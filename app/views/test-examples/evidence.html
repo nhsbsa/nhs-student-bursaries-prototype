@@ -1,0 +1,90 @@
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Your uploaded evidence {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %}
+<a class="nhsuk-skip-link" href="#maincontent">Skip to main content</a>
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <h1 class="nhsuk-app-heading" id="uploadEvidenceH1">
+      Your uploaded evidence
+    </h1>
+
+
+    <p>To confirm what you've told us, we need to see evidence of:</p>
+    <ul>
+      <li>Evidence X</li>
+      <li>Evidence Y</li>
+      <li>Evidence Z</li>
+    </ul>
+
+    <h2 class="nhsuk-heading-m">Uploaded files</h2>
+    <table>
+      <caption class="nhsuk-u-visually-hidden">Uploaded documents table</caption>
+      <thead>
+        <th>Type</th>
+        <th>Status</th>
+        <th>What you can do</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Evidence Y</td>
+          <td>Uploaded</td>
+          <td><a href="#">View</a> or <a href="#">Delete</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    <div class="nhsuk-form-group">
+
+      <fieldset class="nhsuk-fieldset">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h3 class="nhsuk-heading-m">
+            Would you like to upload more evidence?
+          </h3>
+        </legend>
+
+        <div class="nhsuk-radios nhsuk-radios--inline">
+
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="example-inline-1" name="example-inline" type="radio" value="yes">
+            <label class="nhsuk-label nhsuk-radios__label" for="example-inline-1">
+              Yes
+            </label>
+          </div>
+
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="example-inline-2" name="example-inline" type="radio" value="no">
+            <label class="nhsuk-label nhsuk-radios__label" for="example-inline-2">
+              No
+            </label>
+          </div>
+
+        </div>
+      </fieldset>
+
+    </div>
+  </div>
+
+  <div class="nhsuk-grid-column-full">
+    <div class="nhsuk-form-group">
+      <a href="" class="nhsuk-button" role="button">Accept and submit</a>
+    </div>
+    <a href="#" id="saveAndComeBackLater">Save and come back later</a>
+  </div>
+</div>
+{% endblock %}

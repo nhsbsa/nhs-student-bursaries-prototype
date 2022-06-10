@@ -1,0 +1,100 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+{{ serviceName }}
+{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<a class="nhsuk-skip-link" href="#maincontent">Skip to main content</a>
+{% block beforeContent %}
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <article>
+            <!-- Change the page title here -->
+            <h1 class="app-heading-l">
+                Privacy notice
+            </h1>
+
+            <p>The NHS Business Services Authority (<span aria-label="NHS Business Services Authority">NHSBSA</span>)
+                is responsible for this service.</p>
+
+            <p>We'll use the information you enter to:</p>
+
+            <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>access your applicaiton</li>
+                <li>pay you</li>
+                <li>detect and prevent fraud and mistakes</li>
+                <li>help plan and make inprovements to NHS services, and/or direct patient care</li>
+            </ul>
+
+            <p>We only keep your data for seven years after your course finishes.</p>
+
+            <h2 class="nhsuk-heading-m">Why we process your information</h2>
+
+            <p>We're required by law to process this information for the Department of Health and Social Care (<span
+                    aria-label="Department of Health and Social Care">DHSC</span> )</p>
+
+            <h2 class="nhsuk-heading-m">Sharing your personal information</h2>
+
+            <p>To prevent, detect and investigate fraud errors, we may share your information with:</p>
+
+            <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>Student Loans Company</li>
+                <li>HM Revenue and Customs</li>
+                <li>higher education institutions</li>
+                <li>The Home Office</li>
+                <li>organisations that you receive benefits, bursaries, grants, or support from</li>
+                <li>bodies acting on behalf of the above organisations</li>
+            </ul>
+
+            <p>We may also share your information with:</p>
+
+            <ul class="nhsuk-list nhsuk-list--bullet">
+                <li><abbr title="Department of Health and Social Care">DHSC</abbr> to investigate and prosecute fraud,
+                    or any unlawful activity that affects the NHS</li>
+                <li>the Cabinet Office in relation to the National Fraud Initiative</li>
+            </ul>
+
+            <p>We may also share annonymised information with <span
+                    aria-label="Department of Health and Social Care">DHSC</span> to check it complies with equality
+                law.</p>
+
+            <p>Information that identifies you will not be shared outside the European Economic Area.</p>
+
+            <h2 class="nhsuk-heading-m">Your rights</h2>
+
+            <p>The information you enter will be managed as required by Data Protection law.</p>
+
+            <p>You have the right to:</p>
+
+            <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>receive a copy of the information we hold about you</li>
+                <li>request your information be changed if you believe it was not correct at the time you provided it
+                </li>
+                <li>request that we delete your information if you think we're keeping it for longer than necessary</li>
+            </ul>
+
+            <!-- <p>Find out more about your rights and how we process information.</p> -->
+        </article>
+    </div>
+
+</div>
+
+
+{% endblock %}

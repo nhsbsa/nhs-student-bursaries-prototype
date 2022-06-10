@@ -1,0 +1,79 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Available funding email {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %}
+<a class="nhsuk-skip-link" href="#maincontent" id="skipLink"
+  >Skip to main content</a
+>
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <span class="nhsuk-caption-l">SRN000020301 - Liam Bloggs</span>
+    <h1 class="app-heading-l" id="declaration">Available funding email</h1>
+    <p>
+      The following email will be sent to the student on completion of this
+      stage of the application:
+    </p>
+    <div class="nhsuk-form-group">
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <dl class="nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">funding_letter.pdf</dt>
+              <dd class="nhsuk-summary-list__value">Funding Letter</dd>
+
+              <dd class="nhsuk-summary-list__actions">
+                <a href="#">
+                  View (new tab)<span class="nhsuk-u-visually-hidden">
+                    funding_letter.pdf</span
+                  >
+                </a>
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="#">
+                  Download<span class="nhsuk-u-visually-hidden">
+                    funding_letter.pdf</span
+                  >
+                </a>
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <p>
+      This email includes all of the information you entered previously. If this
+      is correct please click 'Approve and send.'
+    </p>
+    <div class="nhsuk-form-group">
+      <a
+        href="approve-na-declaration"
+        class="nhsuk-button"
+        type="Submit"
+        role="button"
+        id="submit"
+        >Approve and send</a
+      >
+    </div>
+  </div>
+</div>
+
+{% endblock %}

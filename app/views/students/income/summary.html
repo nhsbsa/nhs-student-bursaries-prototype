@@ -1,0 +1,141 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Check your answers {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <h1 class="app-page-heading">
+      <span class="nhsuk-caption-l">Your income</span>Check your answers
+    </h1>
+
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Sponsorship</dt>
+        <dd class="nhsuk-summary-list__value">£6000</dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a href="scholarship">
+            Change<span class="nhsuk-u-visually-hidden"> Sponsorship</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Salary</dt>
+        <dd class="nhsuk-summary-list__value">£0</dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a href="employment">
+            Change<span class="nhsuk-u-visually-hidden"> name</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Self-employment</dt>
+        <dd class="nhsuk-summary-list__value">£0</dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a href="self-employment">
+            Change<span class="nhsuk-u-visually-hidden"> Self-employed</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Pension</dt>
+        <dd class="nhsuk-summary-list__value">£0</dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a href="pension">
+            Change<span class="nhsuk-u-visually-hidden"> Pension</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Rent</dt>
+        <dd class="nhsuk-summary-list__value">£4000</dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a href="rent">
+            Change<span class="nhsuk-u-visually-hidden"> Rent </span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Taxable benefits</dt>
+        <dd class="nhsuk-summary-list__value">£300</dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a href="benefits">
+            Change<span class="nhsuk-u-visually-hidden">
+              Taxable benefits
+            </span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Maintenance received</dt>
+        <dd class="nhsuk-summary-list__value">£0</dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a href="maintenance">
+            Change<span class="nhsuk-u-visually-hidden">
+              Maintenance received</span
+            >
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Trust funds</dt>
+        <dd class="nhsuk-summary-list__value">£0</dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a href="trust-fund">
+            Change<span class="nhsuk-u-visually-hidden">Trust funds</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Other unearned income</dt>
+        <dd class="nhsuk-summary-list__value">£750</dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a href="other">
+            Change<span class="nhsuk-u-visually-hidden">
+              Other unearned income</span
+            >
+          </a>
+        </dd>
+      </div>
+    </dl>
+
+    <h2 class="nhsuk-heading-l">Submit your income details</h2>
+    <p>
+      By clicking accept you’re confirming that the details you’re providing are
+      correct.
+    </p>
+    <div class="nhsuk-form-group">
+      <a href="evidence" class="nhsuk-button" role="button"
+        >Accept and continue</a
+      >
+    </div>
+
+    <a href="#">Cancel and return to dashboard</a>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,233 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Check your answers {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %}{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <h1 class="nhsuk-app-heading" id="checkYouranswers">
+      <span class="nhsuk-caption-l">Week 1 - 1/8/2021 to 7/8/2021</span>
+      Check your answers
+    </h1>
+  </div>
+  <div class="nhsuk-grid-column-full">
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Placement addresses</dt>
+        <dd class="nhsuk-summary-list__value">
+          Royal Victoria Infirmary, NE1 4LP<br />Freeman Hospital, NE7 7DN
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="which-addresses">
+            Change<span class="nhsuk-u-visually-hidden">
+              Change placement address</span
+            >
+          </a>
+        </dd>
+      </div>
+    </dl>
+
+    <h2 class="nhsuk-heading-m" id="hospital-1">Royal Victoria Infirmary</h2>
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Mode of transport</dt>
+        <dd class="nhsuk-summary-list__value">Car</dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="travel-type">
+            Change<span class="nhsuk-u-visually-hidden">
+              Change mode of transport</span
+            >
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">What dates did you drive?</dt>
+        <dd class="nhsuk-summary-list__value">
+          Monday 2nd August <br />
+          Tuesday 3rd August <br />
+          Wednesday 4th August
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="address-dates">
+            Change<span class="nhsuk-u-visually-hidden"> change dates</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Miles per day</dt>
+        <dd class="nhsuk-summary-list__value">
+          45 miles <br />
+          46 miles <br />
+          45 miles
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="car-mileage">
+            Change<span class="nhsuk-u-visually-hidden"> change mileage</span>
+          </a>
+        </dd>
+      </div>
+    </dl>
+
+    <h2 class="nhsuk-heading-m" id="hospital-2">Freeman Hospital</h2>
+
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Mode of transport</dt>
+        <dd class="nhsuk-summary-list__value">Car</dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="travel-type-2">
+            Change<span class="nhsuk-u-visually-hidden">
+              Change mode of transport</span
+            >
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">What dates did you drive?</dt>
+        <dd class="nhsuk-summary-list__value">
+          Thursday 5th August<br />
+          Friday 6th August
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="address-dates-2">
+            Change<span class="nhsuk-u-visually-hidden"> change dates</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Miles per day</dt>
+        <dd class="nhsuk-summary-list__value">
+          30 miles <br />
+          30 miles
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="car-mileage-2">
+            Change<span class="nhsuk-u-visually-hidden"> change cost</span>
+          </a>
+        </dd>
+      </div>
+    </dl>
+
+    <h2 class="nhsuk-heading-m" id="other-info">Other information</h2>
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Did you travel further than your placement?
+        </dt>
+        <dd class="nhsuk-summary-list__value">Yes</dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="community-mileage">
+            Change<span class="nhsuk-u-visually-hidden">
+              change community mileage</span
+            >
+          </a>
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Extra mileage mode of transport</dt>
+        <dd class="nhsuk-summary-list__value">Car</dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="community-mileage-type">
+            Change<span class="nhsuk-u-visually-hidden">
+              change community mileage</span
+            >
+          </a>
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Extra mileage dates and miles</dt>
+        <dd class="nhsuk-summary-list__value">
+          Thursday 4th August - 20 miles
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="community-mileage-details">
+            Change<span class="nhsuk-u-visually-hidden">
+              change community mileage</span
+            >
+          </a>
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Did you incur extra costs?</dt>
+        <dd class="nhsuk-summary-list__value">Yes</dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="extra-costs">
+            Change<span class="nhsuk-u-visually-hidden">
+              change extra costs</span
+            >
+          </a>
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Extra cost type and cost</dt>
+        <dd class="nhsuk-summary-list__value">Parking - £5</dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="extra-costs-type">
+            Change<span class="nhsuk-u-visually-hidden">
+              change extra costs</span
+            >
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Additional comments</dt>
+        <dd class="nhsuk-summary-list__value">None</dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="additional-comments">
+            Change<span class="nhsuk-u-visually-hidden">
+              change additional comments</span
+            >
+          </a>
+        </dd>
+      </div>
+    </dl>
+
+    <h2 class="nhsuk-heading-m" id="complete">Complete your journey details</h2>
+
+    <p>
+      By clicking continue you’re confirming that the details you’re providing
+      are correct.
+    </p>
+
+    <div class="nhsuk-form-group">
+      <a href="evidence" class="nhsuk-button" role="button" id="continueBtn"
+        >Save and continue</a
+      >
+    </div>
+  </div>
+</div>
+{% endblock %}

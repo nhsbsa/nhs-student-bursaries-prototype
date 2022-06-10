@@ -1,0 +1,138 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} {{ serviceName }} prototypes | Update your status {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %}
+<a class="nhsuk-skip-link" href="#maincontent" id="skipLink"
+  >Skip to main content</a
+>
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <h1 class="nhsuk-app-heading" id="checkYourDetails">
+      <span class="nhsuk-caption-l">Status assessment</span>
+      Update your status
+    </h1>
+    <div class="nhsuk-card">
+      <div class="nhsuk-card__content">
+        <h2 class="nhsuk-heading-m">
+          Based on your answers you will be classed as an independent student.
+        </h2>
+        <p>
+          As we have assessed you as an independent student before, we need to
+          know if your status has changed since you last time you applied.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="nhsuk-grid-column-full">
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Do you want to apply for an Income Assessed bursary?
+        </dt>
+        <dd class="nhsuk-summary-list__value">Yes</dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Have Student Finance England confirmed you're an independent student?
+        </dt>
+        <dd class="nhsuk-summary-list__value">No</dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Do you have any dependent children?
+        </dt>
+        <dd class="nhsuk-summary-list__value">No</dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          What is your relationship status?
+        </dt>
+        <dd class="nhsuk-summary-list__value">None of the above</dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Have both of your parents died?</dt>
+        <dd class="nhsuk-summary-list__value">No</dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Are you estranged from your parents?
+        </dt>
+        <dd class="nhsuk-summary-list__value">No</dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Have you supported yourself for a total of 36 months before your
+          course starts?
+        </dt>
+        <dd class="nhsuk-summary-list__value">Yes</dd>
+      </div>
+    </dl>
+    <form method="post">
+      <div class="nhsuk-form-group">
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h2 class="nhsuk-fieldset__heading">Are these details correct?</h2>
+          </legend>
+
+          <div class="nhsuk-radios nhsuk-radios--inline">
+            <div class="nhsuk-radios__item">
+              <input
+                class="nhsuk-radios__input"
+                id="detailsYes"
+                name="checkYourDetails"
+                type="radio"
+                value="yes"
+              />
+              <label class="nhsuk-label nhsuk-radios__label" for="detailsYes">
+                Yes
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input
+                class="nhsuk-radios__input"
+                id="detailsNo"
+                name="checkYourDetails"
+                type="radio"
+                value="no"
+              />
+              <label class="nhsuk-label nhsuk-radios__label" for="detailsNo">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <button class="nhsuk-button" type="submit" id="continueBtn">
+        Save and continue
+      </button>
+    </form>
+  </div>
+</div>
+{% endblock %}

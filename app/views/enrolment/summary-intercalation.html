@@ -1,0 +1,215 @@
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+{% block header %} {{ header({ "service": { "name": "Bursary", "href": "/" },
+"showNav": "false", "showSearch": "false" }) }} {% endblock %}
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Check your answers {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %}
+<a class="nhsuk-skip-link" href="#maincontent">Skip to main content</a>
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-back-link">
+  <a class="nhsuk-back-link__link" href="intercalating-course">
+    <svg
+      class="nhsuk-icon nhsuk-icon__chevron-left"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <path
+        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"
+      ></path>
+    </svg>
+    Go back</a
+  >
+</div>
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <h1 class="nhsuk-app-heading">Check your answers</h1>
+
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Academic year</dt>
+        <dd class="nhsuk-summary-list__value">June 2021</dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="courseyear">
+            Change<span class="nhsuk-u-visually-hidden"> course year</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">University</dt>
+        <dd class="nhsuk-summary-list__value">
+          <p>City University London</p>
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="university">
+            Change<span class="nhsuk-u-visually-hidden">university</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Type of course</dt>
+        <dd class="nhsuk-summary-list__value">
+          <p>Undergraduate degree</p>
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="whichcourse">
+            Change<span class="nhsuk-u-visually-hidden">type of course</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Study type</dt>
+        <dd class="nhsuk-summary-list__value">
+          <p>Full time</p>
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="parttime">
+            Change<span class="nhsuk-u-visually-hidden">study type</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Course name</dt>
+        <dd class="nhsuk-summary-list__value">
+          <p>Bachelor of Medicine & Surgery - MBBS - 5 years</p>
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="course">
+            Change<span class="nhsuk-u-visually-hidden">course</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Course start year</dt>
+        <dd class="nhsuk-summary-list__value">
+          <p>2017</p>
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="firstyear">
+            Change<span class="nhsuk-u-visually-hidden">course</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Course history 2017/18</dt>
+        <dd class="nhsuk-summary-list__value">
+          <p>Course year 1</p>
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="coursehistory0">
+            Change<span class="nhsuk-u-visually-hidden">course</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Course history 2018/19</dt>
+        <dd class="nhsuk-summary-list__value">Course year 2</dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="coursehistory">
+            Change<span class="nhsuk-u-visually-hidden">course history</span>
+          </a>
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Course history 2019/20</dt>
+        <dd class="nhsuk-summary-list__value">Course year 3</dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="coursehistory1">
+            Change<span class="nhsuk-u-visually-hidden">course history</span>
+          </a>
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Course history 2020/21</dt>
+        <dd class="nhsuk-summary-list__value">Course year 4</dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="coursehistory2">
+            Change<span class="nhsuk-u-visually-hidden">course history</span>
+          </a>
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Course 2021/22</dt>
+        <dd class="nhsuk-summary-list__value">Intercalating</dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="coursehistory3">
+            Change<span class="nhsuk-u-visually-hidden">course history</span>
+          </a>
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Intercalating university</dt>
+        <dd class="nhsuk-summary-list__value">
+          Complutense University of Madrid
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="intercalating">
+            Change<span class="nhsuk-u-visually-hidden">intercalating</span>
+          </a>
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Intercalating course</dt>
+        <dd class="nhsuk-summary-list__value">Bachelor of Surgery</dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="intercalating-course">
+            Change<span class="nhsuk-u-visually-hidden"
+              >intercalating course</span
+            >
+          </a>
+        </dd>
+      </div>
+    </dl>
+    <h2 class="nhsuk-heading-l">Complete academic year</h2>
+    <p>
+      By clicking accept you’re confirming that the details you’re providing are
+      correct.
+    </p>
+
+    <div class="nhsuk-form-group">
+      <a
+        id="accept"
+        role="button"
+        class="nhsuk-button"
+        href="/enrolment/complete"
+        >Continue</a
+      >
+    </div>
+    <a href="#">Cancel and return to dashboard</a>
+  </div>
+</div>
+
+{% endblock %}

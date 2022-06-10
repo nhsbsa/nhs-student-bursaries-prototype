@@ -1,0 +1,94 @@
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+{% block header %} {{ header({ "service": { "name": "Bursary", "href": "/" },
+"showNav": "false", "showSearch": "false" }) }} {% endblock %}
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} What you will need {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <div class="nhsuk-back-link">
+      <a class="nhsuk-back-link__link" href="#">
+        <svg
+          class="nhsuk-icon nhsuk-icon__chevron-left"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"
+          ></path>
+        </svg>
+        Go back</a
+      >
+    </div>
+    <h1 class="nhsuk-app-heading" id="eligibilityAssessment">
+      <span class="nhsuk-caption-l">Before you start</span>
+      What you will need
+    </h1>
+
+    <p>To qualify for an NHS bursary, you must have:</p>
+    <ul>
+      <li>the right to live in the UK</li>
+      <li>
+        lived in the UK for more than 3 years before the first day of the
+        academic year you’re applying for
+      </li>
+    </ul>
+
+    <p>Depending on your circumstances we’ll ask you:</p>
+    <ul>
+      <li>about your residency status</li>
+      <li>where you’ve lived in the last 3 years or 5 years</li>
+      <li>to upload evidence of your right to live in the UK</li>
+    </ul>
+
+    <h2 class="nhsuk-heading-l" id="studentLoanH2">
+      Evidence you’ll have to provide
+    </h2>
+
+    <p>
+      If you’re a UK National, you’ll need to upload a copy of your passport or
+      birth certificate.
+    </p>
+
+    <p>
+      If you are not a UK National,you’ll need to upload a copy of your passport
+      and one of the following:
+    </p>
+    <ul>
+      <li>UK residency card or permit</li>
+      <li>EU identity card</li>
+    </ul>
+
+    <h2 class="nhsuk-heading-s" id="appliedStudentLoan">
+      If you have applied for a student loan
+    </h2>
+
+    <p>
+      If you're getting a loan from Student Finance England, we will not need to
+      ask you any questions about your residency status.
+    </p>
+    <p>
+      Your loan must be from Student Finance England. We’ll ask you to upload
+      evidence of your Student Finance England letter to prove this.
+    </p>
+
+    <a href="studentloan" class="nhsuk-button" id="start">Start now</a>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,266 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Check the funding details {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %}
+<a class="nhsuk-skip-link" href="#maincontent" id="skipLink"
+  >Skip to main content</a
+>
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <!-- Change the page title here -->
+    <span class="nhsuk-caption-l">SRN000020301 - Liam Bloggs</span>
+    <h1 class="app-heading-l" id="declaration">Check the funding details</h1>
+
+    <div class="nhsuk-form-group">
+      <h2 class="nhsuk-heading-l" id="evidence">Evidence supplied</h2>
+      <div class="nhsuk-card nhsuk-grid-column-full">
+        <div class="nhsuk-card__content">
+          <dl class="nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">needs_assessment.pdf</dt>
+              <dd class="nhsuk-summary-list__value">Needs assessment</dd>
+
+              <dd class="nhsuk-summary-list__actions">
+                <a href="#">
+                  View (new tab)<span class="nhsuk-u-visually-hidden">
+                    needs_assessment.pdf</span
+                  >
+                </a>
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <p>
+      Please check the filled out groups of allowance provided to the student.
+      You can amend them under each section.
+    </p>
+    <div class="nhsuk-form-group">
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <div class="nhsuk-form-group">
+            <h2 class="nhsuk-heading-m">Specialist equipment</h2>
+            <table role="table" class="nhsuk-table-responsive">
+              <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                  <th role="columnheader" class="" scope="col">Item</th>
+                  <th role="columnheader" class="" scope="col">Supplier</th>
+                  <th role="columnheader" class="" scope="col">Quote No.</th>
+                  <th role="columnheader" class="" scope="col">
+                    Amounts we’ll pay
+                  </th>
+                  <th role="columnheader" class="" scope="col">
+                    Bought already?
+                  </th>
+                </tr>
+              </thead>
+
+              <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Item </span
+                    >Laptop
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading"
+                      >Supplier </span
+                    >PC World
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading"
+                      >Quote No. </span
+                    >459820497
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading"
+                      >Amounts we'll pay </span
+                    >£400
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading"
+                      >Bought already? </span
+                    >No
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <button class="nhsuk-button nhsuk-button--secondary" type="submit">
+            Change specialist equipment
+          </button>
+
+          <h2 class="nhsuk-heading-m">Non-Medical Help</h2>
+          <div class="nhsuk-form-group">
+            <table role="table" class="nhsuk-table-responsive">
+              <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                  <th role="columnheader" class="" scope="col">Item</th>
+                  <th role="columnheader" class="" scope="col">Supplier</th>
+                  <th role="columnheader" class="" scope="col">
+                    Duration (Hours)
+                  </th>
+                  <th role="columnheader" class="" scope="col">
+                    Total cost approved
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Item </span
+                    >Note Taker
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading"
+                      >Supplier </span
+                    >PC World
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading"
+                      >Duration (Hours)</span
+                    >6 Hours
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading"
+                      >Total cost approved </span
+                    >£400
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <button class="nhsuk-button nhsuk-button--secondary" type="submit">
+            Change non-medical help
+          </button>
+
+          <h2 class="nhsuk-heading-m">General Allowance</h2>
+          <div class="nhsuk-form-group">
+            <table role="table" class="nhsuk-table-responsive">
+              <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                  <th role="columnheader" class="" scope="col">Item</th>
+                  <th role="columnheader" class="" scope="col">
+                    Amount available
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Item </span
+                    >Printing credits
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading"
+                      >Amount available </span
+                    >£200
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <button class="nhsuk-button nhsuk-button--secondary" type="submit">
+            Change general allowance
+          </button>
+
+          <h2 class="nhsuk-heading-m">Travel Allowance</h2>
+          <div class="nhsuk-form-group">
+            <table role="table" class="nhsuk-table-responsive">
+              <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                  <th role="columnheader" class="" scope="col">Journey type</th>
+                  <th role="columnheader" class="" scope="col">Provider</th>
+                  <th role="columnheader" class="" scope="col">
+                    Daily travel <br />between postcodes
+                  </th>
+
+                  <th role="columnheader" class="" scope="col">
+                    Total number <br />
+                    of journeys
+                  </th>
+                  <th role="columnheader" class="" scope="col">Taxi cost</th>
+                  <th role="columnheader" class="" scope="col">
+                    Public transport cost
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading"
+                      >Journey type </span
+                    >University
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading"
+                      >Provider </span
+                    >Blueline
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading"
+                      >Daily travel between postcodes </span
+                    >NE1 2JR and <br />NE27 6RU
+                  </td>
+
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading"
+                      >Total number of journeys </span
+                    >20
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading"
+                      >Taxi cost </span
+                    >£5
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading"
+                      >Public transport cost </span
+                    >£2
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="nhsuk-form-group">
+            <button class="nhsuk-button nhsuk-button--secondary" type="submit">
+              Change travel allowance
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nhsuk-form-group">
+      <a
+        href="na-send-email"
+        class="nhsuk-button"
+        type="Submit"
+        role="button"
+        id="submit"
+        >Submit and generate email</a
+      >
+    </div>
+  </div>
+</div>
+
+{% endblock %}

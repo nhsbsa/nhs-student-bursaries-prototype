@@ -1,0 +1,124 @@
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Upload your evidence {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <fieldset class="nhsuk-fieldset">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-app-heading" id="uploadEvidenceH1">
+          Upload your evidence
+        </h1>
+      </legend>
+      <p>
+        We now need to see proof that you are seperated.
+      </p>
+
+      <div class="nhsuk-form-group">
+        <label for="file" class="nhsuk-label" id="title-label"
+          ><strong>Upload your documents</strong></label
+        >
+        <span class="nhsuk-hint"
+          >The quality of your digital photo upload must be:</span
+        >
+        <ul class="list list-bullet nhsuk-hint">
+          <li>original copy</li>
+          <li>full document displayed</li>
+          <li>clear and in focus</li>
+          <li>in colour</li>
+          <li>unaltered by computer software</li>
+        </ul>
+        <p class="nhsuk-hint" id="file-format-reject">
+          If the document does not meet this criteria, your application will be
+          rejected
+        </p>
+
+        <span class="nhsuk-hint">Uploaded attachments must be:</span>
+        <ul class="list list-bullet nhsuk-hint">
+          <li>jpg, bmp, png, tif, pdf</li>
+          <li>no more than 5mb</li>
+        </ul>
+
+        <div class="nhsuk-form-group">
+          <div class="form-group-error" id="fileSizeError" hidden="true">
+            <span id="fileSizeErrorMessage" class="error-message"></span>
+          </div>
+          <input id="file" class="nhsuk-input" type="file" name="file" />
+        </div>
+        <div class="nhsuk-form-group">
+          <label for="evidence-type" class="nhsuk-label"
+            >Type of evidence</label
+          >
+          <select
+            id="evidence-type"
+            class="nhsuk-select nhsuk-u-width-three-quarters"
+          >
+            <option value="">Type of evidence</option>
+            <option id="thirdPartyLetter">Letter from third party</option>
+          </select>
+        </div>
+        <div class="nhsuk-form-group">
+          <button
+            type="submit"
+            class="nhsuk-button nhsuk-button--secondary"
+            role="button"
+            id="uploadFile"
+          >
+            Upload file
+          </button>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+
+  <div class="nhsuk-grid-column-full">
+    <div class="nhsuk-form-group">
+      <h2 class="nhsuk-heading-m">Uploaded files</h2>
+      <div class="nhsuk-card nhsuk-grid-column-full">
+        <div class="nhsuk-card__content">
+          <dl class="nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Home Office letter</dt>
+              <dd class="nhsuk-summary-list__value">Uploaded</dd>
+
+              <dd class="nhsuk-summary-list__actions">
+                <a href="#">
+                  View<span class="nhsuk-u-visually-hidden">
+                    view document</span
+                  >
+                </a>
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="#">
+                  Remove<span class="nhsuk-u-visually-hidden">
+                    remove document</span
+                  >
+                </a>
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </div>
+
+    <div class="nhsuk-form-group">
+      <a href="uploadconfirmation" class="nhsuk-button" role="button"
+        >Accept and submit</a
+      >
+    </div>
+    <a href="#" id="saveAndComeBackLater">Save and come back later</a>
+  </div>
+</div>
+{% endblock %}

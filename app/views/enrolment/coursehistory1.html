@@ -1,0 +1,191 @@
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+{% block header %} {{ header({ "service": { "name": "Bursary", "href": "/" },
+"showNav": "false", "showSearch": "false" }) }} {% endblock %}
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} What were you doing during
+the 2019/20 academic year? {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-back-link">
+  <a class="nhsuk-back-link__link" href="/enrolment/coursehistory" id="back">
+    <svg
+      class="nhsuk-icon nhsuk-icon__chevron-left"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <path
+        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"
+      ></path>
+    </svg>
+    Go back</a
+  >
+</div>
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <div class="nhsuk-form-group">
+      <h1 class="nhsuk-app-heading" id="courseHistoryH1">
+        <span class="nhsuk-caption-l">Course details</span>
+        What were you doing during the 2019/20 academic year?
+      </h1>
+
+      <p>
+        As you’ve told us your course began in 2017 we need to know what you
+        were doing in the previous 5 years to confirm your eligibility.
+      </p>
+      <p>In the 2019/20 academic year:</p>
+      <div class="nhsuk-form-group">
+        <div class="nhsuk-radios">
+          <div class="nhsuk-radios__item">
+            <input
+              class="nhsuk-radios__input"
+              id="year1"
+              name="course-details"
+              type="radio"
+              value="year1"
+            />
+            <label class="nhsuk-label nhsuk-radios__label" for="year1">
+              I was in year 1 of my course
+            </label>
+          </div>
+
+          <div class="nhsuk-radios__item">
+            <input
+              class="nhsuk-radios__input"
+              id="year2"
+              name="course-details"
+              type="radio"
+              value="year2"
+            />
+            <label class="nhsuk-label nhsuk-radios__label" for="year2">
+              I was in year 2 of my course
+            </label>
+          </div>
+
+          <div class="nhsuk-radios__item">
+            <input
+              class="nhsuk-radios__input"
+              id="year3"
+              name="course-details"
+              type="radio"
+              value="year3"
+            />
+            <label class="nhsuk-label nhsuk-radios__label" for="year3">
+              I was in year 3 of my course
+            </label>
+          </div>
+
+          <div class="nhsuk-radios__item">
+            <input
+              class="nhsuk-radios__input"
+              id="year4"
+              name="course-details"
+              type="radio"
+              value="year4"
+            />
+            <label class="nhsuk-label nhsuk-radios__label" for="year4">
+              I was in year 4 of my course
+            </label>
+          </div>
+          <div class="nhsuk-radios__item">
+            <input
+              class="nhsuk-radios__input"
+              id="intercalated"
+              name="course-details"
+              type="radio"
+              value="intercalated"
+            />
+            <label class="nhsuk-label nhsuk-radios__label" for="intercalated">
+              I intercalated
+            </label>
+            <div
+              class="nhsuk-hint nhsuk-checkboxes__hint"
+              id="intercalation-item-hint"
+            >
+              An intercalation is an extra year on top of your degree that is
+              spent studying another degree or subject.
+            </div>
+          </div>
+          <div class="nhsuk-radios__item">
+            <input
+              class="nhsuk-radios__input"
+              id="gapYear"
+              name="course-details"
+              type="radio"
+              value="gapYear"
+            />
+            <label class="nhsuk-label nhsuk-radios__label" for="gapYear">
+              I took a gap year
+            </label>
+            <div
+              class="nhsuk-hint nhsuk-checkboxes__hint"
+              id="gapyear-item-hint"
+            >
+              A gap year is a temporary break from your course.
+            </div>
+          </div>
+          <div class="nhsuk-radios__item">
+            <input
+              class="nhsuk-radios__input"
+              id="repeated"
+              name="course-details"
+              type="radio"
+              value="repeated"
+            />
+            <label class="nhsuk-label nhsuk-radios__label" for="repeated">
+              I repeated a year of study
+            </label>
+          </div>
+          <div class="nhsuk-radios__item">
+            <input
+              class="nhsuk-radios__input"
+              id="studiedPHD"
+              name="course-details"
+              type="radio"
+              value="studiedPHD"
+            />
+            <label class="nhsuk-label nhsuk-radios__label" for="studiedPHD">
+              I studied a PhD degree
+            </label>
+          </div>
+          <div class="nhsuk-radios__item">
+            <input
+              class="nhsuk-radios__input"
+              id="foundation"
+              name="course-details"
+              type="radio"
+              value="foundation"
+            />
+            <label class="nhsuk-label nhsuk-radios__label" for="foundation">
+              I studied a foundation degree
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="nhsuk-form-group">
+        <a
+          id="next"
+          role="button"
+          class="nhsuk-button"
+          href="/enrolment/coursehistory2"
+          >Continue</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

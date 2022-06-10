@@ -1,0 +1,110 @@
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+{% block header %} {{ header({ "service": { "name": "Bursary", "href": "/" },
+"showNav": "false", "showSearch": "false" }) }} {% endblock %}
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Placement journey details {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %}{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+      <h1 class="nhsuk-app-heading" id="return-mileage-title">
+        <span class="nhsuk-caption-l">Practice Placement Expenses</span>
+        Journey details
+      </h1>
+    </legend>
+
+    <div class="nhsuk-grid-column-full">
+      <div class="nhsuk-form-group">
+        <table role="table" class="nhsuk-table-responsive">
+          <thead role="rowgroup" class="nhsuk-table__head">
+            <tr role="row">
+              <th role="columnheader" class="" scope="col">To</th>
+              <th role="columnheader" class="" scope="col">From</th>
+              <th role="columnheader" class="" scope="col">Method</th>
+              <th role="columnheader" class="" scope="col">Distance or cost</th>
+              <th role="columnheader" class="" scope="col">What you can do</th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">To </span> Address A
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">From </span> Address B
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Method </span> Car
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Distance </span> 20 miles
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading"
+                  >What you can do </span
+                ><a href="#" id="deleteChild"
+                  >Delete
+                  <span class="nhsuk-u-visually-hidden">John Smith</span></a
+                >
+              </td>
+            </tr>
+          </tbody>
+          <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">To </span> Address A
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">From </span> Address C
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Method </span> Bus
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Distance </span> £5.50
+                  </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading"
+                  >What you can do </span
+                ><a href="#" id="deleteChild"
+                  >Delete
+                  <span class="nhsuk-u-visually-hidden">Joe bloggs</span></a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="nhsuk-form-group">
+        <a
+          href="/ppe/plan-c/journey/address-to"
+          class="nhsuk-button nhsuk-button--secondary"
+          role="button"
+          id="add"
+          >Add a new journey</a
+        >
+      </div>
+
+      <a href="/ppe/dashboard/dashboard" class="nhsuk-button"
+        >Return to dashboard</a
+      >
+    </div>
+  </div>
+</div>
+
+{% endblock %}

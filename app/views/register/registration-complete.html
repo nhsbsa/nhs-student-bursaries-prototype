@@ -1,0 +1,42 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Account activated {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <h1 class="nhsuk-heading-xl" id="accountActivated">Account activated</h1>
+
+    <h2 class="nhsuk-heading-s">What happens next</h2>
+    <p>Your account has been successfully activated. You can now log in.</p>
+
+    <p>
+      <a
+        role="button"
+        id="logInLink"
+        href="/register/login"
+        class="nhsuk-button"
+        >Log in to your <span>{{ serviceName }} account</span></a
+      >
+    </p>
+  </div>
+</div>
+
+{% endblock %}

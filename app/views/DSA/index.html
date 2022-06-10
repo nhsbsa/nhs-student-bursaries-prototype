@@ -1,0 +1,689 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Disabled Students' Allowance {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <div class="nhsuk-back-link">
+      <a class="nhsuk-back-link__link" href="/">
+        <svg
+          class="nhsuk-icon nhsuk-icon__chevron-left"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"
+          ></path>
+        </svg>
+        Go back</a
+      >
+    </div>
+    <!-- Change the page title here -->
+    <h1 class="nhsuk-app-heading" id="userRegH1">
+      <span class="nhsuk-caption-l">NHSBSA Prototype</span>
+      Disabled Students' Allowance
+    </h1>
+
+    <hr aria-hidden="true" />
+
+    <h2 class="nhsuk-heading-m">
+      Disabled Students' Allowance V1
+      <strong
+        class="task-completed status-shortlisted"
+        style="background-color: #330072; float: right"
+      >
+        In progress
+      </strong>
+      <span class="nhsuk-caption-m nhsuk-caption--bottom"
+        >Last updated: 13 July 2021</span
+      >
+    </h2>
+
+    <p>User research is needed on:</p>
+
+    <ul class="nhsuk-list nhsuk-list--bullet">
+      <li>equipment list</li>
+      <li>disability list</li>
+      <li>evidence screens</li>
+    </ul>
+    <p>
+      Evidence screens for this prototype are to show the possibility of
+      including the <strong>type of evidence.</strong><br />
+      These will need refinement and implemented elsewhere depending on user
+      research and conversations with the team.
+    </p>
+    <div class="nhsuk-expander-group">
+      <details
+        class="nhsuk-details nhsuk-expander"
+        nhsuk-polyfilled="true"
+        id="nhsuk-details0"
+      >
+        <summary
+          class="nhsuk-details__summary"
+          role="button"
+          aria-controls="nhsuk-details__text0"
+        >
+          <span class="nhsuk-details__summary-text">
+            Application - Previously assessed by Student Finance
+          </span>
+        </summary>
+        <div class="nhsuk-details__text" id="nhsuk-details__text0">
+          <table class="nhsuk-table">
+            <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">
+              DSA Questions pages table
+            </caption>
+            <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                <th role="columnheader" class="" scope="col">Journey point</th>
+                <th role="columnheader" class="" scope="col">Link</th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Intro</td>
+                <td class="nhsuk-table__cell">
+                  <a href="intro"
+                    >View
+                    <span class="nhsuk-u-visually-hidden"> DSA intro</span></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Consent</td>
+                <td class="nhsuk-table__cell">
+                  <a href="consent"
+                    >View
+                    <span class="nhsuk-u-visually-hidden"> consent</span></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Previously assessed for DSA?</td>
+                <td class="nhsuk-table__cell">
+                  <a href="previously-assessed"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      previously assessed question</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">When was assessment?</td>
+                <td class="nhsuk-table__cell">
+                  <a href="assessed-yes"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      last assessment question</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">What disabilites do you have?</td>
+                <td class="nhsuk-table__cell">
+                  <a href="disability-assessed"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      what disabilities do you have question</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">
+                  What disability equipment do you own?
+                </td>
+                <td class="nhsuk-table__cell">
+                  <a href="equipment-list-applied"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      equipment question</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">
+                  Have any circumstances changed?
+                </td>
+                <td class="nhsuk-table__cell">
+                  <a href="circumstances-changed"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      change of circumstances question</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">What has changed?</td>
+                <td class="nhsuk-table__cell">
+                  <a href="change-details"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      what has changed question</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">
+                  Summary - if circumstances haven't changed
+                </td>
+                <td class="nhsuk-table__cell">
+                  <a href="summary-assessed"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      Summary - if circumstances haven't changed</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">
+                  Summary - if circumstances have changed
+                </td>
+                <td class="nhsuk-table__cell">
+                  <a href="summary-changed"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      summary - if circumstances have changed</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Evidence</td>
+                <td class="nhsuk-table__cell">
+                  <a href="evidence-assessed"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      upload your evidence</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">
+                  Dashboard - Save and come back later
+                </td>
+                <td class="nhsuk-table__cell">
+                  <a href="dashboard-save"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      Save and come back later page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Declaration</td>
+                <td class="nhsuk-table__cell">
+                  <a href="declaration"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      declaration page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
+    </div>
+
+    <div class="nhsuk-expander-group">
+      <details
+        class="nhsuk-details nhsuk-expander"
+        nhsuk-polyfilled="true"
+        id="nhsuk-details1"
+      >
+        <summary
+          class="nhsuk-details__summary"
+          role="button"
+          aria-controls="nhsuk-details__text1"
+        >
+          <span class="nhsuk-details__summary-text">
+            Application - Not assessed previously for DSA
+          </span>
+        </summary>
+        <div class="nhsuk-details__text" id="nhsuk-details__text1">
+          <table class="nhsuk-table">
+            <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">
+              DSA questions
+            </caption>
+            <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                <th role="columnheader" class="" scope="col">Journey point</th>
+                <th role="columnheader" class="" scope="col">Link</th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Intro</td>
+                <td class="nhsuk-table__cell">
+                  <a href="intro"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      Not assessed previously for DSA intro screen</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Consent</td>
+                <td class="nhsuk-table__cell">
+                  <a href="consent"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      Not assessed previously for DSA consent page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Previously assessed for DSA?</td>
+                <td class="nhsuk-table__cell">
+                  <a href="previously-assessed"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      previously assessed question</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">What is your disability?</td>
+                <td class="nhsuk-table__cell">
+                  <a href="disability"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      Not assessed previously diability question</span
+                    ></a
+                  >
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">
+                  Do you own specialist equipment?
+                </td>
+                <td class="nhsuk-table__cell">
+                  <a href="equipment"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      specialist equipment page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">What equipment do you own?</td>
+                <td class="nhsuk-table__cell">
+                  <a href="equipment-list"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      What equipment do you own? question</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Summary - owns equipment</td>
+                <td class="nhsuk-table__cell">
+                  <a href="summary-equipment"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      owns own equipment question</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">
+                  Summary - doesn't own equipment
+                </td>
+                <td class="nhsuk-table__cell">
+                  <a href="summary"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      Summary - doesn't own equipment question</span
+                    ></a
+                  >
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Evidence</td>
+                <td class="nhsuk-table__cell">
+                  <a href="evidence"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      DSA submit evidence page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">
+                  Dashboard - Save and come back later
+                </td>
+                <td class="nhsuk-table__cell">
+                  <a href="dashboard-save"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      Save and come back later page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Declaration</td>
+                <td class="nhsuk-table__cell">
+                  <a href="declaration"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      declaration page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
+    </div>
+
+    <div class="nhsuk-expander-group">
+      <details
+        class="nhsuk-details nhsuk-expander"
+        nhsuk-polyfilled="true"
+        id="nhsuk-details0"
+      >
+        <summary
+          class="nhsuk-details__summary"
+          role="button"
+          aria-controls="nhsuk-details__text0"
+        >
+          <span class="nhsuk-details__summary-text">
+            Applied for DSA - Previously assessed by Student Finance
+          </span>
+        </summary>
+        <div class="nhsuk-details__text" id="nhsuk-details__text0">
+          <table class="nhsuk-table">
+            <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">
+              DSA Questions pages table
+            </caption>
+            <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                <th role="columnheader" class="" scope="col">Journey point</th>
+                <th role="columnheader" class="" scope="col">Link</th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Main dashboard</td>
+                <td class="nhsuk-table__cell">
+                  <a href="dashboard-na-uploaded"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      DSA dashboard</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">DSA dashboard</td>
+                <td class="nhsuk-table__cell">
+                  <a href="dsa-app"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      DSA dashboard</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">
+                  Upload receipts - What type of evidence?
+                </td>
+                <td class="nhsuk-table__cell">
+                  <a href="upload-receipts"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      what type of evidence question</span
+                    ></a
+                  >
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Upload your evidence</td>
+                <td class="nhsuk-table__cell">
+                  <a href="evidence-receipts"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      evidence upload</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">View your receipts</td>
+                <td class="nhsuk-table__cell">
+                  <a href="view-receipts"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      view receipts</span
+                    ></a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
+    </div>
+
+    <div class="nhsuk-expander-group">
+      <details
+        class="nhsuk-details nhsuk-expander"
+        nhsuk-polyfilled="true"
+        id="nhsuk-details0"
+      >
+        <summary
+          class="nhsuk-details__summary"
+          role="button"
+          aria-controls="nhsuk-details__text0"
+        >
+          <span class="nhsuk-details__summary-text">
+            Applied for DSA - Not assessed previously for DSA
+          </span>
+        </summary>
+        <div class="nhsuk-details__text" id="nhsuk-details__text0">
+          <table class="nhsuk-table">
+            <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">
+              DSA Questions pages table
+            </caption>
+            <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                <th role="columnheader" class="" scope="col">Journey point</th>
+                <th role="columnheader" class="" scope="col">Link</th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">
+                  Main dashboard - Waiting for Needs Assessment
+                </td>
+                <td class="nhsuk-table__cell">
+                  <a href="dashboard-complete"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      dashboard - waiting for needs assessment</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Needs Assessment upload</td>
+                <td class="nhsuk-table__cell">
+                  <a href="needsassessment-upload"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      Needs assessment upload</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">
+                  Main dashboard - Needs Assessment uploaded
+                </td>
+                <td class="nhsuk-table__cell">
+                  <a href="dashboard-na-uploaded"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      DSA dashboard</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">DSA dashboard</td>
+                <td class="nhsuk-table__cell">
+                  <a href="dsa-app"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      DSA dashboard</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">
+                  Upload receipts - What type of evidence?
+                </td>
+                <td class="nhsuk-table__cell">
+                  <a href="upload-receipts"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      what type of evidence question</span
+                    ></a
+                  >
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Upload your evidence</td>
+                <td class="nhsuk-table__cell">
+                  <a href="evidence-receipts"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      evidence upload</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">View your receipts</td>
+                <td class="nhsuk-table__cell">
+                  <a href="view-receipts"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      view receipts</span
+                    ></a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
+    </div>
+
+    <div class="nhsuk-expander-group">
+      <details
+        class="nhsuk-details nhsuk-expander"
+        nhsuk-polyfilled="true"
+        id="nhsuk-details0"
+      >
+        <summary
+          class="nhsuk-details__summary"
+          role="button"
+          aria-controls="nhsuk-details__text0"
+        >
+          <span class="nhsuk-details__summary-text">
+            UR Recommendations - Iterations
+          </span>
+        </summary>
+        <div class="nhsuk-details__text" id="nhsuk-details__text0">
+          <table class="nhsuk-table">
+            <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">
+              DSA Questions pages table
+            </caption>
+            <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                <th role="columnheader" class="" scope="col">Journey point</th>
+                <th role="columnheader" class="" scope="col">Link</th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">
+                  Intro - Including information about study needs assessment
+                  date and what equipment you've been funded for
+                </td>
+                <td class="nhsuk-table__cell">
+                  <a href="intro-needsassessment"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      Intro - Including information about study needs assessment
+                      date and what equipment you've been funded for</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">
+                  Student needs assessment date - Removed day field
+                </td>
+                <td class="nhsuk-table__cell">
+                  <a href="assessed-yes-month"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      Student needs assessment date - Removed day field</span
+                    ></a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,248 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Status assessment {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block header %} {{ header({ "service": { "name": "Bursary", "href": "/" },
+"showNav": "true", "showSearch": "false", "primaryLinks": [ { "url" :
+"/dashboard/dashboard-enrolment", "label" : "Dashboard" }, { "url" :
+"personal-details", "label" : "Personal details" }, { "url" : "#", "label" :
+"Sign out" } ] }) }} {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<!-- Breadcrumb -->
+
+{% endblock %}
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-width-container">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+        <div class="nhsuk-back-link">
+            <a class="nhsuk-back-link__link" href="/enrolement-breakdown/tasklist">
+              <svg
+                class="nhsuk-icon nhsuk-icon__chevron-left"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"
+                ></path>
+              </svg>
+              Go back</a
+            >
+          </div>
+
+      <h1 class="app-page-heading">
+        <span class="nhsuk-caption-l">BRN0000057-1 - September 2020</span> Status assessment
+      </h1>
+
+      <h2 class="nhsuk-heading-m">Status assessment</h2>
+
+      <dl class="nhsuk-summary-list">
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+           Independent
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Yes
+          </dd>
+      
+        </div>
+      
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Means Tested
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Yes
+          </dd>
+      
+        </div>
+      
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            SFE Independent
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+           No
+          </dd>
+      
+        </div>
+      
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Care of child
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            No
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+                Relationship
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              None of the above
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+                Self Supported
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              Yes
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+                Evidence
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              <a
+            href="#"
+          >
+         P60
+          </a>
+            </dd>
+          </div>
+      </dl>
+
+      <h2 class="nhsuk-heading-m">Independent reason</h2>
+
+   
+          <table role="table" class="nhsuk-table-responsive">
+            <caption class="nhsuk-table__caption">Employment history</caption>
+            <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                <th role="columnheader" class="" scope="col">
+                Employment
+                </th>
+                <th role="columnheader" class="" scope="col">
+                    Reason
+                </th>
+                <th role="columnheader" class="" scope="col">
+                    Date from
+                </th>
+                <th role="columnheader" class="" scope="col">
+                    Date to
+                </th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Employment </span>NHS
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Reason </span>Intern
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Date from </span>01/01/2012
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Date from </span>01/01/2015
+                </td>
+              </tr>
+            </tbody>
+            <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Employment </span>Mcdonalds
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Reason </span>Full-time work
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Date from </span>01/01/2010
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Date from </span>01/01/2011
+                  </td>
+                </tr>
+              </tbody>
+          </table>
+        
+
+      <!--<dl class="nhsuk-summary-list">
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Employment
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            NHS
+          </dd>
+      
+        </div>
+      
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Reason
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Payed intern
+          </dd>
+      
+        </div>
+      
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Date from
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            01/01/2012
+          </dd>
+      
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Date to
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+             01/01/2015
+            </dd>
+        
+          </div>
+      
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Evidence
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <a
+            href="#"
+            aria-describedby="createAcademicYear"
+          >
+          Student finance letter
+          </a>
+          </dd>
+        </div>-->
+
+        
+      </dl>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

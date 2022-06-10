@@ -1,0 +1,135 @@
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Upload evidence {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <fieldset class="nhsuk-fieldset">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-app-heading" id="uploadEvidence">
+          <span class="nhsuk-caption-l">Status assessment</span>
+          Upload evidence
+        </h1>
+      </legend>
+
+      <p>
+        You have stated that you were employed between 01/11/2020 and
+        20/12/2020. We need proof of this.
+      </p>
+
+      <p>Because this is employment, we need:</p>
+      <ul>
+        <li>payslips</li>
+        <li>a P60</li>
+        <li>a letter from your employer</li>
+      </ul>
+
+      <form method="post">
+        <div class="nhsuk-form-group">
+          <label for="file" class="nhsuk-label" id="title-label"
+            ><strong>Guidance for uploading a document</strong></label
+          >
+          <span class="nhsuk-hint">Your file must be:</span>
+          <ul class="list list-bullet nhsuk-hint">
+            <li>an original document</li>
+            <li>full document displayed</li>
+            <li>clear and in focus</li>
+            <li>in colour</li>
+            <li>unaltered by computer software</li>
+          </ul>
+
+          <span class="nhsuk-hint">Uploaded attachments must be:</span>
+          <ul class="list list-bullet nhsuk-hint">
+            <li>jpg, bmp, png, tif, pdf</li>
+            <li>at least 50kb and no more than 5mb</li>
+          </ul>
+
+          <div class="nhsuk-form-group">
+            <div class="form-group-error" id="fileSizeError" hidden="true">
+              <span id="fileSizeErrorMessage" class="error-message"></span>
+            </div>
+            <input id="file" class="nhsuk-input" type="file" name="file" />
+          </div>
+          <div class="nhsuk-form-group">
+            <label for="evidence-type" class="nhsuk-label"
+              >Type of evidence</label
+            >
+            <select
+              id="evidence-type"
+              class="nhsuk-select nhsuk-u-width-three-quarters"
+            >
+              <option value="">Type of evidence</option>
+              <option id="payslip">Payslip</option>
+            </select>
+          </div>
+          <button
+            type="submit"
+            class="nhsuk-button nhsuk-button--secondary"
+            id="uploadBtn"
+          >
+            Upload file
+          </button>
+
+          <h2 class="nhsuk-heading-m" id="uploadedFiles">Uploaded files</h2>
+          <div class="nhsuk-card nhsuk-grid-column-full">
+            <div class="nhsuk-card__content">
+              <dl class="nhsuk-summary-list">
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">Payslip1.png</dt>
+                  <dd class="nhsuk-summary-list__actions">
+                    <a href="#" id="view">
+                      View<span class="nhsuk-u-visually-hidden"> View</span>
+                    </a>
+                  </dd>
+                  <dd class="nhsuk-summary-list__actions">
+                    <a href="#" id="remove">
+                      Remove<span class="nhsuk-u-visually-hidden"> Remove</span>
+                    </a>
+                  </dd>
+                </div>
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">EmployerLetter.png</dt>
+                  <dd class="nhsuk-summary-list__actions">
+                    <a href="#" id="view">
+                      View<span class="nhsuk-u-visually-hidden"> View</span>
+                    </a>
+                  </dd>
+                  <dd class="nhsuk-summary-list__actions">
+                    <a href="#" id="view">
+                      Remove<span class="nhsuk-u-visually-hidden"> Remove</span>
+                    </a>
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+          <div class="nhsuk-form-group">
+            <a
+              href="/status/uploadconfirmation"
+              class="nhsuk-button"
+              role="button"
+              id="continueBtn"
+              >Save and continue</a
+            >
+          </div>
+          <a href="">Save and come back later</a>
+        </div>
+      </form>
+    </fieldset>
+  </div>
+</div>
+{% endblock %}

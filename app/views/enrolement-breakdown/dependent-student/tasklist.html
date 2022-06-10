@@ -1,0 +1,201 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Student's application {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block header %} {{ header({ "service": { "name": "Bursary", "href": "/" },
+"showNav": "true", "showSearch": "false", "primaryLinks": [ { "url" :
+"/dashboard/dashboard-enrolment", "label" : "Dashboard" }, { "url" :
+"personal-details", "label" : "Personal details" }, { "url" : "#", "label" :
+"Sign out" } ] }) }}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item">
+        <a class="nhsuk-breadcrumb__link" href="#">Student search</a>
+      </li>
+      <li class="nhsuk-breadcrumb__item">
+        <a class="nhsuk-breadcrumb__link" href="#">Student details</a>
+      </li>
+      <li class="nhsuk-breadcrumb__item">
+        <a class="nhsuk-breadcrumb__link" href="#">Course details</a>
+      </li>
+      <li class="nhsuk-breadcrumb__item">
+        <a class="nhsuk-breadcrumb__link" href="#">Student's application</a>
+      </li>
+    </ol>
+    <p class="nhsuk-breadcrumb__back">
+      <a class="nhsuk-breadcrumb__backlink" href="#">Back to student search</a>
+    </p>
+  </div>
+</nav>
+{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<!-- Breadcrumb -->
+
+{% endblock %}
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-width-container">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <h1 class="app-page-heading">
+        <span class="nhsuk-caption-l">BRN0000057-1 - September 2022</span>
+        Student's application
+      </h1>
+
+      <ol class="app-task-list">
+        <li>
+          <span
+            class="
+              featured-list--item__number featured-list--item__number--mobile
+              nhsuk-heading-l
+            "
+            >1</span
+          >
+          <h2 class="featured-list--item__heading nhsuk-heading-m">
+            <span
+              class="
+                featured-list--item__number
+                nhsuk-heading-l nhsuk-u-margin-bottom-1 nhsuk-heading-m
+              "
+              >1</span
+            >
+            Apply for a non-means tested bursary
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a
+                  href="/enrolement-breakdown/dependent-student/summary-pages/coursedetails"
+                 
+                >
+                  Course details
+                </a>
+              </span>
+              <strong
+                class="nhsuk-tag nhsuk-tag--green app-task-list__tag"
+                id="courseDetails"
+                >Assessed</strong
+              >
+            </li>
+            <li class="app-task-list__item">
+              <a
+                href="/enrolement-breakdown/dependent-student/summary-pages/eligibility"
+                aria-describedby="courseDetails"
+              >
+                Eligibility assessment
+              </a>
+              <strong
+                class="nhsuk-tag nhsuk-tag--green app-task-list__tag"
+                id="eligibility"
+                >Eligible</strong
+              >
+            </li>
+
+            <li class="app-task-list__item">
+              <a
+                href="/enrolement-breakdown/dependent-student/summary-pages/statusassessment "
+                aria-describedby="status"
+              >
+                Status assessment
+              </a>
+              <strong
+                class="nhsuk-tag nhsuk-tag--green app-task-list__tag"
+                id="status"
+                >Dependent</strong
+              >
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <span
+            class="
+              featured-list--item__number featured-list--item__number--mobile
+              nhsuk-heading-l
+            "
+            >2</span
+          >
+          <h3 class="featured-list--item__heading nhsuk-heading-m">
+            <span
+              class="
+                featured-list--item__number
+                nhsuk-heading-l nhsuk-u-margin-bottom-1
+              "
+              >2</span
+            >
+            Apply for a means tested bursary
+          </h3>
+          <p>
+            <!--  <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name"> Dependent details </span>
+             
+            </li>-->
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a
+                  href="/enrolement-breakdown/dependent-student/summary-pages/income "
+                >
+                  Income and expenses assessment
+                </a>
+              </span>
+              <strong
+                class="nhsuk-tag nhsuk-tag--green app-task-list__tag"
+                id="incomeExpense"
+                >Assessed</strong
+              >
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a
+                  href="/enrolement-breakdown/dependent-student/summary-pages/parents "
+                  aria-describedby="incomeExpense"
+                >
+                  Parent or partner details
+                </a>
+              </span>
+              <strong
+                class="nhsuk-tag nhsuk-tag--green app-task-list__tag"
+                id="parentPartnerDetails"
+                >Assessed</strong
+              >
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name"
+                ><a
+                  href="/enrolement-breakdown/dependent-student/summary-pages/parents-income"
+                  aria-describedby="parentPartnerDetails"
+                >
+                  Parent or partner income and expenses assessment
+                </a>
+              </span>
+              <strong
+                class="nhsuk-tag nhsuk-tag--green app-task-list__tag"
+                id="parentPartnerAssessment"
+                >Assessed</strong
+              >
+            </li>
+          
+        </li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

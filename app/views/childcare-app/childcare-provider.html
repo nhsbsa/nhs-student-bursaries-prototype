@@ -1,0 +1,80 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Who is your childcare provider? {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <div class="nhsuk-back-link">
+            <a class="nhsuk-back-link__link" href="childcare-parental-responsibility">
+                <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                    aria-hidden="true">
+                    <path
+                        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+                    </path>
+                </svg>
+                Go back</a>
+        </div>
+
+        <h1 class="app-page-heading">
+            <span class="nhsuk-caption-l">Childcare assessment</span>Who is your childcare provider?
+        </h1>
+
+        <p>If you have more than one childcare provider, you can add details for another once we have collected details of your current provider.</p>
+
+        <p>We need to know the childcare provider registration body or ofsted registration number to process your application.</p>
+
+        <form action="/childcare-app/childcare-provider-details" method="post">
+            <div class="nhsuk-form-group">
+
+                <fieldset class="nhsuk-fieldset">
+                    <legend class="nhsuk-fieldset__legend nhsuk-u-visually-hidden">
+                        Who is your childcare provider?
+                    </legend>
+                    <div class="nhsuk-form-group">
+                        <label class="nhsuk-label" for="provider-name">
+                            Name of childcare provider
+                        </label>
+                        <input class="nhsuk-input" id="provider-name" name="provider-name" type="text">
+                    </div>
+                    <div class="nhsuk-form-group">
+                        <label class="nhsuk-label" for="provider-body">
+                           Registration body (If known)
+                        </label>
+                        <input class="nhsuk-input" id="provider-body" name="provider-body" type="text">
+                    </div>
+                    <div class="nhsuk-form-group">
+                        <label class="nhsuk-label" for="provider-ofstead">
+                           Ofstead registration number (If known)
+                        </label>
+                        <input class="nhsuk-input" id="provider-ofstead" name="provider-ofstead" type="text">
+                    </div>
+                </fieldset>
+            </div>
+
+            <div class="nhsuk-form-group">
+                <button class="nhsuk-button" type="submit" id="continue" role="button">
+                    Continue
+                </button>
+
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

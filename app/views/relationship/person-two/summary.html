@@ -1,0 +1,118 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Check your answers {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<form
+  id="registrationForm"
+  name="registrationForm"
+  action="/enrolment/dob"
+  method="post"
+>
+  <input
+    type="hidden"
+    name="_csrf"
+    value="7f540de9-8add-4331-b4d9-37e6c1eaf7b4"
+  />
+
+  <h1 class="nhsuk-app-heading">
+    <span class="nhsuk-caption-l">Parent details</span> Check your answers
+  </h1>
+
+  <dl class="nhsuk-summary-list">
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+        Live with both parents
+      </dt>
+      <dd class="nhsuk-summary-list__value">Yes</dd>
+
+      <dd class="nhsuk-summary-list__actions">
+        <a href="/relationship/living-arrangements">
+          Change<span class="nhsuk-u-visually-hidden">
+            Live with both parents</span
+          >
+        </a>
+      </dd>
+    </div>
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">Parent one name</dt>
+      <dd class="nhsuk-summary-list__value">Karen Francis</dd>
+
+      <dd class="nhsuk-summary-list__actions">
+        <a href="/relationship/person-one/name-one">
+          Change<span class="nhsuk-u-visually-hidden">Parent one name</span>
+        </a>
+      </dd>
+    </div>
+
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">Parent one email</dt>
+      <dd class="nhsuk-summary-list__value">
+        <p>karen.francis@example.com</p>
+      </dd>
+
+      <dd class="nhsuk-summary-list__actions">
+        <a href="/relationship/person-one/email-one">
+          Change<span class="nhsuk-u-visually-hidden">Parent one email</span>
+        </a>
+      </dd>
+    </div>
+
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">Parent two name</dt>
+      <dd class="nhsuk-summary-list__value">
+        <p>Francis Karen</p>
+      </dd>
+
+      <dd class="nhsuk-summary-list__actions">
+        <a href="name">
+          Change<span class="nhsuk-u-visually-hidden">Parent two name</span>
+        </a>
+      </dd>
+    </div>
+
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">Parent two email</dt>
+      <dd class="nhsuk-summary-list__value">
+        <p>franciskaren@example.com</p>
+      </dd>
+
+      <dd class="nhsuk-summary-list__actions">
+        <a href="email">
+          Change<span class="nhsuk-u-visually-hidden">Parent two email</span>
+        </a>
+      </dd>
+    </div>
+  </dl>
+  <h2 class="nhsuk-heading-l">Submit your parent details</h2>
+  <p>
+    By clicking accept you’re confirming that the details you’re providing are
+    correct.
+  </p>
+
+  <div class="nhsuk-form-group">
+    <a href="/relationship/complete" class="nhsuk-button" role="button" id="accept"
+      >Accept and continue</a
+    >
+  </div>
+  <a href="#">Cancel and return to dashboard</a>
+</form>
+{% endblock %}

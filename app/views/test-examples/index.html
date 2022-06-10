@@ -1,0 +1,152 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} {{ serviceName }} prototypes | Evidence upload {% endblock
+%}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <div class="nhsuk-back-link">
+      <a class="nhsuk-back-link__link" href="/">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+          aria-hidden="true">
+          <path
+            d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+          </path>
+        </svg>
+        Go back</a>
+    </div>
+    <!-- Change the page title here -->
+    <h1 class="nhsuk-app-heading" id="evidenceH1">
+      <span class="nhsuk-caption-l">NHSBSA Prototype</span>
+      Evidence upload
+    </h1>
+
+    <hr aria-hidden="true" />
+
+    <h2 class="nhsuk-heading-m">
+      Evidence upload
+      <strong class="task-completed status-shortlisted" style="background-color: #605eb9; float: right">
+        Ready for MVP
+      </strong>
+      <span class="nhsuk-caption-m nhsuk-caption--bottom">Last updated: 07 December 2021</span>
+    </h2>
+
+    <p>What needs to be considered:</p>
+
+    <ul class="nhsuk-list nhsuk-list--bullet">
+      <li>UR for additional comments</li>
+      <li>multi-file upload</li>
+    </ul>
+
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+        <table class="nhsuk-table">
+          <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">
+            single and multiple file upload pages table
+          </caption>
+          <thead role="rowgroup" class="nhsuk-table__head">
+            <tr role="row">
+              <th role="columnheader" class="" scope="col">Journey point</th>
+              <th role="columnheader" class="" scope="col">Link</th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Evidence upload</td>
+              <td class="nhsuk-table__cell">
+                <a href="upload-document2" id="view">View
+                  <span class="nhsuk-u-visually-hidden">Evidence upload</span></a>
+              </td>
+
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Improved evidence upload</td>
+              <td class="nhsuk-table__cell">
+                <a href="document-upload" id="view">View
+                  <span class="nhsuk-u-visually-hidden">Evidence upload</span></a>
+              </td>
+
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Improved evidence upload (For continuous improvement)</td>
+              <td class="nhsuk-table__cell">
+                <a href="document-upload-CI" id="view">View
+                  <span class="nhsuk-u-visually-hidden">Evidence upload</span></a>
+              </td>
+
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="nhsuk-expander-group">
+          <details class="nhsuk-details nhsuk-expander" nhsuk-polyfilled="true" id="nhsuk-details5">
+            <summary class="nhsuk-details__summary" role="button" aria-controls="nhsuk-details__text5">
+              <span class="nhsuk-details__summary-text">
+                Additional comments
+              </span>
+            </summary>
+            <div class="nhsuk-details__text" id="nhsuk-details__text5">
+              <table class="nhsuk-table">
+                <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">
+                  Additional comments
+                </caption>
+                <thead role="rowgroup" class="nhsuk-table__head">
+                  <tr role="row">
+                    <th role="columnheader" class="" scope="col">
+                      Journey point
+                    </th>
+                    <th role="columnheader" class="" scope="col">Link</th>
+                  </tr>
+                </thead>
+                <p>
+                  Linked to UR recommendation
+                  <a href="https://bsa2468.atlassian.net/browse/SBREQ-243">here</a>. This needs to be explored further,
+                  as the journeys it works
+                  with might be limited.
+                </p>
+
+                <tbody class="nhsuk-table__body">
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">Evidence upload</td>
+                    <td class="nhsuk-table__cell">
+                      <a href="evidence-upload-additional">View
+                        <span class="nhsuk-u-visually-hidden">
+                          declare income page</span></a>
+                    </td>
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">Additional info</td>
+                    <td class="nhsuk-table__cell">
+                      <a href="evidence-upload-additional-info">View
+                        <span class="nhsuk-u-visually-hidden">
+                          complete application page</span></a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

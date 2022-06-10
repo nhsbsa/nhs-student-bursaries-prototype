@@ -1,0 +1,55 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} {{ serviceName }} prototypes | Enter your verification
+code {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <!-- Change the page title here -->
+    <h1 class="app-heading-l" id="verificationH1">
+      Enter your verification code
+    </h1>
+    <p>
+      We have sent you a text message with a 6 digit code to the number ending
+      in <b>468</b>.
+    </p>
+    <p>It may take a few minutes to arrive.</p>
+    <!-- Add your content here -->
+    <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-label nhsuk-u-visually-hidden" for="verify">
+        Verification code
+      </label>
+      <span class="nhsuk-hint">For example, 110787</span>
+      <input
+        class="nhsuk-input nhsuk-u-width-one-third"
+        id="verify"
+        name="verify"
+        type="text"
+      />
+    </div>
+    <div class="nhsuk-form-group">
+      <a href="confirmation" class="nhsuk-button" role="button">Submit</a>
+    </div>
+    <p><a href="#">Request another code</a></p>
+  </div>
+</div>
+{% endblock %}

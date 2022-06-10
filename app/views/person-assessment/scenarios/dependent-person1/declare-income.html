@@ -1,0 +1,92 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Do you want to give your financial details? {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <h1 class="nhsuk-app-heading">
+      <span class="nhsuk-caption-l">Your income and expenses</span> Do you want
+      to give your financial details?
+    </h1>
+    <fieldset class="nhsuk-fieldset">
+      <legend class="nhsuk-fieldset__legend nhsuk-u-visually-hidden">
+        Do you want to give your financial details?
+      </legend>
+
+      <p>
+        Giving your financial details can help
+        <strong>student's name</strong> get more money from the bursary. If you
+        choose not to, <strong>student's name</strong> can still get the minimum
+        amount of the {{ serviceName }}.
+      </p>
+
+      <p>
+        Details of your children, income and expenses will need to be taken.
+        These will be based on the last tax year and you will have to produce
+        evidence for these.
+      </p>
+
+      <form method="post">
+        <div class="nhsuk-form-group">
+          <div class="nhsuk-radios">
+            <div class="nhsuk-radios__item">
+              <input
+                class="nhsuk-radios__input"
+                id="finance-details-yes"
+                name="finance-details"
+                type="radio"
+                value="yes"
+              />
+              <label
+                class="nhsuk-label nhsuk-radios__label"
+                for="finance-details-yes"
+              >
+                Yes
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input
+                class="nhsuk-radios__input"
+                id="finance-details-no"
+                name="finance-details"
+                type="radio"
+                value="no"
+              />
+              <label
+                class="nhsuk-label nhsuk-radios__label"
+                for="finance-details-no"
+              >
+                No
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="nhsuk-form-group">
+          <button class="nhsuk-button" type="submit" id="continueBtn">
+            Continue
+          </button>
+        </div>
+      </form>
+    </fieldset>
+  </div>
+</div>
+{% endblock %}

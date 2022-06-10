@@ -1,0 +1,47 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+Student Bursaries prototype
+{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="moj-multi-file-upload__upload">
+    <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--m" for="documents">
+            Upload a file
+        </label>
+        <div class="moj-multi-file-upload__dropzone"><input class="govuk-file-upload moj-multi-file-upload__input"
+                id="documents" name="documents" type="file" multiple="">
+            <p class="govuk-body">Drag and drop files here or</p><label for="documents"
+                class="govuk-button govuk-button--secondary">Choose files</label>
+            <div aria-live="polite" role="status" class="govuk-visually-hidden"></div>
+        </div>
+    </div>
+
+    <button type="submit" class="govuk-button govuk-button--secondary moj-multi-file-upload__button"
+        data-module="govuk-button">
+        Upload file
+    </button>
+
+
+</div>
+
+{% endblock %}

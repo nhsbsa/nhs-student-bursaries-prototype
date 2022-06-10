@@ -1,0 +1,105 @@
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+{% block header %} {{ header({ "service": { "name": "Bursary", "href": "/" },
+"showNav": "false", "showSearch": "false" }) }} {% endblock %}
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Check your answers {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <h1 class="nhsuk-app-heading">
+      <span class="nhsuk-caption-l">Disabled students’ allowance</span>Check your
+      answers
+    </h1>
+
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Previous assessment</dt>
+        <dd class="nhsuk-summary-list__value">No</dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="previously-assessed" id="previouslyAssessedChange">
+            Change<span class="nhsuk-u-visually-hidden">
+              Previous assessment</span
+            >
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Type of disability</dt>
+        <dd class="nhsuk-summary-list__value">
+          <p>ADHD</p>
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="assessed-yes" id="disabilityChange">
+            Change<span class="nhsuk-u-visually-hidden">
+              Type of disability
+            </span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Do you own any disability equipment?
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          <p>Yes</p>
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="circumstances-changed" id="specialistEquipmentChange">
+            Change<span class="nhsuk-u-visually-hidden">
+              Do you own any disability equipment?</span
+            >
+          </a>
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Disability equipment</dt>
+        <dd class="nhsuk-summary-list__value">
+          <p>Laptop, chair, wrist rest</p>
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="equipment-list" id="equipmentOwnedChange">
+            Change<span class="nhsuk-u-visually-hidden">
+              Disability equipment</span
+            >
+          </a>
+        </dd>
+      </div>
+    </dl>
+
+    <h2 class="nhsuk-heading-l" id="submitApplicationHeading">
+      Submit your application
+    </h2>
+    <p>
+      By clicking accept and continue you’re confirming that the details you’re
+      providing are correct.
+    </p>
+    <p>You’ll need to upload your evidence on the next page.</p>
+
+    <div class="nhsuk-form-group">
+      <a id="register" role="button" class="nhsuk-button" href="evidence"
+        >Accept and continue</a
+      >
+    </div>
+    <a href="dashboard" id="saveDashboard">Cancel and return to dashboard</a>
+  </div>
+</div>
+
+{% endblock %}

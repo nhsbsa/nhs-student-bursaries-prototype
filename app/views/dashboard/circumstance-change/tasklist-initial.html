@@ -1,0 +1,221 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Student dashboard {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block header %} {{ header({ "service": { "name": "Bursary", "href": "/" },
+"showNav": "true", "showSearch": "false", "primaryLinks": [ { "url" :
+"dashboard", "label" : "Dashboard" }, { "url" : "personal-details", "label" :
+"Personal details" }, { "url" : "application-history", "label" : "Previous
+applications" } ,{ "url" : "#", "label" : "Sign out" } ] }) }} {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<!-- Breadcrumb -->
+
+{% endblock %}
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-width-container">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <h1 class="app-page-heading">Your September 2021 bursary application</h1>
+    </div>
+    <div class="nhsuk-grid-column-full">
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <table class="nhsuk-table">
+            <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                <th role="columnheader" class="" scope="col">Award</th>
+                <th role="columnheader" class="" scope="col">Course</th>
+                <th role="columnheader" class="" scope="col">Course year</th>
+
+                <th role="columnheader" class="" scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Means tested</td>
+                <td class="nhsuk-table__cell">Medicine (BSc)</td>
+                <td class="nhsuk-table__cell">Year 5</td>
+                <td class="nhsuk-table__cell">
+                  <strong class="nhsuk-tag nhsuk-tag--grey"
+                    >Waiting for university</strong
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="nhsuk-grid-column-two-thirds">
+      <div class="nhsuk-u-padding-bottom-4">
+        <h2 class="nhsuk-heading-m">Application complete</h2>
+        <p>You have completed 8 of 8 sections.</p>
+      </div>
+
+      <ol class="app-task-list">
+        <li>
+          <span
+            class="
+              featured-list--item__number featured-list--item__number--mobile
+              nhsuk-heading-l
+            "
+            >1</span
+          >
+          <h3 class="featured-list--item__heading nhsuk-heading-m">
+            <span
+              class="
+                featured-list--item__number
+                nhsuk-heading-l nhsuk-u-margin-bottom-1
+              "
+              >1</span
+            >
+            Apply for a non-means tested bursary
+          </h3>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name"> Course details </span>
+              <strong
+                class="nhsuk-tag nhsuk-tag--green app-task-list__tag"
+                id="createAcademicYear"
+                >Complete</strong
+              >
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                Eligibility assessment
+              </span>
+              <strong
+                class="nhsuk-tag nhsuk-tag--green app-task-list__tag"
+                id="eligibilityAssessment"
+                >Complete</strong
+              >
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name"> Status assessment </span>
+              <strong
+                class="nhsuk-tag nhsuk-tag--green app-task-list__tag"
+                id="statusAssessment"
+                >Complete</strong
+              >
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <span
+            class="
+              featured-list--item__number featured-list--item__number--mobile
+              nhsuk-heading-l
+            "
+            >2</span
+          >
+          <h3 class="featured-list--item__heading nhsuk-heading-m">
+            <span
+              class="
+                featured-list--item__number
+                nhsuk-heading-l nhsuk-u-margin-bottom-1
+              "
+              >2</span
+            >
+            Apply for a means tested bursary
+          </h3>
+
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name"> Dependent details </span>
+              <strong
+                class="nhsuk-tag nhsuk-tag--grey app-task-list__tag"
+                id="eligibilityAssessment"
+                >Not applicable</strong
+              >
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                Income and expenses assessment
+              </span>
+              <strong
+                class="nhsuk-tag nhsuk-tag--green app-task-list__tag"
+                id="incomeAssessment"
+                >Complete</strong
+              >
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                Parent or partner details
+              </span>
+              <strong
+                class="nhsuk-tag nhsuk-tag--grey app-task-list__tag"
+                id="parentDetails"
+                >Not applicable</strong
+              >
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                Parent or partner income and expenses assessment
+              </span>
+              <strong
+                class="nhsuk-tag nhsuk-tag--grey app-task-list__tag"
+                id="parentIncomeAssessment"
+                >Not applicable</strong
+              >
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <span
+            class="
+              featured-list--item__number featured-list--item__number--mobile
+              nhsuk-heading-l
+            "
+            >3</span
+          >
+          <h3 class="featured-list--item__heading nhsuk-heading-m">
+            <span
+              class="
+                featured-list--item__number
+                nhsuk-heading-l nhsuk-u-margin-bottom-1
+              "
+              >3</span
+            >
+            Complete your application
+          </h3>
+        </li>
+
+        <li class="app-task-list__item">
+          <span class="app-task-list__task-name">
+            <a href="">Declaration</a>
+          </span>
+          <strong
+            class="nhsuk-tag nhsuk-tag--green app-task-list__tag"
+            id="declaration"
+            >Complete</strong
+          >
+        </li>
+      </ol>
+    </div>
+  </div>
+  <div class="nhsuk-form-group nhsuk-u-padding-top-8">
+    <a id="continue" role="button" class="nhsuk-button" href="intro"
+      >Apply for a change of circumstances</a
+    >
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,131 @@
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+{% block header %} {{ header({ "service": { "name": "Bursary", "href": "/" },
+"showNav": "false", "showSearch": "false" }) }} {% endblock %}
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Where did you attend your placement? {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %}{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-back-link">
+  <a class="nhsuk-back-link__link" href="start-date" id="back">
+    <svg
+      class="nhsuk-icon nhsuk-icon__chevron-left"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <path
+        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"
+      ></path>
+    </svg>
+    Go back</a
+  >
+</div>
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+      <h1 class="nhsuk-app-heading" id="return-mileage-title">
+        <span class="nhsuk-caption-l">Placement details</span> Where did you
+        attend your placement?
+      </h1>
+    </legend>
+
+    <p>
+      If your placement took place at more than one address, you can add another
+      address after you have added this one.
+    </p>
+
+    <fieldset class="nhsuk-fieldset" role="group">
+      <legend class="nhsuk-u-visually-hidden">Address fields</legend>
+
+      <div class="nhsuk-form-group">
+        <label for="address1" class="nhsuk-label"
+          >Name of company or hospital
+        </label>
+
+        <input
+          name="address"
+          id="address1"
+          class="nhsuk-input nhsuk-u-width-two-thirds"
+          type="text"
+          maxlength="30"
+        />
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label for="address2" class="nhsuk-label"
+          >Building name or number</label
+        >
+        <input
+          name="address"
+          id="address2"
+          class="nhsuk-input nhsuk-u-width-two-thirds"
+          type="text"
+          maxlength="30"
+        />
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label for="address3" class="nhsuk-label">Street</label>
+        <input
+          name="address"
+          id="address3"
+          class="nhsuk-input nhsuk-u-width-two-thirds"
+          type="text"
+          maxlength="30"
+        />
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label for="town" class="nhsuk-label">Town or city</label>
+        <input
+          name="address"
+          id="town"
+          class="nhsuk-input nhsuk-u-width-two-thirds"
+          type="text"
+          maxlength="30"
+        />
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label for="country" class="nhsuk-label">Country</label>
+        <input
+          name="address"
+          id="country"
+          class="nhsuk-input nhsuk-u-width-two-thirds"
+          type="text"
+          maxlength="30"
+        />
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label for="postcode" class="nhsuk-label">Postcode</label>
+
+        <input
+          name="address"
+          id="postcode"
+          class="nhsuk-input nhsuk-input--width-10"
+          type="text"
+          maxlength="8"
+        />
+      </div>
+    </fieldset>
+
+    <a href="address-summary" class="nhsuk-button">Continue</a>
+  </div>
+</div>
+
+{% endblock %}

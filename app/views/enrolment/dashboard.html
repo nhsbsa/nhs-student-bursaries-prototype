@@ -1,0 +1,65 @@
+{% extends 'layout.html' %}
+{% block header %}
+{{ header({
+    "service": {
+        "name": "Bursary",
+        "href": "/"
+      },
+      "showNav": "true",
+      "showSearch": "false",
+      "primaryLinks": [
+      {
+        "url"  : "/enrolment/dashboard",
+        "label" : "Home"
+      },
+      {
+        "url"  : "#",
+        "label" : "Personal details"
+      },
+      {
+        "url"  : "#",
+        "label" : "Payment details"
+      },
+      {
+        "url"  : "#",
+        "label" : "Sign out"
+      }
+    ]
+    })
+  }}
+{% endblock %}
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+{{ serviceName }} account
+{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %}
+<a class="nhsuk-skip-link" href="#maincontent" id="skipLink">Skip to main content</a>
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+    <h1 class="nhsuk-app-heading" id="bursaryAccountH1">
+      <span class="nhsuk-caption-l">Your bursary reference number is BRN0000058</span>
+      {{ serviceName }} account
+    </h1>
+    <div class="nhsuk-card nhsuk-card--clickable">
+      <div class="nhsuk-card__content">
+        <h2 class="nhsuk-card__heading nhsuk-heading-m" id="createAcademicYearH2">
+          <a class="nhsuk-card__link" href="/enrolment/intro" id="academicYear">Start 2021/22 bursary application</a>
+        </h2>
+        <p class="nhsuk-card__description">You can now begin your application for the 2021/22 academic year.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

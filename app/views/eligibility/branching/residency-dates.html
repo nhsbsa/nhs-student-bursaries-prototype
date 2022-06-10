@@ -1,0 +1,155 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} What date did you
+live in England to?
+{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <div class="nhsuk-back-link">
+      <a class="nhsuk-back-link__link" href="add-residency-reason" id="back">
+        <svg
+          class="nhsuk-icon nhsuk-icon__chevron-left"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"
+          ></path>
+        </svg>
+        Go back</a
+      >
+    </div>
+
+    <h1 class="nhsuk-app-heading" id="residencyDates">
+      <span class="nhsuk-caption-l">Your eligibility</span> What date did you
+      live in England to?
+    </h1>
+    <p>
+      You said you lived in England on the 10/10/2018, we need to know what date
+      this was to.
+    </p>
+
+    <div class="nhsuk-form-group">
+      <fieldset
+        class="nhsuk-fieldset"
+        aria-describedby="to-date-hint"
+        role="group"
+      >
+        <legend
+          class="
+            nhsuk-fieldset__legend nhsuk-fieldset__legend--l
+            nhsuk-u-visually-hidden
+          "
+        >
+          To date
+        </legend>
+        <span class="nhsuk-label" for="to-date-hint">To date</span>
+        <span class="nhsuk-hint" id="to-date-hint">For example, 14 3 2019</span>
+        <div class="nhsuk-date-input" id="to-date">
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label
+                class="nhsuk-label nhsuk-date-input__label"
+                for="to-date-day"
+              >
+                Day
+              </label>
+              <input
+                class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                id="to-date-day"
+                name="to-date-day"
+                type="text"
+                pattern="[0-9]*"
+                inputmode="numeric"
+              />
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label
+                class="nhsuk-label nhsuk-date-input__label"
+                for="to-date-month"
+              >
+                Month
+              </label>
+              <input
+                class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                id="to-date-month"
+                name="to-date-month"
+                type="text"
+                pattern="[0-9]*"
+                inputmode="numeric"
+              />
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label
+                class="nhsuk-label nhsuk-date-input__label"
+                for="to-date-year"
+              >
+                Year
+              </label>
+              <input
+                class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
+                id="to-date-year"
+                name="to-date-year"
+                type="text"
+                pattern="[0-9]*"
+                inputmode="numeric"
+              />
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    <div class="nhsuk-form-group">
+      <div class="nhsuk-checkboxes">
+        <div class="nhsuk-checkboxes__item">
+          <input
+            class="nhsuk-checkboxes__input"
+            id="currently-here"
+            name="currently-here"
+            type="checkbox"
+            value="i currently live here"
+          />
+          <label
+            class="nhsuk-label nhsuk-checkboxes__label"
+            for="currently-here"
+          >
+            I currently live here
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="nhsuk-form-group">
+      <a
+        href="/eligibility/branching/residency-table"
+        class="nhsuk-button"
+        role="button"
+        id="next"
+        >Continue</a
+      >
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,156 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}{{ serviceName }} prototypes | Check this application {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block header %} {{ header({ "service": { "name": "Bursary", "href": "/"
+}, "showNav": "true", "showSearch": "false", "primaryLinks": [ { "url" : "submittedforms",
+"label" : "Applications" },  { "url" : "search", "label" : "Search for a student" }, { "url" : "#", "label" : "Change password" }, { "url" : "index", "label" : "Log out" } ] })
+}} {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<!-- Breadcrumb -->
+<a class="nhsuk-skip-link" href="#maincontent">Skip to main content</a>
+
+{% endblock %}
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-width-container">
+    <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+
+            <h1 class="app-page-heading">
+                Check this application
+            </h1>
+
+            <div class="nhsuk-form-group">
+
+                <fieldset class="nhsuk-fieldset">
+                  <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                    <p class="">
+                      Has the student attached their accommodation receipt or invoice?
+                    </p>
+                  </legend>
+              
+                  <div class="nhsuk-radios nhsuk-radios--inline">
+              
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="accommodationYes" name="accommodation" type="radio" value="yes">
+                      <label class="nhsuk-label nhsuk-radios__label" for="accommodationYes">
+                        Yes
+                      </label>
+                    </div>
+              
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="accommodationNo" name="accommodation" type="radio" value="no">
+                      <label class="nhsuk-label nhsuk-radios__label" for="accommodationNo">
+                        No
+                      </label>
+                    </div>
+              
+                  </div>
+                </fieldset>
+
+                </div>
+                
+                <div class="nhsuk-form-group">
+
+                    <fieldset class="nhsuk-fieldset">
+                      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                        <p class="">
+                          Have they used an accepted type of travel?
+                        </p>
+                       <!--  <div class="nhsuk-hint" id="transportHint">
+                           If the student has claimed for taxi journeys, [?]
+                          </div> -->
+                      </legend>
+                  
+                      <div class="nhsuk-radios nhsuk-radios--inline">
+                  
+                        <div class="nhsuk-radios__item">
+                          <input class="nhsuk-radios__input" id="transportYes" name="transport" type="radio" value="yes">
+                          <label class="nhsuk-label nhsuk-radios__label" for="transportYes">
+                            Yes
+                          </label>
+                        </div>
+                        
+                  
+                        <div class="nhsuk-radios__item">
+                          <input class="nhsuk-radios__input" id="transportNo" name="transport" type="radio" value="no">
+                          <label class="nhsuk-label nhsuk-radios__label" for="transportNo">
+                            No
+                          </label>
+                        </div>
+                  
+                      </div>
+                    </fieldset>
+              
+                    </div>
+
+                    <fieldset class="nhsuk-fieldset">
+                      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                        <p class="">
+                          Did the student require a taxi?
+                        </p>
+
+                    <div class="nhsuk-radios nhsuk-radios--conditional">
+          
+                      <div class="nhsuk-radios__item">
+                        <input class="nhsuk-radios__input" id="yes" name="taxis" type="radio" value="yes" aria-controls="conditional-yes" aria-expanded="false">
+                        <label class="nhsuk-label nhsuk-radios__label" for="yes">
+                          Yes
+                        </label>
+                        </div>
+                        <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-yes">
+      
+                          <div class="nhsuk-form-group">
+                            <label class="nhsuk-label" for="comment">
+                              Provide more information
+                            </label>
+                            <textarea class="nhsuk-textarea nhsuk-u-width-full" id="comment" name="commentBox" type="text"></textarea>
+                            <br>
+                            <p>How much did the taxi cost?</p>
+                            <p class="nhsuk-hint">Amount, in pounds. For example, 159.70</p>
+                            <input class="nhsuk-input nhsuk-u-width-full" id="comment" name="commentBox" type="text"></input>
+                          </div>
+                  
+                        </div>
+                     
+      
+                      <div class="nhsuk-radios__item">
+                        <input class="nhsuk-radios__input" id="no" name="taxis" type="radio" value="no" >
+                        <label class="nhsuk-label nhsuk-radios__label" for="no">
+                          No
+                        </label>
+                      </div>
+                      
+                    </div>
+             
+                        </div>
+                      </fieldset>
+                
+                      </div>
+
+                    <div class="nhsuk-form-group">
+                    <a class="nhsuk-button" type="submit" id="approve" href="additionalcomments"> 
+                        Continue
+                    </a>     
+              </div>
+
+             
+
+
+                    {% endblock %}

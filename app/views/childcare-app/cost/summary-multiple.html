@@ -1,0 +1,160 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+Check your details
+{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<!--<div class="nhsuk-back-link">
+  <a class="nhsuk-back-link__link" href="#">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+      aria-hidden="true">
+      <path
+        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+      </path>
+    </svg>
+    Go back</a>
+</div>
+</div> -->
+
+<form id="registrationForm" name="registrationForm" action="/register/done" method="post">
+    <input type="hidden" name="_csrf" value="7f540de9-8add-4331-b4d9-37e6c1eaf7b4" />
+    <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full">
+            <h1 class="nhsuk-app-heading" id="checkYourDetailsH1">Check your details</h1>
+            <div class="nhsuk-card">
+                <div class="nhsuk-card__content">
+                  <h3 class="nhsuk-card__heading">
+                    Based on what you've told us
+                  </h3>
+                  <p class="nhsuk-card__description">You will be eligible to claim back &pound;1667.60 of your childcare costs for term 1 of your course.</p>
+
+                  <p>When your application has been assessed, you will receieve this payment monthly.</p>
+
+                  <p>Read more about <a href="#">how we calculate childcare costs.<span class="nhsuk-u-visually-hidden"> (opens in a new window)</span></a></p>
+                </div>
+              </div>
+            <dl class="nhsuk-summary-list">
+                <dl class="nhsuk-summary-list">
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">Childcare provider</dt>
+                        <dd class="nhsuk-summary-list__value" id="providerName">Scottish Childcare Association</dd>
+                        <dd class="nhsuk-summary-list__actions">
+                            <a id="linkChangeName" href="provider"><span>Change</span></a>
+                        </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">Total cost for September</dt>
+                        <dd class="nhsuk-summary-list__value" id="costForSeptember">578.90</dd>
+                        <dd class="nhsuk-summary-list__actions">
+                            <a id="linkChangeName" href="per-month"><span>Change</span><span
+                                    class="nhsuk-u-visually-hidden"> chilcare costs for September</span></a>
+                        </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">Total cost for October</dt>
+                        <dd class="nhsuk-summary-list__value" id="costForOctober">578.90</dd>
+                        <dd class="nhsuk-summary-list__actions">
+                            <a id="linkChangeName" href="month2"><span>Change</span><span
+                                    class="nhsuk-u-visually-hidden"> chilcare costs for October</span></a>
+                        </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">Total cost for November</dt>
+                        <dd class="nhsuk-summary-list__value" id="costForNovember">324.60</dd>
+                        <dd class="nhsuk-summary-list__actions">
+                            <a id="linkChangeName" href="month3"><span>Change</span><span
+                                    class="nhsuk-u-visually-hidden"> chilcare costs for November</span></a>
+                        </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">Total cost for December</dt>
+                        <dd class="nhsuk-summary-list__value" id="costForDecember">324.60</dd>
+                        <dd class="nhsuk-summary-list__actions">
+                            <a id="linkChangeName" href="month4"><span>Change</span><span
+                                    class="nhsuk-u-visually-hidden"> chilcare costs for December</span></a>
+                        </dd>
+                    </div>
+                </dl>
+            </dl>
+
+            <dl class="nhsuk-summary-list">
+                <dl class="nhsuk-summary-list">
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">Childcare provider</dt>
+                        <dd class="nhsuk-summary-list__value" id="providerName">Little Bratz</dd>
+                        <dd class="nhsuk-summary-list__actions">
+                            <a id="linkChangeName" href="provider"><span>Change</span></a>
+                        </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">Total cost for September</dt>
+                        <dd class="nhsuk-summary-list__value" id="costForSeptember">120.33</dd>
+                        <dd class="nhsuk-summary-list__actions">
+                            <a id="linkChangeName" href="per-month"><span>Change</span><span
+                                    class="nhsuk-u-visually-hidden"> chilcare costs for September</span></a>
+                        </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">Total cost for October</dt>
+                        <dd class="nhsuk-summary-list__value" id="costForOctober">120.33</dd>
+                        <dd class="nhsuk-summary-list__actions">
+                            <a id="linkChangeName" href="month2"><span>Change</span><span
+                                    class="nhsuk-u-visually-hidden"> chilcare costs for October</span></a>
+                        </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">Total cost for November</dt>
+                        <dd class="nhsuk-summary-list__value" id="costForNovember">74</dd>
+                        <dd class="nhsuk-summary-list__actions">
+                            <a id="linkChangeName" href="month3"><span>Change</span><span
+                                    class="nhsuk-u-visually-hidden"> chilcare costs for November</span></a>
+                        </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">Total cost for December</dt>
+                        <dd class="nhsuk-summary-list__value" id="costForDecember">74</dd>
+                        <dd class="nhsuk-summary-list__actions">
+                            <a id="linkChangeName" href="month4"><span>Change</span><span
+                                    class="nhsuk-u-visually-hidden"> chilcare costs for December</span></a>
+                        </dd>
+                    </div>
+                </dl>
+            </dl>
+        </div>
+    </div>
+
+    <h2>Confirm details</h2>
+    <p>
+        By clicking accept you’re confirming that the details you’re providing are
+        correct.
+    </p>
+
+    <div class="nhsuk-form-group">
+        <div class="nhsuk-form-group">
+            <a class="nhsuk-button" type="submit" id="next" href="#" role="button">
+                Accept and continue
+            </a>
+        </div>
+    </div>
+
+</form>
+
+{% endblock %}

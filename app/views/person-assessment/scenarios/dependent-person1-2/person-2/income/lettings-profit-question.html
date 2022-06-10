@@ -1,0 +1,118 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Lettings/lodgings profit {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <div class="nhsuk-back-link">
+      <a class="nhsuk-back-link__link" href="other-income-question">
+        <svg
+          class="nhsuk-icon nhsuk-icon__chevron-left"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"
+          ></path>
+        </svg>
+        Go back</a
+      >
+    </div>
+
+    <h1 class="app-page-heading">
+      <span class="nhsuk-caption-l">Income assessment</span>Do you receive any
+      profit from lettings/lodgings?
+    </h1>
+
+      <div class="nhsuk-form-group">
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-u-visually-hidden">
+            Do you receive any profit from lettings or lodgings?
+          </legend>
+
+          <div class="nhsuk-radios nhsuk-radios--conditional">
+            <div class="nhsuk-radios__item">
+              <input
+                class="nhsuk-radios__input"
+                id="yes"
+                name="lettings-profit"
+                type="radio"
+                value="Yes"
+                aria-controls="conditional-lettings-profit"
+              />
+              <label class="nhsuk-label nhsuk-radios__label" for="yes">
+                Yes
+              </label>
+            </div>
+
+            <div
+              class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden"
+              id="conditional-lettings-profit"
+            >
+              <div class="nhsuk-form-group">
+                <label
+                  class="nhsuk-label nhsuk-u-font-weight-bold"
+                  for="lettings-profit-info"
+                >
+                  Amount of profit from lettings or lodgings you received in the
+                  last tax year
+                </label>
+                <span class="nhsuk-hint">For example, 12500</span>
+                <input
+                  class="nhsuk-input nhsuk-u-width-two-thirds"
+                  id="lettings-profit-info"
+                  name="lettings-profit-info"
+                  type="text"
+                />
+              </div>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input
+                class="nhsuk-radios__input"
+                id="no"
+                name="lettings-profit"
+                type="radio"
+                value="No"
+              />
+              <label class="nhsuk-label nhsuk-radios__label" for="no">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="nhsuk-form-group">
+        <a
+          href="summary"
+          class="nhsuk-button"
+          type="submit"
+          id="next"
+          role="button"
+        >
+          Continue
+        </a>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

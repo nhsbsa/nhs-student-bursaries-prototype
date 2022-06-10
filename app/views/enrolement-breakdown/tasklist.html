@@ -1,0 +1,171 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Enrolment breakdown {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block header %} {{ header({ "service": { "name": "Bursary", "href": "/" },
+"showNav": "true", "showSearch": "false", "primaryLinks": [ { "url" :
+"/dashboard/dashboard-enrolment", "label" : "Dashboard" }, { "url" :
+"personal-details", "label" : "Personal details" }, { "url" : "#", "label" :
+"Sign out" } ] }) }} {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<!-- Breadcrumb -->
+
+{% endblock %}
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-width-container">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <h1 class="app-page-heading">
+        <span class="nhsuk-caption-l">BRN0000057-1 - September 2020</span> Enrolment breakdown
+      </h1>
+
+      
+
+      <ol class="app-task-list">
+        <li>
+          <span
+            class="
+              featured-list--item__number featured-list--item__number--mobile
+              nhsuk-heading-l
+            "
+            >1</span
+          >
+          <h2 class="featured-list--item__heading nhsuk-heading-m">
+            <span
+              class="
+                featured-list--item__number
+                nhsuk-heading-l nhsuk-u-margin-bottom-1
+              "
+              >1</span
+            >
+            Eligibility
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a
+                  href="/enrolement-breakdown/summary-pages/coursedetails"
+        
+                >
+                  Course details
+                </a>
+              </span>
+                <strong
+              class="nhsuk-tag nhsuk-tag--green app-task-list__tag"
+              id="courseDetails"
+              >Assessed</strong
+            >
+              
+             
+            </li>
+            <li class="app-task-list__item">
+                <a
+                  href="/enrolement-breakdown/summary-pages/eligibility"
+                  aria-describedby="courseDetails"
+                >
+                Eligibility assessment
+                </a>
+                <strong
+              class="nhsuk-tag nhsuk-tag--green app-task-list__tag"
+              id="eligibility"
+              >Eligibile</strong
+            >
+            </li>
+            <li class="app-task-list__item">
+                <a
+                  href="/enrolement-breakdown/summary-pages/statusassessment "
+                  aria-describedby="eligibility"
+                >
+                Status assessment 
+                </a>
+                <strong
+                class="nhsuk-tag nhsuk-tag--green app-task-list__tag"
+                id="status"
+                >Independent</strong
+              >
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <span
+            class="
+              featured-list--item__number featured-list--item__number--mobile
+              nhsuk-heading-l
+            "
+            >2</span
+          >
+          <h3 class="featured-list--item__heading nhsuk-heading-m">
+            <span
+              class="
+                featured-list--item__number
+                nhsuk-heading-l nhsuk-u-margin-bottom-1
+              "
+              >2</span
+            >
+            Income assessment
+          </h3>
+          <p>
+    
+       <!--  <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name"> Dependent details </span>
+             
+            </li>--> 
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a
+                  href="/enrolement-breakdown/summary-pages/income "
+                  aria-describedby="incomeExpense"
+                >
+                Income and expenses assessment 
+                </a>
+              </span>
+                  <strong
+              class="nhsuk-tag nhsuk-tag--green app-task-list__tag"
+              id="incomeExpense"
+              >Assessed</strong
+            >
+              
+              
+              
+            </li>
+           <!-- <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                Parent or partner details
+              </span>
+             
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name"
+                ><a href="parent-income" aria-describedby="createAcademicYear">
+                  Parent or partner income and expenses assessment
+                </a>
+              </span>
+             
+            </li>--> 
+          </ul>
+        </li>
+
+      </ol>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

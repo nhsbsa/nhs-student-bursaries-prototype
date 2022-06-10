@@ -1,0 +1,182 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Your claim {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block header %} {{ header({ "service": { "name": "Bursary", "href": "/" },
+"showNav": "true", "showSearch": "false", "primaryLinks": [ { "url" :
+"dashboard1", "label" : "Dashboard" }, { "url" : "personal-details", "label" :
+"Personal details" }, { "url" : "#", "label" : "Sign out" } ] }) }} {% endblock
+%}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<!-- Breadcrumb -->
+
+{% endblock %}
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-width-container">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <h1 class="app-page-heading">Your claim</h1>
+
+      <div class="nhsuk-u-padding-bottom-4">
+        <h2 class="nhsuk-heading-m">Application incomplete</h2>
+      </div>
+
+      <ol class="app-task-list">
+        <li>
+          <span
+            class="
+              featured-list--item__number featured-list--item__number--mobile
+              nhsuk-heading-l
+            "
+            >1</span
+          >
+          <h3 class="featured-list--item__heading nhsuk-heading-m">
+            <span
+              class="
+                featured-list--item__number
+                nhsuk-heading-l nhsuk-u-margin-bottom-1
+              "
+              >1</span
+            >
+            Your details
+          </h3>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name"> Claim details </span>
+              <strong
+                class="nhsuk-tag nhsuk-tag--green app-task-list__tag"
+                id="createAcademicYear"
+                >Completed</strong
+              >
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                Your university travel
+              </span>
+              <strong
+                class="nhsuk-tag nhsuk-tag--green app-task-list__tag"
+                id="eligibilityAssessment"
+                >Completed</strong
+              >
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <span
+            class="
+              featured-list--item__number featured-list--item__number--mobile
+              nhsuk-heading-l
+            "
+            >2</span
+          >
+          <h3 class="featured-list--item__heading nhsuk-heading-m">
+            <span
+              class="
+                featured-list--item__number
+                nhsuk-heading-l nhsuk-u-margin-bottom-1
+              "
+              >2</span
+            >
+            Your journeys
+          </h3>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name"> Week 1 journeys </span>
+              <strong
+                class="nhsuk-tag nhsuk-tag--green app-task-list__tag"
+                id="createAcademicYear"
+                >Completed</strong
+              >
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name"> Week 2 journeys</span>
+              <strong
+                class="nhsuk-tag nhsuk-tag--green app-task-list__tag"
+                id="eligibilityAssessment"
+                >Completed</strong
+              >
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <span
+            class="
+              featured-list--item__number featured-list--item__number--mobile
+              nhsuk-heading-l
+            "
+            >3</span
+          >
+          <h3 class="featured-list--item__heading nhsuk-heading-m">
+            <span
+              class="
+                featured-list--item__number
+                nhsuk-heading-l nhsuk-u-margin-bottom-1
+              "
+              >3</span
+            >
+            Your extras
+          </h3>
+
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <span aria-describedby="dependantDetails">
+                  <a href="">Passenger details</a>
+                </span>
+              </span>
+              <strong
+                class="nhsuk-tag nhsuk-tag--grey app-task-list__tag"
+                id="dependantDetails"
+                >Haven't started</strong
+              >
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <span aria-describedby="dependantDetails">
+                  <a href="accommodation/address">Accommodation details</a>
+                </span>
+              </span>
+              <strong
+                class="nhsuk-tag nhsuk-tag--grey app-task-list__tag"
+                id="dependantDetails"
+                >Haven't started</strong
+              >
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <span aria-describedby="incomeAssessment">
+                  <a href="">One-off costs</a>
+                </span>
+              </span>
+              <strong
+                class="nhsuk-tag nhsuk-tag--grey app-task-list__tag"
+                id="incomeAssessment"
+                >Haven't started</strong
+              >
+            </li>
+          </ul>
+        </li>
+      </ol>
+      <a href="dashboard">Save and come back later</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

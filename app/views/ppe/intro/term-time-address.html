@@ -1,0 +1,146 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} What address will you live at while attending your course?
+{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %}{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<form
+  id="registrationForm"
+  name="registrationForm"
+  action="/register/account"
+  method="post"
+  autocomplete="on"
+>
+  <input
+    type="hidden"
+    name="_csrf"
+    value="7f540de9-8add-4331-b4d9-37e6c1eaf7b4"
+  />
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <div class="nhsuk-back-link">
+        <a class="nhsuk-back-link__link" href="academic-year" id="back">
+          <svg
+            class="nhsuk-icon nhsuk-icon__chevron-left"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path
+              d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"
+            ></path>
+          </svg>
+          Go back
+        </a>
+      </div>
+
+      <h1 class="nhsuk-app-heading" id="addressH1">
+        <span class="nhsuk-caption-l">Practice Placement Expenses</span> What
+        address will you live at while attending your course?
+      </h1>
+
+      <p>
+        If you’re living in temporary or student accommodation, enter this
+        address.
+      </p>
+      <p>You must tell us if your address changes.</p>
+
+      <fieldset class="nhsuk-fieldset" role="group">
+        <legend class="nhsuk-u-visually-hidden">Address fields</legend>
+
+        <div class="nhsuk-form-group">
+          <label id="nameOrNumber-label" for="nameOrNumber" class="nhsuk-label"
+            >Building name or number</label
+          >
+          <input
+            class="nhsuk-input nhsuk-u-width-two-thirds"
+            name="address"
+            id="nameOrNumber"
+            type="text"
+            maxlength="30"
+          />
+        </div>
+
+        <div class="nhsuk-form-group">
+          <label id="address1-label" for="address1" class="nhsuk-label"
+            >Street</label
+          >
+
+          <input
+            name="address"
+            id="address1"
+            class="nhsuk-input nhsuk-u-width-two-thirds"
+            type="text"
+            maxlength="30"
+          />
+        </div>
+
+        <div class="nhsuk-form-group">
+          <label id="address2-label" for="address2" class="nhsuk-label"
+            >Town or city</label
+          >
+          <input
+            name="address.address2"
+            id="address2"
+            class="nhsuk-input nhsuk-u-width-two-thirds"
+            type="text"
+            maxlength="30"
+          />
+        </div>
+
+        <div class="nhsuk-form-group">
+          <label id="country-label" for="country" class="nhsuk-label"
+            >Country</label
+          >
+          <input
+            name="address"
+            id="country"
+            class="nhsuk-input nhsuk-u-width-two-thirds"
+            type="text"
+            maxlength="30"
+          />
+        </div>
+
+        <div class="nhsuk-form-group">
+          <label id="postcode-label" for="postcode" class="nhsuk-label"
+            >Postcode</label
+          >
+
+          <input
+            name="address"
+            id="postcode"
+            class="nhsuk-input nhsuk-input--width-10"
+            type="text"
+            maxlength="8"
+          />
+        </div>
+      </fieldset>
+    </div>
+  </div>
+
+  <div class="nhsuk-form-group">
+    <a href="student-accommodation" class="nhsuk-button" role="button"
+      >Continue</a
+    >
+  </div>
+</form>
+
+{% endblock %}

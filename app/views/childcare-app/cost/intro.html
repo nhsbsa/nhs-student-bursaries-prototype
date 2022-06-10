@@ -1,0 +1,72 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Apply for childcare costs {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+        <h1 class="app-page-heading">
+            Claim back your childcare costs
+        </h1>
+
+        <p>You can claim 85% of your weekly childcare costs across all providers.</p>
+
+        <p>You will need to claim your childcare costs per term.</p>
+
+        <h2 class="nhsuk-heading-m">What you're eligible for</h2>
+
+        <table class="nhsuk-table-responsive" role="table">
+            <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                    <th role="columnheader" scope="col">Number of children</th>
+                    <th role="columnheader" scope="col">Maximum amount eligible per week</th>
+                    <th role="columnheader" scope="col">Maximum amount payable per week (85%)</th>
+                </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Number of children </span>1</td>
+                    <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Maximum amount eligible per week </span>&pound;151.50</td>
+                    <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Maximum amount payable per week (85%) </span>&pound;128.78</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Number of children </span>2 or more</td>
+                    <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Maximum amount eligible per week </span>&pound;225.23</td>
+                    <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Maximum amount payable per week (85%) </span>&pound;191.45</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+
+        <div class="nhsuk-warning-callout">
+            <h3 class="nhsuk-warning-callout__label">
+                Important<span class="nhsuk-u-visually-hidden">:</span>
+            </h3>
+            <p>We will confirm with your childcare provider that the costs you have provided are an accurate estimation.</p>
+            <p>You may be required to pay back any overestimation on childcare costs so it is important your estimations are as accurate as possible.</p>
+
+            <strong>OR ELSE</strong>
+        </div>
+        <a href="provider" class="nhsuk-button">Start now</a>
+
+    </div>
+</div>
+{% endblock %}

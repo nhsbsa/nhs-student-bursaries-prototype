@@ -1,0 +1,57 @@
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Status assessment complete {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <span class="nhsuk-caption-l">Status assessment</span>
+    <h1 class="nhsuk-app-heading" id="incomeNoH1">
+      Status assessment complete
+    </h1>
+
+    <form method="post">
+      <p>
+        We’ll review your evidence and let you know if this has been accepted.
+      </p>
+      <p>We do not need any details of your income or expenses currently.</p>
+
+      <h2 class="nhsuk-heading-m" id="whatHappensNext">What happens next</h2>
+      <p>
+        We still need the person you're dependent on to provide their income and
+        expense details for the last tax year.
+      </p>
+      <div class="nhsuk-form-group">
+        <a
+          class="nhsuk-button"
+          type="submit"
+          id="continue"
+          href="intro"
+          >Continue to your income assessment</a
+        >
+      </div>
+      <div class="nhsuk-form-group">
+        <a
+          class="nhsuk-button nhsuk-button--secondary"
+          type="submit"
+          id="homeBtn"
+          href="intro"
+          >Return to dashboard</a
+        >
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

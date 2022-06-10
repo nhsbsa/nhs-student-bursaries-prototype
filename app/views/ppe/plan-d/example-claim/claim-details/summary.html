@@ -1,0 +1,97 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Check your answers {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %}{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <h1 class="nhsuk-app-heading" id="checkYouranswers">
+      <span class="nhsuk-caption-l">Your claim</span>
+      Check your answers
+    </h1>
+  </div>
+  <div class="nhsuk-grid-column-full">
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Claim dates</dt>
+        <dd class="nhsuk-summary-list__value">1/8/2021 to <br />1/9/2021</dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="claim-dates">
+            Change<span class="nhsuk-u-visually-hidden">
+              Change Claim dates</span
+            >
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">What are you claiming for?</dt>
+        <dd class="nhsuk-summary-list__value">
+          Travel <br />
+          Accommodation <br />
+
+          One-off costs
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="claim-details">
+            Change<span class="nhsuk-u-visually-hidden">
+              Change what are you claiming for</span
+            >
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Placement addresses</dt>
+        <dd class="nhsuk-summary-list__value">
+          Royal Victoria Infirmary, NE1 4LP <br />
+          Freeman Hospital, NE7 7DN
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="placement-list">
+            Change<span class="nhsuk-u-visually-hidden">
+              change placement addresses</span
+            >
+          </a>
+        </dd>
+      </div>
+    </dl>
+
+    <h2 class="nhsuk-heading-m" id="complete">Complete your claim details</h2>
+
+    <p>
+      By clicking continue you’re confirming that the details you’re providing
+      are correct.
+    </p>
+
+    <div class="nhsuk-form-group">
+      <a
+        href="/ppe/plan-d/example-claim/tasklist-claimdetails"
+        class="nhsuk-button"
+        role="button"
+        id="continueBtn"
+        >Save and continue</a
+      >
+    </div>
+  </div>
+</div>
+{% endblock %}

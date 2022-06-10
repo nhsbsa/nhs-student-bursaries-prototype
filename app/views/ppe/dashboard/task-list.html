@@ -1,0 +1,208 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Student dashboard {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block header %} {{ header({ "service": { "name": "Bursary", "href": "/" },
+"showNav": "true", "showSearch": "false", "primaryLinks": [ { "url" :
+"dashboard", "label" : "Dashboard" }, { "url" : "claim-history", "label" :
+"Claim history" }, { "url" : "#", "label" : "Sign out" } ] }) }} {% endblock
+%}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<!-- Breadcrumb -->
+<a class="nhsuk-skip-link" href="#maincontent">Skip to main content</a>
+
+{% endblock %}
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-width-container">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <h1 class="app-page-heading">Your bursary application</h1>
+
+      <div class="nhsuk-u-padding-bottom-4">
+        <h2 class="nhsuk-heading-m">Application incomplete</h2>
+      </div>
+
+      <ol class="app-task-list">
+        <li>
+          <span
+            class="
+              featured-list--item__number featured-list--item__number--mobile
+              nhsuk-heading-l
+            "
+            >1</span
+          >
+          <h3 class="featured-list--item__heading nhsuk-heading-m">
+            <span
+              class="
+                featured-list--item__number
+                nhsuk-heading-l nhsuk-u-margin-bottom-1
+              "
+              >1</span
+            >
+            Your details
+          </h3>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="/ppe/university-travel/study-travel" aria-describedby="createAcademicYear">
+                  University travel
+                </a>
+              </span>
+              <strong
+                class="nhsuk-tag nhsuk-tag--grey app-task-list__tag"
+                id="createAcademicYear"
+                >Haven't started</strong
+              >
+            </li>
+
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="/ppe/add-placement/start-date" aria-describedby="createAcademicYear">
+                  Placement details
+                </a>
+              </span>
+              <strong
+                class="nhsuk-tag nhsuk-tag--grey app-task-list__tag"
+                id="createAcademicYear"
+                >Haven't started</strong
+              >
+            </li>
+            <!--<li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="createAcademicYear">
+                  Claim details
+                </a>
+              </span>
+              <strong
+                class="nhsuk-tag nhsuk-tag--grey app-task-list__tag"
+                id="createAcademicYear"
+                >Haven't started</strong
+              >
+            </li>-->
+          </ul>
+        </li>
+
+        <li>
+          <span
+            class="
+              featured-list--item__number featured-list--item__number--mobile
+              nhsuk-heading-l
+            "
+            >2</span
+          >
+          <h3 class="featured-list--item__heading nhsuk-heading-m">
+            <span
+              class="
+                featured-list--item__number
+                nhsuk-heading-l nhsuk-u-margin-bottom-1
+              "
+              >2</span
+            >
+            Your claim
+          </h3>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="/ppe/add-journey/pick-address" aria-describedby="createAcademicYear">
+                  Travel claim
+                </a>
+              </span>
+              <strong
+                class="nhsuk-tag nhsuk-tag--grey app-task-list__tag"
+                id="dependantDetails"
+                >Not available</strong
+              >
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="/ppe/add-accommodation/accommodation-claim" aria-describedby="createAcademicYear">
+                  Accommodation claim
+                </a>
+              </span>
+              <strong
+                class="nhsuk-tag nhsuk-tag--grey app-task-list__tag"
+                id="dependantDetails"
+                >Not available</strong
+              >
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="/ppe/add-person/passenger-claim" aria-describedby="createAcademicYear">
+                  Passengers claim
+                </a>
+              </span>
+              <strong
+                class="nhsuk-tag nhsuk-tag--grey app-task-list__tag"
+                id="incomeAssessment"
+                >Not available</strong
+              >
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <span
+            class="
+              featured-list--item__number featured-list--item__number--mobile
+              nhsuk-heading-l
+            "
+            >3</span
+          >
+          <h3 class="featured-list--item__heading nhsuk-heading-m">
+            <span
+              class="
+                featured-list--item__number
+                nhsuk-heading-l nhsuk-u-margin-bottom-1
+              "
+              >3</span
+            >
+            Complete
+          </h3>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="/ppe/evidence-upload" aria-describedby="createAcademicYear">
+                  Upload evidence
+                </a>
+              </span>
+              <strong
+                class="nhsuk-tag nhsuk-tag--grey app-task-list__tag"
+                id="dependantDetails"
+                >Not available</strong
+              >
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="/ppe/declaration" aria-describedby="createAcademicYear">
+                  Submit
+                </a>
+              </span>
+              <strong
+                class="nhsuk-tag nhsuk-tag--grey app-task-list__tag"
+                id="dependantDetails"
+                >Not available</strong
+              >
+            </li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+  </div>
+</div>
+{% endblock %}

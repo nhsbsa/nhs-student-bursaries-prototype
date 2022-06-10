@@ -1,0 +1,99 @@
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+{% block header %} {{ header({ "service": { "name": "Bursary", "href": "/" },
+"showNav": "false", "showSearch": "false" }) }} {% endblock %}
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Data Protection Act Consent
+{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-back-link">
+  <a class="nhsuk-back-link__link" href="intro">
+    <svg
+      class="nhsuk-icon nhsuk-icon__chevron-left"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <path
+        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"
+      ></path>
+    </svg>
+    Go back</a
+  >
+</div>
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <h1 class="nhsuk-app-heading" id="dataProtectionActConsent">
+      <span class="nhsuk-caption-l">Disabled student allowance</span>
+      Data Protection Act Consent
+    </h1>
+
+    <p>
+      The NHSBSA will use the information you have provided for the processing
+      of your application and for the prevention and detection of fraud.
+    </p>
+
+    <p>
+      We may contact you to discuss your application by any methods you have
+      provided.
+    </p>
+    <p>
+      Yor personal data will be deleted from our systems and files no later than
+      seven years after the end of your course. We will not disclose your
+      personal data to any third party other than:
+    </p>
+    <ul>
+      <li>higher education institutions</li>
+      <li>local authorities</li>
+      <li>the home office</li>
+      <li>HM Revenue and customs</li>
+      <li>organisations from which you receive benefits</li>
+      <li>bursaries, grants or support</li>
+      <li>the Student Loans Company</li>
+    </ul>
+    <p>We will not transfer your data outside the European Economic Area.</p>
+    <p>
+      The {{ serviceName }} Scheme is made pursuant to Section 63 of the Health
+      Services and Public Health Act 1968.
+    </p>
+
+    <div class="nhsuk-form-group">
+      <div class="nhsuk-checkboxes">
+        <div class="nhsuk-checkboxes__item">
+          <input
+            class="nhsuk-checkboxes__input"
+            id="agreeTerms"
+            name="agreeTerms"
+            type="checkbox"
+            value="I agree to these terms"
+          />
+          <label class="nhsuk-label nhsuk-checkboxes__label" for="agreeTerms">
+            I agree to these terms
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <a
+      href="previously-assessed"
+      class="nhsuk-button"
+      id="continueToApplication"
+      >Continue to application</a
+    >
+  </div>
+</div>
+
+{% endblock %}

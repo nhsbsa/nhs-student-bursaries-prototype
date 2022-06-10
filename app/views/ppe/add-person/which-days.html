@@ -1,0 +1,104 @@
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+{% block header %} {{ header({ "service": { "name": "Bursary", "href": "/" },
+"showNav": "false", "showSearch": "false" }) }} {% endblock %}
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Which days did you take said passenger? {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %}{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-back-link">
+  <a class="nhsuk-back-link__link" href="" id="back">
+    <svg
+      class="nhsuk-icon nhsuk-icon__chevron-left"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <path
+        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"
+      ></path>
+    </svg>
+    Go back</a
+  >
+</div>
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-app-heading" id="return-travel-title">
+          <span class="nhsuk-caption-l">Practice Placement Expenses</span>Which days did you take said passenger?
+        </h1>
+      </legend>
+
+      {% from 'checkboxes/macro.njk' import checkboxes %}
+
+{{ checkboxes({
+  "idPrefix": "passengerDays",
+  "name": "PassengerDays",
+  "fieldset": {
+    "legend": {
+      "text": "Which days did you take said passenger?",
+      "classes": "nhsuk-fieldset__legend--l nhsuk-u-visually-hidden",
+      isPageHeading: true
+    }
+  },
+  "hint": {
+    "text": "Select all options that are relevant to you."
+  },
+  "items": [
+    {
+      "value": "day 1",
+      "text": "Monday 28/06/2021",
+      "name": "PassengerDays"
+    },
+    {
+      "value": "day 2",
+      "text": "Tuesday 29/06/2021",
+      "name": "PassengerDays"
+    },
+    {
+      "value": "day 3",
+      "text": "Wednesday 30/06/2021",
+      "name": "PassengerDays"
+    },
+    {
+        "value": "day 4",
+        "text": "Thursday 1/07/2021",
+        "name": "PassengerDays"
+      },
+      {
+        "value": "day 5",
+        "text": "Friday 2/07/2021",
+        "name": "PassengerDays"
+      },
+      {
+        "value": "day 6",
+        "text": "Saturday 3/07/2021",
+        "name": "PassengerDays"
+      },
+      {
+        "value": "day 7",
+        "text": "Sunday 4/07/2021",
+        "name": "PassengerDays"
+      }
+  ]
+}) }}
+
+   
+    <a href="/ppe/add-person/summary" class="nhsuk-button">Continue</a>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,50 @@
+
+
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script src="/js/all.js"></script>
+<script src="/js/autocomplete.js"></script>
+<!-- <script src="/js/multifile.js"></script>
+<script src="/js/govuk.js"></script> -->
+<!-- Add any custom scripts -->
+<script type="text/javascript">
+  accessibleAutocomplete.enhanceSelectElement({
+
+    defaultValue: "",
+    autoselect: true,
+    selectElement: document.querySelector("#location-picker"),
+  });
+</script>
+<script type="text/javascript">
+  accessibleAutocomplete.enhanceSelectElement({
+
+    defaultValue: "",
+    autoselect: false,
+    showAllValues: true,
+    selectElement: document.querySelector("#evidence-type"),
+  });
+</script>
+<script type="text/javascript">
+  accessibleAutocomplete.enhanceSelectElement({
+    defaultValue: "",
+    autoselect: true,
+    placeholder: "Month",
+    selectElement: document.querySelector("#month-picker"),
+  });
+
+</script>
+  <script type="text/javascript">
+  accessibleAutocomplete.enhanceSelectElement({
+    defaultValue: "",
+    autoselect: true,
+    placeholder: "Search for a registration body",
+    selectElement: document.querySelector("#regbody-picker"),
+  });
+</script>
+<script type="text/javascript">
+  accessibleAutocomplete.enhanceSelectElement({
+    defaultValue: "",
+    autoselect: true,
+    showAllValues: true,
+    selectElement: document.querySelector("#address-picker"),
+  });
+</script>

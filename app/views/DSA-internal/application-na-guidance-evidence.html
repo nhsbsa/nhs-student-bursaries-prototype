@@ -1,0 +1,114 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} {{ serviceName }} prototypes | Sign in to your account {%
+endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Breadcrumb -->
+<a class="nhsuk-skip-link" href="#maincontent">Skip to main content</a>
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-width-container">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+      <h1 class="nhsuk-app-heading" id="summaryH1">
+        <span class="nhsuk-caption-l">000020301 - Liam Bloggs</span> Check this
+        application
+      </h1>
+      <div class="nhsuk-form-group">
+        <h2 class="nhsuk-heading-l" id="evidence">Evidence supplied</h2>
+        <div class="nhsuk-card nhsuk-grid-column-full">
+          <div class="nhsuk-card__content">
+            <dl class="nhsuk-summary-list">
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">needs_assessment.pdf</dt>
+                <dd class="nhsuk-summary-list__value">Needs assessment</dd>
+
+                <dd class="nhsuk-summary-list__actions">
+                  <a href="#">
+                    View (new tab)<span class="nhsuk-u-visually-hidden">
+                      needs_assessment.pdf</span
+                    >
+                  </a>
+                </dd>
+
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">laptop_receipt.pdf</dt>
+                <dd class="nhsuk-summary-list__value">Receipt - Laptop</dd>
+
+                <dd class="nhsuk-summary-list__actions">
+                  <a href="#">
+                    View (new tab)<span class="nhsuk-u-visually-hidden">
+                        laptop_receipt.pdf</span
+                    >
+                  </a>
+                </dd>
+
+              </div>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <h2 class="nhsuk-heading-m">Specialist equipment</h2>
+      <p>
+        Students are entitled to x, y and z. On the needs assessment under the
+        title of 'Specialist Equipment' there will be guidance on what this
+        student can get.
+      </p>
+
+      <h2 class="nhsuk-heading-m">Non-Medical Helper (NMH) Allowance </h2>
+      <p>
+        Students are entitled to x, y and z. On the needs assessment under the
+        title of 'Non-Medical Helper (NMH) Allowance' there will be guidance on what this
+        student can get.
+      </p>
+
+      <h2 class="nhsuk-heading-m">General Allowance</h2>
+      <p>
+        Students are entitled to x, y and z. On the needs assessment under the
+        title of 'General Allowance' there will be guidance on what this
+        student can get.
+      </p>
+
+      <h2 class="nhsuk-heading-m">Travel allowance</h2>
+      <p>
+        Students are entitled to x, y and z. On the needs assessment under the
+        title of 'Travel allowance' there will be guidance on what this
+        student can get.
+      </p>
+      
+
+      <div class="nhsuk-form-group">
+        <a
+          class="nhsuk-button"
+          type="submit"
+          id="next"
+          href="specialist-equipment-evidence"
+          role="button"
+        >
+          Continue
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

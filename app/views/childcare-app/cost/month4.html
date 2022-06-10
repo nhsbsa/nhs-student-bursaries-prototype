@@ -1,0 +1,87 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} What will your childcare costs be per week in
+December 2021? {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <div class="nhsuk-back-link">
+            <a class="nhsuk-back-link__link" href="month3">
+                <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                    aria-hidden="true">
+                    <path
+                        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+                    </path>
+                </svg>
+                Go back</a>
+        </div>
+
+        <h1 class="app-page-heading">
+            <span class="nhsuk-caption-l">Childcare assessment</span>What will your childcare costs be per week in
+            December 2021?
+        </h1>
+
+        <p>This is the weekly amount you pay from Monday to Sunday.</p>
+
+        <form action="/childcare-app/cost/another" method="post">
+            <div class="nhsuk-form-group">
+
+                <fieldset class="nhsuk-fieldset">
+                    <legend class="nhsuk-fieldset__legend nhsuk-u-visually-hidden">
+                        Childcare costs per week
+                    </legend>
+                    <div class="nhsuk-form-group">
+
+                        <label for="week1" class="nhsuk-label">Week commencing 06/12/2021</label>
+                        <span class="nhsuk-hint">Amount in pounds per week, for example, 127.90</span>
+                        <input type="text" class="nhsuk-input nhsuk-u-width-one-half" id="week1" inputmode="decimal" />
+
+                    </div>
+                    <div class="nhsuk-form-group">
+
+                        <label for="week2" class="nhsuk-label">Week commencing 13/12/2021</label>
+                        <input type="text" class="nhsuk-input nhsuk-u-width-one-half" id="week2" inputmode="decimal" />
+
+                    </div>
+                    <div class="nhsuk-form-group">
+
+                        <label for="week3" class="nhsuk-label">Week commencing 20/12/2021</label>
+                        <input type="text" class="nhsuk-input nhsuk-u-width-one-half" id="week3" inputmode="decimal" />
+
+                    </div>
+                    <div class="nhsuk-form-group">
+
+                        <label for="week4" class="nhsuk-label">Week commencing 27/12/2021</label>
+                        <input type="text" class="nhsuk-input nhsuk-u-width-one-half" id="week4" inputmode="decimal" />
+
+                    </div>
+
+            </div>
+
+            <div class="nhsuk-form-group">
+                <button class="nhsuk-button" type="submit" id="continue" role="button">
+                    Continue
+                </button>
+
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

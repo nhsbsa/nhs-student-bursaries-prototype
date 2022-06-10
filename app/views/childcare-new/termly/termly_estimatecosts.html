@@ -1,0 +1,457 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+Estimate costs for all children at all providers for the first term
+{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-column-two-thirds">
+        <div class="nhsuk-back-link">
+            <a class="nhsuk-back-link__link" href="termly_estimatecostsintro">
+                <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                    aria-hidden="true">
+                    <path
+                        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+                    </path>
+                </svg>
+                Go back</a>
+        </div>
+
+
+        <h1 class="heading-large" id="estimateIntroH1">Estimate costs for all children at all providers for the first
+            term</h1>
+
+
+        <p>
+            You need to provide an estimate of all costs for all children at all providers for the first term (18
+            weeks).
+        </p>
+
+    </div>
+
+    <table role="table" class="nhsuk-table-responsive">
+        <caption class="nhsuk-table__caption">Estimated costs</caption>
+        <thead role="rowgroup" class="nhsuk-table__head">
+            <tr role="row">
+                <th role="columnheader" class="" scope="col">
+                    Week no.
+                </th>
+                <th role="columnheader" class="" scope="col">
+                    Start date
+                </th>
+                <th role="columnheader" class="" scope="col">
+                    Child 1
+                </th>
+                <th role="columnheader" class="" scope="col">
+                    Child 2
+                </th>
+                <th role="columnheader" class="" scope="col">
+                    Child 3
+                </th>
+            </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Week No.</span>1
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Week No.</span>2
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+            <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Week No.</span>3
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+            <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Week No.</span>4
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+
+            <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Week No.</span>5
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+
+            <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Week No.</span>6
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+            <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Week No.</span>7
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+
+            <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Week No.</span>8
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+
+            <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Week No.</span>9
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+
+            <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Week No.</span>10
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+
+            <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Week No.</span>11
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+            <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Week No.</span>12
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+
+            <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Week No.</span>13
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+
+            <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Week No.</span>14
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+
+            <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Week No.</span>15
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+
+            <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Week No.</span>16
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+
+            <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Week No.</span>17
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+
+            <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Week No.</span>18
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10"
+                        type="text">
+                </td>
+        </tbody>
+    </table>
+
+    <div class="nhsuk-form-group">
+        <a class="nhsuk-button" type="submit" id="next" href="complete" role="button">
+            Next
+        </a>
+    </div>
+
+
+    <p><a class="nhsuk-link" id="cancelLink" href="\childcare-new\intro">Cancel</a></p>
+</div>
+
+{% endblock %}

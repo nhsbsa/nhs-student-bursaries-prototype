@@ -1,0 +1,391 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Internal dashboard {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <div class="nhsuk-back-link">
+      <a class="nhsuk-back-link__link" href="/">
+        <svg
+          class="nhsuk-icon nhsuk-icon__chevron-left"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"
+          ></path>
+        </svg>
+        Go back</a
+      >
+    </div>
+
+    <h1 class="nhsuk-app-heading" id="studentIncomeH1">
+      <span class="nhsuk-caption-l">NHSBSA Prototype</span>
+      Internal dashboard
+    </h1>
+    <hr aria-hidden="true" />
+    <h2 class="nhsuk-heading-m">
+      Internal dashboard
+      <strong
+        class="task-completed status-shortlisted"
+        style="background-color: #330072; float: right"
+      >
+        Version 2
+      </strong>
+      <span class="nhsuk-caption-m nhsuk-caption--bottom"
+        >Last updated: 03 November 2021</span
+      >
+    </h2>
+
+    <p>The following have been completed:</p>
+
+    <ul class="nhsuk-list nhsuk-list--bullet">
+      <li>
+        There is 2 versions of the enrolement breakdown screen, one for
+        dependent students and another for independent.
+      </li>
+    </ul>
+
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-full">
+            <div class="nhsuk-expander-group">
+              <details
+                class="nhsuk-details nhsuk-expander"
+                nhsuk-polyfilled="true"
+                id="nhsuk-details0"
+              >
+                <summary
+                  class="nhsuk-details__summary"
+                  role="button"
+                  aria-controls="nhsuk-details__text0"
+                >
+                  <span class="nhsuk-details__summary-text">
+                    Internal dashboard
+                  </span>
+                </summary>
+
+                <div class="nhsuk-details__text" id="nhsuk-details__text0">
+                  <table class="nhsuk-table">
+                    <caption
+                      class="nhsuk-table__caption nhsuk-u-visually-hidden"
+                    ></caption>
+                    <thead role="rowgroup" class="nhsuk-table__head">
+                      <tr role="row">
+                        <th role="columnheader" class="" scope="col">
+                          Journey point
+                        </th>
+                        <th role="columnheader" class="" scope="col">Link</th>
+                      </tr>
+                    </thead>
+                    <tbody class="nhsuk-table__body">
+                      <tr role="row" class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell">Dashboard</td>
+                        <td class="nhsuk-table__cell">
+                          <a href="internal/dashboard"
+                            >View
+                            <span class="nhsuk-u-visually-hidden">
+                              Dashboard</span
+                            ></a
+                          >
+                        </td>
+                      </tr>
+                      <tr role="row" class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell">Edit course details</td>
+                        <td class="nhsuk-table__cell">
+                          <a href="internal/edit-course-details"
+                            >View
+                            <span class="nhsuk-u-visually-hidden">
+                              Course details</span
+                            ></a
+                          >
+                        </td>
+                      </tr>
+                      <tr role="row" class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell">View calculations</td>
+                        <td class="nhsuk-table__cell">
+                          <a href="internal/view-calculations"
+                            >View
+                            <span class="nhsuk-u-visually-hidden">
+                              calculations</span
+                            ></a
+                          >
+                        </td>
+                      </tr>
+
+                      <tr role="row" class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell">Course history</td>
+                        <td class="nhsuk-table__cell">
+                          <a href="internal/course-history"
+                            >View
+                            <span class="nhsuk-u-visually-hidden">
+                              course history</span
+                            ></a
+                          >
+                        </td>
+                      </tr>
+
+                      <tr role="row" class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell">
+                         Dependence details
+                        </td>
+                        <td class="nhsuk-table__cell">
+                          <a href="internal/parent-partner-income"
+                            >View
+                            <span class="nhsuk-u-visually-hidden">
+                              dependence details</span
+                            ></a
+                          >
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </details>
+
+              <details
+                class="nhsuk-details nhsuk-expander"
+                nhsuk-polyfilled="true"
+                id="nhsuk-details0"
+              >
+                <summary
+                  class="nhsuk-details__summary"
+                  role="button"
+                  aria-controls="nhsuk-details__text0"
+                >
+                  <span class="nhsuk-details__summary-text">
+                    Internal dashboard (dependent)
+                  </span>
+                </summary>
+
+                <div class="nhsuk-details__text" id="nhsuk-details__text0">
+                  <table class="nhsuk-table">
+                    <caption
+                      class="nhsuk-table__caption nhsuk-u-visually-hidden"
+                    ></caption>
+                    <thead role="rowgroup" class="nhsuk-table__head">
+                      <tr role="row">
+                        <th role="columnheader" class="" scope="col">
+                          Journey point
+                        </th>
+                        <th role="columnheader" class="" scope="col">Link</th>
+                      </tr>
+                    </thead>
+                    <tbody class="nhsuk-table__body">
+                      <tr role="row" class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell">Student's application</td>
+                        <td class="nhsuk-table__cell">
+                          <a
+                            href="/enrolement-breakdown/dependent-student/tasklist"
+                            >View
+                            <span class="nhsuk-u-visually-hidden">
+                              Student's application</span
+                            ></a
+                          >
+                        </td>
+                      </tr>
+                      <tr role="row" class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell">Course details</td>
+                        <td class="nhsuk-table__cell">
+                          <a
+                            href="/enrolement-breakdown/dependent-student/summary-pages/coursedetails"
+                            >View
+                            <span class="nhsuk-u-visually-hidden">
+                              Course details</span
+                            ></a
+                          >
+                        </td>
+                      </tr>
+                      <tr role="row" class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell">Eligibility assessment</td>
+                        <td class="nhsuk-table__cell">
+                          <a
+                            href="/enrolement-breakdown/dependent-student/summary-pages/eligibility"
+                            >View
+                            <span class="nhsuk-u-visually-hidden">
+                              Eligibility assessment</span
+                            ></a
+                          >
+                        </td>
+                      </tr>
+
+                      <tr role="row" class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell">Status assessment</td>
+                        <td class="nhsuk-table__cell">
+                          <a
+                            href="/enrolement-breakdown/dependent-student/summary-pages/statusassessment"
+                            >View
+                            <span class="nhsuk-u-visually-hidden">
+                              Status assessment</span
+                            ></a
+                          >
+                        </td>
+                      </tr>
+
+                      <tr role="row" class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell">Income and expenses assessment</td>
+                        <td class="nhsuk-table__cell">
+                          <a
+                            href="/enrolement-breakdown/dependent-student/summary-pages/income"
+                            >View
+                            <span class="nhsuk-u-visually-hidden">
+                              Income and expenses assessment</span
+                            ></a
+                          >
+                        </td>
+                      </tr>
+
+                      <tr role="row" class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell">Parent or partner details</td>
+                        <td class="nhsuk-table__cell">
+                          <a
+                            href="/enrolement-breakdown/dependent-student/summary-pages/parents"
+                            >View
+                            <span class="nhsuk-u-visually-hidden">
+                              Parent or partner details</span
+                            ></a
+                          >
+                        </td>
+                      </tr>
+
+                      <tr role="row" class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell">
+                          Parents - Income and expenses assessment
+                        </td>
+                        <td class="nhsuk-table__cell">
+                          <a
+                            href="/enrolement-breakdown/dependent-student/summary-pages/parents-income"
+                            >View
+                            <span class="nhsuk-u-visually-hidden">
+                              Parents - Income and expenses assessment</span
+                            ></a
+                          >
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </details>
+
+              <details
+                class="nhsuk-details nhsuk-expander"
+                nhsuk-polyfilled="true"
+                id="nhsuk-details0"
+              >
+                <summary
+                  class="nhsuk-details__summary"
+                  role="button"
+                  aria-controls="nhsuk-details__text0"
+                >
+                  <span class="nhsuk-details__summary-text">
+                    Internal dashboard (independent)
+                  </span>
+                </summary>
+
+                <div class="nhsuk-details__text" id="nhsuk-details__text0">
+                  <table class="nhsuk-table">
+                    <caption
+                      class="nhsuk-table__caption nhsuk-u-visually-hidden"
+                    ></caption>
+                    <thead role="rowgroup" class="nhsuk-table__head">
+                      <tr role="row">
+                        <th role="columnheader" class="" scope="col">
+                          Journey point
+                        </th>
+                        <th role="columnheader" class="" scope="col">Link</th>
+                      </tr>
+                    </thead>
+                    <tbody class="nhsuk-table__body">
+                      <tr role="row" class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell">Enrolment breakdown</td>
+                        <td class="nhsuk-table__cell">
+                          <a href="/enrolement-breakdown/tasklist"
+                            >View
+                            <span class="nhsuk-u-visually-hidden">
+                              Enrolment breakdown</span
+                            ></a
+                          >
+                        </td>
+                      </tr>
+                      <tr role="row" class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell">Course details</td>
+                        <td class="nhsuk-table__cell">
+                          <a
+                            href="/enrolement-breakdown/summary-pages/coursedetails"
+                            >View
+                            <span class="nhsuk-u-visually-hidden">
+                              Course details</span
+                            ></a
+                          >
+                        </td>
+                      </tr>
+                      <tr role="row" class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell">Eligibility assessment</td>
+                        <td class="nhsuk-table__cell">
+                          <a
+                            href="/enrolement-breakdown/summary-pages/eligibility"
+                            >View
+                            <span class="nhsuk-u-visually-hidden">
+                              Eligibility assessment</span
+                            ></a
+                          >
+                        </td>
+                      </tr>
+
+                      <tr role="row" class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell">Status assessment</td>
+                        <td class="nhsuk-table__cell">
+                          <a
+                            href="/enrolement-breakdown/summary-pages/statusassessment"
+                            >View
+                            <span class="nhsuk-u-visually-hidden">
+                              Status assessment</span
+                            ></a
+                          >
+                        </td>
+                      </tr>
+
+                      <tr role="row" class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell">Income and expenses assessment</td>
+                        <td class="nhsuk-table__cell">
+                          <a href="/enrolement-breakdown/summary-pages/income"
+                            >View
+                            <span class="nhsuk-u-visually-hidden">
+                              Income and expenses assessment</span
+                            ></a
+                          >
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </details>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {% endblock %}
+    </div>
+  </div>
+</div>

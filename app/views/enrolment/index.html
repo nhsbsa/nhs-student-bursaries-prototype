@@ -1,0 +1,228 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Course details {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <div class="nhsuk-back-link">
+      <a class="nhsuk-back-link__link" href="/">
+        <svg
+          class="nhsuk-icon nhsuk-icon__chevron-left"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"
+          ></path>
+        </svg>
+        Go back</a
+      >
+    </div>
+    <!-- Change the page title here -->
+    <h1 class="nhsuk-app-heading" id="userRegH1">
+      <span class="nhsuk-caption-l">NHSBSA Prototype</span>
+      Course details
+    </h1>
+
+    <hr aria-hidden="true" />
+
+    <h2 class="nhsuk-heading-m">
+      Course details
+      <strong
+        class="task-completed status-shortlisted"
+        style="background-color: #330072; float: right"
+      >
+        MVP Ready
+      </strong>
+      <span class="nhsuk-caption-m nhsuk-caption--bottom"
+        >Last updated: 28th September 2021</span
+      >
+    </h2>
+
+    <p>The following have been completed:</p>
+
+    <ul class="nhsuk-list nhsuk-list--bullet">
+      <li>radio buttons have been tested throughout</li>
+      <li>accessibility has been checked</li>
+      <li>routing works where implemented</li>
+      <li>small content changes have been done</li>
+      <li>cancel buttons have been removed</li>
+      <li>titles all match headings</li>
+    </ul>
+
+    <p>Most recent updates:</p>
+    <ul class="nhsuk-list nhsuk-list--bullet">
+      <li>
+        'Cancel and return to dashboard' has been added on the summary screens
+      </li>
+    </ul>
+
+    <table class="nhsuk-table">
+      <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">
+        Registration journey pages
+      </caption>
+      <thead role="rowgroup" class="nhsuk-table__head">
+        <tr role="row">
+          <th role="columnheader" class="" scope="col">Journey point</th>
+          <th role="columnheader" class="" scope="col">Link</th>
+        </tr>
+      </thead>
+      <tbody class="nhsuk-table__body">
+        <tr role="row" class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">Intro</td>
+          <td class="nhsuk-table__cell">
+            <a href="/enrolment/intro"
+              >View <span class="nhsuk-u-visually-hidden">intro screen</span></a
+            >
+          </td>
+        </tr>
+        <tr role="row" class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">Start month and year</td>
+          <td class="nhsuk-table__cell">
+            <a href="/enrolment/courseyear"
+              >View
+              <span class="nhsuk-u-visually-hidden"
+                >start month and year screen</span
+              ></a
+            >
+          </td>
+        </tr>
+        <tr role="row" class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">Secondment</td>
+          <td class="nhsuk-table__cell">
+            <a href="/enrolment/secondment"
+              >View
+              <span class="nhsuk-u-visually-hidden">secondment screen</span></a
+            >
+          </td>
+        </tr>
+        <tr role="row" class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">Not eligible</td>
+          <td class="nhsuk-table__cell">
+            <a href="/enrolment/seconded-yes"
+              >View
+              <span class="nhsuk-u-visually-hidden"
+                >not eligible screen</span
+              ></a
+            >
+          </td>
+        </tr>
+        <tr role="row" class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">Select university</td>
+          <td class="nhsuk-table__cell">
+            <a href="/enrolment/seconded-no"
+              >View
+              <span class="nhsuk-u-visually-hidden"
+                >select university screen</span
+              ></a
+            >
+          </td>
+        </tr>
+        <tr role="row" class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">Select course</td>
+          <td class="nhsuk-table__cell">
+            <a href="/enrolment/course"
+              >View
+              <span class="nhsuk-u-visually-hidden">course screen</span></a
+            >
+          </td>
+        </tr>
+        <tr role="row" class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">Course history</td>
+          <td class="nhsuk-table__cell">
+            <a href="/enrolment/coursehistory0"
+              >View
+              <span class="nhsuk-u-visually-hidden"
+                >course history screen</span
+              ></a
+            >
+          </td>
+        </tr>
+        <tr role="row" class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">Current academic year</td>
+          <td class="nhsuk-table__cell">
+            <a href="/enrolment/coursehistory3"
+              >View
+              <span class="nhsuk-u-visually-hidden"
+                >course history current year screen</span
+              ></a
+            >
+          </td>
+        </tr>
+        <tr role="row" class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">Intercalating university</td>
+          <td class="nhsuk-table__cell">
+            <a href="intercalating"
+              >View
+              <span class="nhsuk-u-visually-hidden"
+                >intercalating university screen</span
+              ></a
+            >
+          </td>
+        </tr>
+        <tr role="row" class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">Intercalating course</td>
+          <td class="nhsuk-table__cell">
+            <a href="intercalating-course"
+              >View
+              <span class="nhsuk-u-visually-hidden"
+                >intercalating course screen</span
+              ></a
+            >
+          </td>
+        </tr>
+        <tr role="row" class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">Summary</td>
+          <td class="nhsuk-table__cell">
+            <a href="/enrolment/summary"
+              >View
+              <span class="nhsuk-u-visually-hidden"
+                >enrolment summary screen</span
+              ></a
+            >
+          </td>
+        </tr>
+        <tr role="row" class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">Intercalating summary</td>
+          <td class="nhsuk-table__cell">
+            <a href="summary-intercalation"
+              >View
+              <span class="nhsuk-u-visually-hidden"
+                >intercalation summary screen</span
+              ></a
+            >
+          </td>
+        </tr>
+        <tr role="row" class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">Done</td>
+          <td class="nhsuk-table__cell">
+            <a href="/enrolment/complete"
+              >View <span class="nhsuk-u-visually-hidden">done screen</span></a
+            >
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+{% endblock %}

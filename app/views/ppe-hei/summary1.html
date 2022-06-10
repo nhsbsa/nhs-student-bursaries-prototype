@@ -1,0 +1,526 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}{{ serviceName }} prototypes | Check this application {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block header %} {{ header({ "service": { "name": "Bursary", "href": "/"
+}, "showNav": "true", "showSearch": "false", "primaryLinks": [ { "url" : "submittedforms",
+"label" : "Applications" },  { "url" : "search", "label" : "Search for a student" }, { "url" : "#", "label" : "Change password" }, { "url" : "index", "label" : "Log out" } ] })
+}} {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<!-- Breadcrumb -->
+<a class="nhsuk-skip-link" href="#maincontent">Skip to main content</a>
+
+{% endblock %}
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-width-container">
+    <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full">
+
+            <h1 class="nhsuk-app-heading" id="summaryH1">
+                <span class="nhsuk-caption-l">001 - Derek Bloggs</span> Check this application
+            </h1>
+
+
+            <dl class="nhsuk-summary-list">
+              <dl class="nhsuk-summary-list">
+                  <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                          Academic year
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                          2019/20
+                      </dd>
+
+                      <!--  <dd class="nhsuk-summary-list__actions">
+            
+                  <a href="#">
+                    View<span class="nhsuk-u-visually-hidden"> academic year</span>
+                  </a>
+            
+                </dd>
+             -->
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                          Term-time address
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                          <p>73 Roman Road</p>
+                          <p>Leeds</p>
+                          <p>LS2 5ZN</p>
+                      </dd>
+
+                      <!--  <dd class="nhsuk-summary-list__actions">
+            
+                  <a href="#">
+                    View<span class="nhsuk-u-visually-hidden"> term time address</span>
+                  </a>
+            
+                </dd> -->
+
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                          Parents house
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                          No
+                      </dd>
+
+                      <!--   <dd class="nhsuk-summary-list__actions">
+              
+                    <a href="#">
+                      View<span class="nhsuk-u-visually-hidden"> parental home</span>
+                    </a>
+              
+                  </dd> -->
+
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                          Term-time accommodation
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                          £5000
+                      </dd>
+
+                      <!--  <dd class="nhsuk-summary-list__actions">
+              
+                    <a href="#">
+                      View<span class="nhsuk-u-visually-hidden"> normal term accommodation cost</span>
+                    </a>
+              
+                  </dd>
+               -->
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                          University travel
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                          Public transport
+                      </dd>
+
+                      <!--   <dd class="nhsuk-summary-list__actions">
+            
+                  <a href="#">
+                    View<span class="nhsuk-u-visually-hidden"> normal travel to university</span>
+                  </a>
+            
+                </dd> -->
+
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                          Public transport cost
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                          £4
+                      </dd>
+
+                      <!--  <dd class="nhsuk-summary-list__actions">
+              
+                    <a href="#">
+                      View<span class="nhsuk-u-visually-hidden"> daily return cost to university</span>
+                    </a>
+              
+                  </dd>
+               -->
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                          Mileage
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                          8 miles
+                      </dd>
+
+                      <!--  <dd class="nhsuk-summary-list__actions">
+              
+                    <a href="#">
+                      View<span class="nhsuk-u-visually-hidden"> normal mileage per day</span>
+                    </a>
+              
+                  </dd>
+               -->
+
+                  </div>
+                  <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                          Extra costs
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                          £0
+                      </dd>
+
+                      <!--  <dd class="nhsuk-summary-list__actions">
+              
+                    <a href="#">
+                      View<span class="nhsuk-u-visually-hidden"> extra costs</span>
+                    </a>
+              
+                  </dd>
+               -->
+
+                  </div>
+              </dl>
+          </dl>
+
+          <dl class="nhsuk-summary-list">
+              <dl class="nhsuk-summary-list">
+                  <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                          Start date
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                          12/3/2019
+                      </dd>
+
+                      <!--  <dd class="nhsuk-summary-list__actions">
+                      
+                  <a href="#">
+                    View<span class="nhsuk-u-visually-hidden"> start date</span>
+                  </a>
+            
+                </dd> -->
+
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                          End date
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                          18/7/2019
+                      </dd>
+
+                      <!--  <dd class="nhsuk-summary-list__actions">
+              
+                    <a href="#">
+                      View<span class="nhsuk-u-visually-hidden"> end date </span>
+                    </a>
+              
+                  </dd>
+               -->
+                  </div>
+
+
+                  <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                          Placement address
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                          <p>Queen Elizabeth Hospital</p>
+                          <p>Gateshead</p>
+                          <p>United Kingdom</p>
+                          <p>NE9 6SX</p>
+                      </dd>
+
+                      <!-- <dd class="nhsuk-summary-list__actions">
+              
+                    <a href="#">
+                      View<span class="nhsuk-u-visually-hidden"> placement address</span>
+                    </a>
+              
+                  </dd> -->
+
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                          Overseas placement
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                          No
+                      </dd>
+
+                      <!--   <dd class="nhsuk-summary-list__actions">
+              
+                    <a href="#">
+                      View<span class="nhsuk-u-visually-hidden"> overseas placement</span>
+                    </a>
+              
+                  </dd> -->
+
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                          Car hire
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                          Yes
+                      </dd>
+
+                      <!--   <dd class="nhsuk-summary-list__actions">
+                  
+                        <a href="#">
+                          View<span class="nhsuk-u-visually-hidden"> car hire</span>
+                        </a>
+                  
+                      </dd> -->
+
+                  </div>
+                  <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                          Car hire cost
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                          £350
+                      </dd>
+
+                      <!--  <dd class="nhsuk-summary-list__actions">
+                      
+                            <a href="#">
+                              View<span class="nhsuk-u-visually-hidden"> cost of hiring the car</span>
+                            </a>
+                      
+                          </dd>
+                       -->
+
+                  </div>
+              </dl>
+          </dl>
+
+          <dl class="nhsuk-summary-list">
+              <dl class="nhsuk-summary-list">
+                  <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                          Journey date
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                          <p>14/4/2019</p>
+                          <p>19/4/2019</p>
+                      </dd>
+
+                      <!--  <dd class="nhsuk-summary-list__actions">
+                      
+                            <a href="#">
+                              View<span class="nhsuk-u-visually-hidden"> journey start date and end date</span>
+                            </a>
+                      
+                          </dd>
+                       -->
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                          Placement address
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                          <p>Queen Elizabeth Hospital</p>
+                          <p>Gateshead</p>
+                          <p>United Kingdom</p>
+                          <p>NE9 6SX</p>
+                      </dd>
+
+                      <!-- <dd class="nhsuk-summary-list__actions">
+                      
+                            <a href="#">
+                              View<span class="nhsuk-u-visually-hidden"> placement address</span>
+                            </a>
+                      
+                          </dd> -->
+
+
+                  </div>
+                  <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                          Total miles
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                          12 miles
+                      </dd>
+
+                      <!-- <dd class="nhsuk-summary-list__actions">
+                          
+                                <a href="#">
+                                  View<span class="nhsuk-u-visually-hidden"> return mileage per day</span>
+                                </a>
+                          
+                              </dd> -->
+
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                          Community mileage
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                          No
+                      </dd>
+
+                      <!-- <dd class="nhsuk-summary-list__actions">
+                              
+                                    <a href="#">
+                                      View<span class="nhsuk-u-visually-hidden"> community mileage during this journey</span>
+                                    </a>
+                              
+                                  </dd> -->
+
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                        University travel cost
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                          £4
+                      </dd>
+
+                      <!-- <dd class="nhsuk-summary-list__actions">
+                                  
+                                        <a href="#">
+                                          View<span class="nhsuk-u-visually-hidden"> daily return cost to </span>
+                                        </a>
+                                  
+                                      </dd> -->
+
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                          Travel type
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                          Cycle
+                      </dd>
+
+                      <!-- <dd class="nhsuk-summary-list__actions">
+              
+                    <a href="#">
+                      View<span class="nhsuk-u-visually-hidden"> mode of travel</span>
+                    </a>
+              
+                  </dd> -->
+
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                          Passengers
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                          Yes
+                      </dd>
+
+                      <!-- <dd class="nhsuk-summary-list__actions">
+                  
+                        <a href="#">
+                          View<span class="nhsuk-u-visually-hidden"> passengers</span>
+                        </a>
+                  
+                      </dd> -->
+
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                          Passenger miles
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                          6 miles
+                      </dd>
+
+                      <!-- <dd class="nhsuk-summary-list__actions">
+                      
+                            <a href="#">
+                              View<span class="nhsuk-u-visually-hidden"> passenger miles</span>
+                            </a>
+                      
+                          </dd> -->
+
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                          Placement accommodation
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                          No
+                      </dd>
+
+                      <!-- <dd class="nhsuk-summary-list__actions">
+                          
+                                <a href="#">
+                                  View<span class="nhsuk-u-visually-hidden"> accommodation</span>
+                                </a>
+                          
+                              </dd> -->
+
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                          Additional costs
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                          Yes - £6
+                      </dd>
+
+                      <!-- <dd class="nhsuk-summary-list__actions">
+                              
+                                    <a href="#">
+                                      View<span class="nhsuk-u-visually-hidden"> additional costs</span>
+                                    </a>
+                              
+                                  </dd> -->
+
+                  </div>
+              </dl>
+          </dl>
+
+
+          <dl class="nhsuk-summary-list">
+              <dl class="nhsuk-summary-list">
+                  <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                          Evidence
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                          evidence.jpg
+                      </dd>
+
+                      <dd class="nhsuk-summary-list__actions">
+
+                          <a href="#">
+                              View evidence<span class="nhsuk-u-visually-hidden"> evidence</span>
+                          </a>
+
+                      </dd>
+
+                  </div>
+
+              </dl>
+          </dl>
+
+            <div class="nhsuk-form-group">
+                <div class="nhsuk-form-group">
+                    <a class="nhsuk-button" type="submit" id="next" href="checklist" role="button">
+                        Continue
+                    </a>
+                </div>
+
+                {% endblock %}

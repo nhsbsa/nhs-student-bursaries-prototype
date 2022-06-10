@@ -1,0 +1,109 @@
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+{% block header %} {{ header({ "service": { "name": "Bursary", "href": "/" },
+"showNav": "false", "showSearch": "false" }) }} {% endblock %}
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}Do you get money from any of these?{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %}
+<a class="nhsuk-skip-link" href="#maincontent">Skip to main content</a>
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <h1 class="app-page-heading" id="otherIncomeH1">
+        <span class="nhsuk-caption-l">Your income</span>Do you get money from any of these?
+    </h1>
+
+
+  <fieldset class="nhsuk-fieldset" >
+    <legend class="nhsuk-fieldset__legend nhsuk-u-visually-hidden">
+        Do you get money from any of these?
+    </legend>
+
+    <p class="nhsuk-hint">Select all that apply to you</p>
+    <div class="nhsuk-checkboxes">
+
+        <div class="nhsuk-checkboxes__item">
+            <input class="nhsuk-checkboxes__input" id="child-1" name="child" type="checkbox"
+                value="british">
+            <label class="nhsuk-label nhsuk-checkboxes__label" for="child-1">
+                Wages from a job
+            </label>
+        </div>
+
+        <div class="nhsuk-checkboxes__item">
+            <input class="nhsuk-checkboxes__input" id="self-employment" name="income" type="checkbox"
+                value="Self-employment">
+            <label class="nhsuk-label nhsuk-checkboxes__label" for="self-employment">
+                Self-employment
+            </label>
+        </div>
+
+        <div class="nhsuk-checkboxes__item">
+            <input class="nhsuk-checkboxes__input" id="rent" name="income" type="checkbox"
+                value="Rent">
+            <label class="nhsuk-label nhsuk-checkboxes__label" for="rent">
+                Rent (full property or part of your home)
+            </label>
+        </div>
+
+        <div class="nhsuk-checkboxes__item">
+            <input class="nhsuk-checkboxes__input" id="sponsorship" name="income" type="checkbox"
+                value="Sponsorship">
+            <label class="nhsuk-label nhsuk-checkboxes__label" for="sponsorship">
+                Sponsorship
+                <p class="nhsuk-hint">(Includes money received from a scholarship or cadetship)</p>
+            </label>
+        </div>
+
+        <div class="nhsuk-checkboxes__item">
+            <input class="nhsuk-checkboxes__input" id="maintainance" name="income" type="checkbox"
+                value="Maintenance payments from an ex-partner">
+            <label class="nhsuk-label nhsuk-checkboxes__label" for="maintainance">
+                Maintenance payments from an ex-partner
+            </label>
+        </div>
+
+        <div class="nhsuk-checkboxes__item">
+            <input class="nhsuk-checkboxes__input" id="trustFunds" name="income" type="checkbox"
+                value="Trust funds">
+            <label class="nhsuk-label nhsuk-checkboxes__label" for="trustFunds">
+                Trust funds
+            </label>
+        </div>
+
+        <div class="nhsuk-checkboxes__item">
+            <input class="nhsuk-checkboxes__input" id="pensions" name="income" type="checkbox"
+                value="Pensions">
+            <label class="nhsuk-label nhsuk-checkboxes__label" for="pensions">
+               Pensions (state, work, private)
+            </label>
+        </div>
+
+        <p>or</p>
+
+        <div class="nhsuk-checkboxes__item">
+            <input class="nhsuk-checkboxes__input" id="no" name="income" type="checkbox"
+                value="No, I do not get paid any of these">
+            <label class="nhsuk-label nhsuk-checkboxes__label" for="no">
+                No, I <b>do not</b> get paid any of these
+            </label>
+    </div>
+ <br>
+    <a href="benefits" class="nhsuk-button" role="button" id="continue">Continue</a>
+  </div>
+</div>
+{% endblock %}

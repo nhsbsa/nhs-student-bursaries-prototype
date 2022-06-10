@@ -1,0 +1,50 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} 
+Complete (placeholder)
+{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-column-two-thirds">
+    <h1 class="heading-large">Complete (placeholder)</h1>
+
+    <div class="nhsuk-inset-text">
+      <span class="nhsuk-u-visually-hidden">Information: </span>
+    
+      <p>
+      Thank you for providing an estimate of costs for the first quarter.
+      </p>
+
+   
+    </div>
+
+  </div>
+
+  
+
+  <p>
+    <a role="button" id="homeLink" href="/childcare-new/intro" class="nhsuk-button"
+      >Return <span>home</span></a
+    >
+  </p>
+</div>
+
+{% endblock %}

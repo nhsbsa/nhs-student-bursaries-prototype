@@ -1,0 +1,128 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} {{ serviceName }} prototypes | Are you receiving
+sponsorship? {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-back-link">
+  <a class="nhsuk-back-link__link" href="intro" id="back">
+    <svg
+      class="nhsuk-icon nhsuk-icon__chevron-left"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <path
+        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"
+      ></path>
+    </svg>
+    Go back</a
+  >
+</div>
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <h1 class="app-page-heading" id="sponsorshipH1">
+      <span class="nhsuk-caption-l">Your income</span>Are you
+      receiving sponsorship?
+    </h1>
+
+    <p>
+      This is any scholarship, studentship, exhibition, award, grant, allowance
+      or benefit however described, payable in connection with your attendance
+      on the course.
+    </p>
+
+    <div class="nhsuk-form-group">
+      <fieldset class="nhsuk-fieldset">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h2
+            class="nhsuk-fieldset__heading nhsuk-u-visually-hidden"
+            id="sponsorshipH2"
+          >
+            Are you receiving sponsorship?
+          </h2>
+        </legend>
+
+        <div class="nhsuk-radios nhsuk-radios--conditional">
+          <div class="nhsuk-radios__item">
+            <input
+              class="nhsuk-radios__input"
+              id="yes"
+              name="scholarship"
+              type="radio"
+              value="email"
+              aria-controls="conditional-contact-1"
+              aria-expanded="false"
+            />
+            <label class="nhsuk-label nhsuk-radios__label" for="yes">
+              Yes
+            </label>
+          </div>
+
+          <div
+            class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden"
+            id="conditional-contact-1"
+          >
+            <div class="nhsuk-form-group">
+              <label
+                class="nhsuk-label nhsuk-u-font-weight-bold"
+                for="scholarship-info"
+              >
+                How much sponsorship will you receive in the 2019/20 academic
+                year?
+              </label>
+              <p class="nhsuk-hint">
+                A typical academic year runs from September until April
+              </p>
+              <input
+                class="nhsuk-input nhsuk-u-width-two-thirds"
+                id="scholarship-info"
+                name="mortgage-info"
+                type="text"
+              />
+            </div>
+          </div>
+
+          <div class="nhsuk-radios__item">
+            <input
+              class="nhsuk-radios__input"
+              id="no"
+              name="scholarship"
+              type="radio"
+              value="No"
+            />
+            <label class="nhsuk-label nhsuk-radios__label" for="no"> No </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+  </div>
+</div>
+
+<div class="nhsuk-form-group">
+  <a href="employment" class="nhsuk-button" role="button">Continue</a>
+</div>
+
+<!-- <div class="form-group">
+  <p><a href="/index" id="cancel">Cancel</a></p>
+</div> -->
+
+{% endblock %}

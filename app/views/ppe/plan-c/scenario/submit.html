@@ -1,0 +1,266 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Check your answers {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <h1 class="nhsuk-app-heading" id="checkYourDetails">
+      <span class="nhsuk-caption-l">1/8/2021 - 19/8/2021 </span>
+      Declaration
+    </h1>
+
+    <p>
+      Please review all information you have provided before completing this
+      declaration. Read this declaration carefully before accepting it. If you
+      choose not to accept it, your funding will not be processed.
+    </p>
+
+    <p>I declare that:</p>
+    <ul class="nhsuk-list nhsuk-list--number">
+      <li>
+        I am undertaking a pre-registration healthcare programme at a university
+        in England, or I am undertaking a pre-registration Medical or Dental
+        course at a university in the UK that is eligible for Practice Placement
+        Expenses.
+      </li>
+      <li>
+        I have read and understood the relevant booklet and/or any other
+        relevant information regarding the conditions for claiming Practice
+        Placement Expenses.
+      </li>
+      <li>
+        I confirm that I have enrolled and commenced on my programme of study
+        and am thus in active training.
+      </li>
+      <li>
+        I confirm that the expenses claimed were essentially incurred as a
+        result of my attending practice placements and that my normal daily
+        travel to university costs have been deducted.
+      </li>
+      <li>
+        I confirm that I have used the cheapest available transport to access
+        the practice placement/s.
+      </li>
+      <li>
+        I confirm that, if I have claimed for a private motor vehicle, I have
+        appropriate insurance in place.
+      </li>
+      <li>
+        I confirm that I am not studying as an assisted student i.e. I am not in
+        receipt of any sponsorship from an employer or any other agency.
+      </li>
+      <li>
+        Student Services is committed to administering entitlement accurately
+        wherever possible. I agree to pay back Student Services within 30 days
+        of receiving notification any excess payment, fees, and any other
+        charges, in the event of the following circumstances:
+        <ul class="nhsuk-list nhsuk-list--bullet">
+          <li>Changing my study pattern from full-time to part-time</li>
+          <li>
+            Withdrawing , abandoning, suspending, deferring, or interrupting the
+            course permanently or temporarily for any reason, regardless of
+            whether I intend to return
+          </li>
+          <li>Taking a year out from study</li>
+          <li>
+            Being overpaid because I have failed to notify NHSBSA Student
+            Services of a change in my circumstances.
+          </li>
+          <li>
+            Where Student Services at its absolute discretion determines I have
+            been given financial support to which I am not entitled
+          </li>
+          <li>
+            Gaining support from sources other than Student Loans Company that
+            might affect my entitlement
+          </li>
+        </ul>
+        Should I fail to make full repayment of any amount due or agree an
+        acceptable repayment plan with NHSBSA, I understand that the debt and
+        relevant personal information may be passed to a debt collection agency.
+        I also understand that I may be charged for any additional recovery
+        costs and/ or interest at the rate of 8% on the referred debt which may
+        be added to the balance.
+      </li>
+    </ul>
+
+    <p>
+      I consent to the disclosure of the information on this form on the
+      following understanding:
+    </p>
+
+    <h2 class="nhsuk-heading-m">Privacy Notice</h2>
+    <p class="nhsuk-u-font-weight-bold">Student Services privacy notice</p>
+    <p>
+      The NHS Business Services Authority (NHSBSA) is responsible for this
+      service.
+    </p>
+    <p class="nhsuk-u-font-weight-bold">Why we process your information</p>
+    <p>We will use the information you provide to:</p>
+    <ul class="nhsuk-list nhsuk-list--bullet">
+      <li>Assess your application</li>
+      <li>Pay you</li>
+      <li>Detect and prevent fraud and mistakes</li>
+      <li>
+        Help plan and make improvements to NHS services, and/ or direct patient
+        care
+      </li>
+    </ul>
+    <p>
+      By law, we must process this information on behalf of the Department of
+      Health and Social Care (DHSC).
+    </p>
+    <p class="nhsuk-u-font-weight-bold">Sharing your personal information</p>
+    <p>
+      To prevent, detect and investigate fraud errors, we may share your
+      information with:
+    </p>
+    <ul class="nhsuk-list nhsuk-list--bullet">
+      <li>Student Loans Company</li>
+      <li>HM Revenue and Customs</li>
+      <li>Higher education institutions</li>
+      <li>The Home Office</li>
+      <li>
+        Organisations from which you receive benefits, bursaries, grants, or
+        support
+      </li>
+      <li>Bodies performing functions on behalf of the above organisations</li>
+    </ul>
+    <p>
+      We may share information with the DHSC to investigate and prosecute fraud,
+      or any other unlawful activity affecting the NHS.
+    </p>
+    <p>
+      We may share information with the Cabinet Office in relation to the
+      National Fraud Initiative.
+    </p>
+    <p>
+      Anonymised information may also be shared with the DHSC to monitor
+      compliance with equality law.
+    </p>
+    <p>
+      Information that identifies you will not be transferred outside the
+      European Economic Area.
+    </p>
+    <p class="nhsuk-u-font-weight-bold">Keeping your personal information</p>
+    <p>
+      We will delete your data no later than seven years after your course
+      finishes.
+    </p>
+    <p class="nhsuk-u-font-weight-bold">Your rights</p>
+    <p>
+      The information you provided will be managed as required by Data
+      Protection law.
+    </p>
+    <p>You have the right to:</p>
+    <ul class="nhsuk-list nhsuk-list--bullet">
+      <li>Receive a copy of the information NHSBSA hold about you</li>
+      <li>
+        Request your information be changed if you believe it was not correct at
+        the time you provided it
+      </li>
+    </ul>
+    <p>From 25 May 2018, you have the right to:</p>
+    <ul class="nhsuk-list nhsuk-list--bullet">
+      <li>
+        Request that your information be deleted if you believe we are keeping
+        it for longer than necessary
+      </li>
+    </ul>
+    <p>Find out more about your rights and how we process information.</p>
+    <p>
+      Practice Placement Expenses (travel and accommodation) claim form (V9)
+      08/2020
+    </p>
+    <p>
+      I understand that the administration of the Practice Placement Expenses is
+      the responsibility of the NHS Business Services Authority. I understand
+      that Student Services may use and share information I provide in relation
+      to this claim with NHS Business Services Authority (NHSBSA) Loss and Fraud
+      Prevention Team, Department of Health and Social Care (DHSC) Anti-Fraud
+      Unit, and NHS Counter Fraud Authority (NHSCFA) for the purposes of the
+      prevention, detection, loss measurement, investigation and prosecution of
+      fraud or any other unlawful activity affecting the NHS.
+    </p>
+    <p>
+      I understand and accept that if I fail to give sufficient notice of any
+      changes to my bank or building society account details, or provide
+      incorrect details, NHSBSA Student Services cannot take responsibility for
+      payments made to an incorrect account, delayed payments, or non-payment of
+      the funding.
+    </p>
+    <p>
+      By agreeing this declaration, I accept and agree to all the conditions
+      held. I declare that the information given on this form and in any
+      supporting documents provided is correct and complete. I understand and
+      accept that if I withhold information from provide Student Services and /
+      or provide false or misleading information, financial support may be
+      refused or withdrawn, and any future claims may be rejected. I understand
+      that disciplinary action may be taken against me and I may be liable to
+      prosecution and or civil proceedings.
+    </p>
+    <p>
+      Any future amendments to this application will require you to re-accept
+      this declaration.
+    </p>
+    <div class="nhsuk-form-group">
+      <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h1 class="nhsuk-fieldset__heading nhsuk-u-visually-hidden">
+            Declaration selection
+          </h1>
+        </legend>
+
+        <div class="nhsuk-hint" id="example-hint">
+          By ticking the box you accept the above declaration
+        </div>
+
+        <div class="nhsuk-checkboxes">
+          <div class="nhsuk-checkboxes__item">
+            <input
+              class="nhsuk-checkboxes__input"
+              id="signature"
+              name="signature"
+              type="checkbox"
+              value="signature"
+            />
+            <label class="nhsuk-label nhsuk-checkboxes__label" for="signature">
+              1st June 2021
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    <div class="nhsuk-form-group">
+      <a
+        href="evidence"
+        class="nhsuk-button"
+        role="button"
+        id="continueBtn"
+        >Submit</a
+      >
+    </div>
+
+    <a href="/ppe/plan-c/scenario/dashboard/dashboard">Save and come back later</a>
+
+  </div>
+</div>
+{% endblock %}

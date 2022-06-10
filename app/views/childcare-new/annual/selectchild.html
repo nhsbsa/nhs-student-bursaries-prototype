@@ -1,0 +1,88 @@
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+Please select the child(ren) being cared for by this provider in the forthcoming academic year
+{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %}
+<a class="nhsuk-skip-link" href="#maincontent">Skip to main content</a>
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+
+<div class="nhsuk-back-link">
+  <a class="nhsuk-back-link__link" href="childcareresponsibility">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+      aria-hidden="true">
+      <path
+        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+      </path>
+    </svg>
+    Go back</a>
+</div>
+
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <fieldset class="nhsuk-fieldset">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-app-heading" id="selectChildH1">
+        Please select the child(ren) being cared for by this provider in the forthcoming academic year
+        </h1>
+      </legend>
+
+      <p>Please note that you may only claim Childcare Allowance if you have applied for the 
+        Dependents Allowance for that child.
+      </p>
+
+      <div class="nhsuk-hint nhsuk-u-visually-hidden" id="example-hint">
+        Select all options that are relevant to you.
+      </div>
+  
+      <div class="nhsuk-checkboxes">
+  
+        <div class="nhsuk-checkboxes__item">
+          <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
+          <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+            John Smith (DOB: 27 Apr 2016)
+          </label>
+        </div>
+  
+        <div class="nhsuk-checkboxes__item">
+          <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox" value="phone">
+          <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
+            Barry Smith (DOB: 12 Sep 2018)
+          </label>
+        </div>
+  
+        <div class="nhsuk-checkboxes__item">
+          <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+          <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+            Lucy Smith (DOB: 19 Dec 2019)
+          </label>
+        </div>
+        </div>
+       <br>
+
+        </fieldset>
+
+      <a class="nhsuk-button" type="submit" id="next" href="additionalchildcare" role="button">
+        Continue
+      </a>
+
+      <p><a class="nhsuk-link" id="cancelLink" href="annual_intro">Cancel</a></p>
+
+</div>
+
+{% endblock %}

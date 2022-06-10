@@ -1,0 +1,91 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} What is your employment status? {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <h1 class="app-page-heading" id="sponsorshipH1">
+            <span class="nhsuk-caption-l">{{ serviceName }} prototype</span>What is your employment status?
+        </h1>
+
+        <form action="/students/scholarship" method="post">
+
+            <div class="nhsuk-form-group">
+
+                <fieldset class="nhsuk-fieldset">
+                    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                        <h2 class="nhsuk-fieldset__heading nhsuk-u-visually-hidden" id="sponsorshipH2">
+                            What is your employment status?
+                        </h2>
+                    </legend>
+
+                    <div class="nhsuk-radios ">
+
+                        <div class="nhsuk-radios__item">
+                            <input class="nhsuk-radios__input" id="yes" name="employment" type="radio" value="Yes">
+                            <label class="nhsuk-label nhsuk-radios__label" for="yes">
+                                Employed 
+                            </label>
+                        </div>
+
+                        <div class="nhsuk-radios__item">
+                            <input class="nhsuk-radios__input" id="no" name="employment" type="radio" value="No">
+                            <label class="nhsuk-label nhsuk-radios__label" for="no">
+                                Self employed 
+                            </label>
+                        </div>
+
+                        <div class="nhsuk-radios__item">
+                            <input class="nhsuk-radios__input" id="no" name="employment" type="radio" value="No">
+                            <label class="nhsuk-label nhsuk-radios__label" for="no">
+                                Employed and self employed
+                            </label>
+                        </div>
+
+                        <div class="nhsuk-radios__item">
+                            <input class="nhsuk-radios__input" id="no" name="employment" type="radio" value="No">
+                            <label class="nhsuk-label nhsuk-radios__label" for="no">
+                                None of the above
+                            </label>
+                        </div>
+
+                    </div>
+                </fieldset>
+            </div>
+
+    </div>
+</div>
+
+<div class="nhsuk-form-group">
+    <a href="pens" class="nhsuk-button" type="submit" id="next" role="button">
+      Continue
+    </a>
+  </div>
+
+    <div class="form-group">
+        <p><a href="/index" id="cancel">Cancel</a></p>
+    </div>
+
+</div>
+</div>
+</div>
+{% endblock %}
+

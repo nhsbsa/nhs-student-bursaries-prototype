@@ -1,0 +1,152 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+Add another childcare provider
+{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <div class="nhsuk-back-link">
+            <a class="nhsuk-back-link__link" href="additionalchildcare">
+                <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                    aria-hidden="true">
+                    <path
+                        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+                    </path>
+                </svg>
+                Go back</a>
+        </div>
+
+
+        <h1 class="app-page-heading" id="anotherChildcareH1">
+          Add another childcare provider 
+        </h1>
+        
+
+        <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full">
+
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-quarter">
+              <p><strong>Childcare provider</strong></p>
+              <p>Nanny</p>
+            </div>
+          
+            <div class="nhsuk-grid-column-one-quarter">
+                <p><strong>Registration body</strong></p>
+                <p>Scottish Childminding Association</p>
+              </div>
+
+              <div class="nhsuk-grid-column-one-quarter">
+                <p><strong>Ofstead number</strong></p>
+                <p>000</p>
+              </div>
+
+              <div class="nhsuk-grid-column-one-quarter">
+                <p><strong>Address</strong></p>
+                <p>Scottish Childminding Association<br>
+                    Argyll Court<br>
+                    Castle Business Park<br>
+                    Stirling<br>
+                    FK9 4TY</p>
+              </div>
+           
+          <!--     <div class="nhsuk-grid-column-one-quarter">
+                <p><strong>Child(ren)</strong></p>
+                <p>Barry Smith</p>
+                <p>Lucy Smith</p>
+              </div> -->
+            
+                 <!--  <dl class="nhsuk-summary-list">
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">Name of childcare provider</dt>
+                      <dd class="nhsuk-summary-list__value" id="name">Nanny</dd>
+                      <dd class="nhsuk-summary-list__actions">
+                         <a id="linkChangeName" href="providerinfo"><span>Change</span></a> 
+                      </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">Registration body</dt>
+                      <dd class="nhsuk-summary-list__value" id="regBody">Scottish Childminding Association</dd>
+                      <dd class="nhsuk-summary-list__actions">
+                         <a id="linkChangeRegBody" href="providerinfo"><span>Change</span> </a>
+                      </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">Address</dt>
+                      <dd class="nhsuk-summary-list__value">
+                        <span id="nameOrNumber">Scottish Childminding Association</span><br />
+                        <span id="address1">Argyll Court</span><br />
+                        <span id="address2">Castle Business Park</span>
+                        <br />
+                        <span id="town">Stirling</span><br />
+                        <span id="postcode">FK9 4TY</span><br />
+                      </dd>
+                      <dd class="nhsuk-summary-list__actions">
+                         <a id="linkChangeAddress" href="provideraddress">
+                          <span>Change</span>
+                        </a> 
+                      </dd>
+                    </div>
+            
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">Phone number</dt>
+                      <dd class="nhsuk-summary-list__value">
+                        <span aria-hidden="true">077777777777</span>
+                      </dd>
+                      <dd class="nhsuk-summary-list__actions">
+                       <a id="linkChangeNumber" href="provideraddress">
+                          <span>Change</span>
+                        </a>
+                      </dd>
+                      </div>
+
+                      <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">Child(ren)</dt>
+                        <dd class="nhsuk-summary-list__value">
+                          <span aria-hidden="true">Barry Smith</span><br>
+                          <span aria-hidden="true">Lucy Smith</span>
+                        </dd>
+                        <dd class="nhsuk-summary-list__actions">
+                         <a id="linkChangeChild" href="selectchild">
+                            <span>Change</span> 
+                          </a>
+                        </dd>
+                  </dl> -->
+                </div>
+              </div>
+               
+              
+        
+            <div class="nhsuk-form-group">
+              <a href="providerinfo" class="nhsuk-button nhsuk-button--secondary" role="button">Add another provider</a>
+
+
+                <div class="nhsuk-form-group">
+                    <a href="summary" class="nhsuk-button" role="button" id="continueBtn">Continue</a>
+                  </div>
+
+                  <p><a class="nhsuk-link" id="cancelLink" href="quarterly_intro">Cancel</a></p>
+    </div>
+</div>
+</div>
+{% endblock %}

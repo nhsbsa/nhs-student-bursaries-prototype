@@ -1,0 +1,145 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} What is your residency
+status? {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <div class="nhsuk-back-link">
+      <a
+        class="nhsuk-back-link__link"
+        href="\eligibility\branching\studentloan"
+        id="back"
+      >
+        <svg
+          class="nhsuk-icon nhsuk-icon__chevron-left"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"
+          ></path>
+        </svg>
+        Go back</a
+      >
+    </div>
+
+    <h1 class="nhsuk-heading-large" id="residencyStatus">
+      <span class="nhsuk-caption-l">Your eligibility</span> What is your residency
+      status?
+    </h1>
+
+      <fieldset class="nhsuk-fieldset">
+        <legend
+          class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l"
+        ></legend>
+
+        <div class="nhsuk-radios">
+          <div class="nhsuk-form-group">
+            <div class="nhsuk-radios__item">
+              <input
+                class="nhsuk-radios__input"
+                id="uk-national"
+                name="residency"
+                type="radio"
+                value="uk-national"
+              />
+              <label class="nhsuk-label nhsuk-radios__label" for="uk-national">
+                UK National
+              </label>
+              <div
+                class="nhsuk-hint nhsuk-checkboxes__hint"
+                id="student-loan-item-hint"
+              >
+                You’re a UK national if you have a UK passport or are eligible
+                to apply for one.
+              </div>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input
+                class="nhsuk-radios__input"
+                id="eu-national"
+                name="residency"
+                type="radio"
+                value="eu-national"
+              />
+              <label class="nhsuk-label nhsuk-radios__label" for="eu-national">
+                EU national
+              </label>
+              <div
+                class="nhsuk-hint nhsuk-checkboxes__hint"
+                id="student-loan-item-hint"
+              >
+                You’re a national of a European Union member state or have been
+                granted settled status under the EU settlement scheme.
+              </div>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input
+                class="nhsuk-radios__input"
+                id="eea-swiss-national"
+                name="residency"
+                type="radio"
+                value="eea-swiss-national"
+              />
+              <label
+                class="nhsuk-label nhsuk-radios__label"
+                for="eea-swiss-national"
+              >
+                EEA or Swiss national
+              </label>
+              <div
+                class="nhsuk-hint nhsuk-checkboxes__hint"
+                id="student-loan-item-hint"
+              >
+                You are, or a family member is, a European Economic Area
+                national or Swiss national. I am working, has worked, or is
+                looking for work in the UK.
+              </div>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input
+                class="nhsuk-radios__input"
+                id="none-above"
+                name="residency"
+                type="radio"
+                value="none-above"
+              />
+              <label class="nhsuk-label nhsuk-radios__label" for="none-above">
+                None of the above
+              </label>
+            </div>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <a href="uk-resident-3years" class="nhsuk-button" role="button"
+              id="continueBtn">Continue</a
+            >
+          </div>
+        </div>
+      </fieldset>
+  </div>
+</div>
+
+{% endblock %}

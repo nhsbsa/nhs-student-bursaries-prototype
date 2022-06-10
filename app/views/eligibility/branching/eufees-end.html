@@ -1,0 +1,22 @@
+{% extends "layout.html" %} {% set mainClasses = 'nhsuk-main-wrapper--s' %} {%
+block pageTitle %} {{ serviceName }} prototypes | This is the end of your journey {% endblock %} {% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <h1 class="nhsuk-app-heading" id="end">This is the end of your journey</h1>
+
+    <p>Thank you for submitting your evidence.</p>
+    <p>Explanation as to why the journey ends here.</p>
+
+    <p>
+      We will contact you with more information once your evidence has been
+      assessed.
+    </p>
+
+    <a class="nhsuk-button" type="submit" id="return" href="#"
+            >Return to dashboard</a
+          >
+  </div>
+  
+</div>
+{% endblock %}

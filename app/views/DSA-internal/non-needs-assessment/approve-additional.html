@@ -1,0 +1,113 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Needs assessment email {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %}
+<a class="nhsuk-skip-link" href="#maincontent" id="skipLink"
+  >Skip to main content</a
+>
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-back-link">
+  <a class="nhsuk-back-link__link" href="application-open">
+    <svg
+      class="nhsuk-icon nhsuk-icon__chevron-left"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <path
+        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"
+      ></path>
+    </svg>
+    Go back</a
+  >
+</div>
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <!-- Change the page title here -->
+    <span class="nhsuk-caption-l">SRN000020301 - Liam Bloggs</span>
+    <h1 class="app-heading-l" id="declaration">Needs assessment email</h1>
+    <p>
+      The following email will be sent to the student on completion of this
+      stage of the application:
+    </p>
+    <div class="nhsuk-form-group">
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <p>Dear Liam Bloggs,</p>
+          <p>
+            I can confirm the NHS will fund the cost of a DSAs study needs
+            assessment to determine the level of support you will need to
+            undertake your course.
+          </p>
+          <h2 class="nhsuk-heading-s">Arranging a Needs Assessment</h2>
+          <p>
+            These can be carried out by a DSA-QAG registered or accredited
+            assessment centre. An up-to-date list of accredited assessment
+            centres can be found at the following link:
+            <a href="http://www.dsa-qag.org.uk">DSA-QAG</a>.
+          </p>
+
+          <h2 class="nhsuk-heading-s">Uploading the Report</h2>
+          <p>
+            On completion of the study needs assessment, a copy of your
+            assessment report should be uploaded to your portal.
+          </p>
+
+          <h2 class="nhsuk-heading-s">The Needs Assessment fee</h2>
+          <p>
+            Funding theough DSAs usually cover the cost of
+            <strong>one</strong> full DSA study needs assessment. There may be
+            circumstances where we agree another assessment is necessary.
+          </p>
+          <p>
+            The fee for the Needs Assessment will be met through the DSAs on
+            your behalf.
+          </p>
+
+          <h2 class="nhsuk-heading-s">Other information</h2>
+
+          <p>
+            If you have any queries about your DSA study needs assessment, the
+            Disability Officer at your university will be able to assist you.
+          </p>
+          <p>
+            If you need to contact us about your DSA application, our student
+            helpline telephone number is <strong>0300 330 1345</strong>. If you
+            prefer to email us, the address is
+            <a href="">nhsbsa.sbaccount@nhs.net</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="nhsuk-form-group">
+      <a
+        href="approve-na-declaration"
+        class="nhsuk-button"
+        type="Submit"
+        role="button"
+        id="submit"
+        >Approve and send email</a
+      >
+    </div>
+  </div>
+</div>
+
+{% endblock %}

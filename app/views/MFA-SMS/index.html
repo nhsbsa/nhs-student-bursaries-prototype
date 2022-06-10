@@ -1,0 +1,421 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+{{ serviceName }} prototypes | Multi-factor authentication - SMS
+{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %}
+
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <div class="nhsuk-back-link">
+      <a class="nhsuk-back-link__link" href="/">
+          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+              aria-hidden="true">
+              <path
+                  d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+              </path>
+          </svg>
+          Go back</a>
+  </div>
+    <!-- Change the page title here -->
+    <h1 class="app-heading-l" id="ppeHEIH1">
+      <span class="nhsuk-caption-l">NHSBSA Prototype</span>
+      Multi-factor authentication - SMS
+    </h1>
+
+    <hr aria-hidden="true">
+
+  <h2 class="nhsuk-heading-m">
+   MFA (SMS) v2
+    <strong class="task-completed status-shortlisted" style="background-color: #330072; float: right;">
+      MVP
+    </strong>
+    <span class="nhsuk-caption-m nhsuk-caption--bottom">Last updated: 6 October 2021</span>
+  </h2>
+
+  <p>The content has been updated by the business and final run through given.</p>
+
+    <hr aria-hidden="true">
+
+    <h2 class="nhsuk-heading-m">
+      MFA (SMS) v2
+       <strong class="task-completed status-shortlisted" style="background-color: #330072; float: right;">
+         Business draft
+       </strong>
+       <span class="nhsuk-caption-m nhsuk-caption--bottom">Last updated: 8 July 2021</span>
+     </h2>
+
+  <p>Updates to the registration journey based on a prototype review held by the service design team. 
+    This will still remain in business draft for the time being.
+  </p>
+
+    <hr aria-hidden="true">
+
+    <h2 class="nhsuk-heading-m">
+      MFA (SMS) v2
+       <strong class="task-completed status-shortlisted" style="background-color: #330072; float: right;">
+         Business draft
+       </strong>
+       <span class="nhsuk-caption-m nhsuk-caption--bottom">Last updated: 30 June 2021</span>
+     </h2>
+
+  <p>Another demo was shown today and questions were raised around whether it could be made mandatory
+    for students to opt in. The prototype reflects what has been agreed so far so is being placed
+    back in business draft for the time being until we have the answer to that question. 
+  </p>
+
+  <hr aria-hidden="true">
+
+  <h2 class="nhsuk-heading-m">
+   MFA (SMS) v2
+    <strong class="task-completed status-shortlisted" style="background-color: #330072; float: right;">
+      Prototype dev
+    </strong>
+    <span class="nhsuk-caption-m nhsuk-caption--bottom">Last updated: 22 June 2021</span>
+  </h2>
+
+  <p>A confirmation screen was added based on feedback to make it clear to students that they have
+    successfully entered their One-Time Password (OTP).</p>
+
+    <hr aria-hidden="true">
+
+    <h2 class="nhsuk-heading-m">
+     MFA (SMS) v1
+      <strong class="task-completed status-shortlisted" style="background-color: #330072; float: right;">
+        Prototype dev
+      </strong>
+      <span class="nhsuk-caption-m nhsuk-caption--bottom">Last updated: 17 June 2021</span>
+    </h2>
+
+    <p>An initial prototype was developed for the SMS option of the multi-factor authentication. 
+      To be demo'd to the team for feedback and suggestions.</p>
+
+    <p>User research will explore:</p>
+    <ul class="nhsuk-list nhsuk-list--bullet">
+      <li>Users expectations for MFA from BSA</li>
+      <li>Users' preference for MFA option</li>
+      <li>HEI user thoughts on using personal phones for receiving SMS</li>
+    </ul>
+
+   
+
+   
+
+    <!-- Add your content here -->
+    <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+
+    <div class="nhsuk-grid-row">
+
+        <details class="nhsuk-details nhsuk-expander" nhsuk-polyfilled="true" id="nhsuk-details1">
+       
+        <summary class="nhsuk-details__summary" role="button" aria-controls="nhsuk-details__text1">
+         
+          <span class="nhsuk-details__summary-text">
+            User registration journey
+          </span>
+        </summary>
+        
+        <div class="nhsuk-details__text" id="nhsuk-details__text1">
+
+        <table class="nhsuk-table">
+            <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">
+              Registration journey pages
+            </caption>
+            <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                <th role="columnheader" class="" scope="col">
+                  Journey point
+                </th>
+                <th role="columnheader" class="" scope="col">Link</th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Landing screen</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/MFA-SMS/registration/landing" id="viewLanding">View
+                    <span class="nhsuk-u-visually-hidden"> landing screen page</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Contact details</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/MFA-SMS/registration/contact" id="viewContact">View
+                    <span class="nhsuk-u-visually-hidden"> contact details page</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Contact preferences</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/MFA-SMS/registration/contactpref" id="viewContactPref">View
+                    <span class="nhsuk-u-visually-hidden"> contact preferences page</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Name</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/MFA-SMS/registration/name" id="viewName">View
+                    <span class="nhsuk-u-visually-hidden"> name page</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Date of birth</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/MFA-SMS/registration/dob" id="viewDOB">View
+                    <span class="nhsuk-u-visually-hidden"> date of birth page</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Postcode lookup</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/MFA-SMS/registration/postcode" id="viewPostcodeLookup">View
+                    <span class="nhsuk-u-visually-hidden"> postcode lookup page</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Enter address manually</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/MFA-SMS/registration/address" id="viewAddress">View
+                    <span class="nhsuk-u-visually-hidden"> enter address manually page</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Account</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/MFA-SMS/registration/account" id="viewAccount">View
+                    <span class="nhsuk-u-visually-hidden"> account page</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Student ID</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/MFA-SMS/registration/student-id" id="viewStudentID">View
+                    <span class="nhsuk-u-visually-hidden"> student id page</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Summary</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/MFA-SMS/registration/summary" id="viewSummary">View
+                    <span class="nhsuk-u-visually-hidden"> summary page</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Activate account</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/MFA-SMS/registration/done" id="viewActivateAccount">View
+                    <span class="nhsuk-u-visually-hidden"> activate account page</span></a>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </details>
+      
+      <details class="nhsuk-details nhsuk-expander" nhsuk-polyfilled="true" id="nhsuk-details0">
+       
+        <summary class="nhsuk-details__summary" role="button" aria-controls="nhsuk-details__text0">
+         
+          <span class="nhsuk-details__summary-text">
+            MFA - first time sign in
+          </span>
+        </summary>
+        
+        <div class="nhsuk-details__text" id="nhsuk-details__text0">
+
+        <table class="nhsuk-table">
+            <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">
+              MFA pages
+            </caption>
+            <p>MFA journey for students on their first time sign in.</p>
+            <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                <th role="columnheader" class="" scope="col">
+                  Journey point
+                </th>
+                <th role="columnheader" class="" scope="col">Link</th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Sign in</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/MFA-SMS/signin-initial/signin" id="viewSignIn">View
+                    <span class="nhsuk-u-visually-hidden"> sign in page</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Two-step verification</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/MFA-SMS/signin-initial/2SV" id="viewTwoStepVerification">View
+                    <span class="nhsuk-u-visually-hidden"> twp-step verification page</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Confirm your number</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/MFA-SMS/signin-initial/confirm" id="viewConfirmYourNumber">View
+                    <span class="nhsuk-u-visually-hidden"> confirm your number page</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Enter your verification code</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/MFA-SMS/signin-initial/verify" id="viewVerificationCode">View
+                    <span class="nhsuk-u-visually-hidden"> enter your verification code page</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Confirmation</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/MFA-SMS/signin-initial/confirmation" id="viewConfirmation">View
+                    <span class="nhsuk-u-visually-hidden"> confirmation page</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Dashboard</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/MFA-SMS/dashboard" id="viewDashboard">View
+                    <span class="nhsuk-u-visually-hidden"> dashboard page</span></a>
+                </td>
+              </tr>
+            </tbody>
+        </table>
+      </div>
+    </details>
+
+    <details class="nhsuk-details nhsuk-expander" nhsuk-polyfilled="true" id="nhsuk-details0">
+       
+      <summary class="nhsuk-details__summary" role="button" aria-controls="nhsuk-details__text0">
+       
+        <span class="nhsuk-details__summary-text">
+          MFA - subsequent sign ins
+        </span>
+      </summary>
+      
+      <div class="nhsuk-details__text" id="nhsuk-details__text0">
+
+      <table class="nhsuk-table">
+          <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">
+            MFA pages
+          </caption>
+          <p>MFA journey for students on subsequent sign ins.</p>
+          <thead role="rowgroup" class="nhsuk-table__head">
+            <tr role="row">
+              <th role="columnheader" class="" scope="col">
+                Journey point
+              </th>
+              <th role="columnheader" class="" scope="col">Link</th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Sign in</td>
+              <td class="nhsuk-table__cell">
+                <a href="/MFA-SMS/signin-subsequent/signin" id="viewSignIn">View
+                  <span class="nhsuk-u-visually-hidden"> sign in page</span></a>
+              </td>
+            </tr>
+
+            <tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Enter your verification code</td>
+              <td class="nhsuk-table__cell">
+                <a href="/MFA-SMS/signin-subsequent/verify" id="viewVerificationCode">View
+                  <span class="nhsuk-u-visually-hidden"> enter your verification code page</span></a>
+              </td>
+            </tr>
+
+            <tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Dashboard</td>
+              <td class="nhsuk-table__cell">
+                <a href="/MFA-SMS/dashboard" id="viewDashboard">View
+                  <span class="nhsuk-u-visually-hidden"> dashboard page</span></a>
+              </td>
+            </tr>
+
+          </tbody>
+      </table>
+    </div>
+  </details>
+
+  <details class="nhsuk-details nhsuk-expander" nhsuk-polyfilled="true" id="nhsuk-details0">
+       
+    <summary class="nhsuk-details__summary" role="button" aria-controls="nhsuk-details__text0">
+     
+      <span class="nhsuk-details__summary-text">
+        Text message
+      </span>
+    </summary>
+    
+    <div class="nhsuk-details__text" id="nhsuk-details__text0">
+
+    <table class="nhsuk-table">
+        <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">
+          MFA pages
+        </caption>
+        <p>This is the text message that will be sent to the student with their
+          one-time password.
+        </p>
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Journey point
+            </th>
+            <th role="columnheader" class="" scope="col">Link</th>
+          </tr>
+        </thead>
+
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Text message</td>
+            <td class="nhsuk-table__cell">
+              <a href="/MFA-SMS/text" id="viewTextMessage">View
+                <span class="nhsuk-u-visually-hidden"> text message page</span></a>
+            </td>
+          </tr>
+
+        </tbody>
+    </table>
+  </div>
+</details>
+
+
+
+    <!-- End of content -->
+
+  </div>
+</div>
+{% endblock %}

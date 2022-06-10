@@ -1,0 +1,377 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Eligibility journey {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <div class="nhsuk-back-link">
+      <a class="nhsuk-back-link__link" href="/">
+        <svg
+          class="nhsuk-icon nhsuk-icon__chevron-left"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"
+          ></path>
+        </svg>
+        Go back</a
+      >
+    </div>
+    <!-- Change the page title here -->
+    <h1 class="app-heading-l" id="userRegH1">
+      <span class="nhsuk-caption-l">NHSBSA Prototype</span>
+      Eligibility journey
+    </h1>
+
+    <hr aria-hidden="true" />
+
+    <h2 class="nhsuk-heading-m">
+      Eligibility
+      <strong
+        class="task-completed status-shortlisted"
+        style="background-color: #330072; float: right"
+      >
+        MVP Ready
+      </strong>
+      <span class="nhsuk-caption-m nhsuk-caption--bottom"
+        >Last updated: 28 September 2021</span
+      >
+    </h2>
+
+    <p>The following have been completed:</p>
+
+    <ul class="nhsuk-list nhsuk-list--bullet">
+      <li>accessibility testing throughout</li>
+      <li>added SFE number if the student has had a loan</li>
+      <li>evidence upload screens are updated</li>
+      <li>save and come back later has been added to evidence/summary</li>
+    </ul>
+
+    <p>Most recent updates:</p>
+    <ul class="nhsuk-list nhsuk-list--bullet">
+      <li>
+        'Cancel and return to dashboard' has been added on the summary screens
+      </li>
+      <li>Back button added on the intro screen</li>
+    </ul>
+
+    <div class="nhsuk-expander-group">
+      <details
+        class="nhsuk-details nhsuk-expander"
+        nhsuk-polyfilled="true"
+        id="nhsuk-details0"
+      >
+        <summary
+          class="nhsuk-details__summary"
+          role="button"
+          aria-controls="nhsuk-details__text0"
+          tabindex="0"
+        >
+          <span class="nhsuk-details__summary-text">
+            Student has applied for student loan
+          </span>
+        </summary>
+        <div class="nhsuk-details__text" id="nhsuk-details__text0">
+          <table class="nhsuk-table">
+            <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">
+              Student has applied for student loan
+            </caption>
+            <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                <th role="columnheader" class="" scope="col">Journey point</th>
+                <th role="columnheader" class="" scope="col">Link</th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Intro</td>
+                <td class="nhsuk-table__cell">
+                  <a href="intro"
+                    >View
+                    <span class="nhsuk-u-visually-hidden"> intro page</span></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Applied for student loan?</td>
+                <td class="nhsuk-table__cell">
+                  <a href="studentloan"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      student loan question</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Provided by student finance?</td>
+                <td class="nhsuk-table__cell">
+                  <a href="studentloan-yes"
+                    >View
+                    <span class="nhsuk-u-visually-hidden"> SFE page</span></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Not eligible</td>
+                <td class="nhsuk-table__cell">
+                  <a href="studentfinance-None"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      not eligible page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Type of loan</td>
+                <td class="nhsuk-table__cell">
+                  <a href="studentfinance-SFE"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      type of loan page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">SFE number</td>
+                <td class="nhsuk-table__cell">
+                  <a href="sfe-number"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      sfe number page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Summary</td>
+                <td class="nhsuk-table__cell">
+                  <a href="summary-yes"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      summary page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Upload your evidence</td>
+                <td class="nhsuk-table__cell">
+                  <a href="evidence-uknational"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      upload your evidence page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Complete</td>
+                <td class="nhsuk-table__cell">
+                  <a href="complete"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      Complete page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
+    </div>
+
+    <div class="nhsuk-expander-group">
+      <details
+        class="nhsuk-details nhsuk-expander"
+        nhsuk-polyfilled="true"
+        id="nhsuk-detailss0"
+      >
+        <summary
+          class="nhsuk-details__summary"
+          role="button"
+          aria-controls="nhsuk-details__textt0"
+          tabindex="0"
+        >
+          <span class="nhsuk-details__summary-text">
+            Student hasn't applied for student loan
+          </span>
+        </summary>
+        <div class="nhsuk-details__text" id="nhsuk-details__textt0">
+          <table class="nhsuk-table">
+            <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">
+              Student Loan Questions
+            </caption>
+            <p>For Swiss and EEA students we will ask 5 years of history.</p>
+            <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                <th role="columnheader" class="" scope="col">Journey point</th>
+                <th role="columnheader" class="" scope="col">Link</th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Intro</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/eligibility/branching/intro"
+                    >View
+                    <span class="nhsuk-u-visually-hidden"> intro page</span></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Applied for Student Loan?</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/eligibility/branching/studentloan"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      applied for student loan page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Residency status</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/eligibility/branching/studentloan-no"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      residency status page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Living in the UK for 3 years</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/eligibility/branching/uk-resident-3years"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      Living in the UK page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Country lived in</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/eligibility/branching/add-residency"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      Country lived in page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Why did you live here?</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/eligibility/branching/add-residency-reason"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      Why did you live here page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">When did you live here to?</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/eligibility/branching/residency-dates"
+                    >View
+                    <span class="nhsuk-u-visually-hidden"
+                      >When did you live here to date</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Residency details</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/eligibility/branching/residency-table"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      Residency details</span
+                    ></a
+                  >
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Summary</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/eligibility/branching/summary-uk"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      Summary page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">
+                  Summary (has lived in the UK for 3 years)
+                </td>
+                <td class="nhsuk-table__cell">
+                  <a href="/eligibility/branching/summary-uk3years"
+                    >View
+                    <span class="nhsuk-u-visually-hidden"
+                      >Summary (Has lived in the UK for 3 years) page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Evidence upload</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/eligibility/branching/evidence-uknational"
+                    >View
+                    <span class="nhsuk-u-visually-hidden"
+                      >evidence upload page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Complete</td>
+                <td class="nhsuk-table__cell">
+                  <a href="complete"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      Complete page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

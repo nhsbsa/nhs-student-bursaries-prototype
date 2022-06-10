@@ -1,0 +1,51 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} You have declared that you have no income {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <!-- Change the page title here -->
+    <h1 class="nhsuk-app-heading" id="studentIncomeH1">
+      <span class="nhsuk-caption-l">Your income</span>
+      You have declared that you have no income
+    </h1>
+
+    <p>
+      You have declared that you have no income, we need to know the reason
+      behind this.
+    </p>
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-label" for="no-income">
+        Can you provide more detail?
+      </label>
+      <textarea
+        class="nhsuk-textarea"
+        id="no-income"
+        name="no-income"
+        rows="5"
+      ></textarea>
+    </div>
+
+    <button class="nhsuk-button" type="submit">Accept and continue</button>
+  </div>
+</div>
+
+{% endblock %}

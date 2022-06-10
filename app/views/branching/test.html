@@ -1,0 +1,106 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+Student Bursaries prototype
+{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <!-- Change the page title here -->
+    <h1 class="app-heading-l">
+      <span class="nhsuk-caption-l">NHSBSA prototype</span>
+      {{ serviceName }} prototypes
+    </h1>
+
+    <!-- Add your content here -->
+    <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+
+    <p class="nhsuk-lede-text">
+      These pages are prototype designs and are subject to change
+    </p>
+    
+    <form action="/branching/test" method="post">
+
+      {% call fieldset({
+        legend: {
+          text: "What is your employment status?",
+          classes: "nhsuk-fieldset__legend--l",
+          isPageHeading: true
+        }
+      }) %}
+
+      {{ checkboxes({
+        "idPrefix": "employment-status",
+        "name": "employment-status",
+        "items": [
+          {
+            "value": "employed",
+            "text": "Employed"
+          },
+          {
+            "value": "self-employed",
+            "text": "Self-employed"
+          },
+          {
+            "value": "unemployed",
+            "text": "Unemployed"
+          },
+          {
+            "value": "retired",
+            "text": "Retired"
+          },
+          {
+            "value": "full-time-student",
+            "text": "Full time student"
+          },
+          {
+            "value": "incapacity-benefit",
+            "text": "Incapacity benefit"
+          },
+          {
+            "value": "income-support",
+            "text": "Income Support"
+          },
+          {
+            "value": "employment-support-allowance",
+            "text": "Employment Support Allowance"
+          },
+          {
+            "value": "other",
+            "text": "Other"
+          }
+        ]
+      }) }}
+
+      {% endcall %}
+
+      {{ button({
+        "text": "Continue"
+      }) }}
+
+    </form>
+
+    <!-- End of content -->
+
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,84 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}{{ serviceName }} prototypes | Rejected forms {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block header %} {{ header({ "service": { "name": "Bursary", "href": "/"
+}, "showNav": "true", "showSearch": "false", "primaryLinks": [ { "url" : "submittedforms",
+"label" : "Submissions" },  { "url" : "search", "label" : "Student search" }, { "url" : "#", "label" : "Change password" }, { "url" : "index", "label" : "Log out" } ] })
+}} {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<!-- Breadcrumb -->
+<a class="nhsuk-skip-link" href="#maincontent">Skip to main content</a>
+
+{% endblock %}
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-width-container">
+    <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full">
+
+            <h1 class="app-page-heading">
+                Rejected forms
+            </h1>
+    
+            <p>List of rejected forms</p>
+
+            <table role="table" class="nhsuk-table-responsive">
+                <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">rejected forms table</caption>
+                <thead role="rowgroup" class="nhsuk-table__head">
+                    <tr role="row">
+                        <th role="columnheader" class="" scope="col">
+                            Student name
+                        </th>
+                        <th role="columnheader" class="" scope="col">
+                            Student number
+                        </th>
+                        <th role="columnheader" class="" scope="col">
+                            Course
+                        </th>
+                       <!--  <th role="columnheader" class="" scope="col">
+                            Claim
+                        </th> -->
+                        <th role="columnheader" class="" scope="col">
+                            Action
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="nhsuk-table__body">
+                    <tr role="row" class="nhsuk-table__row">
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Student name </span>Derek Bloggs
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Student number </span>001
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Course </span>Dental Therapy
+                      </td>
+                     <!--  <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Claim </span>Travel
+                        </td> -->
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Action </span><a href="#">View</a>
+                        </td>
+                    </tr>
+                  </tbody>
+   
+              </table>
+     
+                    {% endblock %}

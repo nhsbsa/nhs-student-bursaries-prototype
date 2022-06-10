@@ -1,0 +1,137 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+Check your details
+{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<!--<div class="nhsuk-back-link">
+  <a class="nhsuk-back-link__link" href="#">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+      aria-hidden="true">
+      <path
+        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+      </path>
+    </svg>
+    Go back</a>
+</div>
+</div> -->
+
+<form id="registrationForm" name="registrationForm" action="/register/done" method="post">
+    <input type="hidden" name="_csrf" value="7f540de9-8add-4331-b4d9-37e6c1eaf7b4" />
+    <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full">
+            <h1 class="nhsuk-app-heading" id="checkYourDetailsH1">Check your details</h1>
+
+            <dl class="nhsuk-summary-list">
+                <dl class="nhsuk-summary-list">
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">Will any of your children be receiving registered childcare?</dt>
+                        <dd class="nhsuk-summary-list__value" id="name">Yes</dd>
+                        <dd class="nhsuk-summary-list__actions">
+                            <a id="linkChangeName" href="registered-childcare"><span>Change</span></a>
+                        </dd>
+                    </div>
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">Will you, your spouse, civil partner, or partner be claiming any benefits?</dt>
+                    <dd class="nhsuk-summary-list__value" id="name">No</dd>
+                    <dd class="nhsuk-summary-list__actions">
+                        <a id="linkChangeName" href="tax-credit"><span>Change</span></a>
+                    </dd>
+                </div>
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">Does this provider have parental responsibility of your child?</dt>
+                    <dd class="nhsuk-summary-list__value" id="name">No</dd>
+                    <dd class="nhsuk-summary-list__actions">
+                        <a id="linkChangeName" href="tax-credit"><span>Change</span></a>
+                    </dd>
+                </div>
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">Provider details</dt>
+                    <dd class="nhsuk-summary-list__value" id="name">Daves Nursery<br>
+                        Scottish Childminding Association <br>
+                        Ofsted registration number 21782822
+                    </dd>
+                    <dd class="nhsuk-summary-list__actions">
+                        <a id="linkChangeName" href="childcare-provider"><span>Change</span></a>
+                    </dd>
+                </div>
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">Address</dt>
+                    <dd class="nhsuk-summary-list__value">
+                        <span id="nameOrNumber">Scottish Childminding Association</span><br />
+                        <span id="address1">Argyll Court</span><br />
+                        <span id="address2">Castle Business Park</span>
+                        <br />
+                        <span id="town">Stirling</span><br />
+                        <span id="postcode">FK9 4TY</span><br />
+                    </dd>
+                    <dd class="nhsuk-summary-list__actions">
+                        <a id="linkChangeAddress" href="childcare-provider-details">
+                            <span>Change</span>
+                        </a>
+                    </dd>
+                </div>
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">Contact details</dt>
+                    <dd class="nhsuk-summary-list__value">
+                        <span aria-hidden="true">scottishchildminding@example.com</span><br>
+                        <span aria-hidden="true">077777777777</span>
+                    </dd>
+                    <dd class="nhsuk-summary-list__actions">
+                        <a id="linkChangeNumber" href="childcare-provider-details1">
+                            <span>Change</span>
+                        </a>
+                    </dd>
+                </div>
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">Children at this provider</dt>
+                    <dd class="nhsuk-summary-list__value">
+                        <span aria-hidden="true">Derek Bloggs</span><br>
+                        <span aria-hidden="true">Brian Bloggs</span>
+                    </dd>
+                    <dd class="nhsuk-summary-list__actions">
+                        <a id="linkChangeNumber" href="children-provider">
+                            <span>Change</span>
+                        </a>
+                    </dd>
+            </dl>
+        </div>
+    </div>
+
+    <h2>Confirm details</h2>
+    <p>
+        By clicking accept you’re confirming that the details you’re providing are
+        correct.
+    </p>
+
+    <div class="nhsuk-form-group">
+        <div class="nhsuk-form-group">
+            <a class="nhsuk-button" type="submit" id="next" href="annual_estimatecostsintro" role="button">
+                Accept and continue
+            </a>
+        </div>
+    </div>
+
+</form>
+
+{% endblock %}

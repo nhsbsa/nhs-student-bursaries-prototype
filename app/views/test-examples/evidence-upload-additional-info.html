@@ -1,0 +1,141 @@
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Upload your evidence {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %}
+<a class="nhsuk-skip-link" href="#maincontent">Skip to main content</a>
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-back-link">
+  <a class="nhsuk-back-link__link" href="evidence-upload-additional">
+    <svg
+      class="nhsuk-icon nhsuk-icon__chevron-left"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <path
+        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"
+      ></path>
+    </svg>
+    Go back</a
+  >
+</div>
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <fieldset class="nhsuk-fieldset">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-app-heading" id="uploadEvidenceH1">Your evidence</h1>
+      </legend>
+    </fieldset>
+  </div>
+
+  <div class="nhsuk-grid-column-full">
+    <div class="nhsuk-form-group">
+      <h2 class="nhsuk-heading-m">Uploaded files</h2>
+      <div class="nhsuk-card nhsuk-grid-column-full">
+        <div class="nhsuk-card__content">
+          <dl class="nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Evidence Y</dt>
+              <dd class="nhsuk-summary-list__value">Uploaded</dd>
+
+              <dd class="nhsuk-summary-list__actions">
+                <a href="#">
+                  View<span class="nhsuk-u-visually-hidden">
+                    view document</span
+                  >
+                </a>
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="nhsuk-grid-column-two-thirds">
+    <div class="nhsuk-form-group">
+      <fieldset class="nhsuk-fieldset" aria-describedby="additional-hint">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h2 class="nhsuk-fieldset__heading">
+            Would you like to provide additional comments?
+          </h2>
+        </legend>
+
+        <div class="nhsuk-hint" id="additional-hint">
+          Provide additional comments if you feel your evidence needs more
+          context.
+        </div>
+
+        <div class="nhsuk-radios nhsuk-radios--conditional">
+          <div class="nhsuk-radios__item">
+            <input
+              class="nhsuk-radios__input"
+              id="additional-yes"
+              name="additional"
+              type="radio"
+              value="email"
+              aria-controls="conditional-additional-yes"
+              aria-expanded="false"
+            />
+            <label class="nhsuk-label nhsuk-radios__label" for="additional-yes">
+              Yes
+            </label>
+          </div>
+
+          <div
+            class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden"
+            id="conditional-additional-yes"
+          >
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="additional-info">
+                Additional comments
+              </label>
+              <textarea
+                class="nhsuk-textarea"
+                rows="5"
+                id="additional-info"
+                name="additional-yes"
+                type="text"
+              >
+              </textarea>
+            </div>
+          </div>
+
+          <div class="nhsuk-radios__item">
+            <input
+              class="nhsuk-radios__input"
+              id="additional-no"
+              name="additional"
+              type="radio"
+              value="no"
+              aria-controls="conditional-additional"
+              aria-expanded="false"
+            />
+            <label class="nhsuk-label nhsuk-radios__label" for="additional-no">
+              No
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    <div class="nhsuk-form-group">
+      <a href="" class="nhsuk-button" role="button">Accept and submit</a>
+    </div>
+    <a href="evidence-upload-additional-info" id="saveAndComeBackLater"
+      >Save and come back later</a
+    >
+  </div>
+</div>
+{% endblock %}

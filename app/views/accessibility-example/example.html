@@ -1,0 +1,85 @@
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+{% block header %} {{ header({ "service": { "name": "Bursary", "href": "/" },
+"showNav": "false", "showSearch": "false" }) }} {% endblock %}
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}Accessibility example{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %}
+<a class="nhsuk-skip-link" href="#maincontent">Skip to main content</a>
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <h1 class="app-page-heading">
+      Accessibility example
+    </h1>
+
+
+  <fieldset class="nhsuk-fieldset" >
+    <legend class="nhsuk-fieldset__legend nhsuk-u-visually-hidden">
+        e.g.
+    </legend> 
+
+    <p class="nhsuk-hint">Select all that apply to you</p>
+    <div class="nhsuk-checkboxes">
+
+        <div class="nhsuk-checkboxes__item">
+            <input class="nhsuk-checkboxes__input" id="option-1" name="child" type="checkbox"
+                value="Option 1">
+            <label class="nhsuk-label nhsuk-checkboxes__label" for="option-1" aria-describedby="option-1">
+                Option 1
+            </label>
+        </div>
+
+        <div class="nhsuk-checkboxes__item">
+            <input class="nhsuk-checkboxes__input" id="option2" name="income" type="checkbox"
+                value="Option 2">
+            <label class="nhsuk-label nhsuk-checkboxes__label" for="option2">
+                Option 2
+            </label>
+        </div>
+
+        <div class="nhsuk-checkboxes__item">
+            <input class="nhsuk-checkboxes__input" id="option2" name="income" type="checkbox"
+                value="Option 3">
+            <label class="nhsuk-label nhsuk-checkboxes__label" for="option2">
+               Option 3
+            </label>
+        </div>
+
+        <div class="nhsuk-checkboxes__item">
+            <input class="nhsuk-checkboxes__input" id="Option4" name="income" type="checkbox"
+                value="Option 4">
+            <label class="nhsuk-label nhsuk-checkboxes__label" for="Option4">
+                Option 4
+            </label>
+        </div>
+
+      
+
+        <p>or</p>
+
+        <div class="nhsuk-checkboxes__item">
+            <input class="nhsuk-checkboxes__input" id="no" name="income" type="checkbox"
+                value="No, I do not get paid any of these">
+            <label class="nhsuk-label nhsuk-checkboxes__label" for="no">
+                No, I <b>do not</b> get paid any of these
+            </label>
+    </div>
+ <br>
+    <a href="benefits" class="nhsuk-button" role="button" id="continue">Continue</a>
+  </div>
+</div>
+{% endblock %}

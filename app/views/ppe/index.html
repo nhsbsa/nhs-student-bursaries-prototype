@@ -1,0 +1,1365 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Practice Placement Expenses {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<main class="nhsuk-main-wrapper" id="content" role="main">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <!-- Change the page title here -->
+      <h1 class="nhsuk-app-heading" id="ppeDetailsH1">
+        Practice Placement Expenses
+      </h1>
+
+      <h2 class="nhsuk-heading-m">
+        Practice Placement Expenses - V2
+        <strong
+          class="task-completed status-shortlisted"
+          style="background-color: #330072; float: right"
+        >
+          In progress
+        </strong>
+        <span class="nhsuk-caption-m nhsuk-caption--bottom"
+          >Last updated: 14 July 2021</span
+        >
+      </h2>
+
+      <p>
+        This journey is for the students who would like to claim Practice
+        Placement Expenses. UR has been done with the students to understand
+        their needs. More UR is needed to see if the prototype meets the
+        students needs. <br />
+      </p>
+      <p>Work is still needed on the following:</p>
+      <ul>
+        <li>
+          The student can claim on journey home if they are staying in different
+          accommodation for placement
+        </li>
+        <li>What do longer claims look like?</li>
+        <li>Consider how students provide additional costs</li>
+      </ul>
+
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full">
+          <div class="nhsuk-expander-group">
+            <details
+              class="nhsuk-details nhsuk-expander"
+              nhsuk-polyfilled="true"
+              id="nhsuk-details0"
+            >
+              <summary
+                class="nhsuk-details__summary"
+                role="button"
+                aria-controls="nhsuk-details__text0"
+                tabindex="0"
+                aria-expanded="false"
+              >
+                <span class="nhsuk-details__summary-text"> Intro </span>
+              </summary>
+
+              <div
+                class="nhsuk-details__text"
+                id="nhsuk-details__text0"
+                aria-hidden="true"
+              >
+                <table class="nhsuk-table">
+                  <caption
+                    class="nhsuk-table__caption nhsuk-u-visually-hidden"
+                  ></caption>
+                  <thead role="rowgroup" class="nhsuk-table__head">
+                    <tr role="row">
+                      <th role="columnheader" class="" scope="col">
+                        Journey point
+                      </th>
+                      <th role="columnheader" class="" scope="col">Link</th>
+                    </tr>
+                  </thead>
+                  <tbody class="nhsuk-table__body">
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Academic year</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/intro/academic-year"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">
+                        Has your term time address changed?
+                      </td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/intro/address-change"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Term time address</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/intro/term-time-address"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">
+                        Do you pay to live at this address?
+                      </td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/intro/student-accommodation"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">
+                        Do you live at your parents house?
+                      </td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/intro/parents"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </details>
+          </div>
+
+          <div class="nhsuk-expander-group">
+            <details
+              class="nhsuk-details nhsuk-expander"
+              nhsuk-polyfilled="true"
+              id="nhsuk-details0"
+            >
+              <summary
+                class="nhsuk-details__summary"
+                role="button"
+                aria-controls="nhsuk-details__text0"
+                tabindex="0"
+                aria-expanded="false"
+              >
+                <span class="nhsuk-details__summary-text">
+                  University travel
+                </span>
+              </summary>
+
+              <div
+                class="nhsuk-details__text"
+                id="nhsuk-details__text0"
+                aria-hidden="true"
+              >
+                <table class="nhsuk-table">
+                  <caption
+                    class="nhsuk-table__caption nhsuk-u-visually-hidden"
+                  ></caption>
+                  <thead role="rowgroup" class="nhsuk-table__head">
+                    <tr role="row">
+                      <th role="columnheader" class="" scope="col">
+                        Journey point
+                      </th>
+                      <th role="columnheader" class="" scope="col">Link</th>
+                    </tr>
+                  </thead>
+                  <tbody class="nhsuk-table__body">
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Study travel</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/university-travel/study-travel"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Return costs</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/university-travel/return-cost"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Return mileage</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/university-travel/return-mileage"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Other costs</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/university-travel/other-costs"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Summary</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/university-travel/summary-university"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </details>
+          </div>
+
+          <div class="nhsuk-expander-group">
+            <details
+              class="nhsuk-details nhsuk-expander"
+              nhsuk-polyfilled="true"
+              id="nhsuk-details0"
+            >
+              <summary
+                class="nhsuk-details__summary"
+                role="button"
+                aria-controls="nhsuk-details__text0"
+                tabindex="0"
+                aria-expanded="false"
+              >
+                <span class="nhsuk-details__summary-text">
+                  Add a placement
+                </span>
+              </summary>
+
+              <div
+                class="nhsuk-details__text"
+                id="nhsuk-details__text0"
+                aria-hidden="true"
+              >
+                <table class="nhsuk-table">
+                  <caption
+                    class="nhsuk-table__caption nhsuk-u-visually-hidden"
+                  ></caption>
+                  <thead role="rowgroup" class="nhsuk-table__head">
+                    <tr role="row">
+                      <th role="columnheader" class="" scope="col">
+                        Journey point
+                      </th>
+                      <th role="columnheader" class="" scope="col">Link</th>
+                    </tr>
+                  </thead>
+                  <tbody class="nhsuk-table__body">
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Start date</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/add-placement/start-date"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Placement address</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/add-placement/placement-address"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Address summary</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/add-placement/address-summary"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Overseas</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/add-placement/overseas"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Vaccinations</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/add-placement/vaccinations"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Travel medication</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/add-placement/medical-insurance"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Visas</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/add-placement/visas"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Car Hire</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/add-placement/car-hire"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Summary</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/add-placement/placement-summary"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </details>
+          </div>
+
+          <div class="nhsuk-expander-group">
+            <details
+              class="nhsuk-details nhsuk-expander"
+              nhsuk-polyfilled="true"
+              id="nhsuk-details0"
+            >
+              <summary
+                class="nhsuk-details__summary"
+                role="button"
+                aria-controls="nhsuk-details__text0"
+                tabindex="0"
+                aria-expanded="false"
+              >
+                <span class="nhsuk-details__summary-text"> Add a journey </span>
+              </summary>
+
+              <div
+                class="nhsuk-details__text"
+                id="nhsuk-details__text0"
+                aria-hidden="true"
+              >
+                <table class="nhsuk-table">
+                  <caption
+                    class="nhsuk-table__caption nhsuk-u-visually-hidden"
+                  ></caption>
+                  <thead role="rowgroup" class="nhsuk-table__head">
+                    <tr role="row">
+                      <th role="columnheader" class="" scope="col">
+                        Journey point
+                      </th>
+                      <th role="columnheader" class="" scope="col">Link</th>
+                    </tr>
+                  </thead>
+                  <tbody class="nhsuk-table__body">
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">
+                        Pick address for journey
+                      </td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/add-journey/pick-address"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Journey dates</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/add-journey/journey-length"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Transport type</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/add-journey/transport"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Return mileage</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/add-journey/return-mileage"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Cycle return mileage</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/add-journey/cycle"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Public transport</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/add-journey/public-transport"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Other placement address</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/add-journey/other-placement"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Transport type</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/add-journey/transport2"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Return mileage</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/add-journey/return-mileage2"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Cycle return mileage</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/add-journey/cycle2"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Public transport</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/add-journey/public-transport2"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Patients</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/add-journey/patients"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Transport type</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/add-journey/transport3"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Return mileage</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/add-journey/return-mileage3"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Cycle return mileage</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/add-journey/cycle3"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Public transport</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/add-journey/public-transport3"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Passengers</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/add-journey/passengers"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Additional travel costs</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/add-journey/travel-costs"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Summary</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/add-journey/summary-journey"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Evidence upload</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/evidence-upload"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </details>
+          </div>
+
+          <div class="nhsuk-expander-group">
+            <details
+              class="nhsuk-details nhsuk-expander"
+              nhsuk-polyfilled="true"
+              id="nhsuk-details0"
+            >
+              <summary
+                class="nhsuk-details__summary"
+                role="button"
+                aria-controls="nhsuk-details__text0"
+                tabindex="0"
+                aria-expanded="false"
+              >
+                <span class="nhsuk-details__summary-text">
+                  Add accommodation
+                </span>
+              </summary>
+
+              <div
+                class="nhsuk-details__text"
+                id="nhsuk-details__text0"
+                aria-hidden="true"
+              >
+                <table class="nhsuk-table">
+                  <caption
+                    class="nhsuk-table__caption nhsuk-u-visually-hidden"
+                  ></caption>
+                  <thead role="rowgroup" class="nhsuk-table__head">
+                    <tr role="row">
+                      <th role="columnheader" class="" scope="col">
+                        Journey point
+                      </th>
+                      <th role="columnheader" class="" scope="col">Link</th>
+                    </tr>
+                  </thead>
+                  <tbody class="nhsuk-table__body">
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Type of accommodation</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/add-accommodation/commercial"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">accommodation address</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/add-accommodation/address"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Dates</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/add-accommodation/dates"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">accommodation cost</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/add-accommodation/accommodation-cost"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">
+                        Maintaining two addresses
+                      </td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/add-accommodation/maintaining-addresses"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Upload evidence</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/add-accommodation/accommodation-evidence"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </details>
+          </div>
+
+          <div class="nhsuk-expander-group">
+            <details
+              class="nhsuk-details nhsuk-expander"
+              nhsuk-polyfilled="true"
+              id="nhsuk-details0"
+            >
+              <summary
+                class="nhsuk-details__summary"
+                role="button"
+                aria-controls="nhsuk-details__text0"
+                tabindex="0"
+                aria-expanded="false"
+              >
+                <span class="nhsuk-details__summary-text">
+                  Add a passenger
+                </span>
+              </summary>
+
+              <div
+                class="nhsuk-details__text"
+                id="nhsuk-details__text0"
+                aria-hidden="true"
+              >
+                <table class="nhsuk-table">
+                  <caption
+                    class="nhsuk-table__caption nhsuk-u-visually-hidden"
+                  ></caption>
+                  <thead role="rowgroup" class="nhsuk-table__head">
+                    <tr role="row">
+                      <th role="columnheader" class="" scope="col">
+                        Journey point
+                      </th>
+                      <th role="columnheader" class="" scope="col">Link</th>
+                    </tr>
+                  </thead>
+                  <tbody class="nhsuk-table__body">
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Choose passenger</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/add-person/which-person"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Name of passenger</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/add-person/name"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">{{ serviceName }}</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/add-person/nhs-bursary"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Passenger mile</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/add-person/passenger-miles"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">
+                        Which days did you take said passenger?
+                      </td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/add-person/which-days"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Passenger summary</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/add-person/summary"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </details>
+          </div>
+
+          <div class="nhsuk-expander-group">
+            <details
+              class="nhsuk-details nhsuk-expander"
+              nhsuk-polyfilled="true"
+              id="nhsuk-details0"
+            >
+              <summary
+                class="nhsuk-details__summary"
+                role="button"
+                aria-controls="nhsuk-details__text0"
+                tabindex="0"
+                aria-expanded="false"
+              >
+                <span class="nhsuk-details__summary-text">
+                  Declaration and Evidence
+                </span>
+              </summary>
+
+              <div
+                class="nhsuk-details__text"
+                id="nhsuk-details__text0"
+                aria-hidden="true"
+              >
+                <table class="nhsuk-table">
+                  <caption
+                    class="nhsuk-table__caption nhsuk-u-visually-hidden"
+                  ></caption>
+                  <thead role="rowgroup" class="nhsuk-table__head">
+                    <tr role="row">
+                      <th role="columnheader" class="" scope="col">
+                        Journey point
+                      </th>
+                      <th role="columnheader" class="" scope="col">Link</th>
+                    </tr>
+                  </thead>
+                  <tbody class="nhsuk-table__body">
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Declaration (full page)</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/declaration"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">
+                        Declaration split into 2 pages (page 1 of 2)
+                      </td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/declaration-page-one"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">
+                        Declaration split into 2 pages (page 2 of 2)
+                      </td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/declaration-page-two"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Evidence upload</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/evidence-upload"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </details>
+          </div>
+
+          <div class="nhsuk-expander-group">
+            <details
+              class="nhsuk-details nhsuk-expander"
+              nhsuk-polyfilled="true"
+              id="nhsuk-details0"
+            >
+              <summary
+                class="nhsuk-details__summary"
+                role="button"
+                aria-controls="nhsuk-details__text0"
+                tabindex="0"
+                aria-expanded="false"
+              >
+                <span class="nhsuk-details__summary-text"> Plan B </span>
+              </summary>
+
+              <div
+                class="nhsuk-details__text"
+                id="nhsuk-details__text0"
+                aria-hidden="true"
+              >
+                <table class="nhsuk-table">
+                  <caption
+                    class="nhsuk-table__caption nhsuk-u-visually-hidden"
+                  ></caption>
+                  <thead role="rowgroup" class="nhsuk-table__head">
+                    <tr role="row">
+                      <th role="columnheader" class="" scope="col">
+                        Journey point
+                      </th>
+                      <th role="columnheader" class="" scope="col">Link</th>
+                    </tr>
+                  </thead>
+                  <tbody class="nhsuk-table__body">
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Claim Length</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/dates-required/claim-length"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">First date</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/dates-required/start-date"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">
+                        Which placement address?
+                      </td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/dates-required/address"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Placement transport</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/dates-required/transport"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Drive week</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/dates-required/drive-weeks"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Cycle week</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/dates-required/cycle-weeks"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Taxi week</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/dates-required/taxi"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Taxi reason</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/dates-required/taxi-reason"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Public transport week</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/dates-required/public-transport"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Other placement address</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/dates-required/other-placement"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">
+                        Other placement transport
+                      </td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/dates-required/other-transport"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">
+                        Other placement drive weeks
+                      </td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/dates-required/week-placement"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">
+                        Other placement cycle weeks
+                      </td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/dates-required/othercycle-weeks"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">
+                        Other placement taxi weeks
+                      </td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/dates-required/othertaxi"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">
+                        Other placement taxi reason
+                      </td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/dates-required/othertaxi-reason"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">
+                        Other placement public transport weeks
+                      </td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/dates-required/otherpublic-transport"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Patients travel</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/dates-required/patients"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Patients transport</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/dates-required/patients-transport"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Patients drive weeks</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/dates-required/week-patients"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Patients cycle weeks</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/dates-required/patientscycle-weeks"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Patients taxi weeks</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/dates-required/patientstaxi"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Patients taxi reason</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/dates-required/patientstaxi-reason"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">
+                        Patients public transport weeks
+                      </td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/dates-required/patientspublic-transport"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Passengers</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/dates-required/passengers"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Other costs type</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/dates-required/other-costs"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Parking costs</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/dates-required/parking-costs"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Tunnels costs</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/dates-required/tunnel-costs"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Toll roads costs</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/dates-required/tollroad-costs"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">other costs</td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/dates-required/extra-costs"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">
+                        Summary - checks your answers
+                      </td>
+                      <td class="nhsuk-table__cell">
+                        <a href="/ppe/dates-required/summary"
+                          >View
+                          <span class="nhsuk-u-visually-hidden"
+                            >Income Tax</span
+                          ></a
+                        >
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+{% endblock %}

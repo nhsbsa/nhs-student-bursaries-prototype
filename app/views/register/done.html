@@ -1,0 +1,90 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Registration complete {%
+endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <h1 class="nhsuk-heading-xl">Registration complete</h1>
+
+    <div class="nhsuk-card">
+      <div class="nhsuk-card__content">
+        <h2 class="nhsuk-heading-l" style="text-align: center">
+          Your bursary reference number is
+          <span id="studentRef">BRN0000782</span>
+        </h2>
+      </div>
+    </div>
+
+    <h3 class="nhsuk-heading-s">What happens next</h3>
+    <p>
+      We’ve sent an email to [registered email address] with a link to activate
+      your account.
+    </p>
+    <p>
+      You must activate your account within 72 hours or you’ll have to register
+      again.
+    </p>
+    <p>
+      You’ll need to tell us your bursary reference number if you contact us
+      about your account. This number will not change, so make a note of this.
+    </p>
+    <details
+      class="nhsuk-details"
+      nhsuk-polyfilled="true"
+      id="nhsuk-details0"
+      role="group"
+    >
+      <summary
+        class="nhsuk-details__summary"
+        role="button"
+        aria-controls="nhsuk-details__text0"
+        tabindex="0"
+      >
+        <span class="nhsuk-details__summary-text">
+          I have not received an email
+        </span>
+      </summary>
+
+      <div class="nhsuk-details__text" id="nhsuk-details__text0">
+        <p>The email may take a few minutes to arrive.</p>
+        <p>Check your spam/junk mail.</p>
+        <p>
+          <span
+            >If the activation email is not in your spam/junk mail, you can
+          </span>
+          <a id="resendLink" href="/nhssb/resend-activation" id="newLink"
+            ><span>request a new activation link</span></a
+          >.
+        </p>
+        <p>
+          If you still cannot activate your account, you can
+          <a href="#">contact us.</a>
+        </p>
+      </div>
+    </details>
+    <a role="button" id="signInLink" href="/register/login" class="nhsuk-button"
+      >Sign in to your <span>{{ serviceName }} account</span></a
+    >
+  </div>
+</div>
+
+{% endblock %}

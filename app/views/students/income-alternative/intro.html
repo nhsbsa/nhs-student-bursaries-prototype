@@ -1,0 +1,78 @@
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+{% block header %} {{ header({ "service": { "name": "Bursary", "href": "/" },
+"showNav": "false", "showSearch": "false" }) }} {% endblock %}
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}What you will need{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %}
+<a class="nhsuk-skip-link" href="#maincontent">Skip to main content</a>
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <h1 class="app-heading-l" id="incomeH1">
+      <span class="nhsuk-caption-l">Your income</span>
+      What you will need
+    </h1>
+
+    <p>
+      To assess your application based on your personal income, 
+      we need to know how much you think you’ll earn in the academic year you’re applying for.
+    </p>
+
+    <p>We’ll ask you about any taxable income you expect to receive from:</p>
+
+    <ul class="nhsuk-list nhsuk-list--bullet">
+      <li>a job or self-employment</li>
+      <li>bank or building society interest</li>
+      <li>sponsorship</li>
+      <li>rent (full property or part of your home)</li>
+      <li>a pension or taxable state benefits</li>
+      <li>maintenance payments</li>
+      <li>any other money you get</li>
+    </ul>
+
+    <h2 class="nhsuk-heading-s" id="evidenceYouWillNeed">
+      Evidence you will need
+    </h2>
+    <p>
+      Depending on your answers, you may need to upload copies of your:
+    </p>
+    <ul class="nhsuk-list nhsuk-list--bullet">
+      <li>payslips</li>
+      <li>P60, P45, or a letter from your employer</li>
+      <li>tax return, self-assessment form, or a letter from your accountant</li>
+      <li>bank statements</li>
+      <li>rent or mortgage statements</li>
+      <li>most recent pension statement</li>
+      <li>HMRC or benefits letter</li>
+      <li>child maintenance letter</li>
+    </ul>
+
+    <div class="nhsuk-warning-callout">
+      <h3 class="nhsuk-warning-callout__label">
+        Important<span class="nhsuk-u-visually-hidden">:</span>
+      </h3>
+      <p>Make sure that you enter your estimated income for the academic year you’re applying for.</p>
+    </div>
+
+
+    <a href="income" class="nhsuk-button" role="button" id="start">Start now</a>
+  
+  </div>
+</div>
+
+{% endblock %}

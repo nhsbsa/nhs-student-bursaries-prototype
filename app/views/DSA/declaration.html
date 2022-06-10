@@ -1,0 +1,122 @@
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} What disabilities do you have? {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-back-link">
+  <a class="nhsuk-back-link__link" href="evidence">
+    <svg
+      class="nhsuk-icon nhsuk-icon__chevron-left"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <path
+        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"
+      ></path>
+    </svg>
+    Go back</a
+  >
+</div>
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <div class="nhsuk-form-group">
+      <fieldset class="nhsuk-fieldset">
+        <legend
+          class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l"
+          aria-describedby="disability-type"
+        >
+          <h1 class="disabilityTitleH1">
+            <span class="nhsuk-caption-l">Disabled students’ allowance</span>
+            Declaration
+          </h1>
+        </legend>
+        <p>I confirm that:</p>
+        <ul>
+          <li>
+            the information and supporting documents I’ve provided in this
+            application are correct
+          </li>
+          <li>
+            I have provided details and evidence of all previous Disabled
+            Students Allowance claims, where applicable.
+          </li>
+          <li>
+            I understand that if I give incorrect information, my funding may be
+            refused or cancelled
+          </li>
+          <li>
+            I understand that I am liable for the cost of providing the
+            necessary evidence to establish my disability in support of my DSA
+            application.
+          </li>
+          <li>
+            I agree that NHSBSA Student Services can use my DSA to pay for a
+            study needs assessment to determine my study support requirements
+          </li>
+          <li>
+            I understand that NHSBSA Student Services and my disability officer,
+            DSA Needs Assessor and my DSA suppliers may exchange information
+            about my DSA application where this is necessary to make sure I get
+            the support I need.
+          </li>
+          <li>
+            I understand that if I do not enrol in training, I’ll need to repay
+            any advance payments of DSA
+          </li>
+          <li>
+            I understand that my equipment can only be used for my course of
+            study and that I am responsible for paying any repair costs.
+          </li>
+          <li>
+            I understand NHSBSA Student Services reserves the right to pay any
+            suppliers of any approved equipment and support directly. I will be
+            notified if NHSBSA Student Services decide to make payments directly
+            to suppliers on my behalf.
+          </li>
+          <li>
+            I understand that if I get money from DSA to buy specialist
+            equipment, I need to provide proof of purchase within one month of
+            the request being made
+          </li>
+          <li>
+            I agree to inform NHSBSA Student Services of any change in my
+            circumstances
+          </li>
+          <li>I agree that if I’m overpaid, I’ll repay the overpayment</li>
+          <li>
+            I understand and accept if I withhold information from NHSBSA
+            Student Services and / or provide false or misleading information
+            disciplinary action may be taken against me and I may be liable to
+            criminal prosecution.
+          </li>
+        </ul>
+
+        <div class="nhsuk-form-group">
+          <a
+            id="register"
+            role="button"
+            class="nhsuk-button"
+            href="dashboard-na-uploaded"
+            >Accept and send</a
+          >
+        </div>
+      </fieldset>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

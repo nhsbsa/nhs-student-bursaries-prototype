@@ -1,0 +1,106 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} What address will you live at while studying?{% endblock
+%}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<form
+  id="registrationForm"
+  name="registrationForm"
+  action="/register/account"
+  method="post"
+  autocomplete="on"
+>
+  <input
+    type="hidden"
+    name="_csrf"
+    value="7f540de9-8add-4331-b4d9-37e6c1eaf7b4"
+  />
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <div class="nhsuk-back-link">
+        <a class="nhsuk-back-link__link" href="/register/dob" id="back">
+          <svg
+            class="nhsuk-icon nhsuk-icon__chevron-left"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path
+              d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"
+            ></path>
+          </svg>
+          Go back
+        </a>
+      </div>
+
+      <h1 class="nhsuk-app-heading" id="addressH1">
+        <span class="nhsuk-caption-l">Registration</span> What address will you
+        live at while studying?
+      </h1>
+
+      <div class="nhsuk-form-group">
+        <label for="address-picker" class="nhsuk-label"
+          >Select an address</label
+        >
+        <span class="nhsuk-hint">For example, 1 Mulberry Lane</span>
+        <select
+          id="address-picker"
+          class="nhsuk-select nhsuk-u-width-three-quarters"
+        >
+          <option value="">1 address found</option>
+          <option id="1">1 Mulberry Lane</option>
+          <option id="1">2 Mulberry Lane</option>
+          <option id="1">3 Mulberry Lane</option>
+          <option id="1">4 Mulberry Lane</option>
+          <option id="1">5 Mulberry Lane</option>
+          <option id="1">6 Mulberry Lane</option>
+          <option id="1">7 Mulberry Lane</option>
+          <option id="1">8 Mulberry Lane</option>
+          <option id="1">9 Mulberry Lane</option>
+          <option id="1">10 Mulberry Lane</option>
+          <option id="1">11 Mulberry Lane</option>
+          <option id="1">12 Mulberry Lane</option>
+          <option id="1">13 Mulberry Lane</option>
+          <option id="1">14 Mulberry Lane</option>
+          <option id="1">15 Mulberry Lane</option>
+          <option id="1">16 Mulberry Lane</option>
+          <option id="1">17 Mulberry Lane</option>
+          <option id="1">18 Mulberry Lane</option>
+          <option id="1">19 Mulberry Lane</option>
+          <option id="1">20 Mulberry Lane</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="nhsuk-form-group">
+    <button class="nhsuk-button" type="submit" id="next" role="button">
+      Continue
+    </button>
+  </div>
+
+  <p>
+    <a href="address">I want to enter my address manually</a>
+  </p>
+</form>
+
+{% endblock %}

@@ -1,0 +1,83 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Check your answers {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block header %} {{ header({ "service": { "name": "Bursary", "href": "/" },
+"showNav": "true", "showSearch": "false", "primaryLinks": [ { "url" :
+"dashboard", "label" : "Dashboard" }, { "url" : "personal-details", "label" :
+"Personal details" }, { "url" : "application-history", "label" : "Previous
+applications" } ,{ "url" : "#", "label" : "Sign out" } ] }) }} {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<!-- Breadcrumb -->
+
+{% endblock %}
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-width-container">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <div class="nhsuk-back-link">
+        <a class="nhsuk-back-link__link" href="tasklist" id="back">
+          <svg
+            class="nhsuk-icon nhsuk-icon__chevron-left"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path
+              d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"
+            ></path>
+          </svg>
+          Go back</a
+        >
+      </div>
+      <h1 class="nhsuk-app-heading">
+        <span class="nhsuk-caption-l">Your application</span>
+        Submit as a non-means tested applicant
+      </h1>
+
+      <p>
+        If you submit as a non-means tested applicant we will take the following
+        into account:
+      </p>
+      <ul>
+        <li>Your course details</li>
+        <li>Your eligibility details</li>
+        <li>Your status assessment</li>
+      </ul>
+
+      <p>We will destroy your other data that you have filled out.</p>
+
+      <p>You will get the minimum from the NHS Bursary.</p>
+
+      <h2 class="nhsuk-heading-l" id="completeH2">Complete your application</h2>
+      <p>
+        By clicking accept you’re confirming that the details you’re providing
+        are correct.
+      </p>
+      <div class="nhsuk-form-group">
+        <a href="#" class="nhsuk-button" role="button" id="next"
+          >Accept and submit</a
+        >
+      </div>
+      <a href="">Cancel and return to dashboard</a>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

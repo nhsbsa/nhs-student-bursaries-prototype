@@ -1,0 +1,129 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- page title -->
+{% block pageTitle %} Expenses {% endblock %}
+
+<!-- breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %} {% endblock %}
+
+<!-- back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %} {% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <h1 class="app-page-heading">
+      <span class="nhsuk-caption-l">Student expenses </span>Check your answers
+    </h1>
+
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Income Tax</dt>
+        <dd class="nhsuk-summary-list__value">£5000</dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="income-tax">
+            Change<span class="nhsuk-u-visually-hidden">income tax</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">National Insurance</dt>
+        <dd class="nhsuk-summary-list__value">£3000</dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="national-insurance">
+            Change<span class="nhsuk-u-visually-hidden"
+              >national insurance</span
+            >
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Pension contributions</dt>
+        <dd class="nhsuk-summary-list__value">£0</dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="personal-pension">
+            Change<span class="nhsuk-u-visually-hidden"
+              >personal pension/retirement annulty payments</span
+            >
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Life Assurance payments</dt>
+        <dd class="nhsuk-summary-list__value">£0</dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="life-assurance">
+            Change<span class="nhsuk-u-visually-hidden"
+              >life assurance premiums</span
+            >
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Mortgage payments</dt>
+        <dd class="nhsuk-summary-list__value">£0</dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="mortgage-payments">
+            Change<span class="nhsuk-u-visually-hidden">mortgage payments</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Rent payments</dt>
+        <dd class="nhsuk-summary-list__value">£6000</dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="rent">
+            Change<span class="nhsuk-u-visually-hidden">rent</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Maintenance payments</dt>
+        <dd class="nhsuk-summary-list__value">£0</dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="maintenance-payments">
+            Change<span class="nhsuk-u-visually-hidden"
+              >maintenance payments</span
+            >
+          </a>
+        </dd>
+      </div>
+    </dl>
+    <h2 class="nhsuk-heading-l">Submit your expenses details</h2>
+    <p>
+      By clicking accept you’re confirming that the details you’re providing are
+      correct.
+    </p>
+    <div class="nhsuk-form-group">
+      <a href="evidence" class="nhsuk-button" role="button">Accept and continue</a>
+    </div>
+
+    <a href="#">Cancel and return to dashboard</a>
+  </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,199 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Student dashboard {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block header %} {{ header({ "service": { "name": "Bursary", "href": "/" },
+"showNav": "true", "showSearch": "false", "primaryLinks": [ { "url" :
+"/dashboard/dashboard-enrolment", "label" : "Dashboard" }, { "url" :
+"personal-details", "label" : "Personal details" }, { "url" : "#", "label" :
+"Sign out" } ] }) }} {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<!-- Breadcrumb -->
+
+{% endblock %}
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-width-container">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <h1 class="app-page-heading">Your bursary application</h1>
+
+      <div class="nhsuk-u-padding-bottom-4">
+        <h2 class="nhsuk-heading-m">Application incomplete</h2>
+        <p>You have completed 3 of 8 sections.</p>
+      </div>
+
+      <ol class="app-task-list">
+        <li>
+          <span
+            class="
+              featured-list--item__number featured-list--item__number--mobile
+              nhsuk-heading-l
+            "
+            >1</span
+          >
+          <h3 class="featured-list--item__heading nhsuk-heading-m">
+            <span
+              class="
+                featured-list--item__number
+                nhsuk-heading-l nhsuk-u-margin-bottom-1
+              "
+              >1</span
+            >
+            Check your eligibility
+          </h3>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a
+                  href="/enrolment/intro"
+                  aria-describedby="createAcademicYear"
+                >
+                  Start course details
+                </a>
+              </span>
+              <strong
+                class="nhsuk-tag nhsuk-tag--grey app-task-list__tag"
+                id="createAcademicYear"
+                >Haven't started</strong
+              >
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                Eligibility assessment
+              </span>
+              <strong
+                class="nhsuk-tag nhsuk-tag--grey app-task-list__tag"
+                id="eligibilityAssessment"
+                >Cannot start yet</strong
+              >
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name"> Status assessment </span>
+              <strong
+                class="nhsuk-tag nhsuk-tag--grey app-task-list__tag"
+                id="statusAssessment"
+                >Cannot start yet</strong
+              >
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <span
+            class="
+              featured-list--item__number featured-list--item__number--mobile
+              nhsuk-heading-l
+            "
+            >2</span
+          >
+          <h3 class="featured-list--item__heading nhsuk-heading-m">
+            <span
+              class="
+                featured-list--item__number
+                nhsuk-heading-l nhsuk-u-margin-bottom-1
+              "
+              >2</span
+            >
+            Your income assessment
+          </h3>
+          <p>
+            If you are not applying for a means tested bursary, you will not
+            need to complete any of these sections. If you are applying for a
+            means tested bursary, you might not need to fill out all of these
+            sections.
+          </p>
+
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name"> Dependent details </span>
+              <strong
+                class="nhsuk-tag nhsuk-tag--grey app-task-list__tag"
+                id="eligibilityAssessment"
+                >Cannot start yet</strong
+              >
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                Income and expenses assessment
+              </span>
+              <strong
+                class="nhsuk-tag nhsuk-tag--grey app-task-list__tag"
+                id="statusAssessment"
+                >Cannot start yet</strong
+              >
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                Parent or partner details
+              </span>
+              <strong
+                class="nhsuk-tag nhsuk-tag--grey app-task-list__tag"
+                id="statusAssessment"
+                >Cannot start yet</strong
+              >
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name"
+                ><a href="parent-income" aria-describedby="createAcademicYear">
+                  Parent or partner income and expenses assessment
+                </a>
+              </span>
+              <strong
+                class="nhsuk-tag nhsuk-tag--grey app-task-list__tag"
+                id="statusAssessment"
+                >Cannot start yet</strong
+              >
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <span
+            class="
+              featured-list--item__number featured-list--item__number--mobile
+              nhsuk-heading-l
+            "
+            >3</span
+          >
+          <h3 class="featured-list--item__heading nhsuk-heading-m">
+            <span
+              class="
+                featured-list--item__number
+                nhsuk-heading-l nhsuk-u-margin-bottom-1
+              "
+              >3</span
+            >
+            Complete your application
+          </h3>
+        </li>
+
+        <li class="app-task-list__item">
+          <span class="app-task-list__task-name"> Declaration </span>
+          <strong
+            class="nhsuk-tag nhsuk-tag--grey app-task-list__tag"
+            id="declaration"
+            >Cannot start yet</strong
+          >
+        </li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

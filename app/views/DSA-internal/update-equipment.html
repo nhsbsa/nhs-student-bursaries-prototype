@@ -1,0 +1,128 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} {{ serviceName }} prototypes | Sign in to your account {%
+endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Breadcrumb -->
+<a class="nhsuk-skip-link" href="#maincontent">Skip to main content</a>
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-width-container">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+      <h1 class="nhsuk-app-heading" id="summaryH1">
+        <span class="nhsuk-caption-l">000020301 - Liam Bloggs</span> Update equipment
+      </h1>
+
+      <div class="nhsuk-form-group">
+        <table role="table" class="nhsuk-table-responsive">
+          <thead role="rowgroup" class="nhsuk-table__head">
+            <tr role="row">
+              <th role="columnheader" class="" scope="col">Item</th>
+              <th role="columnheader" class="" scope="col">Supplier</th>
+              <th role="columnheader" class="" scope="col">Quote No.</th>
+              <th role="columnheader" class="" scope="col">Amounts we’ll pay </th>           
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Age </span>Laptop
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">How much? </span
+                >PC World
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">How often? </span
+                >459820497
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Delete </span
+                >£400
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="nhsuk-form-group">
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h2 class="nhsuk-fieldset__heading">
+              Information about this piece of equipment
+            </h2>
+          </legend>
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="input-width-10"> Amount used </label>
+            <input
+              class="nhsuk-input nhsuk-input--width-10"
+              id="input-width-10"
+              name="test-width-10"
+              type="text"
+            />
+          
+        </div>
+        <div class="nhsuk-form-group">
+          <fieldset class="nhsuk-fieldset">
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+              <h2 class="nhsuk-heading-m">
+                Is the evidence provided?
+              </h2>
+            </legend>
+        
+            <div class="nhsuk-radios nhsuk-radios--inline">
+        
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-inline-1" name="example-inline" type="radio" value="yes">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-inline-1">
+                  Yes
+                </label>
+              </div>
+        
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-inline-2" name="example-inline" type="radio" value="no">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-inline-2">
+                  No
+                </label>
+              </div>
+        
+            </div>
+          </fieldset>
+        </fieldset>
+      </div>
+
+      <div class="nhsuk-form-group">
+        <a
+          class="nhsuk-button"
+          type="submit"
+          id="next"
+          href="specialist-equipment-summary"
+          role="button"
+        >
+          Continue
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

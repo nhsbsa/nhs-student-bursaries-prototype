@@ -1,0 +1,745 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+{% block header %}
+  {{ header({
+    "service": {
+        "name": "Bursary admin",
+        "href": "/"
+      },
+      "showNav": "true",
+      "showSearch": "false",
+      "primaryLinks": [
+      {
+        "url"  : "/MFA/profile",
+        "label" : "Payment details"
+      },
+      {
+        "url"  : "/MFA/sign-in",
+        "label" : "Users"
+      },
+      {
+        "url"  : "/MFA/profile",
+        "label" : "Applications"
+      },
+      {
+        "url"  : "/MFA/profile",
+        "label" : "Uni portal"
+      },
+      {
+        "url"  : "/MFA/profile",
+        "label" : "Reports"
+      },
+      {
+        "url"  : "/MFA/profile",
+        "label" : "Student search"
+      }
+    ]
+    })
+  }}
+{% endblock %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+Student Bursaries prototype
+{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %}
+
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+      <h1 class="nhs-app-heading">
+        University management</h1>
+  </div>
+</div>
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <nav class="nhsuk-contents-list" role="navigation" aria-label="Pages in this section">
+<h2 class="nhsuk-u-visually-hidden">Navigation</h2>
+<ol class="nhsuk-contents-list__list">
+    <li class="nhsuk-contents-list__item" aria-current="page">
+      <span class="nhsuk-contents-list__current">Manage universities</span>
+    </li>
+    <li class="nhsuk-contents-list__item">
+      <a class="nhsuk-contents-list__link" href="#">Manage courses</a>
+    </li>
+    <li class="nhsuk-contents-list__item">
+      <a class="nhsuk-contents-list__link" href="#">Manage enrolment year</a>
+    </li>
+    <li class="nhsuk-contents-list__item">
+      <a class="nhsuk-contents-list__link" href="#">Manage forms</a>
+    </li>
+</ol>
+</nav>
+
+  </div>
+  <div class="nhsuk-grid-column-full">
+      <table id="collegesTable" class="js-table-sortable">
+					<caption class="nhsuk-u-visually-hidden">Colleges table</caption>
+					<thead>
+						<tr>
+							<th class="bold sortable" scope="col" data-sort="string">University
+								name</th>
+							<th class="bold sortable" scope="col" data-sort="string">Regional
+								uplift</th>
+							<th class="bold sortable" scope="col" data-sort="string">London</th>
+							<td></td>
+						</tr>
+					</thead>
+					<tbody>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=1"><span class="wordbreak">ANGLIA RUSKIN UNIVERSITY - CAMBRIDGE</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=1">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=2"><span class="wordbreak">ANGLIA RUSKIN UNIVERSITY - CHELMSFORD</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=2">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=3"><span class="wordbreak">ANGLIA RUSKIN UNIVERSITY - PETERBOROUGH</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=3">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=4"><span class="wordbreak">BIRMINGHAM CITY UNIVERSITY</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=4">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=5"><span class="wordbreak">BIRMINGHAM METROPOLITAN COLLEGE</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=5">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=6"><span class="wordbreak">BOURNEMOUTH UNIVERSITY</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=6">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=7"><span class="wordbreak">BPP UNIVERSITY LTD</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=7">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=8"><span class="wordbreak">BRUNEL UNIVERSITY LONDON</span></a></td>
+								<td>No</td>
+								<td>Yes</td>
+								<td><a href="/sb/admin/courses?collegeId=8">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=9"><span class="wordbreak">BUCKS NEW UNIVERSITY</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=9">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=10"><span class="wordbreak">CANTERBURY CHRIST CHURCH UNIVERSITY</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=10">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=11"><span class="wordbreak">CITY UNIVERSITY LONDON</span></a></td>
+								<td>No</td>
+								<td>Yes</td>
+								<td><a href="/sb/admin/courses?collegeId=11">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=12"><span class="wordbreak">COLCHESTER INSTITUTE</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=12">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=13"><span class="wordbreak">COVENTRY UNIVERSITY</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=13">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=14"><span class="wordbreak">DE MONTFORT UNIVERSITY</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=14">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=15"><span class="wordbreak">EDGE HILL UNIVERSITY</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=15">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=16"><span class="wordbreak">KEELE UNIVERSITY</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=16">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=17"><span class="wordbreak">KINGS COLLEGE LONDON</span></a></td>
+								<td>No</td>
+								<td>Yes</td>
+								<td><a href="/sb/admin/courses?collegeId=17">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=18"><span class="wordbreak">KINGSTON UNIVERSITY</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=18">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=19"><span class="wordbreak">LEEDS BECKETT UNIVERSITY</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=19">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=20"><span class="wordbreak">LIVERPOOL JOHN MOORES UNIVERSITY</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=20">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=21"><span class="wordbreak">LONDON METROPOLITAN UNIVERSITY</span></a></td>
+								<td>No</td>
+								<td>Yes</td>
+								<td><a href="/sb/admin/courses?collegeId=21">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=22"><span class="wordbreak">LONDON SOUTH BANK UNIVERSITY</span></a></td>
+								<td>No</td>
+								<td>Yes</td>
+								<td><a href="/sb/admin/courses?collegeId=22">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=23"><span class="wordbreak">MANCHESTER METROPOLITAN UNIVERSITY</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=23">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=24"><span class="wordbreak">MIDDLESEX UNIVERSITY</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=24">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=25"><span class="wordbreak">NEW COLLEGE DURHAM</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=25">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=26"><span class="wordbreak">NORTHUMBRIA UNIVERSITY</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=26">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=27"><span class="wordbreak">OXFORD BROOKES UNIVERSITY</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=27">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr>
+								<td><a href="/sb/admin/collegeDetails?collegeId=28"><span class="wordbreak">SHEFFIELD HALLAM UNIVERSITY</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=28">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=29"><span class="wordbreak">SOLENT UNIVERSITY</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=29">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=30"><span class="wordbreak">ST GEORGE'S - UNIVERSITY OF LONDON</span></a></td>
+								<td>No</td>
+								<td>Yes</td>
+								<td><a href="/sb/admin/courses?collegeId=30">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr>
+								<td><a href="/sb/admin/collegeDetails?collegeId=31"><span class="wordbreak">STAFFORDSHIRE UNIVERSITY</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=31">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=32"><span class="wordbreak">UNIVERSITY COLLEGE LONDON</span></a></td>
+								<td>No</td>
+								<td>Yes</td>
+								<td><a href="/sb/admin/courses?collegeId=32">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr>
+								<td><a href="/sb/admin/collegeDetails?collegeId=33"><span class="wordbreak">UNIVERSITY OF BEDFORDSHIRE</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=33">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=34"><span class="wordbreak">UNIVERSITY OF BIRMINGHAM</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=34">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=35"><span class="wordbreak">UNIVERSITY OF BOLTON</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=35">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=36"><span class="wordbreak">UNIVERSITY OF BRADFORD</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=36">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=37"><span class="wordbreak">UNIVERSITY OF BRIGHTON</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=37">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=38"><span class="wordbreak">UNIVERSITY OF BRISTOL</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=38">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr>
+								<td><a href="/sb/admin/collegeDetails?collegeId=39"><span class="wordbreak">UNIVERSITY OF CENTRAL LANCASHIRE</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=39">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=40"><span class="wordbreak">UNIVERSITY OF CHESTER</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=40">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=41"><span class="wordbreak">UNIVERSITY OF CUMBRIA</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=41">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=42"><span class="wordbreak">UNIVERSITY OF DERBY</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=42">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=43"><span class="wordbreak">UNIVERSITY OF EAST ANGLIA</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=43">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=44"><span class="wordbreak">UNIVERSITY OF EAST LONDON</span></a></td>
+								<td>No</td>
+								<td>Yes</td>
+								<td><a href="/sb/admin/courses?collegeId=44">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=45"><span class="wordbreak">UNIVERSITY OF ESSEX</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=45">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=46"><span class="wordbreak">UNIVERSITY OF EXETER</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=46">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr>
+								<td><a href="/sb/admin/collegeDetails?collegeId=47"><span class="wordbreak">UNIVERSITY OF GLOUCESTERSHIRE</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=47">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=48"><span class="wordbreak">UNIVERSITY OF GREENWICH</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=48">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr>
+								<td><a href="/sb/admin/collegeDetails?collegeId=49"><span class="wordbreak">UNIVERSITY OF HERTFORDSHIRE</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=49">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=50"><span class="wordbreak">UNIVERSITY OF HUDDERSFIELD</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=50">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=51"><span class="wordbreak">UNIVERSITY OF HULL</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=51">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=52"><span class="wordbreak">UNIVERSITY OF LEEDS</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=52">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=53"><span class="wordbreak">UNIVERSITY OF LEICESTER</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=53">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=54"><span class="wordbreak">UNIVERSITY OF LINCOLN</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=54">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=55"><span class="wordbreak">UNIVERSITY OF LIVERPOOL</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=55">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=56"><span class="wordbreak">UNIVERSITY OF MANCHESTER</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=56">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=57"><span class="wordbreak">UNIVERSITY OF NEWCASTLE</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=57">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=58"><span class="wordbreak">UNIVERSITY OF NORTHAMPTON</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=58">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=59"><span class="wordbreak">UNIVERSITY OF NOTTINGHAM</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=59">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=60"><span class="wordbreak">UNIVERSITY OF PLYMOUTH</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=60">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=61"><span class="wordbreak">UNIVERSITY OF PORTSMOUTH</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=61">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=62"><span class="wordbreak">UNIVERSITY OF READING</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=62">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=63"><span class="wordbreak">UNIVERSITY OF ROEHAMPTON</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=63">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=64"><span class="wordbreak">UNIVERSITY OF SALFORD</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=64">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr>
+								<td><a href="/sb/admin/collegeDetails?collegeId=65"><span class="wordbreak">UNIVERSITY OF SHEFFIELD</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=65">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=66"><span class="wordbreak">UNIVERSITY OF SOUTHAMPTON</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=66">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=67"><span class="wordbreak">UNIVERSITY OF ST MARK AND ST JOHN</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=67">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=68"><span class="wordbreak">UNIVERSITY OF SUFFOLK</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=68">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=69"><span class="wordbreak">UNIVERSITY OF SUNDERLAND</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=69">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=70"><span class="wordbreak">UNIVERSITY OF SURREY</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=70">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=71"><span class="wordbreak">UNIVERSITY OF TEESSIDE</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=71">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=72"><span class="wordbreak">UNIVERSITY OF THE WEST OF ENGLAND</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=72">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=73"><span class="wordbreak">UNIVERSITY OF WEST LONDON</span></a></td>
+								<td>No</td>
+								<td>Yes</td>
+								<td><a href="/sb/admin/courses?collegeId=73">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=74"><span class="wordbreak">UNIVERSITY OF WINCHESTER</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=74">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=75"><span class="wordbreak">UNIVERSITY OF WOLVERHAMPTON</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=75">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=76"><span class="wordbreak">UNIVERSITY OF WORCESTER</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=76">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=77"><span class="wordbreak">UNIVERSITY OF YORK</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=77">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=78"><span class="wordbreak">UNIVERSIYT OF PLYMOUTH</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=78">Manage
+										courses</a></td>
+							</tr>
+						
+							<tr style="">
+								<td><a href="/sb/admin/collegeDetails?collegeId=79"><span class="wordbreak">YORK ST JOHN UNIVERSITY</span></a></td>
+								<td>No</td>
+								<td>No</td>
+								<td><a href="/sb/admin/courses?collegeId=79">Manage
+										courses</a></td>
+							</tr>
+						
+					</tbody>
+				</table>
+    </div>
+</div>
+
+{% endblock %}

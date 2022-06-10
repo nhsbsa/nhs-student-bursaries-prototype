@@ -1,0 +1,113 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Get help with childcare costs {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <h1 class="app-page-heading">
+            Get help with childcare costs
+        </h1>
+
+        <p>You may be eligible for help with your childcare costs if you:</p>
+
+        <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>are receiving an {{ serviceName }}</li>
+            <li>have children under 15, or under 17 if they have special educational needs</li>
+            <li>pay for registered childcare while you attend your course</li>
+        </ul>
+
+        <p>Your childcare allowance:</p>
+
+        <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>does not have to be paid back</li>
+            <li>is paid on top of your bursary</li>
+        </ul>
+
+        <h2 class="nhsuk-heading-m">What you will get</h2>
+
+        <p>You can get up to 85% of your childcare costs paid for while attending your course, but it will not cover all
+            your costs.</p>
+
+        <p>The amount you'll get depends on:</p>
+
+        <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>your household income</li>
+            <li>the number of children who are dependent on you</li>
+        </ul>
+
+        <p>The most you can get is:</p>
+
+        <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>up to £128.78 a week for 1 child</li>
+            <li>up to £191.45 a week for 2 or more children</li>
+        </ul>
+
+        <p>You must pay for any remaining costs</p>
+
+        <div class="nhsuk-inset-text">
+            <h2 class="nhsuk-heading-s">Example</h2>
+            <p>If your childcare for 1 child costs £100 a week, you’ll get £85 - this is 85% of your costs.</p>
+
+            <p>If your childcare for 1 child costs £220 a week, you’ll get £128.78. This is because 85% of your costs is
+                £187, which is above the weekly limit.</p>
+        </div>
+
+        <div class="nhsuk-warning-callout">
+            <h3 class="nhsuk-warning-callout__label">
+                Important<span class="nhsuk-u-visually-hidden">:</span>
+            </h3>
+            <p>Childcare allowance is not the same as 15 or 30 hours free childcare. You can’t use it to pay for those
+                hours.</p>
+        </div>
+
+        <h3 class="nhsuk-heading-medium">Eligibility</h3>
+
+        <p>To claim for Childcare Allowance, all the following must apply:</p>
+
+        <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>You’re receiving an {{ serviceName }} (but not if you’re receiving an EU Fees only award)</li>
+            <li>Your child is under 15, or under 17 if they have special educational needs</li>
+            <li>The children in your application are financially dependent on you</li>
+            <li>are receiving care from an Ofsted-registered childcare provider</li>
+            <li>You (or your partner) are not claiming Tax-Free Childcare or childcare benefits from Working Tax Credit
+                or Universal Credit</li>
+        </ul>
+
+        <h3 class="nhsuk-heading-m">How you are paid</h3>
+
+        <p>If you’re eligible for Childcare Allowance, you’ll be paid each term. Your payment will go into your bank
+            account at the same time as your {{ serviceName }}.</p>
+
+        <p>Your childcare payments may change each term, as they are based on the weekly amounts you have entered in
+            your application.</p>
+
+        <a href="/childcare-app/intro-page" class="nhsuk-button">Continue</a>
+
+        <h4 class="nhsuk-heading-m">If your circumstances change</h4>
+
+        <p>You must tell us if your childcare costs or providers change as this could affect what you’re entitled to.
+            This will allow us to make sure that you receive the correct amount.</p>
+
+        <p>You can <a href="#">find out more about Childcare Allowance</a> on our website.</p>
+
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,101 @@
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+{% block header %} {{ header({ "service": { "name": "Bursary", "href": "/" },
+"showNav": "false", "showSearch": "false" }) }} {% endblock %}
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Check your details {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %}
+<a class="nhsuk-skip-link" href="#maincontent">Skip to main content</a>
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <h1 class="nhsuk-app-heading">Check your details</h1>
+
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Personal pension/retirement annuity
+        </dt>
+        <dd class="nhsuk-summary-list__value">£25000</dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="personal-pension-question" id="personalpensionChange">
+            Change<span class="nhsuk-u-visually-hidden">
+              Personal pension/returement annulty</span
+            >
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Other loan interest</dt>
+        <dd class="nhsuk-summary-list__value">
+          <p>£0</p>
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="other-loan-question" id="otherloanChange">
+            Change<span class="nhsuk-u-visually-hidden">
+              Other loan interest</span
+            >
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Professional subscriptions</dt>
+        <dd class="nhsuk-summary-list__value">
+          <p>£3000</p>
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="subscriptions-question" id="subscriptionChange">
+            Change<span class="nhsuk-u-visually-hidden">
+              Professional subscriptions</span
+            >
+          </a>
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Employee pension contributions</dt>
+        <dd class="nhsuk-summary-list__value">
+          <p>£0</p>
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="employee-pension-question" id="employeepensionChange">
+            Change<span class="nhsuk-u-visually-hidden">
+              Employee pension contributions</span
+            >
+          </a>
+        </dd>
+      </div>
+    </dl>
+
+    <h2 class="nhsuk-heading-l">Complete expense assessment</h2>
+    <p>
+      By clicking accept you’re confirming that the details you’re providing are
+      correct.
+    </p>
+
+    <div class="nhsuk-form-group">
+      <a id="register" role="button" class="nhsuk-button" href="evidence"
+        >Accept and continue</a
+      >
+    </div>
+    <a href="#">Cancel and return to dashboard</a>
+  </div>
+</div>
+
+{% endblock %}

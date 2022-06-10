@@ -1,0 +1,68 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} What is their name? {%
+endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %}
+<a class="nhsuk-skip-link" href="#maincontent" id="skipLink"
+  >Skip to main content</a
+>
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <h1 class="nhsuk-app-heading" id="nameH1">
+      <span class="nhsuk-caption-l">Spouse details</span> What is their name?
+    </h1>
+
+    <div class="nhsuk-form-group">
+      <label id="firstname-label" for="firstname" class="nhsuk-label"
+        >First name</label
+      >
+
+      <input
+        class="nhsuk-input nhsuk-u-width-two-thirds"
+        name="name"
+        id="firstname"
+        type="text"
+        maxlength="35"
+      />
+    </div>
+
+    <div class="nhsuk-form-group">
+      <label id="lastName-label" for="lastName" class="nhsuk-label"
+        >Last name</label
+      >
+
+      <input
+        name="name"
+        id="lastName"
+        class="nhsuk-input nhsuk-u-width-two-thirds"
+        type="text"
+        maxlength="35"
+      />
+    </div>
+  </div>
+</div>
+
+<div class="nhsuk-form-group">
+  <a href="email" class="nhsuk-button" role="button" id="next">Continue</a>
+</div>
+
+{% endblock %}

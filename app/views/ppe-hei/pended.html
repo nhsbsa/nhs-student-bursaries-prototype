@@ -1,0 +1,65 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}{{ serviceName }} prototypes | Ask this student for more information {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block header %} {{ header({ "service": { "name": "Bursary", "href": "/"
+}, "showNav": "true", "showSearch": "false", "primaryLinks": [ { "url" : "submittedforms",
+"label" : "Applications" },  { "url" : "search", "label" : "Search for a student" }, { "url" : "#", "label" : "Change password" }, { "url" : "index", "label" : "Log out" } ] })
+}} {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<!-- Breadcrumb -->
+<a class="nhsuk-skip-link" href="#maincontent">Skip to main content</a>
+
+{% endblock %}
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-width-container">
+    <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+
+            <h1 class="app-page-heading">
+              Ask this student for more information
+            </h1>
+
+           <p>
+            Dear Liam Bloggs,
+            <br><br>
+             We’ve received your Practice Placement Expenses (PPE) claim.  
+             <br><br>
+             We are unable to process your claim at this time as you have not sent us the required evidence to show the costs you’ve claimed for.
+             <br><br>
+             To assess your claim, we need you to send us the following evidence: 
+             <br><br>
+            
+            <textarea class="nhsuk-textarea" id="pend" name="pendTxt" rows="5" aria-describedby="pendHint"></textarea>
+          
+          <br>
+              Once you’ve uploaded all evidence, you can re-submit your claim to us.
+              
+              <br><br>
+              Kind regards, 
+              <br><br>
+              University of Plymouth
+           </p>
+
+             
+
+           <div class="grid-row">
+            <a class="nhsuk-button" role="button" id="submit" href="confirmation1">Send claim back to student</a>
+          </div>
+            {% endblock %}

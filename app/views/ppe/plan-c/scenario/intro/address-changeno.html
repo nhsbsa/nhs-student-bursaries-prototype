@@ -1,0 +1,68 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- page title -->
+{% block pageTitle %} You are not eligible for {{ serviceName }} {% endblock %}
+
+<!-- breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %} {% endblock %}
+
+<!-- back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %} {% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-back-link">
+  <a
+    class="nhsuk-back-link__link"
+    href="current-address"
+  >
+    <svg
+      class="nhsuk-icon nhsuk-icon__chevron-left"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <path
+        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"
+      ></path>
+    </svg>
+    Go back</a
+  >
+</div>
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <h1 class="nhsuk-app-heading" id="notEligible">
+      You must change your address on your {{ serviceName }}
+    </h1>
+
+    <p>
+      As you’re receiving an {{ serviceName }} you must first change your address on your {{ serviceName }} before making an expense claim.
+    </p>
+
+  <!--  <p>
+      If you think you’re eligible, you can
+      <a href="">contact us.</a>
+    </p>-->
+
+    <div class="nhsuk-form-group">
+      <a
+        href="/ppe/plan-c/scenario/dashboard/dashboard"
+        class="nhsuk-button"
+        role="button"
+        >Return to dashboard</a
+      >
+    </div>
+  </div>
+</div>
+
+{% endblock %}

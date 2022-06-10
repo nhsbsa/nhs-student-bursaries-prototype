@@ -1,0 +1,120 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Student dashboard {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block header %} {{ header({ "service": { "name": "Bursary", "href": "/" },
+"showNav": "true", "showSearch": "false", "primaryLinks": [ { "url" :
+"dashboard", "label" : "Dashboard" }, { "url" : "claim-history", "label" :
+"Claim history" }, { "url" : "#", "label" : "Sign out" } ] }) }} {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<!-- Breadcrumb -->
+
+{% endblock %}
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <h1 class="app-page-heading">
+      <span class="nhsuk-caption-l">Welcome, John Smith</span> Your travel
+      expenses
+    </h1>
+    <h2 class="nhsuk-heading-m">Before you start your placement claim</h2>
+    <p>You must enter the elements which apply to you in each section. These are manageable lists that you can keep up to date throughout the year and this is where your claim will pull the different elements of your claim from.</p>
+    <hr aria-hidden="true" />
+    <ul class="nhsuk-grid-row nhsuk-card-group">
+      <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+    
+        <div class="nhsuk-card nhsuk-card--clickable">
+          <div class="nhsuk-card__content">
+            <h2 class="nhsuk-card__heading nhsuk-heading-m">
+              <a class="nhsuk-card__link" href="/ppe/plan-c/scenario/university-travel/study-travel">University travel</a>
+            </h2>
+            <p class="nhsuk-card__description">This is your normal daily travel journey to university.</p>
+          </div>
+        </div>
+    
+      </li>
+      <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+    
+        <div class="nhsuk-card nhsuk-card--clickable">
+          <div class="nhsuk-card__content">
+            <h2 class="nhsuk-card__heading nhsuk-heading-m">
+              <a class="nhsuk-card__link" href="placement-menu">Placement addresses</a>
+            </h2>
+            <p class="nhsuk-card__description">Enter the addresses of all placement sites you will attend</p>
+          </div>
+        </div>
+    
+      </li>
+      <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+    
+        <div class="nhsuk-card nhsuk-card--clickable">
+          <div class="nhsuk-card__content">
+            <h2 class="nhsuk-card__heading nhsuk-heading-m">
+              <a class="nhsuk-card__link" href="accommodation-menu">Accommodation addresses</a>
+            </h2>
+            <p class="nhsuk-card__description">If you are staying away from your usual term time accommodation enter the addresses of any other accommodation you will be using during a placement.</p>
+          </div>
+        </div>
+    
+      </li>
+    </ul>
+
+    <ul class="nhsuk-grid-row nhsuk-card-group">
+      <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+    
+        <div class="nhsuk-card nhsuk-card--clickable">
+          <div class="nhsuk-card__content">
+            <h2 class="nhsuk-card__heading nhsuk-heading-m">
+              <a class="nhsuk-card__link" href="journey-menu">Placement journeys</a>
+            </h2>
+            <p class="nhsuk-card__description">This uses your placement and accommodation addresses to create details of the journeys you have undertaken as part of your placement.</p>
+          </div>
+        </div>
+    
+      </li>
+      <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+    
+        <div class="nhsuk-card nhsuk-card--clickable">
+          <div class="nhsuk-card__content">
+            <h2 class="nhsuk-card__heading nhsuk-heading-m">
+              <a class="nhsuk-card__link" href="passenger-menu">Passengers</a>
+            </h2>
+            <p class="nhsuk-card__description">Enter details of any other NHS Bursary funded passengers who travelled with you in your own vehicle to your placement.</p>
+          </div>
+        </div>
+    
+      </li>
+      <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+    
+        <div class="nhsuk-card nhsuk-card--clickable">
+          <div class="nhsuk-card__content">
+            <h2 class="nhsuk-card__heading nhsuk-heading-m">
+              <a class="nhsuk-card__link" href="/ppe/plan-c/scenario/intro/current-address">Start claim</a>
+            </h2>
+            <p class="nhsuk-card__description">Only when you are happy you have entered all relevant information to build your claim should you click start claim. This will take you through a process that builds your expenses claim using the information you have already entered. You will be able to pause, save and come back to your claim as often as you wish before submission.</p>
+          </div>
+        </div>
+    
+      </li>
+    </ul>
+   
+  </div>
+</div>
+
+{% endblock %}

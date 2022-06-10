@@ -1,0 +1,89 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+{{ serviceName }} prototypes | Declaration
+{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %}
+<a class="nhsuk-skip-link" href="#maincontent" id="skipLink">Skip to main content</a>
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    <!-- Change the page title here -->
+    <h1 class="app-heading-l" id="declaration">
+      Declaration
+    </h1>
+
+    <!-- Add your content here -->
+    <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+
+    <div class="nhsuk-form-group">
+    <p>In countersigning this claim for Practice Placement Expenses, I confirm the following:</p>
+
+    <ul class="nhsuk-list nhsuk-list--bullet">
+      <li>The student named on this claim is studying on a pre-registration healthcare programme that is, to the best of my 
+      knowledge, eligible for Practice Placement Expenses. </li>
+   
+      <li>The practice placement(s) for which the student is claiming the Practice Placement Expenses were essentially incurred 
+        as part of the overall programme requirements.</li>
+
+      <li>The expenses detailed in this claim form have been reasonably and necessarily incurred in accordance with the provisions 
+        of the policy.</li>
+
+      <li>The student's normal daily travel to university costs have been deducted, where applicable.</li>
+
+      <li>I have checked the claim and, to the best of my knowledge, confirm that the expenses being claimed are correct.</li>
+     
+      <li>I have checked the receipts where applicable.</li>
+
+      <li>The receipts will be retained in line with this institutions audit and governance requirements.</li>
+
+      <li>I am a registered employee of the higher education institution that the student attends, and I have authority agreed by the 
+        higher education institution to countersign Practice Placement Expenses claims.</li>
+
+      <li>I understand and accept that if I provide false or misleading information, I may be liable to prosecution and/or civil proceedings.</li>
+
+      <li>I understand that the administration of Practice Placement Expenses and responsibility for counter fraud and security management are both 
+        responsibilities of the NHS Business Services Authority.</li>
+
+      <li>I understand that Student Services may share the information on this form with NHS Counter Fraud Authority for the purposes of the prevention, 
+        detection, investifation and prosecution of fraud or any other unlawful activity affecting the NHS. </li>  
+  </ul>
+
+
+</div>
+
+<h2>Confirm and submit to NHSBSA for payment</h2>
+
+    <p>By ticking the box you’re confirming that you have read and accepted the declaration.</p>
+    
+    <div class="nhsuk-checkboxes">
+        <div class="nhsuk-checkboxes__item">
+          <input class="nhsuk-checkboxes__input" id="accept" name="accept" type="checkbox" value="accept">
+          <label class="nhsuk-label nhsuk-checkboxes__label" for="accept">
+            Accept
+          </label>
+        </div>
+
+        <div class="nhsuk-form-group">
+            <a href="approved" class="nhsuk-button" type="Submit" role="button" id="submit">Submit</a>
+        </div>
+
+{% endblock %}

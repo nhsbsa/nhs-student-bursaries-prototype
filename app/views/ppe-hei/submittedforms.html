@@ -1,0 +1,510 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /View applications/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /View applications/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}{{ serviceName }} prototypes | Submitted applications {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block header %} {{ header({ "service": { "name": "Bursary", "href": "/"
+}, "showNav": "true", "showSearch": "false", "primaryLinks": [ { "url" : "submittedforms",
+"label" : "Applications" },  { "url" : "search", "label" : "Search for a student" }, { "url" : "#", "label" : "Change password" }, { "url" : "index", "label" : "Log out" } ] })
+}} {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<!-- Breadcrumb -->
+<a class="nhsuk-skip-link" href="#maincontent">Skip to main content</a>
+
+{% endblock %}
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-width-container">
+    <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full">
+
+            <h1 class="app-page-heading">
+                Submitted applications
+            </h1>
+
+            <!-- <p>List of student submitted applications</p> -->
+
+            <table role="table" class="nhsuk-table-responsive">
+                <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">submitted applications table</caption>
+                <thead role="rowgroup" class="nhsuk-table__head">
+                    <tr role="row">
+                        <th role="columnheader" class="" scope="col">
+                            Student name
+                        </th>
+                        <th role="columnheader" class="" scope="col">
+                            Student number
+                        </th>
+                        <th role="columnheader" class="" scope="col">
+                            Course
+                        </th>
+                        <th role="columnheader" class="" scope="col">
+                          Date of journey
+                      </th>
+                        <th role="columnheader" class="" scope="col">
+                            Action
+                        </th>
+                      
+                    </tr>
+                </thead>
+                <tbody class="nhsuk-table__body">
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Student name </span>Sam Bloggs
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Student number </span>000
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Course </span>Adult Nursing
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Date </span>17/7/2019
+                    </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Action </span><a href="summary">View application</a>
+                      </td>
+                  </tr>
+                </tbody>
+                <tbody class="nhsuk-table__body">
+                    <tr role="row" class="nhsuk-table__row">
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Student name </span>Derek Bloggs
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Student number </span>001
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Course </span>Dental Therapy
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Date </span>18/7/2019
+                      </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Action </span><a href="summary1">View application</a>
+                        </td>
+                    </tr>
+                  </tbody>
+                  <tbody class="nhsuk-table__body">
+                    <tr role="row" class="nhsuk-table__row">
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Student name </span>John Bloggs
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Student number </span>002
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Course </span>Medicine
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Date </span>19/7/2019
+                      </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Action </span><a href="summary">View application</a>
+                        </td>
+                    </tr>
+                  </tbody>
+
+                  <tbody class="nhsuk-table__body">
+                    <tr role="row" class="nhsuk-table__row">
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Student name </span>John Smith
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Student number </span>003
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Course </span>Adult Nursing
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Date </span>20/7/2019
+                      </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Action </span><a href="summary1">View application</a>
+                        </td>
+                    </tr>
+                  </tbody>
+
+                  <tbody class="nhsuk-table__body">
+                    <tr role="row" class="nhsuk-table__row">
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Student name </span>Joe Smith
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Student number </span>004
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Course </span>Medicine
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Date </span>21/7/2019
+                      </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Action </span><a href="summary">View application</a>
+                        </td>
+                    </tr>
+                  </tbody>
+
+                  <tbody class="nhsuk-table__body">
+                    <tr role="row" class="nhsuk-table__row">
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Student name </span>Barry Smith
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Student number </span>005
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Course </span>Dental Hygiene
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Date </span>22/7/2019
+                      </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Action </span><a href="summary1">View application</a>
+                        </td>
+                    </tr>
+                  </tbody>
+
+                  <tbody class="nhsuk-table__body">
+                    <tr role="row" class="nhsuk-table__row">
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Student name </span>Jack Jones
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Student number </span>006
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Course </span>Dietetics
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Date </span>23/7/2019
+                      </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Action </span><a href="summary">View application</a>
+                        </td>
+                    </tr>
+                  </tbody>
+
+                  <tbody class="nhsuk-table__body">
+                    <tr role="row" class="nhsuk-table__row">
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Student name </span>Sally Jones
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Student number </span>007
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Course </span>Medicine
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Date </span>23/7/2019
+                      </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Action </span><a href="summary1">View application</a>
+                        </td>
+                    </tr>
+                  </tbody>
+
+                  <tbody class="nhsuk-table__body">
+                    <tr role="row" class="nhsuk-table__row">
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Student name </span>Michelle Jones
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Student number </span>008
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Course </span>Medicine
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Date </span>23/7/2019
+                      </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Action </span><a href="summary">View application</a>
+                        </td>
+                    </tr>
+                  </tbody>
+
+                  <tbody class="nhsuk-table__body">
+                    <tr role="row" class="nhsuk-table__row">
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Student name </span>Mary Bloggs
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Student number </span>009
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Course </span>Medicine
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Date </span>23/7/2019
+                      </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Action </span><a href="summary1">View application</a>
+                        </td>
+                    </tr>
+                  </tbody>
+
+                  <tbody class="nhsuk-table__body">
+                    <tr role="row" class="nhsuk-table__row">
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Student name </span>Sam Bloggs
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Student number </span>010
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Course </span>Medical (A100)
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Date </span>24/7/2019
+                      </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Action </span><a href="summary">View application</a>
+                        </td>
+                    </tr>
+                  </tbody>
+
+                  <tbody class="nhsuk-table__body">
+                    <tr role="row" class="nhsuk-table__row">
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Student name </span>Lucy Bloggs
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Student number </span>011
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Course </span>Adult Nursing
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Date </span>25/7/2019
+                      </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Action </span><a href="summary1">View application</a>
+                        </td>
+                    </tr>
+                  </tbody>
+
+                  <tbody class="nhsuk-table__body">
+                    <tr role="row" class="nhsuk-table__row">
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Student name </span>Ricky Smith
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Student number </span>012
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Course </span> Dental Therapy
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Date </span>25/7/2019
+                      </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Action </span><a href="summary">View application</a>
+                        </td>
+                    </tr>
+                  </tbody>
+
+                  <tbody class="nhsuk-table__body">
+                    <tr role="row" class="nhsuk-table__row">
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Student name </span>Mick Smith
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Student number </span>013
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Course </span>Podiatry
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Date </span>26/7/2019
+                      </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Action </span><a href="summary1">View application</a>
+                        </td>
+                    </tr>
+                  </tbody>
+
+                  <tbody class="nhsuk-table__body">
+                    <tr role="row" class="nhsuk-table__row">
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Student name </span>Liam Bloggs
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Student number </span>014
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Course </span>Medicine
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Date </span>26/7/2019
+                      </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Action </span><a href="summary">View application</a>
+                        </td>
+                    </tr>
+                  </tbody>
+
+                  <tbody class="nhsuk-table__body">
+                    <tr role="row" class="nhsuk-table__row">
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Student name </span>Matt Bloggs
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Student number </span>015
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Course </span>Dental Therapy
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Date </span>27/7/2019
+                      </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Action </span><a href="summary1">View application</a>
+                        </td>
+                    </tr>
+                  </tbody>
+
+                  <tbody class="nhsuk-table__body">
+                    <tr role="row" class="nhsuk-table__row">
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Student name </span>Adrian Bloggs
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Student number </span>016
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Course </span>Medicine
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Date </span>28/7/2019
+                      </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Action </span><a href="summary">View application</a>
+                        </td>
+                    </tr>
+                  </tbody>
+
+                  <tbody class="nhsuk-table__body">
+                    <tr role="row" class="nhsuk-table__row">
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Student name </span>James Bloggs
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Student number </span>017
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Course </span>Adult Nursing
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Date </span>29/7/2019
+                      </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Action </span><a href="summary1">View application</a>
+                        </td>
+                    </tr>
+                  </tbody>
+
+                  <tbody class="nhsuk-table__body">
+                    <tr role="row" class="nhsuk-table__row">
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Student name </span>Emma Bloggs
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Student number </span>018
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Course </span> Adult Nursing
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Date </span> 29/7/2019
+                      </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Action </span><a href="summary">View application</a>
+                        </td>
+                    </tr>
+                  </tbody>
+
+                  <tbody class="nhsuk-table__body">
+                    <tr role="row" class="nhsuk-table__row">
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Student name </span>Jackie Bloggs
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Student number </span>019
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Course </span>Medicine
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Date </span> 29/7/2019
+                      </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Action </span><a href="summary1">View application</a>
+                        </td>
+                    </tr>
+                  </tbody>
+
+                  <tbody class="nhsuk-table__body">
+                    <tr role="row" class="nhsuk-table__row">
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Student name </span>Steven Bloggs
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Student number </span>020
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Course </span>Medicine
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Date </span>30/7/2019
+                      </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Action </span><a href="summary">View application</a>
+                        </td>
+                    </tr>
+                  </tbody>
+              </table>
+
+              
+              <nav class="nhsuk-pagination" role="navigation" aria-label="Pagination">
+                <ul class="nhsuk-list nhsuk-pagination__list">
+                  <li class="nhsuk-pagination-item--previous">
+                    <a class="nhsuk-pagination__link nhsuk-pagination__link--prev" href="#">
+                      <span class="nhsuk-pagination__title">Previous</span>
+                      <span class="nhsuk-u-visually-hidden">:</span>
+                      <!-- <span class="nhsuk-pagination__page"></span> -->
+                      <svg class="nhsuk-icon nhsuk-icon__arrow-left" xmlns="http://www.w3.org/2000/svg" View applicationBox="0 0 24 24" aria-hidden="true">
+                        <path d="M4.1 12.3l2.7 3c.2.2.5.2.7 0 .1-.1.1-.2.1-.3v-2h11c.6 0 1-.4 1-1s-.4-1-1-1h-11V9c0-.2-.1-.4-.3-.5h-.2c-.1 0-.3.1-.4.2l-2.7 3c0 .2 0 .4.1.6z"></path>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="nhsuk-pagination-item--next">
+                    <a class="nhsuk-pagination__link nhsuk-pagination__link--next" href="submittedforms1">
+                      <span class="nhsuk-pagination__title">Next</span>
+                      <span class="nhsuk-u-visually-hidden">:</span>
+                      <!-- <span class="nhsuk-pagination__page"></span> -->
+                      <svg class="nhsuk-icon nhsuk-icon__arrow-right" xmlns="http://www.w3.org/2000/svg" View applicationBox="0 0 24 24" aria-hidden="true">
+                        <path d="M19.6 11.66l-2.73-3A.51.51 0 0 0 16 9v2H5a1 1 0 0 0 0 2h11v2a.5.5 0 0 0 .32.46.39.39 0 0 0 .18 0 .52.52 0 0 0 .37-.16l2.73-3a.5.5 0 0 0 0-.64z"></path>
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+    
+</div>
+
+                    {% endblock %}

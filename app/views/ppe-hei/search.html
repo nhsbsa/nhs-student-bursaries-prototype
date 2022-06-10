@@ -1,0 +1,65 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}{{ serviceName }} prototypes | Search for a student {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block header %} {{ header({ "service": { "name": "Bursary", "href": "/"
+}, "showNav": "true", "showSearch": "false", "primaryLinks": [ { "url" : "submittedforms",
+"label" : "Applications" },  { "url" : "search", "label" : "Search for a student" }, { "url" : "#", "label" : "Change password" }, { "url" : "index", "label" : "Log out" } ] })
+}} {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<!-- Breadcrumb -->
+<a class="nhsuk-skip-link" href="#maincontent">Skip to main content</a>
+
+{% endblock %}
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-width-container">
+    
+        <h1 class="app-page-heading">
+            Search for a student
+        </h1>
+         
+        <div class="nhsuk-form-group">
+        <div class="nhsuk-grid-row">
+                <div class="nhsuk-grid-column-one-third">
+                  <label class="nhsuk-label" id="studentNameLbl" for="studentNameInput">Student name</label>
+                  <input class="nhsuk-input" id="studentNameInput"> </input>
+                </div>
+             
+            
+                <div class="nhsuk-grid-column-one-third">
+                    <label class="nhsuk-label" id="studentNameLbl" for="studentNumInput">Student number</label>
+                    <input class="nhsuk-input" id="studentNumInput"> </input>
+                </div>
+
+                <div class="nhsuk-grid-column-one-third">
+                    <label class="nhsuk-label" id="heiNumLbl" for="heiNumInput">HEI number</label>
+                    <input class="nhsuk-input" id="heiNumInput"> </input>
+                </div>
+            </div>
+            </div>
+              
+           
+                <a href="searchresults" class="nhsuk-button" type="Submit" role="button" id="search">Search</a>
+        
+             
+            </div>
+    
+</div>
+
+{% endblock %}

@@ -1,0 +1,128 @@
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+{% block header %} {{ header({ "service": { "name": "Bursary", "href": "/" },
+"showNav": "false", "showSearch": "false" }) }} {% endblock %}
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Check your answers {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <h1 class="nhsuk-app-heading" id="checkYourDetails">
+      <span class="nhsuk-caption-l">Accommodation details</span>Check your
+      answers
+    </h1>
+
+    <div class="nhsuk-u-padding-bottom-4">
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">Accommodation type</dt>
+          <dd class="nhsuk-summary-list__value"><p>Hotel</p></dd>
+
+          <dd class="nhsuk-summary-list__actions">
+            <a href="">
+              Change<span class="nhsuk-u-visually-hidden">
+                Accommodation type</span
+              >
+            </a>
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">Address</dt>
+          <dd class="nhsuk-summary-list__value">
+            <p>73 Roman Rd</p>
+            <p>Leeds</p>
+            <p>LS2 5ZN</p>
+          </dd>
+
+          <dd class="nhsuk-summary-list__actions">
+            <a href="">
+              Change<span class="nhsuk-u-visually-hidden">Address</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">Date from</dt>
+          <dd class="nhsuk-summary-list__value">
+            <p>10/4/2020</p>
+          </dd>
+
+          <dd class="nhsuk-summary-list__actions">
+            <a href="">
+              Change<span class="nhsuk-u-visually-hidden">Date from</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">Date to</dt>
+          <dd class="nhsuk-summary-list__value">
+            <p>22/4/2020</p>
+          </dd>
+
+          <dd class="nhsuk-summary-list__actions">
+            <a href="">
+              Change<span class="nhsuk-u-visually-hidden">Date to</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">Total Cost</dt>
+          <dd class="nhsuk-summary-list__value">
+            <p>£250</p>
+          </dd>
+
+          <dd class="nhsuk-summary-list__actions">
+            <a href="">
+              Change<span class="nhsuk-u-visually-hidden">Total Cost</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">Other accommodation</dt>
+          <dd class="nhsuk-summary-list__value">
+            <p>Yes</p>
+          </dd>
+
+          <dd class="nhsuk-summary-list__actions">
+            <a href="">
+              Change<span class="nhsuk-u-visually-hidden"
+                >Other accommodation</span
+              >
+            </a>
+          </dd>
+        </div>
+      </dl>
+      <p>
+        By clicking accept and continue you’re confirming that the answers
+        you’re providing are correct.
+      </p>
+      <p>You’ll need to upload your evidence on the next page.</p>
+
+      <div class="nhsuk-form-group">
+        <a
+          id="register"
+          role="button"
+          class="nhsuk-button"
+          href="accommodation-evidence"
+          >Accept and continue</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

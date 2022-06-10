@@ -1,0 +1,303 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Person 1/2 details {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <div class="nhsuk-back-link">
+      <a class="nhsuk-back-link__link" href="/">
+        <svg
+          class="nhsuk-icon nhsuk-icon__chevron-left"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"
+          ></path>
+        </svg>
+        Go back</a
+      >
+    </div>
+
+    <h1 class="nhsuk-app-heading" id="studentIncomeH1">
+      <span class="nhsuk-caption-l">NHSBSA Prototype</span>
+      Person 1/2 details
+    </h1>
+    <hr aria-hidden="true" />
+    <h2 class="nhsuk-heading-m">
+      Person 1/2 details
+      <strong
+        class="task-completed status-shortlisted"
+        style="background-color: #330072; float: right"
+      >
+        MVP Ready
+      </strong>
+      <span class="nhsuk-caption-m nhsuk-caption--bottom"
+        >Last updated: 29 September 2021</span
+      >
+    </h2>
+
+    <p>The following have been completed:</p>
+
+    <ul class="nhsuk-list nhsuk-list--bullet">
+      <li>accessibility testing throughout</li>
+      <li>parent one and two have been combined to one journey</li>
+      <li>save and come back later has been added to summary screens</li>
+    </ul>
+
+    <p>Most recent updates:</p>
+    <ul class="nhsuk-list nhsuk-list--bullet">
+      <li>
+        'Cancel and return to dashboard' has been added on the summary screens
+      </li>
+    </ul>
+
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-full">
+            <div class="nhsuk-expander-group">
+              <details
+                class="nhsuk-details nhsuk-expander"
+                nhsuk-polyfilled="true"
+                id="nhsuk-details0"
+              >
+                <summary
+                  class="nhsuk-details__summary"
+                  role="button"
+                  aria-controls="nhsuk-details__text0"
+                >
+                  <span class="nhsuk-details__summary-text">
+                    Parent details
+                  </span>
+                </summary>
+
+                <div class="nhsuk-details__text" id="nhsuk-details__text0">
+                  <table class="nhsuk-table">
+                    <caption
+                      class="nhsuk-table__caption nhsuk-u-visually-hidden"
+                    ></caption>
+                    <thead role="rowgroup" class="nhsuk-table__head">
+                      <tr role="row">
+                        <th role="columnheader" class="" scope="col">
+                          Journey point
+                        </th>
+                        <th role="columnheader" class="" scope="col">Link</th>
+                      </tr>
+                    </thead>
+                    <tbody class="nhsuk-table__body">
+                      <tr role="row" class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell">
+                          Do you live with both parents?
+                        </td>
+                        <td class="nhsuk-table__cell">
+                          <a href="living-arrangements"
+                            >View
+                            <span class="nhsuk-u-visually-hidden">
+                              Do you live with both parents? page</span
+                            ></a
+                          >
+                        </td>
+                      </tr>
+                      <tr role="row" class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell">
+                          Why don't you live with the other parent?
+                        </td>
+                        <td class="nhsuk-table__cell">
+                          <a href="reason"
+                            >View
+                            <span class="nhsuk-u-visually-hidden">
+                              Why don't you live with the other parent?
+                              page</span
+                            ></a
+                          >
+                        </td>
+                      </tr>
+                      <tr role="row" class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell">Parent one name</td>
+                        <td class="nhsuk-table__cell">
+                          <a href="person-one/name"
+                            >View
+                            <span class="nhsuk-u-visually-hidden">
+                              person one name page</span
+                            ></a
+                          >
+                        </td>
+                      </tr>
+                      <tr role="row" class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell">Parent one email</td>
+                        <td class="nhsuk-table__cell">
+                          <a href="person-one/email"
+                            >View
+                            <span class="nhsuk-u-visually-hidden">
+                              person one email page</span
+                            ></a
+                          >
+                        </td>
+                      </tr>
+                      <tr role="row" class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell">Parent two name</td>
+                        <td class="nhsuk-table__cell">
+                          <a href="person-two/name"
+                            >View
+                            <span class="nhsuk-u-visually-hidden">
+                              Parent two name</span
+                            ></a
+                          >
+                        </td>
+                      </tr>
+                      <tr role="row" class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell">Parent two email</td>
+                        <td class="nhsuk-table__cell">
+                          <a href="person-two/email"
+                            >View
+                            <span class="nhsuk-u-visually-hidden">
+                              Parent two email</span
+                            ></a
+                          >
+                        </td>
+                      </tr>
+                      <tr role="row" class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell">Summary - one parent</td>
+                        <td class="nhsuk-table__cell">
+                          <a href="person-one/summary"
+                            >View
+                            <span class="nhsuk-u-visually-hidden">
+                              Summary - one parent</span
+                            ></a
+                          >
+                        </td>
+                      </tr>
+                      <tr role="row" class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell">
+                          Summary - both parents
+                        </td>
+                        <td class="nhsuk-table__cell">
+                          <a href="person-two/summary"
+                            >View
+                            <span class="nhsuk-u-visually-hidden">
+                              Summary - both parents</span
+                            ></a
+                          >
+                        </td>
+                      </tr>
+                      <tr role="row" class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell">Complete</td>
+                        <td class="nhsuk-table__cell">
+                          <a href="complete"
+                            >View
+                            <span class="nhsuk-u-visually-hidden">
+                              Complete</span
+                            ></a
+                          >
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </details>
+            </div>
+
+            <div class="nhsuk-expander-group">
+              <details
+                class="nhsuk-details nhsuk-expander"
+                nhsuk-polyfilled="true"
+                id="nhsuk-details1"
+              >
+                <summary
+                  class="nhsuk-details__summary"
+                  role="button"
+                  aria-controls="nhsuk-details__text1"
+                >
+                  <span class="nhsuk-details__summary-text"> Spouse </span>
+                </summary>
+
+                <div class="nhsuk-details__text" id="nhsuk-details__text1">
+                  <table class="nhsuk-table">
+                    <caption
+                      class="nhsuk-table__caption nhsuk-u-visually-hidden"
+                    ></caption>
+                    <thead role="rowgroup" class="nhsuk-table__head">
+                      <tr role="row">
+                        <th role="columnheader" class="" scope="col">
+                          Journey point
+                        </th>
+                        <th role="columnheader" class="" scope="col">Link</th>
+                      </tr>
+                    </thead>
+                    <tbody class="nhsuk-table__body">
+                      <tr role="row" class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell">Name</td>
+                        <td class="nhsuk-table__cell">
+                          <a href="spouse/name"
+                            >View
+                            <span class="nhsuk-u-visually-hidden">
+                              name page</span
+                            ></a
+                          >
+                        </td>
+                      </tr>
+                      <tr role="row" class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell">Email</td>
+                        <td class="nhsuk-table__cell">
+                          <a href="spouse/email"
+                            >View
+                            <span class="nhsuk-u-visually-hidden">
+                              email page</span
+                            ></a
+                          >
+                        </td>
+                      </tr>
+                      <tr role="row" class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell">Summary</td>
+                        <td class="nhsuk-table__cell">
+                          <a href="spouse/summary"
+                            >View
+                            <span class="nhsuk-u-visually-hidden"
+                              >Summary</span
+                            ></a
+                          >
+                        </td>
+                      </tr>
+                      <tr role="row" class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell">Complete</td>
+                        <td class="nhsuk-table__cell">
+                          <a href="spouse/complete"
+                            >View
+                            <span class="nhsuk-u-visually-hidden"
+                              >complete</span
+                            ></a
+                          >
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </details>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

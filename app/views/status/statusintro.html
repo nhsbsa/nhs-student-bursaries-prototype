@@ -1,0 +1,106 @@
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+{% block header %} {{ header({ "service": { "name": "Bursary", "href": "/" },
+"showNav": "false", "showSearch": "false" }) }} {% endblock %}
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}Apply for an income assessed bursary {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-back-link">
+  <a class="nhsuk-back-link__link" href="intro" id="back">
+    <svg
+      class="nhsuk-icon nhsuk-icon__chevron-left"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <path
+        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"
+      ></path>
+    </svg>
+    Go back</a
+  >
+</div>
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+      <h1 class="nhsuk-app-heading">Apply for an income assessed bursary</h1>
+    </legend>
+    <p>
+      This section will determine if you’re an independent or dependent student.
+    </p>
+
+    <h2 class="nhsuk-heading-m" id="independentStudent">
+      If you are an independent student
+    </h2>
+
+    <p>
+      We will not consider your parents income when we assess how much financial
+      support you can get.
+    </p>
+    <p>You are an independent student if you:</p>
+    <ul>
+      <li>have no living parents</li>
+      <li>
+        are married, in a civil partnership, seperated, divorced or widowed
+      </li>
+      <li>care for a person under the age of 18</li>
+      <li>
+        have not had any contact with your parents for 1 year before the start
+        of the academic year you’re applying for
+      </li>
+      <li>
+        have supported yourself for at least 3 years before the start of your
+        course
+      </li>
+    </ul>
+    <p>
+      If none of these apply to you, we’ll assess you as a dependent student.
+    </p>
+    <h3 class="nhsuk-heading-s" id="sfeAssessment">
+      Student Finance England assessment
+    </h3>
+    <p>
+      If Student Finance England have confirmed you're an independent, you can
+      upload evidence to complete this section.
+    </p>
+    <h2 class="nhsuk-heading-m" id="depdendentStudent">
+      If you are a dependent student
+    </h2>
+    <p>
+      We’ll assess your application based on your parent’s income and expenses
+      for the last tax year. Your parents need to complete this themselves.
+    </p>
+    <h3 class="nhsuk-heading-s" id="evidence">Evidence you will need</h3>
+
+    <p>Depending on your circumstances, you might need to send proof of:</p>
+
+    <ul>
+      <li>your latest award letter from SFE</li>
+      <li>your parent’s death certificates</li>
+      <li>your marriage or civil partnership certificate</li>
+      <li>your divorce decree or partners death certificate</li>
+      <li>your payslips, P60s, P45s or tax return</li>
+      <li>a letter from your employers or HMRC</li>
+      <li>a letter from your local council or care authority</li>
+      <li>your child or children’s birth certificates</li>
+    </ul>
+
+    <a href="incomebursary" class="nhsuk-button">Start now</a>
+  </div>
+</div>
+
+{% endblock %}

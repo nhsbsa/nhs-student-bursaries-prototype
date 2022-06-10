@@ -1,0 +1,96 @@
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+Upload evidence that you are irreconcilably estranged from your parents
+{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %}
+<a class="nhsuk-skip-link" href="#maincontent">Skip to main content</a>
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+
+ <div class="nhsuk-back-link">
+  <a class="nhsuk-back-link__link" href="/status/estranged">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+      aria-hidden="true">
+      <path
+        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+      </path>
+    </svg>
+    Go back</a>
+</div> 
+
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <fieldset class="nhsuk-fieldset">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-app-heading" id="uploadEvidenceH1">
+            Upload evidence that you are irreconcilably estranged from your parents
+        </h1>
+      </legend>
+
+     
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-three-quarters">
+
+          <form method="post">
+            <div class="nhsuk-form-group">
+
+        <p>Based on your answers, we consider you to be an independent student and we now require evidence to support this status.</p> 
+           <p>Please upload evidence that you are irreconcilably estranged from your parents. </p>  
+          <!-- We will assess your bursary entitlement using the income of your spouse/partner --></p>
+
+        <label for="file" class="nhsuk-label" id="title-label"><strong>Guidance for uploading a document</strong></label>
+        <p class="nhsuk-hint" id="file-format-hint">Please choose a file of one of the following types:
+          types</p>
+        <span class="nhsuk-hint">The quality of your digital photo upload must be:</span>
+        <ul class="list list-bullet nhsuk-hint">
+          <li>original copy</li>
+          <li>full document displayed</li>
+          <li>clear and in focus</li>
+          <li>in colour</li>
+          <li>unaltered by computer software</li>		
+        </ul>
+        <p class="nhsuk-hint" id="file-format-reject">
+          If the document does not meet this criteria, your application will be rejected
+                      </p>
+                      
+                      <div class="form-group-error" id="fileSizeError" hidden="true">
+                          <span id="fileSizeErrorMessage" class="error-message"></span>
+                      </div>
+                      <input id="file" class="nhsuk-input" type="file" name="file"
+                         />
+                  
+<br>
+<br>
+
+<a class="nhsuk-button" type="submit" id="uploadBtn" href="uploadconfirmation">Upload evidence</a>
+
+<p><a class="nhsuk-link" id="cancelLink" href="intro">Cancel</a></p>
+
+          </form>
+
+       
+        </div>
+        
+      </div>
+    </fieldset>
+  </div>
+
+</div>
+</div>
+
+{% endblock %}

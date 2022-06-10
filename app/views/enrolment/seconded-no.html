@@ -1,0 +1,233 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+{% block header %} {{ header({ "service": { "name": "Bursary", "href": "/" },
+"showNav": "false", "showSearch": "false" }) }} {% endblock %}
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Which university are you
+attending? {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-back-link">
+  <a class="nhsuk-back-link__link" href="courseyear" id="back">
+    <svg
+      class="nhsuk-icon nhsuk-icon__chevron-left"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <path
+        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"
+      ></path>
+    </svg>
+    Go back</a
+  >
+</div>
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <h1 class="nhsuk-app-heading" id="universityH1">
+      <span class="nhsuk-caption-l">Course details</span>
+      Which university are you attending?
+    </h1>
+
+    <p>
+      We need to know your home university. This is the university that you’ll
+      graduate from.
+    </p>
+
+    <div class="nhsuk-form-group">
+      <label for="location-picker" class="nhsuk-label"
+        >Name of university</label
+      >
+      <span class="nhsuk-hint">For example, Northumbria University</span>
+      <select
+        id="location-picker"
+        class="nhsuk-select nhsuk-u-width-three-quarters"
+      >
+        <option value="">Select an option</option>
+        <option value="Anglia Ruskin University - Cambridge">
+          Anglia Ruskin University - Cambridge
+        </option>
+        <option value="Anglia Ruskin University - Chelmsford">
+          Anglia Ruskin University - Chelmsford
+        </option>
+        <option value="Anglia Ruskin University - Peterborough">
+          Anglia Ruskin University - Peterborough
+        </option>
+        <option value="Birmingham City University">
+          Birmingham City University
+        </option>
+        <option value="Birmingham Metropolitan College">
+          Birmingham Metropolitan College
+        </option>
+        <option value="Bournemouth University">Bournemouth University</option>
+        <option value="Bpp University Ltd">Bpp University Ltd</option>
+        <option value="Brunel University London">
+          Brunel University London
+        </option>
+        <option value="Bucks New University">Bucks New University</option>
+        <option value="Canterbury Christ Church University">
+          Canterbury Christ Church University
+        </option>
+        <option value="City University London">City University London</option>
+        <option value="Colchester Institute">Colchester Institute</option>
+        <option value="Coventry University">Coventry University</option>
+        <option value="De Montfort University">De Montfort University</option>
+        <option value="Edge Hill University">Edge Hill University</option>
+        <option value="Keele University">Keele University</option>
+        <option value="Kings College London">Kings College London</option>
+        <option value="Kingston University">Kingston University</option>
+        <option value="Leeds Beckett University">
+          Leeds Beckett University
+        </option>
+        <option value="Liverpool John Moores University">
+          Liverpool John Moores University
+        </option>
+        <option value="London Metropolitan University">
+          London Metropolitan University
+        </option>
+        <option value="London South Bank University">
+          London South Bank University
+        </option>
+        <option value="Manchester Metropolitan University">
+          Manchester Metropolitan University
+        </option>
+        <option value="Middlesex University">Middlesex University</option>
+        <option value="New College Durham">New College Durham</option>
+        <option value="Northumbria University">Northumbria University</option>
+        <option value="Oxford Brookes University">
+          Oxford Brookes University
+        </option>
+        <option value="Sheffield Hallam University">
+          Sheffield Hallam University
+        </option>
+        <option value="Solent University">Solent University</option>
+        <option value="St George's - University Of London">
+          St George's - University Of London
+        </option>
+        <option value="Staffordshire University">
+          Staffordshire University
+        </option>
+        <option value="University College London">
+          University College London
+        </option>
+        <option value="University Of Bedfordshire">
+          University Of Bedfordshire
+        </option>
+        <option value="University Of Birmingham">
+          University Of Birmingham
+        </option>
+        <option value="University Of Bolton">University Of Bolton</option>
+        <option value="University Of Bradford">University Of Bradford</option>
+        <option value="University Of Brighton">University Of Brighton</option>
+        <option value="University Of Bristol">University Of Bristol</option>
+        <option value="University Of Central Lancashire">
+          University Of Central Lancashire
+        </option>
+        <option value="University Of Chester">University Of Chester</option>
+        <option value="University Of Cumbria">University Of Cumbria</option>
+        <option value="University Of Derby">University Of Derby</option>
+        <option value="University Of East Anglia">
+          University Of East Anglia
+        </option>
+        <option value="University Of East London">
+          University Of East London
+        </option>
+        <option value="University Of Essex">University Of Essex</option>
+        <option value="University Of Exeter">University Of Exeter</option>
+        <option value="University Of Gloucestershire">
+          University Of Gloucestershire
+        </option>
+        <option value="University Of Greenwich">University Of Greenwich</option>
+        <option value="University Of Hertfordshire">
+          University Of Hertfordshire
+        </option>
+        <option value="University Of Huddersfield">
+          University Of Huddersfield
+        </option>
+        <option value="University Of Hull">University Of Hull</option>
+        <option value="University Of Leeds">University Of Leeds</option>
+        <option value="University Of Leicester">University Of Leicester</option>
+        <option value="University Of Lincoln">University Of Lincoln</option>
+        <option value="University Of Liverpool">University Of Liverpool</option>
+        <option value="University Of Manchester">
+          University Of Manchester
+        </option>
+        <option value="University Of Newcastle">University Of Newcastle</option>
+        <option value="University Of Northampton">
+          University Of Northampton
+        </option>
+        <option value="University Of Nottingham">
+          University Of Nottingham
+        </option>
+        <option value="University Of Plymouth">University Of Plymouth</option>
+        <option value="University Of Portsmouth">
+          University Of Portsmouth
+        </option>
+        <option value="University Of Reading">University Of Reading</option>
+        <option value="University Of Roehampton">
+          University Of Roehampton
+        </option>
+        <option value="University Of Salford">University Of Salford</option>
+        <option value="University Of Sheffield">University Of Sheffield</option>
+        <option value="University Of Southampton">
+          University Of Southampton
+        </option>
+        <option value="University Of St Mark And St John">
+          University Of St Mark And St John
+        </option>
+        <option value="University Of Suffolk">University Of Suffolk</option>
+        <option value="University Of Sunderland">
+          University Of Sunderland
+        </option>
+        <option value="University Of Surrey">University Of Surrey</option>
+        <option value="University Of Teesside">University Of Teesside</option>
+        <option value="University Of The West Of England">
+          University Of The West Of England
+        </option>
+        <option value="University Of West London">
+          University Of West London
+        </option>
+        <option value="University Of Winchester">
+          University Of Winchester
+        </option>
+        <option value="University Of Wolverhampton">
+          University Of Wolverhampton
+        </option>
+        <option value="University Of Worcester">University Of Worcester</option>
+        <option value="University Of York">University Of York</option>
+        <option value="Universiyt Of Plymouth">Universiyt Of Plymouth</option>
+        <option value="York St John University">York St John University</option>
+      </select>
+    </div>
+
+    <div class="nhsuk-form-group">
+      <a id="next" role="button" class="nhsuk-button" href="whichcourse"
+        >Continue</a
+      >
+    </div>
+
+    <p>
+      If you cannot find your university, you can
+      <a href="#">contact us.</a>
+    </p>
+  </div>
+</div>
+
+{% endblock %}

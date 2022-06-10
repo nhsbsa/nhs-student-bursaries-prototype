@@ -1,0 +1,346 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} 
+Childcare - quarterly 
+{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %}
+<a class="nhsuk-skip-link" href="#maincontent">Skip to main content</a>
+
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<main class="nhsuk-main-wrapper" id="content" role="main">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <div class="nhsuk-back-link">
+        <a class="nhsuk-back-link__link" href="/childcare-new/intro">
+          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+            aria-hidden="true">
+            <path
+              d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+            </path>
+          </svg>
+          Go back</a>
+      </div>
+      <!-- Change the page title here -->
+      <h1>Childcare - quarterly</h1>
+      
+      <p>Students must provide details for the childcare provider(s) before they can estimate costs for
+      the child(ren). Start with the childcare provider details option and continue through the journey.
+      </p>
+
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full">
+
+          <div class="nhsuk-expander-group">
+            <details class="nhsuk-details nhsuk-expander" nhsuk-polyfilled="true" id="nhsuk-details0"
+            >
+          <summary class="nhsuk-details__summary" role="button" aria-controls="nhsuk-details__text0"
+          tabindex="0" aria-expanded="false">
+         
+          <span class="nhsuk-details__summary-text">
+            Childcare provider details
+          </span>
+        </summary>
+
+        <div class="nhsuk-details__text" id="nhsuk-details__text0" aria-hidden="true">
+              
+                <table class="nhsuk-table">
+                  <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">
+                  </caption>
+                  <thead role="rowgroup" class="nhsuk-table__head">
+                    <tr role="row">
+                      <th role="columnheader" class="" scope="col">
+                        Journey point
+                      </th>
+                      <th role="columnheader" class="" scope="col">
+                        Link
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="nhsuk-table__body">
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Claim Working Tax Credit</td>
+                      <td class="nhsuk-table__cell "> <a href="childtaxcredit">View 
+                        <span class="nhsuk-u-visually-hidden">claim working tax credit</span></a></td>
+                    </tr>
+                </tbody>
+                  <tbody class="nhsuk-table__body">
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Who is your childcare provider?</td>
+                      <td class="nhsuk-table__cell "> <a href="providerinfo">View 
+                        <span class="nhsuk-u-visually-hidden">registration body (if known)</span></a></td>
+                    </tr>
+                  </tbody>
+                  <tbody class="nhsuk-table__body">
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Details of childcare provider</td>
+                      <td class="nhsuk-table__cell "> <a href="provideraddress">View 
+                        <span class="nhsuk-u-visually-hidden">details of childcare provider</span></a></td>
+                    </tr>
+                  </tbody>
+                  <tbody class="nhsuk-table__body">
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Would this person normally have parental responsibility?</td>
+                      <td class="nhsuk-table__cell "> <a href="childcareresponsibility">View 
+                        <span class="nhsuk-u-visually-hidden">would this person normally have parental responsibility</span></a></td>
+                    </tr>
+                  </tbody>
+                  <tbody class="nhsuk-table__body">
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">End of journey (if student says yes to parental responsibility question)</td>
+                      <td class="nhsuk-table__cell "> <a href="end">View 
+                        <span class="nhsuk-u-visually-hidden">end of journey</span></a></td>
+                    </tr>
+                  </tbody>
+                  <tbody class="nhsuk-table__body">
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Select the child(ren) being cared for by this provider</td>
+                      <td class="nhsuk-table__cell "> <a href="selectchild">View 
+                        <span class="nhsuk-u-visually-hidden">select the child(ren) being cared for by this provider</span></a></td>
+                    </tr>
+                  </tbody>
+                  <tbody class="nhsuk-table__body">
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Do you want to add another childcare provider?</td>
+                      <td class="nhsuk-table__cell "> <a href="additionalchildcare">View 
+                        <span class="nhsuk-u-visually-hidden">do you want to add another childcare provider</span></a></td>
+                    </tr>
+                  </tbody>
+                  <tbody class="nhsuk-table__body">
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Add another childcare provider</td>
+                      <td class="nhsuk-table__cell "> <a href="addadditionalchildcare">View 
+                        <span class="nhsuk-u-visually-hidden">add another childcare provider</span></a></td>
+                    </tr>
+                  </tbody>
+                  <tbody class="nhsuk-table__body">
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Check your answers</td>
+                      <td class="nhsuk-table__cell "> <a href="summary">View 
+                        <span class="nhsuk-u-visually-hidden">check your answers</span></a></td>
+                    </tr>
+                  </tbody>
+                </table>
+          </div>
+          </details>
+          </div>
+
+          <div class="nhsuk-expander-group">
+            <details class="nhsuk-details nhsuk-expander" nhsuk-polyfilled="true" id="nhsuk-details0">
+          <summary class="nhsuk-details__summary" role="button" aria-controls="nhsuk-details__text0"
+          tabindex="0" aria-expanded="false">
+         
+          <span class="nhsuk-details__summary-text">
+            Estimate costs for the child(ren) - quarterly (option 1)
+          </span>
+        </summary>
+
+        <div class="nhsuk-details__text" id="nhsuk-details__text0" aria-hidden="true">
+
+        <table class="nhsuk-table">
+          <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">
+          </caption>
+          <thead role="rowgroup" class="nhsuk-table__head">
+            <tr role="row">
+              <th role="columnheader" class="" scope="col">
+                Journey point
+              </th>
+              <th role="columnheader" class="" scope="col">
+                Link
+              </th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Intro</td>
+              <td class="nhsuk-table__cell "> <a href="quarterly_estimatecostsintro">View 
+                <span class="nhsuk-u-visually-hidden">intro</span></a></td>
+            </tr>
+          </tbody>
+          <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Estimate costs quarterly</td>
+              <td class="nhsuk-table__cell "> <a href="quarterly_estimatecosts">View 
+                <span class="nhsuk-u-visually-hidden">estimate costs quarterly</span></a></td>
+            </tr>
+        </tbody>
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Complete</td>
+            <td class="nhsuk-table__cell "> <a href="complete">View 
+              <span class="nhsuk-u-visually-hidden">complete</span></a></td>
+          </tr>
+        </tbody>
+    </table>
+</div>
+</details>
+</div>
+<div class="nhsuk-expander-group">
+  <details class="nhsuk-details nhsuk-expander" nhsuk-polyfilled="true" id="nhsuk-details0">
+<summary class="nhsuk-details__summary" role="button" aria-controls="nhsuk-details__text0"
+tabindex="0" aria-expanded="false">
+
+<span class="nhsuk-details__summary-text">
+  Estimate costs for the child(ren) - quarterly (option 2)
+</span>
+</summary>
+
+<div class="nhsuk-details__text" id="nhsuk-details__text0" aria-hidden="true">
+
+<table class="nhsuk-table">
+<caption class="nhsuk-table__caption nhsuk-u-visually-hidden">
+</caption>
+<thead role="rowgroup" class="nhsuk-table__head">
+  <tr role="row">
+    <th role="columnheader" class="" scope="col">
+      Journey point
+    </th>
+    <th role="columnheader" class="" scope="col">
+      Link
+    </th>
+  </tr>
+</thead>
+<tbody class="nhsuk-table__body">
+  <tr role="row" class="nhsuk-table__row">
+    <td class="nhsuk-table__cell">Option 2 intro</td>
+    <td class="nhsuk-table__cell "> <a href="quarterly_estimatecostsintro1">View 
+      <span class="nhsuk-u-visually-hidden">option 2 intro</span></a></td>
+  </tr>
+</tbody>
+<tbody class="nhsuk-table__body">
+  <tr role="row" class="nhsuk-table__row">
+    <td class="nhsuk-table__cell">Week 1</td>
+    <td class="nhsuk-table__cell "> <a href="week1">View 
+      <span class="nhsuk-u-visually-hidden">week 1</span></a></td>
+  </tr>
+</tbody>
+<tbody class="nhsuk-table__body">
+  <tr role="row" class="nhsuk-table__row">
+    <td class="nhsuk-table__cell">Week 2</td>
+    <td class="nhsuk-table__cell "> <a href="week2">View 
+      <span class="nhsuk-u-visually-hidden">week 1</span></a></td>
+  </tr>
+</tbody>
+<tbody class="nhsuk-table__body">
+  <tr role="row" class="nhsuk-table__row">
+    <td class="nhsuk-table__cell">Week 3</td>
+    <td class="nhsuk-table__cell "> <a href="week3">View 
+      <span class="nhsuk-u-visually-hidden">week 3</span></a></td>
+  </tr>
+</tbody>
+<tbody class="nhsuk-table__body">
+  <tr role="row" class="nhsuk-table__row">
+    <td class="nhsuk-table__cell">Week 4</td>
+    <td class="nhsuk-table__cell "> <a href="week4">View 
+      <span class="nhsuk-u-visually-hidden">week 4</span></a></td>
+  </tr>
+</tbody>
+<tbody class="nhsuk-table__body">
+  <tr role="row" class="nhsuk-table__row">
+    <td class="nhsuk-table__cell">Week 5</td>
+    <td class="nhsuk-table__cell "> <a href="week5">View 
+      <span class="nhsuk-u-visually-hidden">week 5</span></a></td>
+  </tr>
+</tbody>
+<tbody class="nhsuk-table__body">
+  <tr role="row" class="nhsuk-table__row">
+    <td class="nhsuk-table__cell">Week 6</td>
+    <td class="nhsuk-table__cell "> <a href="week6">View 
+      <span class="nhsuk-u-visually-hidden">week 6</span></a></td>
+  </tr>
+</tbody>
+<tbody class="nhsuk-table__body">
+  <tr role="row" class="nhsuk-table__row">
+    <td class="nhsuk-table__cell">Week 7</td>
+    <td class="nhsuk-table__cell "> <a href="week7">View 
+      <span class="nhsuk-u-visually-hidden">week 7</span></a></td>
+  </tr>
+</tbody>
+<tbody class="nhsuk-table__body">
+  <tr role="row" class="nhsuk-table__row">
+    <td class="nhsuk-table__cell">Week 8</td>
+    <td class="nhsuk-table__cell "> <a href="week8">View 
+      <span class="nhsuk-u-visually-hidden">week 8</span></a></td>
+  </tr>
+</tbody>
+<tbody class="nhsuk-table__body">
+  <tr role="row" class="nhsuk-table__row">
+    <td class="nhsuk-table__cell">Week 9</td>
+    <td class="nhsuk-table__cell "> <a href="week9">View 
+      <span class="nhsuk-u-visually-hidden">week 9</span></a></td>
+  </tr>
+</tbody>
+<tbody class="nhsuk-table__body">
+  <tr role="row" class="nhsuk-table__row">
+    <td class="nhsuk-table__cell">Week 10</td>
+    <td class="nhsuk-table__cell "> <a href="week10">View 
+      <span class="nhsuk-u-visually-hidden">week 10</span></a></td>
+  </tr>
+</tbody>
+<tbody class="nhsuk-table__body">
+  <tr role="row" class="nhsuk-table__row">
+    <td class="nhsuk-table__cell">Week 11</td>
+    <td class="nhsuk-table__cell "> <a href="week11">View 
+      <span class="nhsuk-u-visually-hidden">week 11</span></a></td>
+  </tr>
+</tbody>
+
+<tbody class="nhsuk-table__body">
+  <tr role="row" class="nhsuk-table__row">
+    <td class="nhsuk-table__cell">Week 12</td>
+    <td class="nhsuk-table__cell "> <a href="week12">View 
+      <span class="nhsuk-u-visually-hidden">week 12</span></a></td>
+  </tr>
+</tbody>
+
+<tbody class="nhsuk-table__body">
+  <tr role="row" class="nhsuk-table__row">
+    <td class="nhsuk-table__cell">Week 13</td>
+    <td class="nhsuk-table__cell "> <a href="week13">View 
+      <span class="nhsuk-u-visually-hidden">week 13</span></a></td>
+  </tr>
+</tbody>
+
+  <!-- <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Check your answers</td>
+              <td class="nhsuk-table__cell "> <a href="summary1">View 
+                <span class="nhsuk-u-visually-hidden">check your answers</span></a></td>
+            </tr>
+          </tbody> -->
+          <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Complete</td>
+              <td class="nhsuk-table__cell "> <a href="complete">View 
+                <span class="nhsuk-u-visually-hidden">complete</span></a></td>
+            </tr>
+          </tbody>
+</table>
+
+</div>
+</details>
+</div>
+</div>
+</div>
+</div>
+</main>
+  </div>
+</main>
+{% endblock %}

@@ -1,0 +1,404 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} September 2022 - Course
+details {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block header %} {{ header({ "service": { "name": "Bursary", "href": "/" },
+"showNav": "true", "showSearch": "false", "primaryLinks": [ { "url" : "#",
+"label" : "Admin menu" }, { "url" : "#", "label" : "Change password" }, { "url"
+: "#", "label" : "Log out" } ] }) }}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item">
+        <a class="nhsuk-breadcrumb__link" href="#">Student search</a>
+      </li>
+      <li class="nhsuk-breadcrumb__item">
+        <a class="nhsuk-breadcrumb__link" href="#">Student details</a>
+      </li>
+      <li class="nhsuk-breadcrumb__item">
+        <a class="nhsuk-breadcrumb__link" href="#">Course details</a>
+      </li>
+    </ol>
+    <p class="nhsuk-breadcrumb__back">
+      <a class="nhsuk-breadcrumb__backlink" href="#">Back to student search</a>
+    </p>
+  </div>
+</nav>
+{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<!-- Breadcrumb -->
+
+{% endblock %}
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-width-container">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+      <button class="nhsuk-button" type="submit">
+        Lock account for editing
+      </button>
+      <h1 class="app-page-heading">
+        <span class="nhsuk-caption-l">BRN0000059-3</span>September 2022 - Course
+        details
+      </h1>
+    </div>
+    <div class="nhsuk-grid-column-one-half">
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <div class="nhsuk-form-group" id="enrolled-group">
+            <label id="enrolled-label" for="enrolledDrop" class="nhsuk-label"
+              >Attendance Status</label
+            >
+
+            <select
+              class="nhsuk-select"
+              id="enrolledDrop"
+              aria-describedby="enrolled-label"
+              name="enrolledStatus"
+            >
+              <option value="discontinued" id="discontinued">
+                Discontinued
+              </option>
+              <option value="info-mismatch" id="info-mismatch">
+                Information mismatch
+              </option>
+              <option value="matched-student" id="matched-student">
+                Matched student - in attendance
+              </option>
+              <option value="not-enrolled" id="not-enrolled">
+                Not enrolled
+              </option>
+              <option value="pending" id="pending" selected="selected">
+                Pending status
+              </option>
+              <option value="withdrawn" id="withdrawn">Withdrawn</option>
+            </select>
+          </div>
+          <div class="nhsuk-form-group">
+            <button class="nhsuk-button" type="submit">Update</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="nhsuk-grid-column-one-half">
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <h2 class="nhsuk-card__heading nhsuk-heading-m">Actions</h2>
+
+          <ul>
+            <li><a href="#" id="uploadEvidence">Upload extra evidence</a></li>
+            <li>
+              <a
+                href="/enrolement-breakdown/dependent-student/tasklist"
+                id="viewApplication"
+                >View student's application</a
+              >
+            </li>
+
+            <li>
+              <a href="view-calculations" id="calculationList"
+                >View calculations</a
+              >
+            </li>
+
+            <li>
+              <a href="edit-course-details" id="updateEnrolment"
+                >Edit course details</a
+              >
+            </li>
+            <li>
+              <a href="course-history" id="courseHistory"
+                >Course details history</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="nhsuk-grid-column-full">
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <table role="table" class="nhsuk-table-responsive">
+            <h3 class="nhsuk-card__heading">Student course details</h3>
+
+            <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                <th role="columnheader" class="" scope="col" style="width: 25%">
+                  University
+                </th>
+                <th role="columnheader" class="" scope="col" style="width: 25%">
+                  Course
+                </th>
+                <th role="columnheader" class="" scope="col" style="width: 25%">
+                  Eligibility status
+                </th>
+                <th role="columnheader" class="" scope="col" style="width: 25%">
+                  Award
+                </th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading"
+                    >University </span
+                  >Barts and the London School of Med and Dent
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Course </span
+                  >Bachelor of Medicine and Surgery
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading"
+                    >Eligibility status </span
+                  >Eligible
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Award </span>
+                  Means tested
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="nhsuk-grid-column-full">
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <h3 class="nhsuk-card__heading">Activities</h3>
+
+          <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                Bursary application simple - Pending
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              <p>Date created: 02/11/2021 14:31:43</p>
+              <p>Date last updated: 02/11/2021 15:01:14</p>
+
+              <p>Last updated by: Michael Lee</p>
+              <button class="nhsuk-button" type="submit">
+                Proceed with application
+              </button>
+            </div>
+          </details>
+
+          <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                DSA application - Pending</span
+              >
+            </summary>
+            <div class="nhsuk-details__text">
+              <p>Date created: 05/11/2021 14:31:43</p>
+              <p>Date last updated: 05/11/2021 17:10:14</p>
+
+              <p>Last updated by: Michael Lee</p>
+              <button class="nhsuk-button" type="submit">
+                Proceed with application
+              </button>
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <details class="nhsuk-details nhsuk-expander">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text"> Bursary application </span>
+        </summary>
+
+        <div class="nhsuk-details__text">
+          <h2 class="nhsuk-heading-m">02/11/2021 - Processor pended</h2>
+          <ol class="app-task-list">
+            <li></li>
+
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                Start course details
+              </span>
+              <strong
+                class="nhsuk-tag nhsuk-tag--green app-task-list__tag"
+                id="createAcademicYear"
+                >Complete</strong
+              >
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                Eligibility assessment
+              </span>
+              <strong
+                class="nhsuk-tag nhsuk-tag--green app-task-list__tag"
+                id="eligibilityAssessment"
+                >Complete</strong
+              >
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name"> Status assessment </span>
+              <strong
+                class="nhsuk-tag nhsuk-tag--green app-task-list__tag"
+                id="statusAssessment"
+                >Complete</strong
+              >
+            </li>
+
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name"> Dependent details </span>
+              <strong
+                class="nhsuk-tag nhsuk-tag--grey app-task-list__tag"
+                id="dependentDetails"
+                >Haven't started</strong
+              >
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                Income and expenses assessment
+              </span>
+              <strong
+                class="nhsuk-tag nhsuk-tag--grey app-task-list__tag"
+                id="incomeExpenseAssessment"
+                >Haven't started</strong
+              >
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                Parent or partner details
+              </span>
+              <strong
+                class="nhsuk-tag nhsuk-tag--grey app-task-list__tag"
+                id="parentPartnerDetails"
+                >Haven't started</strong
+              >
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name"
+                ><a
+                  href="parent-partner-income"
+                  aria-describedby="createAcademicYear"
+                >
+                  Parent or partner income and expenses assessment
+                </a>
+              </span>
+              <strong
+                class="nhsuk-tag nhsuk-tag--yellow app-task-list__tag"
+                id="parentPartnerIncomeExpenses"
+                >In progress</strong
+              >
+            </li>
+
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name"> Declaration </span>
+              <strong
+                class="nhsuk-tag nhsuk-tag--grey app-task-list__tag"
+                id="declaration"
+                >Haven't started</strong
+              >
+            </li>
+          </ol>
+        </div>
+      </details>
+
+      <details class="nhsuk-details nhsuk-expander">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text"> TDAE </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <p>Student will upload these.</p>
+        </div>
+      </details>
+
+      <details class="nhsuk-details nhsuk-expander">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text"> Payments </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <div class="nhsuk-form-group">
+            <table role="table" class="nhsuk-table-responsive">
+              <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                  <th
+                    role="columnheader"
+                    class=""
+                    scope="col"
+                    style="width: 25%"
+                  >
+                    Next payment
+                  </th>
+                  <th
+                    role="columnheader"
+                    class=""
+                    scope="col"
+                    style="width: 25%"
+                  >
+                    Value
+                  </th>
+                  <th
+                    role="columnheader"
+                    class=""
+                    scope="col"
+                    style="width: 25%"
+                  >
+                    Award count
+                  </th>
+                  <th
+                    role="columnheader"
+                    class=""
+                    scope="col"
+                    style="width: 25%"
+                  >
+                    Held
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading"
+                      >Next payment </span
+                    >11/12/2021
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Value </span
+                    >1650.00
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading"
+                      >Award count </span
+                    >1
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Held </span>
+                    No
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="nhsuk-form-group">
+            <button class="nhsuk-button" type="submit">Manage payments</button>
+          </div>
+        </div>
+      </details>
+    </div>
+  </div>
+</div>
+{% endblock %}

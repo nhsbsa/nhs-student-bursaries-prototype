@@ -1,0 +1,82 @@
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+{% block header %} {{ header({ "service": { "name": "Bursary", "href": "/" },
+"showNav": "false", "showSearch": "false" }) }} {% endblock %}
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} What you'll need {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <div class="nhsuk-back-link">
+      <a class="nhsuk-back-link__link" href="">
+        <svg
+          class="nhsuk-icon nhsuk-icon__chevron-left"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"
+          ></path>
+        </svg>
+        Go back</a
+      >
+    </div>
+    <h1 class="nhsuk-app-heading" id="disabledStudentAllowanceH1">
+      <span class="nhsuk-caption-l">Before you start</span>
+      What you will need
+    </h1>
+
+    <p>
+      You can only apply for Disabled Students' Allowance (DSA) if you're in
+      receipt of an NHS Bursary.
+    </p>
+
+    <p>You only need to apply for DSA once during your course.</p>
+
+    <p>We'll ask for information about:</p>
+    <ul>
+      <li>your disability</li>
+      <li>what disability equipment you own</li>
+    </ul>
+
+    <p>Depending on your answers, we may ask you to send us evidence of:</p>
+    <ul>
+      <li>
+        a report from a doctor or specialist that explains how your disability
+        impacts you
+      </li>
+      <li>your education, health and care (EHC) plan (if applicable)</li>
+    </ul>
+
+    <h2 class="nhsuk-heading-m">If you have received DSA before</h2>
+
+    <p>We'll ask for information about:</p>
+    <ul>
+      <li>what date your study needs assessment was carried out</li>
+      <li>what disability equipment you have been funded for</li>
+    </ul>
+
+    <p>
+      If you have received DSA from Student Finance before, we'll use this
+      information to assess how much you can get. You'll need to upload evidence
+      of your study needs assessment.
+    </p>
+    <a href="" class="nhsuk-button" id="startNow">Start now</a>
+  </div>
+</div>
+
+{% endblock %}

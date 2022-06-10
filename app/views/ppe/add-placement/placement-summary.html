@@ -1,0 +1,141 @@
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+{% block header %} {{ header({ "service": { "name": "Bursary", "href": "/" },
+"showNav": "false", "showSearch": "false" }) }} {% endblock %}
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} PPE | Check your details {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <h1 class="nhsuk-app-heading" id="checkYourDetails">Check your answers</h1>
+
+    <div class="nhsuk-u-padding-bottom-4">
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">Start date</dt>
+          <dd class="nhsuk-summary-list__value">12/3/2019</dd>
+
+          <dd class="nhsuk-summary-list__actions">
+            <a href="">
+              Change<span class="nhsuk-u-visually-hidden">Start date</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">End date</dt>
+          <dd class="nhsuk-summary-list__value">
+            <p>18/7/2019</p>
+          </dd>
+
+          <dd class="nhsuk-summary-list__actions">
+            <a href="">
+              Change<span class="nhsuk-u-visually-hidden">End date</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">Practice placement address</dt>
+          <dd class="nhsuk-summary-list__value">
+            <p>Queen Victoria Rd</p>
+            <p>Newcastle upon Tyne</p>
+            <p>NE1 4LP</p>
+          </dd>
+
+          <dd class="nhsuk-summary-list__actions">
+            <a href="">
+              Change<span class="nhsuk-u-visually-hidden"
+                >Practice placement address</span
+              >
+            </a>
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Practice placement address second location
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <p></p>
+          </dd>
+
+          <dd class="nhsuk-summary-list__actions">
+            <a href="">
+              Change<span class="nhsuk-u-visually-hidden"
+                >Practice placement address second location</span
+              >
+            </a>
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">Overseas placement</dt>
+          <dd class="nhsuk-summary-list__value">
+            <p>No</p>
+          </dd>
+
+          <dd class="nhsuk-summary-list__actions">
+            <a href="">
+              Change<span class="nhsuk-u-visually-hidden"
+                >Overseas placement</span
+              >
+            </a>
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">Car Hire</dt>
+          <dd class="nhsuk-summary-list__value">
+            <p>Yes</p>
+          </dd>
+
+          <dd class="nhsuk-summary-list__actions">
+            <a href="">
+              Change<span class="nhsuk-u-visually-hidden">Car hire</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Cost to you of hiring the car?
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <p>£350</p>
+          </dd>
+
+          <dd class="nhsuk-summary-list__actions">
+            <a href="">
+              Change<span class="nhsuk-u-visually-hidden"
+                >Cost to you of hiring the car?</span
+              >
+            </a>
+          </dd>
+        </div>
+      </dl>
+    </div>
+    <div class="nhsuk-form-group">
+      <a
+        id="register"
+        role="button"
+        class="nhsuk-button"
+        href="/ppe/add-journey/journey-length"
+        >Continue</a
+      >
+    </div>
+  </div>
+</div>
+
+{% endblock %}

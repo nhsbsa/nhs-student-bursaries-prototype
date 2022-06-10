@@ -1,0 +1,127 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Check this application {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Breadcrumb -->
+<a class="nhsuk-skip-link" href="#maincontent">Skip to main content</a>
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-back-link">
+  <a class="nhsuk-back-link__link" href="application-na-guidance">
+    <svg
+      class="nhsuk-icon nhsuk-icon__chevron-left"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <path
+        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"
+      ></path>
+    </svg>
+    Go back</a
+  >
+</div>
+
+<div class="nhsuk-width-container">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+      <h1 class="nhsuk-app-heading" id="summaryH1">
+        <span class="nhsuk-caption-l">SRN000020301 - Liam Bloggs</span> Check
+        this application
+      </h1>
+
+      <div class="nhsuk-form-group">
+        <h2 class="nhsuk-heading-l" id="evidence">Evidence supplied</h2>
+        <div class="nhsuk-card nhsuk-grid-column-full">
+          <div class="nhsuk-card__content">
+            <dl class="nhsuk-summary-list">
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">needs_assessment.pdf</dt>
+                <dd class="nhsuk-summary-list__value">Needs assessment</dd>
+
+                <dd class="nhsuk-summary-list__actions">
+                  <a href="#">
+                    View (new tab)<span class="nhsuk-u-visually-hidden">
+                      needs_assessment.pdf</span
+                    >
+                  </a>
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <div class="nhsuk-form-group">
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h2 class="nhsuk-fieldset__heading">
+              Will this student be provided with Specialist Equipment?
+            </h2>
+          </legend>
+
+          <div class="nhsuk-radios">
+            <div class="nhsuk-radios__item">
+              <input
+                class="nhsuk-radios__input"
+                id="specialist-yes"
+                name="specialist"
+                type="radio"
+                value="yes"
+              />
+              <label
+                class="nhsuk-label nhsuk-radios__label"
+                for="specialist-yes"
+              >
+                Yes
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input
+                class="nhsuk-radios__input"
+                id="specialist-no"
+                name="specialist"
+                type="radio"
+                value="no"
+              />
+              <label class="nhsuk-label nhsuk-radios__label" for="example-no">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="nhsuk-form-group">
+        <a
+          class="nhsuk-button"
+          type="submit"
+          id="next"
+          href="specialist-equipment-info"
+          role="button"
+        >
+          Continue
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

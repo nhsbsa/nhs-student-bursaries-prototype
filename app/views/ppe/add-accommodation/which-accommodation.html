@@ -1,0 +1,118 @@
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+{% block header %} {{ header({ "service": { "name": "Bursary", "href": "/" },
+"showNav": "false", "showSearch": "false" }) }} {% endblock %}
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Which placement address were you travelling to?{% endblock
+%}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %}{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-back-link">
+  <a class="nhsuk-back-link__link" href="" id="back">
+    <svg
+      class="nhsuk-icon nhsuk-icon__chevron-left"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <path
+        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"
+      ></path>
+    </svg>
+    Go back</a
+  >
+</div>
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+      <h1 class="nhsuk-app-heading" id="placement-title">
+        <span class="nhsuk-caption-l">Practice Placement Expenses</span> Which
+        placement address were you travelling to?
+      </h1>
+    </legend>
+
+    <form action="/ppe/add-accommodation/which-accommodation" method="post">
+      <div class="nhsuk-form-group">
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-fieldset__heading nhsuk-u-visually-hidden">
+              Which placement address were you travelling to?
+            </h1>
+          </legend>
+
+          <div class="nhsuk-radios">
+            <div class="nhsuk-radios__item">
+              <input
+                class="nhsuk-radios__input"
+                id="accommodation-1"
+                name="accommodationJourney"
+                type="radio"
+                value="accommodation-1"
+              />
+              <label
+                class="nhsuk-label nhsuk-radios__label"
+                for="accommodation-1"
+              >
+                Premier Inn Newcastle, Derwenthaugh Rd, Swalwell, Newcastle upon
+                Tyne NE16 3BL
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input
+                class="nhsuk-radios__input"
+                id="accommodation-2"
+                name="accommodationJourney"
+                type="radio"
+                value="accommodation-2"
+              />
+              <label
+                class="nhsuk-label nhsuk-radios__label"
+                for="accommodation-2"
+              >
+                Marriott Hotel, Marconi Way, Metrocentre, Newcastle upon Tyne
+                NE11 9XF
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input
+                class="nhsuk-radios__input"
+                id="add-new-accommodation"
+                name="accommodationJourney"
+                type="radio"
+                value="add-new-accommodation"
+              />
+              <label
+                class="nhsuk-label nhsuk-radios__label"
+                for="add-new-accommodation"
+              >
+                Add new accommodation
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="nhsuk-form-group">
+        <button class="nhsuk-button" type="submit" id="continue" role="button">
+          Continue
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+{% block header %} {{ header({ "service": { "name": "Bursary", "href": "/" },
+"showNav": "false", "showSearch": "false" }) }} {% endblock %}
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Practice Placement Expenses {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+      <h1 class="nhsuk-app-heading" id="ppe-title">
+        <span class="nhsuk-caption-l">Practice Placement Expenses</span>Claim
+        form
+      </h1>
+    </legend>
+
+    <h3 class="nhsuk-heading-s" id="evidence">Evidence you will need</h3>
+
+    <p>Depending on your circumstances, you might need to send proof of:</p>
+
+    <ul>
+      <li>Bus tickets</li>
+      <li>Receipts</li>
+    </ul>
+
+    <a href="academic-year" class="nhsuk-button">Start now</a>
+  </div>
+</div>
+
+{% endblock %}

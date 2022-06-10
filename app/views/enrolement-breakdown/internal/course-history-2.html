@@ -1,0 +1,126 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Course
+history {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block header %} {{ header({ "service": { "name": "Bursary", "href": "/" },
+"showNav": "true", "showSearch": "false", "primaryLinks": [ { "url" : "#",
+"label" : "Admin menu" }, { "url" : "#", "label" : "Change password" }, { "url"
+: "#", "label" : "Log out" } ] }) }}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item">
+        <a class="nhsuk-breadcrumb__link" href="#">Student search</a>
+      </li>
+      <li class="nhsuk-breadcrumb__item">
+        <a class="nhsuk-breadcrumb__link" href="#">Student details</a>
+      </li>
+      <li class="nhsuk-breadcrumb__item">
+        <a
+          class="nhsuk-breadcrumb__link"
+          href="/enrolement-breakdown/internal/dashboard"
+          >Course details</a
+        >
+      </li>
+      <li class="nhsuk-breadcrumb__item">
+        <a class="nhsuk-breadcrumb__link" href="#">Course history</a>
+      </li>
+    </ol>
+    <p class="nhsuk-breadcrumb__back">
+      <a class="nhsuk-breadcrumb__backlink" href="#">Back to student search</a>
+    </p>
+  </div>
+</nav>
+{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<!-- Breadcrumb -->
+
+{% endblock %}
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-width-container">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+      <h1 class="app-page-heading">
+        <span class="nhsuk-caption-l">BRN0000059-3 - Record 2 of 2</span>Course
+        history
+      </h1>
+
+      <h2 class="nhsuk-heading-m">Modified - 20/10/2021 11:21:04</h2>
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">Academic year</dt>
+          <dd class="nhsuk-summary-list__value" id="enrolmentYear">
+            September 2022
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key w-50">University</dt>
+          <dd class="nhsuk-summary-list__value" id="college">
+            Barts And The London School Of Med And Dent
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key w-50">Type of course</dt>
+          <dd class="nhsuk-summary-list__value" id="courseLevel">
+            Undergraduate degree
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key w-50">Study type</dt>
+          <dd class="nhsuk-summary-list__value" id="attendanceType">
+            Full time
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">Course name</dt>
+          <dd class="nhsuk-summary-list__value" id="course">
+            Bachelor of Medicine - MBBS - 4 years
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">Course start year</dt>
+          <dd class="nhsuk-summary-list__value" id="courseStartYear">2022</dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">Course 2022/23</dt>
+          <dd class="nhsuk-summary-list__value" id="studyYear[0]">
+            Course year 1
+          </dd>
+        </div>
+      </dl>
+
+      <div class="nhsuk-form-group">
+        <a
+          id="continue"
+          role="button"
+          class="nhsuk-button"
+          href="course-history"
+          >Previous</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

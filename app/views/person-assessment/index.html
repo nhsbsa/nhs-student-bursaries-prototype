@@ -1,0 +1,971 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Person 1 and 2 Income
+Assessment {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <div class="nhsuk-back-link">
+      <a class="nhsuk-back-link__link" href="/">
+        <svg
+          class="nhsuk-icon nhsuk-icon__chevron-left"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"
+          ></path>
+        </svg>
+        Go back</a
+      >
+    </div>
+
+    <!-- Change the page title here -->
+    <h1 class="nhsuk-app-heading" id="p1AndP2">
+      <span class="nhsuk-caption-l">NHSBSA Prototype</span>
+      Person 1 and 2 assessment
+    </h1>
+
+    <hr aria-hidden="true" />
+    <h2 class="nhsuk-heading-m">
+      Person 1 and 2 assessment
+      <strong
+        class="task-completed status-shortlisted"
+        style="background-color: #330072; float: right"
+      >
+        MVP Ready
+      </strong>
+      <span class="nhsuk-caption-m nhsuk-caption--bottom"
+        >Last updated: 29 September 2021</span
+      >
+    </h2>
+
+    <p>The following have been done:</p>
+
+    <ul class="nhsuk-list nhsuk-list--bullet">
+      <li>content has been implemented</li>
+      <li>evidence screens have been updated</li>
+      <li>dashboard matches staging environment</li>
+    </ul>
+
+    <p>Most recent updates:</p>
+    <ul class="nhsuk-list nhsuk-list--bullet">
+      <li>
+        'Cancel and return to dashboard' has been added on the summary screens
+      </li>
+    </ul>
+
+    <div class="nhsuk-expander-group">
+      <details
+        class="nhsuk-details nhsuk-expander"
+        nhsuk-polyfilled="true"
+        id="nhsuk-details4"
+      >
+        <summary
+          class="nhsuk-details__summary"
+          role="button"
+          aria-controls="nhsuk-details__text4"
+        >
+          <span class="nhsuk-details__summary-text"> Dependent </span>
+        </summary>
+        <div class="nhsuk-details__text" id="nhsuk-details__text4">
+          <table class="nhsuk-table">
+            <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">
+              Dependent pages table
+            </caption>
+            <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                <th role="columnheader" class="" scope="col">Journey point</th>
+                <th role="columnheader" class="" scope="col">Link</th>
+              </tr>
+            </thead>
+            <p>
+              This is the journey for when the student is a dependent student
+              and has declared 1 parent/legal guardian.
+            </p>
+            <p>
+              When the student declares a person 2, they will see the exact same
+              screens as person 1
+              <strong>except the dependent children section.</strong>
+            </p>
+            <tbody class="nhsuk-table__body">
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Declare income/expenses</td>
+                <td class="nhsuk-table__cell">
+                  <a href="scenarios/dependent-person1/declare-income"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      declare income page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Application is complete</td>
+                <td class="nhsuk-table__cell">
+                  <a href="scenarios/dependent-person1/not-eligible"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      complete application page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Dashboard</td>
+                <td class="nhsuk-table__cell">
+                  <a href="scenarios/dependent-person1/dashboard/dashboard"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      dashboard parent page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2 class="nhsuk-heading-m">Dependent child questions</h2>
+
+          <table class="nhsuk-table">
+            <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">
+              Children information pages table
+            </caption>
+            <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                <th role="columnheader" class="" scope="col">Journey point</th>
+                <th role="columnheader" class="" scope="col">Link</th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Intro</td>
+                <td class="nhsuk-table__cell">
+                  <a href="scenarios/dependent-person1/children/intro"
+                    >View
+                    <span class="nhsuk-u-visually-hidden"
+                      >person 1 intro page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Dependent children</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="scenarios/dependent-person1/children/dependent-children"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      person 1 dependent children page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">No dependent children</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="scenarios/dependent-person1/children/declaration"
+                    id="viewNoDependent"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      person 1 no dependent children page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Name</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="scenarios/dependent-person1/children/name"
+                    id="viewName"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      person 1 child name page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Date of birth</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="scenarios/dependent-person1/children/dob"
+                    id="viewDOB"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      person 1 child date of birth</span
+                    ></a
+                  >
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Higher education</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="scenarios/dependent-person1/children/higher-education"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      person 1 child higher education page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Summary</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="scenarios/dependent-person1/children/summary"
+                    id="summaryView"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      person 1 child summary page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2 class="nhsuk-heading-m">Income assessment</h2>
+
+          <table class="nhsuk-table">
+            <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">
+              Income assessment pages table
+            </caption>
+            <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                <th role="columnheader" class="" scope="col">Journey point</th>
+                <th role="columnheader" class="" scope="col">Link</th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Dashboard (childcare done)</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="scenarios/dependent-person1/dashboard/dashboard-childrencomplete"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      dashboard (childcare done) page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Intro</td>
+                <td class="nhsuk-table__cell">
+                  <a href="scenarios/dependent-person1/income/intro"
+                    >View
+                    <span class="nhsuk-u-visually-hidden"
+                      >dependant person 1 intro</span
+                    ></a
+                  >
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Salary</td>
+                <td class="nhsuk-table__cell">
+                  <a href="scenarios/dependent-person1/income/salary-question"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      dependant person 1 salary question page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Taxable allowance</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="scenarios/dependent-person1/income/taxable-allowance-question"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      dependant person 1 taxable allowance page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Self-employment income</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="scenarios/dependent-person1/income/self-employment-question"
+                    >View
+                    <span class="nhsuk-u-visually-hidden"
+                      >dependant person 1 self-employment page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Maintanance payments</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="scenarios/dependent-person1/income/maintenance-question"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      dependant person 1 Maintenance page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Pension</td>
+                <td class="nhsuk-table__cell">
+                  <a href="scenarios/dependent-person1/income/pension-question"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      dependant person 1 pension page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">
+                  Bank or building society interest
+                </td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="scenarios/dependent-person1/income/bank-interest-question"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      dependant person 1 bank/buildinmg society page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Taxable benefits</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="scenarios/dependent-person1/income/taxable-benefits-question"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      dependant person 1 taxable benefits page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Lettings or lodgings</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="scenarios/dependent-person1/income/lettings-profit-question"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      dependant person 1 lettings or lodgings page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Unearned income</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="scenarios/dependent-person1/income/other-income-question"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      dependant person 1 unearned income page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Summary</td>
+                <td class="nhsuk-table__cell">
+                  <a href="scenarios/dependent-person1/income/summary"
+                    >View
+                    <span class="nhsuk-u-visually-hidden"
+                      >dependant person 1 summary page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Upload evidence</td>
+                <td class="nhsuk-table__cell">
+                  <a href="scenarios/dependent-person1/income/evidence"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      dependant person 1 evidence upload page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2 class="nhsuk-heading-m">Expenses assessment</h2>
+
+          <table class="nhsuk-table">
+            <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">
+              Income expenses pages
+            </caption>
+            <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                <th role="columnheader" class="" scope="col">Journey point</th>
+                <th role="columnheader" class="" scope="col">Link</th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Dashboard (income done)</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="scenarios/dependent-person1/dashboard/dashboard-incomecomplete"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      dashboard (income done) page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Intro</td>
+                <td class="nhsuk-table__cell">
+                  <a href="scenarios/dependent-person1/expenses/intro"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      person 1 income expenses intro page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Personal pension</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="scenarios/dependent-person1/expenses/personal-pension-question"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      person 1 income expenses personal pension page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Other loan</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="scenarios/dependent-person1/expenses/other-loan-question"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      person 1 income expenses other loan page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Professional subscriptions</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="scenarios/dependent-person1/expenses/subscriptions-question"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      person 1 income expenses professional subscriptions
+                      page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Check your details</td>
+                <td class="nhsuk-table__cell">
+                  <a href="scenarios/dependent-person1/expenses/summary"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      person 1 income expenses check your details page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Evidence upload</td>
+                <td class="nhsuk-table__cell">
+                  <a href="scenarios/dependent-person1/expenses/evidence"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      person 1 income expenses evidence upload page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">
+                  Dashboard (all applications complete)
+                </td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="scenarios/dependent-person1/dashboard/dashboard-complete"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      dashboard all applications complete page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
+    </div>
+
+    <div class="nhsuk-expander-group">
+      <details
+        class="nhsuk-details nhsuk-expander"
+        nhsuk-polyfilled="true"
+        id="nhsuk-details5"
+      >
+        <summary
+          class="nhsuk-details__summary"
+          role="button"
+          aria-controls="nhsuk-details__text5"
+        >
+          <span class="nhsuk-details__summary-text"> Independent </span>
+        </summary>
+        <div class="nhsuk-details__text" id="nhsuk-details__text5">
+          <table class="nhsuk-table">
+            <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">
+              Independent
+            </caption>
+            <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                <th role="columnheader" class="" scope="col">Journey point</th>
+                <th role="columnheader" class="" scope="col">Link</th>
+              </tr>
+            </thead>
+            <p>
+              This is the journey for when the student is an independent student
+              and has declared a spouse.
+            </p>
+            <tbody class="nhsuk-table__body">
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Declare income/expenses</td>
+                <td class="nhsuk-table__cell">
+                  <a href="scenarios/independent-person1/declare-income"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      declare income page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Application is complete</td>
+                <td class="nhsuk-table__cell">
+                  <a href="scenarios/independent-person1/not-eligible"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      complete application page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Dashboard</td>
+                <td class="nhsuk-table__cell">
+                  <a href="scenarios/independent-person1/dashboard/dashboard"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      independent with person 1 (spouse) Dashboard</span
+                    ></a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2 class="nhsuk-heading-m">Income assessment</h2>
+
+          <table class="nhsuk-table">
+            <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">
+              Income assessment pages
+            </caption>
+            <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                <th role="columnheader" class="" scope="col">Journey point</th>
+                <th role="columnheader" class="" scope="col">Link</th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Intro</td>
+                <td class="nhsuk-table__cell">
+                  <a href="scenarios/independent-person1/income/intro"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      independent with person 1 (spouse) Intro page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Salary</td>
+                <td class="nhsuk-table__cell">
+                  <a href="scenarios/independent-person1/income/salary-question"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      independent with person 1 (spouse) salary page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Taxable allowance</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="scenarios/independent-person1/income/taxable-allowance-question"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      independent with person 1 (spouse)taxable allowance
+                      page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Self-employment income</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="scenarios/independent-person1/income/self-employment-question"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      independent with person 1 (spouse) self-employment
+                      page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Maintenance payments</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="scenarios/independent-person1/income/maintenance-question"
+                    >View
+                    <span class="nhsuk-u-visually-hidden"
+                      >independent with person 1 (spouse) maintenance page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Pension</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="scenarios/independent-person1/income/pension-question"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      independent with person 1 (spouse)pension page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Bank interest</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="scenarios/independent-person1/income/bank-interest-question"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      independent with person 1 (spouse) bank interest
+                      page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Taxable benefits</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="scenarios/independent-person1/income/taxable-benefits-question"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      independent with person 1 (spouse)taxable benefits
+                      question</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Unearned income</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="scenarios/independent-person1/income/other-income-question"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      independent with person 1 (spouse)unearned income
+                      question</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Lettings or lodgings</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="scenarios/independent-person1/income/lettings-profit-question"
+                    >View
+                    <span class="nhsuk-u-visually-hidden"
+                      >l independent with person 1 (spouse)ettings or lodgings
+                      question</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Summary</td>
+                <td class="nhsuk-table__cell">
+                  <a href="scenarios/independent-person1/income/summary"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      independent with person 1 (spouse) summary page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Upload evidence</td>
+                <td class="nhsuk-table__cell">
+                  <a href="scenarios/independent-person1/income/evidence"
+                    >View
+                    <span class="nhsuk-u-visually-hidden"
+                      >independent with person 1 (spouse) evidence upload
+                      page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2 class="nhsuk-heading-m">Expenses assessment</h2>
+
+          <table class="nhsuk-table">
+            <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">
+              Income expenses pages
+            </caption>
+            <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                <th role="columnheader" class="" scope="col">Journey point</th>
+                <th role="columnheader" class="" scope="col">Link</th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Dashboard (income done)</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="scenarios/independent-person1/dashboard/dashboard-incomecomplete"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      dashboard (income done) page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Intro</td>
+                <td class="nhsuk-table__cell">
+                  <a href="scenarios/independent-person1/expenses/intro"
+                    >View <span class="nhsuk-u-visually-hidden">Intro</span></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Income tax</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="scenarios/independent-person1/expenses/income-tax-question"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      independent with person 1 (spouse) income tax
+                      question</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">National insurance</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="scenarios/independent-person1/expenses/national-insurance-question"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      independent with person 1 (spouse) national insurance
+                      question</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Personal pension</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="scenarios/independent-person1/expenses/personal-pension-question"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      independent with person 1 (spouse) personal pension
+                      question</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Loan interest</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="scenarios/independent-person1/expenses/other-loan-question"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      independent with person 1 (spouse) loan interest
+                      question</span
+                    ></a
+                  >
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Professional subscriptions</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="scenarios/independent-person1/expenses/subscriptions-question"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      independent with person 1 (spouse) professional
+                      subscriptions question</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Mortgage</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="scenarios/independent-person1/expenses/mortgage-question"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      independent with person 1 (spouse) mortgage question</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Rent</td>
+                <td class="nhsuk-table__cell">
+                  <a href="scenarios/independent-person1/expenses/rent-question"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      independent with person 1 (spouse) rent question</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Life assurance</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="scenarios/independent-person1/expenses/life-assurance-question"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      independent with person 1 (spouse) life assurance
+                      question</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Maintenance</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="scenarios/independent-person1/expenses/maintenance-question"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      independent with person 1 (spouse) maintenance
+                      question</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Check your details</td>
+                <td class="nhsuk-table__cell">
+                  <a href="scenarios/independent-person1/expenses/summary"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      independent with person 1 (spouse) check your details
+                      page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Evidence upload</td>
+                <td class="nhsuk-table__cell">
+                  <a href="scenarios/independent-person1/expenses/evidence"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      independent with person 1 (spouse) evidence upload
+                      page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">
+                  Dashboard (all applications complete)
+                </td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="scenarios/independent-person1/dashboard/dashboard-complete"
+                    >View
+                    <span class="nhsuk-u-visually-hidden">
+                      dashboard all applications complete page</span
+                    ></a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
