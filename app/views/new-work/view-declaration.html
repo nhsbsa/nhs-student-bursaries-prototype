@@ -1,0 +1,141 @@
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+{% block header %} {{ header({ "service": { "name": "Bursary", "href": "/" },
+"showNav": "false", "showSearch": "false" }) }} {% endblock %}
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Check your answers {%
+endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+{{ backLink({
+"href": "javascript:history.go(-1)",
+"text": "Go back"
+}) }}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <span class="nhsuk-caption-l">September 2023</span>
+    <h1 class="nhsuk-app-heading" id="checkYourDetails">Academic year</h1>
+
+
+    <h2 class="nhsuk-heading-l">Enrolment declaration</h2>
+
+    <p>Please review all information you have provided before completing this declaration. Read this declaration
+      carefully before accepting it. If you choose not to accept it, we will be unable to process your application for
+      an NHS Bursary.
+    </p>
+
+    <div id="declaration">
+
+      <h2 class="nhsuk-heading-l">I declare that:</h2>
+      <ol class="nhsuk-list" type="a">
+        <li> a) I will be/I am undertaking a pre-registration health professional training course which is eligible for
+          an NHS Bursary award.</li>
+        <li> b) I have read and understood the relevant booklet NHS Bursary Funding for Medical and Dental Students and
+          the conditions of an NHS Bursary award.<p> By accepting this declaration, I agree to the following conditions:
+          </p>
+        </li>
+        <li> c) I will supply any additional information which might be reasonably required by NHS Bursary to verify
+          information I have given on this form.</li>
+        <li> d) I will inform NHSBSA Student Services immediately of any change in circumstances that might affect my
+          entitlement to financial support or the NHSBSA Student Services records relating to me, including but not
+          limited to:<ul class="list list-bullet">
+            <li>withdrawing, suspending, deferring, or interrupting the course temporarily or permanently for any
+              reason, regardless of whether I intend to return</li>
+            <li>changing my study pattern from full-time to part-time, or vice versa</li>
+            <li>taking a year or term out from study</li>
+            <li>changing the account I want my payments made to</li>
+            <li>changing address</li>
+            <li>gaining support from a publicly funded body (excluding Student Finance Direct, Access to Learning Fund,
+              government benefit agencies and bursaries from my Higher Education Institution) or an employer</li>
+          </ul>
+        </li>
+        <li> e) I accept that NHSBSA Student Services will immediately terminate or suspend my funding if:<ul
+            class="list list-bullet">
+            <li>I withdraw, suspend, defer, or interrupt the course temporarily or permanently for any reason,
+              regardless of whether I intend to return</li>
+            <li>I take a year or term out from study</li>
+            <li>NHSBSA Student Services determines in its absolute discretion that it is reasonable for it to do so</li>
+            <li>I gain support from a publicly funded body (excluding the Student Loans Company, my Higher Education
+              Institution by way of hardship funds or bursaries and government benefit agencies) </li>
+            <li>NHSBSA Student Services in its absolute discretion determines that I am no longer entitled to financial
+              support</li>
+          </ul>
+        </li>
+        <li>f) NHSBSA Student Services are committed to administering entitlement accurately. I agree to repay any
+          excess payment, fees, and any other charges to NHSBSA Student Services within 30 days of receiving
+          notification, in the event of the following circumstances:<ul class="list list-bullet">
+            <li>changing my study pattern from full-time to part-time</li>
+            <li>withdrawing, suspending, deferring, or interrupting the course temporarily or permanently for any
+              reason, regardless of whether I intend to return</li>
+            <li>taking a year or term out from study</li>
+            <li>being overpaid because I have failed to inform NHSBSA Student Services of a change in my circumstances
+            </li>
+            <li>where NHSBSA Student Services at its absolute discretion determines I have been given financial support
+              to which I am not entitled</li>
+            <li>gaining support from a publicly funded body (excluding the Student Loans Company, my Higher Education
+              Institution and government benefit agencies). </li>
+          </ul>
+          <p>Should I fail to make full repayment of any amount due or agree an acceptable repayment plan with NHS
+            Bursary, I agree the debt and relevant personal information may be passed to a debt collection agency. I
+            agree that I will be charged for any additional recovery costs at the rate of 8% which will be added to the
+            balance outstanding on referral.</p>
+        </li>
+        <li>g) I understand that information on this form may be shared for the purposes of verification and, in
+          compliance with Data Protection law, to and from other organisations including:<ul class="list list-bullet">
+            <li>Higher Education Institutions</li>
+            <li>Local Authorities throughout the United Kingdom</li>
+            <li>organisations from which I am receiving benefits, bursaries, grants or support</li>
+            <li>NHSBSA software suppliers</li>
+            <li>the Department for Work and Pensions</li>
+            <li>the Home Office</li>
+            <li>HM Revenue and Customs</li>
+          </ul>
+        </li>
+      </ol>
+      <p>I understand that my information may be shared with the organisations detailed in the section entitled
+        ‘Student's income and expenses’ of this form for the purposes of verification of income information provided on
+        the form for the prevention, detection and investigation of fraud.</p>
+      <p>I understand that the administration of the NHS Bursary is the responsibility the NHS Business Services
+        Authority (NHSBSA) and the responsibility for countering fraud is the responsibility of the NHS Counter Fraud
+        Authority (NHSCFA).</p>
+      <p>I understand that NHSBSA Student Services may use and share information I provide in this form and in any
+        supporting documents with NHSBSA Loss and Fraud Prevention Team, Department of Health and Social Care (DHSC)
+        Anti-Fraud Unit, and NHS Counter Fraud Authority (NHSCFA) for the purposes of the prevention, detection, loss
+        measurement, investigation and prosecution of fraud or any other unlawful activity affecting the NHS.</p>
+      <p>I understand and accept that if I fail to give sufficient notice of any change to my bank or building society
+        account details, or provide incorrect details, NHSBSA Student Services cannot take responsibility for payments
+        made to an incorrect account, delayed payments or non-payment of the bursary.</p>
+      <p>I understand and accept that the terms and conditions (including rates) of the NHS Bursary may change at any
+        time without notice and the scheme is subject to continued government funding, which may cease at any time
+        without notice.</p>
+      <p>By agreeing this declaration, I accept and agree to all the conditions held. I declare that the information
+        given on this form and in any supporting documents provided is correct and complete. I understand and accept
+        that if I withhold information from NHSBSA Student Services and / or provide false or misleading information,
+        financial support may be refused or withdrawn, and any future applications may be rejected. I understand that
+        disciplinary action may be taken against me and I may be liable to prosecution and or civil proceedings.</p>
+      <p>Any future amendments to this application will require you to re-accept this declaration.</p>
+    </div>
+
+    <div class="nhsuk-checkboxes">
+      <div class="nhsuk-checkboxes__item">
+        <input type="checkbox" id="declarationBox" disabled="disabled" checked="checked"
+          class="nhsuk-checkboxes__input">
+        <label for="declarationBox" class="nhsuk-label nhsuk-checkboxes__label">Accepted 08/08/2024 10:38</label>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}
