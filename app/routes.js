@@ -7,6 +7,15 @@ router.get("/", function (req, res) {
   res.render("index");
 });
 
+
+// clear session data - link in footer
+router.post('/clear-session-data/', (req, res) => {
+  req.session.data = {}
+  res.render('index')
+})
+
+
+
 // Branching example
 
 router.post("/enrolment/secondment/", function (req, res) {
