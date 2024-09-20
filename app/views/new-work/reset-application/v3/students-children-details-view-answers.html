@@ -1,0 +1,82 @@
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+{% block header %} {{ header({ "service": { "name": "Bursary", "href": "/" },
+"showNav": "false", "showSearch": "false" }) }} {% endblock %}
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Check your answers {%
+endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+{{ backLink({
+"href": "javascript:history.go(-1)",
+"text": "Go back"
+}) }}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <span class="nhsuk-caption-l">Student's children details</span>
+    <h1 class="nhsuk-app-heading" id="checkYourDetails">View your answers</h1>
+
+    <div style="margin-bottom: 40px;">
+      <table role="table" class="nhsuk-table-responsive">
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Name
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Date of birth
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Higher education
+            </th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading" aria-hidden="true">Name </span>John Smith
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading" aria-hidden="true">Date of birth </span>15/03/2010
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading" aria-hidden="true">Higher education </span>Yes
+            </td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading" aria-hidden="true">Name </span>Sarah Smith
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading" aria-hidden="true">Date of birth </span>22/04/2012
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading" aria-hidden="true">Higher education </span>No
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    {% if data['submitted'] != 'true' %}
+    <h2 class="nhsuk-heading-m">If you find a mistake</h2>
+    <p>If you have made a mistake on your September 2023 bursary application, you can delete it and start again.</p>
+    <p>You can <a href="tasklist">go back</a> to the previous page and use the Delete application button to do this.
+    </p>
+    {% endif %}
+
+  </div>
+</div>
+
+{% endblock %}

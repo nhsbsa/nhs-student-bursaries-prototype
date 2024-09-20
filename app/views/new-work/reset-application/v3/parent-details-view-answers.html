@@ -1,0 +1,70 @@
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+{% block header %} {{ header({ "service": { "name": "Bursary", "href": "/" },
+"showNav": "false", "showSearch": "false" }) }} {% endblock %}
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Check your answers {%
+endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+{{ backLink({
+"href": "javascript:history.go(-1)",
+"text": "Go back"
+}) }}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <span class="nhsuk-caption-l">Parent details</span>
+    <h1 class="nhsuk-app-heading" id="checkYourDetails">View your answers</h1>
+
+
+    <dl class="nhsuk-summary-list">
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Parents live together</dt>
+        <dd class="nhsuk-summary-list__value">Yes</dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Parent one name</dt>
+        <dd class="nhsuk-summary-list__value">george Hutchinson</dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Parent one email</dt>
+        <dd class="nhsuk-summary-list__value">jrhut@nhsbsa.nhs.uk</dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Parent two name</dt>
+        <dd class="nhsuk-summary-list__value">Joe Hutchinson</dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Parent two email</dt>
+        <dd class="nhsuk-summary-list__value">jrhut@nhsbsa.nhs.uk</dd>
+      </div>
+
+    </dl>
+
+    {% if data['submitted'] != 'true' %}
+    <h2 class="nhsuk-heading-m">If you find a mistake</h2>
+    <p>If you have made a mistake on your September 2023 bursary application, you can delete it and start again.</p>
+    <p>You can <a href="tasklist">go back</a> to the previous page and use the Delete application button to do this.
+    </p>
+    {% endif %}
+
+  </div>
+</div>
+
+{% endblock %}
