@@ -28,9 +28,15 @@ endblock %}
     <h1 class="nhsuk-app-heading" id="checkYourDetails">Check your answers</h1>
 
     <dl class="nhsuk-summary-list">
+
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">Academic year</dt>
         <dd class="nhsuk-summary-list__value">September 2022</dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Course year</dt>
+        <dd class="nhsuk-summary-list__value">Course year 5</dd>
       </div>
 
       <div class="nhsuk-summary-list__row">
@@ -69,28 +75,13 @@ endblock %}
       </div>
 
       <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">Course history 2018/19</dt>
-        <dd class="nhsuk-summary-list__value">Course year 1</dd>
-      </div>
-
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">Course history 2019/20</dt>
-        <dd class="nhsuk-summary-list__value">Course year 2</dd>
-      </div>
-
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">Course history 2020/21</dt>
-        <dd class="nhsuk-summary-list__value">Course year 3</dd>
-      </div>
-
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">Course history 2021/22</dt>
-        <dd class="nhsuk-summary-list__value">Course year 4</dd>
-      </div>
-
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">Course 2022/23</dt>
-        <dd class="nhsuk-summary-list__value">Course year 5</dd>
+        <dt class="nhsuk-summary-list__key">Course history</dt>
+        <dd class="nhsuk-summary-list__value">
+          Course year 1 - 2018 to 19 <br>
+          Course year 2 - 2019 to 20 <br>
+          Course year 3 - 2020 to 21 <br>
+          Course year 4 - 2021 to 22 <br>
+        </dd>
       </div>
 
     </dl>
@@ -98,7 +89,7 @@ endblock %}
     {% if data['submitted'] != 'true' %}
     <h2 class="nhsuk-heading-m">If you find a mistake</h2>
     <p>If you've made a mistake on your application, you need to delete it and start again.</p>
-    <p>To do this, <a href="tasklist">go back</a> to the previous back and select Delete application.</p>
+    <p>To do this, <a href="tasklist">go back</a> to the previous page and select Delete application.</p>
     {% endif %}
 
   </div>
