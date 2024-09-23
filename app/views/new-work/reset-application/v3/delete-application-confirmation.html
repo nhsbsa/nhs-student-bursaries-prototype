@@ -28,31 +28,22 @@
 <!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
 
-{{ backLink({
+<!-- {{ backLink({
 "href": "javascript:history.go(-1)",
 "text": "Go back"
-}) }}
+}) }} -->
 
 <div class="nhsuk-width-container">
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-      <h1 class="app-page-heading">Delete this NHS Bursary application</h1>
 
-      <p>If you delete your September 2023 application all information relating to it will also be deleted. This
-        includes:</p>
+      <!-- Done panel -->
+      <div class="nhsuk-panel nhsuk-u-margin-bottom-5" style="background: #4b6170; padding: 40px;">
+        <h1 class="nhsuk-panel__title" style="color: #fefefe; padding: 0; margin: 0; text-align: center;">NHS Bursary
+          application deleted</h1>
+      </div>
 
-      <ul>
-        <li>information you've given us </li>
-        <li>evidence you've uploaded</li>
-        <li>information your parents or partner gave us </li>
-      </ul>
-
-      <p>You'll be able to re-apply for September 2023.</p>
-
-      <a href="delete-application-confirmation" class="nhsuk-button" role="button" id="delete" style="background-color: #d4351c;">Accept and
-        delete</a>
-
-      <p><a href="tasklist">Cancel and return to application</a></p>
+      <a href="dashboard" class="nhsuk-button" role="button" id="delete">Go to dashboard</a>
 
     </div>
   </div>
