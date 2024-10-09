@@ -4,9 +4,9 @@
 
 <!-- Extends the layout from /views/layout.html -->
 {% extends 'layout.html' %}
-<!-- 
+<!--
   In /views/layout.html you can:
-    - change the header and footer 
+    - change the header and footer
     - add custom CSS and JavaScript
 -->
 
@@ -60,7 +60,7 @@
               <span class="nhsuk-details__summary-text">Tasklist rework: Delete application, new CYAs, and content
                 tweaks (30/8/2024)</span>
             </summary>
-            
+
             <div class="nhsuk-details__text">
 
               <hr>
@@ -156,6 +156,62 @@
                 <li>Tasklist (Completed + Submitted): <a
                     href="new-work/reset-application/v1/tasklist-submitted">Link</a></li>
               </ul>
+
+          </details>
+        </div>
+
+        <div class="nhsuk-expander-group">
+          <details class="nhsuk-details nhsuk-expander">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">National Insurance number and university student ID</span>
+            </summary>
+            <div class="nhsuk-details__text">
+
+              <h3 class="nhsuk-heading-m">Summary</h3>
+              <ul>
+                <!--<li><strong>Issue:</strong> Students completing applications with incorrect data are currently unable to
+                  go back and
+                  change their answers before submission.</li>
+
+                <li><strong>Agreed solution:</strong></li>
+                <ul>
+                  <li>Allow student to delete their application, from the Tasklist page.</li>
+                  <li>Also add 'Check Your Answers' pages for each section they have completed (accessible from the
+                    Tasklist), to allow them to check (but NOT edit) their changes, before submitting or deleting their
+                    application.</li>
+                </ul>-->
+
+                <li>JIRA ticket: <a href="https://bsa2468.atlassian.net/browse/SSCRD-221" target=”_blank”>SSCRD-221</a></li>
+                <li><a href="https://miro.com/app/board/uXjVNANWbDs=/?moveToWidget=3458764600959584600&cot=14" target=”_blank”>Miro discussion/documentation on this work</a></li>
+              </ul>
+
+              <hr>
+
+              <div class="nhsuk-action-link">
+                <a class="nhsuk-action-link__link" href="register/intro">
+                  <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M0 0h24v24H0z" fill="none"></path>
+                    <path
+                      d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z">
+                    </path>
+                  </svg>
+                  <span class="nhsuk-action-link__text">Registration journey</span>
+                </a>
+              </div>
+
+              <div class="nhsuk-action-link">
+                <a class="nhsuk-action-link__link" href="/dashboard/">
+                  <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M0 0h24v24H0z" fill="none"></path>
+                    <path
+                      d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z">
+                    </path>
+                  </svg>
+                  <span class="nhsuk-action-link__text">Personal details changes</span>
+                </a>
+              </div>
 
           </details>
         </div>

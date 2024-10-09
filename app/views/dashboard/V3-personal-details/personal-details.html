@@ -1,0 +1,164 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Account details {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block header %} {{ header({ "service": { "name": "Bursary", "href": "/" },
+"showNav": "true", "showSearch": "false", "primaryLinks": [ { "url" :
+"/dashboard/dashboard-enrolment", "label" : "Dashboard" }, { "url" : "personal-details", "label" :
+"Personal details" }, { "url" : "#", "label" :
+"Payment details" }, { "url" : "#", "label" : "Sign out" } ] }) }} {% endblock
+%}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<!-- Breadcrumb -->{% endblock %}
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-width-container">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <h1 class="app-page-heading">
+        Personal details
+      </h1>
+    </div>
+    <div class="nhsuk-grid-column-two-thirds">
+      <p>If you need to update your address, you have to apply for a change of circumstance through your bursary application. This can only be done when your application is complete.</p>
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">Name</dt>
+          <dd class="nhsuk-summary-list__value">Karen Francis</dd>
+
+          <dd class="nhsuk-summary-list__actions">
+            <a href="#">
+              Change<span class="nhsuk-u-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">Date of birth</dt>
+          <dd class="nhsuk-summary-list__value">15 March 1984</dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="#">Change<span class="nhsuk-u-visually-hidden">date of birth</span></a>
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">National Insurance number</dt>
+          <dd class="nhsuk-summary-list__value">QQ 12 34 56 C</dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a id="updateNINO" href="national-insurance-number">
+							Change<span class="nhsuk-u-visually-hidden"> National Insurance number</span>
+						</a>
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">Student ID number</dt>
+          <dd class="nhsuk-summary-list__value">AB12345678</dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a id="updateAddress" href="student-id">
+							Change<span class="nhsuk-u-visually-hidden"> University Student ID</span>
+						</a>
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">Address</dt>
+          <dd class="nhsuk-summary-list__value">
+            73 Roman Rd<br />Leeds<br />
+            LS2 5ZN
+          </dd>
+
+          <dd class="nhsuk-summary-list__actions"></dd>
+        </div>
+      </dl>
+
+      <h2 class="nhsuk-heading-l">Account details</h2>
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">Email address</dt>
+          <dd class="nhsuk-summary-list__value">karenfrancis@hotmail.co.uk</dd>
+
+          <dd class="nhsuk-summary-list__actions">
+            <a href="#">
+              Change<span class="nhsuk-u-visually-hidden">
+                Email</span
+              >
+            </a>
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">Password</dt>
+          <dd class="nhsuk-summary-list__value">***********</dd>
+
+          <dd class="nhsuk-summary-list__actions">
+            <a href="#">
+              Change<span class="nhsuk-u-visually-hidden">
+                Password</span
+              >
+            </a>
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">Phone number</dt>
+          <dd class="nhsuk-summary-list__value">*******7609</dd>
+
+          <dd class="nhsuk-summary-list__actions">
+            <a href="#">
+              Change<span class="nhsuk-u-visually-hidden">
+                Phone number</span
+              >
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="nhsuk-heading-l">Bank details</h2>
+
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">Account number</dt>
+          <dd class="nhsuk-summary-list__value">*****678</dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">Sort code</dt>
+          <dd class="nhsuk-summary-list__value">****02</dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">Account holder</dt>
+          <dd class="nhsuk-summary-list__value">Ms Karen Francis</dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">Building society number</dt>
+          <dd class="nhsuk-summary-list__value">*********213</dd>
+        </div>
+      </dl>
+      <p>
+        <a href=""
+          >Change bank details<span class="nhsuk-u-visually-hidden">
+            update bank details</span
+          ></a
+        >
+      </p>
+    </div>
+  </div>
+</div>
+{% endblock %}

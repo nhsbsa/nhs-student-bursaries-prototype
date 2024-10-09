@@ -1,0 +1,54 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+  What is your National Insurance number?
+{% endblock %}
+
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+      <h1 class="nhsuk-heading-l">What is your National Insurance number?</h1>
+
+      <div class="nhsuk-form-group">
+        <div id="national-insurance-number-hint" class="nhsuk-hint">
+          It’s on your National Insurance card, benefit letter, payslip or P60. For example, ‘QQ 12 34 56 C’.
+        </div>
+        <input class="nhsuk-input nhsuk-input--width-10 nhsuk-input--extra-letter-spacing" id="national-insurance-number" name="nationalInsuranceNumber" type="text" spellcheck="false" aria-describedby="national-insurance-number-hint">
+      </div>
+
+      <details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            What is my National Insurance number?
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <p>If you are unable to locate your National Insurance number, refer to <a href="https://www.gov.uk/find-national-insurance-number" target="_blank">find your National Insurance number (opens in a new tab)</a>.</p>
+        </div>
+      </details>
+
+      <a class="nhsuk-button" href="national-insurance-number-changed">Save and continue</a><br>
+
+    </div>
+
+  </div>
+{% endblock %}
