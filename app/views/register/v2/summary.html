@@ -1,0 +1,184 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Check your answers {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<form
+  id="registrationForm"
+  name="registrationForm"
+  action="/register/v2/done"
+  method="post"
+>
+  <input
+    type="hidden"
+    name="_csrf"
+    value="7f540de9-8add-4331-b4d9-37e6c1eaf7b4"
+  />
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <h1 class="nhsuk-heading-l">Check your answers</h1>
+
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">Email address</dt>
+          <dd class="nhsuk-summary-list__value">
+            <span id="email">Joeblogs8@gmail.com</span><br />
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a id="linkChangeEmail" href="contact" id="viewEmail">
+              <span>Change</span>
+              <span class="nhsuk-u-visually-hidden">Email</span>
+            </a>
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">Phone number</dt>
+          <dd class="nhsuk-summary-list__value">
+            <span id="phone">07832462837</span>
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a id="linkChangePhone" href="phone" id="viewPhone">
+              <span>Change</span>
+              <span class="nhsuk-u-visually-hidden">Change phone number</span>
+            </a>
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">Name</dt>
+          <dd class="nhsuk-summary-list__value" id="firstName">Joe Blogs</dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a id="linkChangeFirstName" href="name" id="viewName"
+              ><span>Change</span></a
+            >
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">Date of birth</dt>
+          <dd class="nhsuk-summary-list__value" id="dob">11 July 1987</dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a id="linkChangeDob" href="dob" id="viewDOB"
+              ><span>Change</span>
+            </a>
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+                Have a National Insurance number?
+            <dd class="nhsuk-summary-list__value">
+                {% if data['national-insurance-number-question'] %}
+                  {{ data['national-insurance-number-question'] }}
+                {% else %}
+                  Yes
+                {% endif %}
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+                <a href="national-insurance-number-question">
+                    Change<span class="nhsuk-u-visually-hidden"> National Insurance number</span>
+                </a>
+            </dd>
+        </div>
+        {% if data['national-insurance-number-question'] == 'No' %}
+          <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                  Reason
+              <dd class="nhsuk-summary-list__value">
+                  {% if data['national-insurance-number-reason'] %}
+                    {{ data['national-insurance-number-reason'] }}
+                  {% else %}
+                    I was not living in the UK when I turned 16 and have not worked in the UK.
+                  {% endif %}
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+                  <a href="national-insurance-number-question">
+                      Change<span class="nhsuk-u-visually-hidden"> reason</span>
+                  </a>
+              </dd>
+          </div>
+        {% else %}
+          <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                  National Insurance number
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                  QQ 12 34 56 C
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+                  <a href="national-insurance-number">
+                      Change<span class="nhsuk-u-visually-hidden"> National Insurance number</span>
+                  </a>
+              </dd>
+          </div>
+        {% endif %}
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">Address</dt>
+          <dd class="nhsuk-summary-list__value">
+            <span id="nameOrNumbre">206</span><br />
+            <span id="address1">Alfred Street</span><br />
+
+            <span id="address2">Wembley</span>
+            <br />
+
+            <span id="town">London</span><br />
+            <span id="postcode">NE32 5SH</span><br />
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a id="linkChangeAddress" href="address" id="viewAddress">
+              <span>Change</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">Password</dt>
+          <dd class="nhsuk-summary-list__value">
+            <span aria-hidden="true">********</span>
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a id="linkChangePassword" href="account" id="viewPassword">
+              <span>Change</span>
+            </a>
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">Student ID number</dt>
+          <dd class="nhsuk-summary-list__value">
+            <span aria-hidden="true">13450129823</span>
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a id="linkChangeStudentID" href="student-id" id="viewStudentID">
+              <span>Change</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="nhsuk-heading-m" id="completeH2">Complete registration</h2>
+      <p>By selecting Register, you're confirming the details you've told us are correct.</p>
+
+      <div class="nhsuk-form-group">
+        <button class="nhsuk-button" type="submit" id="next" role="button">
+          Register
+        </button>
+      </div>
+    </div>
+  </div>
+</form>
+
+{% endblock %}

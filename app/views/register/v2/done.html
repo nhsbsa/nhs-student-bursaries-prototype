@@ -1,0 +1,55 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Registration complete {%
+endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <div class="nhsuk-card" style="background: #005EB8;">
+      <div class="nhsuk-card__content">
+        <h1 class="nhsuk-heading-xl" style="text-align: center; color: white;">
+          NHS Bursary account created
+        </h1>
+        <h2 class="nhsuk-heading-l" style="text-align: center; color: white;">
+          Your student reference number is
+          <span id="studentRef">BRN0000782</span>
+        </h2>
+      </div>
+    </div>
+
+    <p>We've sent a confirmation email to <span>jrhut@nhsbsa.nhs.ukk</span>.
+		You need to activate your account using the link in the email within 72 hours. If you do not, you'll need to create a new account.</p>
+
+		<h2 class="nhsuk-heading-m">What to do if you do not receive the email</h2>
+
+		<p>Check your spam or junk folder, as the email may be there. If it is not, you can request a new activation link after signing in to your account.</p>
+
+		<p>If you still do not receive an email, try to create another account. You'll need to use a different email address.</p>
+
+		<p>If you have any further problems, you can <a target="_blank" rel="noopener" href="https://www.nhsbsa.nhs.uk/nhs-bursary-students/contact-us">contact us (opens in a new tab)</a>.</p>
+
+		<p>
+			<a id="homeLink" href="#">Sign in to your <span>NHS Bursary account</span></a>
+		</p>
+  </div>
+</div>
+
+{% endblock %}

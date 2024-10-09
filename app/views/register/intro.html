@@ -4,9 +4,9 @@
 
 <!-- Extends the layout from /views/layout.html -->
 {% extends 'layout.html' %}
-<!-- 
+<!--
   In /views/layout.html you can:
-    - change the header and footer 
+    - change the header and footer
     - add custom CSS and JavaScript
 -->
 
@@ -42,6 +42,25 @@
       <span class="nhsuk-caption-l">NHSBSA Prototype</span>
       User registration journey
     </h1>
+
+    <hr aria-hidden="true" />
+
+    <h2 class="nhsuk-heading-m">
+      User registration
+      <strong class="task-completed status-shortlisted" style="background-color: #330072; float: right">Version 2</strong>
+      <span class="nhsuk-caption-m nhsuk-caption--bottom">Last updated: 2 October 2024</span>
+    </h2>
+
+    <p>The following have been changed:</p>
+    <ul class="nhsuk-list nhsuk-list--bullet">
+      <li>Updated journey to match Test enviornment as of 2 October 2024</li>
+      <li>3 new pages asking:</li>
+      <li>Do you have a National Insurance number?</li>
+      <li>What is your National Insurance number?</li>
+      <li>Why do you not have a National Insurance number?</li>
+    </ul>
+
+    <a class="nhsuk-button" href="/register/v2/landing">Start page</a>
 
     <hr aria-hidden="true" />
 

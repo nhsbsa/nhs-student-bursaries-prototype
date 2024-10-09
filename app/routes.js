@@ -14,6 +14,17 @@ router.post('/clear-session-data/', (req, res) => {
   res.render('index')
 })
 
+router.post('/register/v2/national-insurance-number-question-route/', (req, res) => {
+
+  const nationalInsuranceNumberQuestion = req.session.data['national-insurance-number-question']
+
+  if (nationalInsuranceNumberQuestion === 'No'){
+    res.redirect('/register/v2/national-insurance-number-reason')
+  } else {
+    res.redirect('/register/v2/national-insurance-number')
+  }
+
+})
 
 
 // Branching example
