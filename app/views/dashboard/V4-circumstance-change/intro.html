@@ -14,8 +14,9 @@
 <!-- Breadcrumb goes inside the beforeContent block -->
 {% block header %} {{ header({ "service": { "name": "Bursary", "href": "/" },
 "showNav": "true", "showSearch": "false", "primaryLinks": [ { "url" :
-"dashboard1", "label" : "Dashboard" }, { "url" : "personal-details", "label" :
-"Personal details" }, { "url" : "#", "label" : "Sign out" } ] }) }} {% endblock
+"/dashboard/dashboard-enrolment", "label" : "Dashboard" }, { "url" : "personal-details", "label" :
+"Personal details" }, { "url" : "#", "label" :
+"Payment details" }, { "url" : "#", "label" : "Sign out" } ] }) }} {% endblock
 %}
 
 <!-- Breadcrumb goes inside the beforeContent block -->
@@ -33,47 +34,50 @@
     <div class="nhsuk-grid-column-two-thirds">
       <div class="nhsuk-back-link">
         <a class="nhsuk-back-link__link" href="tasklist-initial" id="back">
-          <svg
-            class="nhsuk-icon nhsuk-icon__chevron-left"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-          >
+          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+            aria-hidden="true">
             <path
-              d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"
-            ></path>
+              d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+            </path>
           </svg>
-          Go back</a
-        >
+          Go back</a>
       </div>
 
       <h1 class="nhsuk-app-heading">
-        <span class="nhsuk-caption-l">Before you start</span>
-        Change of circumstance
+        <span class="nhsuk-caption-l">Change of circumstance</span>
+        Before you start
       </h1>
 
       <p>
-        To apply for a change of circumstance, you must complete this section
-        and send us any evidence you deem is relevant.
+        Only tell us about a change if you think it will affect how much money you can get.
       </p>
 
-      <p>Examples of a change of circumstance could be:</p>
+      <p>Examples of a change of circumstance could include:</p>
       <ul>
-        <li>you have moved out of your parent's home</li>
-        <li>you have got married</li>
-        <li>you have had children</li>
+        <li>moving out of your parent's home</li>
+        <li>getting married</li>
+        <li>having children</li>
+        <li>a change to your household income</li>
       </ul>
 
-      <p>We will need to know:</p>
+      <p>These are only examples of a change of circumstance, you can tell us about other changes.</p>
+
+      <p>If you tell us about a change, we'll need to know:</p>
       <ul>
-        <li>an explanation of what this change is</li>
-        <li>what date this change is effective from</li>
-        <li>any evidence that will support this change</li>
+        <li>what the change is</li>
+        <li>the date of the change</li>
+        <li>the reason for the change</li>
       </ul>
+
+      <p>You'll need to upload evidence of your change. </p>
+
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p>For your security, you will be signed out of the service if you do not do anything for 60 minutes.</p>
+      </div>
+
       <div class="nhsuk-form-group">
-        <a href="changes" class="nhsuk-button" role="button" id="next"
-          >Continue</a
-        >
+        <a href="changes" class="nhsuk-button" role="button" id="next">Continue</a>
       </div>
     </div>
   </div>
