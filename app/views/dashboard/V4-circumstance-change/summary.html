@@ -14,8 +14,9 @@
 <!-- Breadcrumb goes inside the beforeContent block -->
 {% block header %} {{ header({ "service": { "name": "Bursary", "href": "/" },
 "showNav": "true", "showSearch": "false", "primaryLinks": [ { "url" :
-"dashboard1", "label" : "Dashboard" }, { "url" : "personal-details", "label" :
-"Personal details" }, { "url" : "#", "label" : "Sign out" } ] }) }} {% endblock
+"/dashboard/dashboard-enrolment", "label" : "Dashboard" }, { "url" : "personal-details", "label" :
+"Personal details" }, { "url" : "#", "label" :
+"Payment details" }, { "url" : "#", "label" : "Sign out" } ] }) }} {% endblock
 %}
 
 <!-- Breadcrumb goes inside the beforeContent block -->
@@ -30,46 +31,43 @@
 
 <div class="nhsuk-width-container">
   <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-full">
+    <div class="nhsuk-grid-column-two-thirds">
       <h1 class="nhsuk-app-heading">
         <span class="nhsuk-caption-l">Change of circumstance</span>
-        Check your answers
+        Check your change of circumstance answers
       </h1>
 
       <dl class="nhsuk-summary-list">
         <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">Change of circumstance</dt>
-          <dd class="nhsuk-summary-list__value">Change in address</dd>
+          <dt class="nhsuk-summary-list__key">Pick the option that best describes your change of circumstance</dt>
+          <dd class="nhsuk-summary-list__value">Change address</dd>
 
           <dd class="nhsuk-summary-list__actions">
             <a href="">
               Change<span class="nhsuk-u-visually-hidden">
-                Change of circumstance</span
-              >
+                Change of circumstance</span>
             </a>
           </dd>
         </div>
 
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
-            Date of change of circumstance
+            When did this change happen?
           </dt>
           <dd class="nhsuk-summary-list__value">
-            <p>11/3/2020</p>
+            <p>01/01/2024</p>
           </dd>
 
           <dd class="nhsuk-summary-list__actions">
             <a href="">
-              Change<span class="nhsuk-u-visually-hidden"
-                >Date of change of circumstance</span
-              >
+              Change<span class="nhsuk-u-visually-hidden">Date of change of circumstance</span>
             </a>
           </dd>
         </div>
 
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
-            Explanation of change of circumstance
+            What is the reason for this change?
           </dt>
           <dd class="nhsuk-summary-list__value">
             <p>I moved out of my parents house into my studio flat.</p>
@@ -77,9 +75,7 @@
 
           <dd class="nhsuk-summary-list__actions">
             <a href="">
-              Change<span class="nhsuk-u-visually-hidden"
-                >Explanation of change of circumstance</span
-              >
+              Change<span class="nhsuk-u-visually-hidden">Explanation of change of circumstance</span>
             </a>
           </dd>
         </div>
@@ -88,15 +84,15 @@
         Complete change of circumstance
       </h2>
       <p>
-        By clicking accept you’re confirming that the details you’re providing
+        By clicking accept you're confirming that the details you're providing
         are correct.
       </p>
+
       <div class="nhsuk-form-group">
-        <a href="evidence" class="nhsuk-button" role="button" id="next"
-          >Accept and continue</a
-        >
+        <a href="evidence" class="nhsuk-button" role="button" id="next">Accept and continue</a>
       </div>
-      <a href="">Cancel and return to dashboard</a>
+
+      <p><a href="">Cancel and return to dashboard</a></p>
     </div>
   </div>
 </div>
