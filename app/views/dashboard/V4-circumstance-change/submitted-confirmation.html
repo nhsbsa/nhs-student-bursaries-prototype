@@ -9,7 +9,8 @@
 -->
 
 <!-- Set the page title inside the pageTitle block -->
-{% block pageTitle %} Explanation of change of circumstance {% endblock %}
+{% block pageTitle %} What date is this change of cicumstance effective from? {%
+endblock %}
 
 <!-- Breadcrumb goes inside the beforeContent block -->
 {% block header %} {{ header({ "service": { "name": "Bursary", "href": "/" },
@@ -43,32 +44,15 @@
           Go back</a>
       </div>
 
-      <span class="nhsuk-caption-l">Change of circumstance</span>
-      <h1 class="nhsuk-heading-l">What is the reason for this change?</h1>
+      <h1 class="nhsuk-heading-l">You have submitted your change of circumstance</h1>
 
-      <div class="nhsuk-hint" id="change-hint">
-        <strong>Do not</strong> include personal or financial information, for example, your National Insurance number
-        or credit card
-        details.
-      </div>
+      <h2 class="nhsuk-heading-m">What happens next</h1>
 
-      <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="change">
-          Reason
-        </label>
+        <p>We will be in touch if we need anything else.</p>
 
-        <textarea class="nhsuk-textarea" id="change" name="change" rows="5" aria-describedby="change-hint"></textarea>
-        
-        <div class="nhsuk-hint" id="change-hint">
-          You have 500 characters remaining
+        <div class="nhsuk-form-group">
+          <a href="tasklist-approved" class="nhsuk-button" role="button" id="next">Return to dashboard</a>
         </div>
-      </div>
-
-
-
-      <div class="nhsuk-form-group">
-        <a href="summary" class="nhsuk-button" role="button" id="next">Continue</a>
-      </div>
     </div>
   </div>
 </div>

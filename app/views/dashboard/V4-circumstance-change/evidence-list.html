@@ -1,0 +1,56 @@
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Upload your evidence {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <h1 class="nhsuk-heading-l">Upload your evidence</h1>
+
+    <p>
+      You must upload any evidence that will support your change of circumstance.
+    </p>
+    <p>If no evidence is needed, you can skip this step.</p>
+
+
+    <div class="nhsuk-form-group">
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <h2 class="nhsuk-heading-m">Uploaded files</h2>
+          <dl class="nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key"><strong>Type</strong></dt>
+              <dd class="nhsuk-summary-list__value"><strong>Status</strong></dd>
+              <dd class="nhsuk-summary-list__value"><strong>What you can do</strong></dd>
+
+            </div>
+          </dl>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <a href="evidence" class="nhsuk-button nhsuk-button--secondary" role="button">Add file</a>
+    </div>
+
+    <a href="#" class="nhsuk-button" role="button">Continue</a>
+
+    </fieldset>
+
+    <p><a href="">Save and come back later</a></p>
+
+  </div>
+</div>
+{% endblock %}
