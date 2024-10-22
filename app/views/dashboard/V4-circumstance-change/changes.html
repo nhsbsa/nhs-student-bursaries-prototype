@@ -41,58 +41,65 @@ endblock %}
       <span class="nhsuk-caption-l">Change of circumstance</span>
       <h1 class="nhsuk-heading-l">Pick the option that best describes your change of circumstance</h1>
 
-      <div class="nhsuk-form-group">
-        <fieldset class="nhsuk-fieldset">
-          <p>
-            If there are multiple changes you need to tell us about, pick one of the options but provide detail of all
-            changes when prompted
-          </p>
-          <div class="nhsuk-radios">
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="dependence" name="change-circumstance" type="radio"
-                value="Change of dependence" />
-              <label class="nhsuk-label nhsuk-radios__label" for="dependence">
-                Change of relationship status
-              </label>
-            </div>
+      <form action="/dashboard/V4-circumstance-change/changes-route" method="POST">
 
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="address" name="change-circumstance" type="radio"
-                value="Change of address" />
-              <label class="nhsuk-label nhsuk-radios__label" for="address">
-                Change address
-              </label>
-            </div>
+        <div class="nhsuk-form-group">
+          <fieldset class="nhsuk-fieldset">
+            <p>
+              If there are multiple changes you need to tell us about, pick one of the options but provide detail of all
+              changes when prompted
+            </p>
+            <div class="nhsuk-radios">
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="relationship-status" name="change-circumstance" type="radio"
+                  value="Change of relationship status" />
+                <label class="nhsuk-label nhsuk-radios__label" for="relationship-status">
+                  Change of relationship status
+                </label>
+              </div>
 
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="address" name="change-circumstance" type="radio"
-                value="Change of address" />
-              <label class="nhsuk-label nhsuk-radios__label" for="address">
-                Change to my income or the income of my spouse/partner/parents
-              </label>
-            </div>
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="address" name="change-circumstance" type="radio"
+                  value="Change of address" />
+                <label class="nhsuk-label nhsuk-radios__label" for="address">
+                  Change address
+                </label>
+              </div>
 
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="address" name="change-circumstance" type="radio"
-                value="Change of address" />
-              <label class="nhsuk-label nhsuk-radios__label" for="address">
-                Change to the details of the children who are dependent on me
-              </label>
-            </div>
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="income" name="change-circumstance" type="radio"
+                  value="Change of income" />
+                <label class="nhsuk-label nhsuk-radios__label" for="income">
+                  Change to my income or the income of my spouse/partner/parents
+                </label>
+              </div>
 
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="other" name="change-circumstance" type="radio"
-                value="Other change" />
-              <label class="nhsuk-label nhsuk-radios__label" for="other">
-                Other change
-              </label>
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="children-details" name="change-circumstance" type="radio"
+                  value="Change of children details" />
+                <label class="nhsuk-label nhsuk-radios__label" for="children-details">
+                  Change to the details of the children who are dependent on me
+                </label>
+              </div>
+
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="other" name="change-circumstance" type="radio"
+                  value="Other change" />
+                <label class="nhsuk-label nhsuk-radios__label" for="other">
+                  Other change
+                </label>
+              </div>
             </div>
-          </div>
-        </fieldset>
-      </div>
-      <div class="nhsuk-form-group">
+          </fieldset>
+        </div>
+
+        <button class="nhsuk-button" type="submit">Continue</button>
+      </form>
+      <!-- <div class="nhsuk-form-group">
         <a href="date" class="nhsuk-button" role="button" id="next">Continue</a>
-      </div>
+      </div> -->
+
+
     </div>
   </div>
 </div>

@@ -18,7 +18,7 @@ router.post('/register/v2/national-insurance-number-question-route/', (req, res)
 
   const nationalInsuranceNumberQuestion = req.session.data['national-insurance-number-question']
 
-  if (nationalInsuranceNumberQuestion === 'No'){
+  if (nationalInsuranceNumberQuestion === 'No') {
     res.redirect('/register/v2/national-insurance-number-reason')
   } else {
     res.redirect('/register/v2/national-insurance-number')
@@ -26,6 +26,33 @@ router.post('/register/v2/national-insurance-number-question-route/', (req, res)
 
 })
 
+router.post('/dashboard/V4-circumstance-change/changes-route/', (req, res) => {
+
+  res.redirect('/dashboard/V4-circumstance-change/date')
+
+})
+
+router.post('/dashboard/V4-circumstance-change/date-route/', (req, res) => {
+
+  const changeCircumstance = req.session.data['change-circumstance']
+
+  if (changeCircumstance === 'Change of relationship status') {
+    res.redirect('/dashboard/V4-circumstance-change/WIP-change-relationship')
+  }
+  else if (changeCircumstance === 'Change of address') {
+    res.redirect('/dashboard/V4-circumstance-change/change-address')
+  }
+  else if (changeCircumstance === 'Change of income') {
+    res.redirect('/dashboard/V4-circumstance-change/WIP-change-income')
+  }
+  else if (changeCircumstance === 'Change of children details') {
+    res.redirect('/dashboard/V4-circumstance-change/WIP-change-children-details')
+  }
+  else {
+    res.redirect('/dashboard/V4-circumstance-change/WIP-change-other')
+  }
+
+})
 
 // Branching example
 
