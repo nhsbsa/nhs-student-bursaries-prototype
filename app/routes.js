@@ -26,30 +26,30 @@ router.post('/register/v2/national-insurance-number-question-route/', (req, res)
 
 })
 
-router.post('/dashboard/V4-circumstance-change/changes-route/', (req, res) => {
+router.post('/dashboard/v4-circumstance-change/apply/changes-route/', (req, res) => {
 
-  res.redirect('/dashboard/V4-circumstance-change/date')
+  res.redirect('/dashboard/v4-circumstance-change/apply/date')
 
 })
 
-router.post('/dashboard/V4-circumstance-change/date-route/', (req, res) => {
+router.post('/dashboard/v4-circumstance-change/apply/date-route/', (req, res) => {
 
   const changeCircumstance = req.session.data['change-circumstance']
 
   if (changeCircumstance === 'Change of relationship status') {
-    res.redirect('/dashboard/V4-circumstance-change/WIP-change-relationship')
+    res.redirect('/dashboard/v4-circumstance-change/apply/WIP-change-relationship')
   }
   else if (changeCircumstance === 'Change of address') {
-    res.redirect('/dashboard/V4-circumstance-change/change-address')
+    res.redirect('/dashboard/v4-circumstance-change/apply/change-address')
   }
   else if (changeCircumstance === 'Change of income') {
-    res.redirect('/dashboard/V4-circumstance-change/WIP-change-income')
+    res.redirect('/dashboard/v4-circumstance-change/apply/WIP-change-income')
   }
   else if (changeCircumstance === 'Change of children details') {
-    res.redirect('/dashboard/V4-circumstance-change/WIP-change-children-details')
+    res.redirect('/dashboard/v4-circumstance-change/apply/WIP-change-children-details')
   }
   else {
-    res.redirect('/dashboard/V4-circumstance-change/WIP-change-other')
+    res.redirect('/dashboard/v4-circumstance-change/apply/WIP-change-other')
   }
 
 })
