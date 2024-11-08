@@ -15,7 +15,7 @@
 <!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
 <div class="nhsuk-grid-row">
-  <div class="nhsuk-grid-column-two-thirds">
+  <div class="nhsuk-grid-column-three-quarters">
 
     <h1 class="nhsuk-heading-l">Upload your evidence</h1>
 
@@ -29,14 +29,23 @@
       <div class="nhsuk-card">
         <div class="nhsuk-card__content">
           <h2 class="nhsuk-heading-m">Uploaded files</h2>
-          <dl class="nhsuk-summary-list">
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key"><strong>Type</strong></dt>
-              <dd class="nhsuk-summary-list__value"><strong>Status</strong></dd>
-              <dd class="nhsuk-summary-list__value"><strong>What you can do</strong></dd>
 
-            </div>
-          </dl>
+          <table class="nhsuk-table">
+            <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                <th role="columnheader" class="" scope="col">
+                  Type
+                </th>
+                <th role="columnheader" class="" scope="col">
+                  Status
+                </th>
+                <th role="columnheader" class="" scope="col">
+                  What you can do
+                </th>
+              </tr>
+            </thead>
+          </table>
+
         </div>
       </div>
     </div>
