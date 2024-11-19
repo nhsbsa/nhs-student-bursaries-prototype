@@ -1,0 +1,92 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Check your answers {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<!-- Breadcrumb -->
+
+{% endblock %}
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-width-container">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <h1 class="nhsuk-app-heading">
+        <span class="nhsuk-caption-l">Change of circumstance</span>
+        Check your change of circumstance answers
+      </h1>
+
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">Pick the option that best describes your change of circumstance</dt>
+          <dd class="nhsuk-summary-list__value">Change address</dd>
+
+          <dd class="nhsuk-summary-list__actions">
+            <a href="">
+              Change<span class="nhsuk-u-visually-hidden">
+                Change of circumstance</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            When did this change happen?
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <p>01/01/2024</p>
+          </dd>
+
+          <dd class="nhsuk-summary-list__actions">
+            <a href="">
+              Change<span class="nhsuk-u-visually-hidden">Date of change of circumstance</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            What is the reason for this change?
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <p>I moved out of my parents house into my studio flat.</p>
+          </dd>
+
+          <dd class="nhsuk-summary-list__actions">
+            <a href="">
+              Change<span class="nhsuk-u-visually-hidden">Explanation of change of circumstance</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+      <h2 class="nhsuk-heading-l" id="completeH2">
+        Complete change of circumstance
+      </h2>
+      <p>
+        By clicking accept you're confirming that the details you're providing
+        are correct.
+      </p>
+
+      <div class="nhsuk-form-group">
+        <a href="evidence-list" class="nhsuk-button" role="button" id="next">Accept and continue</a>
+      </div>
+
+      <p><a href="">Cancel and return to dashboard</a></p>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

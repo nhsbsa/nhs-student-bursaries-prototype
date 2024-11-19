@@ -26,6 +26,41 @@ router.post('/register/v2/national-insurance-number-question-route/', (req, res)
 
 })
 
+
+
+// V5 Change of Circs Rework
+
+router.post('/dashboard/v5-circumstance-change-rework/apply/changes-route/', (req, res) => {
+
+  res.redirect('/dashboard/v5-circumstance-change-rework/apply/date')
+
+})
+
+router.post('/dashboard/v5-circumstance-change-rework/apply/date-route/', (req, res) => {
+
+  const changeCircumstance = req.session.data['change-circumstance']
+
+  if (changeCircumstance === 'Change of relationship status') {
+    res.redirect('/dashboard/v5-circumstance-change-rework/apply/WIP-change-relationship')
+  }
+  else if (changeCircumstance === 'Change of address') {
+    res.redirect('/dashboard/v5-circumstance-change-rework/apply/change-address')
+  }
+  else if (changeCircumstance === 'Change of income') {
+    res.redirect('/dashboard/v5-circumstance-change-rework/apply/WIP-change-income')
+  }
+  else if (changeCircumstance === 'Change of children details') {
+    res.redirect('/dashboard/v5-circumstance-change-rework/apply/WIP-change-children-details')
+  }
+  else {
+    res.redirect('/dashboard/v5-circumstance-change-rework/apply/WIP-change-other')
+  }
+
+})
+
+
+// V4 Change of Circs
+
 router.post('/dashboard/v4-circumstance-change/apply/changes-route/', (req, res) => {
 
   res.redirect('/dashboard/v4-circumstance-change/apply/date')
