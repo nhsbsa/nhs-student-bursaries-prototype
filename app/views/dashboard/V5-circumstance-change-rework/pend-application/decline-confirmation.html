@@ -1,0 +1,123 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-processor.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Student dashboard {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+{% endblock %}
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-width-container">
+  <main class="nhsuk-main-wrapper" id="maincontent" role="main" style="padding: 0;">
+
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-two-thirds">
+
+        <div>
+          <h1 class="nhsuk-app-heading" style="margin-bottom: 20px;">
+            <span class="nhsuk-caption-l" id="studentRef">BRN0000259 - Mike Lee</span>
+            <!-- Change of circumstances summary -->
+          </h1>
+        </div>
+
+        <div class="nhsuk-card" style="background: #005EB8; margin-top: 0;">
+          <div class="nhsuk-card__content">
+            <h1 class="nhsuk-card__heading" style="text-align: center; color: white;">
+              Change request declined
+            </h1>
+          </div>
+        </div>
+
+        <p>The following note has been added to this student's record:</p>
+
+        <div class="nhsuk-card">
+          <div class="nhsuk-card__content">
+
+            <p><strong>Change of Circumstances on 26 November 2024 11:37:38</strong><br>
+              Linked activity 252 - Change address</p>
+
+            <p>CoC declined.</p>
+
+            <p>Decline reason - Student submitted duplicate CoC request, this one is no longer needed, will process other request.</p>
+
+            <p>Type - Change address<br>
+              Old address - 13 Pleasant House, Laney Street, Smalltown, Scotland, NE33 3AB<br>
+              New address - 34 The Tower, Streetson Crescent, Bigtown, England, SR2 7NB<br>
+              Will be living in parent's home during term-time of academic year - Yes<br>
+              Comment - Change of university house.<br>
+              Effective from date - 15 October 2024</p>
+
+            <div class="nhsuk-hint" id="contact-hint">
+              Last modified by <strong>John Smith</strong>
+            </div>
+
+            <!-- <dl class="nhsuk-summary-list">
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Note type
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  Change of Circumstances
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Link to activity (optional)
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  252 - Change address (Complete)
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Comments
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  Change of university house.<br>
+                  Old address: 13 Pleasant House, Laney Street, Smalltown, Scotland, NE33 3AB<br>
+                  New address: 34 The Tower, Streetson Crescent, Bigtown, England, SR2 7NB<br>
+                  Effective from date: 15 October 2024
+                </dd>
+              </div>
+            </dl> -->
+
+          </div>
+        </div>
+
+
+        <div class="nhsuk-form-group">
+          <!-- <a class="nhsuk-button nhsuk-u-margin-right-5" id="complete" href="#" role="button"
+            data-module="nhsuk-button">Add note and return to student detials</a> -->
+          <a class="nhsuk-button nhsuk-u-margin-right-5" id="complete" href="student-details-locked-declined"
+            role="button" data-module="nhsuk-button">Return to student detials</a>
+
+          <!-- <a class="nhsuk-button nhsuk-button--secondary" id="Pend" href="student-details-locked-pended" role="button"
+            data-module="nhsuk-button">Pend</a> -->
+
+          <!-- <p><a id="canceltoStudent" href="student-details-locked">Return to student details</a></p> -->
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+</div>
+{% endblock %}
