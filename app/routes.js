@@ -36,6 +36,7 @@ router.post('/dashboard/v5-circumstance-change-rework/apply/changes-route/', (re
 
 })
 
+
 router.post('/dashboard/v5-circumstance-change-rework/apply/date-route/', (req, res) => {
 
   const changeCircumstance = req.session.data['change-circumstance']
@@ -57,6 +58,28 @@ router.post('/dashboard/v5-circumstance-change-rework/apply/date-route/', (req, 
   }
 
 })
+
+
+router.post('/dashboard/v5-circumstance-change-rework/pend-application/change-summary/', (req, res) => {
+
+  const processorChoice = req.session.data['processorChoice']
+
+  if (processorChoice === 'complete') {
+    res.redirect('/dashboard/v5-circumstance-change-rework/pend-application/change-confirmation')
+  }
+  else if (processorChoice === 'pend') {
+    res.redirect('/dashboard/v5-circumstance-change-rework/pend-application/student-details-locked-pended')
+  }
+  else if (processorChoice === 'decline') {
+    res.redirect('/dashboard/v5-circumstance-change-rework/pend-application/decline-reason')
+  }
+  else {
+    res.redirect('/dashboard/v5-circumstance-change-rework/pend-application/change-summary')
+  }
+
+})
+
+
 
 
 // V4 Change of Circs
