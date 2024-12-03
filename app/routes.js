@@ -71,26 +71,6 @@ router.post('/dashboard/V5-circumstance-change-rework/pend-application/change-su
     res.redirect('/dashboard/V5-circumstance-change-rework/pend-application/student-details-locked-pended')
   }
   else if (processorChoice === 'decline') {
-    res.redirect('/dashboard/V5-circumstance-change-rework/pend-application/decline-confirmation')
-  }
-  else {
-    res.redirect('/dashboard/V5-circumstance-change-rework/pend-application/change-summary')
-  }
-
-})
-
-
-router.post('/dashboard/V5-circumstance-change-rework/pend-application/change-summary-v2/', (req, res) => {
-
-  const processorChoice = req.session.data['processorChoice']
-
-  if (processorChoice === 'complete') {
-    res.redirect('/dashboard/V5-circumstance-change-rework/pend-application/change-confirmation')
-  }
-  else if (processorChoice === 'pend') {
-    res.redirect('/dashboard/V5-circumstance-change-rework/pend-application/student-details-locked-pended')
-  }
-  else if (processorChoice === 'decline') {
     res.redirect('/dashboard/V5-circumstance-change-rework/pend-application/decline-reason')
   }
   else {
