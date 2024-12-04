@@ -60,21 +60,21 @@ router.post('/dashboard/V5-circumstance-change-rework/apply/date-route/', (req, 
 })
 
 
-router.post('/dashboard/V5-circumstance-change-rework/pend-application/change-summary/', (req, res) => {
+router.post('/dashboard/V5-circumstance-change-rework/process-application/change-summary/', (req, res) => {
 
   const processorChoice = req.session.data['processorChoice']
 
   if (processorChoice === 'complete') {
-    res.redirect('/dashboard/V5-circumstance-change-rework/pend-application/change-confirmation')
+    res.redirect('/dashboard/V5-circumstance-change-rework/process-application/change-confirmation')
   }
   else if (processorChoice === 'pend') {
-    res.redirect('/dashboard/V5-circumstance-change-rework/pend-application/student-details-locked-pended')
+    res.redirect('/dashboard/V5-circumstance-change-rework/process-application/student-details-locked-pended')
   }
   else if (processorChoice === 'decline') {
-    res.redirect('/dashboard/V5-circumstance-change-rework/pend-application/decline-reason')
+    res.redirect('/dashboard/V5-circumstance-change-rework/process-application/decline-reason')
   }
   else {
-    res.redirect('/dashboard/V5-circumstance-change-rework/pend-application/change-summary')
+    res.redirect('/dashboard/V5-circumstance-change-rework/process-application/change-summary')
   }
 
 })
