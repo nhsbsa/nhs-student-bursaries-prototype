@@ -32,7 +32,19 @@ router.post('/register/v2/national-insurance-number-question-route/', (req, res)
 
 router.post('/dashboard/V5-circumstance-change-rework/apply/changes-route/', (req, res) => {
 
-  res.redirect('/dashboard/V5-circumstance-change-rework/apply/date')
+  const changeCircumstance = req.session.data['change-circumstance']
+
+  // If user selects any option, proceed to Date question - otherwise, stay on this page
+  if (changeCircumstance === 'Change of relationship status'
+    || 'Change of address'
+    || 'Change of income'
+    || 'Change of children details'
+    || 'Other change') {
+    res.redirect('/dashboard/V5-circumstance-change-rework/apply/date')
+  }
+  else {
+    res.redirect('/dashboard/V5-circumstance-change-rework/apply/changes')
+  }
 
 })
 
@@ -41,20 +53,28 @@ router.post('/dashboard/V5-circumstance-change-rework/apply/date-route/', (req, 
 
   const changeCircumstance = req.session.data['change-circumstance']
 
+  // Route user to correct question subjourney, depending on answer to previous Change Reason question
+
   if (changeCircumstance === 'Change of relationship status') {
-    res.redirect('/dashboard/V5-circumstance-change-rework/apply/WIP-change-relationship')
+    // res.redirect('/dashboard/V5-circumstance-change-rework/apply/WIP-change-relationship')
   }
   else if (changeCircumstance === 'Change of address') {
     res.redirect('/dashboard/V5-circumstance-change-rework/apply/change-address')
   }
   else if (changeCircumstance === 'Change of income') {
-    res.redirect('/dashboard/V5-circumstance-change-rework/apply/WIP-change-income')
+    // res.redirect('/dashboard/V5-circumstance-change-rework/apply/WIP-change-income')
+    res.redirect('/dashboard/V5-circumstance-change-rework/apply/explanation')
   }
   else if (changeCircumstance === 'Change of children details') {
-    res.redirect('/dashboard/V5-circumstance-change-rework/apply/WIP-change-children-details')
+    // res.redirect('/dashboard/V5-circumstance-change-rework/apply/WIP-change-children-details')
+    res.redirect('/dashboard/V5-circumstance-change-rework/apply/explanation')
+  }
+  else if (changeCircumstance === 'Other change') {
+    // res.redirect('/dashboard/V5-circumstance-change-rework/apply/WIP-change-other')
+    res.redirect('/dashboard/V5-circumstance-change-rework/apply/explanation')
   }
   else {
-    res.redirect('/dashboard/V5-circumstance-change-rework/apply/WIP-change-other')
+    res.redirect('/dashboard/V5-circumstance-change-rework/apply/explanation')
   }
 
 })
