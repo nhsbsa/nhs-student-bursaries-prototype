@@ -80,6 +80,23 @@ router.post('/dashboard/V5-circumstance-change-rework/process-application/change
 })
 
 
+router.post('/dashboard/V5-circumstance-change-rework/upload-missing-evidence/change-already-submitted-route/', (req, res) => {
+
+  const differentChange = req.session.data['different-change']
+
+  if (differentChange === 'yes') {
+    res.redirect('/dashboard/V5-circumstance-change-rework/apply/intro')
+  }
+  else if (differentChange === 'no') {
+    res.redirect('/dashboard/V5-circumstance-change-rework/upload-missing-evidence/dashboard')
+  }
+  else {
+    res.redirect('/dashboard/V5-circumstance-change-rework/upload-missing-evidence/change-already-submitted')
+  }
+
+})
+
+
 
 
 // V4 Change of Circs

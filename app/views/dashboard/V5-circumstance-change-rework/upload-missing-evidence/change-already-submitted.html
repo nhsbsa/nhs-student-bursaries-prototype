@@ -1,0 +1,165 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Change of circumstances {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<!-- Breadcrumb -->
+
+{% endblock %}
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-width-container">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <div class="nhsuk-back-link">
+        <a class="nhsuk-back-link__link" href="javascript:history.go(-1)" id="back">
+          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+            aria-hidden="true">
+            <path
+              d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+            </path>
+          </svg>
+          Go back</a>
+      </div>
+
+      <h1 class="nhsuk-app-heading">
+        You have already submitted a change of circumstances
+      </h1>
+
+      <div class="nhsuk-warning-callout">
+        <h3 class="nhsuk-warning-callout__label">
+          <span role="text">
+            <span class="nhsuk-u-visually-hidden">Important: </span>
+            Previously submitted change
+          </span>
+        </h3>
+
+        <dl class="nhsuk-summary-list">
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Type of change</dt>
+            <dd class="nhsuk-summary-list__value">Change of address</dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Date of change
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              <p>15 October 2024</p>
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              New address
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              <p>34<br>
+                The Tower<br>
+                Streetson Crescent<br>
+                Bigtown<br>
+                England<br>
+                SR2 7NB</p>
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Living with parents?
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              <p>Yes</p>
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Reason for change
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              <p>I moved out of my parents house into my studio flat.</p>
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Date submitted
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              <p>22 October 2024 11:47am</p>
+            </dd>
+          </div>
+
+        </dl>
+
+        <!-- <p>You have a <a href="#">previously submitted claim (opens in a new tab)</a> with costs on these days.</p> -->
+      </div>
+
+      <p>This change has been returned to you, and is waiting for you to <a
+          href="/dashboard/V5-circumstance-change-rework/upload-missing-evidence/evidence-list">add more evidence</a>.
+      </p>
+
+      <details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            If you need to change your previously submitted change
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <p>Contact info here</p>
+          <ul>
+
+        </div>
+      </details>
+
+      <h2 class="nhsuk-heading-m">
+        Do you want to tell us about a different change?
+      </h2>
+
+      <!-- <div class="nhsuk-hint">Select Yes if you have costs on these days that you have not already told us about. Your
+        claim will be declined if you try to claim for costs you have already claimed for.</div> -->
+
+      <form action="/dashboard/V5-circumstance-change-rework/upload-missing-evidence/change-already-submitted-route"
+        method="POST">
+
+        <div class="nhsuk-radios">
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="different-change-yes" name="different-change" type="radio"
+              value="yes">
+            <label class="nhsuk-label nhsuk-radios__label" for="different-change-yes">
+              Yes
+            </label>
+          </div>
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="different-change-no" name="different-change" type="radio" value="no">
+            <label class="nhsuk-label nhsuk-radios__label" for="different-change-no">
+              No
+            </label>
+          </div>
+        </div>
+
+        <button class="nhsuk-button" type="submit" style="margin-top: 40px;">Continue</button>
+        <p><a id="canceltoTasklist" href="tasklist-approved">Cancel</a></p>
+
+      </form>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
