@@ -35,8 +35,19 @@
 
       <div class="nhsuk-u-padding-bottom-4">
         <h2 class="nhsuk-heading-m">Academic year starting September 2023</h2>
+        <!-- <p>You've submitted your NHS Bursary application. We're currently processing your application.</p> -->
         <!-- <p>You are applying for a means tested bursary studying Bachelor of Medicine and Surgery (course year 5) at
           Lancaster University.</p> -->
+      </div>
+
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <h3 class="nhsuk-card__heading">
+            We've approved your NHS Bursary
+          </h3>
+          <p class="nhsuk-card__description">You can check your expected payment dates in the Payment details section of
+            your account.</p>
+        </div>
       </div>
 
       <ol class="app-task-list">
@@ -56,11 +67,11 @@
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="course-details-view-answers?submitted=false">
+                <a href="course-details-view-answers?submitted=true">
                   Course details
                 </a>
               </span>
-              <strong class="nhsuk-tag app-task-list__tag">Complete</strong>
+              <strong class="nhsuk-tag app-task-list__tag">Eligible course</strong>
             </li>
           </ul>
         </li>
@@ -88,14 +99,14 @@
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="eligibility-view-answers?submitted=false">Eligibility</a></span>
-              <strong class="nhsuk-tag app-task-list__tag">Complete</strong>
+                <a href="eligibility-view-answers?submitted=true">Eligibility</a></span>
+              <strong class="nhsuk-tag app-task-list__tag">Eligible</strong>
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="status-assessment-view-answers?submitted=false">Status assessment</a></span>
-              <strong class="nhsuk-tag app-task-list__tag">Complete</strong>
-            </li>
+                <a href="status-assessment-view-answers?submitted=true">Status assessment</a></span>
+                <strong class="nhsuk-tag app-task-list__tag">Dependent of parents</strong>
+              </li>
           </ul>
         </li>
 
@@ -115,23 +126,23 @@
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="student-income-details-view-answers?submitted=false">Student income details</a></span>
-              <strong class="nhsuk-tag app-task-list__tag">Complete</strong>
+                <a href="student-income-details-view-answers?submitted=true">Student income details</a></span>
+                <strong class="nhsuk-tag app-task-list__tag">Assessed</strong>
+              </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="student-expense-details-view-answers?submitted=true">Student expense details</a></span>
+                <strong class="nhsuk-tag app-task-list__tag">Assessed</strong>
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="student-expense-details-view-answers?submitted=false">Student expense details</a></span>
-              <strong class="nhsuk-tag app-task-list__tag">Complete</strong>
+                <a href="parent-details-view-answers?submitted=true">Parent or partner details</a></span>
+                <strong class="nhsuk-tag app-task-list__tag">Complete</strong>
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="parent-details-view-answers?submitted=false">Parent or partner details</a></span>
-              <strong class="nhsuk-tag app-task-list__tag">Complete</strong>
-            </li>
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                <a href="students-children-details-view-answers?submitted=false">Student's children details</a></span>
-              <strong class="nhsuk-tag app-task-list__tag">Complete</strong>
+                <a href="students-children-details-view-answers?submitted=true">Student's children details</a></span>
+                <strong class="nhsuk-tag app-task-list__tag">Assessed</strong>
             </li>
           </ul>
         </li>
@@ -159,20 +170,20 @@
             <span class="app-task-list__task-name">
               Other dependent children details
             </span>
-            <strong class="nhsuk-tag app-task-list__tag">Complete</strong>
+            <strong class="nhsuk-tag app-task-list__tag">Assessed</strong>
           </li>
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
               Income details
             </span>
-            <strong class="nhsuk-tag app-task-list__tag">Complete</strong>
+            <strong class="nhsuk-tag app-task-list__tag">Assessed</strong>
           </li>
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
               Expense details
               </a>
             </span>
-            <strong class="nhsuk-tag app-task-list__tag">Complete</strong>
+            <strong class="nhsuk-tag app-task-list__tag">Assessed</strong>
           </li>
         </ul>
 
@@ -199,26 +210,18 @@
             <span class="app-task-list__task-name">
               Income details
             </span>
-            <strong class="nhsuk-tag app-task-list__tag">Complete</strong>
+            <strong class="nhsuk-tag app-task-list__tag">Assessed</strong>
           </li>
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
               Expense details
               </a>
             </span>
-            <strong class="nhsuk-tag app-task-list__tag">Complete</strong>
+            <strong class="nhsuk-tag app-task-list__tag">Assessed</strong>
           </li>
         </ul>
 
       </ol>
-
-      <a href="tasklist-5-submitted?submitted=true" class="nhsuk-button" role="button" id="continue">Submit
-        application</a>
-
-      <h2 class="nhsuk-heading-m">Delete application</h2>
-      <p>If you've made a mistake on your application, you need to <a href="delete-application">delete it and start
-          again</a>.</p>
-
 
 
 
@@ -239,12 +242,11 @@
             </li>
             <li><a href="tasklist-2-completed-by-student">Completed by student only + Not submitted</a>
             </li>
-            <li><strong><a href="tasklist-3-all-complete">Completed by all + Not submitted</a> <br>
-                [YOU ARE HERE]</strong></li>
+            <li><a href="tasklist-3-all-complete">Completed by all + Not submitted</a></li>
             <li><a href="tasklist-4-completed-by-student-submitted">Completed by student only + Submitted</a>
             </li>
             <li><a href="tasklist-5-submitted">Completed by all + Submitted</a></li>
-            <li><a href="tasklist-6-approved">Completed by all + Submitted + Approved</a><br>(ONLY accessible via this link)</li>
+            <li><strong><a href="tasklist-6-approved">Completed by all + Submitted + Approved</a><br>(ONLY accessible via this link)<br> [YOU ARE HERE]</strong></li>
           </ul>
 
           <h4 class="nhsuk-heading-s">Other pages:</h4>
@@ -257,7 +259,7 @@
 
             <li>Delete application journey: Accessible from within Tasklist pages (before submission).</li>
           </ul>
-          
+
           <hr>
 
           <p>Please note: This 'Prototype navigation' section is NOT to be developed in the real service.</p>
