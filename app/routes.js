@@ -88,7 +88,7 @@ router.post('/dashboard/V5-circumstance-change-rework/process-application/change
     res.redirect('/dashboard/V5-circumstance-change-rework/process-application/change-confirmation')
   }
   else if (processorChoice === 'pend') {
-    res.redirect('/dashboard/V5-circumstance-change-rework/process-application/student-details-locked-pended')
+    res.redirect('/dashboard/V5-circumstance-change-rework/process-application/pend-reason')
   }
   else if (processorChoice === 'decline') {
     res.redirect('/dashboard/V5-circumstance-change-rework/process-application/decline-reason')
