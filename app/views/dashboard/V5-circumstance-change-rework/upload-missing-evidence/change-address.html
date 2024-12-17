@@ -1,0 +1,132 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}What address will you
+live at while studying? {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<form id="registrationForm" name="registrationForm" action="/register/v2/account" method="post" autocomplete="on">
+  <input type="hidden" name="_csrf" value="7f540de9-8add-4331-b4d9-37e6c1eaf7b4" />
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <div class="nhsuk-back-link">
+        <a class="nhsuk-back-link__link" href="javascript:history.go(-1)" id="back">
+          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+            aria-hidden="true">
+            <path
+              d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+            </path>
+          </svg>
+          Go back
+        </a>
+      </div>
+
+      <span class="nhsuk-caption-l">Change of circumstances</span>
+      <h1 class="nhsuk-heading-l">
+        Change your address
+      </h1>
+
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-heading-m">
+          Your previous address
+        </h1>
+      </legend>
+
+      <dl class="nhsuk-summary-list">
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Previous address
+          </dt>
+
+          <dd class="nhsuk-summary-list__value">
+            13<br>
+            Pleasant House<br>
+            Laney Street<br>
+            Smalltown<br>
+            Scotland<br>
+            NE33 3AB
+          </dd>
+
+        </div>
+
+      </dl>
+
+      <fieldset class="nhsuk-fieldset">
+
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h2 class="nhsuk-heading-m">
+            What is your new address?
+          </h2>
+        </legend>
+
+        <p>This is the address you live at while you're at university. For example, halls of residence or your parental
+          home.</p>
+
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" id="nameOrNumber-label" for="nameOrNumber">Building name or number<span
+              class="nhsuk-u-visually-hidden"> line 1 of 2</span></label>
+          <input class="nhsuk-input" name="nameOrNumber" id="nameOrNumber" type="text" maxlength="30" value="34" />
+        </div>
+
+        <div class="nhsuk-form-group">
+          <label id="address1-label" for="address1" class="nhsuk-label nhsuk-u-visually-hidden">
+            <span class="nhsuk-u-visually-hidden">Building and street line 2 of 2</span>
+          </label>
+          <input name="address1" id="address1" class="nhsuk-input" type="text" maxlength="30" value="The Tower" />
+        </div>
+
+        <div class="nhsuk-form-group">
+          <label id="address2-label" for="address2" class="nhsuk-label">Street</label>
+          <input name="address2" id="address2" class="nhsuk-input" type="text" maxlength="30" value="Streetson Crescent" />
+        </div>
+
+        <div class="nhsuk-form-group">
+          <label id="town-label" for="town" class="nhsuk-label">Town or city</label>
+          <input name="town" id="town" class="nhsuk-input nhsuk-u-width-two-thirds" type="text" maxlength="30"
+            value="Bigtown" />
+        </div>
+
+        <div class="nhsuk-form-group">
+          <label id="country-label" for="country" class="nhsuk-label">Country</label>
+          <input name="country" id="country" class="nhsuk-input nhsuk-u-width-two-thirds" type="text" maxlength="30"
+            value="England" />
+        </div>
+
+        <div class="nhsuk-form-group">
+          <label id="postcode-label" for="postcode" class="nhsuk-label">Postcode</label>
+          <input name="postcode" id="postcode" class="nhsuk-input nhsuk-input--width-10" type="text" maxlength="8"
+            value="SR2 7NB" />
+        </div>
+      </fieldset>
+    </div>
+  </div>
+
+  <div class="nhsuk-form-group" style="margin-top: 20px;">
+    <a href="living-with-parents" class="nhsuk-button" role="button" id="next">Continue</a>
+
+    <p><a id="canceltoTasklist" href="tasklist-approved">Cancel</a></p>
+  </div>
+
+</form>
+
+{% endblock %}
