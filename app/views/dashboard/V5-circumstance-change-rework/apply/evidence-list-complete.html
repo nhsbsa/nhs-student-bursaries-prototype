@@ -19,7 +19,11 @@
 
     <span class="nhsuk-caption-l">Change of circumstances</span>
     <h1 class="nhsuk-heading-l">
-      Add evidence
+      {% if data['livingWithParents'] == "Yes" %}
+        Add evidence (optional)
+      {% else %}
+        Add evidence
+      {% endif %}
     </h1>
     
     <p>You can upload any evidence that supports your change of circumstances.</p>
@@ -48,7 +52,7 @@
               <tr role="row" class="nhsuk-table__row">
                 <td class="nhsuk-table__cell">Letter from letting agent</td>
                 <td class="nhsuk-table__cell "><a href="/images/placeholder-image-16-9.jpg" target="_blank" rel="noopener">letting-agent-letter.pdf</a></td>
-                <td class="nhsuk-table__cell "><a href="#">Remove</a></td>
+                <td class="nhsuk-table__cell "><a href="evidence-list">Remove</a></td>
               </tr>
             </tbody>
           </table>
@@ -61,8 +65,6 @@
     </div>
 
     <a href="provided-all-documents" class="nhsuk-button" role="button">Continue</a>
-
-    </fieldset>
 
     <p><a href="">Save and come back later</a></p>
 

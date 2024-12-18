@@ -19,7 +19,11 @@
 
     <span class="nhsuk-caption-l">Change of circumstances</span>
     <h1 class="nhsuk-heading-l">
+      {% if data['livingWithParents'] == "Yes" %}
+      Add evidence (optional)
+      {% else %}
       Add evidence
+      {% endif %}
     </h1>
 
     <p>
@@ -31,9 +35,9 @@
       <a href="evidence" class="nhsuk-button nhsuk-button--secondary" role="button">Add evidence</a>
     </div>
 
+    {% if data['livingWithParents'] == "Yes" %}
     <a href="#" class="nhsuk-button" role="button">Continue</a>
-
-    </fieldset>
+    {% endif %}
 
     <p><a href="">Save and come back later</a></p>
 
