@@ -30,6 +30,8 @@ router.post('/register/v2/national-insurance-number-question-route/', (req, res)
 
 // V5 Change of Circs Rework
 
+// Routes for STUDENT: APPLY FOR CoC journey 
+
 router.post('/dashboard/V5-circumstance-change-rework/apply/changes-route/', (req, res) => {
 
   const changeCircumstance = req.session.data['change-circumstance']
@@ -80,6 +82,17 @@ router.post('/dashboard/V5-circumstance-change-rework/apply/date-route/', (req, 
 })
 
 
+router.post('/dashboard/V5-circumstance-change-rework/apply/living-with-parents-route/', (req, res) => {
+
+  res.redirect('/dashboard/V5-circumstance-change-rework/apply/explanation')
+
+})
+
+
+
+
+// Routes for PROCESSOR: PROCESS APPLICATION journey 
+
 router.post('/dashboard/V5-circumstance-change-rework/process-application/change-summary/', (req, res) => {
 
   const processorChoice = req.session.data['processorChoice']
@@ -100,6 +113,9 @@ router.post('/dashboard/V5-circumstance-change-rework/process-application/change
 })
 
 
+
+// Routes for STUDENT: UPDATE APPLICATION AFTER RETURNED journey 
+
 router.post('/dashboard/V5-circumstance-change-rework/upload-missing-evidence/change-already-submitted-route/', (req, res) => {
 
   const differentChange = req.session.data['different-change']
@@ -115,6 +131,15 @@ router.post('/dashboard/V5-circumstance-change-rework/upload-missing-evidence/ch
   }
 
 })
+
+
+router.post('/dashboard/V5-circumstance-change-rework/upload-missing-evidence/living-with-parents-route/', (req, res) => {
+
+  res.redirect('/dashboard/V5-circumstance-change-rework/upload-missing-evidence/summary')
+
+})
+
+
 
 
 

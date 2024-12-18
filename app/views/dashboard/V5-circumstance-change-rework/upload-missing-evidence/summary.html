@@ -93,7 +93,13 @@
             Living with parents?
           </dt>
           <dd class="nhsuk-summary-list__value">
-            <p>No</p>
+            <p>
+              {% if data['livingWithParents'] %}
+              {{ data['livingWithParents'] }}
+              {% else %}
+              No
+              {% endif %}
+            </p>
           </dd>
 
           <dd class="nhsuk-summary-list__actions">

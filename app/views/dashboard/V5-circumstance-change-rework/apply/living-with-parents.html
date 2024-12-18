@@ -22,9 +22,6 @@ live at while studying? {% endblock %}
 <!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
 
-<form id="registrationForm" name="registrationForm" action="/register/v2/account" method="post" autocomplete="on">
-  <input type="hidden" name="_csrf" value="7f540de9-8add-4331-b4d9-37e6c1eaf7b4" />
-
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
@@ -49,39 +46,39 @@ live at while studying? {% endblock %}
         Select Yes even if you're only living with one parent or guardian.
       </div>
 
-      <div class="nhsuk-form-group">
+      <form action="/dashboard/V5-circumstance-change-rework/apply/living-with-parents-route" method="POST">
 
-        <fieldset class="nhsuk-fieldset">
+        <div class="nhsuk-form-group">
 
-          <div class="nhsuk-radios">
+          <fieldset class="nhsuk-fieldset">
 
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">
-              <label class="nhsuk-label nhsuk-radios__label" for="example-1">
-                Yes
-              </label>
+            <div class="nhsuk-radios">
+
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-1" name="livingWithParents" type="radio" value="Yes">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                  Yes
+                </label>
+              </div>
+
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-2" name="livingWithParents" type="radio" value="No">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                  No
+                </label>
+              </div>
+
             </div>
+          </fieldset>
 
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
-              <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-                No
-              </label>
-            </div>
+        </div>
 
-          </div>
-        </fieldset>
-
-      </div>
+        <button class="nhsuk-button" type="submit">Continue</button>
+      </form>
     </div>
   </div>
 
-  <div class="nhsuk-form-group">
-    <a href="explanation" class="nhsuk-button" role="button" id="next">Continue</a>
-
     <p><a id="canceltoTasklist" href="tasklist-approved">Cancel</a></p>
-  </div>
 
-</form>
 
 {% endblock %}
