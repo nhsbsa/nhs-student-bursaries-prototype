@@ -130,7 +130,7 @@ router.post('/dashboard/V5-circumstance-change-rework/process-application/change
 
 // Routes for STUDENT: UPDATE APPLICATION AFTER RETURNED journey 
 
-router.post('/dashboard/V5-circumstance-change-rework/upload-missing-evidence/change-already-submitted-route/', (req, res) => {
+router.post('/dashboard/V5-circumstance-change-rework/review-application/change-already-submitted-route/', (req, res) => {
 
   const differentChange = req.session.data['different-change']
 
@@ -138,39 +138,39 @@ router.post('/dashboard/V5-circumstance-change-rework/upload-missing-evidence/ch
     res.redirect('/dashboard/V5-circumstance-change-rework/apply/intro')
   }
   else if (differentChange === 'no') {
-    res.redirect('/dashboard/V5-circumstance-change-rework/upload-missing-evidence/dashboard')
+    res.redirect('/dashboard/V5-circumstance-change-rework/review-application/dashboard')
   }
   else {
-    res.redirect('/dashboard/V5-circumstance-change-rework/upload-missing-evidence/change-already-submitted')
+    res.redirect('/dashboard/V5-circumstance-change-rework/review-application/change-already-submitted')
   }
 
 })
 
 
-router.post('/dashboard/V5-circumstance-change-rework/upload-missing-evidence/date-route/', (req, res) => {
+router.post('/dashboard/V5-circumstance-change-rework/review-application/date-route/', (req, res) => {
 
-  res.redirect('/dashboard/V5-circumstance-change-rework/upload-missing-evidence/summary')
-
-})
-
-
-router.post('/dashboard/V5-circumstance-change-rework/upload-missing-evidence/change-address-route/', (req, res) => {
-
-  res.redirect('/dashboard/V5-circumstance-change-rework/upload-missing-evidence/summary')
+  res.redirect('/dashboard/V5-circumstance-change-rework/review-application/summary')
 
 })
 
 
-router.post('/dashboard/V5-circumstance-change-rework/upload-missing-evidence/living-with-parents-route/', (req, res) => {
+router.post('/dashboard/V5-circumstance-change-rework/review-application/change-address-route/', (req, res) => {
 
-  res.redirect('/dashboard/V5-circumstance-change-rework/upload-missing-evidence/summary')
+  res.redirect('/dashboard/V5-circumstance-change-rework/review-application/summary')
 
 })
 
 
-router.post('/dashboard/V5-circumstance-change-rework/upload-missing-evidence/explanation-route/', (req, res) => {
+router.post('/dashboard/V5-circumstance-change-rework/review-application/living-with-parents-route/', (req, res) => {
 
-  res.redirect('/dashboard/V5-circumstance-change-rework/upload-missing-evidence/summary')
+  res.redirect('/dashboard/V5-circumstance-change-rework/review-application/summary')
+
+})
+
+
+router.post('/dashboard/V5-circumstance-change-rework/review-application/explanation-route/', (req, res) => {
+
+  res.redirect('/dashboard/V5-circumstance-change-rework/review-application/summary')
 
 })
 
