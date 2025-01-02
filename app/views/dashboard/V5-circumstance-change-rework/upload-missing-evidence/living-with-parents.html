@@ -46,7 +46,8 @@ live at while studying? {% endblock %}
       Select Yes even if you're only living with one parent or guardian.
     </div>
 
-    <form action="/dashboard/V5-circumstance-change-rework/upload-missing-evidence/living-with-parents-route" method="POST">
+    <form action="/dashboard/V5-circumstance-change-rework/upload-missing-evidence/living-with-parents-route"
+      method="POST">
 
       <div class="nhsuk-form-group">
 
@@ -54,8 +55,10 @@ live at while studying? {% endblock %}
 
           <div class="nhsuk-radios">
 
+            {% if data['livingWithParents'] === 'Yes' %}
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="example-1" name="livingWithParents" type="radio" value="Yes">
+              <input class="nhsuk-radios__input" id="example-1" name="livingWithParents" type="radio" value="Yes"
+                checked>
               <label class="nhsuk-label nhsuk-radios__label" for="example-1">
                 Yes
               </label>
@@ -67,6 +70,24 @@ live at while studying? {% endblock %}
                 No
               </label>
             </div>
+
+            {% else %}
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="example-1" name="livingWithParents" type="radio" value="Yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                Yes
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="example-2" name="livingWithParents" type="radio" value="No"
+                checked>
+              <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                No
+              </label>
+            </div>
+            {% endif %}
+
 
           </div>
         </fieldset>

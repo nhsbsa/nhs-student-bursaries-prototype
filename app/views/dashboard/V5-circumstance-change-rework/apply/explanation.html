@@ -45,20 +45,22 @@
         Do not include personal or financial information that is not relevant to your change.
       </div>
 
-      <div class="nhsuk-form-group">
+      <form action="/dashboard/V5-circumstance-change-rework/apply/explanation-route" method="POST">
 
-        <textarea class="nhsuk-textarea" id="change" name="change" rows="5" aria-describedby="change-hint"></textarea>
+        <div class="nhsuk-form-group">
 
-        <div class="nhsuk-hint" id="change-hint">
-          You have 500 characters remaining
+          <textarea class="nhsuk-textarea" id="change" name="reason" rows="5" aria-describedby="change-hint"></textarea>
+
+          <div class="nhsuk-hint" id="change-hint">
+            You have 500 characters remaining
+          </div>
         </div>
-      </div>
 
-      <div class="nhsuk-form-group">
-        <a href="summary" class="nhsuk-button" role="button" id="next">Continue</a>
+        <button class="nhsuk-button" type="submit">Continue</button>
 
-        <p><a id="canceltoTasklist" href="tasklist-approved">Cancel</a></p>
-      </div>
+          <p><a id="canceltoTasklist" href="tasklist-approved">Cancel</a></p>
+      </form>
+
     </div>
   </div>
 </div>

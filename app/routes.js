@@ -82,9 +82,23 @@ router.post('/dashboard/V5-circumstance-change-rework/apply/date-route/', (req, 
 })
 
 
+router.post('/dashboard/V5-circumstance-change-rework/apply/change-address-route/', (req, res) => {
+
+  res.redirect('/dashboard/V5-circumstance-change-rework/apply/living-with-parents')
+
+})
+
+
 router.post('/dashboard/V5-circumstance-change-rework/apply/living-with-parents-route/', (req, res) => {
 
   res.redirect('/dashboard/V5-circumstance-change-rework/apply/explanation')
+
+})
+
+
+router.post('/dashboard/V5-circumstance-change-rework/apply/explanation-route/', (req, res) => {
+
+  res.redirect('/dashboard/V5-circumstance-change-rework/apply/summary')
 
 })
 
@@ -133,7 +147,28 @@ router.post('/dashboard/V5-circumstance-change-rework/upload-missing-evidence/ch
 })
 
 
+router.post('/dashboard/V5-circumstance-change-rework/upload-missing-evidence/date-route/', (req, res) => {
+
+  res.redirect('/dashboard/V5-circumstance-change-rework/upload-missing-evidence/summary')
+
+})
+
+
+router.post('/dashboard/V5-circumstance-change-rework/upload-missing-evidence/change-address-route/', (req, res) => {
+
+  res.redirect('/dashboard/V5-circumstance-change-rework/upload-missing-evidence/summary')
+
+})
+
+
 router.post('/dashboard/V5-circumstance-change-rework/upload-missing-evidence/living-with-parents-route/', (req, res) => {
+
+  res.redirect('/dashboard/V5-circumstance-change-rework/upload-missing-evidence/summary')
+
+})
+
+
+router.post('/dashboard/V5-circumstance-change-rework/upload-missing-evidence/explanation-route/', (req, res) => {
 
   res.redirect('/dashboard/V5-circumstance-change-rework/upload-missing-evidence/summary')
 
