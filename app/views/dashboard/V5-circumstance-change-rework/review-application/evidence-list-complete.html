@@ -19,12 +19,21 @@
 
     <span class="nhsuk-caption-l">Change of circumstances</span>
     <h1 class="nhsuk-heading-l">
+      {% if data['livingWithParents'] == "Yes" %}
+      Add evidence (optional)
+      {% else %}
       Add evidence
+      {% endif %}
     </h1>
 
+    {% if data['livingWithParents'] == "Yes" %}
     <p>You can upload any evidence that supports your change of circumstances.</p>
+    {% else %}
+    <p>You need to upload evidence that supports your change of circumstances.</p>
+    {% endif %}
 
     <p>Once you're done, select Continue.</p>
+    
 
     <div class="nhsuk-card">
       <div class="nhsuk-card__content">
