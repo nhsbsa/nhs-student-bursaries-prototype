@@ -61,16 +61,10 @@
               Date of change
             </dt>
 
-            <!-- CONVERT CIRCUMSTANCE MONTH TO WRITTEN MONTH  -->
-            <!-- Convert month number to month name, so it can be written out in the field -->
-            {% set allMonths = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
-            'October', 'November', 'December'] %}
-            {% set circumstanceMonthName = allMonths[data['circumstance-month'] - 1] %}
-
             <dd class="nhsuk-summary-list__value">
               <p>
                 {% if data['circumstance-day'] %}
-                {{ data['circumstance-day'] }} {{ circumstanceMonthName }} {{ data['circumstance-year'] }}
+                {{ data['circumstance-day'] }} <span class="cya-month">{{ data['circumstance-month'] }}</span> {{ data['circumstance-year'] }}
                 {% else %}
                 15 October 2024
                 {% endif %}
@@ -189,5 +183,42 @@
     </div>
   </div>
 </div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function () {
+    const months = {
+      "01": "January",
+      "02": "February",
+      "03": "March",
+      "04": "April",
+      "05": "May",
+      "06": "June",
+      "07": "July",
+      "08": "August",
+      "09": "September",
+      "1": "January",
+      "2": "February",
+      "3": "March",
+      "4": "April",
+      "5": "May",
+      "6": "June",
+      "7": "July",
+      "8": "August",
+      "9": "September",
+      "10": "October",
+      "11": "November",
+      "12": "December",
+    };
+
+    $(".cya-month").text(function () {
+      const month = $(this).text();
+      console.log("month:", month);
+      console.log("months[month]:", months[month]);
+      return months[month];
+    });
+  });
+</script>
 
 {% endblock %}
