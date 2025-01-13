@@ -4,9 +4,9 @@
 
 <!-- Extends the layout from /views/layout.html -->
 {% extends 'layout.html' %}
-<!-- 
+<!--
   In /views/layout.html you can:
-    - change the header and footer 
+    - change the header and footer
     - add custom CSS and JavaScript
 -->
 
@@ -40,14 +40,24 @@ Finance England number?{% endblock %}
 
     <h1 class="nhsuk-app-heading" id="residency">
       <span class="nhsuk-caption-l">Student loan details</span> What is your Student
-      Finance England number?
+      Finance England (SFE) number?
     </h1>
     <p>
       Your SFE number can be found on letters or emails you've had from Student
-      Finance England.
+      Finance England. This may be called your Customer Reference Number (CRN).
     </p>
+    <details class="nhsuk-details">
+      <summary class="nhsuk-details__summary">
+        <span class="nhsuk-details__summary-text">
+          I cannot find or do not know my reference number
+        </span>
+      </summary>
+      <div class="nhsuk-details__text">
+        <p>You can <a href="https://logon.slc.co.uk/reset/details/pages/ForgotCRN.xhtml?_locale=en_UK&cookieConsent=reject" target="_blank">recover your reference number (opens in a new tab)</a> through Student Finance England.</p>
+      </div>
+    </details>
     <div class="nhsuk-form-group nhsuk-u-width-two-thirds">
-      <label class="nhsuk-label" for="sfe-number"> SFE number </label>
+      <!--<label class="nhsuk-label" for="sfe-number"> SFE number </label>-->
       <input
         class="nhsuk-input"
         id="sfe-number"
