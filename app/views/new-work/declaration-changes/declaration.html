@@ -1,0 +1,174 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} What date is this change of cicumstance effective from? {%
+endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block header %} {{ header({ "service": { "name": "Bursary", "href": "/" },
+"showNav": "true", "showSearch": "false", "primaryLinks": [ { "url" :
+"/dashboard/dashboard-enrolment", "label" : "Home" }, { "url" :
+"personal-details", "label" : "Personal details" }, { "url" : "#", "label" :
+"Payment details" }, { "url" : "#", "label" : "Sign out" } ] }) }} {% endblock %}
+<!-- More info and code for the breadcrumb can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<!-- Breadcrumb -->
+
+{% endblock %}
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-width-container">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <div class="nhsuk-back-link">
+        <a class="nhsuk-back-link__link" href="javascript:history.go(-1)" id="back">
+          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+            aria-hidden="true">
+            <path
+              d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+            </path>
+          </svg>
+          Go back</a>
+      </div>
+
+      <span class="nhsuk-caption-l">BRN0000057 - Mike Lee</span>
+      <h1 class="nhsuk-heading-l">Student declaration</h1>
+
+      <p>Make sure you've reviewed all the information you gave us, and you've read the declaration
+        carefully. If you choose not to accept it, we cannot process your NHS Bursary application.</p>
+
+      <div class="nhsuk-warning-callout">
+        <h3 class="nhsuk-warning-callout__label">
+          <span role="text">
+            <span class="nhsuk-u-visually-hidden">Important: </span>
+            Declaration
+          </span>
+        </h3>
+
+        <p>I declare that:</p>
+        <ul>
+          <li>I'm studying a pre-registration health professional course which is eligible for the NHS Bursary
+          </li>
+          <li>I've read and understood relevant guidance and related information about the conditions for claiming
+            an NHS Bursary</li>
+          <li>I'll give NHSBSA Student Services any additional information they may reasonably need to verify the
+            information I've given on my application</li>
+        </ul>
+
+        <h2 class="nhsuk-heading-m">Sharing your information</h2>
+        <p>For verification purposes and compliance with Data Protection law, we may share your information with:</p>
+        <ul>
+          <li>higher education institutions</li>
+          <li>Local Authorities in the UK</li>
+          <li>Home Office</li>
+          <li>HM Revenue and Customs</li>
+          <li>Department for Work and Pensions</li>
+          <li>organisations you receive benefits, bursaries, grants, or support from</li>
+          <li>NHSBSA software suppliers</li>
+        </ul>
+        <p>I understand that the information I provided about my income and expenses may be shared with these
+          organisations to prevent, detect and investigate fraud.</p>
+        <p>To prevent, detect, investigate, and prosecute fraud or other unlawful activity affecting the NHS, we may
+          also share your information with:</p>
+        <ul>
+          <li>Department of Health and Social Care</li>
+          <li>NHSBSA Loss and Fraud Prevention Team</li>
+          <li>NHS Counter Fraud Authority</li>
+        </ul>
+
+        <h2 class="nhsuk-heading-m">Changes to circumstances or attendance</h2>
+        <p>I accept that NHSBSA Student Services will immediately stop or suspend my funding if:</p>
+        <ul>
+          <li>I withdraw, abandon, suspend, defer, or interrupt my course for any reason either permanently or
+            temporarily, regardless of whether I intend to return</li>
+          <li>I take a year or term out from studying</li>
+          <li>I gain financial support from a publicly funded body - excluding the Student Loans Company, government
+            benefit agencies, and hardship loans or bursaries from my Higher Education Institution</li>
+          <li>NHSBSA Student Services in its absolute discretion decides that I'm no longer entitled to financial
+            support and it's reasonable to withdraw funding</li>
+        </ul>
+        <p>I'll notify NHSBSA Student Services immediately of any change in circumstances that might affect my
+          entitlement to financial support or their records relating to me, including but not limited to:</p>
+        <ul>
+          <li>changing my study pattern from full time to part time, or vice versa</li>
+          <li>withdrawing, abandoning, suspending, deferring, or interrupting my course for any reason either
+            permanently or temporarily, regardless of whether I intend to return</li>
+          <li>taking a year or term out from studying</li>
+          <li>changing the bank account I want my payments made to</li>
+          <li>changing address</li>
+        </ul>
+        <p>I understand and accept that if I fail to notify NHSBSA Student Services of any change to my bank or building
+          society account details in sufficient time, or provide incorrect information, NHSBSA Student Services cannot
+          take responsibility for:</p>
+        <ul>
+          <li>payments made to an incorrect account</li>
+          <li>delayed payments</li>
+          <li>payments not being made</li>
+        </ul>
+
+        <h2 class="nhsuk-heading-m">Repayments</h2>
+        <p>We're committed to accurately administering entitlement where possible. I agree to pay back NHSBSA
+          Student Services any excess payment, fees, and any other charges within 30 days of being notified. Related
+          circumstances include, but are not limited to, if:</p>
+        <ul>
+          <li>I change my study pattern from full time to part time, or vice versa</li>
+          <li>withdrawing, abandoning, suspending, deferring, or interrupting my course for any reason either
+            permanently or temporarily, regardless of whether I intend to return</li>
+          <li>taking a year or term out from studying</li>
+          <li>I've been overpaid because I failed to notify NHSBSA Student Services of a change in my
+            circumstances</li>
+          <li>NHSBSA Student Services in its absolute discretion decides I've received funding I'm not
+            entitled to</li>
+          <li>I gain financial support from a publicly funded body - excluding the Student Loans Company, government
+            benefit agencies, and my Higher Education Institution</li>
+        </ul>
+        <p>I understand that if I fail to fully repay any amount due or agree on an acceptable repayment plan with
+          NHSBSA, the debt and relevant personal information may pass to a debt collection agency. I also understand
+          that I will be charged for any additional recovery cost at the rate of 8% on the referred debt.</p>
+
+        <h2 class="nhsuk-heading-m">Social Work Bursary</h2>
+        <p>I understand NHSBSA is responsible for administrating the NHS Bursary and the NHS Counter Fraud Authority is
+          responsible for countering fraud.</p>
+        <p>I understand and accept that the terms and conditions (including rates) for the NHS Bursary may change at any
+          time without notice, and the scheme is subject to continued government funding, which may stop at any time
+          without notice.</p>
+        <p>I understand if I fail to notify NHSBSA Student Services that I have withdrawn, abandoned, suspended,
+          deferred or interrupted my course for any reason either permanently or temporarily, I may be referred to the
+          NHSBSA Loss and Fraud Prevention Team for failure to disclose information and obtaining money I'm not
+          entitled to.</p>
+        <p>I declare the information I've given on this form and in any supporting documents is complete and
+          accurate. I understand and accept that if I give NHSBSA Student Services false or misleading information, they
+          may refuse or withdraw financial support. I may also be liable to criminal prosecution, civil proceedings, or
+          both.</p>
+        <p>You'll need to re-accept this declaration for any future changes to this application.</p>
+
+
+
+      </div>
+
+      <div class="nhsuk-checkboxes__item nhsuk-u-margin-bottom-7">
+        <input class="nhsuk-checkboxes__input" id="student-declaration" name="student-declaration" type="checkbox"
+          value="email">
+        <label class="nhsuk-label nhsuk-checkboxes__label" for="student-declaration">
+          Accept declaration
+        </label>
+      </div>
+
+      <div class="nhsuk-form-group">
+        <a href="tasklist-2-submitted" class="nhsuk-button" role="button" id="next">Apply now</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
