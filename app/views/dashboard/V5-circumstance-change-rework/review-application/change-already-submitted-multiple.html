@@ -1,0 +1,291 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Change of circumstances {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<!-- Breadcrumb -->
+
+{% endblock %}
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-width-container">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <div class="nhsuk-back-link">
+        <a class="nhsuk-back-link__link" href="javascript:history.go(-1)" id="back">
+          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+            aria-hidden="true">
+            <path
+              d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+            </path>
+          </svg>
+          Go back</a>
+      </div>
+
+      <span class="nhsuk-caption-l">Change of circumstances</span>
+      <h1 class="nhsuk-app-heading">
+        You've already submitted a change for these dates
+      </h1>
+
+      <div class="nhsuk-warning-callout">
+        <h3 class="nhsuk-warning-callout__label">
+          <span role="text">
+            <span class="nhsuk-u-visually-hidden">Important: </span>
+            Previously submitted change
+          </span>
+        </h3>
+
+        <dl class="nhsuk-summary-list">
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Type of change</dt>
+            <dd class="nhsuk-summary-list__value">Change to relationship status</dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Date of change
+            </dt>
+
+            <dd class="nhsuk-summary-list__value">
+              <p>
+                <!-- {% if data['circumstance-day'] %}
+                {{ data['circumstance-day'] }} <span class="cya-month">{{ data['circumstance-month'] }}</span> {{ data['circumstance-year'] }}
+                {% else %} -->
+                15 October 2024
+                <!-- {% endif %} -->
+              </p>
+
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Reason for change
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              <p>
+                <!-- {% if data['reason'] %}
+                {{ data['reason'] }}
+                {% else %} -->
+                I am now married, and living with my partner.
+                <!-- {% endif %} -->
+              </p>
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Date submitted
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              <p>25 October 2024 4:35pm</p>
+            </dd>
+          </div>
+
+        </dl>
+
+        <!-- <p>This change has been returned. You need to <a
+            href="/dashboard/V5-circumstance-change-rework/review-application/summary">change your answers or add
+            more evidence</a>.
+        </p> -->
+
+      </div>
+
+
+
+      <div class="nhsuk-warning-callout">
+        <h3 class="nhsuk-warning-callout__label">
+          <span role="text">
+            <span class="nhsuk-u-visually-hidden">Important: </span>
+            Previously submitted change
+          </span>
+        </h3>
+
+        <dl class="nhsuk-summary-list">
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Type of change</dt>
+            <dd class="nhsuk-summary-list__value">Change of address</dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Date of change
+            </dt>
+
+            <dd class="nhsuk-summary-list__value">
+              <p>
+                {% if data['circumstance-day'] %}
+                {{ data['circumstance-day'] }} <span class="cya-month">{{ data['circumstance-month'] }}</span> {{ data['circumstance-year'] }}
+                {% else %}
+                15 October 2024
+                {% endif %}
+              </p>
+
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              New address
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              <p>
+                {% if data['address-1-name-or-number-1'] %}
+                {{ data['address-1-name-or-number-1'] }} <br>
+                {{ data['address-2-name-or-number-2'] }} <br>
+                {{ data['address-3-street'] }} <br>
+                {{ data['address-4-town'] }} <br>
+                {{ data['address-5-country'] }} <br>
+                {{ data['address-6-postcode'] }}
+  
+                {% else %}
+                34<br>
+                The Tower<br>
+                Streetson Crescent<br>
+                Bigtown<br>
+                England<br>
+                SR2 7NB
+  
+                {% endif %}
+              </p>
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Living with parents?
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              <p>
+                {% if data['livingWithParents'] %}
+                {{ data['livingWithParents'] }}
+                {% else %}
+                No
+                {% endif %}
+              </p>
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Reason for change
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              <p>
+                {% if data['reason'] %}
+                {{ data['reason'] }}
+                {% else %}
+                I moved out of my parents house into my studio flat.
+                {% endif %}
+              </p>
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Date submitted
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              <p>22 October 2024 11:47am</p>
+            </dd>
+          </div>
+
+        </dl>
+
+        <p>This change has been returned. You need to <a
+            href="/dashboard/V5-circumstance-change-rework/review-application/summary">change your answers or add
+            more evidence</a>.
+        </p>
+
+      </div>
+
+
+      <p>If you have any questions, you can <a
+          href="https://www.nhsbsa.nhs.uk/nhs-bursary/contact-nhs-bursaries">contact us</a>.
+      </p>
+
+      <h2 class="nhsuk-heading-m">
+        Do you want to tell us about a different change?
+      </h2>
+
+      <form action="/dashboard/V5-circumstance-change-rework/review-application/change-already-submitted-route"
+        method="POST">
+
+        <div class="nhsuk-radios">
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="different-change-yes" name="different-change" type="radio"
+              value="yes">
+            <label class="nhsuk-label nhsuk-radios__label" for="different-change-yes">
+              Yes
+            </label>
+          </div>
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="different-change-no" name="different-change" type="radio" value="no">
+            <label class="nhsuk-label nhsuk-radios__label" for="different-change-no">
+              No
+            </label>
+          </div>
+        </div>
+
+        <button class="nhsuk-button" type="submit" style="margin-top: 40px;">Continue</button>
+        <p><a id="canceltoTasklist" href="tasklist-approved">Cancel</a></p>
+
+      </form>
+
+    </div>
+  </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function () {
+    const months = {
+      "01": "January",
+      "02": "February",
+      "03": "March",
+      "04": "April",
+      "05": "May",
+      "06": "June",
+      "07": "July",
+      "08": "August",
+      "09": "September",
+      "1": "January",
+      "2": "February",
+      "3": "March",
+      "4": "April",
+      "5": "May",
+      "6": "June",
+      "7": "July",
+      "8": "August",
+      "9": "September",
+      "10": "October",
+      "11": "November",
+      "12": "December",
+    };
+
+    $(".cya-month").text(function () {
+      const month = $(this).text();
+      console.log("month:", month);
+      console.log("months[month]:", months[month]);
+      return months[month];
+    });
+  });
+</script>
+
+{% endblock %}
