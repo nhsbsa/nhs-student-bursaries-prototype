@@ -112,7 +112,8 @@ router.post('/dashboard/V5-circumstance-change-rework/process-application/change
   const processorChoice = req.session.data['processorChoice']
 
   if (processorChoice === 'complete') {
-    res.redirect('/dashboard/V5-circumstance-change-rework/process-application/change-confirmation')
+    // res.redirect('/dashboard/V5-circumstance-change-rework/process-application/change-confirmation')
+    res.redirect('/dashboard/V5-circumstance-change-rework/process-application/payment-scheduling-required')
   }
   else if (processorChoice === 'pend') {
     res.redirect('/dashboard/V5-circumstance-change-rework/process-application/pend-reason')
