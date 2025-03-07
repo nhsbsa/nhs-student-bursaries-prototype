@@ -1,0 +1,222 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-processor.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Student dashboard {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb"
+  style="background-color: white; padding:12px 0; margin-bottom: 40px;">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a id="studentDetailsLink" class="nhsuk-breadcrumb__link"
+          href="student-details-unlocked">Student details</a></li>
+
+    </ol>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink"
+        href="/internal/enrolment/details?enrolmentId=238">Back to Course details</a></p>
+  </div>
+</nav>
+
+{% endblock %}
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+
+<div class="nhsuk-width-container">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <div>
+        <h1 class="nhsuk-heading-xl">
+          <span class="nhsuk-caption-l" id="studentRef">
+            <span>BRN0000259</span>
+            <span class="nhsuk-u-visually-hidden"> - </span>
+          </span>
+          September 2023 calculations
+        </h1>
+      </div>
+    </div>
+
+    <div class="nhsuk-grid-column-one-third">
+      <div class="nhsuk-form-group">
+        <a href="student-details-locked" class="nhsuk-button nhsuk-button--secondary" role="button" id="next"
+          style="float: right;">Lock record</a>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <table role="table" class="nhsuk-table-responsive">
+        <caption class="nhsuk-table__caption"></caption>
+        <thead role="rowgroup" class="nhsuk-table__head"> </thead>
+        <tbody>
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Calc date
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Non-means tested
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Basic award
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Number of extra weeks
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Extra weeks allowance
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Parent learning allowance
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Dependents allowance
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Childcare allowance
+            </th>
+            <th role="columnheader" class="" scope="col">Total</th>
+          </tr>
+        </tbody>
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Calc date </span>
+              <span>16/08/2024</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Non-means tested </span>
+              <span>1,000.00</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Basic award </span>
+              <span>2,643.00</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Number of extra weeks</span>
+              <span>0</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Extra weeks allowance </span>
+              <span>0.00</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Parent learning allowance </span>
+              <span>1,204.00</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Dependents allowance </span>
+              <span>2,997.00</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Childcare allowance </span>
+              <span>0.00</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Total </span>
+              <span>7,844.00</span>
+            </td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Calc date </span>
+              <span>06/12/2022</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Non-means tested </span>
+              <span>1,000.00</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Basic award </span>
+              <span>2,643.00</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Number of extra weeks</span>
+              <span>0</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Extra weeks allowance </span>
+              <span>0.00</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Parent learning allowance </span>
+              <span>1,204.00</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Dependents allowance </span>
+              <span>2,997.00</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Childcare allowance </span>
+              <span>0.00</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Total </span>
+              <span>7,844.00</span>
+            </td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Calc date </span>
+              <span>11/08/2022</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Non-means tested </span>
+              <span>1,000.00</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Basic award </span>
+              <span>2,643.00</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Number of extra weeks</span>
+              <span>0</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Extra weeks allowance </span>
+              <span>0.00</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Parent learning allowance </span>
+              <span>1,204.00</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Dependents allowance </span>
+              <span>2,997.00</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Childcare allowance </span>
+              <span>0.00</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Total </span>
+              <span>7,844.00</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+    <a href="course-details" class="nhsuk-button" id="paymentButton" role="button" style="margin-top: 40px;">Return to
+      course details </a>
+
+  </div>
+
+</div>
+{% endblock %}
