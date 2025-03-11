@@ -1,0 +1,1574 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-processor.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Student dashboard {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb"
+  style="background-color: white; padding:12px 0; margin-bottom: 40px;">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a id="studentDetailsLink" class="nhsuk-breadcrumb__link"
+          href="student-details-unlocked">Student details</a></li>
+
+    </ol>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="#">Back to Course details</a></p>
+  </div>
+</nav>
+
+{% endblock %}
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+
+<div class="nhsuk-width-container">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <div>
+        <h1 class="nhsuk-heading-xl">
+          <span class="nhsuk-caption-l" id="studentRef">
+            <span>BRN0000259</span>
+            <span class="nhsuk-u-visually-hidden"> - </span>
+          </span>
+          Payment schedule history
+        </h1>
+      </div>
+    </div>
+
+    <!-- <div class="nhsuk-grid-column-one-third">
+      <div class="nhsuk-form-group">
+        <a href="payment-details-unlocked" class="nhsuk-button nhsuk-button--secondary" role="button" id="next"
+          style="float: right;">Unlock record</a>
+      </div>
+    </div> -->
+  </div>
+
+  <!-- <h2 class="nhsuk-heading-m">Changes made 3rd March 2025</h2> -->
+
+
+  <table role="table" class="nhsuk-table-responsive">
+    <!-- <caption class="nhsuk-table__caption">Ibuprofen liquid dosages for children</caption> -->
+    <thead role="rowgroup" class="nhsuk-table__head">
+      <tr role="row">
+        <th role="columnheader" class="" scope="col" style="width: 4%; text-align: right;">
+        </th>
+        <th role="columnheader" class="" scope="col" style="width: 33%; text-align: left;">
+          Date of change
+        </th>
+        <th role="columnheader" class="" scope="col" style="width: 31%; text-align: center;">
+          Academic year
+        </th>
+        <th role="columnheader" class="" scope="col" style="width: 31%; text-align: right;">
+          Cause of change
+        </th>
+        <th role="columnheader" class="" scope="col" style="width: 4%; text-align: right;">
+        </th>
+      </tr>
+
+      <!-- <tr role="row">
+        <th role="columnheader" class="" scope="col" style="width: 37%; text-align: left;">
+          Date of change
+        </th>
+        <th role="columnheader" class="" scope="col" style="width: 31%; text-align: center;">
+          Academic year
+        </th>
+        <th role="columnheader" class="" scope="col" style="width: 32%; text-align: right;">
+          Cause of change
+        </th>
+      </tr> -->
+    </thead>
+
+    <tbody class="nhsuk-table__body">
+    </tbody>
+  </table>
+
+  <details class="nhsuk-details nhsuk-expander">
+    <summary class="nhsuk-details__summary">
+
+      <span class="nhsuk-details__summary-text" style="width: 95%">
+        <div class="nhsuk-grid-row">
+
+          <div class="nhsuk-grid-column-one-third" style="float: left; width: 32%;">
+            <p style="text-align: left; margin: 0;">02/07/2024 13:34</p>
+          </div>
+
+          <div class="nhsuk-grid-column-one-third" style="float: left; width: 34%;">
+            <p style="text-align: center; margin: 0;">August 2024</p>
+          </div>
+
+          <div class="nhsuk-grid-column-one-third" style="float: left; width: 33.33%;">
+            <p style="text-align: right; margin: 0;">Change of address</p>
+          </div>
+
+        </div>
+
+      </span>
+    </summary>
+
+
+
+
+
+    <div class="nhsuk-details__text">
+
+      <hr>
+
+      <!-- <table class="nhsuk-table">
+        <caption class="nhsuk-table__caption">Payment schedule changes</caption>
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Type
+            </th>
+            <th role="columnheader" class=" nhsuk-table__header--numeric" scope="col">
+              Old amount
+            </th>
+            <th role="columnheader" class=" nhsuk-table__header--numeric" scope="col">
+              New amount
+            </th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Basic award</td>
+            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£31.25</td>
+            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£32.05</td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Extra weeks allowance</td>
+            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£111.60</td>
+            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£114.50</td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Non-means tested grant</td>
+            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£19.30</td>
+            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£19.80</td>
+          </tr>
+        </tbody>
+      </table> -->
+
+
+
+
+
+      <!-- TERM 1 -->
+
+      <h2 class="nhsuk-heading-m" style="margin-bottom: 10px;">Term 1 payments</h2>
+
+      <table role="table" class="nhsuk-table-l" style="margin-bottom: 20px;">
+        <!-- <caption class="nhsuk-table__caption">Term 1 payments </caption> -->
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">Type</th>
+            <th role="columnheader" class="" scope="col">Old amount</th>
+            <th role="columnheader" class="" scope="col">New amount</th>
+            <th role="columnheader" class="" scope="col">Expected date</th>
+            <th role="columnheader" class="" scope="col">Payment date</th>
+            <!-- <th role="columnheader" class="" scope="col">Status</th> -->
+            <th role="columnheader" class="" scope="col">Change</th>
+          </tr>
+        </thead>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              Basic award
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £872.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £872.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              16/08/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              16/08/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <strong class="nhsuk-tag nhsuk-tag--white">
+                Unchanged
+              </strong>
+            </td>
+          </tr>
+
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              Extra weeks allowance
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £610.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £610.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              16/08/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              16/08/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <strong class="nhsuk-tag nhsuk-tag--white">
+                Unchanged
+              </strong>
+            </td>
+          </tr>
+
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              Extra weeks allowance
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £15.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £15.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              16/08/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              16/08/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <strong class="nhsuk-tag nhsuk-tag--white">
+                Unchanged
+              </strong>
+            </td>
+          </tr>
+
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              Non-means tested grant
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £330.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £330.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              16/08/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              16/08/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <strong class="nhsuk-tag nhsuk-tag--white">
+                Unchanged
+              </strong>
+            </td>
+          </tr>
+
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              Basic award
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £17.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              16/08/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              16/08/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <strong class="nhsuk-tag nhsuk-tag--green">
+                New
+              </strong>
+            </td>
+          </tr>
+
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              Non-means tested grant
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £7.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              16/08/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              16/08/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <strong class="nhsuk-tag nhsuk-tag--green">
+                New
+              </strong>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+
+      <h3 class="nhsuk-heading-xs" style="margin-bottom: 0px;">Total amount payable for term 1: £1,851.00</h3>
+
+      <hr style="margin-top: 10px;">
+
+
+
+      <!-- TERM 2 -->
+
+      <h2 class="nhsuk-heading-m" style="margin-bottom: 10px; margin-top: 60px;">Term 2 payments</h2>
+
+      <table role="table" class="nhsuk-table-l" style="margin-bottom: 20px">
+        <!-- <caption class="nhsuk-table__caption">Term 2 payments </caption> -->
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">Type</th>
+            <th role="columnheader" class="" scope="col">Old amount</th>
+            <th role="columnheader" class="" scope="col">New amount</th>
+            <th role="columnheader" class="" scope="col">Expected date</th>
+            <th role="columnheader" class="" scope="col">Payment date</th>
+            <!-- <th role="columnheader" class="" scope="col">Status</th> -->
+            <th role="columnheader" class="" scope="col">Change</th>
+          </tr>
+        </thead>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              Basic award
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £872.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £889.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              13/12/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              13/12/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <strong class="nhsuk-tag nhsuk-tag--aqua-green">
+                Increased
+              </strong>
+            </td>
+          </tr>
+
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              Extra weeks allowance
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £610.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £610.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              13/12/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              13/12/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <strong class="nhsuk-tag nhsuk-tag--white">
+                Unchanged
+              </strong>
+            </td>
+          </tr>
+
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              Extra weeks allowance
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £15.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £15.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              13/12/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              13/12/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <strong class="nhsuk-tag nhsuk-tag--white">
+                Unchanged
+              </strong>
+            </td>
+          </tr>
+
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              Non-means tested grant
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £330.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £337.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              13/12/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              13/12/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <strong class="nhsuk-tag nhsuk-tag--aqua-green">
+                Increased
+              </strong>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+
+      <h3 class="nhsuk-heading-xs" style="margin-bottom: 0px;">Total amount payable for term 2: £1,851.00</h3>
+
+      <hr style="margin-top: 10px;">
+
+
+
+      <!-- TERM 3 -->
+
+      <h2 class="nhsuk-heading-m" style="margin-bottom: 10px; margin-top: 60px;">Term 3 payments</h2>
+
+      <table role="table" class="nhsuk-table-l" style="margin-bottom: 20px">
+        <!-- <caption class="nhsuk-table__caption">Term 3 payments </caption> -->
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">Type</th>
+            <th role="columnheader" class="" scope="col">Old amount</th>
+            <th role="columnheader" class="" scope="col">New amount</th>
+            <th role="columnheader" class="" scope="col">Expected date</th>
+            <th role="columnheader" class="" scope="col">Payment date</th>
+            <!-- <th role="columnheader" class="" scope="col">Status</th> -->
+            <th role="columnheader" class="" scope="col">Change</th>
+          </tr>
+        </thead>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              Basic award
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £872.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £889.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              14/03/2025
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <strong class="nhsuk-tag nhsuk-tag--aqua-green">
+                Increased
+              </strong>
+            </td>
+          </tr>
+
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              Extra weeks allowance
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £610.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £610.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              14/03/2025
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <strong class="nhsuk-tag nhsuk-tag--white">
+                Unchanged
+              </strong>
+            </td>
+          </tr>
+
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              Extra weeks allowance
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £15.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £15.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              14/03/2025
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <strong class="nhsuk-tag nhsuk-tag--white">
+                Unchanged
+              </strong>
+            </td>
+          </tr>
+
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              Non-means tested grant
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £330.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £337.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              14/03/2025
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <strong class="nhsuk-tag nhsuk-tag--aqua-green">
+                Increased
+              </strong>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+
+      <h3 class="nhsuk-heading-xs" style="margin-bottom: 0px;">Total amount payable for term 3: £1,851.00</h3>
+
+      <hr style="margin-top: 10px;">
+
+
+
+
+
+      <!-- ONE OFF PAYMENTS -->
+
+      <h2 class="nhsuk-heading-m" style="margin-bottom: 10px; margin-top: 60px;">One off payments</h2>
+
+      <p>No one off payments.</p>
+
+    </div>
+
+  </details>
+
+
+
+
+
+
+
+
+
+  <details class="nhsuk-details nhsuk-expander">
+    <summary class="nhsuk-details__summary">
+
+      <span class="nhsuk-details__summary-text" style="width: 95%">
+        <div class="nhsuk-grid-row">
+
+          <div class="nhsuk-grid-column-one-third" style="float: left; width: 32%;">
+            <p style="text-align: left; margin: 0;">02/07/2024 13:34</p>
+          </div>
+
+          <div class="nhsuk-grid-column-one-third" style="float: left; width: 34%;">
+            <p style="text-align: center; margin: 0;">August 2024</p>
+          </div>
+
+          <div class="nhsuk-grid-column-one-third" style="float: left; width: 33.33%;">
+            <p style="text-align: right; margin: 0;">Change of address</p>
+          </div>
+
+        </div>
+
+      </span>
+    </summary>
+
+
+
+
+
+    <div class="nhsuk-details__text">
+
+      <hr>
+
+      <!-- <table class="nhsuk-table">
+        <caption class="nhsuk-table__caption">Payment schedule changes</caption>
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Type
+            </th>
+            <th role="columnheader" class=" nhsuk-table__header--numeric" scope="col">
+              Old amount
+            </th>
+            <th role="columnheader" class=" nhsuk-table__header--numeric" scope="col">
+              New amount
+            </th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Basic award</td>
+            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£31.25</td>
+            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£32.05</td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Extra weeks allowance</td>
+            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£111.60</td>
+            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£114.50</td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Non-means tested grant</td>
+            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£19.30</td>
+            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£19.80</td>
+          </tr>
+        </tbody>
+      </table> -->
+
+
+
+
+
+      <!-- TERM 1 -->
+
+      <h2 class="nhsuk-heading-m" style="margin-bottom: 10px;">Term 1 payments</h2>
+
+      <table role="table" class="nhsuk-table-l" style="margin-bottom: 20px;">
+        <!-- <caption class="nhsuk-table__caption">Term 1 payments </caption> -->
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">Type</th>
+            <th role="columnheader" class="" scope="col">Old amount</th>
+            <th role="columnheader" class="" scope="col">New amount</th>
+            <th role="columnheader" class="" scope="col">Expected date</th>
+            <th role="columnheader" class="" scope="col">Payment date</th>
+            <!-- <th role="columnheader" class="" scope="col">Status</th> -->
+            <th role="columnheader" class="" scope="col">Change</th>
+          </tr>
+        </thead>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              Basic award
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £872.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £872.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              16/08/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              16/08/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <strong class="nhsuk-tag nhsuk-tag--white">
+                Unchanged
+              </strong>
+            </td>
+          </tr>
+
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              Extra weeks allowance
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £610.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £610.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              16/08/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              16/08/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <strong class="nhsuk-tag nhsuk-tag--white">
+                Unchanged
+              </strong>
+            </td>
+          </tr>
+
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              Extra weeks allowance
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £15.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £15.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              16/08/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              16/08/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <strong class="nhsuk-tag nhsuk-tag--white">
+                Unchanged
+              </strong>
+            </td>
+          </tr>
+
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              Non-means tested grant
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £330.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £330.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              16/08/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              16/08/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <strong class="nhsuk-tag nhsuk-tag--white">
+                Unchanged
+              </strong>
+            </td>
+          </tr>
+
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              Basic award
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £17.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              16/08/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              16/08/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <strong class="nhsuk-tag nhsuk-tag--green">
+                New
+              </strong>
+            </td>
+          </tr>
+
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              Non-means tested grant
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £7.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              16/08/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              16/08/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <strong class="nhsuk-tag nhsuk-tag--green">
+                New
+              </strong>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+
+      <h3 class="nhsuk-heading-xs" style="margin-bottom: 0px;">Total amount payable for term 1: £1,851.00</h3>
+
+      <hr style="margin-top: 10px;">
+
+
+
+      <!-- TERM 2 -->
+
+      <h2 class="nhsuk-heading-m" style="margin-bottom: 10px; margin-top: 60px;">Term 2 payments</h2>
+
+      <table role="table" class="nhsuk-table-l" style="margin-bottom: 20px">
+        <!-- <caption class="nhsuk-table__caption">Term 2 payments </caption> -->
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">Type</th>
+            <th role="columnheader" class="" scope="col">Old amount</th>
+            <th role="columnheader" class="" scope="col">New amount</th>
+            <th role="columnheader" class="" scope="col">Expected date</th>
+            <th role="columnheader" class="" scope="col">Payment date</th>
+            <!-- <th role="columnheader" class="" scope="col">Status</th> -->
+            <th role="columnheader" class="" scope="col">Change</th>
+          </tr>
+        </thead>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              Basic award
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £872.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £889.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              13/12/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              13/12/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <strong class="nhsuk-tag nhsuk-tag--aqua-green">
+                Increased
+              </strong>
+            </td>
+          </tr>
+
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              Extra weeks allowance
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £610.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £610.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              13/12/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              13/12/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <strong class="nhsuk-tag nhsuk-tag--white">
+                Unchanged
+              </strong>
+            </td>
+          </tr>
+
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              Extra weeks allowance
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £15.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £15.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              13/12/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              13/12/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <strong class="nhsuk-tag nhsuk-tag--white">
+                Unchanged
+              </strong>
+            </td>
+          </tr>
+
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              Non-means tested grant
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £330.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £337.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              13/12/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              13/12/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <strong class="nhsuk-tag nhsuk-tag--aqua-green">
+                Increased
+              </strong>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+
+      <h3 class="nhsuk-heading-xs" style="margin-bottom: 0px;">Total amount payable for term 2: £1,851.00</h3>
+
+      <hr style="margin-top: 10px;">
+
+
+
+      <!-- TERM 3 -->
+
+      <h2 class="nhsuk-heading-m" style="margin-bottom: 10px; margin-top: 60px;">Term 3 payments</h2>
+
+      <table role="table" class="nhsuk-table-l" style="margin-bottom: 20px">
+        <!-- <caption class="nhsuk-table__caption">Term 3 payments </caption> -->
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">Type</th>
+            <th role="columnheader" class="" scope="col">Old amount</th>
+            <th role="columnheader" class="" scope="col">New amount</th>
+            <th role="columnheader" class="" scope="col">Expected date</th>
+            <th role="columnheader" class="" scope="col">Payment date</th>
+            <!-- <th role="columnheader" class="" scope="col">Status</th> -->
+            <th role="columnheader" class="" scope="col">Change</th>
+          </tr>
+        </thead>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              Basic award
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £872.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £889.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              14/03/2025
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <strong class="nhsuk-tag nhsuk-tag--aqua-green">
+                Increased
+              </strong>
+            </td>
+          </tr>
+
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              Extra weeks allowance
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £610.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £610.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              14/03/2025
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <strong class="nhsuk-tag nhsuk-tag--white">
+                Unchanged
+              </strong>
+            </td>
+          </tr>
+
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              Extra weeks allowance
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £15.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £15.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              14/03/2025
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <strong class="nhsuk-tag nhsuk-tag--white">
+                Unchanged
+              </strong>
+            </td>
+          </tr>
+
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              Non-means tested grant
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £330.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £337.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              14/03/2025
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <strong class="nhsuk-tag nhsuk-tag--aqua-green">
+                Increased
+              </strong>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+
+      <h3 class="nhsuk-heading-xs" style="margin-bottom: 0px;">Total amount payable for term 3: £1,851.00</h3>
+
+      <hr style="margin-top: 10px;">
+
+
+
+
+
+      <!-- ONE OFF PAYMENTS -->
+
+      <h2 class="nhsuk-heading-m" style="margin-bottom: 10px; margin-top: 60px;">One off payments</h2>
+
+      <p>No one off payments.</p>
+
+    </div>
+
+  </details>
+
+
+
+
+
+
+
+  <details class="nhsuk-details nhsuk-expander">
+    <summary class="nhsuk-details__summary">
+
+      <span class="nhsuk-details__summary-text" style="width: 95%">
+        <div class="nhsuk-grid-row">
+
+          <div class="nhsuk-grid-column-one-third" style="float: left; width: 32%;">
+            <p style="text-align: left; margin: 0;">02/07/2024 13:34</p>
+          </div>
+
+          <div class="nhsuk-grid-column-one-third" style="float: left; width: 34%;">
+            <p style="text-align: center; margin: 0;">August 2024</p>
+          </div>
+
+          <div class="nhsuk-grid-column-one-third" style="float: left; width: 33.33%;">
+            <p style="text-align: right; margin: 0;">Change of address</p>
+          </div>
+
+        </div>
+
+      </span>
+    </summary>
+
+
+
+
+
+    <div class="nhsuk-details__text">
+
+      <hr>
+
+      <!-- <table class="nhsuk-table">
+        <caption class="nhsuk-table__caption">Payment schedule changes</caption>
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Type
+            </th>
+            <th role="columnheader" class=" nhsuk-table__header--numeric" scope="col">
+              Old amount
+            </th>
+            <th role="columnheader" class=" nhsuk-table__header--numeric" scope="col">
+              New amount
+            </th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Basic award</td>
+            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£31.25</td>
+            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£32.05</td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Extra weeks allowance</td>
+            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£111.60</td>
+            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£114.50</td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Non-means tested grant</td>
+            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£19.30</td>
+            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£19.80</td>
+          </tr>
+        </tbody>
+      </table> -->
+
+
+
+
+
+      <!-- TERM 1 -->
+
+      <h2 class="nhsuk-heading-m" style="margin-bottom: 10px;">Term 1 payments</h2>
+
+      <table role="table" class="nhsuk-table-l" style="margin-bottom: 20px;">
+        <!-- <caption class="nhsuk-table__caption">Term 1 payments </caption> -->
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">Type</th>
+            <th role="columnheader" class="" scope="col">Old amount</th>
+            <th role="columnheader" class="" scope="col">New amount</th>
+            <th role="columnheader" class="" scope="col">Expected date</th>
+            <th role="columnheader" class="" scope="col">Payment date</th>
+            <!-- <th role="columnheader" class="" scope="col">Status</th> -->
+            <th role="columnheader" class="" scope="col">Change</th>
+          </tr>
+        </thead>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              Basic award
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £872.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £872.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              16/08/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              16/08/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <strong class="nhsuk-tag nhsuk-tag--white">
+                Unchanged
+              </strong>
+            </td>
+          </tr>
+
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              Extra weeks allowance
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £610.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £610.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              16/08/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              16/08/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <strong class="nhsuk-tag nhsuk-tag--white">
+                Unchanged
+              </strong>
+            </td>
+          </tr>
+
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              Extra weeks allowance
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £15.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £15.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              16/08/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              16/08/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <strong class="nhsuk-tag nhsuk-tag--white">
+                Unchanged
+              </strong>
+            </td>
+          </tr>
+
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              Non-means tested grant
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £330.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £330.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              16/08/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              16/08/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <strong class="nhsuk-tag nhsuk-tag--white">
+                Unchanged
+              </strong>
+            </td>
+          </tr>
+
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              Basic award
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £17.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              16/08/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              16/08/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <strong class="nhsuk-tag nhsuk-tag--green">
+                New
+              </strong>
+            </td>
+          </tr>
+
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              Non-means tested grant
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £7.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              16/08/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              16/08/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <strong class="nhsuk-tag nhsuk-tag--green">
+                New
+              </strong>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+
+      <h3 class="nhsuk-heading-xs" style="margin-bottom: 0px;">Total amount payable for term 1: £1,851.00</h3>
+
+      <hr style="margin-top: 10px;">
+
+
+
+      <!-- TERM 2 -->
+
+      <h2 class="nhsuk-heading-m" style="margin-bottom: 10px; margin-top: 60px;">Term 2 payments</h2>
+
+      <table role="table" class="nhsuk-table-l" style="margin-bottom: 20px">
+        <!-- <caption class="nhsuk-table__caption">Term 2 payments </caption> -->
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">Type</th>
+            <th role="columnheader" class="" scope="col">Old amount</th>
+            <th role="columnheader" class="" scope="col">New amount</th>
+            <th role="columnheader" class="" scope="col">Expected date</th>
+            <th role="columnheader" class="" scope="col">Payment date</th>
+            <!-- <th role="columnheader" class="" scope="col">Status</th> -->
+            <th role="columnheader" class="" scope="col">Change</th>
+          </tr>
+        </thead>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              Basic award
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £872.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £889.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              13/12/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              13/12/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <strong class="nhsuk-tag nhsuk-tag--aqua-green">
+                Increased
+              </strong>
+            </td>
+          </tr>
+
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              Extra weeks allowance
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £610.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £610.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              13/12/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              13/12/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <strong class="nhsuk-tag nhsuk-tag--white">
+                Unchanged
+              </strong>
+            </td>
+          </tr>
+
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              Extra weeks allowance
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £15.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £15.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              13/12/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              13/12/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <strong class="nhsuk-tag nhsuk-tag--white">
+                Unchanged
+              </strong>
+            </td>
+          </tr>
+
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              Non-means tested grant
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £330.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £337.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              13/12/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              13/12/2024
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <strong class="nhsuk-tag nhsuk-tag--aqua-green">
+                Increased
+              </strong>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+
+      <h3 class="nhsuk-heading-xs" style="margin-bottom: 0px;">Total amount payable for term 2: £1,851.00</h3>
+
+      <hr style="margin-top: 10px;">
+
+
+
+      <!-- TERM 3 -->
+
+      <h2 class="nhsuk-heading-m" style="margin-bottom: 10px; margin-top: 60px;">Term 3 payments</h2>
+
+      <table role="table" class="nhsuk-table-l" style="margin-bottom: 20px">
+        <!-- <caption class="nhsuk-table__caption">Term 3 payments </caption> -->
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">Type</th>
+            <th role="columnheader" class="" scope="col">Old amount</th>
+            <th role="columnheader" class="" scope="col">New amount</th>
+            <th role="columnheader" class="" scope="col">Expected date</th>
+            <th role="columnheader" class="" scope="col">Payment date</th>
+            <!-- <th role="columnheader" class="" scope="col">Status</th> -->
+            <th role="columnheader" class="" scope="col">Change</th>
+          </tr>
+        </thead>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              Basic award
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £872.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £889.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              14/03/2025
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <strong class="nhsuk-tag nhsuk-tag--aqua-green">
+                Increased
+              </strong>
+            </td>
+          </tr>
+
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              Extra weeks allowance
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £610.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £610.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              14/03/2025
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <strong class="nhsuk-tag nhsuk-tag--white">
+                Unchanged
+              </strong>
+            </td>
+          </tr>
+
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              Extra weeks allowance
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £15.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £15.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              14/03/2025
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <strong class="nhsuk-tag nhsuk-tag--white">
+                Unchanged
+              </strong>
+            </td>
+          </tr>
+
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              Non-means tested grant
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £330.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              £337.00
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              14/03/2025
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <strong class="nhsuk-tag nhsuk-tag--aqua-green">
+                Increased
+              </strong>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+
+      <h3 class="nhsuk-heading-xs" style="margin-bottom: 0px;">Total amount payable for term 3: £1,851.00</h3>
+
+      <hr style="margin-top: 10px;">
+
+
+
+
+
+      <!-- ONE OFF PAYMENTS -->
+
+      <h2 class="nhsuk-heading-m" style="margin-bottom: 10px; margin-top: 60px;">One off payments</h2>
+
+      <p>No one off payments.</p>
+
+    </div>
+
+  </details>
+  
+</div>
+{% endblock %}
