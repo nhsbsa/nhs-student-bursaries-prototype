@@ -113,7 +113,7 @@ router.post('/dashboard/V5-circumstance-change-rework/process-application/change
 
   if (processorChoice === 'complete') {
     // res.redirect('/dashboard/V5-circumstance-change-rework/process-application/change-confirmation')
-    res.redirect('/dashboard/V5-circumstance-change-rework/process-application/payment-scheduling-required')
+    res.redirect('/dashboard/V5-circumstance-change-rework/process-application/payment-scheduling-required-initial')
   }
   else if (processorChoice === 'pend') {
     res.redirect('/dashboard/V5-circumstance-change-rework/process-application/pend-reason')
