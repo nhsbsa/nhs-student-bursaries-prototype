@@ -110,22 +110,44 @@ router.post('/dashboard/V5-circumstance-change-rework/apply/explanation-route/',
 router.post('/dashboard/V5-circumstance-change-rework/process-application/change-summary/', (req, res) => {
 
   const processorChoice = req.session.data['processorChoice']
+  const changeScenario = req.session.data['changeScenario']
 
+  // COMPLETE CHANGE radio option
   if (processorChoice === 'complete') {
-    // res.redirect('/dashboard/V5-circumstance-change-rework/process-application/change-confirmation')
-    res.redirect('/dashboard/V5-circumstance-change-rework/process-application/payment-scheduling-required-initial')
+
+    // Route for updating Address only
+    if (changeScenario === 'addressOnly') {
+      res.redirect('/dashboard/V5-circumstance-change-rework/process-application/change-confirmation-comment')
+    }
+
+    // Route for updating payments automatically
+    else if (changeScenario === 'automaticReschedule') {
+      res.redirect('/dashboard/V5-circumstance-change-rework/process-application/change-confirmation-comment')
+    }
+
+    // Else, route for updating payments manually (the most complex one)
+    else {
+      res.redirect('/dashboard/V5-circumstance-change-rework/process-application/payment-scheduling-required-initial')
+    }
   }
+
+  // PEND CHANGE radio option
   else if (processorChoice === 'pend') {
     res.redirect('/dashboard/V5-circumstance-change-rework/process-application/pend-reason')
   }
+
+  // DECLINE CHANGE radio option
   else if (processorChoice === 'decline') {
     res.redirect('/dashboard/V5-circumstance-change-rework/process-application/decline-reason')
   }
+
+  // Else, stay on this page (no radio selected)
   else {
     res.redirect('/dashboard/V5-circumstance-change-rework/process-application/change-summary')
   }
 
 })
+
 
 
 
