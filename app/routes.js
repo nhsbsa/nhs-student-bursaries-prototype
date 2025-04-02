@@ -115,17 +115,17 @@ router.post('/dashboard/V5-circumstance-change-rework/process-application/change
   // COMPLETE CHANGE radio option
   if (processorChoice === 'complete') {
 
-    // Route for updating Address only
+    // Route for updating Address only - go straight to asking for comment
     if (changeScenario === 'addressOnly') {
       res.redirect('/dashboard/V5-circumstance-change-rework/process-application/change-confirmation-comment')
     }
 
-    // Route for updating payments automatically
+    // Route for updating payments automatically - go straight to asking for comment
     else if (changeScenario === 'automaticReschedule') {
       res.redirect('/dashboard/V5-circumstance-change-rework/process-application/change-confirmation-comment')
     }
 
-    // Else, route for updating payments manually (the most complex one)
+    // Else, route for updating payments manually (the most complex one) - ask them to update payments
     else {
       res.redirect('/dashboard/V5-circumstance-change-rework/process-application/payment-scheduling-required-initial')
     }
@@ -144,6 +144,31 @@ router.post('/dashboard/V5-circumstance-change-rework/process-application/change
   // Else, stay on this page (no radio selected)
   else {
     res.redirect('/dashboard/V5-circumstance-change-rework/process-application/change-summary')
+  }
+
+})
+
+
+router.post('/dashboard/V5-circumstance-change-rework/process-application/change-confirmation-comment-route/', (req, res) => {
+
+  const changeScenario = req.session.data['changeScenario']
+  
+  // Save input from comment textbox
+  const changeProcessorComment = req.session.data['change-processor-comment']
+
+  // Route for updating Address only
+  if (changeScenario === 'addressOnly') {
+    res.redirect('/dashboard/V5-circumstance-change-rework/process-application/change-confirmation-address-only')
+  }
+
+  // Route for updating payments automatically
+  else if (changeScenario === 'automaticReschedule') {
+    res.redirect('/dashboard/V5-circumstance-change-rework/process-application/change-confirmation-auto-scheduled')
+  }
+
+  // Else, route for updating payments manually (the most complex one)
+  else {
+    res.redirect('/dashboard/V5-circumstance-change-rework/process-application/change-confirmation-manually-scheduled')
   }
 
 })
