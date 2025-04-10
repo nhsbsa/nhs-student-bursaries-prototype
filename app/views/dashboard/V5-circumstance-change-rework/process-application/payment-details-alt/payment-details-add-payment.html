@@ -1,0 +1,192 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-processor.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Student dashboard {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb"
+  style="background-color: white; padding:12px 0; margin-bottom: 40px;">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a id="searchLink" class="nhsuk-breadcrumb__link" href="#">Student search</a>
+      </li>
+      <li class="nhsuk-breadcrumb__item"><a id="studentDetailsLink" class="nhsuk-breadcrumb__link"
+          href="student-details-locked">Student details</a></li>
+      <li class="nhsuk-breadcrumb__item"><a id="studentDetailsLink" class="nhsuk-breadcrumb__link"
+          href="payment-details-locked">Payment details</a></li>
+
+    </ol>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="#">Back to Course details</a></p>
+  </div>
+</nav>
+
+{% endblock %}
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-width-container">
+  <main class="nhsuk-main-wrapper" id="maincontent" role="main">
+
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-two-thirds">
+
+        <div class="nhsuk-back-link">
+          <a class="nhsuk-back-link__link" href="javascript:history.go(-1)" id="back">
+            <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+              aria-hidden="true">
+              <path
+                d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+              </path>
+            </svg>
+            Go back
+          </a>
+        </div>
+
+        <div>
+          <h1 class="nhsuk-app-heading nhsuk-heading-l">
+            <span class="nhsuk-caption-l" id="studentRef">BRN0000259-2 - Mike Lee (August 2024)</span>
+            Add payment
+          </h1>
+        </div>
+
+          <div class="nhsuk-form-group">
+            <label id="paymentType-label" for="paymentTypeDrop" class="nhsuk-label">Payment type</label>
+
+            <select class="nhsuk-select" id="paymentTypeDrop" name="paymentType">
+              <option value="">Please select...</option>
+              <option value="1">Means tested bursary</option>
+              <option value="5">Childcare Allowance</option>
+              <option value="6">DSA (equipment)</option>
+              <option value="7">DSA (general)</option>
+              <option value="8">DSA (non medical)</option>
+              <option value="9">DSA (travel)</option>
+              <option value="3">Dependants Allowance</option>
+              <option value="2">Extra weeks Allowance</option>
+              <option value="13">NHS Hardship Grant</option>
+              <option value="12">Non means tested grant</option>
+              <option value="4">Parent Learning Allowance</option>
+              <option value="11">TDAE (accommodation)</option>
+              <option value="10">TDAE (travel)</option>
+            </select>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <label id="term-label" for="termDrop" class="nhsuk-label">Term</label>
+
+            <select class="nhsuk-select" id="termDrop" name="term">
+              <option value="">Please select...</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <fieldset id="paymentDateFieldset" class="nhsuk-fieldset" role="group">
+              <legend class="nhsuk-fieldset__legend nhsuk-label">Payment date</legend>
+
+
+
+              <div class="nhsuk-date-input" id="change-date">
+                <div class="nhsuk-date-input__item">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="paymentDate-day">Day</label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="paymentDate-day"
+                      name="day" type="text" pattern="[0-9]*" inputmode="numeric" value="">
+                  </div>
+                </div>
+                <div class="nhsuk-date-input__item">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="paymentDate-month">Month</label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="paymentDate-month"
+                      name="month" type="text" pattern="[0-9]*" inputmode="numeric" value="">
+                  </div>
+                </div>
+                <div class="nhsuk-date-input__item">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="paymentDate-year">Year</label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="paymentDate-year"
+                      name="year" type="text" pattern="[0-9]*" inputmode="numeric" value="">
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="amount" id="amountLabel">Amount </label>
+
+
+            <input class="nhsuk-input nhsuk-u-width-one-quarter" type="text" maxlength="11" id="amount" name="amount"
+              value="">
+          </div>
+
+          <div class="nhsuk-form-group">
+            <fieldset class="nhsuk-fieldset" role="group">
+              <legend class="nhsuk-u-visually-hidden">Is this payment held?</legend>
+              <div class="nhsuk-checkboxes">
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+                    Held
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+
+          <div class="nhsuk-form-group">
+            <label id="changeReason-label" for="changeReason" class="nhsuk-label">Reason for change</label>
+
+            <select class="nhsuk-select" id="changeReasonDrop" name="changeReason">
+              <option value="">Please select...</option>
+              <option value="1">Change of address</option>
+              <option value="2">Change to income, or parents' or partner's income</option>
+              <option value="3">Change to relationship status</option>
+              <option value="4">Change to dependent children's details</option>
+              <option value="5">Policy change</option>
+              <option value="6">Change to term dates</option>
+              <option value="7">Correcting processor errors</option>
+              <option value="8">Policy change</option>
+              <option value="9">Student withdrawing</option>
+              <option value="10">Student resuming</option>
+              <option value="11">Student partial repeat</option>
+              <!-- <option value="12">Other reason</option> -->
+            </select>
+          </div>
+
+          <!-- <div class="nhsuk-form-group">
+            <button class="nhsuk-button nhsuk-u-margin-right-5" type="submit" id="next" data-module="nhsuk-button"
+              data-prevent-double-click="true">Submit</button>
+
+          </div> -->
+
+
+        <div class="nhsuk-form-group" style="margin-top: 40px;">
+        <a class="nhsuk-button nhsuk-u-margin-right-5" id="complete" href="payment-details-locked-payments-updated-payments-updated" role="button"
+          data-module="nhsuk-button">Submit</a>
+
+        <p><a id="canceltoStudent" href="payment-details-locked">Cancel</a></p>
+      </div>
+
+
+      </div>
+    </div>
+  </main>
+</div>
+{% endblock %}

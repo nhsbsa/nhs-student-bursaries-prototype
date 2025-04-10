@@ -1,0 +1,2117 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-processor.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Student dashboard {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb"
+  style="background-color: white; padding:12px 0; margin-bottom: 40px;">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a id="studentDetailsLink" class="nhsuk-breadcrumb__link"
+          href="student-details-locked">Student details</a></li>
+
+    </ol>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="#">Back to Course details</a></p>
+  </div>
+</nav>
+
+{% endblock %}
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+
+<div class="nhsuk-width-container">
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-full">
+      <div style="margin-bottom: 60px; border: 5px solid rgb(0, 112, 60); background-color: rgb(0, 112, 60)">
+        <div style="padding: 10px 15px 10px 24px; border-bottom: 1px solid transparent;">
+          <h2 class="nhsuk-heading-m" style="margin: 0; padding: 0; color: #fff;">
+            Success
+          </h2>
+        </div>
+
+        <div style="padding: 24px 24px 10px 24px; background-color: #fff;">
+          <p>
+            The payments for August 2024 have been updated.
+          </p>
+        </div>
+
+      </div>
+    </div>
+    
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <div>
+        <h1 class="nhsuk-heading-xl">
+          <span class="nhsuk-caption-l" id="studentRef">
+            <span>BRN0000259 - Mike Lee</span>
+            <span class="nhsuk-u-visually-hidden"> - </span>
+          </span>
+          Payment details
+        </h1>
+      </div>
+    </div>
+
+    <div class="nhsuk-grid-column-one-third">
+      <div class="nhsuk-form-group">
+        <a href="payment-details-unlocked" class="nhsuk-button nhsuk-button--secondary" role="button" id="next"
+          style="float: right;">Unlock record</a>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!-- <div style="margin-bottom: 60px; border: 5px solid #1d70b8; background-color: #1d70b8;">
+        <div style="padding: 10px 15px 10px 24px; border-bottom: 1px solid transparent;">
+          <h2 class="nhsuk-heading-m" style="margin: 0; padding: 0; color: #fff;">
+            Update payments for change of circumstances
+          </h2>
+        </div>
+
+        <div style="padding: 24px; background-color: #fff;">
+          <p>
+            You need to manually update the payments scheduled for the August 2024 academic year.
+          </p>
+          <p>
+            After you've updated the payments, select Return to change.
+          </p>
+
+          <a href="payment-scheduling-required" class="nhsuk-button nhsuk-button--secondary" role="button"
+            style="margin-bottom: 10px;">
+            Return to change</a>
+        </div>
+
+      </div> -->
+
+
+
+      <h2 class="nhsuk-heading-l">Payment history</h2>
+
+      <details class="nhsuk-details nhsuk-expander">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Payments made
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+
+          <table role="table" class="nhsuk-table-responsive">
+            <caption class="nhsuk-table__caption">Payments</caption>
+            <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                <th role="columnheader" class="" scope="col">Payment date</th>
+                <th role="columnheader" class="" scope="col">Type</th>
+                <th role="columnheader" class="" scope="col">Amount</th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+
+                  14 November 2024
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  Means tested bursary
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  £872
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+
+                  14 November 2024
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  Dependants Allowance
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  £989
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+
+                  14 November 2024
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  Parent Learning Allowance
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  £397
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+
+                  14 November 2024
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  Non means tested grant
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  £330
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+
+                  14 November 2024
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  Means tested bursary
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  £872
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+
+                  14 November 2024
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  Dependants Allowance
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  £989
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+
+                  14 November 2024
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  Parent Learning Allowance
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  £397
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+
+                  14 November 2024
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  Non means tested grant
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  £330
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+
+                  14 November 2024
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  Means tested bursary
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  £899
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+
+                  14 November 2024
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  Dependants Allowance
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  £1019
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+
+                  14 November 2024
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  Parent Learning Allowance
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  £410
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+
+                  14 November 2024
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  Non means tested grant
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  £340
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+
+                  24 October 2023
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  Childcare Allowance
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  £1100
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+
+                  24 October 2023
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  Means tested bursary
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  £872
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+
+                  18 July 2023
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  Childcare Allowance
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  £5053
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+
+        </div>
+      </details>
+
+      <!-- <details class="nhsuk-details" id="nhsuk-details5">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">Payments made</span>
+        </summary>
+
+        <div class="nhsuk-details__text">
+          <table role="table" class="nhsuk-table-responsive">
+            <caption class="nhsuk-table__caption">Payments</caption>
+            <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                <th role="columnheader" class="" scope="col">Payment date</th>
+                <th role="columnheader" class="" scope="col">Type</th>
+                <th role="columnheader" class="" scope="col">Amount</th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+
+                  14 November 2024
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  Means tested bursary
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  £872
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+
+                  14 November 2024
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  Dependants Allowance
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  £989
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+
+                  14 November 2024
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  Parent Learning Allowance
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  £397
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+
+                  14 November 2024
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  Non means tested grant
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  £330
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+
+                  14 November 2024
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  Means tested bursary
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  £872
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+
+                  14 November 2024
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  Dependants Allowance
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  £989
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+
+                  14 November 2024
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  Parent Learning Allowance
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  £397
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+
+                  14 November 2024
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  Non means tested grant
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  £330
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+
+                  14 November 2024
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  Means tested bursary
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  £899
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+
+                  14 November 2024
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  Dependants Allowance
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  £1019
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+
+                  14 November 2024
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  Parent Learning Allowance
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  £410
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+
+                  14 November 2024
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  Non means tested grant
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  £340
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+
+                  24 October 2023
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  Childcare Allowance
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  £1100
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+
+                  24 October 2023
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  Means tested bursary
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  £872
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+
+                  18 July 2023
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  Childcare Allowance
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  £5053
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+
+                  05/12/2022
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  Disabled Students Allowance (equipment)
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  £872
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+
+                  05/12/2022
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  Disabled Students Allowance (general)
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  £872
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+
+                  05/12/2022
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  Disabled Students Allowance (non-medical)
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  £872
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+
+                  05/12/2022
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  Disabled Students Allowance (travel)
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  £872
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+
+                  05/12/2022
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  TDAE (travel)
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  £1053
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+
+                  05/12/2022
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  TDAE (travel)
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  £872
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+
+                  05/12/2022
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  NHS Bursary Hardship Grant
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  £728
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+
+                  05/12/2022
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  Means tested bursary
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  £872
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+
+                  05/12/2022
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  Non means tested grant
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  £330
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+
+                  05/12/2022
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  Means tested bursary
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  £872
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+
+                  05/12/2022
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  Non means tested grant
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  £330
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+
+                  05/12/2022
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  Means tested bursary
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  £899
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+
+                  05/12/2022
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  Non means tested grant
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+
+                  £340
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </details> -->
+
+
+      <!-- <hr class="nhsuk-u-margin-top-9"> -->
+
+
+      <h2 class="nhsuk-heading-l nhsuk-u-margin-top-8">Payments by academic year</h2>
+
+      <div class="nhsuk-tabs" data-module="nhsuk-tabs">
+        <h2 class="nhsuk-tabs__title">
+          Contents
+        </h2>
+
+        <ul class="nhsuk-tabs__list">
+
+          <li class="nhsuk-tabs__list-item nhsuk-tabs__list-item--selected">
+            <a class="nhsuk-tabs__tab" href="#august-2024">
+              August 2024
+            </a>
+          </li>
+
+          <li class="nhsuk-tabs__list-item">
+            <a class="nhsuk-tabs__tab" href="#august-2023">
+              August 2023
+            </a>
+          </li>
+
+        </ul>
+
+        <div class="nhsuk-tabs__panel" id="august-2024">
+
+
+          <h3 class="nhsuk-heading-m" id="enrolHeader[1]">August 2024 academic year (matched student - in attendance)
+          </h3>
+
+          <details class="nhsuk-details" id="nhsuk-details5term1[1]">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">Term 1</span>
+            </summary>
+
+            <div class="nhsuk-details__text" id="nhsuk-details__text5[1]">
+
+              <table role="table" class="nhsuk-table-l">
+                <caption class="nhsuk-table__caption">Term 1 payments </caption>
+                <thead role="rowgroup" class="nhsuk-table__head">
+                  <tr role="row">
+                    <th role="columnheader" class="" scope="col">Type</th>
+                    <th role="columnheader" class="" scope="col">Amount</th>
+                    <th role="columnheader" class="" scope="col">Expected date</th>
+                    <th role="columnheader" class="" scope="col">Payment date</th>
+                    <th role="columnheader" class="" scope="col">Status</th>
+                    <th role="columnheader" class="" scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody class="nhsuk-table__body">
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      Means tested bursary
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      £872
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 August 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 August 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      Paid
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-l__heading"></span>
+                    </td>
+                  </tr>
+
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      Extra weeks Allowance
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      £610
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 August 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 August 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      Paid
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-l__heading"></span>
+                    </td>
+                  </tr>
+
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      Extra weeks Allowance
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      £15
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 August 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 August 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      Paid
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-l__heading"></span>
+                    </td>
+                  </tr>
+
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      Non means tested grant
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      £330
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 August 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 August 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      Paid
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-l__heading"></span>
+                    </td>
+                  </tr>
+
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      Means tested bursary
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      £17
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 August 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 August 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      Paid
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-l__heading"></span>
+                    </td>
+                  </tr>
+
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      Non means tested grant
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      £7
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 August 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 August 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      Paid
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-l__heading"></span>
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+
+              <div class="nhsuk-u-margin-top-4">
+                <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-0" id="enrol1term1TotalAmount">Total amount for
+                  term 1: £1,851</h3>
+              </div>
+
+            </div>
+          </details>
+
+
+
+          <details class="nhsuk-details" id="nhsuk-details5term1[1]">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">Term 2</span>
+            </summary>
+
+            <div class="nhsuk-details__text" id="nhsuk-details__text5[1]">
+
+              <table role="table" class="nhsuk-table-l">
+                <caption class="nhsuk-table__caption">Term 2 payments </caption>
+                <thead role="rowgroup" class="nhsuk-table__head">
+                  <tr role="row">
+                    <th role="columnheader" class="" scope="col">Type</th>
+                    <th role="columnheader" class="" scope="col">Amount</th>
+                    <th role="columnheader" class="" scope="col">Expected date</th>
+                    <th role="columnheader" class="" scope="col">Payment date</th>
+                    <th role="columnheader" class="" scope="col">Status</th>
+                    <th role="columnheader" class="" scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody class="nhsuk-table__body">
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      Means tested bursary
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      £872
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 December 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 December 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      Paid
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-l__heading"></span>
+                    </td>
+                  </tr>
+
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      Extra weeks Allowance
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      £610
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 December 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 December 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      Paid
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-l__heading"></span>
+                    </td>
+                  </tr>
+
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      Extra weeks Allowance
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      £15
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 December 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 December 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      Paid
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-l__heading"></span>
+                    </td>
+                  </tr>
+
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      Non means tested grant
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      £330
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 December 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 December 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      Paid
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-l__heading"></span>
+                    </td>
+                  </tr>
+
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      Means tested bursary
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      £17
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 December 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 December 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      Paid
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-l__heading"></span>
+                    </td>
+                  </tr>
+
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      Non means tested grant
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      £7
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 December 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 December 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      Paid
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-l__heading"></span>
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+
+              <div class="nhsuk-u-margin-top-4">
+                <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-0" id="enrol1term1TotalAmount">Total amount for
+                  term 2: £1,851</h3>
+              </div>
+
+            </div>
+          </details>
+
+
+
+
+          <details class="nhsuk-details" id="nhsuk-details5term1[1]">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">Term 3</span>
+            </summary>
+
+            <div class="nhsuk-details__text" id="nhsuk-details__text5[1]">
+
+              <table role="table" class="nhsuk-table-l">
+                <caption class="nhsuk-table__caption">Term 3 payments </caption>
+                <thead role="rowgroup" class="nhsuk-table__head">
+                  <tr role="row">
+                    <th role="columnheader" class="" scope="col">Type</th>
+                    <th role="columnheader" class="" scope="col">Amount</th>
+                    <th role="columnheader" class="" scope="col">Debt</th>
+                    <th role="columnheader" class="" scope="col">Payable</th>
+                    <th role="columnheader" class="" scope="col">Expected date</th>
+                    <th role="columnheader" class="" scope="col">Payment date</th>
+                    <th role="columnheader" class="" scope="col">Status</th>
+                    <th role="columnheader" class="" scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody class="nhsuk-table__body">
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      Means tested bursary
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      £872
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      £10
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      £872
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 April 2025
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 April 2025
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      Pending
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <a href="payment-details-edit-payment">Edit</a>
+                      <br>
+                      <a href="payment-details-edit-debt">Debt</a>
+                    </td>
+                  </tr>
+
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      Extra weeks Allowance
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      £610
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      £610
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 April 2025
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 April 2025
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      Pending
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <a href="payment-details-edit-payment">Edit</a>
+                      <br>
+                      <a href="payment-details-add-debt">Debt</a>
+                    </td>
+                  </tr>
+
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      Extra weeks Allowance
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      £15
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      £15
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 April 2025
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 April 2025
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      Pending
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <a href="payment-details-edit-payment">Edit</a>
+                      <br>
+                      <a href="payment-details-add-debt">Debt</a>
+                    </td>
+                  </tr>
+
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      Non means tested grant
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      £330
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      £330
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 April 2025
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 April 2025
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      Pending
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <a href="payment-details-edit-payment">Edit</a>
+                      <br>
+                      <a href="payment-details-add-debt">Debt</a>
+                    </td>
+                  </tr>
+
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      Means tested bursary
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      £17
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      £17
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 April 2025
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 April 2025
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      Pending
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <a href="payment-details-edit-payment">Edit</a>
+                      <br>
+                      <a href="payment-details-add-debt">Debt</a>
+                    </td>
+                  </tr>
+
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      Non means tested grant
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      £7
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      £7
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 April 2025
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 April 2025
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      Pending
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <a href="payment-details-edit-payment">Edit</a>
+                      <br>
+                      <a href="payment-details-add-debt">Debt</a>
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+
+              <div class="nhsuk-u-margin-top-4">
+                <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-0" id="enrol1term1TotalAmount">Total amount for
+                  term 3: £1,851</h3>
+              </div>
+
+            </div>
+          </details>
+
+
+          <details class="nhsuk-details" id="nhsuk-details5oneoff[3]">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">One off payments</span>
+            </summary>
+
+            <div class="nhsuk-details__text" id="nhsuk-details__text5oneoff[3]">
+
+
+              <table role="table" class="nhsuk-table-l">
+                <caption class="nhsuk-table__caption">One off payments</caption>
+                <thead role="rowgroup" class="nhsuk-table__head">
+                  <tr role="row">
+                    <th role="columnheader" class="" scope="col">Type</th>
+                    <th role="columnheader" class="" scope="col">Amount</th>
+                    <th role="columnheader" class="" scope="col">Payment date</th>
+                    <th role="columnheader" class="" scope="col">Status</th>
+                    <th role="columnheader" class="" scope="col">Action</th>
+                  </tr>
+                </thead>
+
+                <tbody class="nhsuk-table__body">
+
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      Disabled Students Allowance (travel)
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      £872
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      5 December 2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      Paid
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-l__heading"></span>
+                    </td>
+                  </tr>
+
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      NHS Bursary Hardship Grant (equipment)
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      £872
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      5 December 2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      Paid
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-l__heading"></span>
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+
+              <table role="table" class="nhsuk-table-l nhsuk-u-margin-top-4">
+                <caption class="nhsuk-table__caption">One off overpayments</caption>
+                <thead role="rowgroup" class="nhsuk-table__head">
+                  <tr role="row">
+                    <th role="columnheader" class="" scope="col">Type</th>
+                    <th role="columnheader" class="" scope="col">Amount</th>
+                    <th role="columnheader" class="" scope="col">Date raised</th>
+                    <th role="columnheader" class="" scope="col">Date extracted</th>
+                    <th role="columnheader" class="" scope="col">Status</th>
+                    <th role="columnheader" class="" scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody class="nhsuk-table__body">
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+
+                      TDAE (travel)
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+
+                      £500
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      5 December 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      5 December 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      Paid
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-l__heading"></span>
+
+                    </td>
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+
+                      Disabled Students Allowance (general)
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+
+                      £200
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      5 December 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      5 December 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      Paid
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-l__heading"></span>
+
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="nhsuk-u-margin-top-4">
+
+                <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-0" id="enrol3oneOffTotalAmount">Total amount of
+                  one off payments: £2,544</h3>
+
+
+              </div>
+            </div>
+          </details>
+
+          <!-- <details class="nhsuk-details" id="nhsuk-details5oneoff[1]">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">One off payments</span>
+        </summary>
+
+        <div class="nhsuk-details__text" id="nhsuk-details__text5oneoff[1]">
+          <p>No one off payments.</p>
+        </div>
+      </details> -->
+
+          <div class="nhsuk-form-group">
+            <a id="addPayment[1]" class="nhsuk-button nhsuk-u-margin-right-5" role="button" href="payment-details-add-payment"
+              data-module="nhsuk-button">Add payment<span class="nhsuk-u-visually-hidden"> for September 2023 academic
+                year (matched student - in attendance)</span></a>
+
+            <a id="addOverpayment[1]" class="nhsuk-button nhsuk-button--secondary" role="button" href="payment-details-add-overpayment"
+              data-module="nhsuk-button">Add overpayment<span class="nhsuk-u-visually-hidden"> for September 2023
+                academic year (matched student - in attendance)</span></a>
+          </div>
+
+        </div>
+
+
+
+
+        <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="august-2023">
+
+          <!-- <p>No payments have been added. Once the award has been calculated, a list of termly payments will be shown here
+      </p> -->
+
+          <h3 class="nhsuk-heading-m" id="enrolHeader[1]">August 2023 academic year (matched student - in attendance)
+          </h3>
+
+          <details class="nhsuk-details" id="nhsuk-details5term1[1]">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">Term 1</span>
+            </summary>
+
+            <div class="nhsuk-details__text" id="nhsuk-details__text5[1]">
+
+              <table role="table" class="nhsuk-table-l">
+                <caption class="nhsuk-table__caption">Term 1 payments </caption>
+                <thead role="rowgroup" class="nhsuk-table__head">
+                  <tr role="row">
+                    <th role="columnheader" class="" scope="col">Type</th>
+                    <th role="columnheader" class="" scope="col">Amount</th>
+                    <th role="columnheader" class="" scope="col">Expected date</th>
+                    <th role="columnheader" class="" scope="col">Payment date</th>
+                    <th role="columnheader" class="" scope="col">Status</th>
+                    <th role="columnheader" class="" scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody class="nhsuk-table__body">
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      Means tested bursary
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      £872
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 August 2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 August 2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      Paid
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-l__heading"></span>
+                    </td>
+                  </tr>
+
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      Extra weeks Allowance
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      £610
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 August 2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 August 2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      Paid
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-l__heading"></span>
+                    </td>
+                  </tr>
+
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      Extra weeks Allowance
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      £15
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 August 2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 August 2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      Paid
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-l__heading"></span>
+                    </td>
+                  </tr>
+
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      Non means tested grant
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      £330
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 August 2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 August 2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      Paid
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-l__heading"></span>
+                    </td>
+                  </tr>
+
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      Means tested bursary
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      £17
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 August 2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 August 2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      Paid
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-l__heading"></span>
+                    </td>
+                  </tr>
+
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      Non means tested grant
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      £7
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 August 2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 August 2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      Paid
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-l__heading"></span>
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+
+              <div class="nhsuk-u-margin-top-4">
+                <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-0" id="enrol1term1TotalAmount">Total amount for
+                  term 1: £1,851</h3>
+              </div>
+
+            </div>
+          </details>
+
+
+
+          <details class="nhsuk-details" id="nhsuk-details5term1[1]">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">Term 2</span>
+            </summary>
+
+            <div class="nhsuk-details__text" id="nhsuk-details__text5[1]">
+
+              <table role="table" class="nhsuk-table-l">
+                <caption class="nhsuk-table__caption">Term 2 payments </caption>
+                <thead role="rowgroup" class="nhsuk-table__head">
+                  <tr role="row">
+                    <th role="columnheader" class="" scope="col">Type</th>
+                    <th role="columnheader" class="" scope="col">Amount</th>
+                    <th role="columnheader" class="" scope="col">Expected date</th>
+                    <th role="columnheader" class="" scope="col">Payment date</th>
+                    <th role="columnheader" class="" scope="col">Status</th>
+                    <th role="columnheader" class="" scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody class="nhsuk-table__body">
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      Means tested bursary
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      £872
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 December 2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 December 2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      Paid
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-l__heading"></span>
+                    </td>
+                  </tr>
+
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      Extra weeks Allowance
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      £610
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 December 2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 December 2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      Paid
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-l__heading"></span>
+                    </td>
+                  </tr>
+
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      Extra weeks Allowance
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      £15
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 December 2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 December 2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      Paid
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-l__heading"></span>
+                    </td>
+                  </tr>
+
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      Non means tested grant
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      £330
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 December 2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 December 2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      Paid
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-l__heading"></span>
+                    </td>
+                  </tr>
+
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      Means tested bursary
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      £17
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 December 2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 December 2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      Paid
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-l__heading"></span>
+                    </td>
+                  </tr>
+
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      Non means tested grant
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      £7
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 December 2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 December 2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      Paid
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-l__heading"></span>
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+
+              <div class="nhsuk-u-margin-top-4">
+                <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-0" id="enrol1term1TotalAmount">Total amount for
+                  term 2: £1,851</h3>
+              </div>
+
+            </div>
+          </details>
+
+
+
+
+          <details class="nhsuk-details" id="nhsuk-details5term1[1]">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">Term 3</span>
+            </summary>
+
+            <div class="nhsuk-details__text" id="nhsuk-details__text5[1]">
+
+              <table role="table" class="nhsuk-table-l">
+                <caption class="nhsuk-table__caption">Term 3 payments </caption>
+                <thead role="rowgroup" class="nhsuk-table__head">
+                  <tr role="row">
+                    <th role="columnheader" class="" scope="col">Type</th>
+                    <th role="columnheader" class="" scope="col">Amount</th>
+                    <th role="columnheader" class="" scope="col">Expected date</th>
+                    <th role="columnheader" class="" scope="col">Payment date</th>
+                    <th role="columnheader" class="" scope="col">Status</th>
+                    <th role="columnheader" class="" scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody class="nhsuk-table__body">
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      Means tested bursary
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      £872
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 April 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 April 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      Paid
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                    </td>
+                  </tr>
+
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      Extra weeks Allowance
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      £610
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 April 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 April 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      Paid
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                    </td>
+                  </tr>
+
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      Extra weeks Allowance
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      £15
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 April 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 April 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      Paid
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                    </td>
+                  </tr>
+
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      Non means tested grant
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      £330
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 April 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 April 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      Paid
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                    </td>
+                  </tr>
+
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      Means tested bursary
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      £17
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 April 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 April 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      Paid
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                    </td>
+                  </tr>
+
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      Non means tested grant
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      £7
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 April 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 April 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      Paid
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+
+              <div class="nhsuk-u-margin-top-4">
+                <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-0" id="enrol1term1TotalAmount">Total amount for
+                  term 3: £1,851</h3>
+              </div>
+
+            </div>
+          </details>
+
+
+          <details class="nhsuk-details" id="nhsuk-details5oneoff[3]">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">One off payments</span>
+            </summary>
+
+            <div class="nhsuk-details__text" id="nhsuk-details__text5oneoff[3]">
+
+
+              <table role="table" class="nhsuk-table-l">
+                <caption class="nhsuk-table__caption">One off payments</caption>
+                <thead role="rowgroup" class="nhsuk-table__head">
+                  <tr role="row">
+                    <th role="columnheader" class="" scope="col">Type</th>
+                    <th role="columnheader" class="" scope="col">Amount</th>
+                    <th role="columnheader" class="" scope="col">Payment date</th>
+                    <th role="columnheader" class="" scope="col">Status</th>
+                    <th role="columnheader" class="" scope="col">Action</th>
+                  </tr>
+                </thead>
+
+                <tbody class="nhsuk-table__body">
+
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      Disabled Students Allowance (travel)
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      £872
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      5 December 2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      Paid
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-l__heading"></span>
+                    </td>
+                  </tr>
+
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      NHS Bursary Hardship Grant (equipment)
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      £872
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      5 December 2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      Paid
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-l__heading"></span>
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+
+              <table role="table" class="nhsuk-table-l nhsuk-u-margin-top-4">
+                <caption class="nhsuk-table__caption">One off overpayments</caption>
+                <thead role="rowgroup" class="nhsuk-table__head">
+                  <tr role="row">
+                    <th role="columnheader" class="" scope="col">Type</th>
+                    <th role="columnheader" class="" scope="col">Amount</th>
+                    <th role="columnheader" class="" scope="col">Date raised</th>
+                    <th role="columnheader" class="" scope="col">Date extracted</th>
+                    <th role="columnheader" class="" scope="col">Status</th>
+                    <th role="columnheader" class="" scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody class="nhsuk-table__body">
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+
+                      TDAE (travel)
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+
+                      £500
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      5 December 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      5 December 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      Paid
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-l__heading"></span>
+
+                    </td>
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+
+                      Disabled Students Allowance (general)
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+
+                      £200
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      5 December 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      5 December 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      Paid
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-l__heading"></span>
+
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="nhsuk-u-margin-top-4">
+
+                <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-0" id="enrol3oneOffTotalAmount">Total amount
+                  of one off payments: £2,544</h3>
+
+
+              </div>
+            </div>
+          </details>
+
+          <!-- <details class="nhsuk-details" id="nhsuk-details5oneoff[1]">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">One off payments</span>
+            </summary>
+
+            <div class="nhsuk-details__text" id="nhsuk-details__text5oneoff[1]">
+              <p>No one off payments.</p>
+            </div>
+          </details> -->
+
+          <div class="nhsuk-form-group">
+            <a id="addPayment[1]" class="nhsuk-button nhsuk-u-margin-right-5" role="button" href="payment-details-add-payment"
+              data-module="nhsuk-button">Add payment<span class="nhsuk-u-visually-hidden"> for September 2023 academic
+                year (matched student - in attendance)</span></a>
+
+            <a id="addOverpayment[1]" class="nhsuk-button nhsuk-button--secondary" role="button" href="payment-details-add-overpayment"
+              data-module="nhsuk-button">Add overpayment<span class="nhsuk-u-visually-hidden"> for September 2023
+                academic year (matched student - in attendance)</span></a>
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+
+    </div>
+  </div>
+
+</div>
+{% endblock %}
