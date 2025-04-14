@@ -67,8 +67,10 @@
 
           <p id="amount-hint">This cannot be more than the £610 payment.</p>
 
-          <input class="nhsuk-input nhsuk-u-width-two-thirds" type="text" maxlength="11" id="amount"
-            aria-describedby="amount-hint" name="amount" value="10">
+          <div class="nhsuk-input__wrapper">
+            <div class="nhsuk-input__prefix" aria-hidden="true">£</div>
+            <input class="nhsuk-input nhsuk-input--width-5" id="example" name="example" type="text" value="10">
+          </div>
         </div>
 
         <!-- <div class="nhsuk-form-group">
@@ -82,8 +84,8 @@
           <a class="nhsuk-button nhsuk-u-margin-right-5" id="complete" href="payment-details-locked-payments-callout"
             role="button" data-module="nhsuk-button">Submit</a>
 
-          <a class="nhsuk-button nhsuk-button--warning nhsuk-u-margin-right-5" id="complete" href="payment-details-locked-payments-callout"
-            role="button" data-module="nhsuk-button">Delete</a>
+          <a class="nhsuk-button nhsuk-button--warning nhsuk-u-margin-right-5" id="complete"
+            href="payment-details-locked-payments-callout" role="button" data-module="nhsuk-button">Delete</a>
 
           <p><a id="canceltoStudent" href="payment-details-locked-payments-callout">Cancel</a></p>
         </div>
