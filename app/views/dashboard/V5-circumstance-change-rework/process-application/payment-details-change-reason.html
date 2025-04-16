@@ -68,7 +68,7 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
 
-      <form action="payment-details-locked-payments-updated" method="POST">
+      <form action="payment-details-locked-payments-updated?paymentsUpdated=true" method="POST">
 
         <div class="nhsuk-form-group">
 
@@ -99,6 +99,12 @@
                 <label class="nhsuk-label nhsuk-radios__label" for="change-income">
                   Change to income, or parents' or partner's income
                 </label>
+
+                {% if data['paymentsUpdated'] == 'true' %}
+                <strong class="nhsuk-tag nhsuk-tag--blue nhsuk-u-margin-top-1">
+                  Used today
+                </strong>                
+                {% endif %}
               </div>
 
               <div class="nhsuk-radios__item">
@@ -114,6 +120,8 @@
                   Other change of circumstances
                 </label>
               </div>
+
+
 
               <h2 class="nhsuk-app-heading nhsuk-heading-m" style="margin: 32px 0 16px 0;">
                 Student attendance changes
@@ -131,6 +139,12 @@
                 <label class="nhsuk-label nhsuk-radios__label" for="change-term-dates">
                   Change to term dates
                 </label>
+
+                {% if data['paymentsUpdated'] == 'true' %}
+                <strong class="nhsuk-tag nhsuk-tag--blue nhsuk-u-margin-top-1">
+                  Used today
+                </strong>                
+                {% endif %}
               </div>
 
               <div class="nhsuk-radios__item">
@@ -169,6 +183,8 @@
                 </label>
               </div>
 
+
+
               <h2 class="nhsuk-app-heading nhsuk-heading-m" style="margin: 32px 0 16px 0;">
                 Other changes
               </h2>
@@ -201,6 +217,12 @@
                 <label class="nhsuk-label nhsuk-radios__label" for="other-reason">
                   Other reason
                 </label>
+
+                {% if data['paymentsUpdated'] == 'true' %}
+                <strong class="nhsuk-tag nhsuk-tag--blue nhsuk-u-margin-top-1">
+                  Used today
+                </strong>                
+                {% endif %}
               </div>
               <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-other-reason">
                 <div class="nhsuk-form-group">

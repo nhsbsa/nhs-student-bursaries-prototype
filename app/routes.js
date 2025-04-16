@@ -109,19 +109,19 @@ router.post('/dashboard/V5-circumstance-change-rework/apply/explanation-route/',
 
 router.post('/dashboard/V5-circumstance-change-rework/process-application/change-summary/', (req, res) => {
 
-  const processorChoice = req.session.data['processorChoice']
-  const changeScenario = req.session.data['changeScenario']
+  const CoCProcessorChoice = req.session.data['CoCProcessorChoice']
+  const CoCScenario = req.session.data['CoCScenario']
 
   // COMPLETE CHANGE radio option
-  if (processorChoice === 'complete') {
+  if (CoCProcessorChoice === 'complete') {
 
     // Route for updating Address only - go straight to asking for comment
-    if (changeScenario === 'addressOnly') {
+    if (CoCScenario === 'addressOnly') {
       res.redirect('/dashboard/V5-circumstance-change-rework/process-application/change-confirmation-comment')
     }
 
     // Route for updating payments automatically - go straight to asking for comment
-    else if (changeScenario === 'automaticReschedule') {
+    else if (CoCScenario === 'automaticReschedule') {
       res.redirect('/dashboard/V5-circumstance-change-rework/process-application/change-confirmation-comment')
     }
 
@@ -132,12 +132,12 @@ router.post('/dashboard/V5-circumstance-change-rework/process-application/change
   }
 
   // PEND CHANGE radio option
-  else if (processorChoice === 'pend') {
+  else if (CoCProcessorChoice === 'pend') {
     res.redirect('/dashboard/V5-circumstance-change-rework/process-application/pend-reason')
   }
 
   // DECLINE CHANGE radio option
-  else if (processorChoice === 'decline') {
+  else if (CoCProcessorChoice === 'decline') {
     res.redirect('/dashboard/V5-circumstance-change-rework/process-application/decline-reason')
   }
 
@@ -151,18 +151,18 @@ router.post('/dashboard/V5-circumstance-change-rework/process-application/change
 
 router.post('/dashboard/V5-circumstance-change-rework/process-application/change-confirmation-comment-route/', (req, res) => {
 
-  const changeScenario = req.session.data['changeScenario']
+  const CoCScenario = req.session.data['CoCScenario']
   
   // Save input from comment textbox
   const changeProcessorComment = req.session.data['change-processor-comment']
 
   // Route for updating Address only
-  if (changeScenario === 'addressOnly') {
+  if (CoCScenario === 'addressOnly') {
     res.redirect('/dashboard/V5-circumstance-change-rework/process-application/change-confirmation-address-only')
   }
 
   // Route for updating payments automatically
-  else if (changeScenario === 'automaticReschedule') {
+  else if (CoCScenario === 'automaticReschedule') {
     res.redirect('/dashboard/V5-circumstance-change-rework/process-application/change-confirmation-auto-scheduled')
   }
 
@@ -174,9 +174,19 @@ router.post('/dashboard/V5-circumstance-change-rework/process-application/change
 })
 
 
+// router.post('/dashboard/V5-circumstance-change-rework/process-application/payment-details-add-payment-route/', (req, res) => {
+
+//   res.redirect('/dashboard/V5-circumstance-change-rework/process-application/payment-details-change-reason?')
+
+// })
 
 
-// Routes for STUDENT: UPDATE APPLICATION AFTER RETURNED journey 
+
+
+
+
+
+// Routes for STUDENT: UPDATE APPLICATION AFTER RETURNED (A.k.a. Review Application) journey 
 
 router.post('/dashboard/V5-circumstance-change-rework/review-application/change-already-submitted-route/', (req, res) => {
 
