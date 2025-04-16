@@ -27,8 +27,7 @@
           href="student-details-locked">Student details</a></li>
 
     </ol>
-    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink"
-        href="#">Back to Course details</a></p>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="#">Back to Course details</a></p>
   </div>
 </nav>
 
@@ -62,7 +61,8 @@
           </h1>
         </div>
 
-        <p>You need to manually update the payments scheduled for this year. Select Go to Payment details to do this.</p>
+        <p>You need to manually update the payments scheduled for this year. Select Go to Payment details to do this.
+        </p>
 
         <h2 class="nhsuk-app-heading nhsuk-heading-m">
           Updated full year award
@@ -145,41 +145,52 @@
         </dl>
 
         <div>
-          <a href="payment-details-locked-coc-callout" class="nhsuk-button nhsuk-button--secondary" role="button">Go to Payment details</a>
+          <a href="payment-details-locked-coc-callout" class="nhsuk-button nhsuk-button--secondary" role="button">Go to
+            Payment details</a>
         </div>
 
 
-        <!-- <p class="nhsuk-u-margin-top-4">After you've updated the payments, select Continue.</p> -->
-
-        <form class="nhsuk-u-margin-top-4">
-
-          <div class="nhsuk-form-group">
-        
-            <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">        
-        
-              <div class="nhsuk-checkboxes" class="nhsuk-u-margin-top-8">
-        
-                <div class="nhsuk-checkboxes__item">
-                  <input class="nhsuk-checkboxes__input" id="contact" name="contact" type="checkbox" value="email">
-                  <label class="nhsuk-label nhsuk-checkboxes__label" for="contact">
-                    I've updated the payments.
-                  </label>
-                </div>
-        
+        <!-- If CoC Payments are made yet, enable checkbox + Continue button  - else, disable them -->
+        {% if data['CoCPaymentsUpdated'] == 'true' %}
+        <div class="nhsuk-form-group nhsuk-u-margin-top-3">
+          <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
+            <div class="nhsuk-checkboxes" class="nhsuk-u-margin-top-8">
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="contact" name="contact" type="checkbox" value="email">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="contact">
+                  I've updated the payments.
+                </label>
               </div>
-            </fieldset>
-        
-          </div>
-        
-        </form>
-
-
-        <div class="nhsuk-form-group" style="margin-top: 40px;">
-          <a class="nhsuk-button nhsuk-u-margin-right-5" id="complete" href="change-confirmation-comment" role="button"
-            data-module="nhsuk-button">Continue</a>
-
-          <p><a id="canceltoStudent" href="student-details-locked">Cancel</a></p>
+            </div>
+          </fieldset>
         </div>
+
+        <a class="nhsuk-button nhsuk-u-margin-right-5" id="complete"
+          href="/dashboard/V5-circumstance-change-rework/process-application/change-confirmation-comment" role="button"
+          data-module="nhsuk-button" style="margin-top: 20px;">Continue</a>
+
+
+        {% else %}
+        <div class="nhsuk-form-group nhsuk-u-margin-top-3">
+          <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
+            <div class="nhsuk-checkboxes" class="nhsuk-u-margin-top-8">
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="contact" name="contact" type="checkbox" value="email"
+                  disabled>
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="contact">
+                  I've updated the payments.
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <a class="nhsuk-button nhsuk-button--disabled nhsuk-u-margin-right-5" disabled="disabled" id="complete"
+          href="/dashboard/V5-circumstance-change-rework/process-application/change-confirmation-comment" role="button"
+          data-module="nhsuk-button" style="margin-top: 20px;">Continue</a>
+        {% endif %}
+
+        <p><a id="canceltoStudent" href="student-details-locked">Cancel</a></p>
 
       </div>
 
