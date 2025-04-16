@@ -25,7 +25,7 @@
       <li class="nhsuk-breadcrumb__item"><a id="studentDetailsLink" class="nhsuk-breadcrumb__link"
           href="student-details-locked">Student details</a></li>
       <li class="nhsuk-breadcrumb__item"><a id="studentDetailsLink" class="nhsuk-breadcrumb__link"
-          href="payment-details-locked-payments-callout">Payment details</a></li>
+          href="payment-details-locked">Payment details</a></li>
     </ol>
     <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="#">Back to Course details</a></p>
   </div>
@@ -58,7 +58,7 @@
             <span>BRN0000259-2 - Mike Lee (August 2024)</span>
             <span class="nhsuk-u-visually-hidden"> - </span>
           </span>
-          What is the reason for these changes?
+          What is the reason for this change?
         </h1>
       </div>
     </div>
@@ -196,14 +196,15 @@
               </div>
 
               <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="other-reason" name="contact" type="radio" value="">
+                <input class="nhsuk-radios__input" id="other-reason" name="contact" type="radio" value=""
+                  aria-controls="conditional-other-reason" aria-expanded="false">
                 <label class="nhsuk-label nhsuk-radios__label" for="other-reason">
                   Other reason
                 </label>
               </div>
-              <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-3">
+              <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-other-reason">
                 <div class="nhsuk-form-group">
-                  <label class="nhsuk-label" for="mobile">
+                  <label class="nhsuk-label" for="other-reason-conditional">
                     Reason for change
                   </label>
                   <input class="nhsuk-input nhsuk-u-width-two-thirds" id="payment-change-reason-other" name="mobile"
@@ -220,68 +221,10 @@
 
         </div>
 
-
-
-
-        <!-- <div class="nhsuk-form-group">
-          <fieldset class="nhsuk-fieldset">
-
-            <div class="nhsuk-radios">
-              <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="relationship-status" name="change-circumstance" type="radio"
-                  value="Change of relationship status" />
-                <label class="nhsuk-label nhsuk-radios__label" for="relationship-status">
-                  Change of address (252)
-                </label>
-              </div>
-
-              <div class="nhsuk-radios nhsuk-radios--conditional">
-
-                <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="contact-1" name="contact" type="radio" value="email"
-                    aria-controls="conditional-contact-1" aria-expanded="false">
-                  <label class="nhsuk-label nhsuk-radios__label" for="contact-1">
-                    Change of address (252)
-                  </label>
-                </div>
-
-                <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-1">
-
-                  <div class="nhsuk-form-group">
-                    <label class="nhsuk-label" for="email">
-                      Email address
-                    </label>
-                    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text">
-                  </div>
-
-                </div>
-
-                <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="address" name="change-circumstance" type="radio"
-                    value="Change of address" />
-                  <label class="nhsuk-label nhsuk-radios__label" for="address">
-                    Policy change
-                  </label>
-                </div>
-
-                <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="other" name="change-circumstance" type="radio"
-                    value="Other change" />
-                  <label class="nhsuk-label nhsuk-radios__label" for="other">
-                    Other reason
-                  </label>
-                </div>
-              </div>
-          </fieldset>
-        </div> -->
-
-        <button class="nhsuk-button" type="submit">Submit changes</button>
+        <button class="nhsuk-button" type="submit">Submit change</button>
 
         <p><a id="canceltoTasklist" href="tasklist-approved">Cancel</a></p>
       </form>
-
-
-
 
     </div>
   </div>

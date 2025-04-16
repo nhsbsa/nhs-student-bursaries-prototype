@@ -26,8 +26,7 @@
       <li class="nhsuk-breadcrumb__item"><a id="studentDetailsLink" class="nhsuk-breadcrumb__link"
           href="student-details-locked">Student details</a></li>
       <li class="nhsuk-breadcrumb__item"><a id="studentDetailsLink" class="nhsuk-breadcrumb__link"
-          href="payment-details-locked">Payment details</a></li>
-
+          href="payment-details-locked-payments-callout">Payment details</a></li>
     </ol>
     <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="#">Back to Course details</a></p>
   </div>
@@ -59,35 +58,37 @@
         <div>
           <h1 class="nhsuk-app-heading nhsuk-heading-l">
             <span class="nhsuk-caption-l" id="studentRef">BRN0000259-2 - Mike Lee (August 2024)</span>
-            Add debt
+            Edit debt
           </h1>
         </div>
 
         <div class="nhsuk-form-group" id="group-amount">
-          <label class="nhsuk-label nhsuk-u-font-weight-bold" for="amount">Debt recovery receipts amount</label>
+          <label class="nhsuk-label nhsuk-u-font-weight-bold" for="amount">Debt Recovery Receipts amount</label>
 
           <p id="amount-hint">This cannot be more than the £610 payment.</p>
 
           <div class="nhsuk-input__wrapper">
             <div class="nhsuk-input__prefix" aria-hidden="true">£</div>
-            <input class="nhsuk-input nhsuk-input--width-5" id="example" name="example" type="text">
+            <input class="nhsuk-input nhsuk-input--width-5" id="example" name="example" type="text" value="10">
           </div>
         </div>
 
         <!-- <div class="nhsuk-form-group">
-            <button class="nhsuk-button nhsuk-u-margin-right-4" type="submit" id="next" data-module="nhsuk-button"
-              data-prevent-double-click="true">Continue</button>
+            <button class="nhsuk-button nhsuk-u-margin-right-5" type="submit" id="next" data-module="nhsuk-button"
+              data-prevent-double-click="true">Submit</button>
 
           </div> -->
 
 
         <div class="nhsuk-form-group" style="margin-top: 40px;">
-          <a class="nhsuk-button nhsuk-u-margin-right-4" id="complete" href="payment-details-change-reason"
-            role="button" data-module="nhsuk-button">Continue</a>
+          <a class="nhsuk-button nhsuk-u-margin-right-5" id="complete" href="payment-details-locked-payments-callout"
+            role="button" data-module="nhsuk-button">Submit</a>
 
-          <p><a id="canceltoStudent" href="payment-details-locked">Cancel</a></p>
+          <a class="nhsuk-button nhsuk-button--warning nhsuk-u-margin-right-5" id="complete"
+            href="payment-details-locked-payments-callout" role="button" data-module="nhsuk-button">Delete</a>
+
+          <p><a id="canceltoStudent" href="payment-details-locked-payments-callout">Cancel</a></p>
         </div>
-
 
       </div>
     </div>

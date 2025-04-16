@@ -25,7 +25,7 @@
       <li class="nhsuk-breadcrumb__item"><a id="studentDetailsLink" class="nhsuk-breadcrumb__link"
           href="student-details-locked">Student details</a></li>
       <li class="nhsuk-breadcrumb__item"><a id="studentDetailsLink" class="nhsuk-breadcrumb__link"
-          href="payment-details-locked">Payment details</a></li>
+          href="payment-details-locked-payments-callout">Payment details</a></li>
     </ol>
     <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="#">Back to Course details</a></p>
   </div>
@@ -58,7 +58,7 @@
             <span>BRN0000259-2 - Mike Lee (August 2024)</span>
             <span class="nhsuk-u-visually-hidden"> - </span>
           </span>
-          What is the reason for this change?
+          What is the reason for these changes?
         </h1>
       </div>
     </div>
@@ -196,14 +196,15 @@
               </div>
 
               <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="other-reason" name="contact" type="radio" value="">
+                <input class="nhsuk-radios__input" id="other-reason" name="contact" type="radio" value=""
+                  aria-controls="conditional-other-reason" aria-expanded="false">
                 <label class="nhsuk-label nhsuk-radios__label" for="other-reason">
                   Other reason
                 </label>
               </div>
-              <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-3">
+              <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-other-reason">
                 <div class="nhsuk-form-group">
-                  <label class="nhsuk-label" for="mobile">
+                  <label class="nhsuk-label" for="other-reason-conditional">
                     Reason for change
                   </label>
                   <input class="nhsuk-input nhsuk-u-width-two-thirds" id="payment-change-reason-other" name="mobile"
@@ -220,14 +221,10 @@
 
         </div>
 
-
-        <button class="nhsuk-button" type="submit">Submit change</button>
+        <button class="nhsuk-button" type="submit">Submit changes</button>
 
         <p><a id="canceltoTasklist" href="tasklist-approved">Cancel</a></p>
       </form>
-
-
-
 
     </div>
   </div>
