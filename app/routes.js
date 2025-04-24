@@ -127,7 +127,7 @@ router.post('/dashboard/V5-circumstance-change-rework/process-application/change
 
     // Else, route for updating payments manually (the most complex one) - ask them to update payments
     else {
-      res.redirect('/dashboard/V5-circumstance-change-rework/process-application/payment-scheduling-required-initial')
+      res.redirect('/dashboard/V5-circumstance-change-rework/process-application/payment-details-single-save-coc/payment-scheduling-required')
     }
   }
 
