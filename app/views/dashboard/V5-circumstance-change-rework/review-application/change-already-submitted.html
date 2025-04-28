@@ -50,6 +50,9 @@
           </span>
         </h3>
 
+        <p>This change has been returned. You need to review your answers or add more evidence.
+        </p>
+
         <dl class="nhsuk-summary-list">
           <div class="nhsuk-summary-list__row">
             <dt class="nhsuk-summary-list__key">Type of change</dt>
@@ -64,7 +67,8 @@
             <dd class="nhsuk-summary-list__value">
               <p>
                 {% if data['circumstance-day'] %}
-                {{ data['circumstance-day'] }} <span class="cya-month">{{ data['circumstance-month'] }}</span> {{ data['circumstance-year'] }}
+                {{ data['circumstance-day'] }} <span class="cya-month">{{ data['circumstance-month'] }}</span> {{
+                data['circumstance-year'] }}
                 {% else %}
                 15 October 2024
                 {% endif %}
@@ -86,7 +90,7 @@
                 {{ data['address-4-town'] }} <br>
                 {{ data['address-5-country'] }} <br>
                 {{ data['address-6-postcode'] }}
-  
+
                 {% else %}
                 34<br>
                 The Tower<br>
@@ -94,7 +98,7 @@
                 Bigtown<br>
                 England<br>
                 SR2 7NB
-  
+
                 {% endif %}
               </p>
             </dd>
@@ -141,10 +145,12 @@
 
         </dl>
 
-        <p>This change has been returned. You need to <a
+        <!-- <p>This change has been returned. You need to <a
             href="/dashboard/V5-circumstance-change-rework/review-application/summary">change your answers or add
             more evidence</a>.
-        </p>
+        </p> -->
+
+        <a href="summary" class="nhsuk-button nhsuk-button--secondary" role="button">Review this change</a>
 
       </div>
 
