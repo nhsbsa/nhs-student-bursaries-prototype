@@ -179,7 +179,11 @@
               Living with parents?
             </dt>
             <dd class="nhsuk-summary-list__value">
+              {% if data['CoCScenario'] == "addressOnly" %}
+              Yes
+              {% else %}
               No
+              {% endif %}
             </dd>
           </div>
 
