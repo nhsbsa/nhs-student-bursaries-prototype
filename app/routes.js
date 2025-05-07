@@ -34,10 +34,10 @@ router.post('/register/v2/national-insurance-number-question-route/', (req, res)
 
 router.post('/change-of-circumstances/V2/apply/changes-route/', (req, res) => {
 
-  const changeCircumstance = req.session.data['change-circumstance']
+  const CoCType = req.session.data['CoCType']
 
   // If user selects any option, proceed to Date question - otherwise, stay on this page
-  if (changeCircumstance === 'Change of relationship status'
+  if (CoCType === 'Change of relationship status'
     || 'Change of address'
     || 'Change of income'
     || 'Change of children details'
@@ -53,25 +53,25 @@ router.post('/change-of-circumstances/V2/apply/changes-route/', (req, res) => {
 
 router.post('/change-of-circumstances/V2/apply/date-route/', (req, res) => {
 
-  const changeCircumstance = req.session.data['change-circumstance']
+  const CoCType = req.session.data['CoCType']
 
   // Route user to correct question subjourney, depending on answer to previous Change Reason question
 
-  if (changeCircumstance === 'Change of relationship status') {
+  if (CoCType === 'Change of relationship status') {
     // res.redirect('/change-of-circumstances/V2/apply/WIP-change-relationship')
   }
-  else if (changeCircumstance === 'Change of address') {
+  else if (CoCType === 'Change of address') {
     res.redirect('/change-of-circumstances/V2/apply/change-address')
   }
-  else if (changeCircumstance === 'Change of income') {
+  else if (CoCType === 'Change of income') {
     // res.redirect('/change-of-circumstances/V2/apply/WIP-change-income')
     res.redirect('/change-of-circumstances/V2/apply/explanation')
   }
-  else if (changeCircumstance === 'Change of children details') {
+  else if (CoCType === 'Change of children details') {
     // res.redirect('/change-of-circumstances/V2/apply/WIP-change-children-details')
     res.redirect('/change-of-circumstances/V2/apply/explanation')
   }
-  else if (changeCircumstance === 'Other change') {
+  else if (CoCType === 'Other change') {
     // res.redirect('/change-of-circumstances/V2/apply/WIP-change-other')
     res.redirect('/change-of-circumstances/V2/apply/explanation')
   }
@@ -248,18 +248,18 @@ router.post('/change-of-circumstances/V1-update-to-live/apply/changes-route/', (
 
 router.post('/change-of-circumstances/V1-update-to-live/apply/date-route/', (req, res) => {
 
-  const changeCircumstance = req.session.data['change-circumstance']
+  const CoCType = req.session.data['CoCType']
 
-  if (changeCircumstance === 'Change of relationship status') {
+  if (CoCType === 'Change of relationship status') {
     res.redirect('/change-of-circumstances/V1-update-to-live/apply/explanation')
   }
-  else if (changeCircumstance === 'Change of address') {
+  else if (CoCType === 'Change of address') {
     res.redirect('/change-of-circumstances/V1-update-to-live/apply/explanation')
   }
-  else if (changeCircumstance === 'Change of income') {
+  else if (CoCType === 'Change of income') {
     res.redirect('/change-of-circumstances/V1-update-to-live/apply/explanation')
   }
-  else if (changeCircumstance === 'Change of children details') {
+  else if (CoCType === 'Change of children details') {
     res.redirect('/change-of-circumstances/V1-update-to-live/apply/explanation')
   }
   else {
