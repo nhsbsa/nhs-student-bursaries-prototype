@@ -152,7 +152,7 @@ router.post('/change-of-circumstances/V2/process-application/change-summary/', (
 router.post('/change-of-circumstances/V2/process-application/change-confirmation-comment-route/', (req, res) => {
 
   const CoCScenario = req.session.data['CoCScenario']
-  
+
   // Save input from comment textbox
   const changeProcessorComment = req.session.data['change-processor-comment']
 
@@ -174,11 +174,14 @@ router.post('/change-of-circumstances/V2/process-application/change-confirmation
 })
 
 
-// router.post('/change-of-circumstances/V2/process-application/payment-details-add-payment-route/', (req, res) => {
+router.post('/change-of-circumstances/V2/process-application/payment-details-change-reason-route/', (req, res) => {
 
-//   res.redirect('/change-of-circumstances/V2/process-application/payment-details-change-reason?')
+  // Save state of paymentsUpdated (it is now true)
+  const paymentsUpdated = req.session.data['paymentsUpdated']
 
-// })
+  res.redirect('/change-of-circumstances/V2/process-application/payment-details-locked-payments-updated#august-2024')
+
+})
 
 
 

@@ -68,7 +68,8 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
 
-      <form action="payment-details-locked-payments-updated?paymentsUpdated=true" method="POST">
+      <!-- <form action="payment-details-locked-payments-updated#august-2024?paymentsUpdated=true" method="POST"> -->
+      <form action="/change-of-circumstances/V2/process-application/payment-details-change-reason-route" method="POST">
 
         <div class="nhsuk-form-group">
 
@@ -103,7 +104,7 @@
                 {% if data['paymentsUpdated'] == 'true' %}
                 <strong class="nhsuk-tag nhsuk-tag--blue nhsuk-u-margin-top-1">
                   Used today
-                </strong>                
+                </strong>
                 {% endif %}
               </div>
 
@@ -143,7 +144,7 @@
                 {% if data['paymentsUpdated'] == 'true' %}
                 <strong class="nhsuk-tag nhsuk-tag--blue nhsuk-u-margin-top-1">
                   Used today
-                </strong>                
+                </strong>
                 {% endif %}
               </div>
 
@@ -221,7 +222,7 @@
                 {% if data['paymentsUpdated'] == 'true' %}
                 <strong class="nhsuk-tag nhsuk-tag--blue nhsuk-u-margin-top-1">
                   Used today
-                </strong>                
+                </strong>
                 {% endif %}
               </div>
               <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-other-reason">
