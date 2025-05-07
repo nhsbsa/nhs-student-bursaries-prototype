@@ -28,11 +28,11 @@ router.post('/register/v2/national-insurance-number-question-route/', (req, res)
 
 
 
-// V5 Change of Circs Rework
+// CoC V2
 
 // Routes for STUDENT: APPLY FOR CoC journey 
 
-router.post('/dashboard/V5-circumstance-change-rework/apply/changes-route/', (req, res) => {
+router.post('/change-of-circumstances/V2/apply/changes-route/', (req, res) => {
 
   const changeCircumstance = req.session.data['change-circumstance']
 
@@ -42,63 +42,63 @@ router.post('/dashboard/V5-circumstance-change-rework/apply/changes-route/', (re
     || 'Change of income'
     || 'Change of children details'
     || 'Other change') {
-    res.redirect('/dashboard/V5-circumstance-change-rework/apply/date')
+    res.redirect('/change-of-circumstances/V2/apply/date')
   }
   else {
-    res.redirect('/dashboard/V5-circumstance-change-rework/apply/changes')
+    res.redirect('/change-of-circumstances/V2/apply/changes')
   }
 
 })
 
 
-router.post('/dashboard/V5-circumstance-change-rework/apply/date-route/', (req, res) => {
+router.post('/change-of-circumstances/V2/apply/date-route/', (req, res) => {
 
   const changeCircumstance = req.session.data['change-circumstance']
 
   // Route user to correct question subjourney, depending on answer to previous Change Reason question
 
   if (changeCircumstance === 'Change of relationship status') {
-    // res.redirect('/dashboard/V5-circumstance-change-rework/apply/WIP-change-relationship')
+    // res.redirect('/change-of-circumstances/V2/apply/WIP-change-relationship')
   }
   else if (changeCircumstance === 'Change of address') {
-    res.redirect('/dashboard/V5-circumstance-change-rework/apply/change-address')
+    res.redirect('/change-of-circumstances/V2/apply/change-address')
   }
   else if (changeCircumstance === 'Change of income') {
-    // res.redirect('/dashboard/V5-circumstance-change-rework/apply/WIP-change-income')
-    res.redirect('/dashboard/V5-circumstance-change-rework/apply/explanation')
+    // res.redirect('/change-of-circumstances/V2/apply/WIP-change-income')
+    res.redirect('/change-of-circumstances/V2/apply/explanation')
   }
   else if (changeCircumstance === 'Change of children details') {
-    // res.redirect('/dashboard/V5-circumstance-change-rework/apply/WIP-change-children-details')
-    res.redirect('/dashboard/V5-circumstance-change-rework/apply/explanation')
+    // res.redirect('/change-of-circumstances/V2/apply/WIP-change-children-details')
+    res.redirect('/change-of-circumstances/V2/apply/explanation')
   }
   else if (changeCircumstance === 'Other change') {
-    // res.redirect('/dashboard/V5-circumstance-change-rework/apply/WIP-change-other')
-    res.redirect('/dashboard/V5-circumstance-change-rework/apply/explanation')
+    // res.redirect('/change-of-circumstances/V2/apply/WIP-change-other')
+    res.redirect('/change-of-circumstances/V2/apply/explanation')
   }
   else {
-    res.redirect('/dashboard/V5-circumstance-change-rework/apply/explanation')
+    res.redirect('/change-of-circumstances/V2/apply/explanation')
   }
 
 })
 
 
-router.post('/dashboard/V5-circumstance-change-rework/apply/change-address-route/', (req, res) => {
+router.post('/change-of-circumstances/V2/apply/change-address-route/', (req, res) => {
 
-  res.redirect('/dashboard/V5-circumstance-change-rework/apply/living-with-parents')
-
-})
-
-
-router.post('/dashboard/V5-circumstance-change-rework/apply/living-with-parents-route/', (req, res) => {
-
-  res.redirect('/dashboard/V5-circumstance-change-rework/apply/explanation')
+  res.redirect('/change-of-circumstances/V2/apply/living-with-parents')
 
 })
 
 
-router.post('/dashboard/V5-circumstance-change-rework/apply/explanation-route/', (req, res) => {
+router.post('/change-of-circumstances/V2/apply/living-with-parents-route/', (req, res) => {
 
-  res.redirect('/dashboard/V5-circumstance-change-rework/apply/summary')
+  res.redirect('/change-of-circumstances/V2/apply/explanation')
+
+})
+
+
+router.post('/change-of-circumstances/V2/apply/explanation-route/', (req, res) => {
+
+  res.redirect('/change-of-circumstances/V2/apply/summary')
 
 })
 
@@ -107,7 +107,7 @@ router.post('/dashboard/V5-circumstance-change-rework/apply/explanation-route/',
 
 // Routes for PROCESSOR: PROCESS APPLICATION journey 
 
-router.post('/dashboard/V5-circumstance-change-rework/process-application/change-summary/', (req, res) => {
+router.post('/change-of-circumstances/V2/process-application/change-summary/', (req, res) => {
 
   const CoCProcessorChoice = req.session.data['CoCProcessorChoice']
   const CoCScenario = req.session.data['CoCScenario']
@@ -117,39 +117,39 @@ router.post('/dashboard/V5-circumstance-change-rework/process-application/change
 
     // Route for updating Address only - go straight to asking for comment
     if (CoCScenario === 'addressOnly') {
-      res.redirect('/dashboard/V5-circumstance-change-rework/process-application/change-confirmation-comment')
+      res.redirect('/change-of-circumstances/V2/process-application/change-confirmation-comment')
     }
 
     // Route for updating payments automatically - go straight to asking for comment
     else if (CoCScenario === 'automaticReschedule') {
-      res.redirect('/dashboard/V5-circumstance-change-rework/process-application/change-confirmation-comment')
+      res.redirect('/change-of-circumstances/V2/process-application/change-confirmation-comment')
     }
 
     // Else, route for updating payments manually (the most complex one) - ask them to update payments
     else {
-      res.redirect('/dashboard/V5-circumstance-change-rework/process-application/payment-details-single-save-coc/payment-scheduling-required?CoCPaymentsUpdated=false')
+      res.redirect('/change-of-circumstances/V2/process-application/payment-details-single-save-coc/payment-scheduling-required?CoCPaymentsUpdated=false')
     }
   }
 
   // PEND CHANGE radio option
   else if (CoCProcessorChoice === 'pend') {
-    res.redirect('/dashboard/V5-circumstance-change-rework/process-application/pend-reason')
+    res.redirect('/change-of-circumstances/V2/process-application/pend-reason')
   }
 
   // DECLINE CHANGE radio option
   else if (CoCProcessorChoice === 'decline') {
-    res.redirect('/dashboard/V5-circumstance-change-rework/process-application/decline-reason')
+    res.redirect('/change-of-circumstances/V2/process-application/decline-reason')
   }
 
   // Else, stay on this page (no radio selected)
   else {
-    res.redirect('/dashboard/V5-circumstance-change-rework/process-application/change-summary')
+    res.redirect('/change-of-circumstances/V2/process-application/change-summary')
   }
 
 })
 
 
-router.post('/dashboard/V5-circumstance-change-rework/process-application/change-confirmation-comment-route/', (req, res) => {
+router.post('/change-of-circumstances/V2/process-application/change-confirmation-comment-route/', (req, res) => {
 
   const CoCScenario = req.session.data['CoCScenario']
   
@@ -158,25 +158,25 @@ router.post('/dashboard/V5-circumstance-change-rework/process-application/change
 
   // Route for updating Address only
   if (CoCScenario === 'addressOnly') {
-    res.redirect('/dashboard/V5-circumstance-change-rework/process-application/change-confirmation-address-only')
+    res.redirect('/change-of-circumstances/V2/process-application/change-confirmation-address-only')
   }
 
   // Route for updating payments automatically
   else if (CoCScenario === 'automaticReschedule') {
-    res.redirect('/dashboard/V5-circumstance-change-rework/process-application/change-confirmation-auto-scheduled')
+    res.redirect('/change-of-circumstances/V2/process-application/change-confirmation-auto-scheduled')
   }
 
   // Else, route for updating payments manually (the most complex one)
   else {
-    res.redirect('/dashboard/V5-circumstance-change-rework/process-application/change-confirmation-manually-scheduled')
+    res.redirect('/change-of-circumstances/V2/process-application/change-confirmation-manually-scheduled')
   }
 
 })
 
 
-// router.post('/dashboard/V5-circumstance-change-rework/process-application/payment-details-add-payment-route/', (req, res) => {
+// router.post('/change-of-circumstances/V2/process-application/payment-details-add-payment-route/', (req, res) => {
 
-//   res.redirect('/dashboard/V5-circumstance-change-rework/process-application/payment-details-change-reason?')
+//   res.redirect('/change-of-circumstances/V2/process-application/payment-details-change-reason?')
 
 // })
 
@@ -188,82 +188,82 @@ router.post('/dashboard/V5-circumstance-change-rework/process-application/change
 
 // Routes for STUDENT: UPDATE APPLICATION AFTER RETURNED (A.k.a. Review Application) journey 
 
-router.post('/dashboard/V5-circumstance-change-rework/review-application/change-already-submitted-route/', (req, res) => {
+router.post('/change-of-circumstances/V2/review-application/change-already-submitted-route/', (req, res) => {
 
   const differentChange = req.session.data['different-change']
 
   if (differentChange === 'yes') {
-    res.redirect('/dashboard/V5-circumstance-change-rework/apply/intro')
+    res.redirect('/change-of-circumstances/V2/apply/intro')
   }
   else if (differentChange === 'no') {
-    res.redirect('/dashboard/V5-circumstance-change-rework/review-application/dashboard')
+    res.redirect('/change-of-circumstances/V2/review-application/dashboard')
   }
   else {
-    res.redirect('/dashboard/V5-circumstance-change-rework/review-application/change-already-submitted')
+    res.redirect('/change-of-circumstances/V2/review-application/change-already-submitted')
   }
 
 })
 
 
-router.post('/dashboard/V5-circumstance-change-rework/review-application/date-route/', (req, res) => {
+router.post('/change-of-circumstances/V2/review-application/date-route/', (req, res) => {
 
-  res.redirect('/dashboard/V5-circumstance-change-rework/review-application/summary')
-
-})
-
-
-router.post('/dashboard/V5-circumstance-change-rework/review-application/change-address-route/', (req, res) => {
-
-  res.redirect('/dashboard/V5-circumstance-change-rework/review-application/summary')
+  res.redirect('/change-of-circumstances/V2/review-application/summary')
 
 })
 
 
-router.post('/dashboard/V5-circumstance-change-rework/review-application/living-with-parents-route/', (req, res) => {
+router.post('/change-of-circumstances/V2/review-application/change-address-route/', (req, res) => {
 
-  res.redirect('/dashboard/V5-circumstance-change-rework/review-application/summary')
-
-})
-
-
-router.post('/dashboard/V5-circumstance-change-rework/review-application/explanation-route/', (req, res) => {
-
-  res.redirect('/dashboard/V5-circumstance-change-rework/review-application/summary')
+  res.redirect('/change-of-circumstances/V2/review-application/summary')
 
 })
 
 
+router.post('/change-of-circumstances/V2/review-application/living-with-parents-route/', (req, res) => {
 
-
-
-
-// V4 Change of Circs
-
-router.post('/dashboard/V4-circumstance-change/apply/changes-route/', (req, res) => {
-
-  res.redirect('/dashboard/V4-circumstance-change/apply/date')
+  res.redirect('/change-of-circumstances/V2/review-application/summary')
 
 })
 
 
-router.post('/dashboard/V4-circumstance-change/apply/date-route/', (req, res) => {
+router.post('/change-of-circumstances/V2/review-application/explanation-route/', (req, res) => {
+
+  res.redirect('/change-of-circumstances/V2/review-application/summary')
+
+})
+
+
+
+
+
+
+// CoC V1
+
+router.post('/change-of-circumstances/V1-update-to-live/apply/changes-route/', (req, res) => {
+
+  res.redirect('/change-of-circumstances/V1-update-to-live/apply/date')
+
+})
+
+
+router.post('/change-of-circumstances/V1-update-to-live/apply/date-route/', (req, res) => {
 
   const changeCircumstance = req.session.data['change-circumstance']
 
   if (changeCircumstance === 'Change of relationship status') {
-    res.redirect('/dashboard/V4-circumstance-change/apply/explanation')
+    res.redirect('/change-of-circumstances/V1-update-to-live/apply/explanation')
   }
   else if (changeCircumstance === 'Change of address') {
-    res.redirect('/dashboard/V4-circumstance-change/apply/explanation')
+    res.redirect('/change-of-circumstances/V1-update-to-live/apply/explanation')
   }
   else if (changeCircumstance === 'Change of income') {
-    res.redirect('/dashboard/V4-circumstance-change/apply/explanation')
+    res.redirect('/change-of-circumstances/V1-update-to-live/apply/explanation')
   }
   else if (changeCircumstance === 'Change of children details') {
-    res.redirect('/dashboard/V4-circumstance-change/apply/explanation')
+    res.redirect('/change-of-circumstances/V1-update-to-live/apply/explanation')
   }
   else {
-    res.redirect('/dashboard/V4-circumstance-change/apply/explanation')
+    res.redirect('/change-of-circumstances/V1-update-to-live/apply/explanation')
   }
 
 })
