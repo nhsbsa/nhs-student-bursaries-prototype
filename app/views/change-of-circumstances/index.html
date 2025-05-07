@@ -1,0 +1,1381 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Dashboard {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <div class="nhsuk-back-link">
+      <a class="nhsuk-back-link__link" href="/">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+          aria-hidden="true">
+          <path
+            d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+          </path>
+        </svg>
+        Go back</a>
+    </div>
+
+    <h1 class="nhsuk-app-heading" id="studentIncomeH1">
+      <span class="nhsuk-caption-l">NHS Bursary prototypes</span>
+      Change of circumstances
+    </h1>
+
+    <hr aria-hidden="true" />
+
+
+    <!-- V2 - CHANGE OF CIRCS REWORK -->
+
+    <h2 class="nhsuk-heading-m">
+      Change of circumstances - Rework
+      <strong class="task-completed status-shortlisted" style="background-color: #330072; float: right">
+        Version 2
+      </strong>
+      <span class="nhsuk-caption-m nhsuk-caption--bottom">Last updated: 6 May 2025</span>
+    </h2>
+
+    <p>The following has been completed:</p>
+    <ul class="nhsuk-list nhsuk-list--bullet">
+      <li>WIP: Phase 2.1 of CoC CI work (SSCRD-218).
+      </li>
+      <li>Many changes throughout the CoC journey, on both the Student and Processor side. This <a
+          href="https://miro.com/app/board/uXjVLVARrQ4=/">Miro board</a> documents all of these changes.</li>
+      <li>This version is otherwise duplicated from V1: It matches Staging, and includes the 'Tasklist Rework'
+        (SSCRD-217) changes.</li>
+    </ul>
+
+    <!-- CoC (STUDENT - APPLY) -->
+
+    <div class="nhsuk-expander-group">
+      <details class="nhsuk-details nhsuk-expander" nhsuk-polyfilled="true" id="nhsuk-details0">
+        <summary class="nhsuk-details__summary" role="button" aria-controls="nhsuk-details__text0">
+          <span class="nhsuk-details__summary-text">
+            Student: Apply for change of circumstances (CoC)
+          </span>
+        </summary>
+
+        <div class="nhsuk-details__text" id="nhsuk-details__text0">
+          <table class="nhsuk-table">
+            <caption class="
+                        nhsuk-table__caption
+                        nhsuk-u-visually-hidden
+                      "></caption>
+            <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                <th role="columnheader" class="" scope="col">
+                  Journey point
+                </th>
+                <th role="columnheader" class="" scope="col">
+                  Link
+                </th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Dashboard</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V2/apply/dashboard">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Dashboard</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Personal details</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V2/apply/personal-details">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Personal details</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Personal details (current academic year incomplete)</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V2/apply/personal-details-current-year-incomplete">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Personal details (current academic year incomplete)</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">
+                  Tasklist
+                </td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V2/apply/tasklist-approved">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Task list</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Intro</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V2/apply/intro">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Intro</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">
+                  Type of change
+                </td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V2/apply/changes">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Type of change</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Date</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V2/apply/date">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Date</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">New address</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V2/apply/change-address">View
+                    <span class="nhsuk-u-visually-hidden">
+                      New address</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Living with parents</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V2/apply/living-with-parents">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Living with parents</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Reason</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V2/apply/explanation">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Reason</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Summary / CYA</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V2/apply/summary">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Summary</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Evidence list (initial)</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V2/apply/evidence-list">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Evidence</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Evidence upload</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V2/apply/evidence">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Evidence</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Evidence list (complete)</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V2/apply/evidence-list-complete">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Evidence</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Provided all documents? [Removed from journey]</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V2/apply/provided-all-documents">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Provided all documents?</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Declaration</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V2/apply/declaration">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Declaration</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Submitted confirmation</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V2/apply/submitted-confirmation">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Submitted confirmation</span></a>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </details>
+    </div>
+
+
+    <!-- CoC (PROCESSOR - PROCESS CoC APPLICATION) -->
+
+    <div class="nhsuk-expander-group">
+      <details class="nhsuk-details nhsuk-expander" nhsuk-polyfilled="true" id="nhsuk-details0">
+        <summary class="nhsuk-details__summary" role="button" aria-controls="nhsuk-details__text0">
+          <span class="nhsuk-details__summary-text">
+            Processor: Process CoC application
+          </span>
+        </summary>
+
+        <div class="nhsuk-details__text" id="nhsuk-details__text0">
+
+          <h2 class="nhsuk-heading-m">1) Start of journey</h2>
+
+          <table class="nhsuk-table">
+            <tbody class="nhsuk-table__body">
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Student details (unlocked)</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V2/process-application/student-details-unlocked">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Student details (unlocked)</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Student details (locked)</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V2/process-application/student-details-locked">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Student details (locked)</span></a>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+
+
+
+          <h2 class="nhsuk-heading-m">2) Complete change</h2>
+
+          <h3 class="nhsuk-heading-xs" style="margin-bottom: 8px;">2.1) Scenario 1: No payment or bursary detail
+            changes, only address</h3>
+
+          <table class="nhsuk-table">
+            <tbody class="nhsuk-table__body">
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Change summary</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="/change-of-circumstances/V2/process-application/change-summary?CoCScenario=addressOnly">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Change summary</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Add a comment about this change (optional)</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V2/process-application/change-confirmation-comment">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Add a comment about this change (optional)</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Change of circumstances completed</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="/change-of-circumstances/V2/process-application/change-confirmation-address-only">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Change of circumstances completed</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Student details (locked + completed)</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="/change-of-circumstances/V2/process-application/student-details-locked-complete">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Student details (locked + completed)</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Student details (locked + completed) - Notes tab</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="/change-of-circumstances/V2/process-application/student-details-locked-complete#tab-2">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Student details (locked + completed) - Notes tab</span></a>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+
+
+
+          <h3 class="nhsuk-heading-xs" style="margin-bottom: 8px;">2.2) Scenario 2: Automatic payment scheduling, with
+            bursary details changing</h3>
+
+          <table class="nhsuk-table">
+            <tbody class="nhsuk-table__body">
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Change summary</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="/change-of-circumstances/V2/process-application/change-summary?CoCScenario=automaticReschedule">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Change summary</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Add a comment about this change (optional)</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V2/process-application/change-confirmation-comment">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Add a comment about this change (optional)</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Change of circumstances completed</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="/change-of-circumstances/V2/process-application/change-confirmation-auto-scheduled">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Change of circumstances completed</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Student details (locked + completed)</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="/change-of-circumstances/V2/process-application/student-details-locked-complete">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Student details (locked + completed)</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Student details (locked + completed) - Notes tab</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="/change-of-circumstances/V2/process-application/student-details-locked-complete#tab-2">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Student details (locked + completed) - Notes tab</span></a>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+
+
+
+          <h3 class="nhsuk-heading-xs" style="margin-bottom: 8px;">2.3) Scenario 3: Manual payment scheduling (as
+            payments already exist in schedule), with bursary details changing</h3>
+
+          <table class="nhsuk-table">
+            <tbody class="nhsuk-table__body">
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Change summary</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="/change-of-circumstances/V2/process-application/change-summary?CoCScenario=manualReschedule">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Change summary</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Update payments (checkbox disabled)</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="/change-of-circumstances/V2/process-application/payment-details-single-save-coc/payment-scheduling-required?CoCPaymentsUpdated=false">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Update payments</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Payment details (locked + CoC notification)</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="/change-of-circumstances/V2/process-application/payment-details-single-save-coc/payment-details-locked-coc-callout">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Payment details (locked + CoC notification)</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Payment details - Add payment</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="/change-of-circumstances/V2/process-application/payment-details-single-save-coc/payment-details-add-payment">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Payment details - Add payment</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Payment details - Edit payment</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="/change-of-circumstances/V2/process-application/payment-details-single-save-coc/payment-details-edit-payment">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Payment details - Edit payment</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Payment details - Add overpayment</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="/change-of-circumstances/V2/process-application/payment-details-single-save-coc/payment-details-add-overpayment">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Payment details - Add overpayment</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Payment details - Edit overpayment</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="/change-of-circumstances/V2/process-application/payment-details-single-save-coc/payment-details-edit-overpayment">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Payment details - Edit overpayment</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Payment details - Add debt</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="/change-of-circumstances/V2/process-application/payment-details-single-save-coc/payment-details-add-debt">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Payment details - Add debt</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Payment details - Edit debt</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="/change-of-circumstances/V2/process-application/payment-details-single-save-coc/payment-details-edit-debt">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Payment details - Edit debt</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Payment details (locked + CoC notification + Success notification)</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="/change-of-circumstances/V2/process-application/payment-details-single-save-coc/payment-details-locked-coc-callout-updated?CoCPaymentsUpdated=true">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Payment details (locked + CoC notification + Success notification)</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Update payments (checkbox enabled)</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="/change-of-circumstances/V2/process-application/payment-details-single-save-coc/payment-scheduling-required?CoCPaymentsUpdated=true">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Update payments</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Add a comment about this change (optional)</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V2/process-application/change-confirmation-comment">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Add a comment about this change (optional)</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Change of circumstances completed</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="/change-of-circumstances/V2/process-application/change-confirmation-manually-scheduled">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Change of circumstances completed</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Student details (locked + completed)</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="/change-of-circumstances/V2/process-application/student-details-locked-complete">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Student details (locked + completed)</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Student details (locked + completed) - Notes tab</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="/change-of-circumstances/V2/process-application/student-details-locked-complete#tab-2">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Student details (locked + completed) - Notes tab</span></a>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+
+
+
+          <h2 class="nhsuk-heading-m">3) Return change</h2>
+
+          <table class="nhsuk-table">
+            <tbody class="nhsuk-table__body">
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Change summary</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="/change-of-circumstances/V2/process-application/change-summary?CoCScenario=addressOnly">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Change summary</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Tell student why you're returning this change
+                </td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V2/process-application/pend-reason">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Tell student why you're returning this change</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Change of circumstances returned to student
+                </td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V2/process-application/pend-confirmation">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Change of circumstances returned to student</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Student details (locked + returned to student)</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V2/process-application/student-details-locked-pended">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Student details (locked + returned to student)</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Student details (locked + returned to student) - Notes tab</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="/change-of-circumstances/V2/process-application/student-details-locked-pended#tab-2">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Student details (locked + returned to student)</span></a>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+
+
+
+          <h2 class="nhsuk-heading-m">4) Decline change</h2>
+
+          <table class="nhsuk-table">
+            <tbody class="nhsuk-table__body">
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Decline reason</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V2/process-application/decline-reason">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Decline reason</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Change request declined</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V2/process-application/decline-confirmation">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Change request declined</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Student details (locked + declined)</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="/change-of-circumstances/V2/process-application/student-details-locked-declined">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Student details (locked + declined)</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Student details (locked + declined) - Notes tab</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="/change-of-circumstances/V2/process-application/student-details-locked-declined#tab-2">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Student details (locked + declined) - Notes tab</span></a>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+
+
+
+          <hr style="margin-top: 90px; margin-bottom: 60px; border-width: 5px;">
+
+          <h2 class="nhsuk-heading-m">Other work: General update payments journey (non-CoC)</h2>
+
+          <table class="nhsuk-table">
+            <tbody class="nhsuk-table__body">
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Payment details (locked)</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V2/process-application/payment-details-locked">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Payment details (locked)</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Payment details - Add payment</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V2/process-application/payment-details-add-payment">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Payment details - Add payment</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Payment details - Edit payment</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V2/process-application/payment-details-edit-payment">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Payment details - Edit payment</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Payment details - Add overpayment</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="/change-of-circumstances/V2/process-application/payment-details-add-overpayment">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Payment details - Add overpayment</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Payment details - Edit overpayment</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="/change-of-circumstances/V2/process-application/payment-details-edit-overpayment">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Payment details - Edit overpayment</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Payment details - Add debt</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V2/process-application/payment-details-add-debt">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Payment details - Add debt</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Payment details - Edit debt</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V2/process-application/payment-details-edit-debt">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Payment details - Edit debt</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Payment details - Change reason</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="/change-of-circumstances/V2/process-application/payment-details-change-reason?paymentsUpdated=false">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Payment details - Change reason</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Payment details - Change reason (with 'Used today' tags)</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="/change-of-circumstances/V2/process-application/payment-details-change-reason?paymentsUpdated=true">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Payment details - Change reason (with 'Used today' tags)</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Payment details (locked + Success notification)</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="/change-of-circumstances/V2/process-application/payment-details-locked-payments-updated">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Payment details (locked + Success notification)</span></a>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+
+
+
+          <h2 class="nhsuk-heading-m">Other work: Payment Schedule History page</h2>
+
+          <table class="nhsuk-table">
+            <tbody class="nhsuk-table__body">
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Student details (locked) - Payments tab</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V2/process-application/student-details-locked#tab-4">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Student details (locked) - Payments tab</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Payment schedule history</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V2/process-application/payment-schedule-history">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Payment schedule history</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Payment schedule history (page 2)</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="/change-of-circumstances/V2/process-application/payment-schedule-history-page-2">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Payment schedule history</span></a>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+
+        </div>
+      </details>
+    </div>
+
+
+    <!-- CoC (STUDENT - REVIEW APPLICATION after returned to student by Processor) -->
+
+    <div class="nhsuk-expander-group">
+      <details class="nhsuk-details nhsuk-expander" nhsuk-polyfilled="true" id="nhsuk-details0">
+        <summary class="nhsuk-details__summary" role="button" aria-controls="nhsuk-details__text0">
+          <span class="nhsuk-details__summary-text">
+            Student: Review application (change answers/add evidence) after processor returns it to student
+          </span>
+        </summary>
+
+        <div class="nhsuk-details__text" id="nhsuk-details__text0">
+          <table class="nhsuk-table">
+            <caption class="
+                        nhsuk-table__caption
+                        nhsuk-u-visually-hidden
+                      "></caption>
+            <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                <th role="columnheader" class="" scope="col">
+                  Journey point
+                </th>
+                <th role="columnheader" class="" scope="col">
+                  Link
+                </th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Dashboard (with notification)</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V2/review-application/dashboard">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Dashboard (with notification)</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Personal details</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V2/review-application/personal-details">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Personal details</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Personal details (current academic year incomplete)</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="/change-of-circumstances/V2/review-application/personal-details-current-year-incomplete">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Personal details (current academic year incomplete)</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">
+                  Tasklist
+                </td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V2/review-application/tasklist-approved">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Task list</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">
+                  Change already submitted
+                </td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V2/review-application/change-already-submitted">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Change already submitted</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">
+                  Change already submitted (with 2 CoCs submitted)
+                </td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="/change-of-circumstances/V2/review-application/change-already-submitted-multiple">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Change already submitted (with 2 CoCs submitted)</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Summary / CYA</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V2/review-application/summary">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Summary</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Date</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V2/review-application/date">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Date</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">New address</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V2/review-application/change-address">View
+                    <span class="nhsuk-u-visually-hidden">
+                      New address</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Living with parents</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V2/review-application/living-with-parents">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Living with parents</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Reason</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V2/review-application/explanation">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Reason</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Evidence list (1 evidence added)</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V2/review-application/evidence-list">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Evidence</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Evidence upload</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V2/review-application/evidence">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Evidence</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Evidence list (2 evidences added)</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V2/review-application/evidence-list-complete">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Evidence</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Provided all documents? [Removed from journey]</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V2/review-application/provided-all-documents">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Provided all documents?</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Declaration</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V2/review-application/declaration">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Declaration</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Submitted confirmation</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V2/review-application/submitted-confirmation">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Submitted confirmation</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Dashboard (without notification)</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V2/review-application/dashboard-no-notification">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Dashboard (without notification)</span></a>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </details>
+    </div>
+
+
+    <hr aria-hidden="true" />
+
+
+
+
+    <!-- V1 - CHANGE OF CIRCS - COPY OF STAGING/AS-IS -->
+
+    <h2 class="nhsuk-heading-m">
+      Change of circumstances - Update to live/as-is
+      <strong class="task-completed status-shortlisted" style="background-color: #330072; float: right">
+        Version 1
+      </strong>
+      <span class="nhsuk-caption-m nhsuk-caption--bottom">Last updated: 4 December 2024</span>
+    </h2>
+
+    <p>The following has been completed:</p>
+    <ul class="nhsuk-list nhsuk-list--bullet">
+      <li>Updated Change of cirumstance journeys to match Staging.</li>
+      <li>Also included 'Tasklist Rework' changes to Tasklist (SSCRD-217 - 30/8/2024), though these are still not
+        developed (as of 15/10/2024).</li>
+      </li>
+    </ul>
+
+    <!-- CoC (STUDENT - APPLY) -->
+
+    <div class="nhsuk-expander-group">
+      <details class="nhsuk-details nhsuk-expander" nhsuk-polyfilled="true" id="nhsuk-details0">
+        <summary class="nhsuk-details__summary" role="button" aria-controls="nhsuk-details__text0">
+          <span class="nhsuk-details__summary-text">
+            Student: Apply for change of circumstances (CoC)
+          </span>
+        </summary>
+
+        <div class="nhsuk-details__text" id="nhsuk-details__text0">
+          <table class="nhsuk-table">
+            <caption class="
+                        nhsuk-table__caption
+                        nhsuk-u-visually-hidden
+                      "></caption>
+            <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                <th role="columnheader" class="" scope="col">
+                  Journey point
+                </th>
+                <th role="columnheader" class="" scope="col">
+                  Link
+                </th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Dashboard</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V1-circumstance-change/apply/dashboard">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Dashboard</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">
+                  Tasklist
+                </td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V1-circumstance-change/apply/tasklist-approved">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Task list</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Intro</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V1-circumstance-change/apply/intro">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Intro</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">
+                  Type of change
+                </td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V1-circumstance-change/apply/changes">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Type of change</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Date</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V1-circumstance-change/apply/date">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Date</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Reason</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V1-circumstance-change/apply/explanation">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Reason</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Summary / CYA</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V1-circumstance-change/apply/summary">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Summary</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Evidence list (initial)</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V1-circumstance-change/apply/evidence-list">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Evidence</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Evidence upload</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V1-circumstance-change/apply/evidence">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Evidence</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Evidence list (complete)</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V1-circumstance-change/apply/evidence-list-complete">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Evidence</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Provided all documents?</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V1-circumstance-change/apply/provided-all-documents">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Provided all documents?</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Submitted confirmation</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V1-circumstance-change/apply/submitted-confirmation">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Submitted confirmation</span></a>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </details>
+    </div>
+
+
+    <!-- CoC (PROCESSOR - PROCESS CoC APPLICATION) -->
+
+    <div class="nhsuk-expander-group">
+      <details class="nhsuk-details nhsuk-expander" nhsuk-polyfilled="true" id="nhsuk-details0">
+        <summary class="nhsuk-details__summary" role="button" aria-controls="nhsuk-details__text0">
+          <span class="nhsuk-details__summary-text">
+            Processor: Process CoC application
+          </span>
+        </summary>
+
+        <div class="nhsuk-details__text" id="nhsuk-details__text0">
+          <table class="nhsuk-table">
+            <caption class="
+                        nhsuk-table__caption
+                        nhsuk-u-visually-hidden
+                      "></caption>
+            <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                <th role="columnheader" class="" scope="col">
+                  Journey point
+                </th>
+                <th role="columnheader" class="" scope="col">
+                  Link
+                </th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Student details (unlocked)</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V1-circumstance-change/process-application/student-details-unlocked">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Student details (unlocked)</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Student details (locked)</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V1-circumstance-change/process-application/student-details-locked">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Student details (locked)</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Change summary</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V1-circumstance-change/process-application/change-summary">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Change summary</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Student details (locked + returned)</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V1-circumstance-change/process-application/student-details-locked-pended">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Student details (locked + returned to student)</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Student details (locked + completed)</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V1-circumstance-change/process-application/student-details-locked-pended">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Student details (locked + returned to student)</span></a>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </details>
+    </div>
+
+
+    <!-- CoC (STUDENT - UPLOAD MISSING EVIDENCE) -->
+
+    <div class="nhsuk-expander-group">
+      <details class="nhsuk-details nhsuk-expander" nhsuk-polyfilled="true" id="nhsuk-details0">
+        <summary class="nhsuk-details__summary" role="button" aria-controls="nhsuk-details__text0">
+          <span class="nhsuk-details__summary-text">
+            Student: Upload missing evidence (after returned to student by Processor)
+          </span>
+        </summary>
+
+        <div class="nhsuk-details__text" id="nhsuk-details__text0">
+          <table class="nhsuk-table">
+            <caption class="
+                        nhsuk-table__caption
+                        nhsuk-u-visually-hidden
+                      "></caption>
+            <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                <th role="columnheader" class="" scope="col">
+                  Journey point
+                </th>
+                <th role="columnheader" class="" scope="col">
+                  Link
+                </th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Dashboard</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V1-circumstance-change/upload-missing-evidence/dashboard">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Dashboard</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Evidence list (1 evidence added)</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V1-circumstance-change/upload-missing-evidence/evidence-list">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Evidence</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Evidence upload</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V1-circumstance-change/upload-missing-evidence/evidence">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Evidence</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Evidence list (2 evidences added)</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V1-circumstance-change/upload-missing-evidence/evidence-list-complete">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Evidence</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Provided all documents?</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V1-circumstance-change/upload-missing-evidence/provided-all-documents">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Provided all documents?</span></a>
+                </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Submitted confirmation</td>
+                <td class="nhsuk-table__cell">
+                  <a href="/change-of-circumstances/V1-circumstance-change/upload-missing-evidence/submitted-confirmation">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Submitted confirmation</span></a>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </details>
+    </div>
+
+
+
+  </div>
+
+
+  {% endblock %}

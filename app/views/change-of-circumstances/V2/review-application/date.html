@@ -41,7 +41,7 @@ endblock %}
       <span class="nhsuk-caption-l">Change of circumstances</span>
       <h1 class="nhsuk-heading-l">When did this change happen?</h1>
 
-      <form action="/dashboard/V5-circumstance-change-rework/apply/date-route" method="POST">
+      <form action="/change-of-circumstances/V2/review-application/date-route" method="POST">
 
         <div class="nhsuk-form-group">
           <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
@@ -49,41 +49,53 @@ endblock %}
             <div class="nhsuk-hint" id="example-hint">For example, 15 3 2023</div>
 
             <div class="nhsuk-date-input" id="change-date">
+
               <div class="nhsuk-date-input__item">
                 <div class="nhsuk-form-group">
                   <label class="nhsuk-label nhsuk-date-input__label" for="circumstance-day">
                     Day
                   </label>
-                  <input class="
-                    nhsuk-input
-                    nhsuk-date-input__input
-                    nhsuk-input--width-2
-                  " id="circumstance-day" name="circumstance-day" type="text" pattern="[0-9]*" inputmode="numeric" />
+                  {% if data['circumstance-day'] %}
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="circumstance-day"
+                    name="circumstance-day" type="text" pattern="[0-9]*" inputmode="numeric"
+                    value="{{ data['circumstance-day'] }}" />
+                  {% else %}
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="circumstance-day"
+                    name="circumstance-day" type="text" pattern="[0-9]*" inputmode="numeric" value="15" />
+                  {% endif %}
                 </div>
               </div>
+
               <div class="nhsuk-date-input__item">
                 <div class="nhsuk-form-group">
                   <label class="nhsuk-label nhsuk-date-input__label" for="circumstance-month">
                     Month
                   </label>
-                  <input class="
-                    nhsuk-input
-                    nhsuk-date-input__input
-                    nhsuk-input--width-2
-                  " id="circumstance-month" name="circumstance-month" type="text" pattern="[0-9]*"
-                    inputmode="numeric" />
+                  {% if data['circumstance-month'] %}
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="circumstance-month"
+                    name="circumstance-month" type="text" pattern="[0-9]*" inputmode="numeric"
+                    value="{{ data['circumstance-month'] }}" />
+                  {% else %}
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="circumstance-month"
+                    name="circumstance-month" type="text" pattern="[0-9]*" inputmode="numeric" value="10" />
+                  {% endif %}
                 </div>
               </div>
+
               <div class="nhsuk-date-input__item">
                 <div class="nhsuk-form-group">
                   <label class="nhsuk-label nhsuk-date-input__label" for="circumstance-year">
                     Year
                   </label>
-                  <input class="
-                    nhsuk-input
-                    nhsuk-date-input__input
-                    nhsuk-input--width-4
-                  " id="circumstance-year" name="circumstance-year" type="text" pattern="[0-9]*" inputmode="numeric" />
+                  {% if data['circumstance-year'] %}
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="circumstance-year"
+                    name="circumstance-year" type="text" pattern="[0-9]*" inputmode="numeric"
+                    value="{{ data['circumstance-year'] }}" />
+                  />
+                  {% else %}
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="circumstance-year"
+                    name="circumstance-year" type="text" pattern="[0-9]*" inputmode="numeric" value="2024" />
+                  {% endif %}
                 </div>
               </div>
             </div>
@@ -92,7 +104,7 @@ endblock %}
 
         <button class="nhsuk-button" type="submit">Continue</button>
 
-        <p><a id="canceltoTasklist" href="tasklist-approved">Cancel</a></p>
+        <p><a id="canceltoTasklist" href="summary">Cancel</a></p>
       </form>
     </div>
   </div>

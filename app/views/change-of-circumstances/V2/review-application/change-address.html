@@ -68,7 +68,7 @@ live at while studying? {% endblock %}
 
     </dl>
 
-    <form action="/dashboard/V5-circumstance-change-rework/apply/change-address-route" method="POST">
+    <form action="/change-of-circumstances/V2/review-application/change-address-route" method="POST">
 
       <fieldset class="nhsuk-fieldset">
 
@@ -82,46 +82,84 @@ live at while studying? {% endblock %}
         <div class="nhsuk-form-group">
           <label class="nhsuk-label" id="nameOrNumber-label" for="nameOrNumber">Building name or number<span
               class="nhsuk-u-visually-hidden"> line 1 of 2</span></label>
+
+          {% if data['address-1-name-or-number-1'] %}
           <input class="nhsuk-input" name="address-1-name-or-number-1" id="nameOrNumber" type="text" maxlength="30"
-            value="" />
+            value="{{ data['address-1-name-or-number-1'] }}" />
+          {% else %}
+          <input class="nhsuk-input" name="address-1-name-or-number-1" id="nameOrNumber" type="text" maxlength="30"
+            value="34" />
+          {% endif %}
         </div>
 
         <div class="nhsuk-form-group">
           <label id="address1-label" for="address1" class="nhsuk-label nhsuk-u-visually-hidden">
             <span class="nhsuk-u-visually-hidden">Building and street line 2 of 2</span>
           </label>
+          {% if data['address-2-name-or-number-2'] %}
           <input name="address-2-name-or-number-2" id="address1" class="nhsuk-input" type="text" maxlength="30"
-            value="" />
+            value="{{ data['address-2-name-or-number-2'] }}" />
+          {% else %}
+          <input name="address-2-name-or-number-2" id="address1" class="nhsuk-input" type="text" maxlength="30"
+            value="The Tower" />
+          {% endif %}
         </div>
 
         <div class="nhsuk-form-group">
           <label id="address2-label" for="address2" class="nhsuk-label">Street</label>
-          <input name="address-3-street" id="address2" class="nhsuk-input" type="text" maxlength="30" value="" />
+
+          {% if data['address-3-street'] %}
+          <input name="address-3-street" id="address2" class="nhsuk-input" type="text" maxlength="30"
+            value="{{ data['address-3-street'] }}" />
+          {% else %}
+          <input name="address-3-street" id="address2" class="nhsuk-input" type="text" maxlength="30"
+            value="Streetson Crescent" />
+          {% endif %}
         </div>
 
         <div class="nhsuk-form-group">
           <label id="town-label" for="town" class="nhsuk-label">Town or city</label>
+
+          {% if data['address-4-town'] %}
           <input name="address-4-town" id="town" class="nhsuk-input nhsuk-u-width-two-thirds" type="text" maxlength="30"
-            value="" />
+          value="{{ data['address-4-town'] }}" />
+          {% else %}
+          <input name="address-4-town" id="town" class="nhsuk-input nhsuk-u-width-two-thirds" type="text" maxlength="30"
+          value="Bigtown" />
+          {% endif %}
         </div>
 
         <div class="nhsuk-form-group">
           <label id="country-label" for="country" class="nhsuk-label">Country</label>
+
+          {% if data['address-5-country'] %}
           <input name="address-5-country" id="country" class="nhsuk-input nhsuk-u-width-two-thirds" type="text"
-            maxlength="30" value="" />
+          maxlength="30" 
+          value="{{ data['address-5-country'] }}" />
+          {% else %}
+          <input name="address-5-country" id="country" class="nhsuk-input nhsuk-u-width-two-thirds" type="text"
+          maxlength="30" value="England" />
+          {% endif %}
         </div>
 
         <div class="nhsuk-form-group">
           <label id="postcode-label" for="postcode" class="nhsuk-label">Postcode</label>
+
+          {% if data['address-6-postcode'] %}
           <input name="address-6-postcode" id="postcode" class="nhsuk-input nhsuk-input--width-10" type="text"
-            maxlength="8" value="" />
+            maxlength="8" 
+            value="{{ data['address-6-postcode'] }}" />
+            {% else %}
+          <input name="address-6-postcode" id="postcode" class="nhsuk-input nhsuk-input--width-10" type="text"
+            maxlength="8" value="SR2 7NB" />
+          {% endif %}
         </div>
       </fieldset>
   </div>
 </div>
 
 <button class="nhsuk-button" type="submit" style="margin-top: 20px;">Continue</button>
-<p><a id="canceltoTasklist" href="tasklist-approved">Cancel</a></p>
+<p><a id="canceltoTasklist" href="summary">Cancel</a></p>
 
 </form>
 

@@ -39,69 +39,8 @@
 
       <span class="nhsuk-caption-l">Change of circumstances</span>
       <h1 class="nhsuk-app-heading">
-        You've already submitted changes for these dates
+        You've already submitted a change for these dates
       </h1>
-
-      <div class="nhsuk-warning-callout">
-        <h3 class="nhsuk-warning-callout__label">
-          <span role="text">
-            <span class="nhsuk-u-visually-hidden">Important: </span>
-            Previously submitted change
-          </span>
-        </h3>
-
-        <dl class="nhsuk-summary-list">
-          <div class="nhsuk-summary-list__row">
-            <dt class="nhsuk-summary-list__key">Type of change</dt>
-            <dd class="nhsuk-summary-list__value">Change to relationship status</dd>
-          </div>
-
-          <div class="nhsuk-summary-list__row">
-            <dt class="nhsuk-summary-list__key">
-              Date of change
-            </dt>
-
-            <dd class="nhsuk-summary-list__value">
-              <p>
-                <!-- {% if data['circumstance-day'] %}
-                {{ data['circumstance-day'] }} <span class="cya-month">{{ data['circumstance-month'] }}</span> {{ data['circumstance-year'] }}
-                {% else %} -->
-                15 October 2024
-                <!-- {% endif %} -->
-              </p>
-
-            </dd>
-          </div>
-
-          <div class="nhsuk-summary-list__row">
-            <dt class="nhsuk-summary-list__key">
-              Reason for change
-            </dt>
-            <dd class="nhsuk-summary-list__value">
-              <p>
-                <!-- {% if data['reason'] %}
-                {{ data['reason'] }}
-                {% else %} -->
-                I am now married, and living with my partner.
-                <!-- {% endif %} -->
-              </p>
-            </dd>
-          </div>
-
-          <div class="nhsuk-summary-list__row">
-            <dt class="nhsuk-summary-list__key">
-              Date submitted
-            </dt>
-            <dd class="nhsuk-summary-list__value">
-              <p>25 October 2024 4:35pm</p>
-            </dd>
-          </div>
-
-        </dl>
-
-      </div>
-
-
 
       <div class="nhsuk-warning-callout">
         <h3 class="nhsuk-warning-callout__label">
@@ -210,7 +149,6 @@
 
       </div>
 
-
       <p>If you have any questions, you can <a
           href="https://www.nhsbsa.nhs.uk/nhs-bursary/contact-nhs-bursaries">contact us</a>.
       </p>
@@ -219,7 +157,7 @@
         Do you want to tell us about a different change?
       </h2>
 
-      <form action="/dashboard/V5-circumstance-change-rework/review-application/change-already-submitted-route"
+      <form action="/change-of-circumstances/V2/review-application/change-already-submitted-route"
         method="POST">
 
         <div class="nhsuk-radios">

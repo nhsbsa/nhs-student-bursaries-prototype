@@ -28,7 +28,7 @@ endblock %}
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
       <div class="nhsuk-back-link">
-        <a class="nhsuk-back-link__link" href="changes" id="back">
+        <a class="nhsuk-back-link__link" href="javascript:history.go(-1)" id="back">
           <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
             aria-hidden="true">
             <path
@@ -38,10 +38,10 @@ endblock %}
           Go back</a>
       </div>
 
-      <span class="nhsuk-caption-l">Change of circumstance</span>
+      <span class="nhsuk-caption-l">Change of circumstances</span>
       <h1 class="nhsuk-heading-l">When did this change happen?</h1>
 
-      <form action="/dashboard/V4-circumstance-change/apply/date-route" method="POST">
+      <form action="/change-of-circumstances/V2/apply/date-route" method="POST">
 
         <div class="nhsuk-form-group">
           <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
@@ -90,12 +90,9 @@ endblock %}
           </fieldset>
         </div>
 
-        <!-- <div class="nhsuk-form-group">
-          <a href="explanation" class="nhsuk-button" role="button" id="next">Continue</a>
-        </div> -->
-
         <button class="nhsuk-button" type="submit">Continue</button>
 
+        <p><a id="canceltoTasklist" href="tasklist-approved">Cancel</a></p>
       </form>
     </div>
   </div>
