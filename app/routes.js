@@ -178,8 +178,9 @@ router.post('/change-of-circumstances/V2/process-application/payment-details-cha
 
   // Save state of paymentsUpdated (it is now true)
   const paymentsUpdated = req.session.data['paymentsUpdated']
+  // const paymentsUpdated = 'true'
 
-  res.redirect('/change-of-circumstances/V2/process-application/payment-details-locked-payments-updated#august-2024')
+  res.redirect('/change-of-circumstances/V2/process-application/payment-details-locked#august-2024')
 
 })
 
