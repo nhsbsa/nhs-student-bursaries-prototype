@@ -1,0 +1,204 @@
+{% extends 'layout.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Upload your evidence {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %}
+<a class="nhsuk-skip-link" href="#maincontent">Skip to main content</a>{%
+endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <fieldset class="nhsuk-fieldset">
+
+      {{ backLink({
+      "href": "summary",
+      "text": "Go back"
+      }) }}
+
+      <h1 class="nhsuk-heading-xl" id="uploadEvidenceH1">
+        <span class="nhsuk-caption-l">Your expenses</span>Expenses evidence
+      </h1>
+
+      <p>You'll need to add evidence for each section before you can continue.</p>
+
+      {% if data['evidence'] != 'added' %}
+        <h2 style="margin-bottom: 0px;" class="nhsuk-heading-s">Pension contributions</h2>
+        <a style="margin-top: 24px; margin-bottom: 48px;" class="nhsuk-button nhsuk-button--secondary" href="upload-evidence?income=pension contributions">Add evidence</a>
+      {% else %}
+        <table style="margin-bottom: 24px;" id="evidenceTable" class="nhsuk-table">
+          <caption class="nhsuk-table__caption">Pension contributions</caption>
+          <thead role="rowgroup" class="nhsuk-table__head">
+            <tr role="row">
+              <th role="columnheader" class="" scope="col">
+                  File
+              </th>
+              <th role="columnheader" class="" scope="col">
+                  Action
+              </th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row" id="evidenceRow1">
+              <td style="width:75%;" class="nhsuk-table__cell ">
+                <a href="#" target="_blank" rel="noopener">
+                  employer-letter.png
+                </a>
+              </td>
+              <td class="nhsuk-table__cell ">
+                <a href="evidence?evidence=removed">Remove</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="margin-bottom: 48px;"><a href="upload-evidence?income=pension contributions">Add more evidence of pension contributions</a></p>
+      {% endif %}
+
+      {% if data['evidence'] != 'added' %}
+        <h2 style="margin-bottom: 0px;" class="nhsuk-heading-s">Life assurance payments</h2>
+        <a style="margin-top: 24px; margin-bottom: 48px;" class="nhsuk-button nhsuk-button--secondary" href="upload-evidence?income=life assurance payments">Add evidence</a>
+      {% else %}
+        <table style="margin-bottom: 24px;" id="evidenceTable" class="nhsuk-table">
+          <caption class="nhsuk-table__caption">Life assurance payments</caption>
+          <thead role="rowgroup" class="nhsuk-table__head">
+            <tr role="row">
+              <th role="columnheader" class="" scope="col">
+                  File
+              </th>
+              <th role="columnheader" class="" scope="col">
+                  Action
+              </th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row" id="evidenceRow1">
+              <td style="width:75%;" class="nhsuk-table__cell ">
+                <a href="#" target="_blank" rel="noopener">
+                  March-2024-wage.png
+                </a>
+              </td>
+              <td class="nhsuk-table__cell ">
+                <a href="evidence?evidence=removed">Remove</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="margin-bottom: 48px;"><a href="upload-evidence?income=life assurance payments">Add more evidence of life assurance payments</a></p>
+      {% endif %}
+
+      {% if data['evidence'] != 'added' %}
+        <h2 style="margin-bottom: 0px;" class="nhsuk-heading-s">Mortgage</h2>
+        <a style="margin-top: 24px; margin-bottom: 48px;" class="nhsuk-button nhsuk-button--secondary" href="upload-evidence?income=mortgage">Add evidence</a>
+      {% else %}
+        <table style="margin-bottom: 24px;" id="evidenceTable" class="nhsuk-table">
+          <caption class="nhsuk-table__caption">Mortgage</caption>
+          <thead role="rowgroup" class="nhsuk-table__head">
+            <tr role="row">
+              <th role="columnheader" class="" scope="col">
+                  File
+              </th>
+              <th role="columnheader" class="" scope="col">
+                  Action
+              </th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row" id="evidenceRow1">
+              <td style="width:75%;" class="nhsuk-table__cell ">
+                <a href="#" target="_blank" rel="noopener">
+                  self-employment-form.png
+                </a>
+              </td>
+              <td class="nhsuk-table__cell ">
+                <a href="evidence?evidence=removed">Remove</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="margin-bottom: 48px;"><a href="upload-evidence?income=mortgage">Add more evidence of mortgage</a></p>
+      {% endif %}
+
+      {% if data['evidence'] != 'added' %}
+        <h2 style="margin-bottom: 0px;" class="nhsuk-heading-s">Rent</h2>
+        <a style="margin-top: 24px; margin-bottom: 48px;" class="nhsuk-button nhsuk-button--secondary" href="upload-evidence?income=rent">Add evidence</a>
+      {% else %}
+        <table style="margin-bottom: 24px;" id="evidenceTable" class="nhsuk-table">
+          <caption class="nhsuk-table__caption">Rent</caption>
+          <thead role="rowgroup" class="nhsuk-table__head">
+            <tr role="row">
+              <th role="columnheader" class="" scope="col">
+                  File
+              </th>
+              <th role="columnheader" class="" scope="col">
+                  Action
+              </th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row" id="evidenceRow1">
+              <td style="width:75%;" class="nhsuk-table__cell ">
+                <a href="#" target="_blank" rel="noopener">
+                  March-pension.png
+                </a>
+              </td>
+              <td class="nhsuk-table__cell ">
+                <a href="evidence?evidence=removed">Remove</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="margin-bottom: 48px;"><a href="upload-evidence?income=rent">Add more evidence of rent</a></p>
+      {% endif %}
+
+      {% if data['evidence'] != 'added' %}
+        <h2 style="margin-bottom: 0px;" class="nhsuk-heading-s">Maintenance payments</h2>
+        <a style="margin-top: 24px; margin-bottom: 48px;" class="nhsuk-button nhsuk-button--secondary" href="upload-evidence?income=maintenance payments">Add evidence</a>
+      {% else %}
+        <table style="margin-bottom: 24px;" id="evidenceTable" class="nhsuk-table">
+          <caption class="nhsuk-table__caption">Maintenance payments</caption>
+          <thead role="rowgroup" class="nhsuk-table__head">
+            <tr role="row">
+              <th role="columnheader" class="" scope="col">
+                  File
+              </th>
+              <th role="columnheader" class="" scope="col">
+                  Action
+              </th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row" id="evidenceRow1">
+              <td style="width:75%;" class="nhsuk-table__cell ">
+                <a href="#" target="_blank" rel="noopener">
+                  letting-agent-letter.png
+                </a>
+              </td>
+              <td class="nhsuk-table__cell ">
+                <a href="evidence?evidence=removed">Remove</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="margin-bottom: 48px;"><a href="upload-evidence?income=maintenance payments">Add more evidence of maintenance payments</a></p>
+      {% endif %}
+
+    <div class="nhsuk-form-group">
+      {% if data['evidence'] == "added" %}
+        <a href="check" class="nhsuk-button" role="button">Continue</a>
+      {% endif %}
+      <p><a href="#" id="saveAndComeBackLater">Save and come back later</a></p>
+    </div>
+
+    </fieldset>
+  </div>
+</div>
+{% endblock %}

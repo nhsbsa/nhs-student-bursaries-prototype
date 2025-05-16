@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+{% block header %} {{ header({ "service": { "name": "Bursary", "href": "/" },
+"showNav": "false", "showSearch": "false" }) }} {% endblock %}
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} You've provided your expense details {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <div class="nhsuk-form-group">
+      <div class="nhsuk-card" style="background: #005EB8; margin-top: 0;">
+          <div class="nhsuk-card__content">
+              <h1 class="nhsuk-card__heading" style="text-align: center; color: white;">
+                  Your expense details completed
+              </h1>
+          </div>
+      </div>
+      <!--<p>You have provided details of your income.</p>
+      <h2 class="nhsuk-heading-m">What happens next?</h2>
+      <p>You can start submitting your expense details or return to the dashboard to save and come back later.</p>
+    </div>-->
+
+    <div class="nhsuk-form-group">
+      <a href="../expenses-v2/tasklist?expenses=completed" class="nhsuk-button" role="button">Return to dashboard</a>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

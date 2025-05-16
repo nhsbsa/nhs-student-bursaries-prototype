@@ -1,0 +1,125 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} {{ serviceName }} Do you get any rent from properties?{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <div class="nhsuk-back-link">
+      <a class="nhsuk-back-link__link" href="pension" id="back">
+        <svg
+          class="nhsuk-icon nhsuk-icon__chevron-left"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"
+          ></path>
+        </svg>
+        Go back</a
+      >
+    </div>
+
+    <div class="nhsuk-form-group">
+      <fieldset class="nhsuk-fieldset">
+        <h1 class="nhsuk-heading-xl" id="rent">
+          <span class="nhsuk-caption-l">Your income</span>Do you get any rent from properties?
+        </h1>
+
+        <p>This includes renting out part of your home.</p>
+
+        <div class="nhsuk-radios nhsuk-radios--conditional">
+          <div class="nhsuk-radios__item">
+            <input
+              class="nhsuk-radios__input"
+              id="yes"
+              name="rent"
+              type="radio"
+              value="yes"
+              aria-controls="conditional-contact-1"
+              aria-expanded="false"
+            />
+            <label class="nhsuk-label nhsuk-radios__label" for="yes">
+              Yes
+            </label>
+          </div>
+
+          <div
+            class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden"
+            id="conditional-contact-1"
+          >
+            <div class="nhsuk-form-group">
+              <label
+                class="nhsuk-label nhsuk-u-font-weight-bold"
+                for="rent-info"
+              >
+              Enter how much you'll get from rental income
+              </label>
+              <p class="nhsuk-hint">
+                This is for the <span id="september-year"></span> to <span id="next-year"></span> academic year
+              </p>
+              <label class="nhsuk-label" for="example">
+                Cost in pounds
+              </label>
+              <div class="nhsuk-input__wrapper">
+                <div class="nhsuk-input__prefix" aria-hidden="true">£</div>
+                <input class="nhsuk-input nhsuk-input--width-5" id="example" name="example" type="text">
+              </div>
+            </div>
+          </div>
+
+          <div class="nhsuk-radios__item">
+            <input
+              class="nhsuk-radios__input"
+              id="no"
+              name="rent"
+              type="radio"
+              value="No"
+            />
+            <label class="nhsuk-label nhsuk-radios__label" for="no"> No </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    <div class="nhsuk-form-group">
+      <a href="benefits" class="nhsuk-button" role="button">Continue</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Get today's date
+  const today = new Date();
+  let year = today.getFullYear();
+
+  // If current month is before September (0-indexed, so September is 8)
+  if (today.getMonth() < 8) {
+    year -= 1;
+  }
+
+  // Display the most recent September's year
+  document.getElementById("september-year").textContent = year;
+
+  // Display the following year
+  document.getElementById("next-year").textContent = year + 1;
+</script>
+
+{% endblock %}

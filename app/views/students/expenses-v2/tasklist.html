@@ -1,0 +1,211 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Student dashboard {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block header %} {{ header({ "service": { "name": "Bursary", "href": "/" },
+"showNav": "true", "showSearch": "false", "primaryLinks": [ { "url" :
+"/dashboard/dashboard-enrolment", "label" : "Home" }, { "url" :
+"personal-details", "label" : "Personal details" }, { "url" : "#", "label" :
+"Payment details" }, { "url" : "#", "label" : "Sign out" } ] }) }} {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<!-- Breadcrumb -->
+
+{% endblock %}
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-width-container">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <h1 class="app-page-heading">Your NHS Bursary application</h1>
+
+      <div class="nhsuk-u-padding-bottom-4">
+        <h2 class="nhsuk-heading-m">Academic year starting September <span id="september-year"></span></h2>
+        <p>You need to complete all sections before you can submit your application.</p>
+      </div>
+
+      <ol class="app-task-list">
+
+        <li>
+          <span class="
+              featured-list--item__number featured-list--item__number--mobile
+              nhsuk-heading-l
+            ">1</span>
+          <h3 class="featured-list--item__heading nhsuk-heading-m">
+            <span class="featured-list--item__number nhsuk-heading-l nhsuk-u-margin-bottom-1">1</span>
+            Course details
+          </h3>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="course-details-view-answers?submitted=false">
+                  Course details
+                </a>
+              </span>
+              <strong class="nhsuk-tag app-task-list__tag">Complete</strong>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <span class="
+              featured-list--item__number featured-list--item__number--mobile
+              nhsuk-heading-l
+            ">2</span>
+          <h3 class="featured-list--item__heading nhsuk-heading-m">
+            <span class="
+                featured-list--item__number
+                nhsuk-heading-l nhsuk-u-margin-bottom-1
+              ">2</span>
+            Check your eligibility
+          </h3>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="view-declaration">
+                  View declaration
+                </a>
+              </span>
+              <strong class="nhsuk-tag app-task-list__tag">Complete</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="eligibility-view-answers?submitted=false">Eligibility</a></span>
+              <strong class="nhsuk-tag app-task-list__tag">Complete</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="status-assessment-view-answers?submitted=false">Status assessment</a></span>
+              <strong class="nhsuk-tag app-task-list__tag">Complete</strong>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <span class="
+              featured-list--item__number featured-list--item__number--mobile
+              nhsuk-heading-l
+            ">3</span>
+          <h3 class="featured-list--item__heading nhsuk-heading-m">
+            <span class="
+                featured-list--item__number
+                nhsuk-heading-l nhsuk-u-margin-bottom-1
+              ">3</span>
+            Your income assessment
+          </h3>
+
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name"><a href="intro">Student income details</a></span>
+              <strong class="nhsuk-tag app-task-list__tag">Completed</strong>
+            </li>
+            <li class="app-task-list__item">
+              {% if data['expenses'] != "completed" %}
+                <span class="app-task-list__task-name"><a href="intro">Student expense details</a></span>
+                <strong class="nhsuk-tag nhsuk-tag--white app-task-list__tag">Not started</strong>
+              {% else %}
+                <span class="app-task-list__task-name"><a href="#">Student expense details</a></span>
+                <strong class="nhsuk-tag app-task-list__tag">Completed</strong>
+              {% endif %}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#">Parent or partner details</a></span>
+              <strong class="nhsuk-tag nhsuk-tag--white app-task-list__tag">Not started</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#">Student's children details</a></span>
+              <strong class="nhsuk-tag nhsuk-tag--white app-task-list__tag">Not started</strong>
+            </li>
+          </ul>
+        </li>
+
+      </ol>
+
+      <!--<a href="tasklist-submitted?submitted=true" class="nhsuk-button" role="button" id="continue">Submit
+        application</a>-->
+
+      <h2 class="nhsuk-heading-m">Delete application</h2>
+      <p>If you've made a mistake on your application, you need to <a href="delete-application">delete it and start
+          again</a>.</p>
+
+
+
+      <!-- PROTOTYPE NAVIGATION - NOT TO BE DEVELOPED
+
+      <div class="nhsuk-card nhsuk-card--care nhsuk-card--care--non-urgent" style="margin-top: 100px;">
+        <div class="nhsuk-card--care__heading-container" style="background-color: #4c2b92;">
+          <h2 class="nhsuk-card--care__heading">
+            <span role="text"></span>Prototype navigation</span>
+          </h2>
+        </div>
+
+        <div class="nhsuk-card__content">
+          <h4 class="nhsuk-heading-s">Tasklist pages:</h4>
+
+          <ul>
+            <li><a href="tasklist-1-not-complete">Not completed + Not submitted</a>
+            </li>
+            <li><strong><a href="tasklist-2-completed-by-student">Completed by student only + Not
+                  submitted</a> <br>[YOU ARE HERE]</strong>
+            </li>
+            <li><a href="tasklist-3-all-complete">Completed by all + Not submitted</a></li>
+            <li><a href="tasklist-4-completed-by-student-submitted">Completed by student only + Submitted</a>
+            </li>
+            <li><a href="tasklist-5-submitted">Completed by all + Submitted</a></li>
+            <li><a href="tasklist-6-approved">Completed by all + Submitted + Approved</a><br>(ONLY accessible via this link)</li>
+          </ul>
+
+          <h4 class="nhsuk-heading-s">Other pages:</h4>
+
+          <ul>
+            <Li>CYA pages: Accessible from within Tasklist pages.</Li>
+            <li><a href="partner-details-view-answers">CYA - Partner details</a>
+              (ONLY accessible via this link - Student will only get Parent OR Partner details - Parent details has been linked
+              in Tasklist pages) </li>
+
+            <li>Delete application journey: Accessible from within Tasklist pages (before submission).</li>
+          </ul>
+
+          <hr>
+
+          <p>Please note: This 'Prototype navigation' section is NOT to be developed in the real service.</p>
+        </div>
+
+      </div> -->
+
+
+    </div>
+  </div>
+</div>
+
+  <script>
+    // Get today's date
+    const today = new Date();
+    let year = today.getFullYear();
+
+    // If current month is before September (0-indexed, so September is 8)
+    if (today.getMonth() < 8) {
+      year -= 1;
+    }
+
+    // Display the most recent September's year
+    document.getElementById("september-year").textContent = year;
+  </script>
+
+{% endblock %}

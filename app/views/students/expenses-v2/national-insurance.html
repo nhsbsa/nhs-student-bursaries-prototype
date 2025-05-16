@@ -1,0 +1,112 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- page title -->
+{% block pageTitle %} Do you pay National Insurance? {% endblock
+%}
+
+<!-- breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %} {% endblock %}
+
+<!-- back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %} {% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <div class="nhsuk-back-link">
+      <a class="nhsuk-back-link__link" href="income-tax" id="back">
+        <svg
+          class="nhsuk-icon nhsuk-icon__chevron-left"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"
+          ></path>
+        </svg>
+        Go back
+      </a>
+    </div>
+    <h1 class="nhsuk-heading-large">
+      <span class="nhsuk-caption-l">Your expenses</span>
+      Do you pay National Insurance?
+    </h1>
+
+    <div class="nhsuk-form-group">
+      <div class="nhsuk-radios">
+        <div class="nhsuk-radios nhsuk-radios--conditional">
+          <div class="nhsuk-radios__item">
+            <input
+              class="nhsuk-radios__input"
+              id="national-insurance-yes"
+              name="national-insurance"
+              type="radio"
+              value="yes"
+              aria-controls="conditional-national-insurance-yes"
+              aria-expanded="false"
+            />
+            <label
+              class="nhsuk-label nhsuk-radios__label"
+              for="national-insurance-yes"
+            >
+              Yes
+            </label>
+          </div>
+
+          <div
+            class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden"
+            id="conditional-national-insurance-yes"
+          >
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-u-font-weight-bold" for="email">
+                How much National Insurance do you expect to pay in the
+                2021/2022 academic year?
+              </label>
+              <p>A typical academic year runs from September until April</p>
+              <input
+                class="nhsuk-input nhsuk-u-width-two-thirds"
+                id="national-insurance-yes"
+                name="national-insurance"
+                type="text"
+              />
+            </div>
+          </div>
+
+          <div class="nhsuk-radios__item">
+            <input
+              class="nhsuk-radios__input"
+              id="national-insurance-no"
+              name="national-insurance"
+              type="radio"
+              value="No"
+            />
+            <label
+              class="nhsuk-label nhsuk-radios__label"
+              for="national-insurance-no"
+            >
+              No
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nhsuk-form-group">
+      <a href="personal-pension" class="nhsuk-button" role="button">Continue</a>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends 'layout.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+{% block header %} {{ header({ "service": { "name": "Bursary", "href": "/" },
+"showNav": "false", "showSearch": "false" }) }} {% endblock %}
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}Expenses{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <div class="nhsuk-back-link">
+      <a class="nhsuk-back-link__link" href="#">
+        <svg
+          class="nhsuk-icon nhsuk-icon__chevron-left"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"
+          ></path>
+        </svg>
+        Go back</a
+      >
+    </div>
+    <span class="nhsuk-caption-l">Your expenses</span>
+    <h1 class="nhsuk-app-heading">What you’ll need</h1>
+
+    <p>To make sure we assess you on your income correctly, we need to know about any expenses you have in the academic year you're submitting a change for.</p>
+
+    <p>You need to tell us about:</p>
+
+    <ul class="nhsuk-list nhsuk-list--bullet">
+      <li>pension contributions</li>
+      <li>life assurance payments</li>
+      <li>maintenance payments</li>
+    </ul>
+
+    <p>You also need to tell us your total mortgage or rent figures for the academic year.</p>
+
+    <h2 class="nhsuk-heading-m">Evidence you’ll need</h2>
+
+    <p>You may need to upload evidence to support some of your answers. Examples of evidence include:</p>
+
+    <ul class="nhsuk-list nhsuk-list--bullet">
+      <li>payslips</li>
+      <li>life assurance policies</li>
+      <li>bank statements</li>
+      <li>rent statements</li>
+      <li>Child Maintenance Service letters</li>
+    </ul>
+
+    <div class="nhsuk-inset-text">
+      <span class="nhsuk-u-visually-hidden">Information: </span>
+      <p>For your security, you’ll be signed out if you do nothing for 60 minutes.</p>
+    </div>
+
+    <a href="personal-pension" class="nhsuk-button">Start now</a>
+  </div>
+</div>
+
+{% endblock %}
