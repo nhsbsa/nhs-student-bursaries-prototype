@@ -220,7 +220,7 @@
                         Yes
                         {% else %}
                         No
-                        {% endif %}                        
+                        {% endif %}
                       </dt>
                     </div>
                     <div class="nhsuk-summary-list__row">
@@ -273,18 +273,45 @@
 
                   <tr role="row">
                     <td>
-                      <p><strong>Change of circumstances - 26 November 2024 at 11:37am</strong><br>
+                      <p><strong>Change of circumstances - 22 January 2024 at 11:37am</strong><br>
                         Linked activity 252 - Change of address</p>
 
+                      {% if data['CoCScenario'] == "addressOnly" %}
+                      <p>Change of circumstances completed. Address updated.</p>
+
+                      {% elseif data['CoCScenario'] == "automaticReschedule" %}
                       <p>Change of circumstances completed. Address updated. Living with parents updated. Payments
-                        updated.</p>
+                        updated automatically.</p>
+
+                      {% else %}
+                      <p>Change of circumstances completed. Address updated. Living with parents updated. Payments
+                        updated manually.</p>
+                      {% endif %}
 
                       <p>Change type: Change of address<br>
                         Previous address: 13 Pleasant House, Laney Street, Smalltown, Scotland, NE33 3AB<br>
                         New address: 34 The Tower, Streetson Crescent, Bigtown, England, SR2 7NB<br>
-                        Living with parents: No<br>
-                        Comment: Change of university house.<br>
-                        Date of change: 20 January 2025</p>
+
+                        Living with parents:
+
+                        {% if data['CoCScenario'] == "addressOnly" %}
+                        Yes
+                        {% else %}
+                        No
+                        {% endif %}
+
+                        <br>
+                        Comment:
+
+                        {% if data['CoCScenario'] == "addressOnly" %}
+                        Me and my parents have moved house together.
+                        {% else %}
+                        I moved out of my parents house into my studio flat.
+                        {% endif %}
+
+                        <br>
+                        Date of change: 20 January 2025
+                      </p>
 
                       <div class="nhsuk-hint" id="contact-hint">
                         Last modified by <strong>John Smith</strong>

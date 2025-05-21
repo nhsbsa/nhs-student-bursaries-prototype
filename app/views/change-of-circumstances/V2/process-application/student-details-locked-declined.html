@@ -273,7 +273,7 @@
 
                   <tr role="row">
                     <td>
-                      <p><strong>Change of circumstances - 26 November 2024 at 11:37am</strong><br>
+                      <p><strong>Change of circumstances - 22 January 2024 at 11:37am</strong><br>
                         Linked activity 252 - Change of address</p>
 
                       <p>Change of circumstances cancelled.</p>
@@ -285,8 +285,18 @@
                         Previous address: 13 Pleasant House, Laney Street, Smalltown, Scotland, NE33 3AB<br>
                         New address: 34 The Tower, Streetson Crescent, Bigtown, England, SR2 7NB<br>
                         Living with parents: No<br>
-                        Comment: Change of university house.<br>
-                        Date of change: 20 January 2025</p>
+
+                        Comment:
+
+                        {% if data['CoCScenario'] == "addressOnly" %}
+                        Me and my parents have moved house together.
+                        {% else %}
+                        I moved out of my parents house into my studio flat.
+                        {% endif %}
+
+                        <br>
+                        Date of change: 20 January 2025
+                      </p>
 
                       <div class="nhsuk-hint" id="contact-hint">
                         Last modified by <strong>John Smith</strong>
@@ -391,8 +401,7 @@
 
               <!-- Action link -->
               <div class="nhsuk-action-link">
-                <a class="nhsuk-action-link__link" href="payment-details-locked"
-                  id="paymentBtnLink">
+                <a class="nhsuk-action-link__link" href="payment-details-locked" id="paymentBtnLink">
                   <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
                     <path d="M0 0h24v24H0z" fill="none"></path>
