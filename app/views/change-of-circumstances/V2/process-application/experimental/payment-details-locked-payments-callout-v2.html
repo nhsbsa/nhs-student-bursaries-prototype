@@ -552,8 +552,13 @@
                       Means tested bursary
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
+                      {% if data['CoCPaymentsUpdated'] == 'true' %}
+                      £998
+                      {% else %}
                       £742
+                      {% endif %}
                     </td>
+
                     <td role="cell" class="nhsuk-table__cell">
                       16 April 2025
                     </td>
@@ -575,7 +580,11 @@
                       Non means tested grant
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
+                      {% if data['CoCPaymentsUpdated'] == 'true' %}
+                      £604
+                      {% else %}
                       £324
+                      {% endif %}
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
                       16 April 2025
