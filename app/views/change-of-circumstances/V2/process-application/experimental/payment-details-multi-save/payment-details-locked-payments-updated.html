@@ -583,6 +583,7 @@
                       £324
                       {% endif %}
                     </td>
+                    
                     <td role="cell" class="nhsuk-table__cell">
                       16 April 2025
                     </td>
@@ -627,7 +628,15 @@
 
               <div class="nhsuk-u-margin-top-4">
                 <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-0" id="enrol1term1TotalAmount">Total amount for
-                  term 3: £1406</h3>
+                  term 3:
+
+                  {% if data['CoCPaymentsUpdated'] == 'true' %}
+                  £1,942
+                  {% else %}
+                  £1406
+                  {% endif %}
+
+                </h3>
               </div>
 
             </div>
