@@ -69,6 +69,24 @@
 
 
           <select class="nhsuk-select" id="paymentTypeDrop" name="paymentType" style="text-transform: none;">
+
+            <!-- Pre-select the payment type, depending on which Edit link the prototype user clicked -->
+            {% if data['ExtraWeeksAllowanceEdited'] == 'true' %}
+            <option value="">Select option</option>
+            <option value="1">Means tested bursary</option>
+            <option value="5">Childcare Allowance</option>
+            <option value="6">DSA (equipment)</option>
+            <option value="7">DSA (general)</option>
+            <option value="8">DSA (non medical)</option>
+            <option value="9">DSA (travel)</option>
+            <option value="3">Dependants Allowance</option>
+            <option value="2" selected>Extra Weeks Allowance</option>
+            <option value="13">NHS Hardship Grant</option>
+            <option value="12">Non means tested grant</option>
+            <option value="4">Parent Learning Allowance</option>
+            <option value="11">TDAE (accommodation)</option>
+            <option value="10">TDAE (travel)</option>
+            {% else %}
             <option value="">Select option</option>
             <option value="1" selected>Means tested bursary</option>
             <option value="5">Childcare Allowance</option>
@@ -83,6 +101,7 @@
             <option value="4">Parent Learning Allowance</option>
             <option value="11">TDAE (accommodation)</option>
             <option value="10">TDAE (travel)</option>
+            {% endif %}
           </select>
         </div>
 
@@ -152,7 +171,13 @@
 
           <div class="nhsuk-input__wrapper">
             <div class="nhsuk-input__prefix" aria-hidden="true">£</div>
-            <input class="nhsuk-input nhsuk-input--width-5" id="example" name="example" type="text" value="872">
+
+            <!-- Prefill the current amount value, depending on which Edit link the prototype user clicked -->
+            {% if data['ExtraWeeksAllowanceEdited'] == 'true' %}
+            <input class="nhsuk-input nhsuk-input--width-5" id="example" name="example" type="text" value="324">
+            {% else %}
+            <input class="nhsuk-input nhsuk-input--width-5" id="example" name="example" type="text" value="742">
+            {% endif %}
           </div>
         </div>
 

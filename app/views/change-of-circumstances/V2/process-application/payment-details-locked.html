@@ -574,7 +574,7 @@
                       Means tested bursary
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      {% if data['CoCPaymentsUpdated'] == 'true' %}
+                      {% if data['MeansTestedBursaryEdited'] == 'true' %}
                       £998
                       {% else %}
                       £742
@@ -591,7 +591,7 @@
                       Pending
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      <a href="payment-details-edit-payment">Edit</a>
+                      <a href="payment-details-edit-payment?MeansTestedBursaryEdited=true">Edit</a>
                       <br>
                       <a href="payment-details-add-debt">Debt</a>
                     </td>
@@ -602,11 +602,7 @@
                       Non means tested grant
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      {% if data['CoCPaymentsUpdated'] == 'true' %}
-                      £604
-                      {% else %}
-                      £324
-                      {% endif %}
+                      £340
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
                       16 April 2025
@@ -629,7 +625,11 @@
                       Extra Weeks Allowance
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      £340
+                      {% if data['ExtraWeeksAllowanceEdited'] == 'true' %}
+                      £604
+                      {% else %}
+                      £324
+                      {% endif %}
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
                       16 April 2025
@@ -641,7 +641,7 @@
                       Pending
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      <a href="payment-details-edit-payment">Edit</a>
+                      <a href="payment-details-edit-payment?ExtraWeeksAllowanceEdited=true">Edit</a>
                       <br>
                       <a href="payment-details-add-debt">Debt</a>
                     </td>
@@ -654,10 +654,15 @@
                 <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-0" id="enrol1term1TotalAmount">Total amount for
                   term 3:
 
-                  {% if data['CoCPaymentsUpdated'] == 'true' %}
+                  <!-- Update this term total, to reflect changes to both payments, or one, or the other, or else neither of them -->
+                  {% if data['ExtraWeeksAllowanceEdited'] == 'true' and data['MeansTestedBursaryEdited'] == 'true' %}
                   £1,942
+                  {% elif data['ExtraWeeksAllowanceEdited'] == 'true' %}
+                  £1,686
+                  {% elif data['MeansTestedBursaryEdited'] == 'true' %}
+                  £1,662
                   {% else %}
-                  £1406
+                  £1,406
                   {% endif %}
 
                 </h3>
