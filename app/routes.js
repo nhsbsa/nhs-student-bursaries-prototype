@@ -120,12 +120,7 @@ router.post('/change-of-circumstances/V2/process-application/change-summary/', (
       res.redirect('/change-of-circumstances/V2/process-application/change-confirmation-comment')
     }
 
-    // Route for updating payments automatically - go straight to asking for comment
-    else if (CoCScenario === 'automaticReschedule') {
-      res.redirect('/change-of-circumstances/V2/process-application/change-confirmation-comment')
-    }
-
-    // Else, route for updating payments manually (the most complex one) - ask them to update payments
+    // Else, payment schedule needs updating too - so ask if they want it updating automatically or manually
     else {
       res.redirect('/change-of-circumstances/V2/process-application/payment-details-single-save-coc/payment-scheduling-required?CoCPaymentsUpdated=false')
     }
