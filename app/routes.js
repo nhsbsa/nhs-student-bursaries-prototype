@@ -144,9 +144,34 @@ router.post('/change-of-circumstances/V2/process-application/change-summary/', (
 })
 
 
+router.post('/change-of-circumstances/V2/process-application/payment-details-single-save-coc/payment-scheduling-required-route/', (req, res) => {
+
+  const CoCSchedulingChoice = req.session.data['CoCSchedulingChoice']
+
+  // AUTOMATIC RESCHEDULE radio option
+  if (CoCSchedulingChoice === 'automaticReschedule') {
+    // Route for automatic payment rescheduling - go straight to asking for comment
+    res.redirect('/change-of-circumstances/V2/process-application/change-confirmation-comment?CoCPaymentsUpdated=false')
+  }
+
+  // MANUAL RESCHEDULE radio option
+  else if (CoCSchedulingChoice === 'manualReschedule') {
+    // Route for manually payment rescheduling - go to start of manual rescheduling journey
+    res.redirect('/change-of-circumstances/V2/process-application/payment-details-single-save-coc/payment-scheduling-required-manual?CoCPaymentsUpdated=false')
+  }
+
+  // Else, stay on this page (no radio selected)
+  else {
+    res.redirect('/change-of-circumstances/V2/process-application/payment-details-single-save-coc/payment-scheduling-required')
+  }
+
+})
+
+
 router.post('/change-of-circumstances/V2/process-application/change-confirmation-comment-route/', (req, res) => {
 
   const CoCScenario = req.session.data['CoCScenario']
+  const CoCSchedulingChoice = req.session.data['CoCSchedulingChoice']
 
   // Save input from comment textbox
   const changeProcessorComment = req.session.data['change-processor-comment']
@@ -157,7 +182,7 @@ router.post('/change-of-circumstances/V2/process-application/change-confirmation
   }
 
   // Route for updating payments automatically
-  else if (CoCScenario === 'automaticReschedule') {
+  else if (CoCSchedulingChoice === 'automaticReschedule') {
     res.redirect('/change-of-circumstances/V2/process-application/change-confirmation-auto-scheduled')
   }
 
