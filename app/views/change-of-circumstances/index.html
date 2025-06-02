@@ -348,11 +348,11 @@
     <!-- V2 - CHANGE OF CIRCS REWORK -->
 
     <h2 class="nhsuk-heading-m">
-      Reworked CoC Change Address journey
+      Reworked CoC Change Address journey + Other related work
       <strong class="task-completed status-shortlisted" style="background-color: #330072; float: right">
         Version 2
       </strong>
-      <span class="nhsuk-caption-m nhsuk-caption--bottom">Last updated: 27 May 2025</span>
+      <span class="nhsuk-caption-m nhsuk-caption--bottom">Last updated: 2 June 2025</span>
     </h2>
 
     <ul class="nhsuk-list nhsuk-list--bullet">
@@ -661,8 +661,8 @@
 
 
 
-          <h3 class="nhsuk-heading-xs" style="margin-bottom: 8px;">2.2) Scenario 2: Automatic payment scheduling, with
-            bursary details changing</h3>
+          <h3 class="nhsuk-heading-xs" style="margin-bottom: 8px;">2.2) Scenarios 2/3: Automatically / Manually updating
+            payment schedule, with bursary details changing</h3>
 
           <table class="nhsuk-table">
             <tbody class="nhsuk-table__body">
@@ -671,16 +671,38 @@
                 <td class="nhsuk-table__cell">Change summary</td>
                 <td class="nhsuk-table__cell">
                   <a
-                    href="/change-of-circumstances/V2/process-application/change-summary?CoCScenario=automaticReschedule">View
+                    href="/change-of-circumstances/V2/process-application/change-summary?CoCScenario=schedulingRequired">View
                     <span class="nhsuk-u-visually-hidden">
                       Change summary</span></a>
                 </td>
               </tr>
 
               <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Update payments</td>
+                <td class="nhsuk-table__cell">
+                  <a
+                    href="/change-of-circumstances/V2/process-application/payment-details-single-save-coc/payment-scheduling-required?CoCPaymentsUpdated=false">View
+                    <span class="nhsuk-u-visually-hidden">
+                      Update payments</span></a>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+
+
+
+          <h3 class="nhsuk-heading-xs" style="margin-bottom: 8px;">2.2.1) Scenario 2: Automatically updating payment
+            schedule</h3>
+
+          <table class="nhsuk-table">
+            <tbody class="nhsuk-table__body">
+
+              <tr role="row" class="nhsuk-table__row">
                 <td class="nhsuk-table__cell">Add a comment about this change (optional)</td>
                 <td class="nhsuk-table__cell">
-                  <a href="/change-of-circumstances/V2/process-application/change-confirmation-comment">View
+                  <a
+                    href="/change-of-circumstances/V2/process-application/change-confirmation-comment?CoCSchedulingChoice=automaticReschedule">View
                     <span class="nhsuk-u-visually-hidden">
                       Add a comment about this change (optional)</span></a>
                 </td>
@@ -718,26 +740,17 @@
 
 
 
-          <h3 class="nhsuk-heading-xs" style="margin-bottom: 8px;">2.3) Scenario 3: Manual payment scheduling (as
-            payments already exist in schedule), with bursary details changing</h3>
+          <h3 class="nhsuk-heading-xs" style="margin-bottom: 8px;">2.2.2) Scenario 3: Manually updating payment schedule
+          </h3>
 
           <table class="nhsuk-table">
             <tbody class="nhsuk-table__body">
 
               <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">Change summary</td>
-                <td class="nhsuk-table__cell">
-                  <a href="/change-of-circumstances/V2/process-application/change-summary?CoCScenario=manualReschedule">View
-                    <span class="nhsuk-u-visually-hidden">
-                      Change summary</span></a>
-                </td>
-              </tr>
-
-              <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">Update payments (checkbox disabled)</td>
+                <td class="nhsuk-table__cell">Update payments manually (checkbox disabled)</td>
                 <td class="nhsuk-table__cell">
                   <a
-                    href="/change-of-circumstances/V2/process-application/payment-details-single-save-coc/payment-scheduling-required?CoCPaymentsUpdated=false">View
+                    href="/change-of-circumstances/V2/process-application/payment-details-single-save-coc/payment-scheduling-required-manual?CoCPaymentsUpdated=false">View
                     <span class="nhsuk-u-visually-hidden">
                       Update payments</span></a>
                 </td>
@@ -882,6 +895,7 @@
               <tr role="row" class="nhsuk-table__row">
                 <td class="nhsuk-table__cell">Change summary</td>
                 <td class="nhsuk-table__cell">
+                  <!-- Scenario does not really affect this journey, so just used 'addressOnly' -->
                   <a href="/change-of-circumstances/V2/process-application/change-summary?CoCScenario=addressOnly">View
                     <span class="nhsuk-u-visually-hidden">
                       Change summary</span></a>
