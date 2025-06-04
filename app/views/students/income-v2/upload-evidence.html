@@ -28,7 +28,7 @@
       </h1>
 
       {% if data['income'] == "sponsorship income" %}
-        <p>Because you have told us you receive sponsorship income, you need to upload either a letter:</p>
+        <p>This should be a letter: </p>
         <ul>
           <li>from your employer</li>
           <li>of sponsorship</li>
@@ -37,68 +37,68 @@
         </ul>
       {% endif %}
 
-      {% if data['income'] == "salary payments" %}
-        <p>Because you have told us you receive salary payments, you need to upload a:</p>
+      {% if data['income'] == "employment income" %}
+        <p>This should be: </p>
         <ul>
-          <li>HMRC letter</li>
-          <li>letter from your employer</li>
-          <li>P45</li>
-          <li>P60</li>
-          <li>Wage slips</li>
+          <li>a HM Revenue and Customs (HMRC) letter</li>
+          <li>a letter from your employer</li>
+          <li>a payslip</li>
+          <li>your P45</li>
+          <li>your P60</li>
         </ul>
       {% endif %}
 
       {% if data['income'] == "self-employment income" %}
-        <p>Because you have told us you receive self-employment income, you need to upload a:</p>
+        <p>This should be: </p>
         <ul>
-          <li>copy of relevant account</li>
-          <li>HMRC letter</li>
-          <li>letter from accountant</li>
-          <li>self employment form</li>
-          <li>tax return</li>
+          <li>a copy of the relevant account</li>
+          <li>a HM Revenue and Customs (HMRC) letter</li>
+          <li>a letter from your accountant</li>
+          <li>your self-employment form</li>
+          <li>your tax return</li>
         </ul>
       {% endif %}
 
       {% if data['income'] == "pension payments" %}
-        <p>Because you have told us you receive pension payments, you need to upload either a:</p>
+        <p>This should be: </p>
         <ul>
-          <li>Department for Work & Pensions letter</li>
-          <li>most recent pension statement</li>
-          <li>P60</li>
+          <li>a Department for Work and Pensions (DWP) letter</li>
+          <li>your most recent pension statement</li>
+          <li>a P60</li>
         </ul>
       {% endif %}
 
       {% if data['income'] == "rental income" %}
-        <p>Because you have told us you receive rental income, you need to upload either a:</p>
+        <p>This should be: </p>
         <ul>
-          <li>letter from accountant</li>
-          <li>letter from letting agent</li>
-          <li>tax return</li>
+          <li>a letter from your accountant</li>
+          <li>a letter from your letting agent</li>
+          <li>your tax return</li>
         </ul>
       {% endif %}
 
       {% if data['income'] == "taxable state benefits" %}
-        <p>Because you have told us you receive taxable state benefits, you need to upload either a:</p>
+        <p>This should be: </p>
         <ul>
-          <li>benefit letter</li>
-          <li>HMRC letter</li>
+          <li>a benefit letter</li>
+          <li>a HM Revenue and Customs (HMRC) letter</li>
         </ul>
       {% endif %}
 
       {% if data['income'] == "maintenance payments" %}
-        <p>Because you have told us you receive maintenance payments, you need to upload either a:</p>
+        <p>This should be: </p>
         <ul>
-          <li>letter from child maintenance agency</li>
-          <li>letter of informal agreement</li>
+          <li>a letter from the Child Maintenance Service (CMS)</li>
+          <li>a letter of informal agreement</li>
         </ul>
       {% endif %}
 
       {% if data['income'] == "money from trust fund" %}
-        <p>Because you have told us you receive money from trust fund, you need to upload a letter from trust fund.</p>
+        <p>This should be a trust fund letter.</p>
       {% endif %}
 
       {% if data['income'] == "other taxable income" %}
-        <p>Because you have told us you receive money from a taxable income, you need to evidence.</p>
+        <p>This should be anything showing your other taxable income.</p>
       {% endif %}
 
 
@@ -137,12 +137,6 @@
         </details>
 
         <div class="nhsuk-form-group">
-          <div class="form-group-error" id="fileSizeError" hidden="true">
-            <span id="fileSizeErrorMessage" class="error-message"></span>
-          </div>
-          <input id="file" class="nhsuk-input" type="file" name="file" />
-        </div>
-        <div class="nhsuk-form-group">
           <label for="evidence-type" class="nhsuk-label"
             >Type of evidence</label
           >
@@ -174,6 +168,13 @@
             <option id="25" value="25">Tax return</option>
             <option id="11" value="11">Wage slips</option>
           </select>
+        </div>
+
+        <div class="nhsuk-form-group">
+          <div class="form-group-error" id="fileSizeError" hidden="true">
+            <span id="fileSizeErrorMessage" class="error-message"></span>
+          </div>
+          <input id="file" class="nhsuk-input" type="file" name="file" />
         </div>
 
     <div class="nhsuk-form-group">
