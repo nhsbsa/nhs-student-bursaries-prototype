@@ -1,0 +1,143 @@
+{% extends 'layout.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+{% block header %} {{ header({ "service": { "name": "Bursary", "href": "/" },
+"showNav": "false", "showSearch": "false" }) }} {% endblock %}
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Check your answers {%
+endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+{{ backLink({
+"href": "javascript:history.go(-1)",
+"text": "Go back"
+}) }}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <h1 class="nhsuk-heading-xl">
+      <span class="nhsuk-caption-l">Your expenses </span>Check your expenses answers
+    </h1>
+
+
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Pension contributions</dt>
+        <dd class="nhsuk-summary-list__value">None</dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="personal-pension">
+            Change<span class="nhsuk-u-visually-hidden"
+              >personal pension/retirement annulty payments</span
+            >
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Life assurance payments</dt>
+        <dd class="nhsuk-summary-list__value">None</dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="life-assurance">
+            Change<span class="nhsuk-u-visually-hidden"
+              >life assurance premiums</span
+            >
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Mortgage total</dt>
+        <dd class="nhsuk-summary-list__value">None</dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="mortgage-payments">
+            Change<span class="nhsuk-u-visually-hidden">mortgage payments</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Rent total</dt>
+        <dd class="nhsuk-summary-list__value">£6000</dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="rent">
+            Change<span class="nhsuk-u-visually-hidden">rent</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Maintenance payments</dt>
+        <dd class="nhsuk-summary-list__value">None</dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="maintenance-payments">
+            Change<span class="nhsuk-u-visually-hidden"
+              >maintenance payments</span
+            >
+          </a>
+        </dd>
+      </div>
+    </dl>
+
+
+    <h2 class="nhsuk-heading-m">Evidence uploaded</h2>
+
+    <dl class="nhsuk-summary-list">
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">HMRC letter</dt>
+        <dd class="nhsuk-summary-list__value">
+          <a href="/images/placeholder-image-16-9.jpg" target="_blank" rel="noopener">hmrc-letter.jpg<span
+              class="nhsuk-u-visually-hidden">opens in new tab</span></a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Bank statements</dt>
+        <dd class="nhsuk-summary-list__value">
+          <a href="/images/placeholder-image-16-9.jpg" target="_blank" rel="noopener">bank-statements.jpg<span
+              class="nhsuk-u-visually-hidden">opens in new tab</span></a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Letter of informal agreement</dt>
+        <dd class="nhsuk-summary-list__value">
+          <a href="/images/placeholder-image-16-9.jpg" target="_blank" rel="noopener">informal-agreement-letter.jpg<span
+              class="nhsuk-u-visually-hidden">opens in new tab</span></a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Rent agreement</dt>
+        <dd class="nhsuk-summary-list__value">
+          <a href="/images/placeholder-image-16-9.jpg" target="_blank" rel="noopener">rent-letter.jpg<span
+              class="nhsuk-u-visually-hidden">opens in new tab</span></a>
+        </dd>
+      </div>
+
+    </dl>
+
+    {% if data['submitted'] != 'true' %}
+    <h2 class="nhsuk-heading-m">If you find a mistake</h2>
+    <p>If you've made a mistake on your application, you need to delete it and start again.</p>
+    <p>To do this, <a href="javascript:history.go(-1)">go back</a> to the previous page and select 'delete it and start again'.</p>
+    {% endif %}
+
+  </div>
+</div>
+
+{% endblock %}

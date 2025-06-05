@@ -1,0 +1,119 @@
+{% extends 'layout.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+{% block header %} {{ header({ "service": { "name": "Bursary", "href": "/" },
+"showNav": "false", "showSearch": "false" }) }} {% endblock %}
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Check your answers {%
+endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+{{ backLink({
+"href": "javascript:history.go(-1)",
+"text": "Go back"
+}) }}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <h1 class="nhsuk-heading-xl">
+      <span class="nhsuk-caption-l">Your income</span>Check your income answers
+    </h1>
+
+
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key" style="width: 50%">Sponsorship income</dt>
+        <dd class="nhsuk-summary-list__value">£6000</dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Employment income</dt>
+        <dd class="nhsuk-summary-list__value">None</dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Self-employment income</dt>
+        <dd class="nhsuk-summary-list__value">None</dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Pension payments</dt>
+        <dd class="nhsuk-summary-list__value">None</dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Rental income</dt>
+        <dd class="nhsuk-summary-list__value">£4000</dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Taxable state benefits</dt>
+        <dd class="nhsuk-summary-list__value">£300.45</dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Maintenance payments</dt>
+        <dd class="nhsuk-summary-list__value">None</dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Money from trust fund</dt>
+        <dd class="nhsuk-summary-list__value">None</dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Other taxable income</dt>
+        <dd class="nhsuk-summary-list__value">£750</dd>
+      </div>
+    </dl>
+
+
+    <h2 class="nhsuk-heading-m">Evidence uploaded</h2>
+
+    <dl class="nhsuk-summary-list">
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Letter from employer, sponsorship, scholarship, cadetship</dt>
+        <dd class="nhsuk-summary-list__value">
+          <a href="/images/placeholder-image-16-9.jpg" target="_blank" rel="noopener">sponsorship-letter.jpg<span
+              class="nhsuk-u-visually-hidden">opens in new tab</span></a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Letter from letting agent</dt>
+        <dd class="nhsuk-summary-list__value">
+          <a href="/images/placeholder-image-16-9.jpg" target="_blank" rel="noopener">letting-agency-letter.jpg<span
+              class="nhsuk-u-visually-hidden">opens in new tab</span></a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Child Maintenance Service letter</dt>
+        <dd class="nhsuk-summary-list__value">
+          <a href="/images/placeholder-image-16-9.jpg" target="_blank" rel="noopener">child-maintenance-letter.jpg<span
+              class="nhsuk-u-visually-hidden">opens in new tab</span></a>
+        </dd>
+      </div>
+
+    </dl>
+
+    {% if data['submitted'] != 'true' %}
+    <h2 class="nhsuk-heading-m">If you find a mistake</h2>
+    <p>If you've made a mistake on your application, you need to delete it and start again.</p>
+    <p>To do this, <a href="javascript:history.go(-1)">go back</a> to the previous page and select 'delete it and start again'.</p>
+    {% endif %}
+
+  </div>
+</div>
+
+{% endblock %}

@@ -28,41 +28,41 @@
       </h1>
 
       {% if data['income'] == "pension contributions" %}
-        <p>Because you have told us you make pension contributions, you need to upload either a:</p>
+        <p>This should be: </p>
         <ul>
-          <li>HMRC letter</li>
-          <li>letter from employer</li>
-          <li>P45</li>
-          <li>P60</li>
-          <li>wage slips</li>
+          <li>a letter from HM Revenue and Customs (HMRC)</li>
+          <li>a letter from your employer</li>
+          <li>a payslip</li>
+          <li>your P45</li>
+          <li>your P60</li>
         </ul>
       {% endif %}
 
       {% if data['income'] == "life assurance payments" %}
-        <p>Because you have told us you make life assurance payments, you need to upload either a:</p>
+        <p>This should be: </p>
         <ul>
-          <li>bank statement</li>
-          <li>life assurance policy/statement</li>
+          <li>a bank statement</li>
+          <li>your life assurance policy or statement</li>
         </ul>
       {% endif %}
 
       {% if data['income'] == "mortgage" %}
-        <p>Because you have told us you make mortgage payments, you need to upload a bank statement.</p>
+        <p>This should be a bank statement.</p>
       {% endif %}
 
       {% if data['income'] == "rent" %}
-        <p>Because you have told us you make rent payments, you need to upload either a:</p>
+        <p>This should be: </p>
         <ul>
-          <li>bank statement</li>
-          <li>rent agreement</li>
+          <li>a bank statement</li>
+          <li>your rental agreement</li>
         </ul>
       {% endif %}
 
       {% if data['income'] == "maintenance payments" %}
-        <p>Because you have told us you make maintenance payments, you need to upload either a:</p>
+        <p>This should be: </p>
         <ul>
-          <li>letter from Child Maintenance Service</li>
-          <li>letter of informal agreement</li>
+          <li>a letter from the Child Maintenance Service (CMS)</li>
+          <li>a letter of informal agreement</li>
         </ul>
       {% endif %}
 
