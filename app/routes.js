@@ -26,11 +26,12 @@ router.post('/register/v2/national-insurance-number-question-route/', (req, res)
 
 })
 
-
+// CoC V3
+router.use('/change-of-circumstances/V3', require('./views/change-of-circumstances/V3/_routes'));
 
 // CoC V2
 
-// Routes for STUDENT: APPLY FOR CoC journey 
+// Routes for STUDENT: APPLY FOR CoC journey
 
 router.post('/change-of-circumstances/V2/apply/changes-route/', (req, res) => {
 
@@ -105,7 +106,7 @@ router.post('/change-of-circumstances/V2/apply/explanation-route/', (req, res) =
 
 
 
-// Routes for PROCESSOR: PROCESS APPLICATION journey 
+// Routes for PROCESSOR: PROCESS APPLICATION journey
 
 router.post('/change-of-circumstances/V2/process-application/change-summary/', (req, res) => {
 
@@ -210,7 +211,7 @@ router.post('/change-of-circumstances/V2/process-application/payment-details-cha
 
 
 
-// Routes for STUDENT: UPDATE APPLICATION AFTER RETURNED (A.k.a. Review Application) journey 
+// Routes for STUDENT: UPDATE APPLICATION AFTER RETURNED (A.k.a. Review Application) journey
 
 router.post('/change-of-circumstances/V2/review-application/change-already-submitted-route/', (req, res) => {
 

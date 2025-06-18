@@ -1,0 +1,52 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} What date is this change of cicumstance effective from? {%
+endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<!-- Breadcrumb -->
+
+{% endblock %}
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-width-container">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <div class="nhsuk-card" style="background: #005EB8; margin-top: 0;">
+        <div class="nhsuk-card__content">
+          <h1 class="nhsuk-card__heading" style="text-align: center; color: white;">
+            Change of circumstances submitted
+          </h1>
+        </div>
+      </div>      
+
+      <h2 class="nhsuk-heading-m">What happens next</h1>
+
+        <p>We've sent you an email to confirm your request. We'll contact you if we need any more information.</p>
+        <p>If you need to tell us about another change, you can submit another change of circumstances.</p>
+
+        <a href="intro" class="nhsuk-button nhsuk-button--secondary" role="button" id="next">Submit
+          another change of circumstances</a>
+
+        <div class="nhsuk-form-group">
+          <a href="dashboard" class="nhsuk-button" role="button" id="next">Return to dashboard</a>
+        </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

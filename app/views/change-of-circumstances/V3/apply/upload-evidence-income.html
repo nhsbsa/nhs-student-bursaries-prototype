@@ -1,0 +1,187 @@
+{% extends 'layout.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Upload your evidence {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %}{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <fieldset class="nhsuk-fieldset">
+
+      {{ backLink({
+      "href": "evidence",
+      "text": "Go back"
+      }) }}
+
+      <h1 class="nhsuk-heading-l" id="uploadEvidenceH1">
+        <span class="nhsuk-caption-l">Change of circumstances</span>Upload evidence of {{ data['income'] }}
+      </h1>
+
+      {% if data['income'] == "sponsorship income" %}
+        <p>This should be a letter: </p>
+        <ul>
+          <li>from your employer</li>
+          <li>of sponsorship</li>
+          <li>of scholarship</li>
+          <li>of cadetship</li>
+        </ul>
+      {% endif %}
+
+      {% if data['income'] == "employment income" %}
+        <p>This should be: </p>
+        <ul>
+          <li>a HM Revenue and Customs (HMRC) letter</li>
+          <li>a letter from your employer</li>
+          <li>a payslip</li>
+          <li>your P45</li>
+          <li>your P60</li>
+        </ul>
+      {% endif %}
+
+      {% if data['income'] == "self-employment income" %}
+        <p>This should be: </p>
+        <ul>
+          <li>a copy of the relevant account</li>
+          <li>a HM Revenue and Customs (HMRC) letter</li>
+          <li>a letter from your accountant</li>
+          <li>your self-employment form</li>
+          <li>your tax return</li>
+        </ul>
+      {% endif %}
+
+      {% if data['income'] == "pension payments" %}
+        <p>This should be: </p>
+        <ul>
+          <li>a Department for Work and Pensions (DWP) letter</li>
+          <li>your most recent pension statement</li>
+          <li>a P60</li>
+        </ul>
+      {% endif %}
+
+      {% if data['income'] == "rental income" %}
+        <p>This should be: </p>
+        <ul>
+          <li>a letter from your accountant</li>
+          <li>a letter from your letting agent</li>
+          <li>your tax return</li>
+        </ul>
+      {% endif %}
+
+      {% if data['income'] == "taxable state benefits" %}
+        <p>This should be: </p>
+        <ul>
+          <li>a benefit letter</li>
+          <li>a HM Revenue and Customs (HMRC) letter</li>
+        </ul>
+      {% endif %}
+
+      {% if data['income'] == "maintenance payments" %}
+        <p>This should be: </p>
+        <ul>
+          <li>a letter from the Child Maintenance Service (CMS)</li>
+          <li>a letter of informal agreement</li>
+        </ul>
+      {% endif %}
+
+      {% if data['income'] == "money from trust fund" %}
+        <p>This should be a trust fund letter.</p>
+      {% endif %}
+
+      {% if data['income'] == "other taxable income" %}
+        <p>This should be anything showing your other taxable income.</p>
+      {% endif %}
+
+
+      <div class="nhsuk-form-group">
+        <details class="nhsuk-details">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              Rules for evidence files
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <p>Evidence must be:</p>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>readable, not blurry</li>
+            <li>the original, full document</li>
+            <li>in colour</li>
+            <li>the right way up - not upside down or sideways</li>
+            <li>JPG, JPEG, PNG or PDF format</li>
+            <li>no more than 8MB</li>
+          </ul>
+        </div>
+        </details>
+
+        <details class="nhsuk-details">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              I'm using an iPhone or iPad
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <p>Any photos you take of your evidence may be in HEIC format. This is also known as HEIF. We cannot accept photos in this format.</p>
+
+            <p>To check if you need to change your Camera settings to make JPEG your default image format, visit <a href="https://support.apple.com/en-gb/HT207022#:~:text=Capturing%20this%20media" rel="noopener" target="_blank">Apple Support's advice (opens in a new tab)</a> on this.</p>
+
+          </div>
+        </details>
+
+        <div class="nhsuk-form-group">
+          <label for="evidence-type" class="nhsuk-label"
+            >Type of evidence</label
+          >
+          <select
+            id="evidence-type"
+            class="nhsuk-select nhsuk-u-width-three-quarters"
+          >
+            <option value="">Select an evidence type</option>
+            {% if data['income'] == "sponsorship income" %}
+              <option id="22" value="22">Letter from employer</option>
+              <option id="22" value="22">Letter from sponsorship, scholarship or cadetship</option>
+            {% endif %}
+            <option id="15" value="15">Benefit letter</option>
+            <option id="33" value="33">Copy of relevant account</option>
+            <option id="23" value="23">DWP letter</option>
+            <option id="31" value="31">HMRC letter</option>
+            <option id="26" value="26">Letter from accountant</option>
+            <option id="29" value="29">Child Maintenance Service letter</option>
+            <option id="14" value="14">Letter from employer</option>
+            <option id="27" value="27">Letter from letting agent</option>
+            <option id="30" value="30">Letter from trust fund</option>
+            <option id="28" value="28">Letter of informal agreement</option>
+            <option id="24" value="24">Pension statement</option>
+            <option id="13" value="13">P45</option>
+            <option id="12" value="12">P60</option>
+            <option id="32" value="32">Self-employment form</option>
+            <option id="25" value="25">Tax return</option>
+            <option id="11" value="11">Payslip</option>
+          </select>
+        </div>
+
+        <div class="nhsuk-form-group">
+          <div class="form-group-error" id="fileSizeError" hidden="true">
+            <span id="fileSizeErrorMessage" class="error-message"></span>
+          </div>
+          <input id="file" class="nhsuk-input" type="file" name="file" />
+        </div>
+
+    <div class="nhsuk-form-group">
+      <a href="evidence-list?evidence=added" class="nhsuk-button" role="button">Upload evidence</a>
+      <p><a href="#" id="saveAndComeBackLater">Save and come back later</a></p>
+    </div>
+
+    </fieldset>
+
+  </div>
+</div>
+{% endblock %}
