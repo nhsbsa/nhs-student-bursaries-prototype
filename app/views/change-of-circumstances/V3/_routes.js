@@ -19,9 +19,9 @@ router.post('/apply/changes-route', (req, res) => {
     CoCType === 'Change of children details' ||
     CoCType === 'Other change'
   ) {
-    res.redirect('/change-of-circumstances/v3/apply/date');
+    res.redirect('/change-of-circumstances/V3/apply/date');
   } else {
-    res.redirect('/change-of-circumstances/v3/apply/changes');
+    res.redirect('/change-of-circumstances/V3/apply/changes');
   }
 
 })
