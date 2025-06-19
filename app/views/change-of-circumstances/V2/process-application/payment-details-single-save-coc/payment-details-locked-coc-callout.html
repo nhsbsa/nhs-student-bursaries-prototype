@@ -36,6 +36,30 @@
 
 <div class="nhsuk-width-container">
   <div class="nhsuk-grid-row">
+
+
+    <!-- If payments were just updated, show green Success notification -->
+    {% if data['CoCPaymentsUpdated'] == 'true' %}
+    <div class="nhsuk-grid-column-full">
+      <div style="margin-bottom: 60px; border: 5px solid rgb(0, 112, 60); background-color: rgb(0, 112, 60)">
+        <div style="padding: 10px 15px 10px 24px; border-bottom: 1px solid transparent;">
+          <h2 class="nhsuk-heading-m" style="margin: 0; padding: 0; color: #fff;">
+            Success
+          </h2>
+        </div>
+
+        <div style="padding: 24px 24px 10px 24px; background-color: #fff;">
+          <p>
+            You've updated the payments for the September 2024 academic year.
+          </p>
+        </div>
+
+      </div>
+    </div>
+    {% endif %}
+
+
+
     <div class="nhsuk-grid-column-two-thirds">
       <div>
         <h1 class="nhsuk-heading-xl">
@@ -143,7 +167,7 @@
 
               <tr role="row" class="nhsuk-table__row">
                 <td role="cell" class="nhsuk-table__cell">
-                  16 August 2024
+                  16 September 2024
                 </td>
                 <td role="cell" class="nhsuk-table__cell">
                   Non means tested grant
@@ -155,7 +179,7 @@
 
               <tr role="row" class="nhsuk-table__row">
                 <td role="cell" class="nhsuk-table__cell">
-                  16 August 2024
+                  16 September 2024
                 </td>
                 <td role="cell" class="nhsuk-table__cell">
                   Extra Weeks Allowance
@@ -167,7 +191,7 @@
 
               <tr role="row" class="nhsuk-table__row">
                 <td role="cell" class="nhsuk-table__cell">
-                  16 August 2024
+                  16 September 2024
                 </td>
                 <td role="cell" class="nhsuk-table__cell">
                   Means tested bursary
@@ -251,7 +275,7 @@
 
               <tr role="row" class="nhsuk-table__row">
                 <td role="cell" class="nhsuk-table__cell">
-                  16 August 2023
+                  16 September 2023
                 </td>
                 <td role="cell" class="nhsuk-table__cell">
                   Non means tested grant
@@ -263,7 +287,7 @@
 
               <tr role="row" class="nhsuk-table__row">
                 <td role="cell" class="nhsuk-table__cell">
-                  16 August 2023
+                  16 September 2023
                 </td>
                 <td role="cell" class="nhsuk-table__cell">
                   Extra Weeks Allowance
@@ -275,7 +299,7 @@
 
               <tr role="row" class="nhsuk-table__row">
                 <td role="cell" class="nhsuk-table__cell">
-                  16 August 2023
+                  16 September 2023
                 </td>
                 <td role="cell" class="nhsuk-table__cell">
                   Means tested bursary
@@ -328,6 +352,7 @@
 
 
 
+
         <!-- 2024 TAB -->
 
         <div class="nhsuk-tabs__panel" id="september-2024">
@@ -363,10 +388,10 @@
                       £720
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      16 August 2024
+                      16 September 2024
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      16 August 2024
+                      16 September 2024
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
                       Paid
@@ -384,10 +409,10 @@
                       £314
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      16 August 2024
+                      16 September 2024
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      16 August 2024
+                      16 September 2024
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
                       Paid
@@ -405,10 +430,10 @@
                       £330
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      16 August 2024
+                      16 September 2024
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      16 August 2024
+                      16 September 2024
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
                       Paid
@@ -890,10 +915,10 @@
                       £872
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      16 August 2023
+                      16 September 2023
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      16 August 2023
+                      16 September 2023
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
                       Paid
@@ -911,10 +936,10 @@
                       £610
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      16 August 2023
+                      16 September 2023
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      16 August 2023
+                      16 September 2023
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
                       Paid
@@ -932,10 +957,10 @@
                       £15
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      16 August 2023
+                      16 September 2023
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      16 August 2023
+                      16 September 2023
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
                       Paid
@@ -953,10 +978,10 @@
                       £330
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      16 August 2023
+                      16 September 2023
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      16 August 2023
+                      16 September 2023
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
                       Paid
@@ -974,10 +999,10 @@
                       £17
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      16 August 2023
+                      16 September 2023
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      16 August 2023
+                      16 September 2023
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
                       Paid
@@ -995,10 +1020,10 @@
                       £7
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      16 August 2023
+                      16 September 2023
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      16 August 2023
+                      16 September 2023
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
                       Paid
@@ -1177,7 +1202,6 @@
 
             </div>
           </details>
-
 
 
 
@@ -1496,11 +1520,7 @@
           </h3>
           <p>There were no payments.</p>
         </div>
-
       </div>
-
-
-
 
     </div>
   </div>
