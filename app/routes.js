@@ -169,6 +169,41 @@ router.post('/change-of-circumstances/V2/process-application/payment-details-sin
 })
 
 
+router.post('/change-of-circumstances/V2/process-application/payment-details-single-save-coc/payment-details-add-payment-route/', (req, res) => {
+
+  // Save state of addedPaymentType dropdown
+  const addedPaymentType = req.session.data['addedPaymentType']
+
+// Initialise values of each payment type being added (false, at first)
+  MeansTestedBursaryAdded = 'false'
+  ExtraWeeksAllowanceAdded = 'false'
+
+  // Save states of constants for each payment type being added
+  if (addedPaymentType === 'meansTestedBursary') {
+    MeansTestedBursaryAdded = 'true'
+  }
+  if (addedPaymentType === 'extraWeeksAllowance') {
+    ExtraWeeksAllowanceAdded = 'true'
+  }
+
+  // Pass values of added payment types so they can be shown in payment schedule.
+  // Both will be shown, or one, or the other, or else neither.
+  if (MeansTestedBursaryAdded === 'true' && ExtraWeeksAllowanceAdded === 'true') {
+    res.redirect('/change-of-circumstances/V2/process-application/payment-details-single-save-coc/payment-details-locked-coc-callout?CoCPaymentsUpdated=true&MeansTestedBursaryAdded=true?ExtraWeeksAllowanceAdded=true')
+  }
+  else if (MeansTestedBursaryAdded === 'true') {
+    res.redirect('/change-of-circumstances/V2/process-application/payment-details-single-save-coc/payment-details-locked-coc-callout?CoCPaymentsUpdated=true&MeansTestedBursaryAdded=true')
+  }
+  else if (ExtraWeeksAllowanceAdded === 'true') {
+    res.redirect('/change-of-circumstances/V2/process-application/payment-details-single-save-coc/payment-details-locked-coc-callout?CoCPaymentsUpdated=true&ExtraWeeksAllowanceAdded=true')
+  }
+  else {
+    res.redirect('/change-of-circumstances/V2/process-application/payment-details-single-save-coc/payment-details-locked-coc-callout?CoCPaymentsUpdated=true')
+  }
+
+})
+
+
 router.post('/change-of-circumstances/V2/process-application/change-confirmation-comment-route/', (req, res) => {
 
   const CoCScenario = req.session.data['CoCScenario']

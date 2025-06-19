@@ -36,6 +36,30 @@
 
 <div class="nhsuk-width-container">
   <div class="nhsuk-grid-row">
+
+
+    <!-- If payments were just updated, show green Success notification -->
+    {% if data['CoCPaymentsUpdated'] == 'true' %}
+    <div class="nhsuk-grid-column-full">
+      <div style="margin-bottom: 60px; border: 5px solid rgb(0, 112, 60); background-color: rgb(0, 112, 60)">
+        <div style="padding: 10px 15px 10px 24px; border-bottom: 1px solid transparent;">
+          <h2 class="nhsuk-heading-m" style="margin: 0; padding: 0; color: #fff;">
+            Success
+          </h2>
+        </div>
+
+        <div style="padding: 24px 24px 10px 24px; background-color: #fff;">
+          <p>
+            You've updated the payments for the September 2024 academic year.
+          </p>
+        </div>
+
+      </div>
+    </div>
+    {% endif %}
+
+
+
     <div class="nhsuk-grid-column-two-thirds">
       <div>
         <h1 class="nhsuk-heading-xl">
@@ -143,7 +167,7 @@
 
               <tr role="row" class="nhsuk-table__row">
                 <td role="cell" class="nhsuk-table__cell">
-                  16 August 2024
+                  16 September 2024
                 </td>
                 <td role="cell" class="nhsuk-table__cell">
                   Non means tested grant
@@ -155,7 +179,7 @@
 
               <tr role="row" class="nhsuk-table__row">
                 <td role="cell" class="nhsuk-table__cell">
-                  16 August 2024
+                  16 September 2024
                 </td>
                 <td role="cell" class="nhsuk-table__cell">
                   Extra Weeks Allowance
@@ -167,7 +191,7 @@
 
               <tr role="row" class="nhsuk-table__row">
                 <td role="cell" class="nhsuk-table__cell">
-                  16 August 2024
+                  16 September 2024
                 </td>
                 <td role="cell" class="nhsuk-table__cell">
                   Means tested bursary
@@ -251,7 +275,7 @@
 
               <tr role="row" class="nhsuk-table__row">
                 <td role="cell" class="nhsuk-table__cell">
-                  16 August 2023
+                  16 September 2023
                 </td>
                 <td role="cell" class="nhsuk-table__cell">
                   Non means tested grant
@@ -263,7 +287,7 @@
 
               <tr role="row" class="nhsuk-table__row">
                 <td role="cell" class="nhsuk-table__cell">
-                  16 August 2023
+                  16 September 2023
                 </td>
                 <td role="cell" class="nhsuk-table__cell">
                   Extra Weeks Allowance
@@ -275,7 +299,7 @@
 
               <tr role="row" class="nhsuk-table__row">
                 <td role="cell" class="nhsuk-table__cell">
-                  16 August 2023
+                  16 September 2023
                 </td>
                 <td role="cell" class="nhsuk-table__cell">
                   Means tested bursary
@@ -328,6 +352,7 @@
 
 
 
+
         <!-- 2024 TAB -->
 
         <div class="nhsuk-tabs__panel" id="september-2024">
@@ -363,10 +388,10 @@
                       £720
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      16 August 2024
+                      16 September 2024
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      16 August 2024
+                      16 September 2024
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
                       Paid
@@ -381,13 +406,13 @@
                       Extra Weeks Allowance
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      £330
+                      £314
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      16 August 2024
+                      16 September 2024
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      16 August 2024
+                      16 September 2024
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
                       Paid
@@ -405,10 +430,10 @@
                       £330
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      16 August 2024
+                      16 September 2024
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      16 August 2024
+                      16 September 2024
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
                       Paid
@@ -477,7 +502,7 @@
                       Extra Weeks Allowance
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      £330
+                      £314
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
                       16 December 2024
@@ -514,16 +539,68 @@
                     </td>
                   </tr>
 
+                  <!-- IF THIS HAS BEEN ADDED... ADD THIS TO TABLE -->
+                  {% if data['MeansTestedBursaryAdded'] == 'true' %}
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      Means tested bursary
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      £108
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      22 January 2025
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      Pending
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <a href="payment-details-edit-payment">Edit</a>
+                      <br>
+                      <a href="payment-details-add-debt">Debt</a>
+                    </td>
+                  </tr>
+                  {% endif %}
+
+                  <!-- IF THIS HAS BEEN ADDED... ADD THIS TO TABLE -->
+                  {% if data['ExtraWeeksAllowanceAdded'] == 'true' %}
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      Extra Weeks Allowance
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      £118
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      22 January 2025
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      Pending
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <a href="payment-details-edit-payment">Edit</a>
+                      <br>
+                      <a href="payment-details-add-debt">Debt</a>
+                    </td>
+                  </tr>
+                  {% endif %}
+
                 </tbody>
               </table>
 
               <div class="nhsuk-u-margin-top-4">
                 <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-0" id="enrol1term1TotalAmount">Total amount for
-                  term 2: £1,364</h3>
+                  term 2: £1,590</h3>
               </div>
 
             </div>
           </details>
+
 
 
 
@@ -554,8 +631,10 @@
                       Means tested bursary
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
+                      <!-- Old flag used (can probably delete once page is completed): -->
+                      <!-- {# if data['CoCPaymentsUpdated'] == 'true' #} -->
                       {% if data['MeansTestedBursaryEdited'] == 'true' %}
-                      £998
+                      £890
                       {% else %}
                       £742
                       {% endif %}
@@ -605,8 +684,10 @@
                       Extra Weeks Allowance
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
+                      <!-- Old flag used (can probably delete once page is completed): -->
+                      <!-- {# if data['CoCPaymentsUpdated'] == 'true' #} -->
                       {% if data['ExtraWeeksAllowanceEdited'] == 'true' %}
-                      £604
+                      £486
                       {% else %}
                       £324
                       {% endif %}
@@ -635,12 +716,12 @@
                   term 3:
 
                   <!-- Update this term total, to reflect changes to both payments, or one, or the other, or else neither of them -->
-                  {% if data['ExtraWeeksAllowanceEdited'] == 'true' and data['MeansTestedBursaryEdited'] == 'true' %}
-                  £1,942
-                  {% elif data['ExtraWeeksAllowanceEdited'] == 'true' %}
-                  £1,686
+                  {% if data['MeansTestedBursaryEdited'] == 'true' and data['ExtraWeeksAllowanceEdited'] == 'true' %}
+                  £1,716
                   {% elif data['MeansTestedBursaryEdited'] == 'true' %}
-                  £1,662
+                  £1,554
+                  {% elif data['ExtraWeeksAllowanceEdited'] == 'true' %}
+                  £1,568
                   {% else %}
                   £1,406
                   {% endif %}
@@ -839,10 +920,10 @@
                       £872
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      16 August 2023
+                      16 September 2023
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      16 August 2023
+                      16 September 2023
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
                       Paid
@@ -860,10 +941,10 @@
                       £610
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      16 August 2023
+                      16 September 2023
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      16 August 2023
+                      16 September 2023
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
                       Paid
@@ -881,10 +962,10 @@
                       £15
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      16 August 2023
+                      16 September 2023
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      16 August 2023
+                      16 September 2023
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
                       Paid
@@ -902,10 +983,10 @@
                       £330
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      16 August 2023
+                      16 September 2023
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      16 August 2023
+                      16 September 2023
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
                       Paid
@@ -923,10 +1004,10 @@
                       £17
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      16 August 2023
+                      16 September 2023
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      16 August 2023
+                      16 September 2023
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
                       Paid
@@ -944,10 +1025,10 @@
                       £7
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      16 August 2023
+                      16 September 2023
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      16 August 2023
+                      16 September 2023
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
                       Paid
@@ -1126,7 +1207,6 @@
 
             </div>
           </details>
-
 
 
 
@@ -1445,11 +1525,7 @@
           </h3>
           <p>There were no payments.</p>
         </div>
-
       </div>
-
-
-
 
     </div>
   </div>
