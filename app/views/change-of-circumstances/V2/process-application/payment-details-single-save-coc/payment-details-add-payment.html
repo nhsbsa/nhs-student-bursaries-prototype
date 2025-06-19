@@ -63,131 +63,128 @@
           </h1>
         </div>
 
-        <div class="nhsuk-form-group">
-          <label id="paymentType-label" for="paymentTypeDrop" class="nhsuk-label">Payment type</label>
+        <form class="form" action="payment-details-add-payment-route" method="post">
+
+          <div class="nhsuk-form-group">
+            <label id="paymentType-label" for="addedPaymentType" class="nhsuk-label">Payment type</label>
 
 
 
-          <select class="nhsuk-select" id="paymentTypeDrop" name="paymentType" style="text-transform: none;">
-            <option value="">Select option</option>
-            <option value="1">Means tested bursary</option>
-            <option value="5">Childcare Allowance</option>
-            <option value="6">DSA (equipment)</option>
-            <option value="7">DSA (general)</option>
-            <option value="8">DSA (non medical)</option>
-            <option value="9">DSA (travel)</option>
-            <option value="3">Dependants Allowance</option>
-            <option value="2">Extra Weeks Allowance</option>
-            <option value="13">NHS Hardship Grant</option>
-            <option value="12">Non means tested grant</option>
-            <option value="4">Parent Learning Allowance</option>
-            <option value="11">TDAE (accommodation)</option>
-            <option value="10">TDAE (travel)</option>
-          </select>
-        </div>
-
-
-        <div class="nhsuk-form-group">
-          <label id="term-label" for="termDrop" class="nhsuk-label">Term</label>
-
-          <div class="nhsuk-radios nhsuk-radios--inline">
-
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="example-inline-1" name="example-inline" type="radio" value="yes">
-              <label class="nhsuk-label nhsuk-radios__label" for="example-inline-1">
-                Term 1
-              </label>
-            </div>
-
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="example-inline-2" name="example-inline" type="radio" value="no">
-              <label class="nhsuk-label nhsuk-radios__label" for="example-inline-2">
-                Term 2
-              </label>
-            </div>
-
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="example-inline-3" name="example-inline" type="radio" value="no">
-              <label class="nhsuk-label nhsuk-radios__label" for="example-inline-3">
-                Term 3
-              </label>
-            </div>
+            <select class="nhsuk-select" id="addedPaymentType" name="addedPaymentType" style="text-transform: none;">
+              <option value="">Select option</option>
+              <option value="meansTestedBursary">Means tested bursary</option>
+              <option value="5">Childcare Allowance</option>
+              <option value="6">DSA (equipment)</option>
+              <option value="7">DSA (general)</option>
+              <option value="8">DSA (non medical)</option>
+              <option value="9">DSA (travel)</option>
+              <option value="3">Dependants Allowance</option>
+              <option value="extraWeeksAllowance">Extra Weeks Allowance</option>
+              <option value="13">NHS Hardship Grant</option>
+              <option value="12">Non means tested grant</option>
+              <option value="4">Parent Learning Allowance</option>
+              <option value="11">TDAE (accommodation)</option>
+              <option value="10">TDAE (travel)</option>
+            </select>
           </div>
-        </div>
-
-        <div class="nhsuk-form-group">
-          <fieldset id="paymentDateFieldset" class="nhsuk-fieldset" role="group">
-            <legend class="nhsuk-fieldset__legend nhsuk-label">Payment date</legend>
 
 
+          <div class="nhsuk-form-group">
+            <label id="term-label" for="termDrop" class="nhsuk-label">Term</label>
 
-            <div class="nhsuk-date-input" id="change-date">
-              <div class="nhsuk-date-input__item">
-                <div class="nhsuk-form-group">
-                  <label class="nhsuk-label nhsuk-date-input__label" for="paymentDate-day">Day</label>
-                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="paymentDate-day"
-                    name="day" type="text" pattern="[0-9]*" inputmode="numeric" value="">
-                </div>
+            <div class="nhsuk-radios nhsuk-radios--inline">
+
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-inline-1" name="example-inline" type="radio" value="yes">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-inline-1">
+                  Term 1
+                </label>
               </div>
-              <div class="nhsuk-date-input__item">
-                <div class="nhsuk-form-group">
-                  <label class="nhsuk-label nhsuk-date-input__label" for="paymentDate-month">Month</label>
-                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="paymentDate-month"
-                    name="month" type="text" pattern="[0-9]*" inputmode="numeric" value="">
-                </div>
+
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-inline-2" name="example-inline" type="radio" value="no">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-inline-2">
+                  Term 2
+                </label>
               </div>
-              <div class="nhsuk-date-input__item">
-                <div class="nhsuk-form-group">
-                  <label class="nhsuk-label nhsuk-date-input__label" for="paymentDate-year">Year</label>
-                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="paymentDate-year"
-                    name="year" type="text" pattern="[0-9]*" inputmode="numeric" value="">
-                </div>
-              </div>
-            </div>
-          </fieldset>
-        </div>
 
-        <div class="nhsuk-form-group">
-          <label class="nhsuk-label" for="amount" id="amountLabel">Amount </label>
-
-
-          <div class="nhsuk-input__wrapper">
-
-            <div class="nhsuk-input__prefix" aria-hidden="true">£</div>
-
-            <input class="nhsuk-input nhsuk-input--width-5" id="example" name="example" type="text">
-          </div>
-        </div>
-
-        <div class="nhsuk-form-group">
-          <fieldset class="nhsuk-fieldset" role="group">
-            <legend class="nhsuk-u-visually-hidden">Is this payment held?</legend>
-            <div class="nhsuk-checkboxes">
-              <div class="nhsuk-checkboxes__item">
-                <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
-                <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
-                  Held
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-inline-3" name="example-inline" type="radio" value="no">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-inline-3">
+                  Term 3
                 </label>
               </div>
             </div>
-          </fieldset>
-        </div>
+          </div>
 
-        <!-- <div class="nhsuk-form-group">
+          <div class="nhsuk-form-group">
+            <fieldset id="paymentDateFieldset" class="nhsuk-fieldset" role="group">
+              <legend class="nhsuk-fieldset__legend nhsuk-label">Payment date</legend>
+
+
+
+              <div class="nhsuk-date-input" id="change-date">
+                <div class="nhsuk-date-input__item">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="paymentDate-day">Day</label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="paymentDate-day"
+                      name="day" type="text" pattern="[0-9]*" inputmode="numeric" value="">
+                  </div>
+                </div>
+                <div class="nhsuk-date-input__item">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="paymentDate-month">Month</label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="paymentDate-month"
+                      name="month" type="text" pattern="[0-9]*" inputmode="numeric" value="">
+                  </div>
+                </div>
+                <div class="nhsuk-date-input__item">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="paymentDate-year">Year</label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="paymentDate-year"
+                      name="year" type="text" pattern="[0-9]*" inputmode="numeric" value="">
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="amount" id="amountLabel">Amount </label>
+
+
+            <div class="nhsuk-input__wrapper">
+
+              <div class="nhsuk-input__prefix" aria-hidden="true">£</div>
+
+              <input class="nhsuk-input nhsuk-input--width-5" id="example" name="example" type="text">
+            </div>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <fieldset class="nhsuk-fieldset" role="group">
+              <legend class="nhsuk-u-visually-hidden">Is this payment held?</legend>
+              <div class="nhsuk-checkboxes">
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+                    Held
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <!-- <div class="nhsuk-form-group">
             <button class="nhsuk-button nhsuk-u-margin-right-4" type="submit" id="next" data-module="nhsuk-button"
               data-prevent-double-click="true">Continue</button>
 
           </div> -->
 
-
-        <div class="nhsuk-form-group" style="margin-top: 40px;">
-          <a class="nhsuk-button nhsuk-u-margin-right-4" id="complete"
-            href="payment-details-locked-coc-callout?CoCPaymentsUpdated=true" role="button"
-            data-module="nhsuk-button">Submit</a>
-
+          <button class="nhsuk-button" type="submit" style="margin-top: 20px;">Submit</button>
           <p><a id="canceltoStudent" href="payment-details-locked-coc-callout">Cancel</a></p>
-        </div>
 
+        </form>
 
       </div>
     </div>

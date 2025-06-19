@@ -539,6 +539,8 @@
                     </td>
                   </tr>
 
+                  <!-- IF THIS HAS BEEN ADDED... ADD THIS TO TABLE -->
+                  {% if data['MeansTestedBursaryAdded'] == 'true' %}
                   <tr role="row" class="nhsuk-table__row">
                     <td role="cell" class="nhsuk-table__cell">
                       Means tested bursary
@@ -550,7 +552,6 @@
                       22 January 2025
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
                       Pending
@@ -561,7 +562,10 @@
                       <a href="payment-details-add-debt">Debt</a>
                     </td>
                   </tr>
+                  {% endif %}
 
+                  <!-- IF THIS HAS BEEN ADDED... ADD THIS TO TABLE -->
+                  {% if data['ExtraWeeksAllowanceAdded'] == 'true' %}
                   <tr role="row" class="nhsuk-table__row">
                     <td role="cell" class="nhsuk-table__cell">
                       Extra Weeks Allowance
@@ -584,6 +588,7 @@
                       <a href="payment-details-add-debt">Debt</a>
                     </td>
                   </tr>
+                  {% endif %}
 
                 </tbody>
               </table>
