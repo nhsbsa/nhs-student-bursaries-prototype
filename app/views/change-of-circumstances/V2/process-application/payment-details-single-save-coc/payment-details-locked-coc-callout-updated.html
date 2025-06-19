@@ -402,7 +402,7 @@
                       Extra Weeks Allowance
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      £330
+                      £314
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
                       16 September 2024
@@ -498,7 +498,7 @@
                       Extra Weeks Allowance
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      £330
+                      £314
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
                       16 December 2024
@@ -535,12 +535,58 @@
                     </td>
                   </tr>
 
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      Means tested bursary
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      £108
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      22 January 2025
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      Pending
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <a href="payment-details-edit-payment">Edit</a>
+                      <br>
+                      <a href="payment-details-add-debt">Debt</a>
+                    </td>
+                  </tr>
+
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      Extra Weeks Allowance
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      £118
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      22 January 2025
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      Pending
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <a href="payment-details-edit-payment">Edit</a>
+                      <br>
+                      <a href="payment-details-add-debt">Debt</a>
+                    </td>
+                  </tr>
+
                 </tbody>
               </table>
 
               <div class="nhsuk-u-margin-top-4">
                 <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-0" id="enrol1term1TotalAmount">Total amount for
-                  term 2: £1,364</h3>
+                  term 2: £1,590</h3>
               </div>
 
             </div>
@@ -576,8 +622,10 @@
                       Means tested bursary
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      {% if data['CoCPaymentsUpdated'] == 'true' %}
-                      £998
+                      <!-- Old flag used (can probably delete once page is completed): -->
+                      <!-- {# if data['CoCPaymentsUpdated'] == 'true' #} -->
+                      {% if data['MeansTestedBursaryEdited'] == 'true' %}
+                      £890
                       {% else %}
                       £742
                       {% endif %}
@@ -593,7 +641,7 @@
                       Pending
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      <a href="payment-details-edit-payment">Edit</a>
+                      <a href="payment-details-edit-payment?MeansTestedBursaryEdited=true">Edit</a>
                       <br>
                       <a href="payment-details-add-debt">Debt</a>
                     </td>
@@ -604,13 +652,8 @@
                       Non means tested grant
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      {% if data['CoCPaymentsUpdated'] == 'true' %}
-                      £604
-                      {% else %}
-                      £324
-                      {% endif %}
+                      £340
                     </td>
-                    
                     <td role="cell" class="nhsuk-table__cell">
                       16 April 2025
                     </td>
@@ -632,7 +675,13 @@
                       Extra Weeks Allowance
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      £340
+                      <!-- Old flag used (can probably delete once page is completed): -->
+                      <!-- {# if data['CoCPaymentsUpdated'] == 'true' #} -->
+                      {% if data['ExtraWeeksAllowanceEdited'] == 'true' %}
+                      £486
+                      {% else %}
+                      £324
+                      {% endif %}
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
                       16 April 2025
@@ -644,7 +693,7 @@
                       Pending
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      <a href="payment-details-edit-payment">Edit</a>
+                      <a href="payment-details-edit-payment?ExtraWeeksAllowanceEdited=true">Edit</a>
                       <br>
                       <a href="payment-details-add-debt">Debt</a>
                     </td>
@@ -657,10 +706,15 @@
                 <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-0" id="enrol1term1TotalAmount">Total amount for
                   term 3:
 
-                  {% if data['CoCPaymentsUpdated'] == 'true' %}
-                  £1,942
+                  <!-- Update this term total, to reflect changes to both payments, or one, or the other, or else neither of them -->
+                  {% if data['MeansTestedBursaryEdited'] == 'true' and data['ExtraWeeksAllowanceEdited'] == 'true' %}
+                  £1,716
+                  {% elif data['MeansTestedBursaryEdited'] == 'true' %}
+                  £1,554
+                  {% elif data['ExtraWeeksAllowanceEdited'] == 'true' %}
+                  £1,568
                   {% else %}
-                  £1406
+                  £1,406
                   {% endif %}
 
                 </h3>
@@ -1160,8 +1214,6 @@
                   <tr role="row">
                     <th role="columnheader" class="" scope="col">Type</th>
                     <th role="columnheader" class="" scope="col">Amount</th>
-                    <!-- <th role="columnheader" class="" scope="col">Debt</th> -->
-                    <!-- <th role="columnheader" class="" scope="col">Payable</th> -->
                     <th role="columnheader" class="" scope="col">Expected date</th>
                     <th role="columnheader" class="" scope="col">Payment date</th>
                     <th role="columnheader" class="" scope="col">Status</th>
@@ -1174,49 +1226,18 @@
                       Means tested bursary
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      {% if data['MeansTestedBursaryEdited'] == 'true' %}
-                      £998
-                      {% else %}
-                      £742
-                      {% endif %}
-                    </td>
-
-                    <td role="cell" class="nhsuk-table__cell">
-                      16 April 2025
+                      £872
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      16 April 2025
+                      16 April 2024
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      Pending
+                      16 April 2024
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      <a href="payment-details-edit-payment?MeansTestedBursaryEdited=true">Edit</a>
-                      <br>
-                      <a href="payment-details-add-debt">Debt</a>
-                    </td>
-                  </tr>
-
-                  <tr role="row" class="nhsuk-table__row">
-                    <td role="cell" class="nhsuk-table__cell">
-                      Non means tested grant
+                      Paid
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      £340
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      16 April 2025
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      16 April 2025
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      Pending
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <a href="payment-details-edit-payment">Edit</a>
-                      <br>
-                      <a href="payment-details-add-debt">Debt</a>
                     </td>
                   </tr>
 
@@ -1225,25 +1246,98 @@
                       Extra Weeks Allowance
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      {% if data['ExtraWeeksAllowanceEdited'] == 'true' %}
-                      £604
-                      {% else %}
-                      £324
-                      {% endif %}
+                      £610
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      16 April 2025
+                      16 April 2024
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      16 April 2025
+                      16 April 2024
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      Pending
+                      Paid
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      <a href="payment-details-edit-payment?ExtraWeeksAllowanceEdited=true">Edit</a>
-                      <br>
-                      <a href="payment-details-add-debt">Debt</a>
+                    </td>
+                  </tr>
+
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      Extra Weeks Allowance
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      £15
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 April 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 April 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      Paid
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                    </td>
+                  </tr>
+
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      Non means tested grant
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      £330
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 April 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 April 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      Paid
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                    </td>
+                  </tr>
+
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      Means tested bursary
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      £17
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 April 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 April 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      Paid
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                    </td>
+                  </tr>
+
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      Non means tested grant
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      £7
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 April 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      16 April 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      Paid
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
                     </td>
                   </tr>
 
@@ -1252,20 +1346,7 @@
 
               <div class="nhsuk-u-margin-top-4">
                 <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-0" id="enrol1term1TotalAmount">Total amount for
-                  term 3:
-
-                  <!-- Update this term total, to reflect changes to both payments, or one, or the other, or else neither of them -->
-                  {% if data['ExtraWeeksAllowanceEdited'] == 'true' and data['MeansTestedBursaryEdited'] == 'true' %}
-                  £1,942
-                  {% elif data['ExtraWeeksAllowanceEdited'] == 'true' %}
-                  £1,686
-                  {% elif data['MeansTestedBursaryEdited'] == 'true' %}
-                  £1,662
-                  {% else %}
-                  £1,406
-                  {% endif %}
-
-                </h3>
+                  term 3: £1,851</h3>
               </div>
 
             </div>
