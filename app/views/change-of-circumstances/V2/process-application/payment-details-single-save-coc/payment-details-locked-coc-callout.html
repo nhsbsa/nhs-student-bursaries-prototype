@@ -595,7 +595,19 @@
 
               <div class="nhsuk-u-margin-top-4">
                 <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-0" id="enrol1term1TotalAmount">Total amount for
-                  term 2: £1,590</h3>
+                  term 2:
+
+                  <!-- Update this term total, to reflect additions of both 2 new payments, or one, or the other, or else neither of them -->
+                  {% if data['MeansTestedBursaryAdded'] == 'true' and data['ExtraWeeksAllowanceAdded'] == 'true' %}
+                  £1,590
+                  {% elif data['MeansTestedBursaryAdded'] == 'true' %}
+                  £1,472
+                  {% elif data['ExtraWeeksAllowanceAdded'] == 'true' %}
+                  £1,382
+                  {% else %}
+                  £1,364
+                  {% endif %}
+                </h3>
               </div>
 
             </div>
