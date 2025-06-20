@@ -29,6 +29,8 @@
     {% if data['livingWithParents'] == "Yes" %}
     <p>You can upload any evidence that supports your change of circumstances.</p>
     <p>If you do not need to give evidence, you can skip this step by selecting Continue.</p>
+    {% elif data['CoCType'] == "Change of income" %}
+    <p>You need to upload new evidence that supports your change. You cannot remove old evidence.</p>
     {% else %}
     <p>You need to upload evidence that supports your change of circumstances.</p>
     {% endif %}
