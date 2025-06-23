@@ -540,7 +540,7 @@
                   </tr>
 
                   <!-- IF THIS HAS BEEN ADDED... ADD THIS TO TABLE -->
-                  {% if data['MeansTestedBursaryAdded'] == 'true' %}
+                  {% if data['T2MeansTestedBursaryAdded'] == 'true' %}
                   <tr role="row" class="nhsuk-table__row">
                     <td role="cell" class="nhsuk-table__cell">
                       Means tested bursary
@@ -565,7 +565,7 @@
                   {% endif %}
 
                   <!-- IF THIS HAS BEEN ADDED... ADD THIS TO TABLE -->
-                  {% if data['ExtraWeeksAllowanceAdded'] == 'true' %}
+                  {% if data['T2ExtraWeeksAllowanceAdded'] == 'true' %}
                   <tr role="row" class="nhsuk-table__row">
                     <td role="cell" class="nhsuk-table__cell">
                       Extra Weeks Allowance
@@ -595,7 +595,19 @@
 
               <div class="nhsuk-u-margin-top-4">
                 <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-0" id="enrol1term1TotalAmount">Total amount for
-                  term 2: £1,590</h3>
+                  term 2:
+
+                  <!-- Update this term total, to reflect additions of both 2 new payments, or one, or the other, or else neither of them -->
+                  {% if data['T2MeansTestedBursaryAdded'] == 'true' and data['T2ExtraWeeksAllowanceAdded'] == 'true' %}
+                  £1,590
+                  {% elif data['T2MeansTestedBursaryAdded'] == 'true' %}
+                  £1,472
+                  {% elif data['T2ExtraWeeksAllowanceAdded'] == 'true' %}
+                  £1,382
+                  {% else %}
+                  £1,364
+                  {% endif %}
+                </h3>
               </div>
 
             </div>
@@ -633,7 +645,7 @@
                     <td role="cell" class="nhsuk-table__cell">
                       <!-- Old flag used (can probably delete once page is completed): -->
                       <!-- {# if data['CoCPaymentsUpdated'] == 'true' #} -->
-                      {% if data['MeansTestedBursaryEdited'] == 'true' %}
+                      {% if data['T3MeansTestedBursaryEdited'] == 'true' %}
                       £890
                       {% else %}
                       £742
@@ -644,13 +656,13 @@
                       16 April 2025
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      16 April 2025
+                      
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
                       Pending
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      <a href="payment-details-edit-payment?MeansTestedBursaryEdited=true">Edit</a>
+                      <a href="payment-details-edit-payment?T3PaymentBeingEdited=meansTestedBursary">Edit</a>
                       <br>
                       <a href="payment-details-add-debt">Debt</a>
                     </td>
@@ -667,7 +679,7 @@
                       16 April 2025
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      16 April 2025
+                      
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
                       Pending
@@ -686,7 +698,7 @@
                     <td role="cell" class="nhsuk-table__cell">
                       <!-- Old flag used (can probably delete once page is completed): -->
                       <!-- {# if data['CoCPaymentsUpdated'] == 'true' #} -->
-                      {% if data['ExtraWeeksAllowanceEdited'] == 'true' %}
+                      {% if data['T3ExtraWeeksAllowanceEdited'] == 'true' %}
                       £486
                       {% else %}
                       £324
@@ -696,13 +708,13 @@
                       16 April 2025
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      16 April 2025
+                      
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
                       Pending
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      <a href="payment-details-edit-payment?ExtraWeeksAllowanceEdited=true">Edit</a>
+                      <a href="payment-details-edit-payment?T3PaymentBeingEdited=extraWeeksAllowance">Edit</a>
                       <br>
                       <a href="payment-details-add-debt">Debt</a>
                     </td>
@@ -716,11 +728,11 @@
                   term 3:
 
                   <!-- Update this term total, to reflect changes to both payments, or one, or the other, or else neither of them -->
-                  {% if data['MeansTestedBursaryEdited'] == 'true' and data['ExtraWeeksAllowanceEdited'] == 'true' %}
+                  {% if data['T3MeansTestedBursaryEdited'] == 'true' and data['T3ExtraWeeksAllowanceEdited'] == 'true' %}
                   £1,716
-                  {% elif data['MeansTestedBursaryEdited'] == 'true' %}
+                  {% elif data['T3MeansTestedBursaryEdited'] == 'true' %}
                   £1,554
-                  {% elif data['ExtraWeeksAllowanceEdited'] == 'true' %}
+                  {% elif data['T3ExtraWeeksAllowanceEdited'] == 'true' %}
                   £1,568
                   {% else %}
                   £1,406

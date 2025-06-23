@@ -123,7 +123,7 @@ router.post('/change-of-circumstances/V2/process-application/change-summary/', (
 
     // Else, payment schedule needs updating too - so ask if they want it updating automatically or manually
     else {
-      res.redirect('/change-of-circumstances/V2/process-application/payment-details-single-save-coc/payment-scheduling-required?CoCPaymentsUpdated=false')
+      res.redirect('/change-of-circumstances/V2/process-application/payment-details-single-save-coc/payment-scheduling-required-manual?CoCPaymentsUpdated=false')
     }
   }
 
@@ -174,28 +174,71 @@ router.post('/change-of-circumstances/V2/process-application/payment-details-sin
   // Save state of addedPaymentType dropdown
   const addedPaymentType = req.session.data['addedPaymentType']
 
-// Initialise values of each payment type being added (false, at first)
-  MeansTestedBursaryAdded = 'false'
-  ExtraWeeksAllowanceAdded = 'false'
+  // Initialise values of each payment type being added (false, at first)
+  T2MeansTestedBursaryAdded = 'false'
+  T2ExtraWeeksAllowanceAdded = 'false'
 
   // Save states of constants for each payment type being added
   if (addedPaymentType === 'meansTestedBursary') {
-    MeansTestedBursaryAdded = 'true'
+    T2MeansTestedBursaryAdded = 'true'
   }
   if (addedPaymentType === 'extraWeeksAllowance') {
-    ExtraWeeksAllowanceAdded = 'true'
+    T2ExtraWeeksAllowanceAdded = 'true'
   }
 
   // Pass values of added payment types so they can be shown in payment schedule.
   // Both will be shown, or one, or the other, or else neither.
-  if (MeansTestedBursaryAdded === 'true' && ExtraWeeksAllowanceAdded === 'true') {
-    res.redirect('/change-of-circumstances/V2/process-application/payment-details-single-save-coc/payment-details-locked-coc-callout?CoCPaymentsUpdated=true&MeansTestedBursaryAdded=true?ExtraWeeksAllowanceAdded=true')
+  if (T2MeansTestedBursaryAdded === 'true' && T2ExtraWeeksAllowanceAdded === 'true') {
+    res.redirect('/change-of-circumstances/V2/process-application/payment-details-single-save-coc/payment-details-locked-coc-callout?CoCPaymentsUpdated=true&T2MeansTestedBursaryAdded=true?T2ExtraWeeksAllowanceAdded=true')
   }
-  else if (MeansTestedBursaryAdded === 'true') {
-    res.redirect('/change-of-circumstances/V2/process-application/payment-details-single-save-coc/payment-details-locked-coc-callout?CoCPaymentsUpdated=true&MeansTestedBursaryAdded=true')
+  else if (T2MeansTestedBursaryAdded === 'true') {
+    res.redirect('/change-of-circumstances/V2/process-application/payment-details-single-save-coc/payment-details-locked-coc-callout?CoCPaymentsUpdated=true&T2MeansTestedBursaryAdded=true')
   }
-  else if (ExtraWeeksAllowanceAdded === 'true') {
-    res.redirect('/change-of-circumstances/V2/process-application/payment-details-single-save-coc/payment-details-locked-coc-callout?CoCPaymentsUpdated=true&ExtraWeeksAllowanceAdded=true')
+  else if (T2ExtraWeeksAllowanceAdded === 'true') {
+    res.redirect('/change-of-circumstances/V2/process-application/payment-details-single-save-coc/payment-details-locked-coc-callout?CoCPaymentsUpdated=true&T2ExtraWeeksAllowanceAdded=true')
+  }
+  else {
+    res.redirect('/change-of-circumstances/V2/process-application/payment-details-single-save-coc/payment-details-locked-coc-callout?CoCPaymentsUpdated=true')
+  }
+
+})
+
+
+router.post('/change-of-circumstances/V2/process-application/payment-details-single-save-coc/payment-details-edit-payment-route/', (req, res) => {
+
+  // Save state of editedPaymentType dropdown
+  const editedPaymentType = req.session.data['editedPaymentType']
+
+  // Reset Edit Clicked flags to false
+  // MeansTestedBursaryEditClicked = 'false'
+  // ExtraWeeksAllowanceEditClicked = 'false'
+
+  // Save states of constants for each payment type being added
+  // T3MeansTestedBursaryEdited = req.session.data['T3MeansTestedBursaryEdited']
+  // T3ExtraWeeksAllowanceEdited = req.session.data['T3ExtraWeeksAllowanceEdited']
+
+  // Save states of constants for each payment type being added
+
+  // if (editedPaymentType === 'meansTestedBursary') {
+  //   T3MeansTestedBursaryEdited = 'true'
+  // }
+  // if (editedPaymentType === 'extraWeeksAllowance') {
+  //   T3ExtraWeeksAllowanceEdited = 'true'
+  // }
+
+  // Pass values of added payment types so they can be shown in payment schedule.
+  // Both will be shown, or one, or the other, or else neither.
+
+  // if (T2MeansTestedBursaryAdded === 'true' && T2ExtraWeeksAllowanceAdded === 'true') {
+  //   res.redirect('/change-of-circumstances/V2/process-application/payment-details-single-save-coc/payment-details-locked-coc-callout?CoCPaymentsUpdated=true&T2MeansTestedBursaryAdded=true?T2ExtraWeeksAllowanceAdded=true')
+  // }
+
+  // Proceed to schedule, while updating and passing the relevant Edited flag
+  if (editedPaymentType === 'meansTestedBursary') {
+    res.redirect('/change-of-circumstances/V2/process-application/payment-details-single-save-coc/payment-details-locked-coc-callout?CoCPaymentsUpdated=true&T3MeansTestedBursaryEdited=true')
+  }
+  else if (editedPaymentType === 'extraWeeksAllowance') {
+    res.redirect('/change-of-circumstances/V2/process-application/payment-details-single-save-coc/payment-details-locked-coc-callout?CoCPaymentsUpdated=true&T3ExtraWeeksAllowanceEdited=true')
   }
   else {
     res.redirect('/change-of-circumstances/V2/process-application/payment-details-single-save-coc/payment-details-locked-coc-callout?CoCPaymentsUpdated=true')

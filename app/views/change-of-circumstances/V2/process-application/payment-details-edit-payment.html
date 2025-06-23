@@ -71,7 +71,7 @@
           <select class="nhsuk-select" id="paymentTypeDrop" name="paymentType" style="text-transform: none;">
 
             <!-- Pre-select the payment type, depending on which Edit link the prototype user clicked -->
-            {% if data['ExtraWeeksAllowanceEdited'] == 'true' %}
+            {% if data['T3ExtraWeeksAllowanceEdited'] == 'true' %}
             <option value="">Select option</option>
             <option value="1">Means tested bursary</option>
             <option value="5">Childcare Allowance</option>
@@ -173,7 +173,7 @@
             <div class="nhsuk-input__prefix" aria-hidden="true">£</div>
 
             <!-- Prefill the current amount value, depending on which Edit link the prototype user clicked -->
-            {% if data['ExtraWeeksAllowanceEdited'] == 'true' %}
+            {% if data['T3ExtraWeeksAllowanceEdited'] == 'true' %}
             <input class="nhsuk-input nhsuk-input--width-5" id="example" name="example" type="text" value="324">
             {% else %}
             <input class="nhsuk-input nhsuk-input--width-5" id="example" name="example" type="text" value="742">
