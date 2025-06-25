@@ -211,7 +211,7 @@
               </details>
 
 
-              
+
               <details class="nhsuk-details nhsuk-expander" id="activity0">
 
                 <summary class="nhsuk-details__summary">
@@ -312,19 +312,51 @@
 
         <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="tab-2" role="tabpanel" aria-labelledby="tab_tab-2">
           <div class="nhsuk-grid-row">
-            <div class="nhsuk-grid-column-one-quarter">
-              <h2 class="nhsuk-heading-m">Notes</h2>
-              <a class="nhsuk-button" id="addNote" href="/internal/notes/addnote?studentId=259" role="button">Add
-                note<span class="nhsuk-u-visually-hidden"> to student account</span></a>
+            <div class="nhsuk-grid-column-full">
+              <div class="nhsuk-form-group" style="clear:both; display: flow-root;">
+                <h3 class="nhsuk-heading-m" style="float: left; margin-top: 14px; margin-bottom: 0px;">Notes</h3>
+                <a href="/internal/notes/addnote?studentId=259" class="nhsuk-button" style="float: right; margin-bottom: 0px;">Add note</a>
+              </div>
+              <hr>
             </div>
+          </div>
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-third">
+              <h4 class="nhsuk-heading-s"">Filter</h4>
+							<div class="nhsuk-form-group">
+								<label class="nhsuk-label visually-hidden" for="filter-notes">Filter notes</label>
+								<input class="nhsuk-input" id="example" name="filter-notes" type="text" value="">
+							</div>
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="student-name">
+                  Note type
+                </label>
+                <div class="nhsuk-hint" id="contact-hint">
+                Select the notes you want shown.
+                </div>
+                <div class="nhsuk-checkboxes nhsuk-checkboxes--small" style="display: flow-root;" data-module="nhsuk-checkboxes">
+                  <div class="nhsuk-checkboxes__item">
+                      <input class="nhsuk-checkboxes__input" id="note-filter" name="note-filter" type="checkbox" value="1">
+                      <label class="nhsuk-label nhsuk-checkboxes__label" for="note-filter">
+                      System note
+                      </label>
+                  </div>
+                  <div class="nhsuk-checkboxes__item">
+                      <input class="nhsuk-checkboxes__input" id="note-filter-2" name="note-filter" type="checkbox" value="2">
+                      <label class="nhsuk-label nhsuk-checkboxes__label" for="note-filter-2">
+                      User note
+                      </label>
+                  </div>
+                </div>
+              </div>
+              <div class="nhsuk-form-group">
+                <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button">
+                Apply filters
+                </button>
+              </div>
+						</div>
 
-            <div class="nhsuk-grid-column-three-quarters">
-              <label for="filterText" class="nhsuk-label">Filter notes</label>
-              <input class="nhsuk-input nhsuk-u-width-full" type="text" name="search-box" value="" id="filterText"
-                onkeyup="filterTable('filterText', 'notesTable')">
-              <span class="inline-search-button">
-                <span class="nhsuk-u-visually-hidden">Search</span>
-              </span>
+            <div class="nhsuk-grid-column-two-thirds">
 
               <table id="notesTable">
                 <caption class="nhsuk-u-visually-hidden">User notes table</caption>
