@@ -209,30 +209,6 @@ router.post('/change-of-circumstances/V2/process-application/payment-details-sin
   // Save state of editedPaymentType dropdown
   const editedPaymentType = req.session.data['editedPaymentType']
 
-  // Reset Edit Clicked flags to false
-  // MeansTestedBursaryEditClicked = 'false'
-  // ExtraWeeksAllowanceEditClicked = 'false'
-
-  // Save states of constants for each payment type being added
-  // T3MeansTestedBursaryEdited = req.session.data['T3MeansTestedBursaryEdited']
-  // T3ExtraWeeksAllowanceEdited = req.session.data['T3ExtraWeeksAllowanceEdited']
-
-  // Save states of constants for each payment type being added
-
-  // if (editedPaymentType === 'meansTestedBursary') {
-  //   T3MeansTestedBursaryEdited = 'true'
-  // }
-  // if (editedPaymentType === 'extraWeeksAllowance') {
-  //   T3ExtraWeeksAllowanceEdited = 'true'
-  // }
-
-  // Pass values of added payment types so they can be shown in payment schedule.
-  // Both will be shown, or one, or the other, or else neither.
-
-  // if (T2MeansTestedBursaryAdded === 'true' && T2ExtraWeeksAllowanceAdded === 'true') {
-  //   res.redirect('/change-of-circumstances/V2/process-application/payment-details-single-save-coc/payment-details-locked-coc-callout?CoCPaymentsUpdated=true&T2MeansTestedBursaryAdded=true?T2ExtraWeeksAllowanceAdded=true')
-  // }
-
   // Proceed to schedule, while updating and passing the relevant Edited flag
   if (editedPaymentType === 'meansTestedBursary') {
     res.redirect('/change-of-circumstances/V2/process-application/payment-details-single-save-coc/payment-details-locked-coc-callout?CoCPaymentsUpdated=true&T3MeansTestedBursaryEdited=true')
