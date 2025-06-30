@@ -10,8 +10,64 @@
 ///////////////////////////////////////////
 
 
+/* Student Services breakdown details */
+
+@media screen and (min-width: 48.0525em) {
+    .ss-details-desktop {
+        display: block;
+        /* Show the desktop view */
+    }
+
+    .ss-details-mobile {
+        display: none !important;
+        /* Hide the mobile view */
+    }
+}
+
+@media screen and (max-width: 48.0525em) {
+    .ss-details-desktop {
+        display: none !important;
+        /* Hide the desktop view */
+    }
+
+    .ss-details-mobile {
+        display: block;
+        padding-left: 10px;
+        border-left: 4px solid #d8dde0;
+        /* Show the mobile view */
+    }
+}
+
+.ss-details-text {
+    padding-right: 0px;
+    padding-left: 10px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-top: 8px;
+    border-left: 4px solid #d8dde0;
+    color: rgb(76, 98, 114);
+}
+
+.ss-details-summary-list {
+    font-size: 1rem;
+    margin-bottom: 0px;
+}
+
+.ss-details-summary-list__key {
+    width: 80% !important;
+    text-align: left;
+}
+
+.ss-details-summary-list__value {
+    padding-right: 0px;
+}
+
+
+
+
+
 /* small checkbox from gov */
-.nhsbsa-table-select > tbody > tr td:first-child {
+.nhsbsa-table-select>tbody>tr td:first-child {
     border-left: 3px solid transparent;
 }
 
@@ -20,108 +76,117 @@
     margin-bottom: 0;
     padding-left: 34px;
     float: left;
-  }
+}
 
-  .nhsuk-checkboxes--small .nhsuk-checkboxes__item:after {
+.nhsuk-checkboxes--small .nhsuk-checkboxes__item:after {
     content: "";
     display: block;
     clear: both;
-  }
+}
 
-  .nhsuk-checkboxes--small .nhsuk-checkboxes__input {
+.nhsuk-checkboxes--small .nhsuk-checkboxes__input {
     left: -10px;
-  }
+}
 
-  .nhsuk-checkboxes--small .nhsuk-checkboxes__label {
+.nhsuk-checkboxes--small .nhsuk-checkboxes__label {
     margin-top: -2px;
     padding: 13px 15px 13px 1px;
     float: left;
-  }
+}
 
-  @media(min-width: 40.0625em) {
+@media(min-width: 40.0625em) {
     .nhsuk-checkboxes--small .nhsuk-checkboxes__label {
-      padding: 11px 15px 10px 1px;
+        padding: 11px 15px 10px 1px;
     }
-  }
+}
 
-  .nhsuk-checkboxes--small .nhsuk-checkboxes__label:before {
+.nhsuk-checkboxes--small .nhsuk-checkboxes__label:before {
     top: 8px;
     width: 24px;
     height: 24px;
-  }
+}
 
-  .nhsuk-checkboxes--small .nhsuk-checkboxes__label:after {
+.nhsuk-checkboxes--small .nhsuk-checkboxes__label:after {
     top: 15px;
     left: 6px;
     width: 12px;
     height: 6.5px;
     border-width: 0 0 3px 3px;
-  }
+}
 
-  .nhsuk-checkboxes--small .nhsuk-checkboxes__hint {
+.nhsuk-checkboxes--small .nhsuk-checkboxes__hint {
     padding: 0;
     clear: both;
-  }
+}
 
-  .nhsuk-checkboxes--small .nhsuk-checkboxes__conditional {
+.nhsuk-checkboxes--small .nhsuk-checkboxes__conditional {
     margin-left: 10px;
     padding-left: 20px;
     clear: both;
-  }
+}
 
-  .nhsuk-checkboxes--small .nhsuk-checkboxes__item:hover .nhsuk-checkboxes__input:not(:disabled)+.nhsuk-checkboxes__label:before {
+.nhsuk-checkboxes--small .nhsuk-checkboxes__item:hover .nhsuk-checkboxes__input:not(:disabled)+.nhsuk-checkboxes__label:before {
     box-shadow: 0 0 0 10px #b1b4b6;
-  }
+}
 
-  .nhsuk-checkboxes--small .nhsuk-checkboxes__item:hover .nhsuk-checkboxes__input:focus+.nhsuk-checkboxes__label:before {
+.nhsuk-checkboxes--small .nhsuk-checkboxes__item:hover .nhsuk-checkboxes__input:focus+.nhsuk-checkboxes__label:before {
     box-shadow: 0 0 0 3px #ffeb3b, 0 0 0 10px #b1b4b6
-  }
+}
 
-  @media(hover: none),
-  (pointer: coarse) {
+@media(hover: none),
+(pointer: coarse) {
     .nhsuk-checkboxes--small .nhsuk-checkboxes__item:hover .nhsuk-checkboxes__input:not(:disabled)+.nhsuk-checkboxes__label:before {
-      box-shadow: initial;
+        box-shadow: initial;
     }
 
     .nhsuk-checkboxes--small .nhsuk-checkboxes__item:hover .nhsuk-checkboxes__input:focus+.nhsuk-checkboxes__label:before {
-      box-shadow: 0 0 0 3px #ffeb3b;
+        box-shadow: 0 0 0 3px #ffeb3b;
     }
-  }
+}
+
 /* Small checkboxes in table */
-td > .nhsuk-checkboxes--small > .nhsuk-checkboxes__item > .nhsuk-checkboxes__label:before {
+td>.nhsuk-checkboxes--small>.nhsuk-checkboxes__item>.nhsuk-checkboxes__label:before {
     top: 10px;
     left: 10px;
 }
-td > .nhsuk-checkboxes--small > .nhsuk-checkboxes__item > .nhsuk-checkboxes__label:after{
+
+td>.nhsuk-checkboxes--small>.nhsuk-checkboxes__item>.nhsuk-checkboxes__label:after {
     top: 17px;
     left: 16px;
 }
+
 @media only screen and (min-width:613px) {
-    td > .nhsuk-checkboxes--small > .nhsuk-checkboxes__item > .nhsuk-checkboxes__label:before {
+    td>.nhsuk-checkboxes--small>.nhsuk-checkboxes__item>.nhsuk-checkboxes__label:before {
         top: 2px;
         left: 10px;
     }
-    td > .nhsuk-checkboxes--small > .nhsuk-checkboxes__item > .nhsuk-checkboxes__label:after{
+
+    td>.nhsuk-checkboxes--small>.nhsuk-checkboxes__item>.nhsuk-checkboxes__label:after {
         top: 8px;
         left: 16px;
     }
 }
+
 @media only screen and (min-width:769px) {
-    td > .nhsuk-checkboxes--small > .nhsuk-checkboxes__item {
+    td>.nhsuk-checkboxes--small>.nhsuk-checkboxes__item {
         margin-left: 10px;
     }
-    td > .nhsuk-checkboxes--small > .nhsuk-checkboxes__item > .nhsuk-checkboxes__label:before {
+
+    td>.nhsuk-checkboxes--small>.nhsuk-checkboxes__item>.nhsuk-checkboxes__label:before {
         top: 0px;
     }
-    td > .nhsuk-checkboxes--small > .nhsuk-checkboxes__item > .nhsuk-checkboxes__label:after{
+
+    td>.nhsuk-checkboxes--small>.nhsuk-checkboxes__item>.nhsuk-checkboxes__label:after {
         top: 7px;
     }
 }
+
 .nhsbsa-row--selected {
     background-color: #fff;
 }
+
 .nhsbsa-row--selected td:first-child {
-    border-left:3px solid #225EB8 !important;
+    border-left: 3px solid #225EB8 !important;
 }
 
 
@@ -365,7 +430,7 @@ td > .nhsuk-checkboxes--small > .nhsuk-checkboxes__item > .nhsuk-checkboxes__lab
 
 .accessibleautocomplete__option:last-of-type {
     border-bottom-width: 0;
-    margin-bottom:0;
+    margin-bottom: 0;
 }
 
 .accessibleautocomplete__option--odd {
