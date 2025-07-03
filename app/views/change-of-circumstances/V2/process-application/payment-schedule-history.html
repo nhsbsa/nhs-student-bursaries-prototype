@@ -2185,14 +2185,24 @@
 
 <script>
   function toggleDetails(link) {
-    const allDetails = document.querySelectorAll('.ss-details-text');
-    const isVisible = [...allDetails].some(detail => detail.style.display === 'block');
+    // Find the container of the clicked link (assumed to be the parent of heading + link)
+    const container = link.closest('div');
 
-    allDetails.forEach(detail => {
-      detail.style.display = isVisible ? 'none' : 'block';
+    // Find the next sibling <table> after the heading/link div
+    const table = container.nextElementSibling;
+
+    // Get only the .ss-details-text elements inside this table
+    const details = table.querySelectorAll('.ss-details-text');
+
+    // Check if any are currently visible
+    const isVisible = [...details].some(el => el.style.display === 'block');
+
+    // Toggle visibility
+    details.forEach(el => {
+      el.style.display = isVisible ? 'none' : 'block';
     });
 
-    // Toggle link text
+    // Toggle the link text
     link.textContent = isVisible ? 'Show old details' : 'Hide old details';
   }
 </script>
