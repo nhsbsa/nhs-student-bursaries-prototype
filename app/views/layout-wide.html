@@ -126,7 +126,35 @@
 <!-- Footer goes inside the footer block -->
 <!-- More info and code for the footer can be found at https://service-manual.nhs.uk/design-system/components/footer -->
 {% block footer %}
-  {{ footer({
+<footer role="contentinfo">
+  <div class="nhsuk-footer-container">
+    <div class="nhsuk-width-container nhsbsa-maxwidth-wide">
+      <h2 class="nhsuk-u-visually-hidden">Support links</h2>
+      <div class="nhsuk-footer">
+
+        <ul class="nhsuk-footer__list">
+          <li class="nhsuk-footer__list-item nhsuk-footer-default__list-item">
+            <a class="nhsuk-footer__list-item-link" href="/">Home</a>
+          </li>
+          <li class="nhsuk-footer__list-item nhsuk-footer-default__list-item">
+            <a class="nhsuk-footer__list-item-link"
+              href="https://www.nhsbsa.nhs.uk/nhs-bursary-students/contact-us">Contact us</a>
+          </li>
+          <li class="nhsuk-footer__list-item nhsuk-footer-default__list-item">
+            <a class="nhsuk-footer__list-item-link" href="/clear-data">Clear data</a>
+          </li>
+        </ul>
+        <div>
+          <p class="nhsuk-footer__copyright">© NHS England</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+<!-- Old NunJucks -->
+  <!-- {{ footer({
     "links": [
       {
         "URL": "/",
@@ -141,8 +169,9 @@
         "label": "Clear data"
       }
     ]
-  })}}
+  })}} -->
 {% endblock %}
+
 {% block bodyEnd %}
   {% block scripts %}
     <!-- Custom JavaScript files can be added to this file -->
