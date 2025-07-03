@@ -1,7 +1,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-processor.html' %}
+{% extends 'layout-wide.html' %}
 <!--
   In /views/layout.html you can:
     - change the header and footer
@@ -18,7 +18,7 @@
 {% block beforeContent %}
 <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb"
   style="background-color: white; padding:12px 0; margin-bottom: 40px;">
-  <div class="nhsuk-width-container">
+  <div class="nhsuk-width-container nhsbsa-maxwidth-wide">
     <ol class="nhsuk-breadcrumb__list nhsuk-width-container-fluid">
       <li class="nhsuk-breadcrumb__item"><a id="studentDetailsLink" class="nhsuk-breadcrumb__link"
           href="student-details-unlocked">Student details</a></li>
