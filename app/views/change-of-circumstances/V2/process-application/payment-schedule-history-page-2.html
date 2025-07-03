@@ -1,7 +1,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-processor.html' %}
+{% extends 'layout-wide.html' %}
 <!--
   In /views/layout.html you can:
     - change the header and footer
@@ -18,7 +18,7 @@
 {% block beforeContent %}
 <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb"
   style="background-color: white; padding:12px 0; margin-bottom: 40px;">
-  <div class="nhsuk-width-container">
+  <div class="nhsuk-width-container nhsbsa-maxwidth-wide">
     <ol class="nhsuk-breadcrumb__list nhsuk-width-container-fluid">
       <li class="nhsuk-breadcrumb__item"><a id="studentDetailsLink" class="nhsuk-breadcrumb__link"
           href="student-details-unlocked">Student details</a></li>
@@ -329,6 +329,11 @@
 
             <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Type
               </span>Extra Weeks Allowance
+              <div class="ss-details-desktop">
+                <div class="ss-details-text" style="display: none;">
+                  Parent Learning Allowance
+                </div>
+              </div>
             </td>
 
             <!-- <td role="cell" class="nhsuk-table__cell">
@@ -522,12 +527,12 @@
             </td>
             <td role="cell" class="nhsuk-table__cell">
               <span class="nhsuk-table-responsive__heading" aria-hidden="true">Expected date </span>
-              16 April 2023
+              16 April 2024
             </td>
             <td role="cell" class="nhsuk-table__cell">
               <span class="nhsuk-table-responsive__heading" aria-hidden="true">Payment date
               </span>
-              16 April 2023
+              16 April 2024
             </td>
             <td role="cell" class="nhsuk-table__cell">
               <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status </span>
@@ -552,12 +557,12 @@
             </td>
             <td role="cell" class="nhsuk-table__cell">
               <span class="nhsuk-table-responsive__heading" aria-hidden="true">Expected date </span>
-              16 April 2023
+              16 April 2024
             </td>
             <td role="cell" class="nhsuk-table__cell">
               <span class="nhsuk-table-responsive__heading" aria-hidden="true">Payment date
               </span>
-              16 April 2023
+              16 April 2024
             </td>
             <td role="cell" class="nhsuk-table__cell">
               <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status </span>
@@ -582,12 +587,12 @@
             </td>
             <td role="cell" class="nhsuk-table__cell">
               <span class="nhsuk-table-responsive__heading" aria-hidden="true">Expected date </span>
-              16 April 2023
+              16 April 2024
             </td>
             <td role="cell" class="nhsuk-table__cell">
               <span class="nhsuk-table-responsive__heading" aria-hidden="true">Payment date
               </span>
-              16 April 2023
+              16 April 2024
             </td>
             <td role="cell" class="nhsuk-table__cell">
               <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status </span>
@@ -998,10 +1003,10 @@
           <tr role="row" class="nhsuk-table__row">
 
             <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Type
-              </span>Extra Weeks Allowance
+              </span>Parent Learning Allowance
               <div class="ss-details-desktop">
                 <div class="ss-details-text" style="display: none">
-                  Childcare Allowance
+                  Extra Weeks Allowance
                 </div>
               </div>
             </td>
