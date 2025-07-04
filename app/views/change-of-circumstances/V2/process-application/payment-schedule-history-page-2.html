@@ -602,9 +602,92 @@
 
     <!-- ONE OFF PAYMENTS -->
 
-    <h2 class="nhsuk-heading-m" style="margin-bottom: 10px; margin-top: 60px;">One off payments</h2>
+    <div style="margin-top: 60px">
+      <h2 class="nhsuk-heading-m" style="margin-top: 0; float: left">One off payments</h2>
 
-    <p>No one off payments.</p>
+      <a href="#" style="float: right; padding-top: 4px;" class="toggle-details"
+        onclick="toggleDetails(this); return false;">Show old details</a>
+    </div>
+
+    <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-4">
+      <thead role="rowgroup" class="nhsuk-table__head">
+        <tr role="row">
+          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Type</th>
+          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Amount</th>
+          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Payment date</th>
+          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Status</th>
+          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Amount change</th>
+        </tr>
+      </thead>
+
+      <tbody class="nhsuk-table__body">
+        <tr role="row" class="nhsuk-table__row">
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading" aria-hidden="true">Type </span>
+            DSA (general)
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount </span>
+            £120
+          </td>
+
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading" aria-hidden="true">Payment date
+            </span>14 October 2023
+          </td>
+
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status </span>
+            Paid
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount change </span>
+            <strong class="nhsuk-tag nhsuk-tag--white" style="white-space: nowrap; overflow: hidden;">
+              No change
+            </strong>
+          </td>
+        </tr>
+
+        <tr role="row" class="nhsuk-table__row">
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading" aria-hidden="true">Type </span>
+            TDAE (travel)
+          </td>
+
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount </span>
+            £220
+            <div class="ss-details-desktop">
+              <div class="ss-details-text" style="display: none">
+                £50
+              </div>
+            </div>
+          </td>
+
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading" aria-hidden="true">No payment date yet
+            </span>
+          </td>
+
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status </span>
+            Pending
+          <div class="ss-details-desktop">
+            <div class="ss-details-text" style="display: none">
+              On hold
+            </div>
+          </div>
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount change </span>
+            <strong class="nhsuk-tag nhsuk-tag--aqua-green" style="white-space: nowrap; overflow: hidden;">
+              Increased
+            </strong>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
 
 
 
@@ -1208,7 +1291,65 @@
 
     <h2 class="nhsuk-heading-m" style="margin-bottom: 10px; margin-top: 60px;">One off payments</h2>
 
-    <p>No one off payments.</p>
+    <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-4">
+      <thead role="rowgroup" class="nhsuk-table__head">
+        <tr role="row">
+          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Type</th>
+          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Amount</th>
+          <!-- <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Payment date</th> -->
+          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Status</th>
+          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Amount change</th>
+        </tr>
+      </thead>
+
+      <tbody class="nhsuk-table__body">
+        <tr role="row" class="nhsuk-table__row">
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading" aria-hidden="true">Type </span>
+            DSA (general)
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount </span>
+            £120
+          </td>
+
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status </span>
+            Pending
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount change </span>
+            <strong class="nhsuk-tag nhsuk-tag--green" style="white-space: nowrap; overflow: hidden;">
+              New
+            </strong>
+          </td>
+        </tr>
+
+        <tr role="row" class="nhsuk-table__row">
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading" aria-hidden="true">Type </span>
+            TDAE (travel)
+          </td>
+
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount </span>
+            £50
+          </td>
+
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status </span>
+            On hold
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount change </span>
+            <strong class="nhsuk-tag nhsuk-tag--green" style="white-space: nowrap; overflow: hidden;">
+              New
+            </strong>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
 
 
 
