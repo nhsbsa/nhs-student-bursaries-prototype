@@ -61,18 +61,18 @@
 <!-- <table role="table" class="nhsuk-table-responsive">
     <thead role="rowgroup" class="nhsuk-table__head">
       <tr role="row">
-        <th role="columnheader" class="" scope="col" style="width: 4%; text-align: right;">
+        <th role="columnheader" class="nhsuk-table__header" scope="col" style="width: 4%; text-align: right;">
         </th>
-        <th role="columnheader" class="" scope="col" style="width: 33%; text-align: left;">
+        <th role="columnheader" class="nhsuk-table__header" scope="col" style="width: 33%; text-align: left;">
           Date of schedule change
         </th>
-        <th role="columnheader" class="" scope="col" style="width: 31%; text-align: center;">
+        <th role="columnheader" class="nhsuk-table__header" scope="col" style="width: 31%; text-align: center;">
           Academic year
         </th>
-        <th role="columnheader" class="" scope="col" style="width: 31%; text-align: right;">
+        <th role="columnheader" class="nhsuk-table__header" scope="col" style="width: 31%; text-align: right;">
           Cause of schedule change
         </th>
-        <th role="columnheader" class="" scope="col" style="width: 4%; text-align: right;">
+        <th role="columnheader" class="nhsuk-table__header" scope="col" style="width: 4%; text-align: right;">
         </th>
       </tr>
     </thead>
@@ -130,14 +130,17 @@
         1 payments </caption>
       <thead role="rowgroup" class="nhsuk-table__head">
         <tr role="row">
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Type</th>
-          <!-- <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Old amount</th> -->
-          <!-- <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">New amount</th> -->
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Amount</th>
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Expected date</th>
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Payment date</th>
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Status</th>
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Amount change</th>
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Type</th>
+          <!-- <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Old amount</th> -->
+          <!-- <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">New amount</th> -->
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Amount</th>
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Expected date
+          </th>
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Payment date
+          </th>
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Status</th>
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Amount
+            change</th>
         </tr>
       </thead>
 
@@ -235,8 +238,10 @@
       </tbody>
     </table>
 
-    <span class="nhsuk-heading-xs nhsuk-u-margin-bottom-0 nhsuk-u-margin-top-2">Total amount payable for term 1: £1,827</span>
-    <hr class="nhsuk-u-margin-top-2">
+    <span class="nhsuk-heading-xs nhsuk-u-margin-bottom-0 nhsuk-u-margin-top-6" style="text-align: right;">Total amount
+      payable for term 1:
+      £1,827</span>
+    <!-- <hr class="nhsuk-u-margin-top-2"> -->
 
 
 
@@ -244,10 +249,17 @@
     <!-- TERM 2 -->
 
     <div style="margin-top: 60px">
-      <h2 class="nhsuk-heading-m" style="margin-top: 0; float: left">Term 2 payments</h2>
+      <h2 class="nhsuk-heading-m" style="margin-top: 0">Term 2</h2>
+    </div>
 
-      <a href="#" style="float: right; padding-top: 4px;" class="toggle-details"
-        onclick="toggleDetails(this); return false;">Show old details</a>
+
+    <!-- TERM 2 PAYMENTS -->
+
+    <div>
+      <h3 class="nhsuk-heading-s" style="margin-top: 0; float: left">Payments</h2>
+
+        <a href="#" style="float: right; padding-top: 2px;" class="toggle-details"
+          onclick="toggleDetails(this); return false;">Show old details</a>
     </div>
 
     <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-4">
@@ -255,16 +267,19 @@
           2 payments </caption> -->
       <thead role="rowgroup" class="nhsuk-table__head">
         <tr role="row">
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Type</th>
-          <!-- <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Old amount</th> -->
-          <!-- <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">New amount</th> -->
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Amount</th>
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Debt</th>
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Payable</th>
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Expected date</th>
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Payment date</th>
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Status</th>
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Amount change</th>
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Type</th>
+          <!-- <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Old amount</th> -->
+          <!-- <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">New amount</th> -->
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Amount</th>
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Debt</th>
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Payable</th>
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Expected date
+          </th>
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Payment date
+          </th>
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Status</th>
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Amount
+            change</th>
         </tr>
       </thead>
 
@@ -438,10 +453,6 @@
               No change
             </strong>
           </td>
-
-          <td role="cell" class="nhsuk-table__cell">
-            <span class="nhsuk-table-responsive__heading" aria-hidden="true">No other changes </span>
-          </td>
         </tr>
 
         <tr role="row" class="nhsuk-table__row">
@@ -483,17 +494,126 @@
               New
             </strong>
           </td>
+        </tr>
 
-          <td class="nhsuk-table__cell">
-            <span class="nhsuk-table-responsive__heading" aria-hidden="true">No other changes </span>
+      </tbody>
+    </table>
+
+
+
+
+    <!-- TERM 2 OVERPAYMENTS -->
+
+    <div style="margin-top: 50px">
+      <h3 class="nhsuk-heading-s" style="margin-top: 0; float: left">Overpayments</h2>
+
+        <a href="#" style="float: right; padding-top: 2px;" class="toggle-details"
+          onclick="toggleDetails(this); return false;">Show old details</a>
+    </div>
+
+    <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-4">
+      <!-- <caption class="nhsuk-table__caption nhsuk-u-font-weight-bold nhsuk-u-font-size-24 nhsuk-u-margin-bottom-4">Term
+          2 payments </caption> -->
+      <thead role="rowgroup" class="nhsuk-table__head">
+        <tr role="row">
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Type</th>
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Amount</th>
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Date raised</th>
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Date extracted
+          </th>
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Status</th>
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Amount
+            change</th>
+        </tr>
+      </thead>
+
+      <tbody class="nhsuk-table__body">
+
+        <tr role="row" class="nhsuk-table__row">
+
+          <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Type
+            </span>Extra Weeks Allowance
+            <div class="ss-details-desktop">
+              <div class="ss-details-text" style="display: none;">
+                Parent Learning Allowance
+              </div>
+            </div>
+          </td>
+
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount </span>
+            £150
+            <div class="ss-details-desktop">
+              <div class="ss-details-text" style="display: none">
+                £80
+              </div>
+            </div>
+          </td>
+
+          <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Date raised
+            </span>13 October 2023
+          </td>
+
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading" aria-hidden="true">Date extracted
+            </span>13 October 2023
+          </td>
+
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status </span>
+            Paid
+          </td>
+
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount change </span>
+            <strong class="nhsuk-tag nhsuk-tag--aqua-green" style="white-space: nowrap; overflow: hidden;">
+              Increased
+            </strong>
+          </td>
+        </tr>
+
+
+
+        <tr role="row" class="nhsuk-table__row">
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading" aria-hidden="true">Type </span>
+            Non means tested grant
+          </td>
+
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount </span>
+            £45
+          </td>
+
+          <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Date raised
+            </span>13 October 2023
+          </td>
+
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading" aria-hidden="true">Date extracted
+            </span>13 October 2023
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status </span>
+            Paid
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount change </span>
+            <strong class="nhsuk-tag nhsuk-tag--white" style="white-space: nowrap; overflow: hidden;">
+              No change
+            </strong>
           </td>
         </tr>
 
       </tbody>
     </table>
 
-    <span class="nhsuk-heading-xs nhsuk-u-margin-bottom-0 nhsuk-u-margin-top-2">Total amount payable for term 2: £1,670</span>
-    <hr class="nhsuk-u-margin-top-2">
+    <span class="nhsuk-heading-xs nhsuk-u-margin-bottom-0 nhsuk-u-margin-top-6" style="text-align: right;">Total amount
+      payable for term 2:
+      £1,670</span>
+
+
+
 
 
 
@@ -503,14 +623,16 @@
         3 payments </caption>
       <thead role="rowgroup" class="nhsuk-table__head">
         <tr role="row">
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Type</th>
-          <!-- <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Old amount</th> -->
-          <!-- <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">New amount</th> -->
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Amount</th>
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Expected date</th>
-          <!-- <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Payment date</th> -->
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Status</th>
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Amount change</th>
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Type</th>
+          <!-- <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Old amount</th> -->
+          <!-- <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">New amount</th> -->
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Amount</th>
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Expected date
+          </th>
+          <!-- <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Payment date</th> -->
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Status</th>
+          <th role="columnheader" class="nhsuk-table__header" scope="col"
+            style="text-wrap-mode: wrap; width: 15%;">Amount change</th>
         </tr>
       </thead>
 
@@ -533,7 +655,7 @@
             <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status </span>
             Pending
           </td>
-          <td role="cell" class="nhsuk-table__cell">
+          <td role="cell" class="nhsuk-table__cell nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount change </span>
             <strong class="nhsuk-tag nhsuk-tag--white" style="white-space: nowrap; overflow: hidden;">
               No change
@@ -559,7 +681,7 @@
             <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status </span>
             Pending
           </td>
-          <td role="cell" class="nhsuk-table__cell">
+          <td role="cell" class="nhsuk-table__cell nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount change </span>
             <strong class="nhsuk-tag nhsuk-tag--white" style="white-space: nowrap; overflow: hidden;">
               No change
@@ -585,7 +707,7 @@
             <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status </span>
             Pending
           </td>
-          <td role="cell" class="nhsuk-table__cell">
+          <td role="cell" class="nhsuk-table__cell nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount change </span>
             <strong class="nhsuk-tag nhsuk-tag--white" style="white-space: nowrap; overflow: hidden;">
               No change
@@ -596,8 +718,9 @@
       </tbody>
     </table>
 
-    <span class="nhsuk-heading-xs nhsuk-u-margin-bottom-0 nhsuk-u-margin-top-2">Total amount payable for term 3: £1,837</span>
-    <hr class="nhsuk-u-margin-top-2">
+    <span class="nhsuk-heading-xs nhsuk-u-margin-bottom-0 nhsuk-u-margin-top-6" style="text-align: right;">Total amount
+      payable for term 3:
+      £1,837</span>
 
 
     <!-- ONE OFF PAYMENTS -->
@@ -612,11 +735,17 @@
     <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-4">
       <thead role="rowgroup" class="nhsuk-table__head">
         <tr role="row">
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Type</th>
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Amount</th>
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Payment date</th>
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Status</th>
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Amount change</th>
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Type
+          </th>
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">
+            Amount</th>
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">
+            Payment date
+          </th>
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">
+            Status</th>
+          <th role="columnheader" class="nhsuk-table__header" scope="col"
+            style="text-wrap-mode: wrap; width: 15%;">Amount change</th>
         </tr>
       </thead>
 
@@ -640,7 +769,7 @@
             <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status </span>
             Paid
           </td>
-          <td role="cell" class="nhsuk-table__cell">
+          <td role="cell" class="nhsuk-table__cell nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount change </span>
             <strong class="nhsuk-tag nhsuk-tag--white" style="white-space: nowrap; overflow: hidden;">
               No change
@@ -678,7 +807,7 @@
               </div>
             </div>
           </td>
-          <td role="cell" class="nhsuk-table__cell">
+          <td role="cell" class="nhsuk-table__cell nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount change </span>
             <strong class="nhsuk-tag nhsuk-tag--aqua-green" style="white-space: nowrap; overflow: hidden;">
               Increased
@@ -689,8 +818,9 @@
       </tbody>
     </table>
 
-    <span class="nhsuk-heading-xs nhsuk-u-margin-bottom-0 nhsuk-u-margin-top-2">Total amount payable for one off payments: £340</span>
-    <hr class="nhsuk-u-margin-top-2">
+    <span class="nhsuk-heading-xs nhsuk-u-margin-bottom-0 nhsuk-u-margin-top-6" style="text-align: right;">Total amount
+      payable for one off
+      payments: £340</span>
 
 
 
@@ -707,16 +837,17 @@
 
       <thead role="rowgroup" class="nhsuk-table__head">
         <tr role="row">
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">
             Award
           </th>
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">
             Old amount
           </th>
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">
             New amount
           </th>
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Amount change</th>
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Amount change
+          </th>
         </tr>
       </thead>
 
@@ -924,13 +1055,15 @@
         1 payments </caption>
       <thead role="rowgroup" class="nhsuk-table__head">
         <tr role="row">
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Type</th>
-          <!-- <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Old amount</th> -->
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Amount</th>
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Expected date</th>
-          <!-- <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Payment date</th> -->
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Status</th>
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Amount change</th>
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Type</th>
+          <!-- <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Old amount</th> -->
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Amount</th>
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Expected date
+          </th>
+          <!-- <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Payment date</th> -->
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Status</th>
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Amount
+            change</th>
         </tr>
       </thead>
 
@@ -953,7 +1086,7 @@
             <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status </span>
             Pending
           </td>
-          <td role="cell" class="nhsuk-table__cell">
+          <td role="cell" class="nhsuk-table__cell nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount change </span>
             <strong class="nhsuk-tag nhsuk-tag--white" style="white-space: nowrap; overflow: hidden;">
               No change
@@ -979,7 +1112,7 @@
             <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status </span>
             Pending
           </td>
-          <td role="cell" class="nhsuk-table__cell">
+          <td role="cell" class="nhsuk-table__cell nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount change </span>
             <strong class="nhsuk-tag nhsuk-tag--white" style="white-space: nowrap; overflow: hidden;">
               No change
@@ -1005,7 +1138,7 @@
             <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status </span>
             Pending
           </td>
-          <td role="cell" class="nhsuk-table__cell">
+          <td role="cell" class="nhsuk-table__cell nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount change </span>
             <strong class="nhsuk-tag nhsuk-tag--white" style="white-space: nowrap; overflow: hidden;">
               No change
@@ -1016,8 +1149,9 @@
       </tbody>
     </table>
 
-    <span class="nhsuk-heading-xs nhsuk-u-margin-bottom-0 nhsuk-u-margin-top-2">Total amount payable for term 1: £1,827</span>
-    <hr class="nhsuk-u-margin-top-2">
+    <span class="nhsuk-heading-xs nhsuk-u-margin-bottom-0 nhsuk-u-margin-top-6" style="text-align: right;">Total amount
+      payable for term 1:
+      £1,827</span>
 
 
 
@@ -1025,10 +1159,17 @@
     <!-- TERM 2 -->
 
     <div style="margin-top: 60px">
-      <h2 class="nhsuk-heading-m" style="margin-top: 0; float: left">Term 2 payments</h2>
+      <h2 class="nhsuk-heading-m" style="margin-top: 0">Term 2</h2>
+    </div>
 
-      <a href="#" style="float: right; padding-top: 4px;" class="toggle-details"
-        onclick="toggleDetails(this); return false;">Show old details</a>
+
+    <!-- TERM 2 PAYMENTS -->
+
+    <div>
+      <h3 class="nhsuk-heading-s" style="margin-top: 0; float: left">Payments</h2>
+
+        <a href="#" style="float: right; padding-top: 4px;" class="toggle-details"
+          onclick="toggleDetails(this); return false;">Show old details</a>
     </div>
 
     <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-4">
@@ -1036,14 +1177,16 @@
           2 payments </caption> -->
       <thead role="rowgroup" class="nhsuk-table__head">
         <tr role="row">
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Type</th>
-          <!-- <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Old amount</th> -->
-          <!-- <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">New amount</th> -->
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Amount</th>
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Expected date</th>
-          <!-- <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Payment date</th> -->
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Status</th>
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Amount change</th>
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Type</th>
+          <!-- <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Old amount</th> -->
+          <!-- <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">New amount</th> -->
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Amount</th>
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Expected date
+          </th>
+          <!-- <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Payment date</th> -->
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Status</th>
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Amount
+            change</th>
         </tr>
       </thead>
 
@@ -1078,7 +1221,7 @@
             <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status </span>
             Pending
           </td>
-          <td role="cell" class="nhsuk-table__cell">
+          <td role="cell" class="nhsuk-table__cell nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount change </span>
             <strong class="nhsuk-tag nhsuk-tag--aqua-green" style="white-space: nowrap; overflow: hidden;">
               Increased
@@ -1132,7 +1275,7 @@
             </div>
           </td>
 
-          <td role="cell" class="nhsuk-table__cell">
+          <td role="cell" class="nhsuk-table__cell nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount change </span>
             <strong class="nhsuk-tag nhsuk-tag--orange" style="white-space: nowrap; overflow: hidden;">
               Decreased
@@ -1170,7 +1313,7 @@
             <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status </span>
             Pending
           </td>
-          <td role="cell" class="nhsuk-table__cell">
+          <td role="cell" class="nhsuk-table__cell nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount change </span>
             <strong class="nhsuk-tag nhsuk-tag--white" style="white-space: nowrap; overflow: hidden;">
               No change
@@ -1181,8 +1324,106 @@
       </tbody>
     </table>
 
-    <span class="nhsuk-heading-xs nhsuk-u-margin-bottom-0 nhsuk-u-margin-top-2">Total amount payable for term 2: £1,841</span>
-    <hr class="nhsuk-u-margin-top-2">
+
+
+    <!-- TERM 2 OVERPAYMENTS -->
+
+    <div style="margin-top: 50px">
+      <h3 class="nhsuk-heading-s" style="margin-top: 0; float: left">Overpayments</h2>
+    </div>
+
+    <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-4">
+      <!-- <caption class="nhsuk-table__caption nhsuk-u-font-weight-bold nhsuk-u-font-size-24 nhsuk-u-margin-bottom-4">Term
+          2 payments </caption> -->
+      <thead role="rowgroup" class="nhsuk-table__head">
+        <tr role="row">
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Type</th>
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Amount</th>
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Date raised</th>
+          <!-- <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Date extracted</th> -->
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Status</th>
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Amount
+            change</th>
+        </tr>
+      </thead>
+
+      <tbody class="nhsuk-table__body">
+
+        <tr role="row" class="nhsuk-table__row">
+
+          <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Type
+            </span>Parent Learning Allowance
+          </td>
+
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount </span>
+            £80
+          </td>
+
+          <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Date raised
+            </span>13 October 2023
+          </td>
+
+          <!-- <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading" aria-hidden="true">Date extracted
+            </span>13 October 2023
+          </td> -->
+
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status </span>
+            Pending
+          </td>
+
+          <td role="cell" class="nhsuk-table__cell nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount change </span>
+            <strong class="nhsuk-tag nhsuk-tag--white" style="white-space: nowrap; overflow: hidden;">
+              No change
+            </strong>
+          </td>
+        </tr>
+
+
+
+        <tr role="row" class="nhsuk-table__row">
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading" aria-hidden="true">Type </span>
+            Non means tested grant
+          </td>
+
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount </span>
+            £45
+          </td>
+
+          <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Date raised
+            </span>13 October 2023
+          </td>
+
+          <!-- <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading" aria-hidden="true">Date extracted
+            </span>13 October 2023
+          </td> -->
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status </span>
+            Pending
+          </td>
+          <td role="cell" class="nhsuk-table__cell nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount change </span>
+            <strong class="nhsuk-tag nhsuk-tag--white" style="white-space: nowrap; overflow: hidden;">
+              No change
+            </strong>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+    <span class="nhsuk-heading-xs nhsuk-u-margin-bottom-0 nhsuk-u-margin-top-6" style="text-align: right;">Total amount
+      payable for term 2: £1,841</span>
+    <!-- <hr class="nhsuk-u-margin-top-2"> -->
+
+
+
 
 
 
@@ -1192,13 +1433,15 @@
         3 payments </caption>
       <thead role="rowgroup" class="nhsuk-table__head">
         <tr role="row">
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Type</th>
-          <!-- <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Old amount</th> -->
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Amount</th>
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Expected date</th>
-          <!-- <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Payment date</th> -->
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Status</th>
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Amount change</th>
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Type</th>
+          <!-- <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Old amount</th> -->
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Amount</th>
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Expected date
+          </th>
+          <!-- <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Payment date</th> -->
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Status</th>
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Amount
+            change</th>
         </tr>
       </thead>
 
@@ -1221,7 +1464,7 @@
             <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status </span>
             Pending
           </td>
-          <td role="cell" class="nhsuk-table__cell">
+          <td role="cell" class="nhsuk-table__cell nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount change </span>
             <strong class="nhsuk-tag nhsuk-tag--white" style="white-space: nowrap; overflow: hidden;">
               No change
@@ -1247,7 +1490,7 @@
             <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status </span>
             Pending
           </td>
-          <td role="cell" class="nhsuk-table__cell">
+          <td role="cell" class="nhsuk-table__cell nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount change </span>
             <strong class="nhsuk-tag nhsuk-tag--white" style="white-space: nowrap; overflow: hidden;">
               No change
@@ -1273,7 +1516,7 @@
             <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status </span>
             Pending
           </td>
-          <td role="cell" class="nhsuk-table__cell">
+          <td role="cell" class="nhsuk-table__cell nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount change </span>
             <strong class="nhsuk-tag nhsuk-tag--white" style="white-space: nowrap; overflow: hidden;">
               No change
@@ -1284,8 +1527,9 @@
       </tbody>
     </table>
 
-    <span class="nhsuk-heading-xs nhsuk-u-margin-bottom-0 nhsuk-u-margin-top-2">Total amount payable for term 3: £1,837</span>
-    <hr class="nhsuk-u-margin-top-2">
+    <span class="nhsuk-heading-xs nhsuk-u-margin-bottom-0 nhsuk-u-margin-top-6" style="text-align: right;">Total amount
+      payable for term 3:
+      £1,837</span>
 
 
     <!-- ONE OFF PAYMENTS -->
@@ -1295,11 +1539,15 @@
     <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-4">
       <thead role="rowgroup" class="nhsuk-table__head">
         <tr role="row">
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Type</th>
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Amount</th>
-          <!-- <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Payment date</th> -->
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Status</th>
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Amount change</th>
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Type
+          </th>
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">
+            Amount</th>
+          <!-- <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Payment date</th> -->
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">
+            Status</th>
+          <th role="columnheader" class="nhsuk-table__header" scope="col"
+            style="text-wrap-mode: wrap; width: 15%;">Amount change</th>
         </tr>
       </thead>
 
@@ -1318,7 +1566,7 @@
             <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status </span>
             Pending
           </td>
-          <td role="cell" class="nhsuk-table__cell">
+          <td role="cell" class="nhsuk-table__cell nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount change </span>
             <strong class="nhsuk-tag nhsuk-tag--green" style="white-space: nowrap; overflow: hidden;">
               New
@@ -1341,7 +1589,7 @@
             <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status </span>
             On hold
           </td>
-          <td role="cell" class="nhsuk-table__cell">
+          <td role="cell" class="nhsuk-table__cell nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount change </span>
             <strong class="nhsuk-tag nhsuk-tag--green" style="white-space: nowrap; overflow: hidden;">
               New
@@ -1352,8 +1600,9 @@
       </tbody>
     </table>
 
-    <span class="nhsuk-heading-xs nhsuk-u-margin-bottom-0 nhsuk-u-margin-top-2">Total amount payable for one off payments: £170</span>
-    <hr class="nhsuk-u-margin-top-2">
+    <span class="nhsuk-heading-xs nhsuk-u-margin-bottom-0 nhsuk-u-margin-top-6" style="text-align: right;">Total amount
+      payable for one off
+      payments: £170</span>
 
 
 
@@ -1372,16 +1621,17 @@
 
       <thead role="rowgroup" class="nhsuk-table__head">
         <tr role="row">
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">
             Award
           </th>
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">
             Old amount
           </th>
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">
             New amount
           </th>
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Amount change</th>
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Amount change
+          </th>
         </tr>
       </thead>
       <tbody class="nhsuk-table__body">
@@ -1590,14 +1840,16 @@
         1 payments </caption>
       <thead role="rowgroup" class="nhsuk-table__head">
         <tr role="row">
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Type</th>
-          <!-- <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Old amount</th> -->
-          <!-- <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">New amount</th> -->
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Amount</th>
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Expected date</th>
-          <!-- <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Payment date</th> -->
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Status</th>
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Amount change</th>
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Type</th>
+          <!-- <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Old amount</th> -->
+          <!-- <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">New amount</th> -->
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Amount</th>
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Expected date
+          </th>
+          <!-- <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Payment date</th> -->
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Status</th>
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Amount
+            change</th>
         </tr>
       </thead>
 
@@ -1625,7 +1877,7 @@
             <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status </span>
             Pending
           </td>
-          <td role="cell" class="nhsuk-table__cell">
+          <td role="cell" class="nhsuk-table__cell nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount change </span>
             <strong class="nhsuk-tag nhsuk-tag--green">
               New
@@ -1656,7 +1908,7 @@
             <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status </span>
             Pending
           </td>
-          <td role="cell" class="nhsuk-table__cell">
+          <td role="cell" class="nhsuk-table__cell nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount change </span>
             <strong class="nhsuk-tag nhsuk-tag--green">
               New
@@ -1687,7 +1939,7 @@
             <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status </span>
             Pending
           </td>
-          <td role="cell" class="nhsuk-table__cell">
+          <td role="cell" class="nhsuk-table__cell nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount change </span>
             <strong class="nhsuk-tag nhsuk-tag--green">
               New
@@ -1698,8 +1950,9 @@
       </tbody>
     </table>
 
-    <span class="nhsuk-heading-xs nhsuk-u-margin-bottom-0 nhsuk-u-margin-top-2">Total amount payable for term 1: £1,827</span>
-    <hr class="nhsuk-u-margin-top-2">
+    <span class="nhsuk-heading-xs nhsuk-u-margin-bottom-0 nhsuk-u-margin-top-6" style="text-align: right;">Total amount
+      payable for term 1:
+      £1,827</span>
 
 
 
@@ -1709,14 +1962,16 @@
         2 payments </caption>
       <thead role="rowgroup" class="nhsuk-table__head">
         <tr role="row">
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Type</th>
-          <!-- <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Old amount</th> -->
-          <!-- <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">New amount</th> -->
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Amount</th>
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Expected date</th>
-          <!-- <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Payment date</th> -->
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Status</th>
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Amount change</th>
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Type</th>
+          <!-- <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Old amount</th> -->
+          <!-- <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">New amount</th> -->
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Amount</th>
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Expected date
+          </th>
+          <!-- <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Payment date</th> -->
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Status</th>
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Amount
+            change</th>
         </tr>
       </thead>
 
@@ -1743,7 +1998,7 @@
             <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status </span>
             Pending
           </td>
-          <td role="cell" class="nhsuk-table__cell">
+          <td role="cell" class="nhsuk-table__cell nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount change </span>
             <strong class="nhsuk-tag nhsuk-tag--green">
               New
@@ -1774,7 +2029,7 @@
             <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status </span>
             Pending
           </td>
-          <td role="cell" class="nhsuk-table__cell">
+          <td role="cell" class="nhsuk-table__cell nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount change </span>
             <strong class="nhsuk-tag nhsuk-tag--green">
               New
@@ -1805,7 +2060,7 @@
             <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status </span>
             Pending
           </td>
-          <td role="cell" class="nhsuk-table__cell">
+          <td role="cell" class="nhsuk-table__cell nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount change </span>
             <strong class="nhsuk-tag nhsuk-tag--green">
               New
@@ -1816,8 +2071,9 @@
       </tbody>
     </table>
 
-    <span class="nhsuk-heading-xs nhsuk-u-margin-bottom-0 nhsuk-u-margin-top-2">Total amount payable for term 2: £1,827</span>
-    <hr class="nhsuk-u-margin-top-2">
+    <span class="nhsuk-heading-xs nhsuk-u-margin-bottom-0 nhsuk-u-margin-top-6" style="text-align: right;">Total amount
+      payable for term 2:
+      £1,827</span>
 
 
 
@@ -1827,14 +2083,16 @@
         3 payments </caption>
       <thead role="rowgroup" class="nhsuk-table__head">
         <tr role="row">
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Type</th>
-          <!-- <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Old amount</th> -->
-          <!-- <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">New amount</th> -->
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Amount</th>
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Expected date</th>
-          <!-- <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Payment date</th> -->
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Status</th>
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Amount change</th>
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Type</th>
+          <!-- <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Old amount</th> -->
+          <!-- <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">New amount</th> -->
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Amount</th>
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Expected date
+          </th>
+          <!-- <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Payment date</th> -->
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Status</th>
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Amount
+            change</th>
         </tr>
       </thead>
 
@@ -1860,7 +2118,7 @@
             <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status </span>
             Pending
           </td>
-          <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading"
+          <td role="cell" class="nhsuk-table__cell nhsuk-table__cell"><span class="nhsuk-table-responsive__heading"
               aria-hidden="true">Amount change </span>
             <strong class="nhsuk-tag nhsuk-tag--green">
               New
@@ -1889,7 +2147,7 @@
             <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status </span>
             Pending
           </td>
-          <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading"
+          <td role="cell" class="nhsuk-table__cell nhsuk-table__cell"><span class="nhsuk-table-responsive__heading"
               aria-hidden="true">Amount change </span>
             <strong class="nhsuk-tag nhsuk-tag--green">
               New
@@ -1918,7 +2176,7 @@
             <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status </span>
             Pending
           </td>
-          <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading"
+          <td role="cell" class="nhsuk-table__cell nhsuk-table__cell"><span class="nhsuk-table-responsive__heading"
               aria-hidden="true">Amount change </span>
             <strong class="nhsuk-tag nhsuk-tag--green">
               New
@@ -1929,8 +2187,9 @@
       </tbody>
     </table>
 
-    <span class="nhsuk-heading-xs nhsuk-u-margin-bottom-0 nhsuk-u-margin-top-2">Total amount payable for term 3: £1,837</span>
-    <hr class="nhsuk-u-margin-top-2">
+    <span class="nhsuk-heading-xs nhsuk-u-margin-bottom-0 nhsuk-u-margin-top-6" style="text-align: right;">Total amount
+      payable for term 3:
+      £1,837</span>
 
 
     <!-- ONE OFF PAYMENTS -->
@@ -1956,16 +2215,17 @@
 
       <thead role="rowgroup" class="nhsuk-table__head">
         <tr role="row">
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">
             Award
           </th>
-          <!-- <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">
+          <!-- <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">
               Old amount
             </th> -->
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">
             New amount
           </th>
-          <th role="columnheader" class="" scope="col" style="text-wrap-mode: wrap;">Amount change</th>
+          <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Amount change
+          </th>
         </tr>
       </thead>
       <tbody class="nhsuk-table__body">
