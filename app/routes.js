@@ -123,7 +123,7 @@ router.post('/change-of-circumstances/V2/process-application/change-summary/', (
 
     // Else, payment schedule needs updating too - so ask if they want it updating automatically or manually
     else {
-      res.redirect('/change-of-circumstances/V2/process-application/payment-details-single-save-coc/payment-scheduling-required-manual?CoCPaymentsUpdated=false')
+      res.redirect('/change-of-circumstances/V2/process-application/payment-details-single-save-coc/payment-scheduling-required?CoCPaymentsUpdated=false')
     }
   }
 
