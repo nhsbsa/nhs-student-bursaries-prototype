@@ -57,32 +57,25 @@
         <div>
           <h1 class="nhsuk-app-heading nhsuk-heading-l">
             <span class="nhsuk-caption-l" id="studentRef">BRN0000259-3 - Mike Lee (September 2024)</span>
-            Add evidence of your calculations (optional)
+            Add your calculations spreadsheet (optional)
           </h1>
         </div>
 
         <p>If you have performed manual calculations, you can upload evidence of this now. The student will not see
           this.</p>
 
-        <div class="nhsuk-card">
-          <div class="nhsuk-card__content">
-            <h2 class="nhsuk-heading-m">Uploaded file</h2>
+        <div class="nhsuk-form-group">
+          <label for="file" class="nhsuk-label">Choose a file</label>
 
-            <table id="fileTable" class="nhsuk-table nhsuk-u-margin-bottom-2" style="display: none;">
-              <thead role="rowgroup" class="nhsuk-table__head">
-                <tr role="row">
-                  <th role="columnheader" scope="col">File</th>
-                  <th role="columnheader" scope="col">Action</th>
-                </tr>
-              </thead>
-              <tbody id="fileTableBody" class="nhsuk-table__body">
-                <!-- File row added here -->
-              </tbody>
-            </table>
+          <div class="form-group-error" id="fileSizeError" hidden="true">
+            <span id="fileSizeErrorMessage" class="error-message"></span>
+          </div>
 
-            <input id="fileInput" type="file" style="display: none;" />
-            <input id="addFileBtn" type="button" value="Add file"
-              onclick="document.getElementById('fileInput').click();" class="nhsuk-button nhsuk-button--secondary" />
+          <input id="file" class="nhsuk-input" type="file" name="file" />
+
+          <!-- Delete link (initially hidden) -->
+          <div id="deleteFileContainer" style="margin-top: 0.5rem; display: none;">
+            <p><a href="#" id="deleteFileLink" class="nhsuk-link">Remove file</a></p>
           </div>
         </div>
 
@@ -105,56 +98,22 @@
 
 
 <script>
-  const fileInput = document.getElementById("fileInput");
-  const fileTable = document.getElementById("fileTable");
-  const fileTableBody = document.getElementById("fileTableBody");
-  const addFileBtn = document.getElementById("addFileBtn");
+  const fileInput = document.getElementById("file");
+  const deleteContainer = document.getElementById("deleteFileContainer");
+  const deleteLink = document.getElementById("deleteFileLink");
 
-  fileInput.addEventListener("change", function () {
-    const files = Array.from(fileInput.files);
-    if (files.length === 0) return;
-
-    const file = files[0];
-    const supportedTypes = ['image/', 'application/pdf', 'text/'];
-
-    const row = document.createElement("tr");
-    row.className = "nhsuk-table__row";
-
-    const fileCell = document.createElement("td");
-    fileCell.className = "nhsuk-table__cell";
-
-    const isPreviewable = supportedTypes.some(type => file.type.startsWith(type));
-    if (isPreviewable) {
-      const previewUrl = URL.createObjectURL(file);
-      fileCell.innerHTML = `<a href="${previewUrl}" target="_blank" rel="noopener">${file.name}</a>`;
+  fileInput.addEventListener("change", () => {
+    if (fileInput.files.length > 0) {
+      deleteContainer.style.display = "block";
     } else {
-      fileCell.textContent = file.name;
+      deleteContainer.style.display = "none";
     }
+  });
 
-    const actionCell = document.createElement("td");
-    actionCell.className = "nhsuk-table__cell";
-
-    const removeLink = document.createElement("a");
-    removeLink.href = "#";
-    removeLink.textContent = "Remove";
-    removeLink.addEventListener("click", function (e) {
-      e.preventDefault();
-      row.remove();
-      fileTable.style.display = "none";
-      addFileBtn.style.display = "inline-block"; // Show Add button again
-      fileInput.value = ""; // Clear file input
-    });
-
-    actionCell.appendChild(removeLink);
-    row.appendChild(fileCell);
-    row.appendChild(actionCell);
-
-    fileTableBody.appendChild(row);
-    fileTable.style.display = "table";
-    addFileBtn.style.display = "none"; // Hide Add button
-
-    fileInput.value = ""; // Allow re-upload of the same file later
+  deleteLink.addEventListener("click", (e) => {
+    e.preventDefault();
+    fileInput.value = "";
+    deleteContainer.style.display = "none";
   });
 </script>
-
 {% endblock %}
