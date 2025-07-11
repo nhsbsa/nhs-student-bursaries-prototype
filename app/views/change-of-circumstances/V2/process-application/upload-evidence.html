@@ -68,34 +68,22 @@
           <div class="nhsuk-card__content">
             <h2 class="nhsuk-heading-m">Uploaded files</h2>
 
-            <table class="nhsuk-table nhsuk-u-margin-bottom-5">
+            <table id="fileTable" class="nhsuk-table nhsuk-u-margin-bottom-5" style="display: none;">
               <thead role="rowgroup" class="nhsuk-table__head">
                 <tr role="row">
-                  <!-- <th role="columnheader" class="" scope="col">
-                    Type
-                  </th> -->
-                  <th role="columnheader" class="" scope="col">
-                    File
-                  </th>
-                  <th role="columnheader" class="" scope="col">
-                    Action
-                  </th>
+                  <th role="columnheader" scope="col">File</th>
+                  <th role="columnheader" scope="col">Action</th>
                 </tr>
               </thead>
-              <tbody class="nhsuk-table__body">
-                <tr role="row" class="nhsuk-table__row">
-                  <!-- <td class="nhsuk-table__cell">SB Calc sheet</td> -->
-                  <td class="nhsuk-table__cell "><a href="/files/letting-agent-letter.png" target="_blank"
-                      rel="noopener">SB Calc Sheet for re-assessments v1 - 2025 rates draft.xlsx</a></td>
-                  <td class="nhsuk-table__cell "><a href="evidence-list">Remove</a></td>
-                </tr>
+              <tbody id="fileTableBody" class="nhsuk-table__body">
+                <!-- File rows added here -->
               </tbody>
             </table>
 
-            <input id="fileInput" type="file" style="display:none;" />
+            <!-- Hidden file input + button -->
+            <input id="fileInput" type="file" style="display:none;" multiple />
             <input type="button" value="Add file" onclick="document.getElementById('fileInput').click();"
               class="nhsuk-button nhsuk-button--secondary" />
-
           </div>
         </div>
 
@@ -115,5 +103,60 @@
     </div>
   </main>
 </div>
+
+
+<script>
+  const fileInput = document.getElementById("fileInput");
+  const fileTable = document.getElementById("fileTable");
+  const fileTableBody = document.getElementById("fileTableBody");
+
+  fileInput.addEventListener("change", function () {
+    const files = Array.from(fileInput.files);
+    const supportedTypes = ['image/', 'application/pdf', 'text/'];
+
+    files.forEach((file) => {
+      const row = document.createElement("tr");
+      row.className = "nhsuk-table__row";
+
+      // File cell with preview if supported
+      const fileCell = document.createElement("td");
+      fileCell.className = "nhsuk-table__cell";
+
+      const isPreviewable = supportedTypes.some(type => file.type.startsWith(type));
+      if (isPreviewable) {
+        const previewUrl = URL.createObjectURL(file);
+        fileCell.innerHTML = `<a href="${previewUrl}" target="_blank" rel="noopener">${file.name}</a>`;
+      } else {
+        fileCell.innerHTML = `
+        <span>${file.name}</span>
+      `;
+      }
+
+      // Action cell with Remove link
+      const actionCell = document.createElement("td");
+      actionCell.className = "nhsuk-table__cell";
+
+      const removeLink = document.createElement("a");
+      removeLink.href = "#";
+      removeLink.textContent = "Remove";
+      removeLink.addEventListener("click", function (e) {
+        e.preventDefault();
+        row.remove();
+        if (fileTableBody.children.length === 0) {
+          fileTable.style.display = "none";
+        }
+      });
+
+      actionCell.appendChild(removeLink);
+      row.appendChild(fileCell);
+      row.appendChild(actionCell);
+
+      fileTableBody.appendChild(row);
+    });
+
+    fileTable.style.display = "table";
+    fileInput.value = ""; // Clear for re-uploading same file(s)
+  });
+</script>
 
 {% endblock %}
