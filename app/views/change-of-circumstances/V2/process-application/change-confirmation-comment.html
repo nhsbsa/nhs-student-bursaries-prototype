@@ -82,8 +82,9 @@
                   manually.
                 </p>
 
-                <!-- <p>Processor comment: I have added this optional comment, to provide some additional info about this
-                  change which could be useful.</p> -->
+                <p id="processorCommentPreview">
+                  Processor comment: <span id="processorCommentText">Your comment would go here.</span>
+                </p>
 
                 <p>Change type: Change of address<br>
                   Previous address: 13 Pleasant House, Laney Street, Smalltown, Scotland, NE33 3AB<br>
@@ -182,6 +183,36 @@
   window.addEventListener('load', () => {
     updateCharacterCount();
     updateScreenReaderMessage();
+  });
+</script>
+
+
+
+<script>
+  const commentPreview = document.getElementById('processorCommentPreview');
+  const commentText = document.getElementById('processorCommentText');
+
+  // When contents of Comment textbox is changed: update Comment in preview 
+  textarea.addEventListener('input', () => {
+    const value = textarea.value.trim();
+
+    if (value) {
+      commentText.textContent = value;
+      commentPreview.style.display = 'block';
+    } else {
+      commentPreview.style.display = 'none';
+    }
+  });
+
+  // On page load: replace placeholder if JS is running
+  window.addEventListener('load', () => {
+    const initialValue = textarea.value.trim();
+    if (initialValue) {
+      commentText.textContent = initialValue;
+      commentPreview.style.display = 'block';
+    } else {
+      commentPreview.style.display = 'none';
+    }
   });
 </script>
 {% endblock %}
