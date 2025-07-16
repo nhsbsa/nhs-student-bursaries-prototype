@@ -78,9 +78,17 @@
                 <p><strong>Change of circumstances - 13 February 2025 at 11:37am</strong><br>
                   Linked activity 252 - Change of address</p>
 
+                {% if data['CoCScenario'] == "addressOnly" %}
+                <p>Change of circumstances completed. Address updated. Email sent to student.</p>
+
+                {% elif data['CoCSchedulingChoice'] == "automaticReschedule" %}
                 <p>Change of circumstances completed. Address updated. Living with parents updated. Payments updated
-                  manually. Email sent to student.
-                </p>
+                  automatically. Email sent to student. </p>
+
+                {% else %}
+                <p>Change of circumstances completed. Address updated. Living with parents updated. Payments updated
+                  manually. Email sent to student. </p>
+                {% endif %}
 
                 <p id="processorCommentPreview">
                   Processor comment: <span id="processorCommentText">This is an example of what your comment will look
@@ -90,9 +98,27 @@
                 <p>Change type: Change of address<br>
                   Previous address: 13 Pleasant House, Laney Street, Smalltown, Scotland, NE33 3AB<br>
                   New address: 34 The Tower, Streetson Crescent, Bigtown, England, SR2 7NB<br>
-                  Living with parents: No<br>
-                  Comment: I moved out of my parents house into my studio flat.<br>
-                  Date of change: 5 February 2025</p>
+
+                  Living with parents:
+
+                  {% if data['CoCScenario'] == "addressOnly" %}
+                  Yes
+                  {% else %}
+                  No
+                  {% endif %}
+
+                  <br>
+                  Comment:
+
+                  {% if data['CoCScenario'] == "addressOnly" %}
+                  Me and my parents have moved house together.
+                  {% else %}
+                  I moved out of my parents house into my studio flat.
+                  {% endif %}
+
+                  <br>
+                  Date of change: 5 February 2025
+                </p>
 
                 <div class="nhsuk-hint" id="contact-hint">
                   Last modified by <strong>John Smith</strong>
