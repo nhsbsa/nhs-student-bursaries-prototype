@@ -158,7 +158,7 @@ router.post('/change-of-circumstances/V2/process-application/payment-details-sin
   // MANUAL RESCHEDULE radio option
   else if (CoCSchedulingChoice === 'manualReschedule') {
     // Route for manually payment rescheduling - go to start of manual rescheduling journey
-    res.redirect('/change-of-circumstances/V2/process-application/payment-details-single-save-coc/payment-scheduling-required-manual?CoCPaymentsUpdated=false')
+    res.redirect('/change-of-circumstances/V2/process-application/payment-details-single-save-coc/payment-details-locked-coc-callout')
   }
 
   // Else, stay on this page (no radio selected)
