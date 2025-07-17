@@ -44,51 +44,118 @@
           </div>
         </div>
 
-        <p>We'll email the student to let them know you've returned this claim. They'll be able to change their answers
-          and add more evidence.</p>
+        <p>You've completed the following actions for this student:</p>
+        <ul>
+          <li>email sent to student - they'll be able to change their answers and add more evidence</li>
+          <li>note created</li>
+        </ul>
 
-        <p>You've added this note to the student's record.</p>
+        <h2 class="nhsuk-heading-m" style="margin-top: 40px;">More details</h2>
 
-        <div class="nhsuk-card">
-          <div class="nhsuk-card__content">
+        <!-- <p>We'll email the student to let them know you've returned this claim. They'll be able to change their answers
+          and add more evidence.</p> -->
 
-            <p><strong>Change of circumstances - 13 February 2025 at 11:37am</strong><br>
-              Linked activity 252 - Change of address</p>
+        <details class="nhsuk-details nhsuk-expander">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              Email sent to student
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <p>You've sent this email to the student.</p>
 
-            <p>Change of circumstances returned to student. Email sent to student.</p>
+            <div class="nhsuk-card">
+              <div class="nhsuk-card__content">
 
-            <p>Return reason: Please correct spelling mistakes in your address. Also you need to upload new
-              evidence with your full name and address.
-            </p>
+                <p><strong>Changes needed for change of circumstances - NHS Bursary</strong></p>
 
-            <p>Change type: Change of address<br>
-              Previous address: 13 Pleasant House, Laney Street, Smalltown, Scotland, NE33 3AB<br>
-              New address: 34 The Tower, Streetson Crescent, Bigtown, England, SR2 7NB<br>
-              Living with parents: No<br>
+                <p>Dear Ali Smith</p>
 
-              Comment:
+                <p>We've returned your change of circumstances request for change of address. You can read our reason
+                  why:
+                </p>
 
-              {% if data['CoCScenario'] == "addressOnly" %}
-              Me and my parents have moved house together.
-              {% else %}
-              I moved out of my parents house into my studio flat.
-              {% endif %}
+                <p>Please correct spelling mistakes in your address. Also you need to upload new evidence with your full
+                  name and address.</p>
 
-              <br>
-              Date of change: 5 February 2025
-            </p>
+                <p><a href="https://nhs-bursary.nhsbsa.nhs.uk/student/login">Sign in to your NHS Bursary account</a> to
+                  review your change and re-submit it.</p>
 
-            <div class="nhsuk-hint" id="contact-hint">
-              Last modified by <strong>John Smith</strong>
+                <p>Student Services</p>
+
+
+
+
+
+
+                <!-- We've completed your change of circumstances request for <strong>Change of address</strong>.</p>
+
+                <p>We've made changes to your payments because of this change.
+                  <a href="https://nhs-bursary.nhsbsa.nhs.uk/student/login">Sign in to your NHS Bursary account</a> to
+                  review your new payments.
+                </p>
+
+                <p>If you've submitted any more changes, we'll send separate emails about these when they're complete or
+                  if we need any more information.</p>
+
+                <p>Student Services</p> -->
+
+              </div>
             </div>
-
           </div>
-        </div>
+        </details>
+
+
+
+        <details class="nhsuk-details nhsuk-expander">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              Note created
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <p>You've added this note to the student's record.</p>
+
+            <div class="nhsuk-card">
+              <div class="nhsuk-card__content">
+
+                <p><strong>Change of circumstances - 13 February 2025 at 11:37am</strong><br>
+                  Linked activity 252 - Change of address</p>
+
+                <p>Change of circumstances returned to student. Email sent to student.</p>
+
+                <p>Return reason: Please correct spelling mistakes in your address. Also you need to upload new
+                  evidence with your full name and address.
+                </p>
+
+                <p>Change type: Change of address<br>
+                  Previous address: 13 Pleasant House, Laney Street, Smalltown, Scotland, NE33 3AB<br>
+                  New address: 34 The Tower, Streetson Crescent, Bigtown, England, SR2 7NB<br>
+                  Living with parents: No<br>
+
+                  Comment:
+
+                  {% if data['CoCScenario'] == "addressOnly" %}
+                  Me and my parents have moved house together.
+                  {% else %}
+                  I moved out of my parents house into my studio flat.
+                  {% endif %}
+
+                  <br>
+                  Date of change: 5 February 2025
+                </p>
+
+                <div class="nhsuk-hint" id="contact-hint">
+                  Last modified by <strong>John Smith</strong>
+                </div>
+
+              </div>
+            </div>
+        </details>
 
         <div class="nhsuk-form-group">
-          <a class="nhsuk-button nhsuk-u-margin-right-5" id="complete" href="student-details-locked-pended"
-            role="button" data-module="nhsuk-button">Return to Student details</a>
-
+          <a class="nhsuk-button nhsuk-u-margin-right-5 nhsuk-u-margin-top-3" id="complete"
+            href="student-details-locked-pended" role="button" data-module="nhsuk-button">Return to Student details</a>
         </div>
 
       </div>
