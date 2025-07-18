@@ -79,15 +79,28 @@
                   Linked activity 252 - Change of address</p>
 
                 {% if data['CoCScenario'] == "addressOnly" %}
-                <p>Change of circumstances completed. Address updated. Email sent to student.</p>
+                <ul>
+                  <li>Change of circumstances completed.</li>
+                  <li>Address updated.</li>
+                  <li>Email sent to student.</li>
+                </ul>
 
                 {% elif data['CoCSchedulingChoice'] == "automaticReschedule" %}
-                <p>Change of circumstances completed. Address updated. Living with parents updated. Payments updated
-                  automatically. Email sent to student. </p>
+                <ul>
+                  <li>Address updated.</li>
+                  <li>Living with parents updated.</li>
+                  <li>Payments updated automatically.</li>
+                  <li>Email sent to student.</li>
+                </ul>
 
                 {% else %}
-                <p>Change of circumstances completed. Address updated. Living with parents updated. Payments updated
-                  manually. Calculations sheet uploaded. Email sent to student. </p>
+                <ul>
+                  <li>Change of circumstances completed.</li>
+                  <li>Address updated.</li>
+                  <li>Living with parents updated.</li>
+                  <li>Payments updated manually.</li>
+                  <li>Email sent to student.</li>
+                </ul>
                 {% endif %}
 
                 <p id="processorCommentPreview">
