@@ -123,7 +123,7 @@ router.post('/change-of-circumstances/V2/process-application/change-summary/', (
 
     // Else, payment schedule needs updating too - so ask if they want it updating automatically or manually
     else {
-      res.redirect('/change-of-circumstances/V2/process-application/payment-details-single-save-coc/payment-scheduling-required?CoCPaymentsUpdated=false')
+      res.redirect('/change-of-circumstances/V2/process-application/coc-payment-journey/payment-scheduling-required?CoCPaymentsUpdated=false')
     }
   }
 
@@ -145,7 +145,7 @@ router.post('/change-of-circumstances/V2/process-application/change-summary/', (
 })
 
 
-router.post('/change-of-circumstances/V2/process-application/payment-details-single-save-coc/payment-scheduling-required-route/', (req, res) => {
+router.post('/change-of-circumstances/V2/process-application/coc-payment-journey/payment-scheduling-required-route/', (req, res) => {
 
   const CoCSchedulingChoice = req.session.data['CoCSchedulingChoice']
 
@@ -158,18 +158,18 @@ router.post('/change-of-circumstances/V2/process-application/payment-details-sin
   // MANUAL RESCHEDULE radio option
   else if (CoCSchedulingChoice === 'manualReschedule') {
     // Route for manually payment rescheduling - go to start of manual rescheduling journey
-    res.redirect('/change-of-circumstances/V2/process-application/payment-details-single-save-coc/payment-details-locked-coc-callout')
+    res.redirect('/change-of-circumstances/V2/process-application/coc-payment-journey/payment-details-locked-coc-callout')
   }
 
   // Else, stay on this page (no radio selected)
   else {
-    res.redirect('/change-of-circumstances/V2/process-application/payment-details-single-save-coc/payment-scheduling-required')
+    res.redirect('/change-of-circumstances/V2/process-application/coc-payment-journey/payment-scheduling-required')
   }
 
 })
 
 
-router.post('/change-of-circumstances/V2/process-application/payment-details-single-save-coc/payment-details-add-payment-route/', (req, res) => {
+router.post('/change-of-circumstances/V2/process-application/coc-payment-journey/payment-details-add-payment-route/', (req, res) => {
 
   // Save state of addedPaymentType dropdown
   const addedPaymentType = req.session.data['addedPaymentType']
@@ -189,35 +189,35 @@ router.post('/change-of-circumstances/V2/process-application/payment-details-sin
   // Pass values of added payment types so they can be shown in payment schedule.
   // Both will be shown, or one, or the other, or else neither.
   if (T2MeansTestedBursaryAdded === 'true' && T2ExtraWeeksAllowanceAdded === 'true') {
-    res.redirect('/change-of-circumstances/V2/process-application/payment-details-single-save-coc/payment-details-locked-coc-callout?CoCPaymentsUpdated=true&T2MeansTestedBursaryAdded=true?T2ExtraWeeksAllowanceAdded=true')
+    res.redirect('/change-of-circumstances/V2/process-application/coc-payment-journey/payment-details-locked-coc-callout?CoCPaymentsUpdated=true&T2MeansTestedBursaryAdded=true?T2ExtraWeeksAllowanceAdded=true')
   }
   else if (T2MeansTestedBursaryAdded === 'true') {
-    res.redirect('/change-of-circumstances/V2/process-application/payment-details-single-save-coc/payment-details-locked-coc-callout?CoCPaymentsUpdated=true&T2MeansTestedBursaryAdded=true')
+    res.redirect('/change-of-circumstances/V2/process-application/coc-payment-journey/payment-details-locked-coc-callout?CoCPaymentsUpdated=true&T2MeansTestedBursaryAdded=true')
   }
   else if (T2ExtraWeeksAllowanceAdded === 'true') {
-    res.redirect('/change-of-circumstances/V2/process-application/payment-details-single-save-coc/payment-details-locked-coc-callout?CoCPaymentsUpdated=true&T2ExtraWeeksAllowanceAdded=true')
+    res.redirect('/change-of-circumstances/V2/process-application/coc-payment-journey/payment-details-locked-coc-callout?CoCPaymentsUpdated=true&T2ExtraWeeksAllowanceAdded=true')
   }
   else {
-    res.redirect('/change-of-circumstances/V2/process-application/payment-details-single-save-coc/payment-details-locked-coc-callout?CoCPaymentsUpdated=true')
+    res.redirect('/change-of-circumstances/V2/process-application/coc-payment-journey/payment-details-locked-coc-callout?CoCPaymentsUpdated=true')
   }
 
 })
 
 
-router.post('/change-of-circumstances/V2/process-application/payment-details-single-save-coc/payment-details-edit-payment-route/', (req, res) => {
+router.post('/change-of-circumstances/V2/process-application/coc-payment-journey/payment-details-edit-payment-route/', (req, res) => {
 
   // Save state of editedPaymentType dropdown
   const editedPaymentType = req.session.data['editedPaymentType']
 
   // Proceed to schedule, while updating and passing the relevant Edited flag
   if (editedPaymentType === 'meansTestedBursary') {
-    res.redirect('/change-of-circumstances/V2/process-application/payment-details-single-save-coc/payment-details-locked-coc-callout?CoCPaymentsUpdated=true&T3MeansTestedBursaryEdited=true')
+    res.redirect('/change-of-circumstances/V2/process-application/coc-payment-journey/payment-details-locked-coc-callout?CoCPaymentsUpdated=true&T3MeansTestedBursaryEdited=true')
   }
   else if (editedPaymentType === 'extraWeeksAllowance') {
-    res.redirect('/change-of-circumstances/V2/process-application/payment-details-single-save-coc/payment-details-locked-coc-callout?CoCPaymentsUpdated=true&T3ExtraWeeksAllowanceEdited=true')
+    res.redirect('/change-of-circumstances/V2/process-application/coc-payment-journey/payment-details-locked-coc-callout?CoCPaymentsUpdated=true&T3ExtraWeeksAllowanceEdited=true')
   }
   else {
-    res.redirect('/change-of-circumstances/V2/process-application/payment-details-single-save-coc/payment-details-locked-coc-callout?CoCPaymentsUpdated=true')
+    res.redirect('/change-of-circumstances/V2/process-application/coc-payment-journey/payment-details-locked-coc-callout?CoCPaymentsUpdated=true')
   }
 
 })
