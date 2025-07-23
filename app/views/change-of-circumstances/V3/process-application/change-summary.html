@@ -1,0 +1,307 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-processor.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Student dashboard {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb"
+  style="background-color: white; padding:12px 0; margin-bottom: 40px;">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a id="searchLink" class="nhsuk-breadcrumb__link" href="#">Student search</a>
+      </li>
+      <li class="nhsuk-breadcrumb__item"><a id="studentDetailsLink" class="nhsuk-breadcrumb__link"
+          href="/change-of-circumstances/V2/process-application/student-details-locked">Student details</a></li>
+
+    </ol>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink"
+        href="#">Back to Course details</a></p>
+  </div>
+</nav>
+
+{% endblock %}
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-width-container">
+  <main class="nhsuk-main-wrapper" id="maincontent" role="main">
+
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-two-thirds">
+
+        <span class="nhsuk-caption-l">BRN0000259-3 - Mike Lee (September 2024)</span>
+        <h1 class="nhsuk-heading-l">
+          Change of circumstances summary
+        </h1>
+
+        <!-- <details class="nhsuk-details">
+      <summary class="nhsuk-details__summary">
+        <span class="nhsuk-details__summary-text">
+          Bursary details
+        </span>
+      </summary>
+      <div class="nhsuk-details__text">
+        <table role="table" class="nhsuk-table-responsive">
+
+          <thead role="rowgroup" class="nhsuk-table__head">
+            <tr role="row">
+              <th role="columnheader" class="" scope="col">Award</th>
+              <th role="columnheader" class="" scope="col">Current address is at parents house</th>
+            </tr>
+          </thead>
+
+          <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row">
+
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Award </span>
+                <span id="AwardName">Means tested</span>
+              </td>
+
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Current address is at parents house</span>
+                <span id="withParents">Yes</span>
+              </td>
+
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </details> -->
+
+        <details class="nhsuk-details nhsuk-expander" open>
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              Bursary details
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+
+            <dl class="nhsuk-summary-list">
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Award
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  Means tested
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Living with parents?
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  Yes
+                </dd>
+              </div>
+
+            </dl>
+
+          </div>
+        </details>
+
+
+        <!-- <div class="nhsuk-card">
+      <div class="nhsuk-card__content">
+        <h3 class="nhsuk-card__heading">Student details</h3>
+        <table role="table" class="nhsuk-table-responsive">
+
+          <thead role="rowgroup" class="nhsuk-table__head">
+            <tr role="row">
+
+              <th role="columnheader" class="" scope="col" >Award</th>
+              <th role="columnheader" class="" scope="col" >Current address is at parents house</th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row">
+
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Award </span>
+                <span id="AwardName">Means tested</span>
+              </td>
+
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Current address is at parents house</span>
+                <span id="withParents">Yes</span>
+              </td>
+
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div> -->
+
+        <h2 class="nhsuk-heading-m" style="margin-top: 40px;">Change details</h2>
+        <dl class="nhsuk-summary-list">
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Type of change
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              Change of address
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              New address
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              34<br>
+              The Tower<br>
+              Streetson Crescent<br>
+              Bigtown<br>
+              England<br>
+              SR2 7NB
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Living with parents?
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              {% if data['CoCScenario'] == "addressOnly" %}
+              Yes
+              {% else %}
+              No
+              {% endif %}
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Comment
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              I moved out of my parents house into my studio flat.
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Date of change
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              5 February 2025
+            </dd>
+          </div>
+        </dl>
+
+
+
+        <h2 class="nhsuk-heading-m" style="margin-top: 80px;">Evidence uploaded</h2>
+
+        <table role="table" class="nhsuk-table-responsive" id="documentListTable" style="margin-bottom: 60px;">
+          <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Evidence uploaded table</caption>
+          <thead role="rowgroup" class="nhsuk-table__head">
+            <tr role="row">
+              <th role="columnheader" class="" scope="col">Type</th>
+              <th role="columnheader" class="" scope="col">Upload date</th>
+              <th role="columnheader" class="" scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+
+            <tr role="row" class="nhsuk-table__row" id="documentListTableRow[0]">
+              <td role="cell" class="nhsuk-table__cell">
+                <span>Letter from letting agent</span>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span>8 February 2025 16:04</span>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <a href="/files/letting-agent-letter.png" target="_blank" rel="noopener">View</span></a>
+              </td>
+            </tr>
+
+            <tr role="row" class="nhsuk-table__row" id="documentListTableRow[0]">
+              <td role="cell" class="nhsuk-table__cell">
+                <span>Rent agreement</span>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span>8 February 2025 16:05</span>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <a href="/files/rent-agreement.pdf" target="_blank" rel="noopener">Download</span></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+
+
+
+        <form class="form" action="change-summary" method="post">
+
+          <div class="nhsuk-form-group">
+
+            <h2 class="nhsuk-heading-m" style="margin-top: 80px;">How would you like to continue?</h2>
+
+            <div class="nhsuk-radios nhsuk-radios--conditional">
+
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="complete" name="CoCProcessorChoice" type="radio" value="complete"
+                  aria-controls="conditional-contact-1" aria-expanded="false">
+                <label class="nhsuk-label nhsuk-radios__label" for="contact-1">
+                  Complete change and update student's details
+                </label>
+                <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
+                  The student's address, bursary details, and payments will be updated. We'll also send them an email
+                </div>
+              </div>
+
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="pend" name="CoCProcessorChoice" type="radio" value="pend"
+                  aria-controls="conditional-contact-3" aria-expanded="false">
+                <label class="nhsuk-label nhsuk-radios__label" for="contact-3">
+                  Return change to student
+                </label>
+                <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
+                  The student can change their answers and add more evidence
+                </div>
+              </div>
+
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="decline" name="CoCProcessorChoice" type="radio" value="decline"
+                  aria-controls="conditional-contact-2" aria-expanded="false">
+                <label class="nhsuk-label nhsuk-radios__label" for="contact-2">
+                  Cancel change
+                </label>
+                <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
+                  You can enter a reason why you're cancelling this change
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <button class="nhsuk-button" type="submit" style="margin-top: 20px;">Continue</button>
+
+          <p><a id="canceltoStudent" href="student-details-locked">Go back to Student details</a></p>
+        </form>
+
+      </div>
+    </div>
+  </main>
+</div>
+{% endblock %}

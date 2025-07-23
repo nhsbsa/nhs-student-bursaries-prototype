@@ -1,0 +1,705 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-processor.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Student dashboard {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb"
+  style="background-color: white; padding:12px 0; margin-bottom: 40px;">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a id="searchLink" class="nhsuk-breadcrumb__link" href="#">Student search</a>
+      </li>
+      <li class="nhsuk-breadcrumb__item"><a id="studentDetailsLink" class="nhsuk-breadcrumb__link"
+          href="/change-of-circumstances/V2/process-application/student-details-locked">Student details</a></li>
+
+    </ol>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="#">Back to Course details</a></p>
+  </div>
+</nav>
+
+{% endblock %}
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-width-container">
+  <main class="nhsuk-main-wrapper" id="maincontent" role="main">
+
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+
+        <div class="nhsuk-back-link">
+          <a class="nhsuk-back-link__link" href="javascript:history.go(-1)" id="back">
+            <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+              aria-hidden="true">
+              <path
+                d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+              </path>
+            </svg>
+            Go back
+          </a>
+        </div>
+
+        <div>
+          <h1 class="nhsuk-app-heading nhsuk-heading-l">
+            <span class="nhsuk-caption-l" id="studentRef">BRN0000259-3 - Mike Lee (September 2024)</span>
+            Update payments
+          </h1>
+        </div>
+
+        <p>You need to update the payments for any relevant academic years. </p>
+
+        <p>We can do this automatically, or you can update the payment schedule manually if the changes are not correct.
+        </p>
+
+
+
+        <!-- <h2 class="nhsuk-heading-m">Automatic payment changes (September 2024 academic year)</h2> -->
+
+        <!-- DETAILS -->
+
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-two-thirds">
+
+            <details class="nhsuk-details">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  Updated full year calculation
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                <dl class="nhsuk-summary-list">
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key" style="width: 45%;">
+                      Academic year start date
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      1 September 2024
+                    </dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      Date of change
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      5 February 2025
+                    </dd>
+                  </div>
+
+                </dl>
+
+
+                <table class="nhsuk-table">
+                  <thead class="nhsuk-table__head">
+                    <tr>
+                      <th scope="col" class="nhsuk-table__header">Award</th>
+                      <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric"
+                        style="white-space: nowrap; overflow: hidden;">Current calculation</th>
+                      <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric"
+                        style="white-space: nowrap; overflow: hidden;">New calculation</th>
+                    </tr>
+                  </thead>
+
+                  <tbody class="nhsuk-table__body">
+                    <tr class="nhsuk-table__row">
+                      <th scope="row" class="nhsuk-table__header">Non means tested grant</th>
+                      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£1,000</td>
+                      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£1,000</td>
+                    </tr>
+                    <tr class="nhsuk-table__row">
+                      <th scope="row" class="nhsuk-table__header">Means tested bursary</th>
+                      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£2,182</td>
+                      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£2,618</td>
+                    </tr>
+                    <tr class="nhsuk-table__row">
+                      <th scope="row" class="nhsuk-table__header">Extra Weeks Allowance</th>
+                      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£952</td>
+                      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£1,428</td>
+                    </tr>
+                    <tr class="nhsuk-table__row">
+                      <th scope="row" class="nhsuk-table__header">Dependants Allowance</th>
+                      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£0</td>
+                      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£0</td>
+                    </tr>
+                    <tr class="nhsuk-table__row">
+                      <th scope="row" class="nhsuk-table__header" style="white-space: nowrap; overflow: hidden;">Parent
+                        Learning Allowance</th>
+                      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£0</td>
+                      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£0</td>
+                    </tr>
+                    <tr class="nhsuk-table__row">
+                      <th scope="row" class="nhsuk-table__header">Childcare Allowance</th>
+                      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£0</td>
+                      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£0</td>
+                    </tr>
+                    <tr class="nhsuk-table__row">
+                      <th scope="row" class="nhsuk-table__header">Total amount payable</th>
+                      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£4,134</td>
+                      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£5,046</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+              </div>
+            </details>
+
+          </div>
+        </div>
+
+
+
+
+        <!-- EXPANDER -->
+
+        <details class="nhsuk-details nhsuk-expander">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text" style="width: 95%">
+              Payment schedule changes (September 2024 academic year)
+            </span>
+          </summary>
+
+          <div class="nhsuk-details__text" style="padding-bottom: 40px;">
+
+            <hr>
+
+
+            <!-- TERM 1 -->
+            <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-top-6 nhsuk-u-margin-bottom-4">
+              <caption
+                class="nhsuk-table__caption nhsuk-u-font-weight-bold nhsuk-u-font-size-24 nhsuk-u-margin-bottom-4">Term
+                1 payments </caption>
+              <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                  <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Type
+                  </th>
+                  <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Amount
+                  </th>
+                  <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Expected
+                    date
+                  </th>
+                  <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Payment
+                    date
+                  </th>
+                  <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Status
+                  </th>
+                  <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Amount
+                    change
+                  </th>
+                </tr>
+              </thead>
+
+              <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Type </span>
+                    Means tested bursary
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount </span>
+                    £720
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Expected date </span>
+                    16 September 2024
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Payment date </span>
+                    16 September 2024
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status </span>
+                    Paid
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <strong class="nhsuk-tag nhsuk-tag--white" style="white-space: nowrap; overflow: hidden;">
+                      No change
+                    </strong>
+                  </td>
+                </tr>
+
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Type </span>
+                    Extra Weeks Allowance
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount </span>
+                    £314
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Expected date </span>
+                    16 September 2024
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Payment date </span>
+                    16 September 2024
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status </span>
+                    Paid
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount change </span>
+                    <strong class="nhsuk-tag nhsuk-tag--white" style="white-space: nowrap; overflow: hidden;">
+                      No change
+                    </strong>
+                  </td>
+                </tr>
+
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Type </span>
+                    Non means tested grant
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount </span>
+                    £330
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Expected date </span>
+                    16 September 2024
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Payment date </span>
+                    16 September 2024
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status </span>
+                    Paid
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount change </span>
+                    <strong class="nhsuk-tag nhsuk-tag--white" style="white-space: nowrap; overflow: hidden;">
+                      No change
+                    </strong>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+
+            <span class="nhsuk-heading-xs nhsuk-u-margin-bottom-0 nhsuk-u-margin-top-6" style="text-align: right;">
+              Total amount payable for term 1: £1,364</span>
+            <!-- <hr class="nhsuk-u-margin-top-2"> -->
+
+
+
+            <!-- TERM 2 -->
+            <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-top-9 nhsuk-u-margin-bottom-4">
+              <caption
+                class="nhsuk-table__caption nhsuk-u-font-weight-bold nhsuk-u-font-size-24 nhsuk-u-margin-bottom-4">Term
+                2 payments </caption>
+              <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                  <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Type
+                  </th>
+                  <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Amount
+                  </th>
+                  <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Expected
+                    date
+                  </th>
+                  <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Payment
+                    date
+                  </th>
+                  <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Status
+                  </th>
+                  <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Amount
+                    change
+                  </th>
+                </tr>
+              </thead>
+
+              <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Type </span>
+                    Means tested bursary
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount </span>
+                    £720
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Expected date </span>
+                    16 December 2024
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Payment date </span>
+                    16 December 2024
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status </span>
+                    Paid
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <strong class="nhsuk-tag nhsuk-tag--white" style="white-space: nowrap; overflow: hidden;">
+                      No change
+                    </strong>
+                  </td>
+                </tr>
+
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Type </span>
+                    Extra Weeks Allowance
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount </span>
+                    £314
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Expected date </span>
+                    16 December 2024
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Payment date </span>
+                    16 December 2024
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status </span>
+                    Paid
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount change </span>
+                    <strong class="nhsuk-tag nhsuk-tag--white" style="white-space: nowrap; overflow: hidden;">
+                      No change
+                    </strong>
+                  </td>
+                </tr>
+
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Type </span>
+                    Non means tested grant
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount </span>
+                    £330
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Expected date </span>
+                    16 December 2024
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Payment date </span>
+                    16 December 2024
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status </span>
+                    Paid
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount change </span>
+                    <strong class="nhsuk-tag nhsuk-tag--white" style="white-space: nowrap; overflow: hidden;">
+                      No change
+                    </strong>
+                  </td>
+                </tr>
+
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Type </span>
+                    Means tested bursary
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount </span>
+                    £108
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Expected date </span>
+                    22 January 2025
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Payment date </span>
+
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status </span>
+                    Pending
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <strong class="nhsuk-tag nhsuk-tag--green" style="white-space: nowrap; overflow: hidden;">
+                      New
+                    </strong>
+                  </td>
+                </tr>
+
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Type </span>
+                    Extra Weeks Allowance
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount </span>
+                    £118
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Expected date </span>
+                    22 January 2025
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Payment date </span>
+
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status </span>
+                    Pending
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount change </span>
+                    <strong class="nhsuk-tag nhsuk-tag--green" style="white-space: nowrap; overflow: hidden;">
+                      New
+                    </strong>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+
+            <span class="nhsuk-heading-xs nhsuk-u-margin-bottom-0 nhsuk-u-margin-top-6" style="text-align: right;">
+              Total amount payable for term 2: £1,590</span>
+
+
+
+            <!-- TERM 3 -->
+
+            <div style="margin-top: 60px">
+              <h2 class="nhsuk-heading-m" style="margin-top: 0; float: left">Term 3 payments</h2>
+
+              <a href="#" style="float: right; padding-top: 4px;" class="toggle-details"
+                onclick="toggleDetails(this); return false;">Show old details</a>
+            </div>
+
+            <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-4">
+              <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                  <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Type
+                  </th>
+                  <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Amount
+                  </th>
+                  <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Expected
+                    date
+                  </th>
+                  <!-- <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Payment date</th> -->
+                  <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Status
+                  </th>
+                  <th role="columnheader" class="nhsuk-table__header" scope="col" style="text-wrap-mode: wrap;">Amount
+                    change
+                  </th>
+                </tr>
+              </thead>
+
+              <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Type </span>
+                    Means tested bursary
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount </span>
+                    £890
+                    <div class="ss-details-desktop">
+                      <div class="ss-details-text" style="display: none">
+                        £742
+                      </div>
+                    </div>
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Expected date </span>
+                    14 April 2025
+                  </td>
+                  <!-- <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading" aria-hidden="true">No payment date yet
+            </span>
+
+          </td> -->
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status </span>
+                    Pending
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount change </span>
+                    <strong class="nhsuk-tag nhsuk-tag--aqua-green">
+                      Increased
+                    </strong>
+                  </td>
+                </tr>
+
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Type </span>
+                    Non means tested grant
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount </span>
+                    £340
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Expected date </span>
+                    14 April 2025
+                  </td>
+                  <!-- <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading" aria-hidden="true">No payment date yet
+            </span>
+
+          </td> -->
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status </span>
+                    Pending
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount change </span>
+                    <strong class="nhsuk-tag nhsuk-tag--white" style="white-space: nowrap; overflow: hidden;">
+                      No change
+                    </strong>
+                  </td>
+                </tr>
+
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Type </span>
+                    Extra Weeks Allowance
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount </span>
+                    £486
+                    <div class="ss-details-desktop">
+                      <div class="ss-details-text" style="display: none">
+                        £324
+                      </div>
+                    </div>
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Expected date </span>
+                    14 April 2025
+                  </td>
+                  <!-- <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading" aria-hidden="true">No payment date yet
+            </span>
+
+          </td> -->
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status </span>
+                    Pending
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount change </span>
+                    <strong class="nhsuk-tag nhsuk-tag--aqua-green">
+                      Increased
+                    </strong>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+
+            <span class="nhsuk-heading-xs nhsuk-u-margin-bottom-0 nhsuk-u-margin-top-6" style="text-align: right;">
+              Total amount payable for term 3: £1,716</span>
+
+
+
+
+
+
+            <!-- ONE OFF PAYMENTS -->
+
+            <h2 class="nhsuk-heading-m" style="margin-bottom: 10px; margin-top: 60px;">One off payments</h2>
+
+            <p>No one off payments.</p>
+
+
+          </div>
+
+        </details>
+
+
+
+
+        <form class="form" action="payment-scheduling-required-route" method="post">
+
+          <div class="nhsuk-form-group">
+
+            <h2 class="nhsuk-heading-m" style="margin-top: 50px;">Would you like to update the payment schedule with
+              these changes?</h2>
+
+            <div class="nhsuk-radios nhsuk-radios--conditional">
+
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="automaticReschedule" name="CoCSchedulingChoice" type="radio"
+                  value="automaticReschedule" aria-controls="conditional-contact-1" aria-expanded="false">
+
+                <label class="nhsuk-label nhsuk-radios__label" for="contact-1">
+                  Yes, these changes are correct
+                </label>
+                <!-- <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
+                  Hint text
+                </div> -->
+              </div>
+
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="manualReschedule" name="CoCSchedulingChoice" type="radio"
+                  value="manualReschedule" aria-controls="conditional-contact-3" aria-expanded="false">
+
+                <label class="nhsuk-label nhsuk-radios__label" for="contact-3">
+                  No, I want to manually update the payment schedule
+                </label>
+              </div>
+
+            </div>
+
+          </div>
+
+          <button class="nhsuk-button" type="submit" style="margin-top: 20px;">Continue</button>
+
+        </form>
+
+        <p><a id="canceltoStudent" href="student-details-locked">Cancel</a></p>
+
+      </div>
+
+    </div>
+  </main>
+</div>
+
+
+
+<script>
+  function toggleDetails(link) {
+    // Find the container of the clicked link (assumed to be the parent of heading + link)
+    const container = link.closest('div');
+
+    // Find the next sibling <table> after the heading/link div
+    const table = container.nextElementSibling;
+
+    // Get only the .ss-details-text elements inside this table
+    const details = table.querySelectorAll('.ss-details-text');
+
+    // Check if any are currently visible
+    const isVisible = [...details].some(el => el.style.display === 'block');
+
+    // Toggle visibility
+    details.forEach(el => {
+      el.style.display = isVisible ? 'none' : 'block';
+    });
+
+    // Toggle the link text
+    link.textContent = isVisible ? 'Show old details' : 'Hide old details';
+  }
+</script>
+{% endblock %}

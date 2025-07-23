@@ -7,6 +7,9 @@ const session = require('express-session');
 const router = express.Router();
 
 
+
+// Routes for STUDENT: APPLY FOR CoC journey
+
 router.post('/apply/changes-route', (req, res) => {
 
   const CoCType = req.session.data['CoCType']
@@ -62,20 +65,114 @@ router.post('/apply/date-route', (req, res) => {
 
 router.post('/apply/income-route', (req, res) => {
 
-    res.redirect('/change-of-circumstances/V3/apply/expenses')
+  res.redirect('/change-of-circumstances/V3/apply/expenses')
 
 })
 
 router.post('/apply/expenses-route', (req, res) => {
 
-    res.redirect('/change-of-circumstances/V3/apply/explanation')
+  res.redirect('/change-of-circumstances/V3/apply/explanation')
 
 })
 
 router.post('/apply/explanation-route', (req, res) => {
 
-    res.redirect('/change-of-circumstances/V3/apply/summary')
+  res.redirect('/change-of-circumstances/V3/apply/summary')
 
 })
+
+
+
+
+// Routes for PROCESSOR: PROCESS APPLICATION journey
+
+router.post('/process-application/change-summary/', (req, res) => {
+
+  const CoCProcessorChoice = req.session.data['CoCProcessorChoice']
+  const CoCScenario = req.session.data['CoCScenario']
+
+  // COMPLETE CHANGE radio option
+  if (CoCProcessorChoice === 'complete') {
+
+    // Route for updating Address only - go straight to asking for comment
+    if (CoCScenario === 'addressOnly') {
+      res.redirect('/change-of-circumstances/V3/process-application/change-confirmation-comment')
+    }
+
+    // Else, payment schedule needs updating too - so ask if they want it updating automatically or manually
+    else {
+      res.redirect('/change-of-circumstances/V3/process-application/coc-payment-journey/payment-scheduling-required?CoCPaymentsUpdated=false')
+    }
+  }
+
+  // PEND CHANGE radio option
+  else if (CoCProcessorChoice === 'pend') {
+    res.redirect('/change-of-circumstances/V3/process-application/pend-reason')
+  }
+
+  // DECLINE CHANGE radio option
+  else if (CoCProcessorChoice === 'decline') {
+    res.redirect('/change-of-circumstances/V3/process-application/decline-reason')
+  }
+
+  // Else, stay on this page (no radio selected)
+  else {
+    res.redirect('/change-of-circumstances/V3/process-application/change-summary')
+  }
+
+})
+
+
+
+router.post('/process-application/coc-payment-journey/payment-scheduling-required-route/', (req, res) => {
+
+  const CoCSchedulingChoice = req.session.data['CoCSchedulingChoice']
+
+  // AUTOMATIC RESCHEDULE radio option
+  if (CoCSchedulingChoice === 'automaticReschedule') {
+    // Route for automatic payment rescheduling - go straight to asking for comment
+    res.redirect('/change-of-circumstances/V2/process-application/change-confirmation-comment?CoCPaymentsUpdated=false')
+  }
+
+  // MANUAL RESCHEDULE radio option
+  else if (CoCSchedulingChoice === 'manualReschedule') {
+    // Route for manually payment rescheduling - go to start of manual rescheduling journey
+    res.redirect('/change-of-circumstances/V2/process-application/coc-payment-journey/payment-details-locked-coc-callout')
+  }
+
+  // Else, stay on this page (no radio selected)
+  else {
+    res.redirect('/change-of-circumstances/V2/process-application/coc-payment-journey/payment-scheduling-required')
+  }
+
+})
+
+
+
+router.post('/process-application/change-confirmation-comment-route/', (req, res) => {
+
+  const CoCScenario = req.session.data['CoCScenario']
+  const CoCSchedulingChoice = req.session.data['CoCSchedulingChoice']
+
+  // Save input from comment textbox
+  const changeProcessorComment = req.session.data['change-processor-comment']
+
+  // Route for updating Address only
+  if (CoCScenario === 'addressOnly') {
+    res.redirect('/change-of-circumstances/V3/process-application/change-confirmation-address-only')
+  }
+
+  // Route for updating payments automatically
+  else if (CoCSchedulingChoice === 'automaticReschedule') {
+    res.redirect('/change-of-circumstances/V3/process-application/change-confirmation-auto-scheduled')
+  }
+
+  // Else, route for updating payments manually (the most complex one)
+  else {
+    res.redirect('/change-of-circumstances/V3/process-application/change-confirmation-manually-scheduled')
+  }
+
+})
+
 
 module.exports = router;
