@@ -131,18 +131,18 @@ router.post('/process-application/coc-payment-journey/payment-scheduling-require
   // AUTOMATIC RESCHEDULE radio option
   if (CoCSchedulingChoice === 'automaticReschedule') {
     // Route for automatic payment rescheduling - go straight to asking for comment
-    res.redirect('/change-of-circumstances/V2/process-application/change-confirmation-comment?CoCPaymentsUpdated=false')
+    res.redirect('/change-of-circumstances/V3/process-application/change-confirmation-comment?CoCPaymentsUpdated=false')
   }
 
   // MANUAL RESCHEDULE radio option
   else if (CoCSchedulingChoice === 'manualReschedule') {
     // Route for manually payment rescheduling - go to start of manual rescheduling journey
-    res.redirect('/change-of-circumstances/V2/process-application/coc-payment-journey/payment-details-locked-coc-callout')
+    res.redirect('/change-of-circumstances/V3/process-application/coc-payment-journey/payment-details-locked-coc-callout')
   }
 
   // Else, stay on this page (no radio selected)
   else {
-    res.redirect('/change-of-circumstances/V2/process-application/coc-payment-journey/payment-scheduling-required')
+    res.redirect('/change-of-circumstances/V3/process-application/coc-payment-journey/payment-scheduling-required')
   }
 
 })
