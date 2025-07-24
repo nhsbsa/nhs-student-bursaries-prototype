@@ -77,10 +77,12 @@
 
                 <h3 class="nhsuk-heading-s">Change of circumstances - 13 February 2025 at 11:37am
                   <br>
-                  <div style="font-size: 1.1875rem; line-height: 1.47368;">Linked activity 352 - Change to student's income or expenses</div>
+                  <div style="font-size: 1.1875rem; line-height: 1.47368;">Linked activity 352 - Change to student's
+                    income or expenses</div>
                   <strong class="nhsuk-tag nhsuk-tag--grey">System note</strong>
                 </h3>
 
+                <!-- WIP: WILL RETURN TO THIS AND UPDATE IT -->
                 {% if data['CoCScenario'] == "addressOnly" %}
                 <ul>
                   <li>Change of circumstances completed.</li>
@@ -91,8 +93,7 @@
                 {% elif data['CoCSchedulingChoice'] == "automaticReschedule" %}
                 <ul>
                   <li>Change of circumstances completed.</li>
-                  <li>Address updated.</li>
-                  <li>Living with parents updated.</li>
+                  <li>Bursary details updated.</li>
                   <li>Payments updated automatically.</li>
                   <li>Email sent to student.</li>
                 </ul>
@@ -100,8 +101,7 @@
                 {% else %}
                 <ul>
                   <li>Change of circumstances completed.</li>
-                  <li>Address updated.</li>
-                  <li>Living with parents updated.</li>
+                  <li>Bursary details updated.</li>
                   <li>Payments updated manually.</li>
                   <!-- <li>Calculations sheet uploaded.</li> -->
                   <li>Email sent to student.</li>
@@ -114,24 +114,15 @@
                 </p>
 
                 <p>Change type: Change to student's income or expenses<br>
-                  Previous address: 13 Pleasant House, Laney Street, Smalltown, Scotland, NE33 3AB<br>
-                  New address: 34 The Tower, Streetson Crescent, Bigtown, England, SR2 7NB<br>
 
-                  Living with parents:
-
-                  {% if data['CoCScenario'] == "addressOnly" %}
-                  Yes
-                  {% else %}
-                  No
-                  {% endif %}
-
-                  <br>
                   Comment:
 
                   {% if data['CoCScenario'] == "addressOnly" %}
-                  Me and my parents have moved house together.
+                  There has been some other change to my income or expenses, but the Change of circumstances form did
+                  not ask me for it.
                   {% else %}
-                  I moved out of my parents house into my studio flat.
+                  My income has changed as I got a new job and my maintainence payments have stopped. My expenses have changed as
+                  I am now renting a flat.
                   {% endif %}
 
                   <br>
