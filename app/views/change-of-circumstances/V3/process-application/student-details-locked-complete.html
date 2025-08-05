@@ -197,34 +197,6 @@
                       <dt class="nhsuk-summary-list__value">Change to student's income or expenses</dt>
                     </div>
                     <div class="nhsuk-summary-list__row">
-                      <dd class="nhsuk-summary-list__key">Previous address</dd>
-                      <dt class="nhsuk-summary-list__value">13<br>
-                        Pleasant House<br>
-                        Laney Street<br>
-                        Smalltown<br>
-                        Scotland<br>
-                        NE33 3AB</dt>
-                    </div>
-                    <div class="nhsuk-summary-list__row">
-                      <dd class="nhsuk-summary-list__key">New address</dd>
-                      <dt class="nhsuk-summary-list__value">34<br>
-                        The Tower<br>
-                        Streetson Crescent<br>
-                        Bigtown<br>
-                        England<br>
-                        SR2 7NB</dt>
-                    </div>
-                    <div class="nhsuk-summary-list__row">
-                      <dd class="nhsuk-summary-list__key">Living with parents?</dd>
-                      <dt class="nhsuk-summary-list__value">
-                        {% if data['CoCScenario'] == "addressOnly" %}
-                        Yes
-                        {% else %}
-                        No
-                        {% endif %}
-                      </dt>
-                    </div>
-                    <div class="nhsuk-summary-list__row">
                       <dd class="nhsuk-summary-list__key">Comment</dd>
                       <dt class="nhsuk-summary-list__value">My income has changed as I got a new job and my maintainence
                         payments have stopped. My expenses have changed as I am now renting a flat.</dt>
@@ -308,6 +280,7 @@
                       <strong class="nhsuk-tag nhsuk-tag--grey">System note</strong>
                     </h4>
 
+                    <!-- WIP: WILL RETURN TO THIS AND UPDATE IT -->
                     {% if data['CoCScenario'] == "addressOnly" %}
                     <ul>
                       <li>Change of circumstances completed.</li>
@@ -318,8 +291,7 @@
                     {% elif data['CoCSchedulingChoice'] == "automaticReschedule" %}
                     <ul>
                       <li>Change of circumstances completed.</li>
-                      <li>Address updated.</li>
-                      <li>Living with parents updated.</li>
+                      <li>Bursary details updated.</li>
                       <li>Payments updated automatically.</li>
                       <li>Email sent to student.</li>
                     </ul>
@@ -327,30 +299,20 @@
                     {% else %}
                     <ul>
                       <li>Change of circumstances completed.</li>
-                      <li>Address updated.</li>
-                      <li>Living with parents updated.</li>
+                      <li>Bursary details updated.</li>
                       <li>Payments updated manually.</li>
                       <!-- <li>Calculations sheet uploaded.</li> -->
                       <li>Email sent to student.</li>
                     </ul>
                     {% endif %}
 
-                    <p>Processor comment: I have added this optional comment, to provide some additional info about this
-                      change which could be useful.</p>
+                    <p>
+                      Processor comment: I have added this optional comment, to provide some additional info about this
+                      change which could be useful.
+                    </p>
 
                     <p>Change type: Change to student's income or expenses<br>
-                      Previous address: 13 Pleasant House, Laney Street, Smalltown, Scotland, NE33 3AB<br>
-                      New address: 34 The Tower, Streetson Crescent, Bigtown, England, SR2 7NB<br>
 
-                      Living with parents:
-
-                      {% if data['CoCScenario'] == "addressOnly" %}
-                      Yes
-                      {% else %}
-                      No
-                      {% endif %}
-
-                      <br>
                       Comment:
 
                       {% if data['CoCScenario'] == "addressOnly" %}
