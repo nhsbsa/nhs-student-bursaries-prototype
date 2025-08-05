@@ -47,10 +47,8 @@
 
         <p>You've completed the following actions for this student:</p>
         <ul>
-          <li>address updated</li>
           <li>bursary details updated</li>
           <li>payments updated (manually)</li>
-          <!-- <li>calculations sheet uploaded</li> -->
           <li>email sent to student</li>
           <li>note created</li>
         </ul>
@@ -68,11 +66,13 @@
 
             <p>You've made this change to the student's bursary application.</p>
 
+            <h3 class="nhsuk-heading-s">Income details</h3>
+
             <table role="table" class="nhsuk-table-responsive">
               <thead role="rowgroup" class="nhsuk-table__head">
                 <tr role="row">
                   <th role="columnheader" class="" scope="col">
-                    Question
+                    Income type
                   </th>
                   <th role="columnheader" class="" scope="col">
                     Old answer
@@ -82,18 +82,81 @@
                   </th>
                 </tr>
               </thead>
+
               <tbody class="nhsuk-table__body">
                 <tr role="row" class="nhsuk-table__row">
                   <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Age </span>Living with parents
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Income type </span>
+                    Sponsorship income
                   </td>
                   <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">How much </span>Yes
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Old answer </span>None
                   </td>
                   <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">How often </span>No
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">New answer </span>£6,000
                   </td>
                 </tr>
+
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Income type </span>
+                    Taxable state benefits
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Old answer </span>£140
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">New answer </span>£300.45
+                  </td>
+                </tr>
+
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Income type </span>
+                    Other taxable income
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Old answer </span>£610
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">New answer </span>£750
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+
+            <h3 class="nhsuk-heading-s nhsuk-u-margin-top-8">Expense details</h3>
+
+            <table role="table" class="nhsuk-table-responsive">
+              <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                  <th role="columnheader" class="" scope="col">
+                    Expense type
+                  </th>
+                  <th role="columnheader" class="" scope="col">
+                    Old answer
+                  </th>
+                  <th role="columnheader" class="" scope="col">
+                    New answer
+                  </th>
+                </tr>
+              </thead>
+
+              <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Expense type </span>
+                    Sponsorship income
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">Old answer </span>None
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading" aria-hidden="true">New answer </span>£6,000
+                  </td>
+                </tr>
+
               </tbody>
             </table>
           </div>
@@ -109,7 +172,7 @@
           </summary>
           <div class="nhsuk-details__text">
 
-            <p>You've updated the student's payment schedule. You can view these changes in the <a
+            <p>We've updated the student's payment schedule. You can view these changes in the <a
                 href="payment-schedule-history" target="_blank">Payment schedule history (opens in a new tab)</a>.
             </p>
 
@@ -134,7 +197,7 @@
 
                 <p>Dear Ali Smith</p>
 
-                <p>We've completed your change of circumstances request for <strong>Change to student's income or
+                <p>We've completed your change of circumstances request for <strong>Change to income or
                     expenses</strong>.</p>
 
                 <p>We've made changes to your payments because of this change.
@@ -175,10 +238,8 @@
 
                 <ul>
                   <li>Change of circumstances completed.</li>
-                  <li>Address updated.</li>
-                  <li>Living with parents updated.</li>
+                  <li>Bursary details updated.</li>
                   <li>Payments updated manually.</li>
-                  <!-- <li>Calculations sheet uploaded.</li> -->
                   <li>Email sent to student.</li>
                 </ul>
 
@@ -186,48 +247,17 @@
                   change which could be useful.</p>
 
                 <p>Change type: Change to student's income or expenses<br>
-                  Previous address: 13 Pleasant House, Laney Street, Smalltown, Scotland, NE33 3AB<br>
-                  New address: 34 The Tower, Streetson Crescent, Bigtown, England, SR2 7NB<br>
-                  Living with parents: No<br>
+
                   Comment: My income has changed as I got a new job and my maintainence payments have stopped. My
-                  expenses have changed as I am now renting a flat.<br>
-                  Date of change: 5 February 2025</p>
+                  expenses have changed as I am now renting a flat.
+
+                  <br>
+                  Date of change: 5 February 2025
+                </p>
 
                 <div class="nhsuk-hint" id="contact-hint">
                   Last modified by <strong>John Smith</strong>
                 </div>
-
-                <!-- <dl class="nhsuk-summary-list">
-              <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">
-                  Note type
-                </dt>
-                <dd class="nhsuk-summary-list__value">
-                  Change of Circumstances
-                </dd>
-              </div>
-
-              <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">
-                  Link to activity (optional)
-                </dt>
-                <dd class="nhsuk-summary-list__value">
-                  352 - Change to student's income or expenses (complete)
-                </dd>
-              </div>
-
-              <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">
-                  Comments
-                </dt>
-                <dd class="nhsuk-summary-list__value">
-                  My income has changed as I got a new job and my maintainence payments have stopped. My expenses have changed as I am now renting a flat.<br>
-                  Old address: 13 Pleasant House, Laney Street, Smalltown, Scotland, NE33 3AB<br>
-                  New address 34 The Tower, Streetson Crescent, Bigtown, England, SR2 7NB<br>
-                  Effective from date: 5 February 2025
-                </dd>
-              </div>
-            </dl> -->
 
               </div>
             </div>
