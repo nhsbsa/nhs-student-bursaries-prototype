@@ -37,89 +37,61 @@
       </a>
     </div>
 
-    <!-- <form action="/students/expenses/life-assurance" method="post">-->
+    <form action="/change-of-circumstances/V3/apply/expenses/life-assurance" method="POST">
+      <div class="nhsuk-form-group">
+        <fieldset class="nhsuk-fieldset">
+          <h1 class="nhsuk-heading-l" id="sponsorshipH1">
+            <span class="nhsuk-caption-l">Change of circumstances</span>Do you pay for life assurance?
+          </h1>
 
-    <div class="nhsuk-form-group">
-      <fieldset class="nhsuk-fieldset">
-        <h1 class="nhsuk-heading-l" id="sponsorshipH1">
-          <span class="nhsuk-caption-l">Change of circumstances</span>Do you pay for life assurance?
-        </h1>
-
-        <p>This is a type of life insurance policy that does not expire. It's paid out no matter what age the person is when they die.</p>
-
-        <div class="nhsuk-form-group">
-          <div class="nhsuk-radios">
-            <div class="nhsuk-radios nhsuk-radios--conditional">
-              <div class="nhsuk-radios__item">
-                <input
-                  class="nhsuk-radios__input"
-                  id="life-assurance-yes"
-                  name="life-assurance"
-                  type="radio"
-                  value="yes"
-                  aria-controls="conditional-life-assurance"
-                  aria-expanded="false"
-                />
-                <label
-                  class="nhsuk-label nhsuk-radios__label"
-                  for="life-assurance-yes"
-                >
-                  Yes
+          <div class="nhsuk-radios nhsuk-radios--conditional">
+            <div class="nhsuk-radios__item">
+              <input
+                class="nhsuk-radios__input"
+                id="life-assurance-yes"
+                name="life-assurance"
+                type="radio"
+                value="yes"
+                aria-controls="conditional-life-assurance"
+                aria-expanded="false"
+                {% if checkedYes %}checked{% endif %}
+              />
+              <label class="nhsuk-label nhsuk-radios__label" for="life-assurance-yes">
+                Yes
+              </label>
+            </div>
+            <div class="nhsuk-radios__conditional {% if not checkedYes %}nhsuk-radios__conditional--hidden{% endif %}" id="conditional-life-assurance">
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label nhsuk-u-font-weight-bold" for="life-assurance-amount">
+                  Enter how much you pay
                 </label>
-              </div>
-
-              <div
-                class="
-                  nhsuk-radios__conditional nhsuk-radios__conditional--hidden"
-                id="conditional-life-assurance"
-              >
-                <div class="nhsuk-form-group">
-                  <label
-                    class="nhsuk-label nhsuk-u-font-weight-bold"
-                    for="benefits-info"
-                  >
-                  Enter how much you'll pay for life assurance
-                  </label>
-                  <p class="nhsuk-hint">
-                    This is for the <span id="september-year"></span> to <span id="next-year"></span> academic year.
-                  </p>
-                  <label class="nhsuk-label" for="example">
-                    Cost in pounds
-                  </label>
-                  <div class="nhsuk-input__wrapper">
-                    <div class="nhsuk-input__prefix" aria-hidden="true">£</div>
-                    <input class="nhsuk-input nhsuk-input--width-5" id="example" name="example" type="text">
-                  </div>
+                <div class="nhsuk-input__wrapper">
+                  <div class="nhsuk-input__prefix" aria-hidden="true">£</div>
+                  <input class="nhsuk-input nhsuk-input--width-5" id="life-assurance-amount" name="life-assurance-amount" type="text" value="{{ amount }}">
                 </div>
               </div>
-
-              <div class="nhsuk-radios__item">
-                <input
-                  class="nhsuk-radios__input"
-                  id="life-assurance-no"
-                  name="life-assurance"
-                  type="radio"
-                  value="no"
-                  checked
-                />
-                <label
-                  class="nhsuk-label nhsuk-radios__label"
-                  for="life-assurance-no"
-                >
-                  No
-                </label>
-              </div>
+            </div>
+            <div class="nhsuk-radios__item">
+              <input
+                class="nhsuk-radios__input"
+                id="life-assurance-no"
+                name="life-assurance"
+                type="radio"
+                value="no"
+                {% if checkedNo %}checked{% endif %}
+              />
+              <label class="nhsuk-label nhsuk-radios__label" for="life-assurance-no">
+                No
+              </label>
             </div>
           </div>
-        </div>
-        <div class="nhsuk-form-group">
-          <a href="../expenses" class="nhsuk-button" role="button"
-            >Continue</a
-          >
-          <p><a href="tasklist-approved">Cancel</a></p>
-        </div>
-      </fieldset>
-    </div>
+        </fieldset>
+      </div>
+      <div class="nhsuk-form-group">
+        <button class="nhsuk-button" type="submit">Continue</button>
+        <p><a href="tasklist-approved">Cancel</a></p>
+      </div>
+    </form>
   </div>
 </div>
 

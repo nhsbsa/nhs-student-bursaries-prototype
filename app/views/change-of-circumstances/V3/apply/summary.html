@@ -151,39 +151,111 @@
           <dl class="nhsuk-summary-list">
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key" style="width: 50%">Sponsorship income</dt>
-              <dd class="nhsuk-summary-list__value">£6,000</dd>
+              <dd class="nhsuk-summary-list__value">
+                {% if data['scholarship-amount'] and data['scholarship-amount'] != 'None' and data['scholarship-amount']|trim != '' and (data['scholarship-amount']|trim|replace(',', '')|float is not none) %}
+                  £{{ data['scholarship-amount']|trim|replace(',', '')|float|format(',') }}
+                {% elif data['scholarship-amount'] == 'None' %}
+                  None
+                {% else %}
+                  £5,750
+                {% endif %}
+              </dd>
             </div>
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">Employment income</dt>
-              <dd class="nhsuk-summary-list__value">None</dd>
+              <dd class="nhsuk-summary-list__value">
+                {% if data['employment-amount'] and data['employment-amount'] != 'None' and data['employment-amount']|trim != '' and (data['employment-amount']|trim|replace(',', '')|float is not none) %}
+                  £{{ data['employment-amount']|trim|replace(',', '')|float|format(',') }}
+                {% elif data['employment-amount'] == 'None' %}
+                  None
+                {% else %}
+                  None
+                {% endif %}
+              </dd>
             </div>
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">Self-employment income</dt>
-              <dd class="nhsuk-summary-list__value">None</dd>
+              <dd class="nhsuk-summary-list__value">
+                {% if data['self-employment-amount'] and data['self-employment-amount'] != 'None' and data['self-employment-amount']|trim != '' and (data['self-employment-amount']|trim|replace(',', '')|float is not none) %}
+                  £{{ data['self-employment-amount']|trim|replace(',', '')|float|format(',') }}
+                {% elif data['self-employment-amount'] == 'None' %}
+                  None
+                {% else %}
+                  None
+                {% endif %}
+              </dd>
             </div>
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">Pension payments</dt>
-              <dd class="nhsuk-summary-list__value">None</dd>
+              <dd class="nhsuk-summary-list__value">
+                {% if data['pension-amount'] and data['pension-amount'] != 'None' and data['pension-amount']|trim != '' and (data['pension-amount']|trim|replace(',', '')|float is not none) %}
+                  £{{ data['pension-amount']|trim|replace(',', '')|float|format(',') }}
+                {% elif data['pension-amount'] == 'None' %}
+                  None
+                {% else %}
+                  None
+                {% endif %}
+              </dd>
             </div>
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">Rental income</dt>
-              <dd class="nhsuk-summary-list__value">£4,000</dd>
+              <dd class="nhsuk-summary-list__value">
+                {% if data['rent-amount'] and data['rent-amount'] != 'None' and data['rent-amount']|trim != '' and (data['rent-amount']|trim|replace(',', '')|float is not none) %}
+                  £{{ data['rent-amount']|trim|replace(',', '')|float|format(',') }}
+                {% elif data['rent-amount'] == 'None' %}
+                  None
+                {% else %}
+                  None
+                {% endif %}
+              </dd>
             </div>
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">Taxable state benefits</dt>
-              <dd class="nhsuk-summary-list__value">£300.45</dd>
+              <dd class="nhsuk-summary-list__value">
+                {% if data['benefits-amount'] and data['benefits-amount'] != 'None' and data['benefits-amount']|trim != '' and (data['benefits-amount']|trim|replace(',', '')|float is not none) %}
+                  £{{ data['benefits-amount']|trim|replace(',', '')|float|format(',') }}
+                {% elif data['benefits-amount'] == 'None' %}
+                  None
+                {% else %}
+                  None
+                {% endif %}
+              </dd>
             </div>
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">Maintenance payments</dt>
-              <dd class="nhsuk-summary-list__value">None</dd>
+              <dd class="nhsuk-summary-list__value">
+                {% if data['maintenance-amount'] and data['maintenance-amount'] != 'None' and data['maintenance-amount']|trim != '' and (data['maintenance-amount']|trim|replace(',', '')|float is not none) %}
+                  £{{ data['maintenance-amount']|trim|replace(',', '')|float|format(',') }}
+                {% elif data['maintenance-amount'] == 'None' %}
+                  None
+                {% else %}
+                  None
+                {% endif %}
+              </dd>
             </div>
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">Money from trust fund</dt>
-              <dd class="nhsuk-summary-list__value">None</dd>
+              <dd class="nhsuk-summary-list__value">
+                {% if data['trust-fund-amount'] and data['trust-fund-amount'] != 'None' and data['trust-fund-amount']|trim != '' and (data['trust-fund-amount']|trim|replace(',', '')|float is not none) %}
+                  £{{ data['trust-fund-amount']|trim|replace(',', '')|float|format(',') }}
+                {% elif data['trust-fund-amount'] == 'None' %}
+                  None
+                {% else %}
+                  None
+                {% endif %}
+              </dd>
             </div>
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">Other taxable income</dt>
-              <dd class="nhsuk-summary-list__value">£750</dd>
+              <dd class="nhsuk-summary-list__value">
+                {% if data['other-amount'] and data['other-amount'] != 'None' and data['other-amount']|trim != '' and (data['other-amount']|trim|replace(',', '')|float is not none) %}
+                  £{{ data['other-amount']|trim|replace(',', '')|float|format(',') }}
+                {% elif data['other-amount'] == 'None' %}
+                  None
+                {% else %}
+                  None
+                {% endif %}
+              </dd>
             </div>
           </dl>
           <p><a href="income" class="nhsuk-button nhsuk-button--secondary">Change income</a></p>
@@ -200,23 +272,63 @@
           <dl class="nhsuk-summary-list">
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">Pension contributions</dt>
-              <dd class="nhsuk-summary-list__value">None</dd>
+              <dd class="nhsuk-summary-list__value">
+                {% if data['personal-pension-amount'] and data['personal-pension-amount'] != 'None' %}
+                  £{{ data['personal-pension-amount'] }}
+                {% elif data['personal-pension-amount'] == 'None' %}
+                  None
+                {% else %}
+                  None
+                {% endif %}
+              </dd>
             </div>
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">Life assurance payments</dt>
-              <dd class="nhsuk-summary-list__value">None</dd>
+              <dd class="nhsuk-summary-list__value">
+                {% if data['life-assurance-amount'] and data['life-assurance-amount'] != 'None' %}
+                  £{{ data['life-assurance-amount'] }}
+                {% elif data['life-assurance-amount'] == 'None' %}
+                  None
+                {% else %}
+                  None
+                {% endif %}
+              </dd>
             </div>
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">Mortgage total</dt>
-              <dd class="nhsuk-summary-list__value">None</dd>
+              <dd class="nhsuk-summary-list__value">
+                {% if data['mortgage-amount'] and data['mortgage-amount'] != 'None' %}
+                  £{{ data['mortgage-amount'] }}
+                {% elif data['mortgage-amount'] == 'None' %}
+                  None
+                {% else %}
+                  None
+                {% endif %}
+              </dd>
             </div>
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">Rent total</dt>
-              <dd class="nhsuk-summary-list__value">£6,000</dd>
+              <dd class="nhsuk-summary-list__value">
+                {% if data['rent-amount'] and data['rent-amount'] != 'None' and data['rent-amount']|trim != '' and (data['rent-amount']|trim|replace(',', '')|float is not none) %}
+                  £{{ data['rent-amount']|trim|replace(',', '')|float|format(',') }}
+                {% elif data['rent-amount'] == 'None' %}
+                  None
+                {% else %}
+                  £4,280
+                {% endif %}
+              </dd>
             </div>
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">Maintenance payments</dt>
-              <dd class="nhsuk-summary-list__value">None</dd>
+              <dd class="nhsuk-summary-list__value">
+                {% if data['maintenance-amount'] and data['maintenance-amount'] != 'None' %}
+                  £{{ data['maintenance-amount'] }}
+                {% elif data['maintenance-amount'] == 'None' %}
+                  None
+                {% else %}
+                  None
+                {% endif %}
+              </dd>
             </div>
           </dl>
           <p><a href="income" class="nhsuk-button nhsuk-button--secondary">Change expenses</a></p>
