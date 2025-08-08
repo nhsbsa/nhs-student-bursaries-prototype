@@ -36,9 +36,9 @@
     {% endif %}
 
     {% if data['CoCType'] == "Change of address" %}
-      <div>
-        <a href="evidence" class="nhsuk-button nhsuk-button--secondary" role="button">Add evidence</a>
-      </div>
+    <div>
+      <a href="evidence" class="nhsuk-button nhsuk-button--secondary" role="button">Add evidence</a>
+    </div>
     {% endif %}
 
     {% if data['CoCType'] == "Change of income" %}
@@ -48,167 +48,112 @@
     <div class="nhsuk-card">
       <div class="nhsuk-card__content">
 
-          <table style="margin-bottom: 24px;" id="evidenceTable" class="nhsuk-table">
-            <caption class="nhsuk-table__caption">Sponsorship income</caption>
-            <thead role="rowgroup" class="nhsuk-table__head">
-              <tr role="row">
-                <th role="columnheader" class="" scope="col">
-                  Type
-                </th>
-                <th role="columnheader" class="" scope="col">
-                    File
-                </th>
-              </tr>
-            </thead>
-            <tbody class="nhsuk-table__body">
-              <tr role="row" class="nhsuk-table__row" id="evidenceRow1">
-                <td class="nhsuk-table__cell">Letter from your employer</td>
-                <td style="" class="nhsuk-table__cell ">
-                  <a href="#" target="_blank" rel="noopener">
-                    employer-letter.png
-                  </a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <p style="margin-bottom: 0px;"><a href="upload-evidence-income?income=sponsorship income">Add more evidence of sponsorship income</a></p>
+        <table style="margin-bottom: 24px;" id="evidenceTable" class="nhsuk-table">
+          <caption class="nhsuk-table__caption">Sponsorship income</caption>
+          <thead role="rowgroup" class="nhsuk-table__head">
+            <tr role="row">
+              <th role="columnheader" class="" scope="col">
+                Type
+              </th>
+              <th role="columnheader" class="" scope="col">
+                File
+              </th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row" id="evidenceRow1">
+              <td class="nhsuk-table__cell">Letter from your employer</td>
+              <td style="" class="nhsuk-table__cell ">
+                <a href="#" target="_blank" rel="noopener">
+                  employer-letter.png
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="margin-bottom: 0px;"><a href="upload-evidence-income?income=sponsorship income">Add more evidence of
+            sponsorship income</a></p>
 
-        </div>
       </div>
-      <div class="nhsuk-card">
-        <div class="nhsuk-card__content">
+    </div>
+    <div class="nhsuk-card">
+      <div class="nhsuk-card__content">
 
-          <table style="margin-bottom: 24px;" id="evidenceTable" class="nhsuk-table">
-            <caption class="nhsuk-table__caption">Rental income</caption>
-            <thead role="rowgroup" class="nhsuk-table__head">
-              <tr role="row">
-                <th role="columnheader" class="" scope="col">
-                  Type
-                </th>
-                <th role="columnheader" class="" scope="col">
-                    File
-                </th>
-              </tr>
-            </thead>
-            <tbody class="nhsuk-table__body">
-              <tr role="row" class="nhsuk-table__row" id="evidenceRow1">
-                <td class="nhsuk-table__cell">Letter from your accountant</td>
-                <td style="" class="nhsuk-table__cell ">
-                  <a href="#" target="_blank" rel="noopener">
-                    letting-agent-letter.png
-                  </a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <p style="margin-bottom: 0px;"><a href="upload-evidence-income?income=rental income">Add more evidence of rental income</a></p>
+        {% if data['evidence'] != 'added' %}
+        <h3 style="margin-bottom: 0px;" class="nhsuk-heading-s">Employment income</h3>
+        <a style="margin-top: 24px; margin-bottom: 0px;" class="nhsuk-button nhsuk-button--secondary"
+          href="upload-evidence-income?income=employment income">Add evidence</a>
+        {% else %}
 
-        </div>
+        <table style="margin-bottom: 24px;" id="evidenceTable" class="nhsuk-table">
+          <caption class="nhsuk-table__caption">Employment income</caption>
+          <thead role="rowgroup" class="nhsuk-table__head">
+            <tr role="row">
+              <th role="columnheader" class="" scope="col">
+                Type
+              </th>
+              <th role="columnheader" class="" scope="col">
+                File
+              </th>
+              <th role="columnheader" class="" scope="col">
+                Action
+              </th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row" id="evidenceRow1">
+              <td class="nhsuk-table__cell">Letter from your employer</td>
+              <td style="" class="nhsuk-table__cell ">
+                <a href="#" target="_blank" rel="noopener">
+                  employer-letter.png
+                </a>
+              </td>
+              <td class="nhsuk-table__cell ">
+                <a href="evidence?evidence=removed">Remove</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="margin-bottom: 0px;"><a href="upload-evidence-income?income=employment income">Add more evidence of
+            employment income</a></p>
+        {% endif %}
+
       </div>
-      <div class="nhsuk-card">
-        <div class="nhsuk-card__content">
+    </div>
 
-          <table style="margin-bottom: 24px;" id="evidenceTable" class="nhsuk-table">
-            <caption class="nhsuk-table__caption">Taxable state benefits</caption>
-            <thead role="rowgroup" class="nhsuk-table__head">
-              <tr role="row">
-                <th role="columnheader" class="" scope="col">
-                  Type
-                </th>
-                <th role="columnheader" class="" scope="col">
-                    File
-                </th>
-              </tr>
-            </thead>
-            <tbody class="nhsuk-table__body">
-              <tr role="row" class="nhsuk-table__row" id="evidenceRow1">
-                <td class="nhsuk-table__cell">Benefit letter</td>
-                <td style="" class="nhsuk-table__cell ">
-                  <a href="#" target="_blank" rel="noopener">
-                    benefit-letter.png
-                  </a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <p style="margin-bottom: 0px;"><a href="upload-evidence-income?income=taxable state benefits">Add more evidence of taxable state benefits</a></p>
 
-        </div>
+    <h2 class="nhsuk-heading-m">Your expenses details</h2>
+
+    <div class="nhsuk-card">
+      <div class="nhsuk-card__content">
+
+        <table style="margin-bottom: 24px;" id="evidenceTable" class="nhsuk-table">
+          <caption class="nhsuk-table__caption">Rent</caption>
+          <thead role="rowgroup" class="nhsuk-table__head">
+            <tr role="row">
+              <th role="columnheader" class="" scope="col">
+                Type
+              </th>
+              <th role="columnheader" class="" scope="col">
+                File
+              </th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row" id="evidenceRow1">
+              <td class="nhsuk-table__cell">Letter from letting agent</td>
+              <td style="" class="nhsuk-table__cell ">
+                <a href="#" target="_blank" rel="noopener">
+                  letting-agent-letter.png
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="margin-bottom: 0px;"><a href="upload-evidence-expenses?income=rent">Add more evidence of rent</a></p>
+
       </div>
-      <div class="nhsuk-card">
-        <div class="nhsuk-card__content">
-
-          {% if data['evidence'] != 'added' %}
-            <h3 style="margin-bottom: 0px;" class="nhsuk-heading-s">Other taxable income</h3>
-            <a style="margin-top: 24px; margin-bottom: 0px;" class="nhsuk-button nhsuk-button--secondary" href="upload-evidence-income?income=other taxable income">Add evidence</a>
-          {% else %}
-            <table style="margin-bottom: 24px;" id="evidenceTable" class="nhsuk-table">
-              <caption class="nhsuk-table__caption">Other taxable income</caption>
-              <thead role="rowgroup" class="nhsuk-table__head">
-                <tr role="row">
-                  <th role="columnheader" class="" scope="col">
-                    Type
-                  </th>
-                  <th role="columnheader" class="" scope="col">
-                      File
-                  </th>
-                  <th role="columnheader" class="" scope="col">
-                      Action
-                  </th>
-                </tr>
-              </thead>
-              <tbody class="nhsuk-table__body">
-                <tr role="row" class="nhsuk-table__row" id="evidenceRow1">
-                  <td class="nhsuk-table__cell">Letter of informal agreement</td>
-                  <td style="" class="nhsuk-table__cell ">
-                    <a href="#" target="_blank" rel="noopener">
-                      capital-gains.png
-                    </a>
-                  </td>
-                  <td class="nhsuk-table__cell ">
-                    <a href="evidence?evidence=removed">Remove</a>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <p style="margin-bottom: 0px;"><a href="upload-evidence-income?income=other taxable income">Add more evidence of other taxable income</a></p>
-          {% endif %}
-
-        </div>
-      </div>
-
-      <h2 class="nhsuk-heading-m">Your expenses details</h2>
-
-      <div class="nhsuk-card">
-        <div class="nhsuk-card__content">
-
-          <table style="margin-bottom: 24px;" id="evidenceTable" class="nhsuk-table">
-            <caption class="nhsuk-table__caption">Rent</caption>
-            <thead role="rowgroup" class="nhsuk-table__head">
-              <tr role="row">
-                <th role="columnheader" class="" scope="col">
-                  Type
-                </th>
-                <th role="columnheader" class="" scope="col">
-                    File
-                </th>
-              </tr>
-            </thead>
-            <tbody class="nhsuk-table__body">
-              <tr role="row" class="nhsuk-table__row" id="evidenceRow1">
-                <td class="nhsuk-table__cell">Letter from letting agent</td>
-                <td style="" class="nhsuk-table__cell ">
-                  <a href="#" target="_blank" rel="noopener">
-                    March-pension.png
-                  </a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <p style="margin-bottom: 0px;"><a href="upload-evidence-expenses?income=rent">Add more evidence of rent</a></p>
-
-        </div>
-      </div>
+    </div>
 
     {% endif %}
 
