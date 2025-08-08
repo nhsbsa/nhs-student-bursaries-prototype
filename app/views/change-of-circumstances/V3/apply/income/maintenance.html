@@ -44,75 +44,75 @@ endblock %}
       <li>the Child Maintenance Service</li>
       <li>you and your ex-partner through an informal arrangement</li>
     </ul>
-    <form action="/change-of-circumstances/V3/apply/income/maintenance" method="POST">
-      <div class="nhsuk-form-group">
-        <fieldset class="nhsuk-fieldset">
-          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-            <h2
-              class="nhsuk-fieldset__heading nhsuk-u-visually-hidden"
-              id="maintenance"
-            >
-              Do you get maintenance payments from an ex-partner?
-            </h2>
-          </legend>
+    <div class="nhsuk-form-group">
+      <fieldset class="nhsuk-fieldset">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h2
+            class="nhsuk-fieldset__heading nhsuk-u-visually-hidden"
+            id="maintenance"
+          >
+            Do you get maintenance payments from an ex-partner?
+          </h2>
+        </legend>
 
-          <div class="nhsuk-radios nhsuk-radios--conditional">
-            <div class="nhsuk-radios__item">
-              <input
-                class="nhsuk-radios__input"
-                id="yes"
-                name="maintenance"
-                type="radio"
-                value="yes"
-                aria-controls="conditional-contact-1"
-                aria-expanded="false"
-                {% if checkedYes %}checked{% endif %}
-              />
-              <label class="nhsuk-label nhsuk-radios__label" for="yes">
-                Yes
+        <div class="nhsuk-radios nhsuk-radios--conditional">
+          <div class="nhsuk-radios__item">
+            <input
+              class="nhsuk-radios__input"
+              id="yes"
+              name="maintenance"
+              type="radio"
+              value="yes"
+              aria-controls="conditional-contact-1"
+              aria-expanded="false"
+            />
+            <label class="nhsuk-label nhsuk-radios__label" for="yes">
+              Yes
+            </label>
+          </div>
+
+          <div
+            class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden"
+            id="conditional-contact-1"
+          >
+            <div class="nhsuk-form-group">
+              <label
+                class="nhsuk-label nhsuk-u-font-weight-bold"
+                for="maintenance-info"
+              >
+              Enter how much you'll get from maintenance payments
               </label>
-            </div>
-
-            <div class="nhsuk-radios__conditional {% if not checkedYes %}nhsuk-radios__conditional--hidden{% endif %}" id="conditional-contact-1">
-              <div class="nhsuk-form-group">
-                <label
-                  class="nhsuk-label nhsuk-u-font-weight-bold"
-                  for="maintenance-info"
-                >
-                Enter how much you'll get from maintenance payments
-                </label>
-                <p class="nhsuk-hint">
-                  This is for the <span id="september-year"></span> to <span id="next-year"></span> academic year.
-                </p>
-                <label class="nhsuk-label" for="example">
-                  Cost in pounds
-                </label>
-                <div class="nhsuk-input__wrapper">
-                  <div class="nhsuk-input__prefix" aria-hidden="true">£</div>
-                  <input class="nhsuk-input nhsuk-input--width-5" id="maintenance-amount" name="maintenance-amount" type="text" value="{{ amount }}">
-                </div>
+              <p class="nhsuk-hint">
+                This is for the <span id="september-year"></span> to <span id="next-year"></span> academic year.
+              </p>
+              <label class="nhsuk-label" for="example">
+                Cost in pounds
+              </label>
+              <div class="nhsuk-input__wrapper">
+                <div class="nhsuk-input__prefix" aria-hidden="true">£</div>
+                <input class="nhsuk-input nhsuk-input--width-5" id="example" name="example" type="text">
               </div>
             </div>
-
-            <div class="nhsuk-radios__item">
-              <input
-                class="nhsuk-radios__input"
-                id="no"
-                name="maintenance"
-                type="radio"
-                value="No"
-                {% if checkedNo %}checked{% endif %}
-              />
-              <label class="nhsuk-label nhsuk-radios__label" for="no"> No </label>
-            </div>
           </div>
-        </fieldset>
-      </div>
-      <div class="nhsuk-form-group">
-        <button class="nhsuk-button" type="submit">Continue</button>
-        <p><a href="tasklist-approved">Cancel</a></p>
-      </div>
-    </form>
+
+          <div class="nhsuk-radios__item">
+            <input
+              class="nhsuk-radios__input"
+              id="no"
+              name="maintenance"
+              type="radio"
+              value="No"
+              checked
+            />
+            <label class="nhsuk-label nhsuk-radios__label" for="no"> No </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    <div class="nhsuk-form-group">
+      <a href="../income" class="nhsuk-button" role="button">Continue</a>
+      <p><a href="tasklist-approved">Cancel</a></p>
+    </div>
   </div>
 </div>
 

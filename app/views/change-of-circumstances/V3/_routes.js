@@ -1,3 +1,4 @@
+
 // External dependencies
 const e = require('express');
 const express = require('express');
@@ -81,162 +82,6 @@ router.post('/apply/explanation-route', (req, res) => {
 })
 
 
-// Routes for STUDENT: APPLY FOR CoC - Income questions
-
-// Employment income
-router.post('/apply/income/employment', (req, res) => {
-  if (req.body['employment'] === 'No') {
-    req.session.data['employment-amount'] = 'None';
-  } else {
-    req.session.data['employment-amount'] = req.body['employment-amount'] || '';
-  }
-  res.redirect('/change-of-circumstances/V3/apply/income');
-});
-
-// Self-employment income
-router.post('/apply/income/self-employment', (req, res) => {
-  if (req.body['selfemployment'] === 'No') {
-    req.session.data['self-employment-amount'] = 'None';
-  } else {
-    req.session.data['self-employment-amount'] = req.body['self-employment-amount'] || '';
-  }
-  res.redirect('/change-of-circumstances/V3/apply/income');
-});
-
-// Pension payments
-router.post('/apply/income/pension', (req, res) => {
-  if (req.body['pension'] === 'No') {
-    req.session.data['pension-amount'] = 'None';
-  } else {
-    req.session.data['pension-amount'] = req.body['pension-amount'] || '';
-  }
-  res.redirect('/change-of-circumstances/V3/apply/income');
-});
-
-// Rental income
-router.post('/apply/income/rent', (req, res) => {
-  if (req.body['rent'] === 'No') {
-    req.session.data['rent-amount'] = 'None';
-  } else {
-    req.session.data['rent-amount'] = req.body['rent-amount'] || '';
-  }
-  res.redirect('/change-of-circumstances/V3/apply/income');
-});
-
-// Taxable state benefits
-router.post('/apply/income/benefits', (req, res) => {
-  if (req.body['benefits'] === 'No') {
-    req.session.data['benefits-amount'] = 'None';
-  } else {
-    req.session.data['benefits-amount'] = req.body['benefits-amount'] || '';
-  }
-  res.redirect('/change-of-circumstances/V3/apply/income');
-});
-
-// Maintenance payments
-router.post('/apply/income/maintenance', (req, res) => {
-  if (req.body['maintenance'] === 'No') {
-    req.session.data['maintenance-amount'] = 'None';
-  } else {
-    req.session.data['maintenance-amount'] = req.body['maintenance-amount'] || '';
-  }
-  res.redirect('/change-of-circumstances/V3/apply/income');
-});
-
-// Trust fund
-router.post('/apply/income/trust-fund', (req, res) => {
-  if (req.body['trust'] === 'No') {
-    req.session.data['trust-fund-amount'] = 'None';
-  } else {
-    req.session.data['trust-fund-amount'] = req.body['trust-fund-amount'] || '';
-  }
-  res.redirect('/change-of-circumstances/V3/apply/income');
-});
-
-// Other taxable income
-router.post('/apply/income/other', (req, res) => {
-  if (req.body['other'] === 'No') {
-    req.session.data['other-amount'] = 'None';
-  } else {
-    req.session.data['other-amount'] = req.body['other-amount'] || '';
-  }
-  res.redirect('/change-of-circumstances/V3/apply/income');
-});
-
-// Sponsorship income
-router.post('/apply/income/scholarship', (req, res) => {
-  if (req.body['scholarship'] === 'No') {
-    req.session.data['scholarship-amount'] = 'None';
-  } else {
-    req.session.data['scholarship-amount'] = req.body['scholarship-amount'] || '';
-  }
-  res.redirect('/change-of-circumstances/V3/apply/income');
-});
-
-
-
-// Routes for STUDENT: APPLY FOR CoC - Expenses questions
-
-// Personal pension contributions
-router.post('/apply/expenses/personal-pension', (req, res) => {
-  if (req.body['personal-pension'] === 'no') {
-    req.session.data['personal-pension-amount'] = 'None';
-    req.session.data['personal-pension'] = 'no';
-  } else {
-    req.session.data['personal-pension-amount'] = req.body['personal-pension-amount'] || '';
-    req.session.data['personal-pension'] = 'yes';
-  }
-  res.redirect('/change-of-circumstances/V3/apply/expenses');
-});
-
-// Life assurance payments
-router.post('/apply/expenses/life-assurance', (req, res) => {
-  if (req.body['life-assurance'] === 'no') {
-    req.session.data['life-assurance-amount'] = 'None';
-    req.session.data['life-assurance'] = 'no';
-  } else {
-    req.session.data['life-assurance-amount'] = req.body['life-assurance-amount'] || '';
-    req.session.data['life-assurance'] = 'yes';
-  }
-  res.redirect('/change-of-circumstances/V3/apply/expenses');
-});
-
-// Mortgage payments
-router.post('/apply/expenses/mortgage-payments', (req, res) => {
-  if (req.body['mortgage'] === 'no') {
-    req.session.data['mortgage-amount'] = 'None';
-    req.session.data['mortgage'] = 'no';
-  } else {
-    req.session.data['mortgage-amount'] = req.body['mortgage-amount'] || '';
-    req.session.data['mortgage'] = 'yes';
-  }
-  res.redirect('/change-of-circumstances/V3/apply/expenses');
-});
-
-// Rent payments
-router.post('/apply/expenses/rent', (req, res) => {
-  if (req.body['rent'] === 'no') {
-    req.session.data['rent-amount'] = 'None';
-    req.session.data['rent'] = 'no';
-  } else {
-    req.session.data['rent-amount'] = req.body['rent-amount'] || '';
-    req.session.data['rent'] = 'yes';
-  }
-  res.redirect('/change-of-circumstances/V3/apply/expenses');
-});
-
-// Maintenance payments
-router.post('/apply/expenses/maintenance-payments', (req, res) => {
-  if (req.body['maintenance'] === 'no') {
-    req.session.data['maintenance-amount'] = 'None';
-    req.session.data['maintenance'] = 'no';
-  } else {
-    req.session.data['maintenance-amount'] = req.body['maintenance-amount'] || '';
-    req.session.data['maintenance'] = 'yes';
-  }
-  res.redirect('/change-of-circumstances/V3/apply/expenses');
-});
-
 
 
 // Routes for PROCESSOR: PROCESS APPLICATION journey
@@ -308,7 +153,7 @@ router.post('/process-application/coc-payment-journey/payment-details-add-paymen
 
   // WIP - COMMENTING OUT MOST OF THIS V2-SPECIFIC CODE FOR NOW - WILL REVIEW LATER
 
-
+  
   // Save state of addedPaymentType dropdown
   // const addedPaymentType = req.session.data['addedPaymentType']
 
@@ -336,7 +181,7 @@ router.post('/process-application/coc-payment-journey/payment-details-add-paymen
   //   res.redirect('/change-of-circumstances/V2/process-application/coc-payment-journey/payment-details-locked-coc-callout?CoCPaymentsUpdated=true&T2ExtraWeeksAllowanceAdded=true')
   // }
   // else {
-  res.redirect('/change-of-circumstances/V3/process-application/coc-payment-journey/payment-details-locked-coc-callout?CoCPaymentsUpdated=true')
+    res.redirect('/change-of-circumstances/V3/process-application/coc-payment-journey/payment-details-locked-coc-callout?CoCPaymentsUpdated=true')
   // }
 
 })
@@ -344,7 +189,7 @@ router.post('/process-application/coc-payment-journey/payment-details-add-paymen
 
 router.post('/process-application/coc-payment-journey/payment-details-edit-payment-route/', (req, res) => {
 
-  // WIP - COMMENTING OUT MOST OF THIS V2-SPECIFIC CODE FOR NOW - WILL REVIEW LATER
+    // WIP - COMMENTING OUT MOST OF THIS V2-SPECIFIC CODE FOR NOW - WILL REVIEW LATER
 
 
   // Save state of editedPaymentType dropdown
@@ -358,7 +203,7 @@ router.post('/process-application/coc-payment-journey/payment-details-edit-payme
   //   res.redirect('/change-of-circumstances/V2/process-application/coc-payment-journey/payment-details-locked-coc-callout?CoCPaymentsUpdated=true&T3ExtraWeeksAllowanceEdited=true')
   // }
   // else {
-  res.redirect('/change-of-circumstances/V2/process-application/coc-payment-journey/payment-details-locked-coc-callout?CoCPaymentsUpdated=true')
+    res.redirect('/change-of-circumstances/V2/process-application/coc-payment-journey/payment-details-locked-coc-callout?CoCPaymentsUpdated=true')
   // }
 
 })
@@ -390,98 +235,5 @@ router.post('/process-application/change-confirmation-comment-route/', (req, res
 
 })
 
-// --- Prefill logic for income/expenses questions ---
-
-function getPrefill(value, defaultValue) {
-  let checkedYes = false, checkedNo = false, amount = '';
-  // If value is missing/empty/undefined and defaultValue is set, use defaultValue and preselect Yes
-  if ((!value || value === '') && defaultValue) {
-    checkedYes = true;
-    amount = defaultValue;
-  } else if (value === 'None') {
-    checkedNo = true;
-  } else if (value && value !== '') {
-    checkedYes = true;
-    amount = value;
-  } else {
-    checkedNo = true;
-  }
-  return { checkedYes, checkedNo, amount };
-}
-
-// Employment income
-router.get('/apply/income/employment', (req, res) => {
-  res.render('change-of-circumstances/V3/apply/income/employment', getPrefill(req.session.data['employment-amount']));
-});
-
-// Self-employment income
-router.get('/apply/income/self-employment', (req, res) => {
-  res.render('change-of-circumstances/V3/apply/income/self-employment', getPrefill(req.session.data['self-employment-amount']));
-});
-
-// Pension payments
-router.get('/apply/income/pension', (req, res) => {
-  res.render('change-of-circumstances/V3/apply/income/pension', getPrefill(req.session.data['pension-amount']));
-});
-
-// Rental income (default: None)
-router.get('/apply/income/rent', (req, res) => {
-  res.render('change-of-circumstances/V3/apply/income/rent', getPrefill(req.session.data['rent-amount'], 'None'));
-});
-
-// Taxable state benefits
-router.get('/apply/income/benefits', (req, res) => {
-  res.render('change-of-circumstances/V3/apply/income/benefits', getPrefill(req.session.data['benefits-amount']));
-});
-
-// Maintenance payments
-router.get('/apply/income/maintenance', (req, res) => {
-  res.render('change-of-circumstances/V3/apply/income/maintenance', getPrefill(req.session.data['maintenance-amount']));
-});
-
-// Trust fund
-router.get('/apply/income/trust-fund', (req, res) => {
-  res.render('change-of-circumstances/V3/apply/income/trust-fund', getPrefill(req.session.data['trust-fund-amount']));
-});
-
-// Other taxable income
-router.get('/apply/income/other', (req, res) => {
-  res.render('change-of-circumstances/V3/apply/income/other', getPrefill(req.session.data['other-amount']));
-});
-
-// Sponsorship income (default: £5750)
-router.get('/apply/income/scholarship', (req, res) => {
-  res.render('change-of-circumstances/V3/apply/income/scholarship', getPrefill(req.session.data['scholarship-amount'], '5750'));
-});
-
-// --- Prefill logic for expenses questions ---
-
-// Personal pension contributions
-router.get('/apply/expenses/personal-pension', (req, res) => {
-  res.render('change-of-circumstances/V3/apply/expenses/personal-pension', getPrefill(req.session.data['personal-pension-amount']));
-});
-
-// Life assurance payments
-router.get('/apply/expenses/life-assurance', (req, res) => {
-  res.render('change-of-circumstances/V3/apply/expenses/life-assurance', getPrefill(req.session.data['life-assurance-amount']));
-});
-
-// Mortgage payments
-router.get('/apply/expenses/mortgage-payments', (req, res) => {
-  res.render('change-of-circumstances/V3/apply/expenses/mortgage-payments', getPrefill(req.session.data['mortgage-amount']));
-});
-
-// Rent payments (expenses) - default to 4280 and preselect Yes if not set
-router.get('/apply/expenses/rent', (req, res) => {
-  res.render(
-    'change-of-circumstances/V3/apply/expenses/rent',
-    getPrefill(req.session.data['rent-amount'], '4280')
-  );
-});
-
-// Maintenance payments
-router.get('/apply/expenses/maintenance-payments', (req, res) => {
-  res.render('change-of-circumstances/V3/apply/expenses/maintenance-payments', getPrefill(req.session.data['maintenance-amount']));
-});
 
 module.exports = router;

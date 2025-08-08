@@ -69,17 +69,6 @@ nunjucksAppEnv.addGlobal('version', packageInfo.version);
 // Add Nunjucks filters
 utils.addNunjucksFilters(nunjucksAppEnv);
 
-nunjucksAppEnv.addFilter('currency', function(str) {
-  if (!str || isNaN(str)) return 'None';
-  // Remove any commas or £ signs, just in case
-  str = String(str).replace(/[^0-9.]/g, '');
-  return '£' + Number(str).toLocaleString('en-GB', {minimumFractionDigits: 0, maximumFractionDigits: 2});
-});
-
-// Add after nunjucksAppEnv is created/configured
-const nunjucksDateFilter = require('nunjucks-date-filter');
-nunjucksAppEnv.addFilter('format', nunjucksDateFilter);
-
 // Session uses service name to avoid clashes with other prototypes
 const sessionName = `nhsuk-prototype-kit-${(Buffer.from(config.serviceName, 'utf8')).toString('hex')}`;
 const sessionOptions = {

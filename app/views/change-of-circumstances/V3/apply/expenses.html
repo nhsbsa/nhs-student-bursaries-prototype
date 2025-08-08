@@ -48,20 +48,12 @@ endblock %}
       <dl class="nhsuk-summary-list">
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">Pension contributions</dt>
-          <dd class="nhsuk-summary-list__value">
-            {% if data['personal-pension-amount'] and data['personal-pension-amount'] != 'None' and data['personal-pension-amount']|trim != '' %}
-              £{{ data['personal-pension-amount'] }}
-            {% elif data['personal-pension-amount'] == 'None' %}
-              None
-            {% else %}
-              None
-            {% endif %}
-          </dd>
+          <dd class="nhsuk-summary-list__value">None</dd>
 
           <dd class="nhsuk-summary-list__actions">
             <a href="expenses/personal-pension">
               Change<span class="nhsuk-u-visually-hidden"
-                > personal pension/retirement annuity payments</span
+                >personal pension/retirement annulty payments</span
               >
             </a>
           </dd>
@@ -69,20 +61,12 @@ endblock %}
 
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">Life assurance payments</dt>
-          <dd class="nhsuk-summary-list__value">
-            {% if data['life-assurance-amount'] and data['life-assurance-amount'] != 'None' and data['life-assurance-amount']|trim != '' %}
-              £{{ data['life-assurance-amount'] }}
-            {% elif data['life-assurance-amount'] == 'None' %}
-              None
-            {% else %}
-              None
-            {% endif %}
-          </dd>
+          <dd class="nhsuk-summary-list__value">None</dd>
 
           <dd class="nhsuk-summary-list__actions">
             <a href="expenses/life-assurance">
               Change<span class="nhsuk-u-visually-hidden"
-                > life assurance premiums</span
+                >life assurance premiums</span
               >
             </a>
           </dd>
@@ -90,56 +74,35 @@ endblock %}
 
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">Mortgage total</dt>
-          <dd class="nhsuk-summary-list__value">
-            {% if data['mortgage-amount'] and data['mortgage-amount'] != 'None' and data['mortgage-amount']|trim != '' %}
-              £{{ data['mortgage-amount'] }}
-            {% elif data['mortgage-amount'] == 'None' %}
-              None
-            {% else %}
-              None
-            {% endif %}
-          </dd>
+          <dd class="nhsuk-summary-list__value">None</dd>
 
           <dd class="nhsuk-summary-list__actions">
             <a href="expenses/mortgage-payments">
-              Change<span class="nhsuk-u-visually-hidden"> mortgage payments</span>
+              Change<span class="nhsuk-u-visually-hidden">mortgage payments</span>
             </a>
           </dd>
         </div>
 
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">Rent total</dt>
-          <dd class="nhsuk-summary-list__value">
-            {% if data['rent-amount'] and data['rent-amount'] != 'None' and data['rent-amount']|trim != '' and (data['rent-amount']|trim|replace(',', '')|float is not none) %}
-              £{{ data['rent-amount']|trim|replace(',', '')|float|format(',') }}
-            {% elif data['rent-amount'] == 'None' %}
-              None
-            {% else %}
-              £4,280
-            {% endif %}
-          </dd>
+          <dd class="nhsuk-summary-list__value">£6,000</dd>
+
           <dd class="nhsuk-summary-list__actions">
             <a href="expenses/rent">
-              Change<span class="nhsuk-u-visually-hidden"> rent</span>
+              Change<span class="nhsuk-u-visually-hidden">rent</span>
             </a>
           </dd>
         </div>
 
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">Maintenance payments</dt>
-          <dd class="nhsuk-summary-list__value">
-            {% if data['maintenance-amount'] and data['maintenance-amount'] != 'None' and data['maintenance-amount']|trim != '' %}
-              £{{ data['maintenance-amount'] }}
-            {% elif data['maintenance-amount'] == 'None' %}
-              None
-            {% else %}
-              None
-            {% endif %}
-          </dd>
+          <dd class="nhsuk-summary-list__value">None</dd>
 
           <dd class="nhsuk-summary-list__actions">
             <a href="expenses/maintenance-payments">
-              Change<span class="nhsuk-u-visually-hidden"> maintenance payments</span>
+              Change<span class="nhsuk-u-visually-hidden"
+                >maintenance payments</span
+              >
             </a>
           </dd>
         </div>

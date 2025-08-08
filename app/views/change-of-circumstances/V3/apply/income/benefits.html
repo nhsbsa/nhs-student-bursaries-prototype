@@ -36,7 +36,7 @@
         Go back</a>
     </div>
 
-    <form action="/change-of-circumstances/V3/apply/income/benefits" method="POST">
+    <form action="../income" method="post">
       <div class="nhsuk-form-group">
         <fieldset class="nhsuk-fieldset">
           <h1 class="nhsuk-heading-l" id="taxableH1">
@@ -73,14 +73,18 @@
                 value="yes"
                 aria-controls="conditional-contact-1"
                 aria-expanded="false"
-                {% if checkedYes %}checked{% endif %}
+                checked
               />
               <label class="nhsuk-label nhsuk-radios__label" for="yes">
                 Yes
               </label>
             </div>
 
-            <div class="nhsuk-radios__conditional {% if not checkedYes %}nhsuk-radios__conditional--hidden{% endif %}" id="conditional-contact-1">
+            <div
+              class="
+                nhsuk-radios__conditional nhsuk-radios__conditional--hidden"
+              id="conditional-contact-1"
+            >
               <div class="nhsuk-form-group">
                 <label
                   class="nhsuk-label nhsuk-u-font-weight-bold"
@@ -96,7 +100,7 @@
                 </label>
                 <div class="nhsuk-input__wrapper">
                   <div class="nhsuk-input__prefix" aria-hidden="true">£</div>
-                  <input class="nhsuk-input nhsuk-input--width-5" id="benefits-amount" name="benefits-amount" type="text" value="{{ amount }}">
+                  <input class="nhsuk-input nhsuk-input--width-5" id="example" name="example" type="text" value="300.45">
                 </div>
               </div>
             </div>
@@ -108,7 +112,6 @@
                 name="benefits"
                 type="radio"
                 value="No"
-                {% if checkedNo %}checked{% endif %}
               />
               <label class="nhsuk-label nhsuk-radios__label" for="no">
                 No
@@ -118,7 +121,7 @@
         </fieldset>
       </div>
       <div class="nhsuk-form-group">
-        <button class="nhsuk-button" type="submit">Continue</button>
+        <a href="../income" class="nhsuk-button" role="button">Continue</a>
         <p><a href="tasklist-approved">Cancel</a></p>
       </div>
     </form>
