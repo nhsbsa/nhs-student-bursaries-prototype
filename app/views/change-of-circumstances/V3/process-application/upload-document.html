@@ -1,0 +1,196 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-processor.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Student dashboard {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb"
+  style="background-color: white; padding:12px 0; margin-bottom: 40px;">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a id="searchLink" class="nhsuk-breadcrumb__link" href="#">Student search</a>
+      </li>
+      <li class="nhsuk-breadcrumb__item"><a id="studentDetailsLink" class="nhsuk-breadcrumb__link"
+          href="/change-of-circumstances/V3/process-application/course-details">Enrolment details</a></li>
+
+    </ol>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="#">Back to Course details</a></p>
+  </div>
+</nav>
+
+{% endblock %}
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-width-container">
+  <main class="nhsuk-main-wrapper" id="maincontent" role="main">
+
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-two-thirds">
+
+        <!-- <div class="nhsuk-back-link">
+          <a class="nhsuk-back-link__link" href="javascript:history.go(-1)" id="back">
+            <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+              aria-hidden="true">
+              <path
+                d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+              </path>
+            </svg>
+            Go back
+          </a>
+        </div> -->
+
+        <div>
+          <h1 class="nhsuk-app-heading nhsuk-heading-xl">
+            Upload additional evidence
+          </h1>
+        </div>
+
+        <details class="nhsuk-details" nhsuk-polyfilled="true">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">How to upload a
+              document</span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <h2 class="nhsuk-heading-s">Upload your evidence</h2>
+            <p>Your file must:</p>
+            <ul class="list list-bullet">
+              <li>be an original document</li>
+              <li>show the full document</li>
+              <li>be clear and in focus</li>
+              <li>be in colour</li>
+              <li>not be protected by a password</li>
+              <li>not be altered by computer software</li>
+            </ul>
+
+            <p>Uploaded attachments must be:</p>
+            <ul class="list list-bullet">
+              <li id="file-format-hint">jpg,jpeg,bmp,png,tif,pdf,msg,xlsx</li>
+              <li id="file-size-hint">no more than 8mb</li>
+            </ul>
+          </div>
+
+        </details>
+
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <span class="nhsuk-u-visually-hidden"> Upload your
+              evidence </span>
+          </legend>
+
+          <div class="nhsuk-form-group" id="docType-group">
+
+            <label for="docType" class="nhsuk-label" id="docTypeName">Type
+              of evidence</label> <select id="docType" class="nhsuk-select nhsuk-u-width-three-quarters"
+              aria-labelledby="docTypeName" name="documentType.id">
+              <option value="">Select an evidence type</option>
+              <option id="46" value="46">Adoption letter</option>
+              <option id="44" value="44">Annual tax return</option>
+              <option id="60" value="60">Appeal/Complaint Response</option>
+              <option id="57" value="57">Audit document email</option>
+              <option id="62" value="62">Audit Doc/email</option>
+              <option id="35" value="35">Bank statements</option>
+              <option id="15" value="15">Benefit letter</option>
+              <option id="2" value="2">Birth certificate</option>
+              <option id="64" value="64">Birth certificate if over 25</option>
+              <option id="55" value="55">Calc sheet</option>
+              <option id="10" value="10">Certificate of naturalisation</option>
+              <option id="52" value="52">Childcare Allowance application form</option>
+              <option id="33" value="33">Copy of relevant account</option>
+              <option id="19" value="19">Council tax letter 25% reduction</option>
+              <option id="56" value="56">DSA application</option>
+              <option id="53" value="53">DSA equipment receipt</option>
+              <option id="54" value="54">DSA general allowance receipt</option>
+              <option id="20" value="20">Death certificate</option>
+              <option id="18" value="18">Decree Nisi</option>
+              <option id="23" value="23">Dept. of work and pensions letter</option>
+              <option id="37" value="37">Doctors report</option>
+              <option id="3" value="3">Driving licence/counter part</option>
+              <option id="38" value="38">Evidence of disability</option>
+              <option id="47" value="47">Evidence of full-time education</option>
+              <option id="45" value="45">Foster carer letter</option>
+              <option id="1" value="1">Full student finance letter</option>
+              <option id="58" value="58">HEI email</option>
+              <option id="31" value="31">HMRC letter</option>
+              <option id="39" value="39">Health and care plan</option>
+              <option id="6" value="6">Home office letter</option>
+              <option id="8" value="8">ID card</option>
+              <option id="26" value="26">Letter from accountant</option>
+              <option id="29" value="29">Letter from child maintenance agency</option>
+              <option id="14" value="14">Letter from employer</option>
+              <option id="22" value="22">Letter from employer, sponsorship, scholarship, cadetship</option>
+              <option id="27" value="27">Letter from letting agent</option>
+              <option id="21" value="21">Letter from third party</option>
+              <option id="30" value="30">Letter from trust fund</option>
+              <option id="28" value="28">Letter of informal agreement</option>
+              <option id="34" value="34">Life assurance policy/statement</option>
+              <option id="17" value="17">Marriage certificate</option>
+              <option id="51" value="51">Most recent payslip</option>
+              <option id="24" value="24">Most recent pension statement</option>
+              <option id="5" value="5">Name change document</option>
+              <option id="40" value="40">Needs assessment</option>
+              <option id="42" value="42">P11D</option>
+              <option id="41" value="41">P2</option>
+              <option id="13" value="13">P45</option>
+              <option id="12" value="12">P60</option>
+              <option id="4" value="4">Passport</option>
+              <option id="65" value="65">Passport if over 25</option>
+              <option id="43" value="43">Pension statement</option>
+              <option id="50" value="50">Personal tax calculation</option>
+              <option id="48" value="48">Personal tax computation</option>
+              <option id="36" value="36">Rent agreement</option>
+              <option id="63" value="63">Student Finance England independent status letter (not Student Finance award
+                letter)</option>
+              <option id="49" value="49">Self assessment tax return</option>
+              <option id="32" value="32">Self employment form</option>
+              <option id="59" value="59">Student Appeal/Complaint</option>
+              <option id="16" value="16">Student loan letter</option>
+              <option id="61" value="61">Study History Email</option>
+              <option id="25" value="25">Tax return</option>
+              <option id="9" value="9">Travel document</option>
+              <option id="7" value="7">Visa/residency permit</option>
+              <option id="11" value="11">Wage slips</option>
+            </select>
+          </div>
+
+          <div id="filenameGroup" class="nhsuk-form-group">
+
+
+
+            <div class="nhsuk-form-group-error" id="fileSizeError" hidden="true" role="alert" aria-live="assertive">
+              <span id="fileSizeErrorMessage" class="nhsuk-error-message"></span>
+            </div>
+            <label for="file" class="nhsuk-label">Choose a file</label>
+
+            <input id="file" class="nhsuk-input nhsuk-u-width-three-quarters" type="file" name="file">
+          </div>
+        </fieldset>
+
+        <div class="nhsuk-form-group">
+          <a class="nhsuk-button nhsuk-u-margin-right-5" id="complete" href="course-details" role="button"
+            data-module="nhsuk-button">Upload file</a>
+
+          <p><a id="canceltoStudent" href="course-details">Cancel</a></p>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+</div>
+
+{% endblock %}
