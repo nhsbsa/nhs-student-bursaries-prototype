@@ -1,4 +1,3 @@
-
 // External dependencies
 const e = require('express');
 const express = require('express');
@@ -81,6 +80,25 @@ router.post('/apply/explanation-route', (req, res) => {
 
 })
 
+// Employment Income Change Submission
+router.post('/apply/income/employment', (req, res) => {
+  req.session.data['employmentIncomeChanged'] = true;
+  res.redirect('/change-of-circumstances/V3/apply/income');
+});
+
+// Sponsorship Income Change Submission
+router.post('/apply/income/scholarship', (req, res) => {
+  req.session.data['sponsorshipIncomeChanged'] = true;
+  res.redirect('/change-of-circumstances/V3/apply/income');
+});
+
+// Rent Expenses Change Submission
+router.post('/apply/expenses/rent', (req, res) => {
+  req.session.data['rentTotalChanged'] = true;
+  res.redirect('/change-of-circumstances/V3/apply/expenses');
+});
+
+
 
 
 
@@ -153,7 +171,7 @@ router.post('/process-application/coc-payment-journey/payment-details-add-paymen
 
   // WIP - COMMENTING OUT MOST OF THIS V2-SPECIFIC CODE FOR NOW - WILL REVIEW LATER
 
-  
+
   // Save state of addedPaymentType dropdown
   // const addedPaymentType = req.session.data['addedPaymentType']
 
@@ -181,7 +199,7 @@ router.post('/process-application/coc-payment-journey/payment-details-add-paymen
   //   res.redirect('/change-of-circumstances/V2/process-application/coc-payment-journey/payment-details-locked-coc-callout?CoCPaymentsUpdated=true&T2ExtraWeeksAllowanceAdded=true')
   // }
   // else {
-    res.redirect('/change-of-circumstances/V3/process-application/coc-payment-journey/payment-details-locked-coc-callout?CoCPaymentsUpdated=true')
+  res.redirect('/change-of-circumstances/V3/process-application/coc-payment-journey/payment-details-locked-coc-callout?CoCPaymentsUpdated=true')
   // }
 
 })
@@ -189,7 +207,7 @@ router.post('/process-application/coc-payment-journey/payment-details-add-paymen
 
 router.post('/process-application/coc-payment-journey/payment-details-edit-payment-route/', (req, res) => {
 
-    // WIP - COMMENTING OUT MOST OF THIS V2-SPECIFIC CODE FOR NOW - WILL REVIEW LATER
+  // WIP - COMMENTING OUT MOST OF THIS V2-SPECIFIC CODE FOR NOW - WILL REVIEW LATER
 
 
   // Save state of editedPaymentType dropdown
@@ -203,7 +221,7 @@ router.post('/process-application/coc-payment-journey/payment-details-edit-payme
   //   res.redirect('/change-of-circumstances/V2/process-application/coc-payment-journey/payment-details-locked-coc-callout?CoCPaymentsUpdated=true&T3ExtraWeeksAllowanceEdited=true')
   // }
   // else {
-    res.redirect('/change-of-circumstances/V2/process-application/coc-payment-journey/payment-details-locked-coc-callout?CoCPaymentsUpdated=true')
+  res.redirect('/change-of-circumstances/V2/process-application/coc-payment-journey/payment-details-locked-coc-callout?CoCPaymentsUpdated=true')
   // }
 
 })
@@ -234,6 +252,5 @@ router.post('/process-application/change-confirmation-comment-route/', (req, res
   }
 
 })
-
 
 module.exports = router;

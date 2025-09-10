@@ -40,104 +40,106 @@ endblock %}
 
       <form action="/change-of-circumstances/V3/apply/income-route" method="POST">
 
-      <span class="nhsuk-caption-l">Change of circumstances</span>
-      <h1 class="nhsuk-heading-l">Your income details</h1>
+        <span class="nhsuk-caption-l">Change of circumstances</span>
+        <h1 class="nhsuk-heading-l">Your income details</h1>
 
-      <!--<p>You can change your previously entered income details. You'll then need to review and add evidence for your income changes later.</p>-->
+        <!--<p>You can change your previously entered income details. You'll then need to review and add evidence for your income changes later.</p>-->
 
-      <dl class="nhsuk-summary-list">
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key" style="width: 50%">Sponsorship income</dt>
-          <dd class="nhsuk-summary-list__value">£5,250</dd>
-          <dd class="nhsuk-summary-list__actions">
-            <a href="income/scholarship">
-              Change<span class="nhsuk-u-visually-hidden"> sponsorship income</span>
-            </a>
-          </dd>
-        </div>
+        <dl class="nhsuk-summary-list">
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key" style="width: 50%">Sponsorship income</dt>
+            <dd class="nhsuk-summary-list__value">
+              {% if data.sponsorshipIncomeChanged %}None{% else %}£5,250{% endif %}
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="/change-of-circumstances/V3/apply/income/scholarship">
+                Change<span class="nhsuk-u-visually-hidden"> sponsorship income</span>
+              </a>
+            </dd>
+          </div>
 
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">Employment income</dt>
-          <dd class="nhsuk-summary-list__value">None</dd>
-          <dd class="nhsuk-summary-list__actions">
-            <a href="income/employment">
-              Change<span class="nhsuk-u-visually-hidden"> salary payments</span>
-            </a>
-          </dd>
-        </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Employment income</dt>
+            <dd class="nhsuk-summary-list__value">
+              {% if data.employmentIncomeChanged %}£21,000{% else %}None{% endif %}
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="/change-of-circumstances/V3/apply/income/employment">
+                Change<span class="nhsuk-u-visually-hidden"> employment income</span>
+              </a>
+            </dd>
+          </div>
 
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">Self-employment income</dt>
-          <dd class="nhsuk-summary-list__value">None</dd>
-          <dd class="nhsuk-summary-list__actions">
-            <a href="income/self-employment">
-              Change<span class="nhsuk-u-visually-hidden"> self-employment income</span>
-            </a>
-          </dd>
-        </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Self-employment income</dt>
+            <dd class="nhsuk-summary-list__value">None</dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="income/self-employment">
+                Change<span class="nhsuk-u-visually-hidden"> self-employment income</span>
+              </a>
+            </dd>
+          </div>
 
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">Pension payments</dt>
-          <dd class="nhsuk-summary-list__value">None</dd>
-          <dd class="nhsuk-summary-list__actions">
-            <a href="income/pension">
-              Change<span class="nhsuk-u-visually-hidden"> pension payments</span>
-            </a>
-          </dd>
-        </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Pension payments</dt>
+            <dd class="nhsuk-summary-list__value">None</dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="income/pension">
+                Change<span class="nhsuk-u-visually-hidden"> pension payments</span>
+              </a>
+            </dd>
+          </div>
 
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">Rental income</dt>
-          <dd class="nhsuk-summary-list__value">None</dd>
-          <dd class="nhsuk-summary-list__actions">
-            <a href="income/rent">
-              Change<span class="nhsuk-u-visually-hidden"> rental income</span>
-            </a>
-          </dd>
-        </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Rental income</dt>
+            <dd class="nhsuk-summary-list__value">None</dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="income/rent">
+                Change<span class="nhsuk-u-visually-hidden"> rental income</span>
+              </a>
+            </dd>
+          </div>
 
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">Taxable state benefits</dt>
-          <dd class="nhsuk-summary-list__value">None</dd>
-          <dd class="nhsuk-summary-list__actions">
-            <a href="income/benefits">
-              Change<span class="nhsuk-u-visually-hidden"> taxable state benefits</span>
-            </a>
-          </dd>
-        </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Taxable state benefits</dt>
+            <dd class="nhsuk-summary-list__value">None</dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="income/benefits">
+                Change<span class="nhsuk-u-visually-hidden"> taxable state benefits</span>
+              </a>
+            </dd>
+          </div>
 
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">Maintenance payments from ex-partner</dt>
-          <dd class="nhsuk-summary-list__value">None</dd>
-          <dd class="nhsuk-summary-list__actions">
-            <a href="income/maintenance">
-              Change<span class="nhsuk-u-visually-hidden"> Maintenance payments</span
-              >
-            </a>
-          </dd>
-        </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Maintenance payments from ex-partner</dt>
+            <dd class="nhsuk-summary-list__value">None</dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="income/maintenance">
+                Change<span class="nhsuk-u-visually-hidden"> Maintenance payments</span>
+              </a>
+            </dd>
+          </div>
 
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">Money from trust fund</dt>
-          <dd class="nhsuk-summary-list__value">None</dd>
-          <dd class="nhsuk-summary-list__actions">
-            <a href="income/trust-fund">
-              Change<span class="nhsuk-u-visually-hidden"> money from trust fund</span>
-            </a>
-          </dd>
-        </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Money from trust fund</dt>
+            <dd class="nhsuk-summary-list__value">None</dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="income/trust-fund">
+                Change<span class="nhsuk-u-visually-hidden"> money from trust fund</span>
+              </a>
+            </dd>
+          </div>
 
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">Other taxable income</dt>
-          <dd class="nhsuk-summary-list__value">None</dd>
-          <dd class="nhsuk-summary-list__actions">
-            <a href="income/other">
-              Change<span class="nhsuk-u-visually-hidden"> other taxable income</span
-              >
-            </a>
-          </dd>
-        </div>
-      </dl>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Other taxable income</dt>
+            <dd class="nhsuk-summary-list__value">None</dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="income/other">
+                Change<span class="nhsuk-u-visually-hidden"> other taxable income</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
 
         <button class="nhsuk-button" type="submit">Continue</button>
 

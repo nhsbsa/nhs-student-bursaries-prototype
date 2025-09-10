@@ -32,39 +32,27 @@
         Go back</a>
     </div>
 
-    <form action="../income" method="post">
+    <form action="/change-of-circumstances/V3/apply/income/employment" method="POST">
       <div class="nhsuk-form-group">
         <fieldset class="nhsuk-fieldset">
           <h1 class="nhsuk-heading-l" id="sponsorshipH1">
-            <span class="nhsuk-caption-l">Change of circumstances</span>Will you earn any employment income this academic year?
+            <span class="nhsuk-caption-l">Change of circumstances</span>Will you earn any employment income this
+            academic year?
           </h1>
           <div class="nhsuk-radios nhsuk-radios--conditional">
             <div class="nhsuk-radios__item">
-              <input
-                class="nhsuk-radios__input"
-                id="yes"
-                name="employment"
-                type="radio"
-                value="yes"
-                aria-controls="conditional-contact-1"
-                aria-expanded="false"
-              />
+              <input class="nhsuk-radios__input" id="yes" name="employment" type="radio" value="yes"
+                aria-controls="conditional-contact-1" aria-expanded="false" />
               <label class="nhsuk-label nhsuk-radios__label" for="yes">
                 Yes
               </label>
             </div>
 
-            <div
-              class="
-                nhsuk-radios__conditional nhsuk-radios__conditional--hidden"
-              id="conditional-contact-1"
-            >
+            <div class="
+                nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-1">
               <div class="nhsuk-form-group">
-                <label
-                  class="nhsuk-label nhsuk-u-font-weight-bold"
-                  for="employment-info"
-                >
-                Enter the amount before any deductions, such as taxes and National Insurance
+                <label class="nhsuk-label nhsuk-u-font-weight-bold" for="employment-info">
+                  Enter the amount before any deductions, such as taxes and National Insurance
                 </label>
                 <p class="nhsuk-hint">
                   This is for the <span id="september-year"></span> to <span id="next-year"></span> academic year.
@@ -80,14 +68,7 @@
             </div>
 
             <div class="nhsuk-radios__item">
-              <input
-                class="nhsuk-radios__input"
-                id="no"
-                name="employment"
-                type="radio"
-                value="No"
-                checked
-              />
+              <input class="nhsuk-radios__input" id="no" name="employment" type="radio" value="No" checked />
               <label class="nhsuk-label nhsuk-radios__label" for="no">
                 No
               </label>
@@ -97,9 +78,7 @@
       </div>
 
       <div class="nhsuk-form-group">
-        <a href="../income" class="nhsuk-button" role="button"
-          >Continue</a
-        >
+        <button class="nhsuk-button" type="submit">Continue</button>
         <p><a href="tasklist-approved">Cancel</a></p>
       </div>
 

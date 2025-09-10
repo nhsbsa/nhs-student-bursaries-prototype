@@ -40,73 +40,69 @@ endblock %}
 
       <form action="/change-of-circumstances/V3/apply/expenses-route" method="POST">
 
-      <span class="nhsuk-caption-l">Change of circumstances</span>
-      <h1 class="nhsuk-heading-l">Your expenses details</h1>
+        <span class="nhsuk-caption-l">Change of circumstances</span>
+        <h1 class="nhsuk-heading-l">Your expenses details</h1>
 
-      <!--<p>You can change your previously entered expense details. You'll then need to review and add evidence for your expense changes later.</p>-->
+        <!--<p>You can change your previously entered expense details. You'll then need to review and add evidence for your expense changes later.</p>-->
 
-      <dl class="nhsuk-summary-list">
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">Pension contributions</dt>
-          <dd class="nhsuk-summary-list__value">None</dd>
+        <dl class="nhsuk-summary-list">
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Pension contributions</dt>
+            <dd class="nhsuk-summary-list__value">None</dd>
 
-          <dd class="nhsuk-summary-list__actions">
-            <a href="expenses/personal-pension">
-              Change<span class="nhsuk-u-visually-hidden"
-                >personal pension/retirement annulty payments</span
-              >
-            </a>
-          </dd>
-        </div>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="expenses/personal-pension">
+                Change<span class="nhsuk-u-visually-hidden">personal pension/retirement annulty payments</span>
+              </a>
+            </dd>
+          </div>
 
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">Life assurance payments</dt>
-          <dd class="nhsuk-summary-list__value">None</dd>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Life assurance payments</dt>
+            <dd class="nhsuk-summary-list__value">None</dd>
 
-          <dd class="nhsuk-summary-list__actions">
-            <a href="expenses/life-assurance">
-              Change<span class="nhsuk-u-visually-hidden"
-                >life assurance premiums</span
-              >
-            </a>
-          </dd>
-        </div>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="expenses/life-assurance">
+                Change<span class="nhsuk-u-visually-hidden">life assurance premiums</span>
+              </a>
+            </dd>
+          </div>
 
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">Mortgage total</dt>
-          <dd class="nhsuk-summary-list__value">None</dd>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Mortgage total</dt>
+            <dd class="nhsuk-summary-list__value">None</dd>
 
-          <dd class="nhsuk-summary-list__actions">
-            <a href="expenses/mortgage-payments">
-              Change<span class="nhsuk-u-visually-hidden">mortgage payments</span>
-            </a>
-          </dd>
-        </div>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="expenses/mortgage-payments">
+                Change<span class="nhsuk-u-visually-hidden">mortgage payments</span>
+              </a>
+            </dd>
+          </div>
 
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">Rent total</dt>
-          <dd class="nhsuk-summary-list__value">£4,500</dd>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Rent total</dt>
+            <dd class="nhsuk-summary-list__value">
+              {% if data.rentTotalChanged %}£6,280{% else %}£4,500{% endif %}
+            </dd>
 
-          <dd class="nhsuk-summary-list__actions">
-            <a href="expenses/rent">
-              Change<span class="nhsuk-u-visually-hidden">rent</span>
-            </a>
-          </dd>
-        </div>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="expenses/rent">
+                Change<span class="nhsuk-u-visually-hidden">rent</span>
+              </a>
+            </dd>
+          </div>
 
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">Maintenance payments to ex-partner</dt>
-          <dd class="nhsuk-summary-list__value">None</dd>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Maintenance payments to ex-partner</dt>
+            <dd class="nhsuk-summary-list__value">None</dd>
 
-          <dd class="nhsuk-summary-list__actions">
-            <a href="expenses/maintenance-payments">
-              Change<span class="nhsuk-u-visually-hidden"
-                >maintenance payments</span
-              >
-            </a>
-          </dd>
-        </div>
-      </dl>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="expenses/maintenance-payments">
+                Change<span class="nhsuk-u-visually-hidden">maintenance payments</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
 
         <button class="nhsuk-button" type="submit">Continue</button>
         <p><a id="canceltoTasklist" href="tasklist-approved">Cancel</a></p>

@@ -37,44 +37,29 @@
       <span class="nhsuk-caption-l">Change of circumstances</span>Do you get any sponsorship income?
     </h1>
 
-    <p>This could include any income, award or benefit that you get in connection with attending your course. For example, from employment, scholarships or cadetships.</p>
+    <p>This could include any income, award or benefit that you get in connection with attending your course. For
+      example, from employment, scholarships or cadetships.</p>
 
     <div class="nhsuk-form-group">
       <fieldset class="nhsuk-fieldset">
         <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-          <h2
-            class="nhsuk-fieldset__heading nhsuk-u-visually-hidden"
-            id="sponsorshipH2"
-          >
+          <h2 class="nhsuk-fieldset__heading nhsuk-u-visually-hidden" id="sponsorshipH2">
             Are you receiving sponsorship?
           </h2>
         </legend>
 
         <div class="nhsuk-radios nhsuk-radios--conditional">
           <div class="nhsuk-radios__item">
-            <input
-              class="nhsuk-radios__input"
-              id="yes"
-              name="scholarship"
-              type="radio"
-              value="email"
-              aria-controls="conditional-contact-1"
-              aria-expanded="false" checked
-            />
+            <input class="nhsuk-radios__input" id="yes" name="scholarship" type="radio" value="email"
+              aria-controls="conditional-contact-1" aria-expanded="false" checked />
             <label class="nhsuk-label nhsuk-radios__label" for="yes">
               Yes
             </label>
           </div>
 
-          <div
-            class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden"
-            id="conditional-contact-1"
-          >
+          <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-1">
             <div class="nhsuk-form-group">
-              <label
-                class="nhsuk-label nhsuk-u-font-weight-bold"
-                for="scholarship-info"
-              >
+              <label class="nhsuk-label nhsuk-u-font-weight-bold" for="scholarship-info">
                 Enter how much you'll get from sponsorship income
               </label>
               <p class="nhsuk-hint">
@@ -91,13 +76,7 @@
           </div>
 
           <div class="nhsuk-radios__item">
-            <input
-              class="nhsuk-radios__input"
-              id="no"
-              name="scholarship"
-              type="radio"
-              value="No"
-            />
+            <input class="nhsuk-radios__input" id="no" name="scholarship" type="radio" value="No" />
             <label class="nhsuk-label nhsuk-radios__label" for="no"> No </label>
           </div>
         </div>
@@ -106,10 +85,12 @@
   </div>
 </div>
 
-<div class="nhsuk-form-group">
-  <a href="../income" class="nhsuk-button" role="button">Continue</a>
-  <p><a href="tasklist-approved">Cancel</a></p>
-</div>
+<form action="/change-of-circumstances/V3/apply/income/scholarship" method="POST">
+  <div class="nhsuk-form-group">
+    <button class="nhsuk-button" type="submit">Continue</button>
+    <p><a href="tasklist-approved">Cancel</a></p>
+  </div>
+</form>
 
 
 
