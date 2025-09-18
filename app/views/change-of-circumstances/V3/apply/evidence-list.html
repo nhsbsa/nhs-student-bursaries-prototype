@@ -19,8 +19,9 @@
 
     <span class="nhsuk-caption-l">Change of circumstances</span>
     <h1 class="nhsuk-heading-l">
-      {% if data['livingWithParents'] == "Yes" %}
+      {% if (data['livingWithParents'] == "Yes") or (data['noDetailsChanged'] == "true") %}
       Add evidence (optional)
+
       {% else %}
       Add evidence
       {% endif %}
@@ -29,9 +30,14 @@
     {% if data['livingWithParents'] == "Yes" %}
     <p>You can upload any evidence that supports your change of circumstances.</p>
     <p>If you do not need to give evidence, you can skip this step by selecting Continue.</p>
+
+    {% elif (data['CoCType'] == "Change of income") and (data['noDetailsChanged'] == "true") %}
+    <p>You can upload evidence for your change of income or expenses.</p>
+
     {% elif data['CoCType'] == "Change of income" %}
     <p>You need to upload new evidence that supports your change. You cannot remove old evidence, but you can use it
       again if it supports this change.</p>
+
     {% else %}
     <p>You need to upload evidence that supports your change of circumstances.</p>
     {% endif %}
@@ -41,6 +47,9 @@
       <a href="evidence" class="nhsuk-button nhsuk-button--secondary" role="button">Add evidence</a>
     </div>
     {% endif %}
+
+    {% if data['noDetailsChanged'] != "true" %}
+
 
     {% if data['CoCType'] == "Change of income" %}
 
@@ -158,8 +167,56 @@
 
     {% endif %}
 
+
+
     {% if data['livingWithParents'] == "Yes" or data['evidence'] == 'added' %}
     <a href="declaration" class="nhsuk-button" role="button">Continue</a>
+    {% endif %}
+
+
+    <!-- Else, no changes to income or expenses -->
+    {% else %}
+
+    {% if data['evidence'] == 'added' %}
+
+    <div class="nhsuk-card">
+      <div class="nhsuk-card__content">
+        <h2 class="nhsuk-heading-m">Uploaded files</h2>
+
+        <table class="nhsuk-table">
+          <thead role="rowgroup" class="nhsuk-table__head">
+            <tr role="row">
+              <th role="columnheader" class="" scope="col">
+                Type
+              </th>
+              <th role="columnheader" class="" scope="col">
+                File
+              </th>
+              <th role="columnheader" class="" scope="col">
+                Action
+              </th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Bank statements</td>
+              <td class="nhsuk-table__cell "><a href="/files/letting-agent-letter.png" target="_blank"
+                  rel="noopener">bank-statements.pdf</a></td>
+              <td class="nhsuk-table__cell "><a href="evidence-list">Remove</a></td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+
+    {% endif %}
+
+    <div>
+      <a href="evidence" class="nhsuk-button nhsuk-button--secondary" role="button">Add evidence</a>
+    </div>
+    <a href="declaration" class="nhsuk-button" role="button">Continue</a>
+
     {% endif %}
 
     <p><a href="">Save and come back later</a></p>

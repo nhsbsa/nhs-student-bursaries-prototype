@@ -124,6 +124,11 @@
             <p>
               {% if data['reason'] %}
               {{ data['reason'] }}
+
+              {% elif data['noDetailsChanged'] == "true" %}
+              There has been some other change to my income or expenses, but the Change of circumstances form did not
+              ask me for it.
+
               {% else %}
               My income has changed as my sponsorship has ended and I got a new job. My expenses have changed as I have
               moved to a new flat.
@@ -139,6 +144,8 @@
         </div>
 
       </dl>
+
+      {% if data['noDetailsChanged'] != "true" %}
 
       {% if data['CoCType'] == "Change of income" %}
       <details class="nhsuk-details nhsuk-expander">
@@ -223,6 +230,9 @@
         </div>
       </details>
       {% endif %}
+
+      {% endif %}
+
 
       <div class="nhsuk-form-group">
         <a href="evidence-list" class="nhsuk-button" role="button" id="next">Save and continue to evidence</a>
