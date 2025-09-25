@@ -62,11 +62,42 @@ router.post('/apply/date-route', (req, res) => {
 
 })
 
+
+
 router.post('/apply/income-route', (req, res) => {
+  // Check if all income details are 'None'
+  const data = req.session.data;
+  const allNone =
+    (data.sponsorshipIncomeChanged && !data.employmentIncomeChanged) &&
+    !data.selfEmploymentIncome &&
+    !data.pensionPayments &&
+    !data.rentalIncome &&
+    !data.taxableStateBenefits &&
+    !data.maintenancePayments &&
+    !data.moneyFromTrustFund &&
+    !data.otherTaxableIncome;
 
-  res.redirect('/change-of-circumstances/V3/apply/expenses')
+  // If all income details are None, redirect to no-income reason page
+  if (
+    (data.sponsorshipIncomeChanged && data.employmentIncomeChanged === undefined) &&
+    !data.selfEmploymentIncome &&
+    !data.pensionPayments &&
+    !data.rentalIncome &&
+    !data.taxableStateBenefits &&
+    !data.maintenancePayments &&
+    !data.moneyFromTrustFund &&
+    !data.otherTaxableIncome
+  ) {
+    res.redirect('/change-of-circumstances/V3/apply/no-income-reason');
+  } else {
+    res.redirect('/change-of-circumstances/V3/apply/expenses');
+  }
+});
 
-})
+router.post('/apply/no-income-reason-route', (req, res) => {
+  // Save the reason if needed: req.session.data.noIncomeReason
+  res.redirect('/change-of-circumstances/V3/apply/expenses?no-income=true');
+});
 
 router.post('/apply/expenses-route', (req, res) => {
 

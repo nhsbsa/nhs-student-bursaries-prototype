@@ -64,6 +64,8 @@
             </a>
           </dd>
         </div>
+
+
         {% if data['CoCType'] == "Change of address" %}
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
@@ -116,6 +118,32 @@
           </dd>
         </div>
         {% endif %}
+
+        {% if (data['CoCType'] == "Change of income") and (data['no-income'] == "true") %}
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Reason for no income
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <p>
+              {% if data['noIncomeReason'] %}
+              {{ data['noIncomeReason'] }}
+
+              {% else %}
+              I have no income because my sponsorship has ended.
+              {% endif %}
+            </p>
+          </dd>
+
+          <dd class="nhsuk-summary-list__actions">
+            <a href="no-income-reason">
+              Change<span class="nhsuk-u-visually-hidden">Reason for no income</span>
+            </a>
+          </dd>
+        </div>
+        {% endif %}
+
+
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
             Reason for change
@@ -144,8 +172,6 @@
         </div>
 
       </dl>
-
-      {% if data['noDetailsChanged'] != "true" %}
 
       {% if data['CoCType'] == "Change of income" %}
       <details class="nhsuk-details nhsuk-expander">
@@ -229,8 +255,6 @@
           <p><a href="income" class="nhsuk-button nhsuk-button--secondary">Change expenses</a></p>
         </div>
       </details>
-      {% endif %}
-
       {% endif %}
 
 
