@@ -65,10 +65,11 @@ router.post('/apply/date-route', (req, res) => {
 
 
 router.post('/apply/income-route', (req, res) => {
-  // Check if all income details are 'None'
   const data = req.session.data;
-  const allNone =
-    (data.sponsorshipIncomeChanged && !data.employmentIncomeChanged) &&
+
+  const noIncome =
+    data.sponsorshipIncomeChanged &&
+    !data.employmentIncomeChanged &&
     !data.selfEmploymentIncome &&
     !data.pensionPayments &&
     !data.rentalIncome &&
@@ -77,17 +78,7 @@ router.post('/apply/income-route', (req, res) => {
     !data.moneyFromTrustFund &&
     !data.otherTaxableIncome;
 
-  // If all income details are None, redirect to no-income reason page
-  if (
-    (data.sponsorshipIncomeChanged && data.employmentIncomeChanged === undefined) &&
-    !data.selfEmploymentIncome &&
-    !data.pensionPayments &&
-    !data.rentalIncome &&
-    !data.taxableStateBenefits &&
-    !data.maintenancePayments &&
-    !data.moneyFromTrustFund &&
-    !data.otherTaxableIncome
-  ) {
+  if (noIncome) {
     res.redirect('/change-of-circumstances/V3/apply/no-income-reason');
   } else {
     res.redirect('/change-of-circumstances/V3/apply/expenses');
@@ -110,6 +101,16 @@ router.post('/apply/explanation-route', (req, res) => {
   res.redirect('/change-of-circumstances/V3/apply/summary')
 
 })
+
+
+// Summary continue button
+router.get('/apply/summary-continue', (req, res) => {
+  if (req.session.data['noDetailsChanged'] == "true") {
+    res.redirect('/change-of-circumstances/V3/apply/declaration');
+  } else {
+    res.redirect('/change-of-circumstances/V3/apply/evidence-list');
+  }
+});
 
 // Employment Income Change Submission
 router.post('/apply/income/employment', (req, res) => {

@@ -188,7 +188,13 @@
             </div>
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">Employment income</dt>
-              <dd class="nhsuk-summary-list__value">£21,000</dd>
+              <dd class="nhsuk-summary-list__value">
+                {% if data['no-income'] == "true" %}
+                None
+                {% else %}
+                £21,000
+                {% endif %}
+              </dd>
             </div>
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">Self-employment income</dt>
@@ -259,7 +265,12 @@
 
 
       <div class="nhsuk-form-group">
-        <a href="evidence-list" class="nhsuk-button" role="button" id="next">Save and continue to evidence</a>
+        
+        {% if data['noDetailsChanged'] == "true" %}
+        <a href="summary-continue" class="nhsuk-button" role="button" id="next">Save and continue</a>
+        {% else %}
+        <a href="summary-continue" class="nhsuk-button" role="button" id="next">Save and continue to evidence</a>
+        {% endif %}
 
         <p><a id="canceltoTasklist" href="tasklist-approved">Cancel</a></p>
       </div>
