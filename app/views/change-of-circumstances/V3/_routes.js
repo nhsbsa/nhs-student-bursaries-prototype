@@ -108,9 +108,26 @@ router.get('/apply/summary-continue', (req, res) => {
   if (req.session.data['noDetailsChanged'] == "true") {
     res.redirect('/change-of-circumstances/V3/apply/declaration');
   } else {
-    res.redirect('/change-of-circumstances/V3/apply/evidence-list');
+    const data = req.session.data;
+    const noIncome =
+      data.sponsorshipIncomeChanged &&
+      !data.employmentIncomeChanged &&
+      !data.selfEmploymentIncome &&
+      !data.pensionPayments &&
+      !data.rentalIncome &&
+      !data.taxableStateBenefits &&
+      !data.maintenancePayments &&
+      !data.moneyFromTrustFund &&
+      !data.otherTaxableIncome;
+
+    if (noIncome) {
+      res.redirect('/change-of-circumstances/V3/apply/evidence-list?no-income=true');
+    } else {
+      res.redirect('/change-of-circumstances/V3/apply/evidence-list?no-income=false');
+    }
   }
 });
+
 
 // Employment Income Change Submission
 router.post('/apply/income/employment', (req, res) => {
