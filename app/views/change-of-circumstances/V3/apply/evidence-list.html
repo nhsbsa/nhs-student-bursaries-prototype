@@ -32,9 +32,6 @@
     <p>If you do not need to give evidence, you can skip this step by selecting Continue.</p>
 
     {% elif data['CoCType'] == "Change of income" %}
-    <p>You can upload evidence for your change of income or expenses.</p>
-
-    {% elif data['CoCType'] == "Change of income" %}
     <p>You need to upload new evidence that supports your change. You cannot remove old evidence, but you can use it
       again if it supports this change.</p>
 
@@ -54,7 +51,7 @@
 
     <h2 class="nhsuk-heading-m">Your income details</h2>
 
-    <div class="nhsuk-card">
+    <!-- <div class="nhsuk-card">
       <div class="nhsuk-card__content">
 
         <table style="margin-bottom: 24px;" id="evidenceTable" class="nhsuk-table">
@@ -84,7 +81,7 @@
             sponsorship income</a></p>
 
       </div>
-    </div>
+    </div> -->
 
     {% if data['no-income'] != 'true' %}
 
