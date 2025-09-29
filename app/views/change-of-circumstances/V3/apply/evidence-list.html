@@ -49,8 +49,6 @@
 
     {% if data['CoCType'] == "Change of income" %}
 
-    {% if data['hasUnlinkedEvidence'] == "true" %}
-
     <details class="nhsuk-details nhsuk-expander">
       <summary class="nhsuk-details__summary">
         <span class="nhsuk-details__summary-text">
@@ -95,12 +93,6 @@
 
       </div>
     </details>
-
-
-
-    <!-- </div>
-    </div> -->
-    {% endif %}
 
 
     <h2 class="nhsuk-heading-m">Your income details</h2>
@@ -186,12 +178,12 @@
 
         {% endif %}
 
-        {% if (data['no-income'] == 'true') and data['evidence'] == 'added' %}
-        <p style="margin-bottom: 0px;"><a href="upload-evidence-income?income=sponsorship income">Add more evidence of
-            sponsorship income</a></p>
-        {% else %}
+        {% if (data['no-income'] == 'true') and data['evidence'] != 'added' %}
         <a style="margin: 0" class="nhsuk-button nhsuk-button--secondary"
           href="upload-evidence-income?income=sponsorship income">Add evidence</a>
+        {% else %}
+        <p style="margin-bottom: 0px;"><a href="upload-evidence-income?income=sponsorship income">Add more evidence of
+            sponsorship income</a></p>
         {% endif %}
 
       </div>
