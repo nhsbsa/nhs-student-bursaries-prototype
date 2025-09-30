@@ -103,7 +103,10 @@
         <h3 class="nhsuk-heading-s">Sponsorship income</h3>
 
         {% if data['no-income'] == 'true' %}
-        <p>You need to add evidence of why you no longer have sponsorship income before you can continue.</p>
+        <div class="nhsuk-inset-text nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-4">
+          <span class="nhsuk-u-visually-hidden">Information: </span>
+          <p>You need to add evidence of why you no longer have sponsorship income before you can continue.</p>
+        </div>
         {% endif %}
 
         {% if (data['no-income'] == 'true') and data['evidence'] == 'added' %}
