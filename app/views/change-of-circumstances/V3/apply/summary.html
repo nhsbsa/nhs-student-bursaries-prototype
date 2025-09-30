@@ -189,7 +189,7 @@
               <dd class="nhsuk-summary-list__value">None</dd>
             </div>
 
-            <!-- IF student is part time (i.e. NOT full time)... show these two questions. -->
+            <!-- IF student is part time (i.e. NOT full time)... show these two questions (1+2 of 3) -->
             {% if data['studentIsFullTime'] != 'true' %}
 
             <div class="nhsuk-summary-list__row">
@@ -218,10 +218,17 @@
               <dt class="nhsuk-summary-list__key">Rental income</dt>
               <dd class="nhsuk-summary-list__value">None</dd>
             </div>
+
+            <!-- IF student is part time (i.e. NOT full time)... show this question (3 of 3) -->
+            {% if data['studentIsFullTime'] != 'true' %}
+
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">Taxable state benefits</dt>
               <dd class="nhsuk-summary-list__value">None</dd>
             </div>
+
+            {% endif %}
+
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">Maintenance payments to ex-partner</dt>
               <dd class="nhsuk-summary-list__value">None</dd>
