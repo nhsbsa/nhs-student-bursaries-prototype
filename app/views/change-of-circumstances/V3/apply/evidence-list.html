@@ -192,6 +192,8 @@
       </div>
     </div>
 
+    <!-- IF student is part time (i.e. NOT full time)... show this extra card for Employment income. -->
+    {% if data['studentIsFullTime'] != 'true' %}
 
     <div class="nhsuk-card">
       <div class="nhsuk-card__content">
@@ -238,6 +240,54 @@
       </div>
     </div>
 
+    {% else %}
+
+        <div class="nhsuk-card">
+      <div class="nhsuk-card__content">
+
+        {% if data['evidence'] != 'added' %}
+        <h3 style="margin-bottom: 0px;" class="nhsuk-heading-s">Rental income</h3>
+        <a style="margin-top: 24px; margin-bottom: 0px;" class="nhsuk-button nhsuk-button--secondary"
+          href="upload-evidence-income?income=rental income">Add evidence</a>
+        {% else %}
+
+        <table style="margin-bottom: 24px;" id="evidenceTable" class="nhsuk-table">
+          <caption class="nhsuk-table__caption">Rental income</caption>
+          <thead role="rowgroup" class="nhsuk-table__head">
+            <tr role="row">
+              <th role="columnheader" class="" scope="col">
+                Type
+              </th>
+              <th role="columnheader" class="" scope="col">
+                File
+              </th>
+              <th role="columnheader" class="" scope="col">
+                Action
+              </th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row" id="evidenceRow1">
+              <td class="nhsuk-table__cell">Letter from accountant</td>
+              <td style="" class="nhsuk-table__cell ">
+                <a href="#" target="_blank" rel="noopener">
+                  accountant-letter.png
+                </a>
+              </td>
+              <td class="nhsuk-table__cell ">
+                <a href="evidence-list?evidence=removed">Remove</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="margin-bottom: 0px;"><a href="upload-evidence-income?income=rental income">Add more evidence of
+            rental income</a></p>
+        {% endif %}
+
+      </div>
+    </div>
+
+    {% endif %}
 
 
     <h2 class="nhsuk-heading-m">Your expenses details</h2>

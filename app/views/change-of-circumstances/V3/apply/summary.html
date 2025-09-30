@@ -180,12 +180,18 @@
             Your income details
           </span>
         </summary>
+
         <div class="nhsuk-details__text">
           <dl class="nhsuk-summary-list">
+
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key" style="width: 50%">Sponsorship income</dt>
               <dd class="nhsuk-summary-list__value">None</dd>
             </div>
+
+            <!-- IF student is part time (i.e. NOT full time)... show these two questions. -->
+            {% if data['studentIsFullTime'] != 'true' %}
+
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">Employment income</dt>
               <dd class="nhsuk-summary-list__value">
@@ -196,10 +202,14 @@
                 {% endif %}
               </dd>
             </div>
+
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">Self-employment income</dt>
               <dd class="nhsuk-summary-list__value">None</dd>
             </div>
+
+            {% endif %}
+
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">Pension payments</dt>
               <dd class="nhsuk-summary-list__value">None</dd>
@@ -224,6 +234,7 @@
               <dt class="nhsuk-summary-list__key">Other taxable income</dt>
               <dd class="nhsuk-summary-list__value">None</dd>
             </div>
+
           </dl>
           <p><a href="income" class="nhsuk-button nhsuk-button--secondary">Change income</a></p>
         </div>
@@ -265,7 +276,7 @@
 
 
       <div class="nhsuk-form-group">
-        
+
         {% if data['noDetailsChanged'] == "true" %}
         <a href="summary-continue" class="nhsuk-button" role="button" id="next">Save and continue</a>
         {% else %}

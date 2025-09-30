@@ -58,6 +58,9 @@ endblock %}
             </dd>
           </div>
 
+          <!-- IF student is part time (i.e. NOT full time)... show these two questions. -->
+          {% if data['studentIsFullTime'] != 'true' %}
+
           <div class="nhsuk-summary-list__row">
             <dt class="nhsuk-summary-list__key">Employment income</dt>
             <dd class="nhsuk-summary-list__value">
@@ -79,6 +82,8 @@ endblock %}
               </a>
             </dd>
           </div>
+
+          {% endif %}
 
           <div class="nhsuk-summary-list__row">
             <dt class="nhsuk-summary-list__key">Pension payments</dt>
