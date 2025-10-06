@@ -63,8 +63,13 @@
               Reason for change
             </dt>
             <dd class="nhsuk-summary-list__value">
+              {% if data['CoCScenario'] == "noChanges" %}
+              There has been some other change to my income or expenses, but the Change of circumstances form did not
+              ask me for it.
+              {% else %}
               My income has changed as my sponsorship has ended and I got a new job. My expenses have changed as I have
               moved to a new flat.
+              {% endif %}
             </dd>
           </div>
 
@@ -101,22 +106,39 @@
               <tbody>
                 <tr>
                   <td>Sponsorship income
+                    {% if data['CoCScenario'] != "noChanges" %}
                     <strong class="nhsuk-tag nhsuk-tag--green">
                       Changed
                     </strong>
+                    {% endif %}
                   </td>
                   <td>£5,250</td>
+
+                  {% if data['CoCScenario'] == "noChanges" %}
+                  <td>£5,250</td>
+                  {% else %}
                   <td>None</td>
+                  {% endif %}
                 </tr>
+
                 <tr>
                   <td>Employment income
+                    {% if data['CoCScenario'] != "noChanges" %}
                     <strong class="nhsuk-tag nhsuk-tag--green">
                       Changed
                     </strong>
+                    {% endif %}
                   </td>
                   <td>None</td>
+
+                  {% if data['CoCScenario'] == "noChanges" %}
+                  <td>None</td>
+                  {% else %}
                   <td>£21,000</td>
+                  {% endif %}
+
                 </tr>
+
                 <tr>
                   <td>Self-employment income</td>
                   <td>None</td>
@@ -181,15 +203,24 @@
                   <td>None</td>
                   <td>None</td>
                 </tr>
+
                 <tr>
                   <td>Rent total
+                    {% if data['CoCScenario'] != "noChanges" %}
                     <strong class="nhsuk-tag nhsuk-tag--green">
                       Changed
                     </strong>
+                    {% endif %}
                   </td>
                   <td>£4,500</td>
+
+                  {% if data['CoCScenario'] == "noChanges" %}
+                  <td>£4,500</td>
+                  {% else %}
                   <td>£6,280</td>
+                  {% endif %}
                 </tr>
+
                 <tr>
                   <td>Maintenance payments to ex-partner</td>
                   <td>None</td>
@@ -210,6 +241,13 @@
             </span>
           </summary>
           <div class="nhsuk-details__text">
+
+            {% if data['CoCScenario'] == "noChanges" %}
+            <h3 class="nhsuk-heading-s">Evidence for this change</h3>
+            <p class="nhsuk-u-margin-bottom-6">No evidence uploaded for this change.</p>
+
+            {% else %}
+
             <table class="nhsuk-table">
               <caption class="nhsuk-table__caption">Evidence for this change</caption>
               <thead>
@@ -253,6 +291,8 @@
                 </tr>
               </tbody>
             </table>
+
+            {% endif %}
 
             <table class="nhsuk-table">
               <caption class="nhsuk-table__caption">Previously used evidence</caption>

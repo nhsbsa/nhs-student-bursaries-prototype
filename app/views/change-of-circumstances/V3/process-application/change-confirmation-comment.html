@@ -83,7 +83,7 @@
                 </h3>
 
                 <!-- WIP: WILL RETURN TO THIS AND UPDATE IT -->
-                {% if data['CoCScenario'] == "addressOnly" %}
+                {% if data['CoCScenario'] == "noChanges" %}
                 <ul>
                   <li>Change of circumstances completed.</li>
                   <li>Address updated.</li>
@@ -117,7 +117,7 @@
 
                   Reason for change:
 
-                  {% if data['CoCScenario'] == "addressOnly" %}
+                  {% if data['CoCScenario'] == "noChanges" %}
                   There has been some other change to my income or expenses, but the Change of circumstances form did
                   not ask me for it.
                   {% else %}

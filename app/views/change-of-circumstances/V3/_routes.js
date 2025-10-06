@@ -162,7 +162,7 @@ router.post('/process-application/change-summary/', (req, res) => {
   if (CoCProcessorChoice === 'complete') {
 
     // Route for updating Address only - go straight to asking for comment
-    if (CoCScenario === 'addressOnly') {
+    if (CoCScenario === 'noChanges') {
       res.redirect('/change-of-circumstances/V3/process-application/change-confirmation-comment')
     }
 
