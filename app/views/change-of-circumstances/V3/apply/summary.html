@@ -29,16 +29,34 @@
         Check your answers
       </h1>
 
+      {% if data['CoCReturned'] == 'true' %}
+      <div class="nhsuk-warning-callout" style="margin-bottom: 24px;">
+        <h3 class="nhsuk-warning-callout__label">
+          <span role="text">
+            <span class="nhsuk-u-visually-hidden">Important: </span>
+            Processor feedback
+          </span>
+        </h3>
+        <p>Please upload your new evidence for your Rent which supports your change.</p>
+      </div>
+
+      <p style="margin-top: 0; margin-bottom: 36px;">Do not change your answers unless they're incorrect. You can add or
+        review your evidence by selecting <strong>Save and continue to evidence</strong>.
+      </p>
+      {% endif %}
+
       <dl class="nhsuk-summary-list">
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">Type of change</dt>
           <dd class="nhsuk-summary-list__value">Change to my income or expenses</dd>
 
           <dd class="nhsuk-summary-list__actions">
+            {% if data['CoCReturned'] != 'true' %}
             <a href="changes">
               Change<span class="nhsuk-u-visually-hidden">
                 Change of circumstances</span>
             </a>
+            {% endif %}
           </dd>
         </div>
 
@@ -284,13 +302,24 @@
 
       <div class="nhsuk-form-group">
 
-        {% if data['noDetailsChanged'] == "true" %}
-        <a href="summary-continue" class="nhsuk-button" role="button" id="next">Save and continue</a>
+        {% if data['CoCReturned'] != 'true' %}
+
+          {% if data['noDetailsChanged'] == "true" %}
+          <a href="summary-continue" class="nhsuk-button" role="button" id="next">Save and continue</a>
+          {% else %}
+          <a href="summary-continue" class="nhsuk-button" role="button" id="next">Save and continue to evidence</a>
+          {% endif %}
+          
+          <p><a id="canceltoTasklist" href="tasklist-approved">Cancel</a></p>
+
         {% else %}
-        <a href="summary-continue" class="nhsuk-button" role="button" id="next">Save and continue to evidence</a>
+
+          <a href="summary-continue?evidence=added" class="nhsuk-button" role="button" id="next">Save and continue to
+            evidence</a>
+          <p><a id="canceltoTasklist" href="tasklist-approved">Save and come back later</a></p>
+
         {% endif %}
 
-        <p><a id="canceltoTasklist" href="tasklist-approved">Cancel</a></p>
       </div>
     </div>
   </div>
