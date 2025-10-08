@@ -57,5 +57,12 @@ router.post('/apply/partner-name-route', (req, res) => {
 })
 
 
+router.post('/apply/partner-email-route', (req, res) => {
+
+  res.redirect('/change-of-circumstances/V4/apply/summary')
+
+})
+
+
 
 module.exports = router;
