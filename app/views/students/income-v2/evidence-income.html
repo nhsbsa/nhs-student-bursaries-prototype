@@ -1,0 +1,69 @@
+{% extends 'layout.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Upload your evidence {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %}{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <fieldset class="nhsuk-fieldset">
+
+      {{ backLink({
+      "href": "summary",
+      "text": "Go back"
+      }) }}
+
+      <h1 class="nhsuk-heading-xl" id="uploadEvidenceH1">
+        <span class="nhsuk-caption-l">Your income</span>Which income is this evidence for?
+      </h1>
+
+      <div class="nhsuk-form-group">
+        <div class="nhsuk-hint" id="example-hint">
+          Select all that apply
+        </div>
+        <div class="nhsuk-checkboxes" data-module="nhsuk-checkboxes">
+
+          <div class="nhsuk-checkboxes__item">
+            <input class="nhsuk-checkboxes__input" id="example" name="example" type="checkbox" value="email">
+            <label class="nhsuk-label nhsuk-checkboxes__label" for="example">
+              Sponsorship income
+            </label>
+          </div>
+
+          <div class="nhsuk-checkboxes__item">
+            <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox" value="phone">
+            <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
+              Rental income
+            </label>
+          </div>
+
+          <div class="nhsuk-checkboxes__item">
+            <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+            <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+              Other taxable income
+            </label>
+          </div>
+        </div>
+      </div>
+
+
+    <div class="nhsuk-form-group">
+      <a href="evidence-2" class="nhsuk-button" role="button">Continue</a>
+    </div>
+
+    </fieldset>
+
+
+  </div>
+</div>
+{% endblock %}
