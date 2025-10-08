@@ -26,6 +26,9 @@ router.post('/register/v2/national-insurance-number-question-route/', (req, res)
 
 })
 
+// CoC V4
+router.use('/change-of-circumstances/V4', require('./views/change-of-circumstances/V4/_routes'));
+
 // CoC V3
 router.use('/change-of-circumstances/V3', require('./views/change-of-circumstances/V3/_routes'));
 
