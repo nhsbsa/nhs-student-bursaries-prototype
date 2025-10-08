@@ -1,0 +1,112 @@
+{% extends 'layout.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Upload your evidence {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %}{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <fieldset class="nhsuk-fieldset">
+
+      {{ backLink({
+      "href": "summary",
+      "text": "Go back"
+      }) }}
+
+      <h1 class="nhsuk-heading-xl" id="uploadEvidenceH1">
+        <span class="nhsuk-caption-l">Your expenses</span>Expenses evidence
+      </h1>
+
+      {% if data['evidence'] != "added" %}
+      <p>You need to add evidence for:</p>
+        <ul class="nhsuk-list nhsuk-list--bullet">
+          <li><b>Rent</b>, this should be:</li>
+					<li class="nhsuk-list-style-none">
+				    <ul class="nhsuk-list nhsuk-list--circle nhsuk-u-margin-bottom-0">
+              <li>a bank statement</li>
+              <li>your rental agreement</li>
+				    </ul>
+				  </li>
+				</ul>
+      {% else %}
+        <p>You have added evidence for all of your expenses.</p>
+      {% endif %}
+
+      {% if data['evidence'] == "added" %}
+      <table class="nhsuk-table">
+        <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Evidence uploaded</caption>
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+                Type
+            </th>
+            <th role="columnheader" class="" scope="col">
+                File
+            </th>
+            <th role="columnheader" class="" scope="col">
+                Income
+            </th>
+            <th role="columnheader" class="" scope="col">
+                Action
+            </th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell ">
+                Rent agreement
+            </td>
+            <td class="nhsuk-table__cell ">
+              <a href="#" target="_blank" rel="noopener">
+                rental-agreement.pdf
+              </a>
+            </td>
+            <td class="nhsuk-table__cell ">
+              <ul class="nhsuk-list" style="margin-bottom: 0px;">
+                <li>Rent</li>
+              </ul>
+            </td>
+            <td class="nhsuk-table__cell ">
+                <p class="nhsuk-u-margin-bottom-2"><a class="nhsuk-link--no-visited-state" href="evidence-2?evidence=added1">Remove</a></p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      {% endif %}
+
+    <div class="nhsuk-form-group">
+      {% if data['evidence'] == "added" %}
+        <a href="upload-evidence-2?evidence=added" class="nhsuk-button nhsuk-button--secondary" role="button">Upload further evidence</a><br>
+        <a href="check" class="nhsuk-button" role="button">Continue</a>
+      {% else %}
+        <a href="upload-evidence-2?evidence=added" class="nhsuk-button" role="button">Upload evidence</a>
+      {% endif %}
+      <p><a href="#" id="saveAndComeBackLater">Save and come back later</a></p>
+    </div>
+
+    </fieldset>
+
+    <style>
+ul, .nhsuk-list--circle {
+  list-style-type: circle;
+    padding-left: 20px;
+}
+
+.nhsuk-list-style-none{
+  list-style: none;
+}
+</style>
+
+  </div>
+</div>
+{% endblock %}
