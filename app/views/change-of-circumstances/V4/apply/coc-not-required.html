@@ -1,0 +1,86 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} What date is this change of cicumstance effective from? {%
+endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<!-- Breadcrumb -->
+
+{% endblock %}
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-width-container">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <div class="nhsuk-card" style="background: #4B6271; margin-top: 0;">
+        <div class="nhsuk-card__content">
+          <h1 class="nhsuk-card__heading" style="text-align: center; color: white;">
+            You don't live with a parent or a partner
+          </h1>
+        </div>
+      </div>
+
+      <p>You only need to tell us about your parent or partner's income or expenses if you live them.</p>
+
+      <h2 class="nhsuk-heading-m">How do you want to continue?</h2>
+
+
+      <form action="/change-of-circumstances/V4/apply/coc-not-required-route" method="POST">
+
+        <div class="nhsuk-form-group">
+          <fieldset class="nhsuk-fieldset">
+            <!-- <p>
+              You do not need to be married or in a civil partnership.
+            </p> -->
+            <div class="nhsuk-radios">
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="changeAnswers" name="cocNotRequiredChoice" type="radio"
+                  value="changeAnswers" />
+                <label class="nhsuk-label nhsuk-radios__label" for="changeAnswers">
+                  Change my answers
+                </label>
+              </div>
+
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="startNewCoC" name="cocNotRequiredChoice" type="radio"
+                  value="startNewCoC" />
+                <label class="nhsuk-label nhsuk-radios__label" for="startNewCoC">
+                  Start a new change of circumstances
+                </label>
+              </div>
+
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="returnToDashboard" name="cocNotRequiredChoice" type="radio"
+                  value="returnToDashboard" />
+                <label class="nhsuk-label nhsuk-radios__label" for="returnToDashboard">
+                  Return to dashboard
+                </label>
+
+              </div>
+          </fieldset>
+        </div>
+
+        <button class="nhsuk-button" type="submit">Continue</button>
+
+        <p><a id="canceltoTasklist" href="tasklist-approved">Cancel</a></p>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

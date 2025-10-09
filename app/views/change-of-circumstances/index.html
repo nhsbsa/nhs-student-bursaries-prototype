@@ -71,47 +71,35 @@
         </summary>
 
         <div class="nhsuk-details__text" id="nhsuk-details__text0">
-          <h2 class="nhsuk-heading-m">1) Scenario 1: Student is already assessed based on Parent</h2>
 
-          <table class="nhsuk-table">
-            <caption class="
-                        nhsuk-table__caption
-                        nhsuk-u-visually-hidden
-                      "></caption>
-            <thead role="rowgroup" class="nhsuk-table__head">
-              <tr role="row">
-                <th role="columnheader" class="" scope="col">
-                  Journey point
-                </th>
-                <th role="columnheader" class="" scope="col">
-                  Link
-                </th>
-              </tr>
-            </thead>
-            <tbody class="nhsuk-table__body">
+          <!-- Scenario 1: Student IS NOT already assessed based on Parent / Parents / Partner -->
+          <h2 class="nhsuk-heading-m">1) Scenario 1: Student IS NOT already assessed based on Parent / Parents / Partner
+          </h2>
 
-              <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">Dashboard</td>
-                <td class="nhsuk-table__cell">
-                  <a href="/change-of-circumstances/V4/apply/dashboard?assessedOn=parent">View
-                    <span class="nhsuk-u-visually-hidden">
-                      Dashboard</span></a>
-                </td>
-              </tr>
+          <a href="/change-of-circumstances/V4/apply/dashboard?assessedOn=neither" class="nhsuk-button" role="button"
+            id="next">Begin journey</a>
 
-              <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">
-                  Tasklist
-                </td>
-                <td class="nhsuk-table__cell">
-                  <a href="/change-of-circumstances/V4/apply/tasklist-approved?assessedOn=parent">View
-                    <span class="nhsuk-u-visually-hidden">
-                      Task list</span></a>
-                </td>
-              </tr>
 
-            </tbody>
-          </table>
+          <!-- Scenario 2: Student IS already assessed based on Parent / Parents / Partner -->
+          <h2 class="nhsuk-heading-m nhsuk-u-margin-top-4">2) Scenario 2: Student IS already assessed based on Parent /
+            Parents / Partner
+          </h2>
+
+          <h3 class="nhsuk-heading-xs" style="margin-bottom: 8px;">Scenario 2a: Student already assessed based on
+            one Parent</h3>
+          <a href="/change-of-circumstances/V4/apply/dashboard?assessedOn=oneParent" class="nhsuk-button" role="button"
+            id="next">Begin journey</a>
+
+          <h3 class="nhsuk-heading-xs" style="margin-bottom: 8px;">Scenario 2b: Student already assessed based on
+            two Parents</h3>
+          <a href="/change-of-circumstances/V4/apply/dashboard?assessedOn=twoParents" class="nhsuk-button" role="button"
+            id="next">Begin journey</a>
+
+          <h3 class="nhsuk-heading-xs" style="margin-bottom: 8px;">Scenario 2c: Student already assessed based on
+            Partner</h3>
+          <a href="/change-of-circumstances/V4/apply/dashboard?assessedOn=partner" class="nhsuk-button" role="button"
+            id="next">Begin journey</a>
+
         </div>
 
       </details>

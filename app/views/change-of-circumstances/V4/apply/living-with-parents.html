@@ -38,25 +38,34 @@
       </div>
 
       <span class="nhsuk-caption-l">Change of circumstances</span>
-      <h1 class="nhsuk-heading-l">Do you live with a partner?</h1>
+      <h1 class="nhsuk-heading-l">Do you live with a parent or parents?</h1>
 
-      <form action="/change-of-circumstances/V4/apply/living-with-partner-route" method="POST">
+      <form action="/change-of-circumstances/V4/apply/living-with-parents-route" method="POST">
 
         <div class="nhsuk-form-group">
           <fieldset class="nhsuk-fieldset">
-            <p>
+            <!-- <p>
               You do not need to be married or in a civil partnership.
-            </p>
+            </p> -->
+            
             <div class="nhsuk-radios">
               <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="yes" name="livingWithPartner" type="radio" value="yes" />
-                <label class="nhsuk-label nhsuk-radios__label" for="yes">
-                  Yes
+                <input class="nhsuk-radios__input" id="yesOneParent" name="livingWithParents" type="radio"
+                  value="yesOneParent" />
+                <label class="nhsuk-label nhsuk-radios__label" for="yesOneParent">
+                  Yes, I live with just one parent
+                </label>
+              </div>
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="yesTwoParents" name="livingWithParents" type="radio"
+                  value="yesTwoParents" />
+                <label class="nhsuk-label nhsuk-radios__label" for="yesTwoParents">
+                  Yes, I live with both parents
                 </label>
               </div>
 
               <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="no" name="livingWithPartner" type="radio" value="no" />
+                <input class="nhsuk-radios__input" id="no" name="livingWithParents" type="radio" value="no" />
                 <label class="nhsuk-label nhsuk-radios__label" for="no">
                   No
                 </label>
