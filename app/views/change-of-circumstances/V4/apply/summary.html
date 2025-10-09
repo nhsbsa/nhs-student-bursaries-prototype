@@ -26,7 +26,17 @@
     <div class="nhsuk-grid-column-two-thirds">
       <h1 class="nhsuk-app-heading">
         <span class="nhsuk-caption-l">Change of circumstances</span>
+        
+        {% if data['livingWithPartner'] == 'Yes' %}
         Check your partner's details
+        {% elif data['livingWithParents'] == 'yesOneParent' %}
+        Check your parent's details
+        {% elif data['livingWithParents'] == 'yesTwoParents' %}
+        Check your parents' details
+        {% else %}
+        Check your details
+        {% endif %}
+
       </h1>
 
       {% if data['CoCReturned'] == 'true' %}
@@ -60,29 +70,28 @@
           </dd>
         </div>
 
-        <!-- <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">
-            Date of change
-          </dt>
 
+        <!-- PARTNER -->
+
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Living with a partner
+          </dt>
           <dd class="nhsuk-summary-list__value">
             <p>
-              {% if data['circumstance-day'] %}
-              {{ data['circumstance-day'] }} <span class="cya-month">{{ data['circumstance-month'] }}</span> {{
-              data['circumstance-year'] }}
-              {% else %}
-              5 February 2025
-              {% endif %}
+              {{ data['livingWithPartner'] }}
             </p>
           </dd>
-
           <dd class="nhsuk-summary-list__actions">
-            <a href="date">
-              Change<span class="nhsuk-u-visually-hidden">Date of change</span>
+            <a href="living-with-partner">
+              Change<span class="nhsuk-u-visually-hidden">Living with a partner</span>
             </a>
           </dd>
-        </div> -->
+        </div>
 
+
+        {% if data['livingWithPartner'] == 'Yes' %}
 
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
@@ -90,16 +99,16 @@
           </dt>
           <dd class="nhsuk-summary-list__value">
             <p>
-              {% if data['name-1'] %}
-              {{ data['name-1'] }}
+              {% if data['partnerFirstName'] %}
+              {{ data['partnerFirstName'] }}
               {% else %}
-              John
+              Harry
               {% endif %}
 
-              {% if data['name-2'] %}
-              {{ data['name-2'] }}
+              {% if data['partnerLastName'] %}
+              {{ data['partnerLastName'] }}
               {% else %}
-              Smith
+              Watson
               {% endif %}
             </p>
           </dd>
@@ -117,10 +126,10 @@
           </dt>
           <dd class="nhsuk-summary-list__value">
             <p>
-              {% if data['email'] %}
-              {{ data['email'] }}
+              {% if data['partnerEmail'] %}
+              {{ data['partnerEmail'] }}
               {% else %}
-              johnsmith@gmail.com
+              harrywatson@gmail.com
               {% endif %}
             </p>
           </dd>
@@ -130,6 +139,188 @@
             </a>
           </dd>
         </div>
+
+        {% endif %}
+
+
+
+        <!-- PARENT OR PARENTS -->
+
+        {% if data['livingWithParents'] == 'yesOneParent' or data['livingWithParents'] == 'yesTwoParents' %}
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Living with parents
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <p>
+              {% if data['livingWithParents'] == 'yesOneParent' %}
+              Yes, one parent
+              {% elif data['livingWithParents'] == 'yesTwoParents' %}
+              Yes, two parents
+              {% endif %}
+            </p>
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="living-with-parents">
+              Change<span class="nhsuk-u-visually-hidden">Living with parents</span>
+            </a>
+          </dd>
+        </div>
+
+
+        <!-- ONE PARENT -->
+
+        {% if data['livingWithParents'] == 'yesOneParent' %}
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Parent's name
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <p>
+              {% if data['parentFirstName'] %}
+              {{ data['parentFirstName'] }}
+              {% else %}
+              Jane
+              {% endif %}
+
+              {% if data['parentLastName'] %}
+              {{ data['parentLastName'] }}
+              {% else %}
+              Smith
+              {% endif %}
+            </p>
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="parent-name">
+              Change<span class="nhsuk-u-visually-hidden">name</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Parent's email
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <p>
+              {% if data['parentEmail'] %}
+              {{ data['parentEmail'] }}
+              {% else %}
+              janesmith@gmail.com
+              {% endif %}
+            </p>
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="parent-email">
+              Change<span class="nhsuk-u-visually-hidden">email</span>
+            </a>
+          </dd>
+        </div>
+
+        {% endif %}
+
+
+        <!-- TWO PARENTS -->
+
+        {% if data['livingWithParents'] == 'yesTwoParents' %}
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Parent 1's name
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <p>
+              {% if data['parent1FirstName'] %}
+              {{ data['parent1FirstName'] }}
+              {% else %}
+              Jane
+              {% endif %}
+
+              {% if data['parent1LastName'] %}
+              {{ data['parent1LastName'] }}
+              {% else %}
+              Smith
+              {% endif %}
+            </p>
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="parent-1-name">
+              Change<span class="nhsuk-u-visually-hidden">name</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Parent 1's email
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <p>
+              {% if data['parent1Email'] %}
+              {{ data['parent1Email'] }}
+              {% else %}
+              janesmith@gmail.com
+              {% endif %}
+            </p>
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="parent-1-email">
+              Change<span class="nhsuk-u-visually-hidden">email</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Parent 2's name
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <p>
+              {% if data['parent2FirstName'] %}
+              {{ data['parent2FirstName'] }}
+              {% else %}
+              John
+              {% endif %}
+
+              {% if data['parent2LastName'] %}
+              {{ data['parent2LastName'] }}
+              {% else %}
+              Smith
+              {% endif %}
+            </p>
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="parent-2-name">
+              Change<span class="nhsuk-u-visually-hidden">name</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Parent 2's email
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <p>
+              {% if data['parent2Email'] %}
+              {{ data['parent2Email'] }}
+              {% else %}
+              johnsmith@gmail.com
+              {% endif %}
+            </p>
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="parent-2-email">
+              Change<span class="nhsuk-u-visually-hidden">email</span>
+            </a>
+          </dd>
+        </div>
+
+        {% endif %}
+
+        {% endif %}
 
       </dl>
 

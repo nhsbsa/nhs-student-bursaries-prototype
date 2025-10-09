@@ -44,11 +44,11 @@ router.post('/apply/living-with-partner-route', (req, res) => {
 
   // If user selects no option, stay on this page
   if (
-    livingWithPartner === 'yes'
+    livingWithPartner === 'Yes'
   ) {
     res.redirect('/change-of-circumstances/V4/apply/partner-name');
   } else if (
-    livingWithPartner === 'no'
+    livingWithPartner === 'No'
   ) {
     res.redirect('/change-of-circumstances/V4/apply/living-with-parents');
   } else {

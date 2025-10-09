@@ -36,8 +36,20 @@ endblock %}
 
       <h2 class="nhsuk-heading-m">What happens next</h1>
 
+        {% if data['livingWith'] == 'partner' %}
         <p>We'll email your partner to let them know how they can provide their financial information to support your
           application.</p>
+        {% elif data['livingWithParents'] == 'yesOneParent' %}
+        <p>We'll email your parent to let them know how they can provide their financial information to support your
+          application.</p>
+        {% elif data['livingWithParents'] == 'yesTwoParents' %}
+        <p>We'll email your parents to let them know how they can provide their financial information to support your
+          application.</p>
+        {% else %}
+        <p>We'll email your partner to let them know how they can provide their financial information to support your
+          application.</p>
+        {% endif %}
+
         <p>If you need to tell us about another change, you can submit another change of circumstances.</p>
 
         <a href="intro" class="nhsuk-button nhsuk-button--secondary" role="button" id="next">Submit
