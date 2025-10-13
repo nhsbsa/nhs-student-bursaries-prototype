@@ -36,7 +36,6 @@ router.post('/apply/living-with-partner-route', (req, res) => {
 
   const livingWithPartner = req.session.data['livingWithPartner']
 
-  // If user selects no option, stay on this page
   if (
     livingWithPartner === 'Yes'
   ) {
@@ -46,6 +45,7 @@ router.post('/apply/living-with-partner-route', (req, res) => {
   ) {
     res.redirect('/change-of-circumstances/V4/apply/living-with-parents');
   } else {
+    // If user selects no option, stay on this page
     res.redirect('/change-of-circumstances/V4/apply/living-with-partner');
   }
 
@@ -55,8 +55,8 @@ router.post('/apply/living-with-partner-route', (req, res) => {
 router.post('/apply/living-with-parents-route', (req, res) => {
 
   const livingWithParents = req.session.data['livingWithParents']
+  const wasLivingWithParentOrPartner = req.session.data['wasLivingWithParentOrPartner']
 
-  // If user selects no option, stay on this page
   if (
     livingWithParents === 'yesOneParent'
   ) {
@@ -66,11 +66,16 @@ router.post('/apply/living-with-parents-route', (req, res) => {
   ) {
     res.redirect('/change-of-circumstances/V4/apply/parent-1-name');
   } else if (
+    livingWithParents === 'no' && wasLivingWithParentOrPartner === 'true'
+  ) {
+    res.redirect('/change-of-circumstances/V4/apply/evidence-list');
+  } else if (
     livingWithParents === 'no'
   ) {
     res.redirect('/change-of-circumstances/V4/apply/coc-not-required');
   } else {
-    res.redirect('/change-of-circumstances/V4/apply/living-with-partner');
+    // If user selects no option, stay on this page
+    res.redirect('/change-of-circumstances/V4/apply/living-with-parents');
   }
 
 })
