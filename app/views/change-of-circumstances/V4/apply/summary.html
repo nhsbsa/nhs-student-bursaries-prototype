@@ -26,7 +26,7 @@
     <div class="nhsuk-grid-column-two-thirds">
       <h1 class="nhsuk-app-heading">
         <span class="nhsuk-caption-l">Change of circumstances</span>
-        
+
         {% if data['livingWithPartner'] == 'Yes' %}
         Check your partner's details
         {% elif data['livingWithParents'] == 'yesOneParent' %}
@@ -146,7 +146,8 @@
 
         <!-- PARENT OR PARENTS -->
 
-        {% if data['livingWithParents'] == 'yesOneParent' or data['livingWithParents'] == 'yesTwoParents' %}
+        {% if data['livingWithParents'] == 'yesOneParent' or data['livingWithParents'] == 'yesTwoParents' or
+        data['livingWithParents'] == 'no' %}
 
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
@@ -155,9 +156,11 @@
           <dd class="nhsuk-summary-list__value">
             <p>
               {% if data['livingWithParents'] == 'yesOneParent' %}
-              Yes, one parent
+              Yes, with one parent
               {% elif data['livingWithParents'] == 'yesTwoParents' %}
-              Yes, two parents
+              Yes, with two parents in the same household
+              {% elif data['livingWithParents'] == 'no' %}
+              No
               {% endif %}
             </p>
           </dd>
@@ -322,15 +325,77 @@
 
         {% endif %}
 
+
+        {% if data['livingWithParents'] == 'no' %}
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+
+            {% if data['previouslyLivingWith'] == 'oneParent' %}
+            When did you stop living with your parent?
+            {% elif data['previouslyLivingWith'] == 'twoParents' %}
+            When did you stop living with your parents?
+            {% else %}
+            When did you stop living with your partner?
+            {% endif %}
+
+          </dt>
+
+          <dd class="nhsuk-summary-list__value">
+            <p>
+              {% if data['dateDay'] and data['dateMonth'] and data['dateYear'] %}
+              {{ data['dateDay'] }} <span class="cya-month">{{ data['dateMonth'] }}</span> {{ data['dateYear'] }}
+              {% else %}
+              5 October 2024
+              {% endif %}
+            </p>
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="date">
+              Change<span class="nhsuk-u-visually-hidden">date</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Reason for change
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <p>
+              {% if data['explanation'] %}
+              {{ data['explanation'] }}
+              {% else %}
+              My partner has moved out.
+              {% endif %}
+            </p>
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="explanation">
+              Change<span class="nhsuk-u-visually-hidden">explanation</span>
+            </a>
+          </dd>
+        </div>
+
+        {% endif %}
+
       </dl>
 
 
+      {% if data['livingWithPartner'] == 'yes' or data['livingWithParents'] == 'yesOneParent' or
+      data['livingWithParents'] == 'yesTwoParents' %}
+
       <div class="nhsuk-form-group">
         <p>By clicking Accept and submit you're confirming that the details you're providing are correct.</p>
-
         <a href="submitted-confirmation" class="nhsuk-button" role="button" id="next">Accept and submit</a>
-        <p><a id="canceltoTasklist" href="tasklist-approved">Cancel</a></p>
       </div>
+      
+      {% else %}
+      <a href="evidence-list" class="nhsuk-button" role="button" id="next">Save and continue to evidence</a>
+      {% endif %}
+
+
+      <p><a id="canceltoTasklist" href="tasklist-approved">Cancel</a></p>
     </div>
   </div>
 </div>

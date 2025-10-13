@@ -68,7 +68,7 @@ router.post('/apply/living-with-parents-route', (req, res) => {
   } else if (
     livingWithParents === 'no' && wasLivingWithParentOrPartner === 'true'
   ) {
-    res.redirect('/change-of-circumstances/V4/apply/evidence-list');
+    res.redirect('/change-of-circumstances/V4/apply/date');
   } else if (
     livingWithParents === 'no'
   ) {
