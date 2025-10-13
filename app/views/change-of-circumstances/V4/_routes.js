@@ -12,7 +12,6 @@ const router = express.Router();
 router.post('/apply/changes-route', (req, res) => {
 
   const CoCType = req.session.data['CoCType']
-  const assessedOn = req.session.data['assessedOn']
 
   // If user selects any option, proceed to p1 or p2 journey...
   if (
@@ -23,12 +22,7 @@ router.post('/apply/changes-route', (req, res) => {
     CoCType === 'Change of children details' ||
     CoCType === 'Other change'
   ) {
-
-    if (assessedOn === 'oneParent' || assessedOn === 'twoParents' || assessedOn === 'partner') {
-      res.redirect('/change-of-circumstances/V4/apply/summary');
-    } else {
-      res.redirect('/change-of-circumstances/V4/apply/living-with-partner');
-    }
+    res.redirect('/change-of-circumstances/V4/apply/living-with-partner');
 
     // ...Otherwise, stay on this page
   } else {

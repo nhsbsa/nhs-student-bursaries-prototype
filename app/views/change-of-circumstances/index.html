@@ -76,8 +76,11 @@
           <h2 class="nhsuk-heading-m">1) Scenario 1: Student IS NOT already assessed based on Parent / Parents / Partner
           </h2>
 
-          <a href="/change-of-circumstances/V4/apply/dashboard?assessedOn=neither" class="nhsuk-button" role="button"
-            id="next">Begin journey</a>
+          <p>If student says they are not currently living with Parent / Parents / Partner, they will be shown a kickout
+            page saying they don't need to submit a CoC in this scenario.</p>
+
+          <a href="/change-of-circumstances/V4/apply/dashboard?previouslyLivingAlone=false" class="nhsuk-button"
+            role="button" id="next">Begin journey</a>
 
 
           <!-- Scenario 2: Student IS already assessed based on Parent / Parents / Partner -->
@@ -85,19 +88,10 @@
             Parents / Partner
           </h2>
 
-          <h3 class="nhsuk-heading-xs" style="margin-bottom: 8px;">Scenario 2a: Student already assessed based on
-            one Parent</h3>
-          <a href="/change-of-circumstances/V4/apply/dashboard?assessedOn=oneParent" class="nhsuk-button" role="button"
-            id="next">Begin journey</a>
+          <p>If student says they are not currently living with Parent / Parents / Partner, they will be asked for
+            evidence to prove this change has happened.</p>
 
-          <h3 class="nhsuk-heading-xs" style="margin-bottom: 8px;">Scenario 2b: Student already assessed based on
-            two Parents</h3>
-          <a href="/change-of-circumstances/V4/apply/dashboard?assessedOn=twoParents" class="nhsuk-button" role="button"
-            id="next">Begin journey</a>
-
-          <h3 class="nhsuk-heading-xs" style="margin-bottom: 8px;">Scenario 2c: Student already assessed based on
-            Partner</h3>
-          <a href="/change-of-circumstances/V4/apply/dashboard?assessedOn=partner" class="nhsuk-button" role="button"
+          <a href="/change-of-circumstances/V4/apply/dashboard?previouslyLivingAlone=true" class="nhsuk-button" role="button"
             id="next">Begin journey</a>
 
         </div>
