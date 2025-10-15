@@ -382,15 +382,15 @@
       </dl>
 
 
-      {% if data['livingWithPartner'] == 'yes' or data['livingWithParents'] == 'yesOneParent' or
+      {% if data['livingWithPartner'] == 'Yes' or data['livingWithParents'] == 'yesOneParent' or
       data['livingWithParents'] == 'yesTwoParents' %}
 
       <div class="nhsuk-form-group">
-        <p>By clicking Accept and submit you're confirming that the details you're providing are correct.</p>
-        <a href="submitted-confirmation" class="nhsuk-button" role="button" id="next">Accept and submit</a>
+        <a href="declaration" class="nhsuk-button" role="button" id="next">Continue</a>
       </div>
-      
+
       {% else %}
+      <!-- Else they are now living with nobody and need to provide evidence of the change -->
       <a href="evidence-list" class="nhsuk-button" role="button" id="next">Save and continue to evidence</a>
       {% endif %}
 
