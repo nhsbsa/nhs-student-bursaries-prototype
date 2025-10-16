@@ -71,76 +71,29 @@
         </summary>
 
         <div class="nhsuk-details__text" id="nhsuk-details__text0">
-          <!-- <h2 class="nhsuk-heading-m">1) Scenario 1 ...</h2> -->
 
-          <table class="nhsuk-table">
-            <caption class="
-                        nhsuk-table__caption
-                        nhsuk-u-visually-hidden
-                      "></caption>
-            <thead role="rowgroup" class="nhsuk-table__head">
-              <tr role="row">
-                <th role="columnheader" class="" scope="col">
-                  Journey point
-                </th>
-                <th role="columnheader" class="" scope="col">
-                  Link
-                </th>
-              </tr>
-            </thead>
-            <tbody class="nhsuk-table__body">
+          <!-- Scenario 1: Student IS NOT already assessed based on Parent / Parents / Partner -->
+          <h2 class="nhsuk-heading-m">1) Scenario 1: Student IS NOT already assessed based on Parent / Parents / Partner
+          </h2>
 
-              <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">Dashboard</td>
-                <td class="nhsuk-table__cell">
-                  <a href="/change-of-circumstances/V4/apply/dashboard">View
-                    <span class="nhsuk-u-visually-hidden">
-                      Dashboard</span></a>
-                </td>
-              </tr>
+          <p>If student says they are not currently living with Parent / Parents / Partner, they will be shown a kickout
+            page saying they don't need to submit a CoC in this scenario.</p>
 
-              <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">
-                  Tasklist
-                </td>
-                <td class="nhsuk-table__cell">
-                  <a href="/change-of-circumstances/V4/apply/tasklist-approved">View
-                    <span class="nhsuk-u-visually-hidden">
-                      Task list</span></a>
-                </td>
-              </tr>
+          <a href="/change-of-circumstances/V4/apply/dashboard?wasLivingWithParentOrPartner=false" class="nhsuk-button"
+            role="button" id="next">Begin journey</a>
 
-              <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">Intro</td>
-                <td class="nhsuk-table__cell">
-                  <a href="/change-of-circumstances/V4/apply/intro">View
-                    <span class="nhsuk-u-visually-hidden">
-                      Intro</span></a>
-                </td>
-              </tr>
 
-              <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">
-                  Type of change
-                </td>
-                <td class="nhsuk-table__cell">
-                  <a href="/change-of-circumstances/V4/apply/changes">View
-                    <span class="nhsuk-u-visually-hidden">
-                      Type of change</span></a>
-                </td>
-              </tr>
+          <!-- Scenario 2: Student IS already assessed based on Parent / Parents / Partner -->
+          <h2 class="nhsuk-heading-m nhsuk-u-margin-top-4">2) Scenario 2: Student IS already assessed based on Parent /
+            Parents / Partner
+          </h2>
 
-              <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">Do you live with a partner?</td>
-                <td class="nhsuk-table__cell">
-                  <a href="/change-of-circumstances/V4/apply/live-with-partner">View
-                    <span class="nhsuk-u-visually-hidden">
-                      Do you live with a partner?</span></a>
-                </td>
-              </tr>
+          <p>If student says they are not currently living with Parent / Parents / Partner, they will be asked for
+            evidence to prove this change has happened.</p>
 
-            </tbody>
-          </table>
+          <a href="/change-of-circumstances/V4/apply/dashboard?wasLivingWithParentOrPartner=true" class="nhsuk-button" role="button"
+            id="next">Begin journey</a>
+
         </div>
 
       </details>

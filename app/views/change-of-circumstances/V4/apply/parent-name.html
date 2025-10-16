@@ -38,18 +38,22 @@
       </div>
 
       <span class="nhsuk-caption-l">Change of circumstances</span>
-      <h1 class="nhsuk-heading-l">What is your partner's email address?</h1>
+      <h1 class="nhsuk-heading-l">What is your parent's name?</h1>
 
-      <form action="/change-of-circumstances/V4/apply/partner-email-route" method="POST">
-
-        <p>Enter the email address you would like us to contact this person on.</p>
-        <p>We may contact them if we need more information to support your application.</p>
+      <form action="/change-of-circumstances/V4/apply/parent-name-route" method="POST">
 
         <div class="nhsuk-form-group">
-          <!-- <label class="nhsuk-label" for="input-width-30">
-            Email address
-          </label>  -->
-          <input class="nhsuk-input nhsuk-input--width-30" id="partnerEmail" name="partnerEmail" type="text">
+          <label class="nhsuk-label" for="parentFirstName">
+            First name
+          </label> <input class="nhsuk-input nhsuk-input--width-30" id="parentFirstName" name="parentFirstName"
+            type="text">
+        </div>
+
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="parentLastName">
+            Last name
+          </label> <input class="nhsuk-input nhsuk-input--width-30" id="parentLastName" name="parentLastName"
+            type="text">
         </div>
 
         <button class="nhsuk-button" type="submit">Continue</button>
