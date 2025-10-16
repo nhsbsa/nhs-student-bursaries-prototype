@@ -38,38 +38,29 @@
       </div>
 
       <span class="nhsuk-caption-l">Change of circumstances</span>
-      <h1 class="nhsuk-heading-l">Who do you live with?</h1>
+      <h1 class="nhsuk-heading-l">Do you still live with your parent, Jane Smith?</h1>
 
-      <form action="/change-of-circumstances/V4/apply/who-do-you-live-with-route" method="POST">
+      <form action="/change-of-circumstances/V4/apply/living-with-same-parent-route" method="POST">
 
         <div class="nhsuk-form-group">
           <fieldset class="nhsuk-fieldset">
-            <!-- <p>
-              You do not need to be married or in a civil partnership.
-            </p> -->
+
             <div class="nhsuk-radios">
               <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="parentOrParents" name="livingWith" type="radio"
-                  value="parentOrParents" />
-                <label class="nhsuk-label nhsuk-radios__label" for="parentOrParents">
-                  Parent or parents
+                <input class="nhsuk-radios__input" id="yes" name="livingWithSameParent" type="radio" value="Yes" />
+                <label class="nhsuk-label nhsuk-radios__label" for="yes">
+                  Yes
                 </label>
               </div>
 
               <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="partner" name="livingWith" type="radio" value="partner" />
-                <label class="nhsuk-label nhsuk-radios__label" for="partner">
-                  Partner
+                <input class="nhsuk-radios__input" id="no" name="livingWithSameParent" type="radio" value="No" />
+                <label class="nhsuk-label nhsuk-radios__label" for="no">
+                  No
                 </label>
               </div>
 
-              <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="neither" name="livingWith" type="radio" value="neither" />
-                <label class="nhsuk-label nhsuk-radios__label" for="neither">
-                  Neither of these
-                </label>
-
-              </div>
+            </div>
           </fieldset>
         </div>
 

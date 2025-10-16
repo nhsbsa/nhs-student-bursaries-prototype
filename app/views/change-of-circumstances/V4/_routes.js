@@ -12,21 +12,39 @@ const router = express.Router();
 router.post('/apply/changes-route', (req, res) => {
 
   const CoCType = req.session.data['CoCType']
+  const wasLivingWith = req.session.data['wasLivingWith']
 
-  // If user selects any option, proceed to p1 or p2 journey...
   if (
-    CoCType === 'Change of relationship status' ||
-    CoCType === 'Change of address' ||
-    CoCType === 'Change of income' ||
-    CoCType === 'Change of p1 or p2 income' ||
-    CoCType === 'Change of children details' ||
-    CoCType === 'Other change'
+    CoCType === 'Change of p1 or p2 income' && wasLivingWith === 'partner'
+  ) {
+    res.redirect('/change-of-circumstances/V4/apply/living-with-same-partner');
+  } else if (
+    CoCType === 'Change of p1 or p2 income'
   ) {
     res.redirect('/change-of-circumstances/V4/apply/living-with-partner');
-
-    // ...Otherwise, stay on this page
+    // If user selects no option, stay on this page
   } else {
     res.redirect('/change-of-circumstances/V4/apply/changes');
+  }
+
+})
+
+
+router.post('/apply/living-with-same-partner-route', (req, res) => {
+
+  const livingWithSamePartner = req.session.data['livingWithSamePartner']
+
+  if (
+    livingWithSamePartner === 'Yes'
+  ) {
+    res.redirect('/change-of-circumstances/V4/apply/partner-name');
+  } else if (
+    livingWithSamePartner === 'No'
+  ) {
+    res.redirect('/change-of-circumstances/V4/apply/living-with-partner');
+  } else {
+    // If user selects no option, stay on this page
+    res.redirect('/change-of-circumstances/V4/apply/living-with-same-partner');
   }
 
 })
@@ -35,15 +53,29 @@ router.post('/apply/changes-route', (req, res) => {
 router.post('/apply/living-with-partner-route', (req, res) => {
 
   const livingWithPartner = req.session.data['livingWithPartner']
+  const wasLivingWith = req.session.data['wasLivingWith']
 
   if (
     livingWithPartner === 'Yes'
   ) {
     res.redirect('/change-of-circumstances/V4/apply/partner-name');
+
   } else if (
     livingWithPartner === 'No'
   ) {
-    res.redirect('/change-of-circumstances/V4/apply/living-with-parents');
+    if (
+      wasLivingWith === 'oneParent'
+    ) {
+      res.redirect('/change-of-circumstances/V4/apply/living-with-same-parent');
+    } else if (
+      wasLivingWith === 'twoParents'
+    ) {
+      res.redirect('/change-of-circumstances/V4/apply/living-with-same-parents');
+    } else {
+      // Else, they were living with nobody (wasLivingWith = nobody)
+      res.redirect('/change-of-circumstances/V4/apply/living-with-parents');
+    }
+
   } else {
     // If user selects no option, stay on this page
     res.redirect('/change-of-circumstances/V4/apply/living-with-partner');
