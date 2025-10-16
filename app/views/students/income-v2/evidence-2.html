@@ -31,7 +31,7 @@
       <p>You need to add evidence for:</p>
         <ul class="nhsuk-list nhsuk-list--bullet">
 					{% if data['evidence'] != "added1" %}
-            <li><b>Sponsorship income</b>, this could be a letter:</li>
+            <li>Sponsorship income, this should be a letter:</li>
   					<li class="nhsuk-list-style-none">
   				    <ul class="nhsuk-list nhsuk-list--circle nhsuk-u-margin-bottom-0">
                 <li>from your employer</li>
@@ -41,7 +41,7 @@
   				    </ul>
   				  </li>
           {% endif %}
-          <li><b>Rental income</b>, this should be:</li>
+          <li>Rental income, this should be:</li>
 					<li class="nhsuk-list-style-none">
 				    <ul class="nhsuk-list nhsuk-list--circle nhsuk-u-margin-bottom-0">
               <li>a letter from your accountant</li>
@@ -49,7 +49,7 @@
               <li>your tax return</li>
 				    </ul>
 				  </li>
-          <li><b>Other taxable income</b>, this should be:</li>
+          <li>Other taxable income, this should be:</li>
 					<li class="nhsuk-list-style-none">
 				    <ul class="nhsuk-list nhsuk-list--circle nhsuk-u-margin-bottom-0">
               <li>anything showing your other taxable income</li>
@@ -59,7 +59,7 @@
 
       <p>You can upload evidence for multiple incomes at once or individually.</p>
       {% else %}
-        <p>You have added evidence for all of your income.</p>
+        <p>You've added evidence for all of your income.</p>
       {% endif %}
 
       {% if data['evidence'] == "added1" %}
