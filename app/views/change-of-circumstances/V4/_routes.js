@@ -12,10 +12,10 @@ const router = express.Router();
 router.post('/apply/changes-route', (req, res) => {
 
   const CoCType = req.session.data['CoCType']
-  const wasLivingWith = req.session.data['wasLivingWith']
+  const wasAssessedOn = req.session.data['wasAssessedOn']
 
   if (
-    CoCType === 'Change of p1 or p2 income' && wasLivingWith === 'partner'
+    CoCType === 'Change of p1 or p2 income' && wasAssessedOn === 'partner'
   ) {
     res.redirect('/change-of-circumstances/V4/apply/living-with-same-partner');
   } else if (
@@ -53,7 +53,6 @@ router.post('/apply/living-with-same-partner-route', (req, res) => {
 router.post('/apply/living-with-partner-route', (req, res) => {
 
   const livingWithPartner = req.session.data['livingWithPartner']
-  const wasLivingWith = req.session.data['wasLivingWith']
 
   if (
     livingWithPartner === 'Yes'
@@ -63,18 +62,7 @@ router.post('/apply/living-with-partner-route', (req, res) => {
   } else if (
     livingWithPartner === 'No'
   ) {
-    if (
-      wasLivingWith === 'oneParent'
-    ) {
-      res.redirect('/change-of-circumstances/V4/apply/living-with-same-parent');
-    } else if (
-      wasLivingWith === 'twoParents'
-    ) {
-      res.redirect('/change-of-circumstances/V4/apply/living-with-same-parents');
-    } else {
-      // Else, they were living with nobody (wasLivingWith = nobody)
-      res.redirect('/change-of-circumstances/V4/apply/living-with-parents');
-    }
+    res.redirect('/change-of-circumstances/V4/apply/are-you-independent');
 
   } else {
     // If user selects no option, stay on this page
@@ -84,25 +72,53 @@ router.post('/apply/living-with-partner-route', (req, res) => {
 })
 
 
-router.post('/apply/living-with-parents-route', (req, res) => {
+router.post('/apply/are-you-independent-route', (req, res) => {
 
-  const livingWithParents = req.session.data['livingWithParents']
-  const wasLivingWithParentOrPartner = req.session.data['wasLivingWithParentOrPartner']
+  const isNowIndependent = req.session.data['isNowIndependent']
+  const wasAssessedOn = req.session.data['wasAssessedOn']
 
   if (
-    livingWithParents === 'yesOneParent'
+    isNowIndependent === 'Yes'
+  ) {
+    res.redirect('/change-of-circumstances/V4/apply/parents-living-together');
+
+  } else if (
+    isNowIndependent === 'No' && (wasAssessedOn === 'partner' || wasAssessedOn === 'oneParent' || wasAssessedOn === 'twoParents')
+  ) {
+    res.redirect('/change-of-circumstances/V4/apply/are-you-independent-reason');
+
+  } else if (
+    isNowIndependent === 'No' && wasAssessedOn === 'nobody'
+  ) {
+    res.redirect('/change-of-circumstances/V4/apply/coc-not-required');
+
+  } else {
+    // If user selects no option, stay on this page
+    res.redirect('/change-of-circumstances/V4/apply/are-you-independent');
+  }
+
+})
+
+
+router.post('/apply/parents-living-together-route', (req, res) => {
+
+  const parentsLivingTogether = req.session.data['parentsLivingTogether']
+  const wasAssessedOnParentOrPartner = req.session.data['wasAssessedOnParentOrPartner']
+
+  if (
+    parentsLivingTogether === 'yesOneParent'
   ) {
     res.redirect('/change-of-circumstances/V4/apply/parent-name');
   } else if (
-    livingWithParents === 'yesTwoParents'
+    parentsLivingTogether === 'yesTwoParents'
   ) {
     res.redirect('/change-of-circumstances/V4/apply/parent-1-name');
   } else if (
-    livingWithParents === 'no' && wasLivingWithParentOrPartner === 'true'
+    parentsLivingTogether === 'no' && wasAssessedOnParentOrPartner === 'true'
   ) {
     res.redirect('/change-of-circumstances/V4/apply/date');
   } else if (
-    livingWithParents === 'no'
+    parentsLivingTogether === 'no'
   ) {
     res.redirect('/change-of-circumstances/V4/apply/coc-not-required');
   } else {

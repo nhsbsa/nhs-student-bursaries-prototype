@@ -38,27 +38,65 @@
       </div>
 
       <span class="nhsuk-caption-l">Change of circumstances</span>
-      <h1 class="nhsuk-heading-l">Are you still living with, married to, or in a civil partnership with Harry Smith?
-      </h1>
+      <h1 class="nhsuk-heading-l">WIP: What type of independent student are you?</h1>
 
-      <form action="/change-of-circumstances/V4/apply/living-with-same-partner-route" method="POST">
+      <form action="/change-of-circumstances/V4/apply/are-you-independent-route" method="POST">
+
+        <p>
+          You are an independent if you:
+        </p>
+        <ul>
+          <li>have any dependent children at the start of the academic year</li>
+          <li>have no living biological or adoptive parents</li>
+          <li>are estranged from your parents</li>
+        </ul>
+
+
+        <details class="nhsuk-details">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              What classes as a dependent child
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <p>A dependent child is a person aged:</p>
+            <ul>
+              <li>0 to 15 in a household (whether they are in a family or not)</li>
+              <li>16 to 18 in full-time education and living in a family with his or her parent(s) or grandparent(s)
+                and not undertaking an apprenticeship/receiving a full time wage</li>
+            </ul>
+            <p>It does not include any people aged 16 to 18 who have a spouse, partner or child living in the
+              household.</p>
+          </div>
+        </details>
+
+
+        <details class="nhsuk-details">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              What classes as being estranged from your parents
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <p>This only includes your biological or adoptive parents.</p>
+            <p>To apply as an estranged student, we expect that you've had no contact with either of your parents in
+              the 12 months before the first day of your course.</p>
+          </div>
+        </details>
 
         <div class="nhsuk-form-group">
           <fieldset class="nhsuk-fieldset">
-            <div id="contact-hint" class="nhsuk-hint">
-              If this partner's name has changed, select Yes, and you can tell us their new name later
-            </div>
 
             <div class="nhsuk-radios">
               <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="yes" name="livingWithSamePartner" type="radio" value="Yes" />
+                <input class="nhsuk-radios__input" id="yes" name="isNowIndependent" type="radio" value="Yes" />
                 <label class="nhsuk-label nhsuk-radios__label" for="yes">
                   Yes
                 </label>
               </div>
 
               <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="no" name="livingWithSamePartner" type="radio" value="No" />
+                <input class="nhsuk-radios__input" id="no" name="isNowIndependent" type="radio" value="No" />
                 <label class="nhsuk-label nhsuk-radios__label" for="no">
                   No
                 </label>
