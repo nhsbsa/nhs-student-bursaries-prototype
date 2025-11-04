@@ -37,7 +37,7 @@ router.post('/apply/living-with-same-partner-route', (req, res) => {
   if (
     livingWithSamePartner === 'Yes'
   ) {
-    res.redirect('/change-of-circumstances/V4/apply/partner-name');
+    res.redirect('/change-of-circumstances/V4/apply/partner-details-check');
   } else if (
     livingWithSamePartner === 'No'
   ) {
@@ -103,56 +103,38 @@ router.post('/apply/are-you-independent-route', (req, res) => {
 router.post('/apply/parents-living-together-route', (req, res) => {
 
   const parentsLivingTogether = req.session.data['parentsLivingTogether']
-  const wasAssessedOnParentOrPartner = req.session.data['wasAssessedOnParentOrPartner']
+  const wasAssessedOn = req.session.data['wasAssessedOn']
 
   if (
-    parentsLivingTogether === 'yesOneParent'
+    parentsLivingTogether === 'Yes'
   ) {
-    res.redirect('/change-of-circumstances/V4/apply/parent-name');
+    if (wasAssessedOn === 'twoParents') {
+      res.redirect('/change-of-circumstances/V4/apply/WIP which-parents-do-you-live-with');
+    } else if (wasAssessedOn === 'oneParent') {
+      res.redirect('/change-of-circumstances/V4/apply/living-with-same-parent');
+    }
+    else {
+      res.redirect('/change-of-circumstances/V4/apply/parent-1-name');
+    }
+
   } else if (
-    parentsLivingTogether === 'yesTwoParents'
+    parentsLivingTogether === 'No'
   ) {
-    res.redirect('/change-of-circumstances/V4/apply/parent-1-name');
-  } else if (
-    parentsLivingTogether === 'no' && wasAssessedOnParentOrPartner === 'true'
-  ) {
-    res.redirect('/change-of-circumstances/V4/apply/date');
-  } else if (
-    parentsLivingTogether === 'no'
-  ) {
-    res.redirect('/change-of-circumstances/V4/apply/coc-not-required');
+    if (wasAssessedOn === 'twoParents') {
+      res.redirect('/change-of-circumstances/V4/apply/WIP which-parent-do-you-live-with');
+    } else if (wasAssessedOn === 'oneParent') {
+      res.redirect('/change-of-circumstances/V4/apply/living-with-same-parent');
+    }
+    else {
+      res.redirect('/change-of-circumstances/V4/apply/explanation');
+    }
+
   } else {
     // If user selects no option, stay on this page
     res.redirect('/change-of-circumstances/V4/apply/living-with-parents');
   }
 
 })
-
-
-// router.post('/apply/who-do-you-live-with-route', (req, res) => {
-
-//   const livingWith = req.session.data['livingWith']
-
-//   // If user selects no option, stay on this page
-//   if (
-//     livingWith === 'parentOrParents'
-//   ) {
-//     res.redirect('/change-of-circumstances/V4/apply/parents-living-together');
-//   }
-//   else if (
-//     livingWith === 'partner'
-//   ) {
-//     res.redirect('/change-of-circumstances/V4/apply/partner-name');
-//   }
-//   else if (livingWith === 'neither'
-//   ) {
-//     res.redirect('/change-of-circumstances/V4/apply/coc-not-required');
-//   }
-//   else {
-//     res.redirect('/change-of-circumstances/V4/apply/who-do-you-live-with');
-//   }
-
-// })
 
 
 router.post('/apply/coc-not-required-route', (req, res) => {

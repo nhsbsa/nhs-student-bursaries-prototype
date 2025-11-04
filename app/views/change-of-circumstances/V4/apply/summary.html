@@ -26,17 +26,7 @@
     <div class="nhsuk-grid-column-two-thirds">
       <h1 class="nhsuk-app-heading">
         <span class="nhsuk-caption-l">Change of circumstances</span>
-
-        {% if data['livingWithPartner'] == 'Yes' %}
-        Check your partner's details
-        {% elif data['livingWithParents'] == 'yesOneParent' %}
-        Check your parent's details
-        {% elif data['livingWithParents'] == 'yesTwoParents' %}
-        Check your parents' details
-        {% else %}
-        Check your details
-        {% endif %}
-
+        Check your answers
       </h1>
 
       {% if data['CoCReturned'] == 'true' %}
@@ -73,10 +63,33 @@
 
         <!-- PARTNER -->
 
+        {% if data['wasAssessedOn'] == 'partner' %}
 
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
-            Living with a partner
+            Still living with, married to, or in a civil partnership with Harry Smith
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <p>
+              {{ data['livingWithSamePartner'] }}
+            </p>
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="living-with-same-partner">
+              Change<span class="nhsuk-u-visually-hidden">Living with same partner</span>
+            </a>
+          </dd>
+        </div>
+
+        {% endif %}
+
+
+        <!-- If this question was answered, show it -->
+        {% if data['livingWithPartner'] %}
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Have a partner who you are living with, married to, or in a civil partnership with
           </dt>
           <dd class="nhsuk-summary-list__value">
             <p>
@@ -90,8 +103,11 @@
           </dd>
         </div>
 
+        {% endif %}
 
-        {% if data['livingWithPartner'] == 'Yes' %}
+
+
+        {% if data['livingWithSamePartner'] == 'Yes' or data['livingWithPartner'] == 'Yes' %}
 
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
@@ -382,8 +398,8 @@
       </dl>
 
 
-      {% if data['livingWithPartner'] == 'Yes' or data['livingWithParents'] == 'yesOneParent' or
-      data['livingWithParents'] == 'yesTwoParents' %}
+      {% if data['livingWithSamePartner'] == 'Yes' or data['livingWithPartner'] == 'Yes' or data['livingWithParents'] ==
+      'yesOneParent' or data['livingWithParents'] == 'yesTwoParents' %}
 
       <div class="nhsuk-form-group">
         <a href="declaration" class="nhsuk-button" role="button" id="next">Continue</a>

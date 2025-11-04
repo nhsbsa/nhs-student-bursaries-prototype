@@ -36,7 +36,7 @@ endblock %}
 
       <h2 class="nhsuk-heading-m">What happens next</h1>
 
-        {% if data['livingWith'] == 'partner' %}
+        {% if data['livingWithSamePartner'] == 'Yes' or data['livingWithPartner'] == 'Yes' %}
         <p>We'll email your partner to let them know how they can provide their financial information to support your
           application.</p>
         {% elif data['livingWithParents'] == 'yesOneParent' %}
