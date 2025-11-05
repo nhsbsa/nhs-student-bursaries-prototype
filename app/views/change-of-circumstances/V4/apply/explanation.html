@@ -39,7 +39,12 @@
       </div>
 
       <span class="nhsuk-caption-l">Change of circumstances</span>
+
+      {% if data['reasonOptional'] == 'true' %}
+      <h1 class="nhsuk-heading-l">What is the reason for this change? (optional)</h1>
+      {% else %}
       <h1 class="nhsuk-heading-l">What is the reason for this change?</h1>
+      {% endif %}
 
       <div class="nhsuk-hint" id="change-hint">
         Do not include personal or financial information that is not relevant to your change.

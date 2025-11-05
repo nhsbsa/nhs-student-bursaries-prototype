@@ -80,12 +80,12 @@ router.post('/apply/are-you-independent-route', (req, res) => {
   if (
     isNowIndependent === 'Yes'
   ) {
-    res.redirect('/change-of-circumstances/V4/apply/parents-living-together');
+    res.redirect('/change-of-circumstances/V4/apply/are-you-independent-reason');
 
   } else if (
     isNowIndependent === 'No' && (wasAssessedOn === 'partner' || wasAssessedOn === 'oneParent' || wasAssessedOn === 'twoParents')
   ) {
-    res.redirect('/change-of-circumstances/V4/apply/are-you-independent-reason');
+    res.redirect('/change-of-circumstances/V4/apply/parents-living-together');
 
   } else if (
     isNowIndependent === 'No' && wasAssessedOn === 'nobody'
@@ -109,8 +109,9 @@ router.post('/apply/parents-living-together-route', (req, res) => {
     parentsLivingTogether === 'Yes'
   ) {
     if (wasAssessedOn === 'twoParents') {
-      res.redirect('/change-of-circumstances/V4/apply/WIP which-parents-do-you-live-with');
-    } else if (wasAssessedOn === 'oneParent') {
+      res.redirect('/change-of-circumstances/V4/apply/which-parents-do-you-live-with');
+    }
+    else if (wasAssessedOn === 'oneParent') {
       res.redirect('/change-of-circumstances/V4/apply/living-with-same-parent');
     }
     else {
@@ -122,7 +123,8 @@ router.post('/apply/parents-living-together-route', (req, res) => {
   ) {
     if (wasAssessedOn === 'twoParents') {
       res.redirect('/change-of-circumstances/V4/apply/WIP which-parent-do-you-live-with');
-    } else if (wasAssessedOn === 'oneParent') {
+    }
+    else if (wasAssessedOn === 'oneParent') {
       res.redirect('/change-of-circumstances/V4/apply/living-with-same-parent');
     }
     else {
@@ -131,7 +133,86 @@ router.post('/apply/parents-living-together-route', (req, res) => {
 
   } else {
     // If user selects no option, stay on this page
-    res.redirect('/change-of-circumstances/V4/apply/living-with-parents');
+    res.redirect('/change-of-circumstances/V4/apply/parents-living-together');
+  }
+
+})
+
+
+router.post('/apply/which-parents-do-you-live-with-route', (req, res) => {
+
+  const whichParentsStillLivingWith = req.session.data['whichParentsStillLivingWith']
+
+  if (
+    whichParentsStillLivingWith === 'both'
+  ) {
+    res.redirect('/change-of-circumstances/V4/apply/which-parents-income-changed');
+
+    // OTHER ELSEIFs TO GO HERE....
+
+  } else {
+    // If user selects no option, stay on this page
+    res.redirect('/change-of-circumstances/V4/apply/are-you-independent');
+  }
+
+})
+
+
+router.post('/apply/which-parents-income-changed-route', (req, res) => {
+
+  const whichParentsIncomeChanged = req.session.data['whichParentsIncomeChanged']
+
+  if (
+    whichParentsIncomeChanged === 'both'
+  ) {
+    res.redirect('/change-of-circumstances/V4/apply/parents-details-check');
+  }
+
+  else if (
+    whichParentsIncomeChanged === 'onlyParent1' || whichParentsIncomeChanged === 'onlyParent2'
+  ) {
+    res.redirect('/change-of-circumstances/V4/apply/parent-details-check');
+  }
+
+  else {
+    // If user selects no option, stay on this page
+    res.redirect('/change-of-circumstances/V4/apply/which-parents-income-changed');
+  }
+
+})
+
+
+router.post('/apply/parents-details-check-route', (req, res) => {
+
+  const whichParentsIncomeChanged = req.session.data['whichParentsIncomeChanged']
+
+  if (
+    whichParentsIncomeChanged === 'both' || whichParentsIncomeChanged === 'onlyParent1' || whichParentsIncomeChanged === 'onlyParent2'
+  ) {
+    res.redirect('/change-of-circumstances/V4/apply/explanation?reasonOptional=true');
+  }
+
+  else {
+    // Stay on this page
+    res.redirect('/change-of-circumstances/V4/apply/parents-details-check');
+  }
+
+})
+
+
+router.post('/apply/parent-details-check-route', (req, res) => {
+
+  const whichParentsIncomeChanged = req.session.data['whichParentsIncomeChanged']
+
+  if (
+    whichParentsIncomeChanged === 'onlyParent1' || whichParentsIncomeChanged === 'onlyParent2'
+  ) {
+    res.redirect('/change-of-circumstances/V4/apply/explanation?reasonOptional=true');
+  }
+
+  else {
+    // Stay on this page
+    res.redirect('/change-of-circumstances/V4/apply/parent-details-check');
   }
 
 })
