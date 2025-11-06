@@ -39,12 +39,13 @@ endblock %}
         {% if data['livingWithSamePartner'] == 'Yes' or data['livingWithPartner'] == 'Yes' %}
         <p>We'll email your partner to let them know how they can provide their financial information to support your
           application.</p>
-        {% elif data['livingWithParents'] == 'yesOneParent' %}
-        <p>We'll email your parent to let them know how they can provide their financial information to support your
-          application.</p>
-        {% elif data['livingWithParents'] == 'yesTwoParents' %}
+        {% elif data['whichParentsIncomeChanged'] == 'both' %}
         <p>We'll email your parents to let them know how they can provide their financial information to support your
           application.</p>
+        {% elif data['whichParentsIncomeChanged'] == 'onlyParent1' or data['whichParentsIncomeChanged'] ==
+        'onlyParent2' %}
+        <p>We'll email your parent (John Smith) to let them know how they can provide their financial information to
+          support your application.</p>
         {% else %}
         <p>We'll contact you if we need any more information.</p>
         {% endif %}

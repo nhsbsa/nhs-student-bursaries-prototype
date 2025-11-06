@@ -1,0 +1,228 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Check your answers {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<!-- Breadcrumb -->
+
+{% endblock %}
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-width-container">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <h1 class="nhsuk-app-heading">
+        <span class="nhsuk-caption-l">Change of circumstances</span>
+        Check your answers
+      </h1>
+
+      {% if data['CoCReturned'] == 'true' %}
+      <div class="nhsuk-warning-callout" style="margin-bottom: 24px;">
+        <h3 class="nhsuk-warning-callout__label">
+          <span role="text">
+            <span class="nhsuk-u-visually-hidden">Important: </span>
+            Processor feedback
+          </span>
+        </h3>
+        <p>Please upload your new evidence for your Rent which supports your change.</p>
+      </div>
+
+      <p style="margin-top: 0; margin-bottom: 36px;">Do not change your answers unless they're incorrect. You can add or
+        review your evidence by selecting <strong>Save and continue to evidence</strong>.
+      </p>
+      {% endif %}
+
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">Type of change</dt>
+          <dd class="nhsuk-summary-list__value">Change to my parents' or partner's income or expenses</dd>
+
+          <dd class="nhsuk-summary-list__actions">
+            {% if data['CoCReturned'] != 'true' %}
+            <a href="changes">
+              Change<span class="nhsuk-u-visually-hidden">
+                Change of circumstances</span>
+            </a>
+            {% endif %}
+          </dd>
+        </div>
+
+
+        <!-- PARTNER -->
+
+        {% if data['wasAssessedOn'] == 'partner' %}
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Still living with, married to, or in a civil partnership with Harry Watson
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <p>
+              {{ data['livingWithSamePartner'] }}
+            </p>
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="living-with-same-partner">
+              Change<span class="nhsuk-u-visually-hidden">Living with same partner</span>
+            </a>
+          </dd>
+        </div>
+
+        {% endif %}
+
+
+        <!-- If this question was answered, show it -->
+        {% if data['livingWithPartner'] %}
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Have a partner who you are living with, married to, or in a civil partnership with
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <p>
+              {{ data['livingWithPartner'] }}
+            </p>
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="living-with-partner">
+              Change<span class="nhsuk-u-visually-hidden">Living with a partner</span>
+            </a>
+          </dd>
+        </div>
+
+        {% endif %}
+
+
+
+        {% if data['livingWithSamePartner'] == 'Yes' or data['livingWithPartner'] == 'Yes' %}
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Partner's name
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <p>
+              {% if data['partnerFirstName'] %}
+              {{ data['partnerFirstName'] }}
+              {% elif data['livingWithPartner'] == 'Yes' %}
+              John
+              {% else %}
+              Harry
+              {% endif %}
+
+              {% if data['partnerLastName'] %}
+              {{ data['partnerLastName'] }}
+              {% elif data['livingWithPartner'] == 'Yes' %}
+              Brunton
+              {% else %}
+              Watson
+              {% endif %}
+            </p>
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="partner-name">
+              Change<span class="nhsuk-u-visually-hidden">name</span>
+            </a>
+          </dd>
+        </div>
+
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Partner's email
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <p>
+              {% if data['partnerEmail'] %}
+              {{ data['partnerEmail'] }}
+              {% elif data['livingWithPartner'] == 'Yes' %}
+              johnbrunton@gmail.com
+              {% else %}
+              harrywatson@gmail.com
+              {% endif %}
+            </p>
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="partner-email">
+              Change<span class="nhsuk-u-visually-hidden">email</span>
+            </a>
+          </dd>
+        </div>
+
+        {% endif %}
+
+      </dl>
+
+
+
+      {% if data['livingWithSamePartner'] == 'Yes' or data['livingWithPartner'] == 'Yes' or data['livingWithParents'] ==
+      'yesOneParent' or data['livingWithParents'] == 'yesTwoParents' %}
+
+      <div class="nhsuk-form-group">
+        <a href="declaration" class="nhsuk-button" role="button" id="next">Continue</a>
+      </div>
+
+      {% else %}
+      <!-- Else they are now living with nobody and need to provide evidence of the change -->
+      <a href="evidence-list" class="nhsuk-button" role="button" id="next">Save and continue to evidence</a>
+      {% endif %}
+
+
+      <p><a id="canceltoTasklist" href="tasklist-approved">Cancel</a></p>
+    </div>
+  </div>
+</div>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function () {
+    const months = {
+      "01": "January",
+      "02": "February",
+      "03": "March",
+      "04": "April",
+      "05": "May",
+      "06": "June",
+      "07": "July",
+      "08": "August",
+      "09": "September",
+      "1": "January",
+      "2": "February",
+      "3": "March",
+      "4": "April",
+      "5": "May",
+      "6": "June",
+      "7": "July",
+      "8": "August",
+      "9": "September",
+      "10": "October",
+      "11": "November",
+      "12": "December",
+    };
+
+    $(".cya-month").text(function () {
+      const month = $(this).text();
+      console.log("month:", month);
+      console.log("months[month]:", months[month]);
+      return months[month];
+    });
+  });
+</script>
+
+{% endblock %}

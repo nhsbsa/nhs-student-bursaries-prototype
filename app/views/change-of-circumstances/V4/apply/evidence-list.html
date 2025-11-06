@@ -18,9 +18,17 @@
   <div class="nhsuk-grid-column-two-thirds">
 
     <span class="nhsuk-caption-l">Change of circumstances</span>
+
+    {% if data['evidenceNeeded'] == 'optional' %}
+    <h1 class="nhsuk-heading-l">
+      Add evidence (optional)
+    </h1>
+    {% else %}
     <h1 class="nhsuk-heading-l">
       Add evidence
     </h1>
+    {% endif %}
+
 
     {% if data['CoCReturned'] == 'true' %}
     <div class="nhsuk-warning-callout" style="margin-bottom: 24px;">
@@ -34,15 +42,21 @@
     </div>
     {% endif %}
 
-    <p>You need to upload evidence that demonstrates you no longer live with a parent or partner. This could be:</p>
-    <ul>
-      <li>a rent agreement</li>
-      <li>a council tax bill</li>
-    </ul>
+
+    {% if data['evidenceNeeded'] == 'optional' %}
+    <p>You can upload evidence that supports your change of circumstances.</p>
+    {% else %}
+
+    <p>EVIDENCE NOT OPTIONAL - WIP CONTENT HERE</p>
+    {% endif %}
+
+
+    {% if data['evidence'] == "added" or data['evidenceNeeded'] == "optional" %}
+    <p>Once you're done, select <strong>Continue</strong>.</p>
+    {% endif %}
+
 
     {% if data['evidence'] == "added" %}
-    <p>Once you're done, select <strong>Continue</strong>.</p>
-
     <div class="nhsuk-card">
       <div class="nhsuk-card__content">
         <h2 class="nhsuk-heading-m">Uploaded files</h2>
@@ -64,8 +78,7 @@
           <tbody class="nhsuk-table__body">
             <tr role="row" class="nhsuk-table__row">
               <td class="nhsuk-table__cell">Rent agreement</td>
-              <td class="nhsuk-table__cell "><a href="#"
-                  rel="noopener">rent-agreement.png</a></td>
+              <td class="nhsuk-table__cell "><a href="#" rel="noopener">rent-agreement.png</a></td>
               <td class="nhsuk-table__cell "><a href="evidence-list?evidence=removed">Remove</a></td>
             </tr>
           </tbody>
@@ -76,7 +89,8 @@
     {% endif %}
 
 
-    {% if data['evidence'] != "added" %}
+    <!-- If evidence is needed, and not yet added, show only "Add evidence" button and make it primary -->
+    {% if data['evidence'] != "added" and data['evidenceNeeded'] != "optional" %}
     <a href="evidence" class="nhsuk-button" role="button">Add evidence</a>
 
     {% else %}

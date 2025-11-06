@@ -218,6 +218,45 @@ router.post('/apply/parent-details-check-route', (req, res) => {
 })
 
 
+router.post('/apply/explanation-route', (req, res) => {
+
+  const whichParentsIncomeChanged = req.session.data['whichParentsIncomeChanged']
+
+  if (
+    whichParentsIncomeChanged === 'onlyParent1' || whichParentsIncomeChanged === 'onlyParent2' || whichParentsIncomeChanged === 'both'
+  ) {
+    res.redirect('/change-of-circumstances/V4/apply/cya-parents');
+  }
+
+  else {
+    // Stay on this page
+    res.redirect('/change-of-circumstances/V4/apply/explanation');
+  }
+
+})
+
+
+router.post('/apply/cya-parents-route', (req, res) => {
+
+  const whichParentsIncomeChanged = req.session.data['whichParentsIncomeChanged']
+
+  if (
+    whichParentsIncomeChanged === 'both'
+  ) {
+    res.redirect('/change-of-circumstances/V4/apply/evidence-list?evidenceNeeded=optional');
+  }
+
+  else {
+    // Stay on this page
+    res.redirect('/change-of-circumstances/V4/apply/cya-parents');
+  }
+
+})
+
+
+
+
+
 router.post('/apply/coc-not-required-route', (req, res) => {
 
   const cocNotRequiredChoice = req.session.data['cocNotRequiredChoice']
@@ -253,7 +292,7 @@ router.post('/apply/partner-name-route', (req, res) => {
 
 router.post('/apply/partner-email-route', (req, res) => {
 
-  res.redirect('/change-of-circumstances/V4/apply/summary')
+  res.redirect('/change-of-circumstances/V4/apply/cya-partner')
 
 })
 
@@ -267,7 +306,7 @@ router.post('/apply/parent-name-route', (req, res) => {
 
 router.post('/apply/parent-email-route', (req, res) => {
 
-  res.redirect('/change-of-circumstances/V4/apply/summary')
+  res.redirect('/change-of-circumstances/V4/apply/cya-parents')
 
 })
 
@@ -295,7 +334,7 @@ router.post('/apply/parent-2-name-route', (req, res) => {
 
 router.post('/apply/parent-2-email-route', (req, res) => {
 
-  res.redirect('/change-of-circumstances/V4/apply/summary')
+  res.redirect('/change-of-circumstances/V4/apply/cya-parents')
 
 })
 
