@@ -38,32 +38,44 @@
       </div>
 
       <span class="nhsuk-caption-l">Change of circumstances</span>
-      <h1 class="nhsuk-heading-l">Do your parents or adoptive parents live together?</h1>
+      <h1 class="nhsuk-heading-l">Which of your parents do you currently live with?</h1>
 
-      <form action="/change-of-circumstances/V4/apply/parents-living-together-route" method="POST">
+      <form action="/change-of-circumstances/V4/apply/which-parent-do-you-live-with-route" method="POST">
 
         <div class="nhsuk-form-group">
           <fieldset class="nhsuk-fieldset">
-            <p>
-              Select No if they do not live together because they are divorced, legally separated, unmarried or
-              widowed. You will only need to ask the parent you usually live with to provide their income details.
-            </p>
-            <p>Legal guardians or step parents should not be declared unless you have been legally adopted by them.</p>
+            <div id="contact-hint" class="nhsuk-hint">
+              If your parent's name has changed, select that you still live with them, and you can tell us their new
+              name later
+            </div>
 
             <div class="nhsuk-radios">
+
               <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="yes" name="parentsLivingTogether" type="radio" value="Yes" />
-                <label class="nhsuk-label nhsuk-radios__label" for="Yes">
-                  Yes
+                <input class="nhsuk-radios__input" id="onlyParent1" name="whichParentStillLivingWith" type="radio"
+                  value="onlyParent1" />
+                <label class="nhsuk-label nhsuk-radios__label" for="onlyParent1">
+                  John Smith only
                 </label>
               </div>
 
               <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="no" name="parentsLivingTogether" type="radio" value="No" />
-                <label class="nhsuk-label nhsuk-radios__label" for="No">
-                  No
+                <input class="nhsuk-radios__input" id="onlyParent2" name="whichParentStillLivingWith" type="radio"
+                  value="onlyParent2" />
+                <label class="nhsuk-label nhsuk-radios__label" for="onlyParent2">
+                  Sarah Smith only
                 </label>
               </div>
+
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="neither" name="whichParentStillLivingWith" type="radio"
+                  value="neither" />
+                <label class="nhsuk-label nhsuk-radios__label" for="neither">
+                  Neither John Smith or Sarah Smith
+                </label>
+              </div>
+
+
 
             </div>
           </fieldset>

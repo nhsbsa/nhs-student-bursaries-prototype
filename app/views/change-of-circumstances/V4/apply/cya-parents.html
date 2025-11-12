@@ -237,7 +237,7 @@
                 {% if data['parent1FirstName'] %}
                 {{ data['parent1FirstName'] }}
                 {% else %}
-                Jane
+                John
                 {% endif %}
 
                 {% if data['parent1LastName'] %}
@@ -263,7 +263,7 @@
                 {% if data['parent1Email'] %}
                 {{ data['parent1Email'] }}
                 {% else %}
-                janesmith@gmail.com
+                johnsmith@gmail.com
                 {% endif %}
               </p>
             </dd>
@@ -283,7 +283,7 @@
                 {% if data['parent2FirstName'] %}
                 {{ data['parent2FirstName'] }}
                 {% else %}
-                John
+                Jane
                 {% endif %}
 
                 {% if data['parent2LastName'] %}
@@ -309,7 +309,7 @@
                 {% if data['parent2Email'] %}
                 {{ data['parent2Email'] }}
                 {% else %}
-                johnsmith@gmail.com
+                janesmith@gmail.com
                 {% endif %}
               </p>
             </dd>
@@ -346,6 +346,28 @@
 
 
           <!-- ONE PARENT -->
+
+          {% if data['livingWithSameParent'] %}
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Is John Smith still the parent you usually live with?
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              <p>
+                {{ data['livingWithSameParent'] }}
+              </p>
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="living-with-same-parent">
+                Change
+              </a>
+            </dd>
+          </div>
+            
+          {% endif %}
+
+
 
           {% if data['livingWithParents'] == 'yesOneParent' %}
 

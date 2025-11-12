@@ -158,6 +158,45 @@ router.post('/apply/which-parents-do-you-live-with-route', (req, res) => {
 })
 
 
+router.post('/apply/which-parent-do-you-live-with-route', (req, res) => {
+
+  const whichParentStillLivingWith = req.session.data['whichParentStillLivingWith']
+
+  if (
+    whichParentStillLivingWith === 'both'
+  ) {
+    res.redirect('/change-of-circumstances/V4/apply/which-parents-income-changed');
+
+    // OTHER ELSEIFs TO GO HERE....
+
+  } else {
+    // If user selects no option, stay on this page
+    res.redirect('/change-of-circumstances/V4/apply/which-parent-do-you-live-with');
+  }
+
+})
+
+
+router.post('/apply/living-with-same-parent-route', (req, res) => {
+
+  const livingWithSameParent = req.session.data['livingWithSameParent']
+
+  if (
+    livingWithSameParent === 'Yes'
+  ) {
+    res.redirect('/change-of-circumstances/V4/apply/parent-details-check');
+  } else if (
+    livingWithSameParent === 'No'
+  ) {
+    res.redirect('/change-of-circumstances/V4/apply/date-parent-changed');
+  } else {
+    // If user selects no option, stay on this page
+    res.redirect('/change-of-circumstances/V4/apply/living-with-same-parent');
+  }
+
+})
+
+
 router.post('/apply/which-parents-income-changed-route', (req, res) => {
 
   const whichParentsIncomeChanged = req.session.data['whichParentsIncomeChanged']
@@ -203,11 +242,17 @@ router.post('/apply/parents-details-check-route', (req, res) => {
 router.post('/apply/parent-details-check-route', (req, res) => {
 
   const whichParentsIncomeChanged = req.session.data['whichParentsIncomeChanged']
+  const livingwithSameParent = req.session.data['livingWithSameParent']
 
   if (
     whichParentsIncomeChanged === 'onlyParent1' || whichParentsIncomeChanged === 'onlyParent2'
   ) {
     res.redirect('/change-of-circumstances/V4/apply/explanation?reasonOptional=true');
+  }
+  else if (
+    livingwithSameParent === 'Yes'
+  ) {
+    res.redirect('/change-of-circumstances/V4/apply/comment');
   }
 
   else {
@@ -335,6 +380,23 @@ router.post('/apply/parent-2-name-route', (req, res) => {
 router.post('/apply/parent-2-email-route', (req, res) => {
 
   res.redirect('/change-of-circumstances/V4/apply/cya-parents')
+
+})
+
+
+router.post('/apply/comment-route', (req, res) => {
+
+  const parentsLivingTogether = req.session.data['parentsLivingTogether']
+
+  if (
+    parentsLivingTogether === 'Yes' || parentsLivingTogether === 'No'
+  ) {
+    res.redirect('/change-of-circumstances/V4/apply/cya-parents');
+  }
+
+  else {
+    res.redirect('/change-of-circumstances/V4/apply/cya-partner');
+  }
 
 })
 
