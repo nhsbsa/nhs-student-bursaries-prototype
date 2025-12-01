@@ -1,0 +1,251 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Student dashboard {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block header %} {{ header({ "service": { "name": "Bursary", "href": "/" },
+"showNav": "true", "showSearch": "false", "primaryLinks": [ { "url" :
+"dashboard", "label" : "Home" }, { "url" : "personal-details", "label" :
+"Personal details" }, { "url" : "#", "label" :
+"Payment details" }, { "url" : "#", "label" : "Sign out" } ] }) }} {% endblock
+%}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<!-- Breadcrumb -->
+
+{% endblock %}
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-width-container">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <h1 class="app-page-heading">Your NHS Bursary application</h1>
+
+      <div class="nhsuk-u-padding-bottom-4">
+        <h2 class="nhsuk-heading-m">Academic year starting September 2024</h2>
+        <!-- <p>You've submitted your NHS Bursary application. We're currently processing your application.</p> -->
+        <!-- <p>You are applying for a means tested bursary studying Bachelor of Medicine and Surgery (course year 5) at
+          Lancaster University.</p> -->
+      </div>
+
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <h3 class="nhsuk-card__heading">
+            We've approved your NHS Bursary
+          </h3>
+          <p class="nhsuk-card__description">You can check your expected payment dates in the Payment details section of
+            your account.</p>
+        </div>
+      </div>
+
+      <div class="nhsuk-action-link">
+
+        {% if data['CoCReturned'] == 'true' %}
+        <a class="nhsuk-action-link__link" href="change-already-submitted-multiple">
+          {% else %}
+          <a class="nhsuk-action-link__link" href="intro">
+          {% endif %}
+
+            <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+              <path d="M0 0h24v24H0z" fill="none"></path>
+              <path
+                d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z">
+              </path>
+            </svg>
+            <span class="nhsuk-action-link__text">Submit a change of circumstances</span>
+          </a>
+      </div>
+
+
+      <ol class="app-task-list">
+
+        <li>
+          <span class="
+              featured-list--item__number featured-list--item__number--mobile
+              nhsuk-heading-l
+            ">1</span>
+          <h3 class="featured-list--item__heading nhsuk-heading-m">
+            <span class="
+                featured-list--item__number
+                nhsuk-heading-l nhsuk-u-margin-bottom-1
+              ">1</span>
+            Course details
+          </h3>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="course-details-view-answers?submitted=true">
+                  Course details
+                </a>
+              </span>
+              <strong class="nhsuk-tag app-task-list__tag">Eligible course</strong>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <span class="
+              featured-list--item__number featured-list--item__number--mobile
+              nhsuk-heading-l
+            ">2</span>
+          <h3 class="featured-list--item__heading nhsuk-heading-m">
+            <span class="
+                featured-list--item__number
+                nhsuk-heading-l nhsuk-u-margin-bottom-1
+              ">2</span>
+            Check your eligibility
+          </h3>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="view-declaration">
+                  View declaration
+                </a>
+              </span>
+              <strong class="nhsuk-tag app-task-list__tag">Complete</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="eligibility-view-answers?submitted=true">Eligibility</a></span>
+              <strong class="nhsuk-tag app-task-list__tag">Eligible</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="status-assessment-view-answers?submitted=true">Status assessment</a></span>
+              <strong class="nhsuk-tag app-task-list__tag">Dependent of parents</strong>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <span class="
+              featured-list--item__number featured-list--item__number--mobile
+              nhsuk-heading-l
+            ">3</span>
+          <h3 class="featured-list--item__heading nhsuk-heading-m">
+            <span class="
+                featured-list--item__number
+                nhsuk-heading-l nhsuk-u-margin-bottom-1
+              ">3</span>
+            Your income assessment
+          </h3>
+
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="student-income-details-view-answers?submitted=true">Student income details</a></span>
+              <strong class="nhsuk-tag app-task-list__tag">Assessed</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="student-expense-details-view-answers?submitted=true">Student expense details</a></span>
+              <strong class="nhsuk-tag app-task-list__tag">Assessed</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="parent-details-view-answers?submitted=true">Parent or partner details</a></span>
+              <strong class="nhsuk-tag app-task-list__tag">Complete</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="students-children-details-view-answers?submitted=true">Student's children details</a></span>
+              <strong class="nhsuk-tag app-task-list__tag">Assessed</strong>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <span class="
+              featured-list--item__number featured-list--item__number--mobile
+              nhsuk-heading-l
+            ">4</span>
+          <h3 class="featured-list--item__heading nhsuk-heading-m">
+            <span class="
+                featured-list--item__number
+                nhsuk-heading-l nhsuk-u-margin-bottom-1
+              ">4</span>
+            George Hutchinson details
+          </h3>
+        </li>
+
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name"> Consent </span>
+            <strong class="nhsuk-tag app-task-list__tag">Complete</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              Other dependent children details
+            </span>
+            <strong class="nhsuk-tag app-task-list__tag">Assessed</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              Income details
+            </span>
+            <strong class="nhsuk-tag app-task-list__tag">Assessed</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              Expense details
+              </a>
+            </span>
+            <strong class="nhsuk-tag app-task-list__tag">Assessed</strong>
+          </li>
+        </ul>
+
+        <li>
+          <span class="
+              featured-list--item__number featured-list--item__number--mobile
+              nhsuk-heading-l
+            ">5</span>
+          <h3 class="featured-list--item__heading nhsuk-heading-m">
+            <span class="
+                featured-list--item__number
+                nhsuk-heading-l nhsuk-u-margin-bottom-1
+              ">5</span>
+            Joe Hutchinson details
+          </h3>
+        </li>
+
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name"> Consent </span>
+            <strong class="nhsuk-tag app-task-list__tag">Complete</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              Income details
+            </span>
+            <strong class="nhsuk-tag app-task-list__tag">Assessed</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              Expense details
+              </a>
+            </span>
+            <strong class="nhsuk-tag app-task-list__tag">Assessed</strong>
+          </li>
+        </ul>
+
+      </ol>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
