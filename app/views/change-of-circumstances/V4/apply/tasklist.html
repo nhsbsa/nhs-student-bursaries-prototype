@@ -9,15 +9,9 @@
 -->
 
 <!-- Set the page title inside the pageTitle block -->
-{% block pageTitle %} Student dashboard {% endblock %}
+{% block pageTitle %} Change of circumstances {% endblock %}
 
 <!-- Breadcrumb goes inside the beforeContent block -->
-{% block header %} {{ header({ "service": { "name": "Bursary", "href": "/" },
-"showNav": "true", "showSearch": "false", "primaryLinks": [ { "url" :
-"dashboard", "label" : "Home" }, { "url" : "personal-details", "label" :
-"Personal details" }, { "url" : "#", "label" :
-"Payment details" }, { "url" : "#", "label" : "Sign out" } ] }) }} {% endblock
-%}
 
 <!-- Breadcrumb goes inside the beforeContent block -->
 <!-- More info and code for the breadcrumb can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
@@ -39,6 +33,12 @@
       </h1>
 
       <p>Check your application answers are still correct before submitting this change of circumstances.</p>
+
+      {% if data['allSectionsComplete'] == 'true' %}
+      <a href="declaration" class="nhsuk-button" role="button" id="next">Submit change of circumstances</a>
+      {% endif %}
+
+
 
       <div class="nhsuk-u-padding-bottom-4">
         <!-- <h2 class="nhsuk-heading-m">Academic year starting September 2024</h2> -->
@@ -128,11 +128,17 @@
                 <a href="student-expense-details-view-answers?submitted=true">Student expense details</a></span>
               <strong class="nhsuk-tag app-task-list__tag nhsuk-tag--green">Complete</strong>
             </li>
+
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="parent-details-view-answers?submitted=true">Parent or partner details</a></span>
+                <a href="tasklist?allSectionsComplete=true">Parent or partner details</a></span>
+              {% if data['allSectionsComplete'] == 'true' %}
+              <strong class="nhsuk-tag app-task-list__tag nhsuk-tag--green">Complete</strong>
+              {% else %}
               <strong class="nhsuk-tag app-task-list__tag nhsuk-tag--grey">Requires checking</strong>
+              {% endif %}
             </li>
+
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
                 <a href="students-children-details-view-answers?submitted=true">Student's children details</a></span>
