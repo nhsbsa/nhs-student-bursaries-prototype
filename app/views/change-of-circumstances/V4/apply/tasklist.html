@@ -29,11 +29,30 @@
 
       <h1 class="app-page-heading">
         <span class="nhsuk-caption-l">Change of circumstances</span>
-        Your September 2024 Bursary application
+        Review your September 2024 Bursary application
       </h1>
+
+
+      {% if data['CoCReturned'] == 'true' %}
+      <div class="nhsuk-warning-callout" style="margin-bottom: 24px;">
+        <h3 class="nhsuk-warning-callout__label">
+          <span role="text">
+            <span class="nhsuk-u-visually-hidden">Important: </span>
+            Processor feedback
+          </span>
+        </h3>
+        <p>Please upload your new evidence for your Rent which supports your change.</p>
+      </div>
+
+      <p style="margin-top: 0; margin-bottom: 36px;">Do not change your answers unless they're incorrect. You can add or
+        review your evidence by selecting <strong>Save and continue to evidence</strong>.
+      </p>
+      {% endif %}
+
 
       <p>Check your application answers are still correct before submitting this change of circumstances.</p>
 
+      
       {% if data['allSectionsComplete'] == 'true' %}
       <a href="declaration" class="nhsuk-button" role="button" id="next">Submit change of circumstances</a>
       {% endif %}
@@ -98,7 +117,7 @@
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="#">Status assessment</a></span>
+                <a href="status-assessment-cya">Status assessment</a></span>
               <strong class="nhsuk-tag app-task-list__tag nhsuk-tag--green">Complete</strong>
             </li>
           </ul>
@@ -129,15 +148,32 @@
               <strong class="nhsuk-tag app-task-list__tag nhsuk-tag--green">Complete</strong>
             </li>
 
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                <a href="tasklist?allSectionsComplete=true">Parent or partner details</a></span>
-              {% if data['allSectionsComplete'] == 'true' %}
-              <strong class="nhsuk-tag app-task-list__tag nhsuk-tag--green">Complete</strong>
-              {% else %}
-              <strong class="nhsuk-tag app-task-list__tag nhsuk-tag--grey">Requires checking</strong>
-              {% endif %}
-            </li>
+
+            <form action="/change-of-circumstances/V4/apply/tasklist-parent-or-partner-details-route" method="POST">
+
+              <li class="app-task-list__item">
+                <!-- Make button that looks like a link to submit the form - to take user to either parent OR partner journey -->
+                <button class="app-task-list__task-name" style="
+                  font-size: 19px;
+                  background: none!important;
+                  border: none;
+                  padding: 0!important;
+                  color: rgb(0, 94, 184);
+                  text-decoration: underline;
+                  cursor: pointer;" type="submit">
+                  Parent or partner details</button>
+
+                <!-- <span class="app-task-list__task-name">
+                  <a href="tasklist?allSectionsComplete=true">Parent or partner details</a></span> -->
+                {% if data['allSectionsComplete'] == 'true' %}
+                <strong class="nhsuk-tag app-task-list__tag nhsuk-tag--green">Complete</strong>
+                {% else %}
+                <strong class="nhsuk-tag app-task-list__tag nhsuk-tag--grey">Requires checking</strong>
+                {% endif %}
+              </li>
+
+            </form>
+
 
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
