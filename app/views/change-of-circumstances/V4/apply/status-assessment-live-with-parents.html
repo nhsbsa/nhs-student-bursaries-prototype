@@ -2,14 +2,14 @@
 
 <!-- Extends the layout from /views/layout.html -->
 {% extends 'layout.html' %}
-<!-- 
+<!--
   In /views/layout.html you can:
-    - change the header and footer 
+    - change the header and footer
     - add custom CSS and JavaScript
 -->
 
 <!-- Set the page title inside the pageTitle block -->
-{% block pageTitle %} Change of circumstances {% endblock %}
+{% block pageTitle %} Change of circumstances {%endblock %}
 
 <!-- Breadcrumb goes inside the beforeContent block -->
 
@@ -37,20 +37,42 @@
           Go back</a>
       </div>
 
-      <h1 class="nhsuk-app-heading">
-        <span class="nhsuk-caption-l">Change of circumstances</span>
-        Review your previous application answers
-      </h1>
+      <span class="nhsuk-caption-l">Change of circumstances</span>
+      <h1 class="nhsuk-heading-l">Do you live in your parents house?</h1>
 
-      <p>
-        You will need to review your application answers, and then submit them again as part of this change of
-        circumstances.
-      </p>
+      <form action="/change-of-circumstances/V4/apply/status-assessment-live-with-parents-route" method="POST">
 
-      <div class="nhsuk-form-group">
-        <a href="status-assessment-cya" class="nhsuk-button" role="button" id="next">Continue</a>
-        <p><a id="canceltoTasklist" href="original-tasklist">Cancel</a></p>
-      </div>
+        <div class="nhsuk-form-group">
+          <fieldset class="nhsuk-fieldset">
+            <p>
+              We need to know if you live at your parent's home as this affects how much funding you can receive.
+            </p>
+            
+            <div class="nhsuk-radios">
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="Yes" name="liveWithParents" type="radio" value="Yes" />
+                <label class="nhsuk-label nhsuk-radios__label" for="Yes">
+                  Yes
+                </label>
+              </div>
+
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="No" name="liveWithParents" type="radio" value="No" />
+                <label class="nhsuk-label nhsuk-radios__label" for="No">
+                  No
+                </label>
+              </div>
+            </div>
+
+          </fieldset>
+        </div>
+
+        <button class="nhsuk-button" type="submit">Continue</button>
+
+        <p><a id="canceltoTasklist" href="tasklist-approved">Cancel</a></p>
+      </form>
+
+
     </div>
   </div>
 </div>

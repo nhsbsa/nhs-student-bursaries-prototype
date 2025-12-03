@@ -26,6 +26,32 @@ router.post('/apply/changes-route', (req, res) => {
 })
 
 
+router.post('/apply/status-assessment-relationship-route', (req, res) => {
+
+  const relationshipStatus = req.session.data['relationshipStatus']
+
+    if (
+    relationshipStatus === 'Married or in a civil partnership' ||
+    relationshipStatus === 'Separated' ||
+    relationshipStatus === 'Divorced' ||
+    relationshipStatus === 'Widowed'
+  ) {
+    res.redirect('/change-of-circumstances/V4/apply/status-assessment-live-with-parents');
+    // Else, None of the above was selected.....
+  } else {
+    res.redirect('/change-of-circumstances/V4/apply/status-assessment-both-parents-died');
+  }
+
+})
+
+
+router.post('/apply/status-assessment-live-with-parents-route', (req, res) => {
+
+    res.redirect('/change-of-circumstances/V4/apply/status-assessment-cya');
+    
+})
+
+
 
 
 module.exports = router;

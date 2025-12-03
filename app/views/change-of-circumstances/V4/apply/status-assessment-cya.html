@@ -1,0 +1,174 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} What date is this change of cicumstance effective from? {%
+endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<!-- Breadcrumb -->
+
+{% endblock %}
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-width-container">
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-full">
+      <span class="nhsuk-caption-l">Change of circumstances</span>
+      <h1 class="nhsuk-app-heading" id="checkYouranswers">Check your
+        status assessment answers</h1>
+
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+
+          {% if data['liveWithParents'] %}
+          <h2 class="nhsuk-heading-m">Based on your answers you will be classed as an independent student.</h2>
+          <p>Your means-tested bursary entitlement will be assessed on the income of you and your partner (if you have
+            one).</p>
+
+          {% else %}
+          <h2 class="nhsuk-heading-m">Based on the answers you have provided your NHS Bursary award will be assessed
+            using your parents income.</h2>
+          <p>You will be therefore classed as a dependent student.</p>
+          <p>Your means-tested bursary entitlement will be assessed on the income of your parents.</p>
+          {% endif %}
+
+        </div>
+      </div>
+    </div>
+
+
+    <form id="statusAssessmentForm" name="statusAssessmentForm" action="evidence-list" method="post">
+      <input type="hidden" name="_csrf" value="15b3ee3f-914b-4e16-88ec-78138df8135d">
+      <div class="nhsuk-grid-column-full">
+        <dl class="nhsuk-summary-list">
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Do you want to apply for an income-assessed bursary?</dt>
+            <dd class="nhsuk-summary-list__value" id="meansTested">Yes</dd>
+            <dd class="nhsuk-summary-list__actions">
+              <!-- <a href="#"><span>Change</span> </a> -->
+            </dd>
+          </div>
+
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Have Student Finance England confirmed you're an independent student?
+            </dt>
+            <dd class="nhsuk-summary-list__value" id="sfeIndependent">No</dd>
+            <dd class="nhsuk-summary-list__actions">
+              <!-- <a href="#"><span>Change</span> </a> -->
+            </dd>
+          </div>
+
+
+
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Do you have any dependent children?</dt>
+            <dd class="nhsuk-summary-list__value" id="careOfChild">No</dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="#"><span>Change</span> </a>
+            </dd>
+          </div>
+
+
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">What is your relationship status?</dt>
+            <dd class="nhsuk-summary-list__value" id="relationshipStatus2">{{ data['relationshipStatus'] }}</dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="status-assessment-relationship"><span>Change</span> </a>
+            </dd>
+          </div>
+
+
+
+          {% if data['liveWithParents'] %}
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Do you live in your parents house?</dt>
+            <dd class="nhsuk-summary-list__value" id="liveWithParents">{{ data['liveWithParents'] }}</dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="status-assessment-live-with-parents"><span>Change</span> </a>
+            </dd>
+          </div>
+
+          {% else %}
+
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Have both of your parent's died?</dt>
+            <dd class="nhsuk-summary-list__value" id="parentsDeceased">No</dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="#"><span>Change</span> </a>
+            </dd>
+          </div>
+
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Are you estranged from your parents?</dt>
+            <dd class="nhsuk-summary-list__value" id="estranged">No</dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="#"><span>Change</span> </a>
+            </dd>
+          </div>
+
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Have you supported yourself for a total of 36 months before your course
+              starts?</dt>
+            <dd class="nhsuk-summary-list__value" id="selfSupported">No</dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="#"><span>Change</span> </a>
+            </dd>
+          </div>
+
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Do you live in your parents house?</dt>
+            <dd class="nhsuk-summary-list__value" id="parentalHome">No</dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="#"><span>Change</span> </a>
+            </dd>
+          </div>
+
+          {% endif %}
+
+
+        </dl>
+      </div>
+
+      <div class="nhsuk-grid-column-full">
+        <h2 class="nhsuk-heading-m" id="confirmYourDetails">Confirm your details</h2>
+
+        <p>By clicking continue you're confirming that the details you're providing are correct.</p>
+        <div class="nhsuk-form-group">
+          <button class="nhsuk-button" type="submit" name="next" id="nextButton" role="button"
+            data-module="nhsuk-button" data-prevent-double-click="true">Save and continue</button>
+        </div>
+
+        <p>
+          <a href="#"
+            id="cancel-link">Cancel and return to dashboard</a>
+        </p>
+      </div>
+    </form>
+
+
+
+  </div>
+</div>
+
+{% endblock %}
