@@ -33,6 +33,29 @@
 
         <dl class="nhsuk-summary-list">
 
+          {% if data['livingWithPartner'] %}
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Do you live with a partner?
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              <p>
+                {{ data['livingWithPartner'] }}
+              </p>
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="partner-live-with-partner">
+                Change<span class="nhsuk-u-visually-hidden">living with partner</span>
+              </a>
+            </dd>
+          </div>
+          {% endif %}
+
+
+
+          {% if data['relationshipStatus'] == 'Married or in a civil partnership' or data['livingWithPartner'] != 'No'
+          %}
+
           <div class="nhsuk-summary-list__row">
             <dt class="nhsuk-summary-list__key">
               Partner's name
@@ -85,6 +108,8 @@
               </a>
             </dd>
           </div>
+
+          {% endif %}
 
         </dl>
 

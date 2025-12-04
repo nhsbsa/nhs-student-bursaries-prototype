@@ -83,15 +83,34 @@ router.post('/apply/partner-email-route', (req, res) => {
 })
 
 
+router.post('/apply/partner-live-with-partner-route', (req, res) => {
+
+  const livingWithPartner = req.session.data['livingWithPartner']
+
+  if (
+    livingWithPartner === 'Yes'
+  ) {
+    res.redirect('/change-of-circumstances/V4/apply/partner-name');
+  }
+  else {
+    {
+      res.redirect('/change-of-circumstances/V4/apply/partner-cya');
+    }
+  }
+
+})
+
+
 router.post('/apply/partner-cya-route', (req, res) => {
 
+  const wasLivingWithPartner = req.session.data['wasLivingWithPartner']
   const livingWithPartner = req.session.data['livingWithPartner']
 
   // If not living with partner, ask for evidence of not living together
   if (
     livingWithPartner === 'No'
   ) {
-    res.redirect('/change-of-circumstances/V4/apply/partner-evidence-of-not-living-with');
+    res.redirect('/change-of-circumstances/V4/apply/partner-evidence-list');
   }
   // Else, go to tasklist
   else {

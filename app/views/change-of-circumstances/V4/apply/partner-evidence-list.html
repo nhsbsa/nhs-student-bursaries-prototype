@@ -1,0 +1,130 @@
+{% extends 'layout.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Change of circumstances evidence {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-three-quarters">
+
+    <span class="nhsuk-caption-l">Change of circumstances</span>
+
+
+    <!-- {% if data['evidenceNeeded'] == 'optional' %}
+    <h1 class="nhsuk-heading-xl">
+      Upload your evidence (optional)
+    </h1>
+    {% else %} -->
+    <h1 class="nhsuk-heading-l">
+      Upload evidence of no longer living with a partner
+    </h1>
+    <!-- {% endif %} -->
+
+
+    <!-- {% if data['CoCReturned'] == 'true' %}
+    <div class="nhsuk-warning-callout" style="margin-bottom: 24px;">
+      <h3 class="nhsuk-warning-callout__label">
+        <span role="text">
+          <span class="nhsuk-u-visually-hidden">Important: </span>
+          Processor feedback
+        </span>
+      </h3>
+      <p>Please upload new evidence that proves you no longer live with your partner.</p>
+    </div>
+    {% endif %} -->
+
+
+    <p>This should be:</p>
+
+    <ul>
+      <li id="documentType[0]">a rent agreement</li>
+      <li id="documentType[1]">a bank statement</li>
+    </ul>
+
+
+    <div class="nhsuk-card mb-30">
+      <div class="nhsuk-card__content p10">
+        <h2 class="nhsuk-heading-m">Uploaded files</h2>
+
+        <table class="nhsuk-table">
+          <caption class="nhsuk-u-visually-hidden">Uploaded
+            documents table</caption>
+
+          <thead role="rowgroup" class="nhsuk-table__head">
+            <tr role="row">
+              <th role="columnheader" scope="col">Type</th>
+              <th role="columnheader" scope="col">Status</th>
+              <th role="columnheader" scope="col">What you can do</th>
+            </tr>
+          </thead>
+
+          <tbody class="nhsuk-table__body">
+
+            {% if data['partner-evidence'] == "added" %}
+            <tr scope="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Rent agreement</td>
+              <td class="nhsuk-table__cell">
+                <span>Uploaded</span>
+              </td>
+              <td class="nhsuk-table__cell"><a
+                  href="/student/status/view/document?documentUuid=6bed7d9d-a9e9-4598-b66c-a630b094b092"
+                  id="documentView[0]" target="_blank" rel="noopener">View</a> <span>
+                  <a id="documentRemove[0]"
+                    href="/student/status/delete/document?documentUuid=6bed7d9d-a9e9-4598-b66c-a630b094b092">Remove</a>
+                </span></td>
+            </tr>
+            {% endif %}
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
+    {% if data['partner-evidence'] == "added" %}
+    <p>
+      You can upload more evidence if you need to. Or, you can select <span
+        class="nhsuk-u-font-weight-bold">Continue</span> if you have uploaded everything.
+    </p>
+    {% endif %}
+
+
+    <div class="nhsuk-form-group">
+      <a class="nhsuk-button nhsuk-button--secondary" href="partner-evidence-upload" role="button">Add file</a>
+    </div>
+
+
+    <!-- {% if data['evidenceNeeded'] == 'optional' %}
+    <p>You can upload evidence that supports your change of circumstances.</p>
+    {% endif %} -->
+
+
+    <!-- {% if data['evidence'] == "added" or data['evidenceNeeded'] == "optional" %}
+    <p>Once you're done, select <strong>Continue</strong>.</p>
+    {% endif %} -->
+
+
+
+    <!-- If evidence is added, show "Add evidence" button -->
+    {% if data['partner-evidence'] == "added" %}
+    <p>By clicking continue you're confirming that you have uploaded all evidence required for this section of your
+      application.</p>
+    <a href="tasklist?allSectionsComplete=true" class="nhsuk-button" role="button">Continue</a>
+    {% endif %}
+
+
+    <p><a href="">Save and come back later</a></p>
+
+  </div>
+</div>
+{% endblock %}

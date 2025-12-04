@@ -1,0 +1,93 @@
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Upload evidence for your change of circumstances {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <div class="nhsuk-back-link">
+      <a class="nhsuk-back-link__link" href="javascript:history.go(-1)" id="back">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+          aria-hidden="true">
+          <path
+            d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+          </path>
+        </svg>
+        Go back</a>
+    </div>
+
+    <span class="nhsuk-caption-l">Change of circumstances</span>
+    <h1 class="nhsuk-heading-xl">
+      Upload your evidence
+    </h1>
+
+
+    <h2 class="nhsuk-heading-s">Requirements for your evidence</h2>
+    <p>Your file must:</p>
+    <ul class="nhsuk-list nhsuk-list--bullet">
+      <li>be an original document</li>
+      <li>show the full document</li>
+      <li>be clear and in focus</li>
+      <li>be in colour</li>
+      <li>not be protected by a password</li>
+      <li>not be altered by computer software</li>
+    </ul>
+
+    <div id="doc-upload-hint">
+      <h3 class="nhsuk-heading-s">File size and type</h3>
+      <p>Attachments must be:</p>
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li id="file-format-hint">jpg,jpeg,bmp,png,tif,pdf</li>
+        <li id="file-size-hint">no more than 8mb</li>
+      </ul>
+    </div>
+
+    <fieldset class="nhsuk-fieldset">
+      <legend class="nhsuk-u-visually-hidden">Upload your evidence</legend>
+
+      <div class="nhsuk-form-group">
+        <label for="evidence-type" class="nhsuk-label">Type of evidence</label>
+        <select id="evidence-type" class="nhsuk-select nhsuk-u-width-three-quarters">
+          <option value="">Type of evidence</option>
+          <option>Rent agreement</option>
+          <option>Bank statement</option>
+        </select>
+      </div>
+
+
+      <div id="filenameGroup" class="nhsuk-form-group">
+        <label for="file" class="nhsuk-label">Choose a file</label>
+
+        <div class="nhsuk-form-group-error" id="fileSizeErrorGroup" hidden="true">
+          <span class="nhsuk-u-visually-hidden">Error: </span>
+          <span id="fileSizeErrorMessage" class="nhsuk-error-message"></span>
+        </div>
+
+
+        <input id="file" class="nhsuk-input  nhsuk-u-width-three-quarters" type="file" name="file"
+          aria-describedby="doc-upload-hint">
+      </div>
+
+
+      <div class="nhsuk-form-group">
+        <a href="partner-evidence-list?partner-evidence=added" class="nhsuk-button" role="button" id="uploadFile">Upload file</a>
+      </div>
+
+    </fieldset>
+  </div>
+</div>
+
+</div>
+{% endblock %}
