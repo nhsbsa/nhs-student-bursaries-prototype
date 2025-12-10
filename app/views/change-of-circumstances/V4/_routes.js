@@ -22,7 +22,6 @@ router.get('/apply/intro', (req, res) => {
       req.session.data['originalRelationshipStatus'] = 'None of the above';
       req.session.data['liveWithParents'] = 'No';
       req.session.data['dependencyStatus'] = 'Independent';
-      req.session.data['originalDependencyStatus'] = 'Independent';
       req.session.data['originalLivingWithPartner'] = 'No';
       req.session.data['livingWithPartner'] = 'No';
       break;
@@ -34,7 +33,6 @@ router.get('/apply/intro', (req, res) => {
       req.session.data['originalRelationshipStatus'] = 'None of the above';
       req.session.data['liveWithParents'] = 'No';
       req.session.data['dependencyStatus'] = 'Independent';
-      req.session.data['originalDependencyStatus'] = 'Independent';
       req.session.data['originalLivingWithPartner'] = 'Yes';
       req.session.data['livingWithPartner'] = 'Yes';
       break;
@@ -46,7 +44,6 @@ router.get('/apply/intro', (req, res) => {
       req.session.data['originalRelationshipStatus'] = 'Married or in a civil partnership';
       req.session.data['liveWithParents'] = 'No';
       req.session.data['dependencyStatus'] = 'Independent';
-      req.session.data['originalDependencyStatus'] = 'Independent';
       break;
 
     case 'dependentAndAssessedOn1Parent':
@@ -55,7 +52,6 @@ router.get('/apply/intro', (req, res) => {
       req.session.data['relationshipStatus'] = 'None of the above';
       req.session.data['originalRelationshipStatus'] = 'None of the above';
       req.session.data['dependencyStatus'] = 'Dependent';
-      req.session.data['originalDependencyStatus'] = 'Dependent';
       req.session.data['parentAssessmentType'] = '1Parent';
       req.session.data['parentsLiveTogether'] = 'No';
       req.session.data['parentsDontLiveTogetherReason'] = 'Divorced';
@@ -67,7 +63,6 @@ router.get('/apply/intro', (req, res) => {
       req.session.data['relationshipStatus'] = 'None of the above';
       req.session.data['originalRelationshipStatus'] = 'None of the above';
       req.session.data['dependencyStatus'] = 'Dependent';
-      req.session.data['originalDependencyStatus'] = 'Dependent';
       req.session.data['parentAssessmentType'] = '2Parents';
       req.session.data['parentsLiveTogether'] = 'Yes';
       break;
@@ -135,7 +130,6 @@ router.post('/apply/tasklist-parent-or-partner-details-route', (req, res) => {
   const originalRelationshipStatus = req.session.data['originalRelationshipStatus'] || null
   const relationshipStatus = req.session.data['relationshipStatus']
   const dependencyStatus = req.session.data['dependencyStatus']
-  // const originalDependencyStatus = req.session.data['originalDependencyStatus'] || null
 
   // If currently married or in a civil partnership
   if (relationshipStatus === 'Married or in a civil partnership') {

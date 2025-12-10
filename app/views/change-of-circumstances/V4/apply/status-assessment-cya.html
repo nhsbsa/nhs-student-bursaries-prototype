@@ -33,8 +33,8 @@ endblock %}
       <div class="nhsuk-card">
         <div class="nhsuk-card__content">
 
-          {% if data['previousSituation'] == 'independentAndLivingWithPartner' or data['previousSituation'] ==
-          'independentAlone' or data['relationshipStatus'] == 'Married or in a civil partnership' %}
+          {% if data['previousSituation'] == 'independentAlone' or
+          data['relationshipStatus'] != 'None of the above' %}
           <h2 class="nhsuk-heading-m">Based on your answers you will be classed as an independent student.</h2>
           <p>Your means-tested bursary entitlement will be assessed on the income of you and your partner (if you have
             one).</p>
