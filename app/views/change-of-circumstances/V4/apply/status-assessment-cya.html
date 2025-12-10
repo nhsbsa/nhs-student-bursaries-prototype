@@ -33,7 +33,8 @@ endblock %}
       <div class="nhsuk-card">
         <div class="nhsuk-card__content">
 
-          {% if data['liveWithParents'] %}
+          {% if data['previousSituation'] == 'independentAndLivingWithPartner' or data['previousSituation'] ==
+          'independentAlone' or data['relationshipStatus'] == 'Married or in a civil partnership' %}
           <h2 class="nhsuk-heading-m">Based on your answers you will be classed as an independent student.</h2>
           <p>Your means-tested bursary entitlement will be assessed on the income of you and your partner (if you have
             one).</p>
@@ -50,7 +51,7 @@ endblock %}
     </div>
 
 
-    <form id="statusAssessmentForm" name="statusAssessmentForm" action="evidence-list" method="post">
+    <form id="statusAssessmentForm" name="statusAssessmentForm" action="status-assessment-evidence-list" method="post">
       <input type="hidden" name="_csrf" value="15b3ee3f-914b-4e16-88ec-78138df8135d">
       <div class="nhsuk-grid-column-full">
         <dl class="nhsuk-summary-list">
@@ -87,7 +88,13 @@ endblock %}
 
           <div class="nhsuk-summary-list__row">
             <dt class="nhsuk-summary-list__key">What is your relationship status?</dt>
-            <dd class="nhsuk-summary-list__value" id="relationshipStatus2">{{ data['relationshipStatus'] }}</dd>
+
+            {% if data['relationshipStatus'] %}
+            <dd class="nhsuk-summary-list__value">{{ data['relationshipStatus'] }}</dd>
+            {% else %}
+            <dd class="nhsuk-summary-list__value">None of the above</dd>
+            {% endif %}
+
             <dd class="nhsuk-summary-list__actions">
               <a href="status-assessment-relationship"><span>Change</span> </a>
             </dd>
@@ -160,8 +167,7 @@ endblock %}
         </div>
 
         <p>
-          <a href="#"
-            id="cancel-link">Cancel and return to dashboard</a>
+          <a href="#" id="cancel-link">Cancel and return to dashboard</a>
         </p>
       </div>
     </form>
