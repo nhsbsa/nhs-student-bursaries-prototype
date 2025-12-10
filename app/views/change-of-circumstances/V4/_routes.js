@@ -81,6 +81,9 @@ router.post('/apply/changes-route', (req, res) => {
 })
 
 
+
+// STATUS ASSESSMENT ROUTES
+
 router.post('/apply/status-assessment-relationship-route', (req, res) => {
 
   const relationshipStatus = req.session.data['relationshipStatus']
@@ -111,14 +114,27 @@ router.post('/apply/status-assessment-live-with-parents-route', (req, res) => {
 })
 
 
-router.post('/apply/tasklist-parent-or-partner-details-route', (req, res) => {
 
+// TASKLIST ROUTES
+
+
+router.post('/apply/tasklist-parent-or-partner-details-route', (req, res) => {
   const relationshipStatus = req.session.data['relationshipStatus']
-  // If now married or in a civil partnership, ask for new partner details
-  if (
-    relationshipStatus === 'Married or in a civil partnership'
-  ) {
-    res.redirect('/change-of-circumstances/V4/apply/partner-name');
+  const originalRelationshipStatus = req.session.data['originalRelationshipStatus'] || null
+
+  // If currently married or in a civil partnership
+  if (relationshipStatus === 'Married or in a civil partnership') {
+    // If this was already the student's original status (no change), go straight to partner CYA
+    if (originalRelationshipStatus && originalRelationshipStatus === relationshipStatus) {
+      res.redirect('/change-of-circumstances/V4/apply/partner-cya');
+    } else {
+      // Otherwise (newly married/in civil partnership) collect partner details first
+      res.redirect('/change-of-circumstances/V4/apply/partner-name');
+    }
+  }
+  // If not married but living with a partner, go to partner CYA and show livingWithPartner
+  else if (req.session.data['livingWithPartner'] === 'Yes') {
+    res.redirect('/change-of-circumstances/V4/apply/partner-cya');
   }
   // Else, go to parent details page
   else {
@@ -127,6 +143,9 @@ router.post('/apply/tasklist-parent-or-partner-details-route', (req, res) => {
 
 })
 
+
+
+// PARTNER DETAILS ROUTES
 
 router.post('/apply/partner-name-route', (req, res) => {
 

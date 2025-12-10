@@ -65,17 +65,16 @@
 
           <tbody class="nhsuk-table__body">
 
-            {% if data['partner-evidence'] == "added" %}
+            {% if data['partnerEvidenceAdded'] == "yes" %}
             <tr scope="row" class="nhsuk-table__row">
               <td class="nhsuk-table__cell">Rent agreement</td>
               <td class="nhsuk-table__cell">
                 <span>Uploaded</span>
               </td>
-              <td class="nhsuk-table__cell"><a
-                  href="/student/status/view/document?documentUuid=6bed7d9d-a9e9-4598-b66c-a630b094b092"
-                  id="documentView[0]" target="_blank" rel="noopener">View</a> <span>
+              <td class="nhsuk-table__cell"><a href="#" id="documentView[0]" target="_blank" rel="noopener">View</a>
+                <span>
                   <a id="documentRemove[0]"
-                    href="/student/status/delete/document?documentUuid=6bed7d9d-a9e9-4598-b66c-a630b094b092">Remove</a>
+                    href="partner-evidence-list?partnerEvidenceAdded=no">Remove</a>
                 </span></td>
             </tr>
             {% endif %}
@@ -86,7 +85,7 @@
     </div>
 
 
-    {% if data['partner-evidence'] == "added" %}
+    {% if data['partnerEvidenceAdded'] == "yes" %}
     <p>
       You can upload more evidence if you need to. Or, you can select <span
         class="nhsuk-u-font-weight-bold">Continue</span> if you have uploaded everything.
@@ -100,7 +99,7 @@
 
 
     <!-- If evidence is added, show "Add evidence" button -->
-    {% if data['partner-evidence'] == "added" %}
+    {% if data['partnerEvidenceAdded'] == "yes" %}
     <p>By clicking continue you're confirming that you have uploaded all evidence required for this section of your
       application.</p>
     <a href="tasklist?allSectionsComplete=true" class="nhsuk-button" role="button">Continue</a>
