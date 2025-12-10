@@ -22,6 +22,7 @@ router.get('/apply/intro', (req, res) => {
       req.session.data['originalRelationshipStatus'] = 'None of the above';
       req.session.data['dependencyStatus'] = 'Independent';
       req.session.data['originalDependencyStatus'] = 'Independent';
+      req.session.data['originalLivingWithPartner'] = 'No';
       req.session.data['livingWithPartner'] = 'No';
       break;
 
@@ -32,6 +33,7 @@ router.get('/apply/intro', (req, res) => {
       req.session.data['originalRelationshipStatus'] = 'None of the above';
       req.session.data['dependencyStatus'] = 'Independent';
       req.session.data['originalDependencyStatus'] = 'Independent';
+      req.session.data['originalLivingWithPartner'] = 'Yes';
       req.session.data['livingWithPartner'] = 'Yes';
       break;
 
@@ -199,16 +201,18 @@ router.post('/apply/partner-live-with-partner-route', (req, res) => {
 
 router.post('/apply/partner-cya-route', (req, res) => {
 
-  const wasLivingWithPartner = req.session.data['wasLivingWithPartner']
+  const originalLivingWithPartner = req.session.data['originalLivingWithPartner']
   const livingWithPartner = req.session.data['livingWithPartner']
 
-  // If not living with partner, ask for evidence of not living together
+  // If was living with partner and now is not, ask for evidence of no longer living together
   if (
-    livingWithPartner === 'No'
+    livingWithPartner === 'No' &&
+    originalLivingWithPartner &&
+    originalLivingWithPartner === 'Yes'
   ) {
     res.redirect('/change-of-circumstances/V4/apply/partner-evidence-list');
   }
-  // Else, go to tasklist
+  // Else, continue straight to tasklist (as in original application journey)
   else {
     res.redirect('/change-of-circumstances/V4/apply/tasklist?allSectionsComplete=true');
   }
