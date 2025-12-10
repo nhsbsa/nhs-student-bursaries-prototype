@@ -74,8 +74,6 @@ endblock %}
           </div>
 
 
-
-
           <div class="nhsuk-summary-list__row">
             <dt class="nhsuk-summary-list__key">Do you have any dependent children?</dt>
             <dd class="nhsuk-summary-list__value" id="careOfChild">No</dd>
@@ -85,24 +83,18 @@ endblock %}
           </div>
 
 
-
           <div class="nhsuk-summary-list__row">
             <dt class="nhsuk-summary-list__key">What is your relationship status?</dt>
-
-            {% if data['relationshipStatus'] %}
             <dd class="nhsuk-summary-list__value">{{ data['relationshipStatus'] }}</dd>
-            {% else %}
-            <dd class="nhsuk-summary-list__value">None of the above</dd>
-            {% endif %}
-
             <dd class="nhsuk-summary-list__actions">
               <a href="status-assessment-relationship"><span>Change</span> </a>
             </dd>
           </div>
 
 
-
-          {% if data['liveWithParents'] %}
+          <!-- If relationship status is anything except 'None of the above', the questions end here,
+          immediately after 'Do you live in your parents house?' is asked -->
+          {% if data['relationshipStatus'] != 'None of the above' %}
 
           <div class="nhsuk-summary-list__row">
             <dt class="nhsuk-summary-list__key">Do you live in your parents house?</dt>
@@ -112,8 +104,9 @@ endblock %}
             </dd>
           </div>
 
-          {% else %}
 
+          <!-- Else, show all answers, which have been given as 'No' for this scenario -->
+          {% else %}
 
           <div class="nhsuk-summary-list__row">
             <dt class="nhsuk-summary-list__key">Have both of your parent's died?</dt>
