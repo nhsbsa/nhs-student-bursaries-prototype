@@ -20,7 +20,9 @@ router.get('/apply/intro', (req, res) => {
       req.session.data['previousSituation'] = 'independentAlone';
       req.session.data['relationshipStatus'] = 'None of the above';
       req.session.data['originalRelationshipStatus'] = 'None of the above';
-      req.session.data['parentDependencyStatus'] = 'Independent';
+      req.session.data['dependencyStatus'] = 'Independent';
+      req.session.data['originalDependencyStatus'] = 'Independent';
+      req.session.data['livingWithPartner'] = 'No';
       break;
 
     case 'independentAndLivingWithPartner':
@@ -28,7 +30,8 @@ router.get('/apply/intro', (req, res) => {
       req.session.data['previousSituation'] = 'independentAndLivingWithPartner';
       req.session.data['relationshipStatus'] = 'None of the above';
       req.session.data['originalRelationshipStatus'] = 'None of the above';
-      req.session.data['parentDependencyStatus'] = 'Independent';
+      req.session.data['dependencyStatus'] = 'Independent';
+      req.session.data['originalDependencyStatus'] = 'Independent';
       req.session.data['livingWithPartner'] = 'Yes';
       break;
 
@@ -37,8 +40,8 @@ router.get('/apply/intro', (req, res) => {
       req.session.data['previousSituation'] = 'independentAndAssessedOnPartner';
       req.session.data['relationshipStatus'] = 'Married or in a civil partnership';
       req.session.data['originalRelationshipStatus'] = 'Married or in a civil partnership';
-      req.session.data['parentDependencyStatus'] = 'Independent';
-      // req.session.data['livingWithPartner'] = 'Yes';
+      req.session.data['dependencyStatus'] = 'Independent';
+      req.session.data['originalDependencyStatus'] = 'Independent';
       break;
 
     case 'dependentAndAssessedOn1Parent':
@@ -46,8 +49,11 @@ router.get('/apply/intro', (req, res) => {
       req.session.data['previousSituation'] = 'dependentAndAssessedOn1Parent';
       req.session.data['relationshipStatus'] = 'None of the above';
       req.session.data['originalRelationshipStatus'] = 'None of the above';
-      req.session.data['parentDependencyStatus'] = 'Dependent';
+      req.session.data['dependencyStatus'] = 'Dependent';
+      req.session.data['originalDependencyStatus'] = 'Dependent';
       req.session.data['parentAssessmentType'] = '1Parent';
+      req.session.data['parentsLiveTogether'] = 'No';
+      req.session.data['parentsDontLiveTogetherReason'] = 'Divorced';
       break;
 
     case 'dependentAndAssessedOn2Parents':
@@ -55,8 +61,10 @@ router.get('/apply/intro', (req, res) => {
       req.session.data['previousSituation'] = 'dependentAndAssessedOn2Parents';
       req.session.data['relationshipStatus'] = 'None of the above';
       req.session.data['originalRelationshipStatus'] = 'None of the above';
-      req.session.data['parentDependencyStatus'] = 'Dependent';
+      req.session.data['dependencyStatus'] = 'Dependent';
+      req.session.data['originalDependencyStatus'] = 'Dependent';
       req.session.data['parentAssessmentType'] = '2Parents';
+      req.session.data['parentsLiveTogether'] = 'Yes';
       break;
   }
 
@@ -119,8 +127,10 @@ router.post('/apply/status-assessment-live-with-parents-route', (req, res) => {
 
 
 router.post('/apply/tasklist-parent-or-partner-details-route', (req, res) => {
-  const relationshipStatus = req.session.data['relationshipStatus']
   const originalRelationshipStatus = req.session.data['originalRelationshipStatus'] || null
+  const relationshipStatus = req.session.data['relationshipStatus']
+  const dependencyStatus = req.session.data['dependencyStatus']
+  // const originalDependencyStatus = req.session.data['originalDependencyStatus'] || null
 
   // If currently married or in a civil partnership
   if (relationshipStatus === 'Married or in a civil partnership') {
@@ -136,9 +146,17 @@ router.post('/apply/tasklist-parent-or-partner-details-route', (req, res) => {
   else if (req.session.data['livingWithPartner'] === 'Yes') {
     res.redirect('/change-of-circumstances/V4/apply/partner-cya');
   }
-  // Else, go to parent details page
+
+  // If dependent student, go to CYA for parents (they can never CHANGE TO dependent, so they
+  // must already be dependent, therefore we must already have some parent details)
+  else if (dependencyStatus === 'Dependent') {
+    res.redirect('/change-of-circumstances/V4/apply/parents-cya');
+  }
+
+  // Else, independent and no partner - go to partner cya (where they can confirm if they still dont
+  // LIVE WITH a partner or not)
   else {
-    res.redirect('/change-of-circumstances/V4/apply/parent-1-name');
+    res.redirect('/change-of-circumstances/V4/apply/partner-cya');
   }
 
 })
@@ -197,6 +215,62 @@ router.post('/apply/partner-cya-route', (req, res) => {
 
 })
 
+
+
+// PARENTS DETAILS ROUTES
+
+router.post('/apply/parents-live-together-route', (req, res) => {
+
+  const parentsLiveTogether = req.session.data['parentsLiveTogether']
+
+  if (
+    parentsLiveTogether === 'Yes'
+  ) {
+    res.redirect('/change-of-circumstances/V4/apply/parent-1-name');
+  }
+  else {
+    {
+      res.redirect('/change-of-circumstances/V4/apply/parent-name');
+    }
+  }
+
+})
+
+
+
+router.post('/apply/parent-email-route', (req, res) => {
+
+  res.redirect('/change-of-circumstances/V4/apply/parents-cya')
+
+})
+
+
+router.post('/apply/parent-1-name-route', (req, res) => {
+
+  res.redirect('/change-of-circumstances/V4/apply/parent-1-email')
+
+})
+
+
+router.post('/apply/parent-1-email-route', (req, res) => {
+
+  res.redirect('/change-of-circumstances/V4/apply/parent-2-name')
+
+})
+
+
+router.post('/apply/parent-2-name-route', (req, res) => {
+
+  res.redirect('/change-of-circumstances/V4/apply/parent-2-email')
+
+})
+
+
+router.post('/apply/parent-2-email-route', (req, res) => {
+
+  res.redirect('/change-of-circumstances/V4/apply/parents-cya')
+
+})
 
 
 module.exports = router;

@@ -33,7 +33,8 @@
 
         <dl class="nhsuk-summary-list">
 
-          {% if data['livingWithPartner'] %}
+          <!-- If not married or in a civil partnership, show living with partner question -->
+          {% if data['relationshipStatus'] != 'Married or in a civil partnership' %}
           <div class="nhsuk-summary-list__row">
             <dt class="nhsuk-summary-list__key">
               Do you live with a partner?
@@ -52,8 +53,8 @@
           {% endif %}
 
 
-
-          {% if data['relationshipStatus'] == 'Married or in a civil partnership' or data['livingWithPartner'] != 'No'
+          <!-- If married/in civil partnership or living with partner, show partner details -->
+          {% if data['relationshipStatus'] == 'Married or in a civil partnership' or data['livingWithPartner'] == 'Yes'
           %}
 
           <div class="nhsuk-summary-list__row">

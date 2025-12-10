@@ -1,0 +1,270 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Check your answers {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<!-- Breadcrumb -->
+
+{% endblock %}
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-width-container">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <h1 class="nhsuk-app-heading">
+        <span class="nhsuk-caption-l">Change of circumstances</span>
+        Check your parent details answers
+      </h1>
+
+      <form action="/change-of-circumstances/V4/apply/parents-cya-route" method="POST">
+
+        <dl class="nhsuk-summary-list">
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Parents live together
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              <p>
+                {{ data['parentsLiveTogether'] }}
+              </p>
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="parent-parents-live-together">
+                Change
+              </a>
+            </dd>
+          </div>
+
+
+
+          <!-- If parents dont live together, show details of 1 parent -->
+          {% if data['parentsLiveTogether'] == 'No' %}
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Reason
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              <p>
+                {{ data['parentsDontLiveTogetherReason'] }}
+              </p>
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="parent-parents-dont-live-together-reason">
+                Change
+              </a>  
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Parent's name
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              <p>
+                {% if data['parent1FirstName'] %}
+                {{ data['parent1FirstName'] }}
+                {% else %}
+                John
+                {% endif %}
+
+                {% if data['parent1LastName'] %}
+                {{ data['parent1LastName'] }}
+                {% else %}
+                Smith
+                {% endif %}
+              </p>
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="parent-1-name">
+                Change<span class="nhsuk-u-visually-hidden">name</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Parent's email
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              <p>
+                {% if data['parent1Email'] %}
+                {{ data['parent1Email'] }}
+                {% else %}
+                johnsmith@gmail.com
+                {% endif %}
+              </p>
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="parent-1-email">
+                Change<span class="nhsuk-u-visually-hidden">email</span>
+              </a>
+            </dd>
+          </div>
+
+
+          <!-- Else both parents do live together, so show details of both -->
+          {% else %}
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Parent 1's name
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              <p>
+                {% if data['parent1FirstName'] %}
+                {{ data['parent1FirstName'] }}
+                {% else %}
+                John
+                {% endif %}
+
+                {% if data['parent1LastName'] %}
+                {{ data['parent1LastName'] }}
+                {% else %}
+                Smith
+                {% endif %}
+              </p>
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="parent-1-name">
+                Change<span class="nhsuk-u-visually-hidden">name</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Parent 1's email
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              <p>
+                {% if data['parent1Email'] %}
+                {{ data['parent1Email'] }}
+                {% else %}
+                johnsmith@gmail.com
+                {% endif %}
+              </p>
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="parent-1-email">
+                Change<span class="nhsuk-u-visually-hidden">email</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Parent 2's name
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              <p>
+                {% if data['parent2FirstName'] %}
+                {{ data['parent2FirstName'] }}
+                {% else %}
+                Sarah
+                {% endif %}
+
+                {% if data['parent2LastName'] %}
+                {{ data['parent2LastName'] }}
+                {% else %}
+                Smith
+                {% endif %}
+              </p>
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="parent-2-name">
+                Change<span class="nhsuk-u-visually-hidden">name</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Parent 2's email
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              <p>
+                {% if data['parent2Email'] %}
+                {{ data['parent2Email'] }}
+                {% else %}
+                sarahsmith@gmail.com
+                {% endif %}
+              </p>
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="parent-2-email">
+                Change<span class="nhsuk-u-visually-hidden">email</span>
+              </a>
+            </dd>
+          </div>
+
+          {% endif %}
+
+        </dl>
+
+
+        <p>By clicking accept you're confirming that the details you're providing are correct.</p>
+
+        <button class="nhsuk-button" type="submit">Accept and continue</button>
+
+        <p><a id="canceltoTasklist" href="tasklist-approved">Cancel and return to dashboard</a></p>
+
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function () {
+    const months = {
+      "01": "January",
+      "02": "February",
+      "03": "March",
+      "04": "April",
+      "05": "May",
+      "06": "June",
+      "07": "July",
+      "08": "August",
+      "09": "September",
+      "1": "January",
+      "2": "February",
+      "3": "March",
+      "4": "April",
+      "5": "May",
+      "6": "June",
+      "7": "July",
+      "8": "August",
+      "9": "September",
+      "10": "October",
+      "11": "November",
+      "12": "December",
+    };
+
+    $(".cya-month").text(function () {
+      const month = $(this).text();
+      console.log("month:", month);
+      console.log("months[month]:", months[month]);
+      return months[month];
+    });
+  });
+</script>
+
+{% endblock %}
