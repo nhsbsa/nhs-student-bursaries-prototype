@@ -84,7 +84,7 @@ router.post('/apply/changes-route', (req, res) => {
   if (
     CoCType === 'Change of p1 or p2 income'
   ) {
-    res.redirect('/change-of-circumstances/V4/apply/intro-2');
+    res.redirect('/change-of-circumstances/V4/apply/date');
     // If user selects no option, stay on this page
   } else {
     res.redirect('/change-of-circumstances/V4/apply/changes');

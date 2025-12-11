@@ -9,7 +9,7 @@
 -->
 
 <!-- Set the page title inside the pageTitle block -->
-{% block pageTitle %} What date is this change of cicumstance effective from? {%
+{% block pageTitle %} Change of cicumstances {%
 endblock %}
 
 <!-- Breadcrumb goes inside the beforeContent block -->
@@ -40,21 +40,15 @@ endblock %}
 
       <span class="nhsuk-caption-l">Change of circumstances</span>
 
-      {% if data['previouslyLivingWith'] == 'partner' %}
-      <h1 class="nhsuk-heading-l">When did you stop living with your partner?</h1>
-      {% elif data['previouslyLivingWith'] == 'oneParent' %}
-      <h1 class="nhsuk-heading-l">When did you stop living with your parent?</h1>
-      {% else %}
-      <h1 class="nhsuk-heading-l">When did you stop living with your parents?</h1>
-      {% endif %}
+      <h1 class="nhsuk-heading-l">When did this change happen?</h1>
 
 
-      <form action="/change-of-circumstances/V4/apply/explanation" method="POST">
+      <form action="/change-of-circumstances/V4/apply/intro-2" method="POST">
 
         <div class="nhsuk-form-group">
           <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
 
-            <div class="nhsuk-hint" id="example-hint">For example, 15 3 2023</div>
+            <div class="nhsuk-hint" id="example-hint">For example, 11 12 2025</div>
 
             <div class="nhsuk-date-input" id="change-date">
               <div class="nhsuk-date-input__item">
