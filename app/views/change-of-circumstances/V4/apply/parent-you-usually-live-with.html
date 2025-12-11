@@ -38,24 +38,41 @@
       </div>
 
       <span class="nhsuk-caption-l">Change of circumstances</span>
-      <h1 class="nhsuk-heading-l">What is your parent's name?</h1>
+      <h1 class="nhsuk-heading-l">Which parent do you usually live with?</h1>
 
-      <form action="/change-of-circumstances/V4/apply/parent-name-route" method="POST">
+      <form action="/change-of-circumstances/V4/apply/parent-you-usually-live-with-route" method="POST">
 
-        <div class="nhsuk-form-group">
-          <label class="nhsuk-label" for="parentFirstName">
-            First name
-          </label>
-          <input class="nhsuk-input nhsuk-input--width-30" id="parentFirstName" name="parentFirstName" type="text"
-            value="{{ data['parentFirstName'] }}">
-        </div>
+        <p>If the parent you usually live with has changed their name, select them and you can tell us their new name
+          later.</p>
 
         <div class="nhsuk-form-group">
-          <label class="nhsuk-label" for="parentLastName">
-            Last name
-          </label>
-          <input class="nhsuk-input nhsuk-input--width-30" id="parentLastName" name="parentLastName" type="text"
-            value="{{ data['parentLastName'] }}">
+
+          <div class="nhsuk-radios">
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="John Smith" name="parentYouUsuallyLiveWith" type="radio"
+                value="John Smith" />
+              <label class="nhsuk-label nhsuk-radios__label" for="John Smith">
+                John Smith
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="Sarah Smith" name="parentYouUsuallyLiveWith" type="radio"
+                value="Sarah Smith" />
+              <label class="nhsuk-label nhsuk-radios__label" for="Sarah Smith">
+                Sarah Smith
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="Neither" name="parentYouUsuallyLiveWith" type="radio"
+                value="Neither" />
+              <label class="nhsuk-label nhsuk-radios__label" for="Neither">
+                Neither of these
+              </label>
+            </div>
+          </div>
+
         </div>
 
         <button class="nhsuk-button" type="submit">Continue</button>

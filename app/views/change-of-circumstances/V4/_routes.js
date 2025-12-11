@@ -231,12 +231,57 @@ router.post('/apply/parents-live-together-route', (req, res) => {
   }
   else {
     {
-      res.redirect('/change-of-circumstances/V4/apply/parent-name');
+      res.redirect('/change-of-circumstances/V4/apply/parents-dont-live-together-reason');
     }
   }
 
 })
 
+
+// PARENTS DON'T LIVE TOGETHER ROUTES
+
+router.post('/apply/parents-dont-live-together-reason-route', (req, res) => {
+
+  res.redirect('/change-of-circumstances/V4/apply/parent-you-usually-live-with')
+
+})
+
+
+router.post('/apply/parent-you-usually-live-with-route', (req, res) => {
+
+  const parentYouUsuallyLiveWith = req.session.data['parentYouUsuallyLiveWith']
+
+  // Set parent's first and last name based on selection
+  if (
+    parentYouUsuallyLiveWith === 'John Smith'
+  ) {
+    req.session.data['parentFirstName'] = 'John';
+    req.session.data['parentLastName'] = 'Smith';
+    req.session.data['parentEmail'] = 'johnsmith@gmail.com';
+  }
+  else if (
+    parentYouUsuallyLiveWith === 'Sarah Smith'
+  ) {
+    req.session.data['parentFirstName'] = 'Sarah';
+    req.session.data['parentLastName'] = 'Smith';
+    req.session.data['parentEmail'] = 'sarahsmith@gmail.com';
+  }
+  else {
+    req.session.data['parentFirstName'] = '';
+    req.session.data['parentLastName'] = '';
+    req.session.data['parentEmail'] = '';
+  }
+
+  res.redirect('/change-of-circumstances/V4/apply/parent-name')
+
+})
+
+
+router.post('/apply/parent-name-route', (req, res) => {
+
+  res.redirect('/change-of-circumstances/V4/apply/parent-email')
+
+})
 
 
 router.post('/apply/parent-email-route', (req, res) => {
@@ -245,6 +290,8 @@ router.post('/apply/parent-email-route', (req, res) => {
 
 })
 
+
+// PARENTS LIVING TOGETHER ROUTES
 
 router.post('/apply/parent-1-name-route', (req, res) => {
 

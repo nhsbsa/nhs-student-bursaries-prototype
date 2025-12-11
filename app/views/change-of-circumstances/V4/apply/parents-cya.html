@@ -43,7 +43,7 @@
               </p>
             </dd>
             <dd class="nhsuk-summary-list__actions">
-              <a href="parent-parents-live-together">
+              <a href="parents-live-together">
                 Change
               </a>
             </dd>
@@ -72,18 +72,34 @@
 
           <div class="nhsuk-summary-list__row">
             <dt class="nhsuk-summary-list__key">
+              Parent you usually live with
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              <p>
+                {{ data['parentYouUsuallyLiveWith'] }}
+              </p>
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="parent-you-usually-live-with">
+                Change
+              </a>  
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
               Parent's name
             </dt>
             <dd class="nhsuk-summary-list__value">
               <p>
-                {% if data['parent1FirstName'] %}
-                {{ data['parent1FirstName'] }}
+                {% if data['parentFirstName'] %}
+                {{ data['parentFirstName'] }}
                 {% else %}
                 John
                 {% endif %}
 
-                {% if data['parent1LastName'] %}
-                {{ data['parent1LastName'] }}
+                {% if data['parentLastName'] %}
+                {{ data['parentLastName'] }}
                 {% else %}
                 Smith
                 {% endif %}
@@ -102,8 +118,8 @@
             </dt>
             <dd class="nhsuk-summary-list__value">
               <p>
-                {% if data['parent1Email'] %}
-                {{ data['parent1Email'] }}
+                {% if data['parentEmail'] %}
+                {{ data['parentEmail'] }}
                 {% else %}
                 johnsmith@gmail.com
                 {% endif %}
