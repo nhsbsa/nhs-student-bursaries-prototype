@@ -54,6 +54,7 @@ router.get('/apply/intro', (req, res) => {
       req.session.data['dependencyStatus'] = 'Dependent';
       req.session.data['parentAssessmentType'] = '1Parent';
       req.session.data['parentsLiveTogether'] = 'No';
+      req.session.data['originalParentsLiveTogether'] = 'No';
       req.session.data['parentsDontLiveTogetherReason'] = 'Divorced';
       break;
 
@@ -65,6 +66,7 @@ router.get('/apply/intro', (req, res) => {
       req.session.data['dependencyStatus'] = 'Dependent';
       req.session.data['parentAssessmentType'] = '2Parents';
       req.session.data['parentsLiveTogether'] = 'Yes';
+      req.session.data['originalParentsLiveTogether'] = 'Yes';
       break;
   }
 
@@ -164,6 +166,27 @@ router.post('/apply/tasklist-parent-or-partner-details-route', (req, res) => {
 
 // PARTNER DETAILS ROUTES
 
+router.post('/apply/partner-cya-route', (req, res) => {
+
+  const originalLivingWithPartner = req.session.data['originalLivingWithPartner']
+  const livingWithPartner = req.session.data['livingWithPartner']
+
+  // If was living with partner and now is not, ask for evidence of no longer living together
+  if (
+    livingWithPartner === 'No' &&
+    originalLivingWithPartner &&
+    originalLivingWithPartner === 'Yes'
+  ) {
+    res.redirect('/change-of-circumstances/V4/apply/partner-evidence-list');
+  }
+  // Else, continue straight to tasklist (as in original application journey)
+  else {
+    res.redirect('/change-of-circumstances/V4/apply/tasklist?allSectionsComplete=true');
+  }
+
+})
+
+
 router.post('/apply/partner-name-route', (req, res) => {
 
   res.redirect('/change-of-circumstances/V4/apply/partner-email')
@@ -196,19 +219,23 @@ router.post('/apply/partner-live-with-partner-route', (req, res) => {
 })
 
 
-router.post('/apply/partner-cya-route', (req, res) => {
 
-  const originalLivingWithPartner = req.session.data['originalLivingWithPartner']
-  const livingWithPartner = req.session.data['livingWithPartner']
+// PARENTS DETAILS ROUTES
 
-  // If was living with partner and now is not, ask for evidence of no longer living together
+router.post('/apply/parents-cya-route', (req, res) => {
+
+  const originalParentsLiveTogether = req.session.data['originalParentsLiveTogether']
+  const parentsLiveTogether = req.session.data['parentsLiveTogether']
+
+  // If parents were living toegher, and now not, ask for evidence of them no longer living together
   if (
-    livingWithPartner === 'No' &&
-    originalLivingWithPartner &&
-    originalLivingWithPartner === 'Yes'
+    parentsLiveTogether === 'No' &&
+    originalParentsLiveTogether &&
+    originalParentsLiveTogether === 'Yes'
   ) {
-    res.redirect('/change-of-circumstances/V4/apply/partner-evidence-list');
+    res.redirect('/change-of-circumstances/V4/apply/parents-evidence-list');
   }
+
   // Else, continue straight to tasklist (as in original application journey)
   else {
     res.redirect('/change-of-circumstances/V4/apply/tasklist?allSectionsComplete=true');
@@ -216,9 +243,6 @@ router.post('/apply/partner-cya-route', (req, res) => {
 
 })
 
-
-
-// PARENTS DETAILS ROUTES
 
 router.post('/apply/parents-live-together-route', (req, res) => {
 
