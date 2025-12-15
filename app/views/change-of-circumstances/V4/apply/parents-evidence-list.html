@@ -39,11 +39,39 @@
     {% endif %} -->
 
 
-    <p>This should be:</p>
+    <p>This should be a:</p>
 
+    {% if data['parentsDontLiveTogetherReason'] == 'Divorced' or data['parentsDontLiveTogetherReason'] == 'Separated' %}
     <ul>
-      <li id="documentType[0]">a tenancy agreement</li>
+      <li id="documentType[0]">Decree Nisi</li>
+      <li id="documentType[1]">Decree Absolute</li>
+      <li id="documentType[2]">Final Order</li>
+      <li id="documentType[3]">marriage certificate</li>
+      <li id="documentType[4]">letter from a professional person</li>
+      <li id="documentType[5]">Universal Credit award showing paid as a single person</li>
+      <li id="documentType[6]">Council Tax letter showing the 25% discount</li>
+      <li id="documentType[7]">legal separation document</li>
     </ul>
+
+    {% elif data['parentsDontLiveTogetherReason'] == 'Deceased' %}
+    <ul>
+      <li id="documentType[0]">death certificate</li>
+      <li id="documentType[2]">letter from a professional person</li>
+    </ul>
+
+    {% else %}
+    <ul>
+      <li id="documentType[0]">Decree Nisi</li>
+      <li id="documentType[1]">Decree Absolute</li>
+      <li id="documentType[2]">Final Order</li>
+      <li id="documentType[3]">marriage certificate</li>
+      <li id="documentType[4]">letter from a professional person</li>
+      <li id="documentType[5]">Universal Credit award showing paid as a single person</li>
+      <li id="documentType[6]">Council Tax letter showing the 25% discount</li>
+      <li id="documentType[7]">legal separation document</li>
+      <li id="documentType[8]">death certificate</li>
+    </ul>
+    {% endif %}
 
 
     <div class="nhsuk-card mb-30">
@@ -66,7 +94,7 @@
 
             {% if data['parentsEvidenceAdded'] == "yes" %}
             <tr scope="row" class="nhsuk-table__row">
-              <td class="nhsuk-table__cell">Tenancy agreement</td>
+              <td class="nhsuk-table__cell">Letter from professional</td>
               <td class="nhsuk-table__cell">
                 <span>Uploaded</span>
               </td>

@@ -59,11 +59,38 @@
 
       <div class="nhsuk-form-group">
         <label for="evidence-type" class="nhsuk-label">Type of evidence</label>
-        <select id="evidence-type" class="nhsuk-select nhsuk-u-width-three-quarters">
+        <select id="evidence-type" name="parentsEvidenceType" class="nhsuk-select nhsuk-u-width-three-quarters">
           <option value="">Type of evidence</option>
-          <option>Rent agreement</option>
-          <option>Tenancy statement</option>
+
+          {% if data['parentsDontLiveTogetherReason'] == 'Divorced' or data['parentsDontLiveTogetherReason'] == 'Separated' %}
+          <option>Decree Nisi</option>
+          <option>Decree Absolute</option>
+          <option>Final Order</option>
+          <option>New marriage certificate</option>
+          <option>Letter from professional</option>
+          <option>Universal Credit award showing paid as a single person</option>
+          <option>Council Tax letter showing single occupancy discount</option>
+          <option>Legal separation document</option>
           <option>Other</option>
+
+          {% elif data['parentsDontLiveTogetherReason'] == 'Deceased' %}
+          <option>Death certificate</option>
+          <option>Letter from professional</option>
+          <option>Other</option>
+
+          {% else %}
+          <option>Decree Nisi</option>
+          <option>Decree Absolute</option>
+          <option>Final Order</option>
+          <option>New marriage certificate</option>
+          <option>Letter from professional</option>
+          <option>Universal Credit award showing paid as a single person</option>
+          <option>Council Tax letter showing single occupancy discount</option>
+          <option>Legal separation document</option>
+          <option>Death certificate</option>
+          <option>Other</option>
+          {% endif %}
+
         </select>
       </div>
 
