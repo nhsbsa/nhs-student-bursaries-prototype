@@ -26,11 +26,23 @@ router.post('/register/v2/national-insurance-number-question-route/', (req, res)
 
 })
 
+
+
 // CoC V4
-router.use('/change-of-circumstances/V4', require('./views/change-of-circumstances/V4/_routes'));
+
+// Routes for STUDENT: APPLY FOR CoC journey
+router.use('/change-of-circumstances/V4/apply', require('./views/change-of-circumstances/V4/apply/_routes'));
+
+// Routes for PARENT/PARTNER: SUBMIT INCOME AND EXPENSES DETAILS journey
+router.use('/change-of-circumstances/V4/parent-and-partner', require('./views/change-of-circumstances/V4/parent-and-partner/_routes'));
+
+
 
 // CoC V3
 router.use('/change-of-circumstances/V3', require('./views/change-of-circumstances/V3/_routes'));
+
+
+
 
 // CoC V2
 
