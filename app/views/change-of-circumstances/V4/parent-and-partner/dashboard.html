@@ -1,0 +1,188 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} P1/P2 journey {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<!-- Breadcrumb -->
+
+{% endblock %}
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-width-container">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="app-page-heading">
+        Your dashboard
+      </h1>
+
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <h2 class="nhsuk-caption-2" id="progressH2">What you have to do</h2>
+
+          <table class="nhsuk-table">
+            <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                <th role="columnheader" class="" scope="col">Assessment</th>
+                <th role="columnheader" class="" scope="col">Progress</th>
+              </tr>
+            </thead>
+
+            <tbody class="nhsuk-table__body">
+
+              <!-- CONSENT SECTION -->
+
+              <tr role="row" class="nhsuk-table__row">
+
+                {% if data['consentDone'] == 'Yes' %}
+                <td class="nhsuk-table__cell">
+                  Consent
+                </td>
+                <td class="nhsuk-table__cell">
+                  <strong class="nhsuk-tag nhsuk-tag--blue"> Consent given </strong>
+                </td>
+                {% else %}
+                <td class="nhsuk-table__cell">
+                  <a href="consent/consent" id="consentLink">Consent</a>
+                </td>
+                <td class="nhsuk-table__cell">
+                  <strong class="nhsuk-tag nhsuk-tag--grey"> Not started </strong>
+                </td>
+                {% endif %}
+
+              </tr>
+
+
+
+              <!-- DEPENDENT CHILDREN SECTION - PARENT 1 ONLY, NOT PARENT 2 -->
+
+              {% if data['userType'] == 'parent' %}
+              <tr role="row" class="nhsuk-table__row">
+
+                <!-- If section is done, show Complete -->
+                {% if data['childrenDone'] == 'Yes' %}
+                <td class="nhsuk-table__cell">
+                  Dependent children
+                </td>
+                <td class="nhsuk-table__cell">
+                  <strong class="nhsuk-tag nhsuk-tag--blue"> Complete </strong>
+                </td>
+
+                <!-- Else if consent is done, but dependent children is not done, show link to dependent children section -->
+                {% elif data['consentDone'] == 'Yes' %}
+                <td class="nhsuk-table__cell">
+                  <a href="children/children-cya">Dependent children</a>
+                </td>
+                <td class="nhsuk-table__cell">
+                  <strong class="nhsuk-tag nhsuk-tag--grey"> Not started </strong>
+                </td>
+
+                <!-- Else show Cannot start yet - still need to complete Consent -->
+                {% else %}
+                <td class="nhsuk-table__cell">
+                  Dependent children
+                </td>
+                <td class="nhsuk-table__cell">
+                  <strong class="nhsuk-tag nhsuk-tag--grey">Cannot start yet </strong>
+                </td>
+                {% endif %}
+
+              </tr>
+              {% endif %}
+
+
+
+              <!-- INCOME SECTION -->
+
+              <tr role="row" class="nhsuk-table__row">
+
+                <!-- If section is done, show Complete -->
+                {% if data['incomeDone'] == 'Yes' %}
+                <td class="nhsuk-table__cell">
+                  Income assessment
+                </td>
+                <td class="nhsuk-table__cell">
+                  <strong class="nhsuk-tag nhsuk-tag--blue"> Complete </strong>
+                </td>
+
+                <!-- Else if consent is done, but income is not done, show link to income section -->
+                {% elif data['consentDone'] == 'Yes' %}
+                <td class="nhsuk-table__cell">
+                  <a href="income/income-cya">Income assessment</a>
+                </td>
+                <td class="nhsuk-table__cell">
+                  <strong class="nhsuk-tag nhsuk-tag--grey"> Not started </strong>
+                </td>
+
+                <!-- Else show Cannot start yet - still need to complete Consent -->
+                {% else %}
+                <td class="nhsuk-table__cell">
+                  Income assessment
+                </td>
+                <td class="nhsuk-table__cell">
+                  <strong class="nhsuk-tag nhsuk-tag--grey">Cannot start yet </strong>
+                </td>
+                {% endif %}
+
+              </tr>
+
+
+
+              <!-- EXPENSES SECTION -->
+
+              <tr role="row" class="nhsuk-table__row">
+
+                <!-- If section is done, show Complete -->
+                {% if data['expensesDone'] == 'Yes' %}
+                <td class="nhsuk-table__cell">
+                  Expenses assessment
+                </td>
+                <td class="nhsuk-table__cell">
+                  <strong class="nhsuk-tag nhsuk-tag--blue"> Complete </strong>
+                </td>
+
+                <!-- Else if income is done, but expenses is not done, show link to expenses section -->
+                {% elif data['incomeDone'] == 'Yes' %}
+                <td class="nhsuk-table__cell">
+                  <a href="expenses/expenses-cya">Expenses assessment</a>
+                </td>
+                <td class="nhsuk-table__cell">
+                  <strong class="nhsuk-tag nhsuk-tag--grey"> Not started </strong>
+                </td>
+
+                <!-- Else show Cannot start yet - still need to complete expenses -->
+                {% else %}
+                <td class="nhsuk-table__cell">
+                  Expenses assessment
+                </td>
+                <td class="nhsuk-table__cell">
+                  <strong class="nhsuk-tag nhsuk-tag--grey">Cannot start yet </strong>
+                </td>
+                {% endif %}
+              </tr>
+
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+{% endblock %}
