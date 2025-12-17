@@ -1,0 +1,98 @@
+{% extends 'layout.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Change of circumstances evidence {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-three-quarters">
+
+    <h1 class="nhsuk-heading-xl">
+      Upload your evidence
+    </h1>
+
+    <p>Because you have told us you receive income from Salary, you now need to upload one of the following:</p>
+
+    <ul>
+      <li>HMRC letter</li>
+      <li>Letter from employer</li>
+      <li>P45</li>
+      <li>P60</li>
+      <li>Wage slips</li>
+    </ul>
+
+
+    <div class="nhsuk-card mb-30">
+      <div class="nhsuk-card__content p10">
+        <h2 class="nhsuk-heading-m">Uploaded files</h2>
+
+        <table class="nhsuk-table">
+          <caption class="nhsuk-u-visually-hidden">Uploaded
+            documents table</caption>
+
+          <thead role="rowgroup" class="nhsuk-table__head">
+            <tr role="row">
+              <th role="columnheader" scope="col">Type</th>
+              <th role="columnheader" scope="col">Status</th>
+              <th role="columnheader" scope="col">What you can do</th>
+            </tr>
+          </thead>
+
+          <tbody class="nhsuk-table__body">
+
+            {% if data['incomeEvidenceAdded'] == "yes" %}
+            <tr scope="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">HMRC letter</td>
+              <td class="nhsuk-table__cell">
+                <span>Uploaded</span>
+              </td>
+              <td class="nhsuk-table__cell"><a href="#" id="documentView[0]" target="_blank" rel="noopener">View</a> or
+                <span>
+                  <a id="documentRemove[0]" href="evidence-list?incomeEvidenceAdded=no">Remove</a>
+                </span>
+              </td>
+            </tr>
+            {% endif %}
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
+    {% if data['incomeEvidenceAdded'] == "yes" %}
+    <p>
+      You can upload more evidence if you need to. Or, you can select <span
+        class="nhsuk-u-font-weight-bold">Continue</span> if you have uploaded everything.
+    </p>
+    {% endif %}
+
+
+    <div class="nhsuk-form-group">
+      <a class="nhsuk-button nhsuk-button--secondary" href="evidence-upload" role="button">Add file</a>
+    </div>
+
+
+    <!-- If evidence is added, show "Add evidence" button -->
+    {% if data['incomeEvidenceAdded'] == "yes" %}
+    <p>By clicking continue you're confirming that you have uploaded all evidence required for this section of your
+      application.</p>
+    <a href="evidence-confirmation" class="nhsuk-button" role="button">Continue</a>
+    {% endif %}
+
+
+    <p><a href="">Save and come back later</a></p>
+
+  </div>
+</div>
+{% endblock %}
