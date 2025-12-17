@@ -1,0 +1,101 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} P1/P2 journey {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<!-- Breadcrumb -->
+
+{% endblock %}
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-width-container">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <div class="nhsuk-back-link">
+        <a class="nhsuk-back-link__link" href="javascript:history.go(-1)" id="back">
+          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+            aria-hidden="true">
+            <path
+              d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+            </path>
+          </svg>
+          Go back</a>
+      </div>
+
+      <span class="nhsuk-caption-l">Your income</span>
+      <h1 class="nhsuk-heading-xl">What you will need </h1>
+
+      <form action="/change-of-circumstances/V4/parent-and-partner/income/income-cya" method="POST">
+
+        <p>To assess your child's NHS Bursary application, we need to know how much
+          you earned in the last tax year.</p>
+
+        <p>We'll ask you if you got money from:</p>
+
+        <ul>
+          <li>a job or self-employment</li>
+          <li>bank or building society interest</li>
+          <li>sponsorship</li>
+          <li>rent (full property or part of your home)</li>
+          <li>a pension or taxable state benefits</li>
+          <li>maintenance payments</li>
+        </ul>
+
+        <h2 class="nhsuk-heading-s" id="evidence">Evidence you will need</h2>
+
+        <p>Depending on your answers, you may need to upload copies of your:</p>
+
+        <ul>
+          <li>payslips</li>
+          <li>P60, P45, or a letter from your employer</li>
+          <li>tax return, self-assessment form, or a letter from your accountant </li>
+          <li>bank statements</li>
+          <li>rent or mortgage statements</li>
+          <li>most recent pension statement</li>
+          <li>HMRC or benefits letter</li>
+          <li>rent or mortgage statements</li>
+          <li>child maintenance letter</li>
+        </ul>
+
+        <div class="nhsuk-warning-callout">
+          <h3 class="nhsuk-warning-callout__label">
+            <span role="text">
+              Important
+            </span>
+          </h3>
+          <p>
+            You will need to provide information for the most recently completed financial year. Please ensure the
+            values you declare match the supporting evidence you provide exactly.
+          </p>
+        </div>
+        <div class="nhsuk-inset-text">
+          <span class="nhsuk-u-visually-hidden">Information: </span>
+          <p>For your security, you will be signed out of the service if you do not do anything for
+            <span>30</span> minutes.
+          </p>
+        </div>
+
+        <button class="nhsuk-button" type="submit">Start now</button>
+
+      </form>
+
+    </div>
+  </div>
+</div>
+{% endblock %}

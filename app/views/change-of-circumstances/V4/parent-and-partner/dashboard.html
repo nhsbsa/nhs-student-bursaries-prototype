@@ -123,7 +123,7 @@
                 <!-- Else if consent is done, but income is not done, show link to income section -->
                 {% elif data['consentDone'] == 'Yes' %}
                 <td class="nhsuk-table__cell">
-                  <a href="income/income-cya">Income assessment</a>
+                  <a href="income/intro">Income assessment</a>
                 </td>
                 <td class="nhsuk-table__cell">
                   <strong class="nhsuk-tag nhsuk-tag--grey"> Not started </strong>
@@ -159,7 +159,7 @@
                 <!-- Else if income is done, but expenses is not done, show link to expenses section -->
                 {% elif data['incomeDone'] == 'Yes' %}
                 <td class="nhsuk-table__cell">
-                  <a href="expenses/expenses-cya">Expenses assessment</a>
+                  <a href="expenses/intro">Expenses assessment</a>
                 </td>
                 <td class="nhsuk-table__cell">
                   <strong class="nhsuk-tag nhsuk-tag--grey"> Not started </strong>

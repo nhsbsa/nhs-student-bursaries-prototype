@@ -1,0 +1,179 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} P1/P2 journey {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<!-- Breadcrumb -->
+
+{% endblock %}
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-width-container">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-heading-xl">Check your income answers </h1>
+
+      <form action="/change-of-circumstances/V4/parent-and-partner/income/evidence-list" method="POST">
+
+        <dl class="nhsuk-summary-list">
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Wages
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              <p>
+                £32,000.00
+              </p>
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="#">Change </a>
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Taxable allowances
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              <p>
+                n/a
+              </p>
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="#">Change </a>
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Self-employment
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              <p>
+                n/a
+              </p>
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="#">Change </a>
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Maintenance payments
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              <p>
+                n/a
+              </p>
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="#">Change </a>
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Pension
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              <p>
+                n/a
+              </p>
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="#">Change </a>
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Bank/Building society interest
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              <p>
+                £375.00
+              </p>
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="#">Change </a>
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Taxable benefits
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              <p>
+                n/a
+              </p>
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="#">Change </a>
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Other income
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              <p>
+                £125.00
+              </p>
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="#">Change </a>
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Rent
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              <p>
+                n/a
+              </p>
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="#">Change </a>
+            </dd>
+          </div>
+
+        </dl>
+
+        <h2 class="nhsuk-heading-l">Submit your income details</h2>
+        <p>By clicking accept you're confirming that the details you're providing are correct.</p>
+
+        <button class="nhsuk-button" type="submit">Accept and continue</button>
+
+      </form>
+
+
+      <div class="nhsuk-form-group">
+        <p><a href="/change-of-circumstances/V4/parent-and-partner/dashboard">Cancel and return to dashboard</a></p>
+      </div>
+
+    </div>
+  </div>
+</div>
+{% endblock %}
