@@ -10,7 +10,7 @@ const router = express.Router();
 // Routes for PARENT/PARTNER: SUBMIT INCOME AND EXPENSES DETAILS journey
 
 // Scenario initialization routes for dashboard page
-router.get('/apply/dashboard', (req, res) => {
+router.get('/parent-and-partner/dashboard', (req, res) => {
   const userType = req.query.userType;
 
   // Initialize variables based on scenario

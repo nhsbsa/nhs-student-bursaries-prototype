@@ -1,0 +1,358 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-processor.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Student dashboard {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb"
+  style="background-color: white; padding:12px 0; margin-bottom: 40px;">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a id="studentDetailsLink" class="nhsuk-breadcrumb__link"
+          href="student-details-unlocked">Student details</a></li>
+
+    </ol>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink"
+        href="/internal/enrolment/details?enrolmentId=238">Back to Course details</a></p>
+  </div>
+</nav>
+
+{% endblock %}
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+
+<div class="nhsuk-width-container">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <div>
+        <h1 class="nhsuk-app-heading">
+          <span class="nhsuk-caption-l" id="studentRef">BRN0000259-3 - Mike Lee (September 2024)</span>
+          <span>September 2024 - Course details</span>
+        </h1>
+      </div>
+    </div>
+
+    <div class="nhsuk-grid-column-one-third">
+      <div class="nhsuk-form-group">
+        <a href="student-details-locked" class="nhsuk-button nhsuk-button--secondary" role="button" id="next"
+          style="float: right;">Unlock record</a>
+      </div>
+    </div>
+
+    <div class="nhsuk-grid-column-one-half">
+      <form name="enrolmentDetailsForm" action="/internal/enrolment/details" method="post"><input type="hidden"
+          name="_csrf" value="54083b39-6756-4902-9bd5-a9c6c32fe028">
+
+        <div class="nhsuk-card">
+          <div class="nhsuk-card__content">
+
+            <div class="nhsuk-form-group" id="enrolled-group">
+              <label id="enrolled-label" for="enrolledDrop" class="nhsuk-label">Attendance Status</label>
+
+              <select class="nhsuk-select" id="enrolledDrop" aria-describedby="enrolled-label" name="enrolledStatus">
+                <option value="6" id="enrolledStatusDropdown0">Discontinued</option>
+                <option value="2" id="enrolledStatusDropdown1">Information mismatch</option>
+                <option value="1" id="enrolledStatusDropdown2">Matched student - in attendance</option>
+                <option value="5" id="enrolledStatusDropdown3">Not enrolled</option>
+                <option value="3" id="enrolledStatusDropdown4" selected="selected">Pending status</option>
+                <option value="4" id="enrolledStatusDropdown5">Withdrawn</option>
+              </select>
+            </div>
+
+            <div>
+              <input type="hidden" name="student.Id" id="student.Id" value="62"> <input type="hidden" name="Id" id="Id"
+                value="95">
+              <button class="nhsuk-button right-float" type="submit" id="updateEnrolmentDetails"
+                role="button">Update</button>
+            </div>
+
+
+          </div>
+        </div>
+
+      </form>
+    </div>
+
+    <div class="nhsuk-grid-column-one-half">
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <h2 class="nhsuk-card__heading nhsuk-heading-m">Actions</h2>
+
+          <ul>
+            <li>
+
+              <a href="upload-documentF"><span id="uploadEvidence">Upload extra evidence</span></a>
+            </li>
+            <li><a href="/internal/viewApplication/summary?enrolmentId=95" id="viewApplication">View
+                student's application</a>
+            </li>
+
+
+            <li><a href="view-calculations" id="calculationList">View full year calculations</a></li>
+
+            <li>
+              <a href="#"><span id="uploadEvidence">Edit course details</span></a>
+            </li>
+            <li>
+              <a href="/internal/enrolment/courseHistory?enrolmentId=95&amp;recordNumber=0" id="courseHistory">Course
+                details history</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="nhsuk-grid-column-full">
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <h3 class="nhsuk-card__heading">Student course details</h3>
+          <table role="table" class="nhsuk-table-responsive">
+
+            <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                <th role="columnheader" class="" scope="col" style="width: 20%">University</th>
+                <th role="columnheader" class="" scope="col" style="width: 20%">Course</th>
+                <th role="columnheader" class="" scope="col" style="width: 20%">Eligibility status</th>
+                <th role="columnheader" class="" scope="col" style="width: 20%">Award</th>
+                <th role="columnheader" class="" scope="col" style="width: 20%">Num extra weeks</th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">University </span>
+                  <span id="courseCollegeName">University of Leeds (Medical)</span>
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Course </span>
+                  <span id="enrolmentCourseName">Bachelor of Medicine and Surgery</span>
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Eligibility status </span>
+
+                  <span id="eligibilityStatusName">Eligible</span>
+
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Award </span>
+
+                  <span id="AwardName">Means tested</span>
+
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Num extra weeks </span>
+
+                  <span id="NumExtraWeeks">0</span>
+
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="nhsuk-grid-column-full">
+      <div class="nhsuk-tabs" data-module="nhsuk-tabs">
+        <h2 class="nhsuk-tabs__title">
+          Contents
+        </h2>
+
+        <ul class="nhsuk-tabs__list">
+
+          <li class="nhsuk-tabs__list-item nhsuk-tabs__list-item--selected">
+            <a class="nhsuk-tabs__tab" href="#activities">
+              Activities
+            </a>
+          </li>
+
+          <li class="nhsuk-tabs__list-item">
+            <a class="nhsuk-tabs__tab" href="#payments">
+              Payments
+            </a>
+          </li>
+
+          <li class="nhsuk-tabs__list-item">
+            <a class="nhsuk-tabs__tab" href="#dsa">
+              Disabled Students Allowance
+            </a>
+          </li>
+
+        </ul>
+
+        <div class="nhsuk-tabs__panel" id="activities">
+
+          <details class="nhsuk-details" id="activity0" open="">
+
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">112 - Means Tested Bursary Application (Complete)</span>
+            </summary>
+
+            <div class="nhsuk-details__text" id="details-content-activities0">
+
+
+              <p>
+                <span class="nhsuk-hint"></span>
+                <span class="nhsuk-hint">Date created: 11/08/2022 11:46:21</span>
+                <span class="nhsuk-hint">Date last updated: 16 August 2024 16:10:42</span>
+                <span class="nhsuk-hint">Last updated by: John Smith</span>
+                <span class="nhsuk-hint">Cipher: john.smith@nhs.net</span>
+              </p>
+              <p>
+
+              </p>
+            </div>
+          </details>
+
+        </div>
+
+        <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="payments">
+
+          <div class="nhsuk-form-group">
+
+            <table id="paymentsTable" class="nhsuk-table-responsive">
+              <caption hidden="" class="visually-hidden">Payments table</caption>
+              <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                  <th role="columnheader" scope="col">Date of next payment</th>
+                  <th role="columnheader" scope="col">Value</th>
+                  <th role="columnheader" scope="col">Award element</th>
+                  <th role="columnheader" scope="col">Held</th>
+                  <th role="columnheader" scope="col">Status</th>
+                </tr>
+              </thead>
+              <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell"><span class="visually-hidden"
+                      hidden="">2023-11-01</span><span>01/11/2023</span></td>
+                  <td role="cell" class="nhsuk-table__cell">330.00</td>
+                  <td role="cell" class="nhsuk-table__cell">Non means tested grant</td>
+                  <td role="cell" class="nhsuk-table__cell">No</td>
+                  <td role="cell" class="nhsuk-table__cell">Paid</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell"><span class="visually-hidden"
+                      hidden="">2023-11-01</span><span>01/11/2023</span></td>
+                  <td role="cell" class="nhsuk-table__cell">872.00</td>
+                  <td role="cell" class="nhsuk-table__cell">Means tested bursary</td>
+                  <td role="cell" class="nhsuk-table__cell">No</td>
+                  <td role="cell" class="nhsuk-table__cell">Paid</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell"><span class="visually-hidden"
+                      hidden="">2023-11-01</span><span>01/11/2023</span></td>
+                  <td role="cell" class="nhsuk-table__cell">989.00</td>
+                  <td role="cell" class="nhsuk-table__cell">Dependants Allowance</td>
+                  <td role="cell" class="nhsuk-table__cell">No</td>
+                  <td role="cell" class="nhsuk-table__cell">Paid</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell"><span class="visually-hidden"
+                      hidden="">2023-11-01</span><span>01/11/2023</span></td>
+                  <td role="cell" class="nhsuk-table__cell">397.00</td>
+                  <td role="cell" class="nhsuk-table__cell">Parent Learning Allowance</td>
+                  <td role="cell" class="nhsuk-table__cell">No</td>
+                  <td role="cell" class="nhsuk-table__cell">Paid</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell"><span class="visually-hidden"
+                      hidden="">2024-04-01</span><span>01/04/2024</span></td>
+                  <td role="cell" class="nhsuk-table__cell">330.00</td>
+                  <td role="cell" class="nhsuk-table__cell">Non means tested grant</td>
+                  <td role="cell" class="nhsuk-table__cell">No</td>
+                  <td role="cell" class="nhsuk-table__cell">Paid</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell"><span class="visually-hidden"
+                      hidden="">2024-04-01</span><span>01/04/2024</span></td>
+                  <td role="cell" class="nhsuk-table__cell">872.00</td>
+                  <td role="cell" class="nhsuk-table__cell">Means tested bursary</td>
+                  <td role="cell" class="nhsuk-table__cell">No</td>
+                  <td role="cell" class="nhsuk-table__cell">Paid</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell"><span class="visually-hidden"
+                      hidden="">2024-04-01</span><span>01/04/2024</span></td>
+                  <td role="cell" class="nhsuk-table__cell">989.00</td>
+                  <td role="cell" class="nhsuk-table__cell">Dependants Allowance</td>
+                  <td role="cell" class="nhsuk-table__cell">No</td>
+                  <td role="cell" class="nhsuk-table__cell">Paid</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell"><span class="visually-hidden"
+                      hidden="">2024-04-01</span><span>01/04/2024</span></td>
+                  <td role="cell" class="nhsuk-table__cell">397.00</td>
+                  <td role="cell" class="nhsuk-table__cell">Parent Learning Allowance</td>
+                  <td role="cell" class="nhsuk-table__cell">No</td>
+                  <td role="cell" class="nhsuk-table__cell">Paid</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell"><span class="visually-hidden"
+                      hidden="">2024-08-01</span><span>01/08/2024</span></td>
+                  <td role="cell" class="nhsuk-table__cell">340.00</td>
+                  <td role="cell" class="nhsuk-table__cell">Non means tested grant</td>
+                  <td role="cell" class="nhsuk-table__cell">No</td>
+                  <td role="cell" class="nhsuk-table__cell">Paid</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell"><span class="visually-hidden"
+                      hidden="">2024-08-01</span><span>01/08/2024</span></td>
+                  <td role="cell" class="nhsuk-table__cell">899.00</td>
+                  <td role="cell" class="nhsuk-table__cell">Means tested bursary</td>
+                  <td role="cell" class="nhsuk-table__cell">No</td>
+                  <td role="cell" class="nhsuk-table__cell">Paid</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell"><span class="visually-hidden"
+                      hidden="">2024-08-01</span><span>01/08/2024</span></td>
+                  <td role="cell" class="nhsuk-table__cell">1019.00</td>
+                  <td role="cell" class="nhsuk-table__cell">Dependants Allowance</td>
+                  <td role="cell" class="nhsuk-table__cell">No</td>
+                  <td role="cell" class="nhsuk-table__cell">Paid</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell"><span class="visually-hidden"
+                      hidden="">2024-08-01</span><span>01/08/2024</span></td>
+                  <td role="cell" class="nhsuk-table__cell">410.00</td>
+                  <td role="cell" class="nhsuk-table__cell">Parent Learning Allowance</td>
+                  <td role="cell" class="nhsuk-table__cell">No</td>
+                  <td role="cell" class="nhsuk-table__cell">Paid</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <a href="payment-details-unlocked" class="nhsuk-button" id="paymentButton" role="button">Manage
+            payments
+          </a>
+
+        </div>
+
+
+        <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="dsa">
+
+          <p class="nhsuk-u-font-weight-bold nhsuk-u-text-align-centre" id="noDSA">This student has no
+            DSA allowances.</p>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>
+{% endblock %}
