@@ -42,47 +42,146 @@
     <div class="nhsuk-grid-row">
       <div class="nhsuk-grid-column-two-thirds">
 
-        <span class="nhsuk-caption-l">BRN0000259-3 - Mike Lee (September 2024)</span>
+        <span class="nhsuk-caption-l">BRN0000259-3 - Ali Smith (September 2024)</span>
         <h1 class="nhsuk-heading-l">
           Change of circumstances summary
         </h1>
 
-        <h2 class="nhsuk-heading-m nhsuk-u-margin-top-6">Change details</h2>
-        <dl class="nhsuk-summary-list">
-          <div class="nhsuk-summary-list__row">
-            <dt class="nhsuk-summary-list__key">
-              Type of change
-            </dt>
-            <dd class="nhsuk-summary-list__value">
-              Parents' or partner's income or expenses
-            </dd>
+        <div class="nhsuk-card">
+          <div class="nhsuk-card__content">
+            <h2 class="nhsuk-heading-m">Change details</h2>
+            <div>
+
+              <dl class="nhsuk-summary-list" style="margin-bottom: 0;">
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Type of change
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    Parents' or partner's income or expenses
+                  </dd>
+                </div>
+
+                <!-- <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Reason for change
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    {% if data['CoCScenario'] == "noChanges" %}
+                    There has been some other change to my income or expenses, but the Change of circumstances form did not
+                    ask me for it.
+                    {% else %}
+                    My income has changed as my sponsorship has ended and I got a new job. My expenses have changed as I have
+                    moved to a new flat.
+                    {% endif %}
+                  </dd>
+                </div> -->
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Date of change
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    5 January 2026
+                  </dd>
+                </div>
+              </dl>
+
+            </div>
           </div>
+        </div>
 
-          <!-- <div class="nhsuk-summary-list__row">
-            <dt class="nhsuk-summary-list__key">
-              Reason for change
-            </dt>
-            <dd class="nhsuk-summary-list__value">
-              {% if data['CoCScenario'] == "noChanges" %}
-              There has been some other change to my income or expenses, but the Change of circumstances form did not
-              ask me for it.
-              {% else %}
-              My income has changed as my sponsorship has ended and I got a new job. My expenses have changed as I have
-              moved to a new flat.
-              {% endif %}
-            </dd>
-          </div> -->
 
-          <div class="nhsuk-summary-list__row">
-            <dt class="nhsuk-summary-list__key">
-              Date of change
-            </dt>
-            <dd class="nhsuk-summary-list__value">
-              5 February 2025
-            </dd>
-          </div>
-        </dl>
 
+        <!-- <h2 class="nhsuk-heading-m nhsuk-u-margin-top-6">Change details</h2> -->
+
+
+
+
+
+
+
+        <table class="nhsuk-table">
+          <thead class="nhsuk-table__head">
+            <tr class="nhsuk-table__row">
+              <th class="nhsuk-table__header" scope="col">Application step</th>
+              <th class="nhsuk-table__header" scope="col">Status</th>
+            </tr>
+          </thead>
+
+          <tbody class="nhsuk-table__body">
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">
+                <a id="assessEnrolment" href="#">Course details</a>
+              </td>
+              <td class="nhsuk-table__cell">
+                <!-- <strong class="nhsuk-tag nhsuk-tag--aqua-green">Eligible course</strong> -->
+                <strong class="nhsuk-tag nhsuk-tag--white">No change</strong>
+              </td>
+            </tr>
+
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">
+                <a id="assessEligibility" href="#">Eligibility</a>
+              </td>
+              <td class="nhsuk-table__cell">
+                <!-- <strong class="nhsuk-tag nhsuk-tag--aqua-green">Eligible</strong> -->
+                <strong class="nhsuk-tag nhsuk-tag--white">No change</strong>
+              </td>
+            </tr>
+
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">
+                <a id="assessStatus" href="#">Status assessment</a>
+              </td>
+              <td class="nhsuk-table__cell">
+                <!-- <strong class="nhsuk-tag nhsuk-tag--red">Dependent on parents</strong> -->
+                <strong class="nhsuk-tag nhsuk-tag--white">No change</strong>
+              </td>
+            </tr>
+
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">
+                <a id="studentIncomeExpenseLink" href="#">Student income/expenses details</a>
+              </td>
+              <td class="nhsuk-table__cell">
+                <!-- <strong class="nhsuk-tag nhsuk-tag--aqua-green">Assessed</strong> -->
+                <strong class="nhsuk-tag nhsuk-tag--white">No change</strong>
+              </td>
+            </tr>
+
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">
+                <a id="person1ChildrenLink" href="#">Person 1 children details</a>
+              </td>
+              <td class="nhsuk-table__cell">
+                <!-- <strong class="nhsuk-tag nhsuk-tag--aqua-green">Assessed</strong> -->
+                <strong class="nhsuk-tag nhsuk-tag--white">No change</strong>
+              </td>
+            </tr>
+
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">
+                <a id="person1IncomeExpensesLink" href="parent-income-expenses/summary">Person 1 income/expenses details</a>
+              </td>
+              <td class="nhsuk-table__cell">
+                <!-- <strong class="nhsuk-tag nhsuk-tag--aqua-green">Assessed</strong> -->
+                <strong class="nhsuk-tag nhsuk-tag--yellow">Changed</strong>
+              </td>
+            </tr>
+
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">
+                <a id="person2IncomeExpensesLink" href="#">Person 2 income/expenses details</a>
+              </td>
+              <td class="nhsuk-table__cell">
+                <!-- <strong class="nhsuk-tag nhsuk-tag--aqua-green">Assessed</strong> -->
+                <strong class="nhsuk-tag nhsuk-tag--yellow">Changed</strong>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
 
 
 
@@ -93,11 +192,11 @@
 
           <div class="nhsuk-form-group">
 
-            
+
             <!-- TEMPORAILY REMOVING H2 HEADING -- TO BE ADDED BACK LATER -->
             <!-- <h2 class="nhsuk-heading-m nhsuk-u-margin-top-8">How would you like to continue?</h2> -->
 
-            
+
             <!-- TEMPORARY OLD BUTTONS -- TO BE REMOVED -->
             <div class="nhsuk-u-margin-top-6">
               <a class="nhsuk-button nhsuk-u-margin-right-3" id="complete" href="#" role="button"

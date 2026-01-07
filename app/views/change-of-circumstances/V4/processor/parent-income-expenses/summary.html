@@ -1,0 +1,256 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-processor.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Change of circumstances summary {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb"
+  style="background-color: white; padding:12px 0; margin-bottom: 40px;">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a id="searchLink" class="nhsuk-breadcrumb__link" href="#">Student search</a>
+      </li>
+      <li class="nhsuk-breadcrumb__item"><a id="studentDetailsLink" class="nhsuk-breadcrumb__link"
+          href="/change-of-circumstances/V4/processor/student-details-locked">Student details</a></li>
+
+    </ol>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="#">Back to Course details</a></p>
+  </div>
+</nav>
+
+{% endblock %}
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-width-container">
+  <main class="nhsuk-main-wrapper" id="maincontent" role="main">
+
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-two-thirds">
+      <div class="nhsuk-back-link">
+        <a class="nhsuk-back-link__link" href="javascript:history.go(-1)" id="back">
+          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+            aria-hidden="true">
+            <path
+              d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+            </path>
+          </svg>
+          Go back</a>
+      </div>
+
+        <span class="nhsuk-caption-l">BRN0000259-3 - Ali Smith (September 2024)</span>
+        <h1 class="nhsuk-heading-l">
+          Parent 1 income and expense details
+        </h1>
+
+
+
+        <div class="nhsuk-card">
+          <div class="nhsuk-card__content">
+            <dl class="nhsuk-summary-list">
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Name</dt>
+                <dd class="nhsuk-summary-list__value">John Smith</dd>
+              </div>
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Email</dt>
+                <dd class="nhsuk-summary-list__value">johnsmith@gmail.com</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+
+
+
+        <div class="nhsuk-table__panel-with-heading-tab">
+          <h2 class="nhsuk-table__heading-tab">Evidence uploaded</h2>
+          <table role="table" class="nhsuk-table-responsive" id="documentListTable">
+            <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Evidence uploaded</caption>
+            <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                <th role="columnheader" class="" scope="col">Type</th>
+                <th role="columnheader" class="" scope="col">Upload date</th>
+                <th role="columnheader" class="" scope="col">View</th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+              <tr role="row" class="nhsuk-table__row" id="documentListTableRow[0]">
+                <td role="cell" class="nhsuk-table__cell">
+                  <span>Bank statement</span>
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span>12 January 2025 15:02</span>
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <a id="document0" href="/internal/personIncomeExpense/view/document?documentId=701"
+                    target="_blank">View</a>
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row" id="documentListTableRow[1]">
+                <td role="cell" class="nhsuk-table__cell">
+                  <span>Letter from employer</span>
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span>12 January 2025 15:06</span>
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <a id="document1" href="/internal/personIncomeExpense/view/document?documentId=702"
+                    target="_blank">View</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 class="nhsuk-app-heading">
+          Income details
+        </h2>
+
+        <table class="nhsuk-table-responsive" id="incomeDetailsTable" style="margin-bottom: 40px;">
+          <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Income details</caption>
+          <thead class="nhsuk-table__head">
+            <tr>
+              <th scope="col">Income type</th>
+              <th scope="col">Old answer</th>
+              <th scope="col">New answer</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr>
+              <td>Salary/wages <strong class="nhsuk-tag nhsuk-tag--yellow">Changed</strong></td>
+              <td id="incomeSalary_old">£29,200</td>
+              <td id="incomeSalary">£34,500</td>
+              <td><a id="linkChangeSalary" href="salary">Change<span
+                    class="nhsuk-u-visually-hidden"> salary/wages</span></a></td>
+            </tr>
+            <tr>
+              <td>Taxable allowances</td>
+              <td id="IncomeTaxableAllowances_old">None</td>
+              <td id="IncomeTaxableAllowances">None</td>
+              <td><a id="linkChangetaxableAllowances" href="/internal/personIncomeExpense/taxableAllowances">Change<span
+                    class="nhsuk-u-visually-hidden"> taxable allowances</span></a></td>
+            </tr>
+            <tr>
+              <td>Self employment <strong class="nhsuk-tag nhsuk-tag--yellow">Changed</strong></td>
+              <td id="IncomeSelfEmployed_old">None</td>
+              <td id="IncomeSelfEmployed">£2,450</td>
+              <td><a id="linkChangeSelfEmployed" href="/internal/personIncomeExpense/selfEmployed">Change<span
+                    class="nhsuk-u-visually-hidden"> self employment</span></a></td>
+            </tr>
+            <tr>
+              <td>Maintenance received</td>
+              <td id="incomeMaintenance_old">None</td>
+              <td id="incomeMaintenance">None</td>
+              <td><a id="linkChangeIncomeMaintenance" href="/internal/personIncomeExpense/maintenanceIncome">Change<span
+                    class="nhsuk-u-visually-hidden"> maintenance received</span></a></td>
+            </tr>
+            <tr>
+              <td>Pension (before tax)</td>
+              <td id="incomePension_old">None</td>
+              <td id="incomePension">None</td>
+              <td><a id="linkChangepensionIncome" href="/internal/personIncomeExpense/pensionIncome">Change<span
+                    class="nhsuk-u-visually-hidden"> pension (before tax)</span></a></td>
+            </tr>
+            <tr>
+              <td>Bank/Building society interest <strong class="nhsuk-tag nhsuk-tag--yellow">Changed</strong></td>
+              <td id="IncomeBankInterest_old">£150</td>
+              <td id="IncomeBankInterest">£340</td>
+              <td><a id="linkChangebankInterest" href="/internal/personIncomeExpense/bankInterest">Change<span
+                    class="nhsuk-u-visually-hidden"> bank/Building society interest</span></a></td>
+            </tr>
+            <tr>
+              <td>Taxable benefits</td>
+              <td id="incomeTaxableBenefits_old">None</td>
+              <td id="incomeTaxableBenefits">None</td>
+              <td><a id="linkChangetaxableBenefits" href="/internal/personIncomeExpense/taxableBenefits">Change<span
+                    class="nhsuk-u-visually-hidden"> taxable benefits</span></a></td>
+            </tr>
+            <tr>
+              <td>Other unearned income</td>
+              <td id="incomeOtherUnearned_old">None</td>
+              <td id="incomeOtherUnearned">None</td>
+              <td><a id="linkChangeotherUnearned" href="/internal/personIncomeExpense/otherUnearned">Change<span
+                    class="nhsuk-u-visually-hidden"> other unearned income</span></a></td>
+            </tr>
+            <tr>
+              <td>Profit from lettings or lodgings</td>
+              <td id="incomeLetting_old">None</td>
+              <td id="incomeLetting">None</td>
+              <td><a id="linkChangeletting" href="/internal/personIncomeExpense/letting">Change<span
+                    class="nhsuk-u-visually-hidden"> profit from lettings or lodgings</span></a></td>
+            </tr>
+            <tr>
+              <td>Reason for zero income</td>
+              <td id="incomeZeroIncomeExplanation_old"></td>
+              <td id="incomeZeroIncomeExplanation"></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2 class="nhsuk-app-heading">Expense details</h2>
+
+        <table class="nhsuk-table-responsive" id="expenseDetailsTable" style="margin-bottom: 40px;">
+          <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Expense details</caption>
+          <thead class="nhsuk-table__head">
+            <tr>
+              <th scope="col">Expense type</th>
+              <th scope="col">Old answer</th>
+              <th scope="col">New answer</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr>
+              <td>Personal pension/retirement annuity</td>
+              <td id="ExpensePension_old">None</td>
+              <td id="ExpensePension">None</td>
+              <td><a id="linkChangepension" href="/internal/personIncomeExpense/pension">Change<span
+                    class="nhsuk-u-visually-hidden"> personal pension/retirement annuity</span></a></td>
+            </tr>
+            <tr>
+              <td>Other loan interest <strong class="nhsuk-tag nhsuk-tag--yellow">Changed</strong></td>
+              <td id="expenseLoanInterest_old">£190</td>
+              <td id="expenseLoanInterest">£240</td>
+              <td><a id="linkChangeloanInterest" href="/internal/personIncomeExpense/loanInterest">Change<span
+                    class="nhsuk-u-visually-hidden"> other loan interest</span></a></td>
+            </tr>
+            <tr>
+              <td>Professional subscriptions</td>
+              <td id="expenseProfessionalSubscription_old">None</td>
+              <td id="expenseProfessionalSubscription">None</td>
+              <td><a id="linkChangeprofessionalSubscription"
+                  href="/internal/personIncomeExpense/professionalSubscription">Change<span
+                    class="nhsuk-u-visually-hidden"> professional subscriptions</span></a></td>
+            </tr>
+            <tr>
+              <td>Employee pension contributions <strong class="nhsuk-tag nhsuk-tag--yellow">Changed</strong></td>
+              <td id="expenseEmployeePension_old">£800</td>
+              <td id="expenseEmployeePension">£1,175</td>
+              <td><a id="linkChangeemployeePension" href="/internal/personIncomeExpense/employeePension">Change<span
+                    class="nhsuk-u-visually-hidden"> employee pension contributions</span></a></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p><a id="canceltoStudent" href="/change-of-circumstances/V4/processor/change-summary">Go back to Change of circumstances summary</a></p>
+      </div>
+    </div>
+  </main>
+</div>
+{% endblock %}
