@@ -36,6 +36,9 @@ router.use('/change-of-circumstances/V4/apply', require('./views/change-of-circu
 // Routes for PARENT/PARTNER: SUBMIT INCOME AND EXPENSES DETAILS journey
 router.use('/change-of-circumstances/V4/parent-and-partner', require('./views/change-of-circumstances/V4/parent-and-partner/_routes'));
 
+// Routes for PROCESSOR: REVIEW CoC journey
+router.use('/change-of-circumstances/V4/processor', require('./views/change-of-circumstances/V4/processor/_routes'));
+
 
 
 // CoC V3

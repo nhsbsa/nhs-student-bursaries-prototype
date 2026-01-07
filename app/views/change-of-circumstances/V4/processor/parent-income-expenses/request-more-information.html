@@ -1,0 +1,112 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-processor.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Change of circumstances summary {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb"
+  style="background-color: white; padding:12px 0; margin-bottom: 40px;">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a id="searchLink" class="nhsuk-breadcrumb__link" href="#">Student search</a>
+      </li>
+      <li class="nhsuk-breadcrumb__item"><a id="studentDetailsLink" class="nhsuk-breadcrumb__link"
+          href="/change-of-circumstances/V4/processor/student-details-locked">Student details</a></li>
+
+    </ol>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="#">Back to Course details</a></p>
+  </div>
+</nav>
+
+{% endblock %}
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-width-container">
+
+  <div class="nhsuk-back-link">
+    <a class="nhsuk-back-link__link" href="javascript:history.go(-1)" id="back">
+      <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+        aria-hidden="true">
+        <path
+          d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+        </path>
+      </svg>
+      Go back</a>
+  </div>
+
+  <h1 class="nhsuk-app-heading">
+    <span class="nhsuk-caption-l">Application Assessment</span><span>Request further evidence</span>
+  </h1>
+
+  <form action="/change-of-circumstances/V4/processor/parent-income-expenses/request-more-information" method="POST">
+    <input type="hidden" name="_csrf" value="864ba651-a8d0-4b47-81da-e49579184dde">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+
+
+      </div>
+      <div class="nhsuk-grid-column-full">
+        <label class="nhsuk-label">Complete text box to send email to Bobert Bilson</label>
+
+        <div class="nhsuk-form-group" id="error-message-documentcomments">
+          <label for="mailContent" class="nhsuk-label" id="mailContent-label">Dear Bobert Bilson,</label>
+
+          <p>You have provided information to support Joe Hutchinson in their application for a means-tested NHS
+            Bursary.</p>
+
+          <textarea class="nhsuk-textarea" rows="8" id="mailContent" maxlength="2000"
+            aria-labelledby="mailContent-label" name="mailContent"></textarea>
+          <div id="charactersRemaining">2000 characters remaining</div>
+        </div>
+
+        <p>Please can you supply this additional information by following this link:
+          <span class="nhsuk-link nhsuk-link--no-visited-state">'link to system'</span>
+        </p>
+        <p>If you have any general queries about the NHS Student Bursary, please use our online enquiry system <a
+            href="https://faq.nhsbsa.nhs.uk/knowledgebase/category/?articlecategory=NHS%20Bursary&amp;id=CAT-05069&amp;parentid="
+            target="_blank">'Ask Us'</a> which is available 24 hours a day, 7 days a week.
+          If you cannot find the answer you require, you can contact us using the details below:</p>
+        <ul>
+          <li>Telephone: 0300 330 1345</li>
+          <li>Text relay service: 18001 0300 330 1345</li>
+          <li>Twitter: <a href="https://www.twitter.com/NHSBSA_Students" target="_blank">@NHSBSA_Students</a></li>
+          <li>Facebook: <a href="https://www.facebook.com/NHSstudentbursaries" target="_blank">NHSstudentbursaries</a>
+          </li>
+        </ul>
+        <br>
+        <p>Yours sincerely,</p>
+        <br>
+        <p>Student Services</p>
+        <p>NHS Business Services Authority</p>
+
+        <div class="nhsuk-form-group">
+          <button class="nhsuk-button" type="submit" name="buttonType" value="sendEmail" id="email"
+            role="button">Send</button>
+        </div>
+        <div class="nhsuk-form-group">
+          <button class="nhsuk-button nhsuk-button--secondary" type="submit" name="buttonType" value="withoutEmail"
+            id="noEmail" role="button">Proceed without email</button>
+        </div>
+      </div>
+
+    </div>
+
+  </form>
+
+</div>
+{% endblock %}

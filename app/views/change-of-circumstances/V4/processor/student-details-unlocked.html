@@ -177,7 +177,8 @@
               <details class="nhsuk-details nhsuk-expander" id="activity0">
 
                 <summary class="nhsuk-details__summary">
-                  <span class="nhsuk-details__summary-text">352 - Change to parent or partner's income or expenses (active)</span>
+                  <span class="nhsuk-details__summary-text">352 - Change to parent or partner's income or expenses ({{
+                    data['CoCActivityStatus'] | default('active') }})</span>
                 </summary>
                 <div class="nhsuk-details__text" id="details-content-activities[0]">
                   <dl class="nhsuk-summary-list">
@@ -215,7 +216,7 @@
                 </div>
               </details>
 
-              
+
               <details class="nhsuk-details nhsuk-expander" id="activity2">
 
                 <summary class="nhsuk-details__summary">
