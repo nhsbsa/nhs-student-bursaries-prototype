@@ -66,16 +66,16 @@ router.post('/update-payments-journey/payment-details-add-payment-route', (req, 
   // Pass values of added payment types so they can be shown in payment schedule.
   // Both will be shown, or one, or the other, or else neither.
   if (T2MeansTestedBursaryAdded === 'true' && T2ExtraWeeksAllowanceAdded === 'true') {
-    res.redirect('/change-of-circumstances/V4/process-application/update-payments-journey/payment-details-locked-coc-callout?CoCPaymentsUpdated=true&T2MeansTestedBursaryAdded=true?T2ExtraWeeksAllowanceAdded=true')
+    res.redirect('/change-of-circumstances/V4/processor/update-payments-journey/payment-details-locked-coc-callout?CoCPaymentsUpdated=true&T2MeansTestedBursaryAdded=true?T2ExtraWeeksAllowanceAdded=true')
   }
   else if (T2MeansTestedBursaryAdded === 'true') {
-    res.redirect('/change-of-circumstances/V4/process-application/update-payments-journey/payment-details-locked-coc-callout?CoCPaymentsUpdated=true&T2MeansTestedBursaryAdded=true')
+    res.redirect('/change-of-circumstances/V4/processor/update-payments-journey/payment-details-locked-coc-callout?CoCPaymentsUpdated=true&T2MeansTestedBursaryAdded=true')
   }
   else if (T2ExtraWeeksAllowanceAdded === 'true') {
-    res.redirect('/change-of-circumstances/V4/process-application/update-payments-journey/payment-details-locked-coc-callout?CoCPaymentsUpdated=true&T2ExtraWeeksAllowanceAdded=true')
+    res.redirect('/change-of-circumstances/V4/processor/update-payments-journey/payment-details-locked-coc-callout?CoCPaymentsUpdated=true&T2ExtraWeeksAllowanceAdded=true')
   }
   else {
-    res.redirect('/change-of-circumstances/V4/process-application/update-payments-journey/payment-details-locked-coc-callout?CoCPaymentsUpdated=true')
+    res.redirect('/change-of-circumstances/V4/processor/update-payments-journey/payment-details-locked-coc-callout?CoCPaymentsUpdated=true')
   }
 
 })
@@ -88,13 +88,13 @@ router.post('/update-payments-journey/payment-details-edit-payment-route', (req,
 
   // Proceed to schedule, while updating and passing the relevant Edited flag
   if (editedPaymentType === 'meansTestedBursary') {
-    res.redirect('/change-of-circumstances/V4/process-application/update-payments-journey/payment-details-locked-coc-callout?CoCPaymentsUpdated=true&T3MeansTestedBursaryEdited=true')
+    res.redirect('/change-of-circumstances/V4/processor/update-payments-journey/payment-details-locked-coc-callout?CoCPaymentsUpdated=true&T3MeansTestedBursaryEdited=true')
   }
   else if (editedPaymentType === 'extraWeeksAllowance') {
-    res.redirect('/change-of-circumstances/V4/process-application/update-payments-journey/payment-details-locked-coc-callout?CoCPaymentsUpdated=true&T3ExtraWeeksAllowanceEdited=true')
+    res.redirect('/change-of-circumstances/V4/processor/update-payments-journey/payment-details-locked-coc-callout?CoCPaymentsUpdated=true&T3ExtraWeeksAllowanceEdited=true')
   }
   else {
-    res.redirect('/change-of-circumstances/V4/process-application/update-payments-journey/payment-details-locked-coc-callout?CoCPaymentsUpdated=true')
+    res.redirect('/change-of-circumstances/V4/processor/update-payments-journey/payment-details-locked-coc-callout?CoCPaymentsUpdated=true')
   }
 
 })
@@ -104,7 +104,7 @@ router.post('/change-confirmation-comment-route', (req, res) => {
 
   const CoCScenario = req.session.data['CoCScenario']
   const CoCSchedulingChoice = req.session.data['CoCSchedulingChoice']
-  
+
   req.session.data['CoCActivityStatus'] = 'complete';
 
   // Save input from comment textbox
