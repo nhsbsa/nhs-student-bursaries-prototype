@@ -321,6 +321,59 @@
                 </tr>
               </thead>
               <tbody>
+
+                {% if data['CoCActivityStatus'] == "complete" %}
+                <tr role="row">
+                  <td style="padding-top: 0px;">
+                    <h4 class="nhsuk-heading-s">Change of circumstances - 13 February 2025 at 11:37am
+                      <br>
+                      <div style="font-size: 1.1875rem; line-height: 1.47368;">Linked activity 252 - Change of parents'
+                        or partner's income or expenses</div>
+                      <strong class="nhsuk-tag nhsuk-tag--grey">System note</strong>
+                    </h4>
+
+                    {% if data['CoCScenario'] == "addressOnly" %}
+                    <ul>
+                      <li>Change of circumstances completed.</li>
+                      <li>Address updated.</li>
+                      <li>Email sent to student.</li>
+                    </ul>
+
+                    {% elif data['CoCSchedulingChoice'] == "automaticReschedule" %}
+                    <ul>
+                      <li>Change of circumstances completed.</li>
+                      <li>Address updated.</li>
+                      <li>Living with parents updated.</li>
+                      <li>Payments updated automatically.</li>
+                      <li>Email sent to student.</li>
+                    </ul>
+
+                    {% else %}
+                    <ul>
+                      <li>Change of circumstances completed.</li>
+                      <!-- <li>Address updated.</li> -->
+                      <li>Bursary details updated.</li>
+                      <li>Payments updated manually.</li>
+                      <!-- <li>Calculations sheet uploaded.</li> -->
+                      <li>Email sent to student.</li>
+                    </ul>
+                    {% endif %}
+
+                    <p>Processor comment: I have added this optional comment, to provide some additional info about this
+                      change which could be useful.</p>
+
+                    <p>Change type: Change of parents' or partner's income or expenses<br>
+                      Date of change: 5 February 2025
+                    </p>
+
+                    <div class="nhsuk-hint" id="contact-hint">
+                      Last modified by <strong>John Smith</strong>
+                    </div>
+                  </td>
+                </tr>
+                {% endif %}
+
+
                 <tr role="row">
                   <td>
                     <h4 class="nhsuk-heading-s">General - 27 October 2024 at 5:03pm
