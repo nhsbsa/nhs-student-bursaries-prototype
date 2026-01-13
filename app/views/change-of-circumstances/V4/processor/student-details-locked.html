@@ -322,6 +322,8 @@
               </thead>
               <tbody>
 
+
+
                 {% if data['CoCActivityStatus'] == "complete" %}
                 <tr role="row">
                   <td style="padding-top: 0px;">
@@ -367,11 +369,39 @@
                     </p>
 
                     <div class="nhsuk-hint" id="contact-hint">
-                      Last modified by <strong>John Smith</strong>
+                      Last modified by <strong>David Williams</strong>
+                    </div>
+                  </td>
+                </tr>
+
+
+                
+                {% elif data['CoCActivityStatus'] == "pended" %}
+                <tr role="row">
+                  <td style="padding-top: 0px;">
+                    <h4 class="nhsuk-heading-s">Change of circumstances - 13 February 2025 at 11:37am
+                      <br>
+                      <div style="font-size: 1.1875rem; line-height: 1.47368;">Linked activity 252 - Change of parents'
+                        or partner's income or expenses</div>
+                      <strong class="nhsuk-tag nhsuk-tag--grey">System note</strong>
+                    </h4>
+
+                    <ul>
+                      <li>Change of circumstances returned to student.</li>
+                      <li>Email sent to student.</li>
+                    </ul>
+
+                    <p>Return reason: Please upload valid evidence for your parents no longer living together.
+                    </p>
+
+                    <div class="nhsuk-hint" id="contact-hint">
+                      Last modified by <strong>David Williams</strong>
                     </div>
                   </td>
                 </tr>
                 {% endif %}
+
+
 
 
                 <tr role="row">

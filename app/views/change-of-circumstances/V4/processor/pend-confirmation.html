@@ -1,0 +1,154 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-processor.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Student dashboard {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+{% endblock %}
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-width-container">
+  <main class="nhsuk-main-wrapper" id="maincontent" role="main" style="padding: 0;">
+
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-two-thirds">
+
+        <div>
+          <h1 class="nhsuk-app-heading" style="margin-bottom: 20px;">
+            <span class="nhsuk-caption-l" id="studentRef">BRN0000259-3 - Ali Smith (September 2024)</span>
+            <!-- Change of circumstances summary -->
+          </h1>
+        </div>
+
+        <div class="nhsuk-card" style="background: #005EB8; margin-top: 0;">
+          <div class="nhsuk-card__content">
+            <h1 class="nhsuk-card__heading" style="text-align: center; color: white;">
+              Change of circumstances returned to student
+            </h1>
+          </div>
+        </div>
+
+        <p>You've completed the following actions for this student:</p>
+        <ul>
+          <li>email sent to student - they'll be able to change their answers and add more evidence</li>
+          <li>note created</li>
+        </ul>
+
+        <h2 class="nhsuk-heading-m" style="margin-top: 40px;">More details</h2>
+
+        <!-- <p>We'll email the student to let them know you've returned this claim. They'll be able to change their answers
+          and add more evidence.</p> -->
+
+        <details class="nhsuk-details nhsuk-expander">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              Email sent to student
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <p>You've sent this email to the student.</p>
+
+            <div class="nhsuk-card">
+              <div class="nhsuk-card__content">
+
+                <p><strong>Changes needed for change of circumstances - NHS Bursary</strong></p>
+
+                <p>Dear Ali Smith</p>
+
+                <p>We've returned your change of circumstances request for change of parents' or partner's income or
+                  expenses. You can read our reason why:
+                </p>
+
+                <p>Please upload valid evidence for your parents no longer living together.</p>
+
+                <p><a href="https://nhs-bursary.nhsbsa.nhs.uk/student/login">Sign in to your NHS Bursary account</a> to
+                  review your change and re-submit it.</p>
+
+                <p>Student Services</p>
+
+
+
+
+
+
+                <!-- We've completed your change of circumstances request for <strong>Change of address</strong>.</p>
+
+                <p>We've made changes to your payments because of this change.
+                  <a href="https://nhs-bursary.nhsbsa.nhs.uk/student/login">Sign in to your NHS Bursary account</a> to
+                  review your new payments.
+                </p>
+
+                <p>If you've submitted any more changes, we'll send separate emails about these when they're complete or
+                  if we need any more information.</p>
+
+                <p>Student Services</p> -->
+
+              </div>
+            </div>
+          </div>
+        </details>
+
+
+
+        <details class="nhsuk-details nhsuk-expander">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              Note created
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <p>You've added this note to the student's record.</p>
+
+            <div class="nhsuk-card">
+              <div class="nhsuk-card__content">
+
+                <h3 class="nhsuk-heading-s">Change of circumstances - 13 February 2025 at 11:37am
+                  <br>
+                  <div style="font-size: 1.1875rem; line-height: 1.47368;">Linked activity 252 - Change of parents' or
+                    partner's income or expenses</div>
+                  <strong class="nhsuk-tag nhsuk-tag--grey">System note</strong>
+                </h3>
+
+                <ul>
+                  <li>Change of circumstances returned to student.</li>
+                  <li>Email sent to student.</li>
+                </ul>
+
+                <p>Return reason: Please upload valid evidence for your parents no longer living together.
+                </p>
+
+                <div class="nhsuk-hint" id="contact-hint">
+                  Last modified by <strong>David Williams</strong>
+                </div>
+
+              </div>
+            </div>
+        </details>
+
+        <div class="nhsuk-form-group">
+          <a class="nhsuk-button nhsuk-u-margin-right-5 nhsuk-u-margin-top-3" id="complete"
+            href="student-details-locked?CoCActivityStatus=pended" role="button" data-module="nhsuk-button">Return to Student details</a>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+</div>
+{% endblock %}
