@@ -1,0 +1,183 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-processor.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Change of circumstances summary {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb"
+  style="background-color: white; padding:12px 0; margin-bottom: 40px;">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a id="searchLink" class="nhsuk-breadcrumb__link" href="#">Student search</a>
+      </li>
+      <li class="nhsuk-breadcrumb__item"><a id="studentDetailsLink" class="nhsuk-breadcrumb__link"
+          href="/change-of-circumstances/V4/processor/student-details-locked">Student details</a></li>
+
+    </ol>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="#">Back to Course details</a></p>
+  </div>
+</nav>
+
+{% endblock %}
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-width-container">
+  <main class="nhsuk-main-wrapper" id="maincontent" role="main">
+
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-back-link">
+          <a class="nhsuk-back-link__link" href="javascript:history.go(-1)" id="back">
+            <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+              aria-hidden="true">
+              <path
+                d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+              </path>
+            </svg>
+            Go back</a>
+        </div>
+
+        <span class="nhsuk-caption-l">BRN0000259-3 - Ali Smith (September 2024)</span>
+        <h1 class="nhsuk-heading-l">
+          Parent details
+        </h1>
+
+
+
+        <div class="nhsuk-table__panel-with-heading-tab">
+          <h2 class="nhsuk-table__heading-tab">Evidence uploaded</h2>
+          <table role="table" class="nhsuk-table-responsive" id="documentListTable">
+            <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Evidence uploaded</caption>
+            <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                <th role="columnheader" class="" scope="col">Type</th>
+                <th role="columnheader" class="" scope="col">Upload date</th>
+                <th role="columnheader" class="" scope="col">View</th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+              <tr role="row" class="nhsuk-table__row" id="documentListTableRow[0]">
+                <td role="cell" class="nhsuk-table__cell">
+                  <span>Death certificate</span>
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span>8 February 2025 11:42</span>
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <a id="document0" href="#" target="_blank">View</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+
+        <table class="nhsuk-table-responsive nhsuk-u-margin-bottom-8" id="incomeDetailsTable">
+          <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Income details</caption>
+          <thead class="nhsuk-table__head">
+            <tr>
+              <th scope="col">Question</th>
+              <th scope="col">Old answer</th>
+              <th scope="col">New answer</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+
+          <tbody class="nhsuk-table__body">
+            <tr>
+              <td>Parents live together <strong class="nhsuk-tag nhsuk-tag--yellow">Changed</strong></td>
+              <td>Yes</td>
+              <td>No</td>
+              <td><a href="salary">Change</a></td>
+            </tr>
+
+            <tr>
+              <td>Reason <strong class="nhsuk-tag nhsuk-tag--yellow">Changed</strong></td>
+              <td></td>
+              <td>Deceased</td>
+              <td><a href="#">Change</a></td>
+            </tr>
+
+            <tr>
+              <td>Parent you ususally live with <strong class="nhsuk-tag nhsuk-tag--yellow">Changed</strong></td>
+              <td></td>
+              <td>John Smith</td>
+              <td><a href="#">Change</a></td>
+            </tr>
+
+            <tr>
+              <td>Parent's name</td>
+              <td>John Smith</td>
+              <td>John Smith</td>
+              <td><a href="#">Change</a></td>
+            </tr>
+
+            <tr>
+              <td>Parent's email</td>
+              <td>johnsmith@gmail.com</td>
+              <td>johnsmith@gmail.com</td>
+              <td><a href="#">Change</a></td>
+            </tr>
+
+          </tbody>
+        </table>
+
+
+        <details class="nhsuk-details nhsuk-u-margin-bottom-9">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              Questions removed due to answer changes
+            </span>
+          </summary>
+
+          <div class="nhsuk-details__text">
+            <p>Some questions in this section are asked only when certain answers are given.</p>
+            <p>The questions below were part of the previous version of this section, but were not asked again
+              because of the new answers provided, and are shown here for reference only.</p>
+
+            <dl class="nhsuk-summary-list">
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Parent 2's name
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  Sarah Smith
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Parent 2's email
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  sarahsmith@gmail.com
+                </dd>
+              </div>
+            </dl>
+
+          </div>
+        </details>
+
+
+        <p><a id="canceltoStudent" href="/change-of-circumstances/V4/processor/change-summary">Go back to Change of
+            circumstances summary</a></p>
+      </div>
+    </div>
+  </main>
+</div>
+{% endblock %}
