@@ -58,20 +58,21 @@
     <div class="nhsuk-grid-row">
       <div class="nhsuk-grid-column-full">
 
+        <p>Complete the text box below to explain why you're returning this assessment to John Smith. It will be
+          included in the email sent to them.</p>
 
-      </div>
-      <div class="nhsuk-grid-column-full">
-        <label class="nhsuk-label">Complete text box to send email to Bobert Bilson</label>
+        <hr>
 
         <div class="nhsuk-form-group" id="error-message-documentcomments">
-          <label for="mailContent" class="nhsuk-label" id="mailContent-label">Dear Bobert Bilson,</label>
+          <label for="mailContent" class="nhsuk-label" id="mailContent-label">Dear John Smith,</label>
 
-          <p>You have provided information to support Joe Hutchinson in their application for a means-tested NHS
+          <p>You have provided information to support Ali Smith in their application for a means-tested NHS
             Bursary.</p>
 
           <textarea class="nhsuk-textarea" rows="8" id="mailContent" maxlength="2000"
             aria-labelledby="mailContent-label" name="mailContent"></textarea>
-          <div id="charactersRemaining">2000 characters remaining</div>
+          <p id="charactersRemaining" class="nhsuk-hint" aria-hidden="true">2000 characters remaining</p>
+          <p id="char-count-screen-reader" class="nhsuk-u-visually-hidden" aria-live="polite">You can enter up to 2000 characters</p>
         </div>
 
         <p>Please can you supply this additional information by following this link:
@@ -94,6 +95,8 @@
         <p>Student Services</p>
         <p>NHS Business Services Authority</p>
 
+        <hr>
+
         <div class="nhsuk-form-group">
           <button class="nhsuk-button" type="submit" name="buttonType" value="sendEmail" id="email"
             role="button">Send</button>
@@ -108,5 +111,56 @@
 
   </form>
 
-</div>
+
+<script>
+  const textarea = document.querySelector('#mailContent');
+  const countRemaining = document.getElementById('charactersRemaining');
+  const staticMsg = document.querySelector('#char-count-screen-reader');
+  const maxCharacters = 2000;
+  let timeoutId;
+
+  function updateCharacterCount() {
+    const textEntered = textarea.value;
+    const newLines = textEntered.match(/(\r\n|\n|\r)/g);
+    const addition = newLines?.length || 0;
+    const remainingCharacters = maxCharacters - textEntered.length + addition - (newLines?.length || 0);
+
+    if (remainingCharacters >= 0) {
+      countRemaining.textContent = `You have ${remainingCharacters} character${remainingCharacters === 1 ? '' : 's'} remaining`;
+      countRemaining.classList.remove('nhsbsa-count-error-message');
+      countRemaining.classList.add('nhsuk-hint');
+      textarea.classList.remove('nhsuk-textarea--error');
+    } else {
+      countRemaining.textContent = `You have ${Math.abs(remainingCharacters)} character${Math.abs(remainingCharacters) === 1 ? '' : 's'} too many`;
+      countRemaining.classList.add('nhsbsa-count-error-message');
+      countRemaining.classList.remove('nhsuk-hint');
+      textarea.classList.add('nhsuk-textarea--error');
+    }
+  }
+
+  function updateScreenReaderMessage() {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      const textEntered = textarea.value;
+      const newLines = textEntered.match(/(\r\n|\n|\r)/g);
+      const addition = newLines?.length || 0;
+      const remainingCharacters = maxCharacters - textEntered.length + addition - (newLines?.length || 0);
+      if (remainingCharacters < 0) {
+        staticMsg.textContent = `You have ${Math.abs(remainingCharacters)} character${Math.abs(remainingCharacters) === 1 ? '' : 's'} too many`;
+      } else {
+        staticMsg.textContent = `You have ${remainingCharacters} character${remainingCharacters === 1 ? '' : 's'} remaining`;
+      }
+    }, 500);
+  }
+
+  textarea.addEventListener('input', () => {
+    updateCharacterCount();
+    updateScreenReaderMessage();
+  });
+
+  window.addEventListener('load', () => {
+    updateCharacterCount();
+    updateScreenReaderMessage();
+  });
+</script>
 {% endblock %}
