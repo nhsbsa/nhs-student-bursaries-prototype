@@ -7,10 +7,10 @@ const router = express.Router();
 
 
 // Route for request-more-information: set CoC activity to 'pending' and redirect
-router.post('/parent-income-expenses/request-more-information', (req, res) => {
+router.post('/parent-income-expenses/request-more-information-route', (req, res) => {
   req.session.data['CoCActivityStatus'] = 'pending';
 
-  res.redirect('/change-of-circumstances/V4/processor/student-details-locked');
+  res.redirect('/change-of-circumstances/V4/processor/parent-income-expenses/request-more-information-note');
 });
 
 

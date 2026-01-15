@@ -1,0 +1,178 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-processor.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Student dashboard {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+{% endblock %}
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-width-container">
+  <main class="nhsuk-main-wrapper" id="maincontent" role="main" style="padding: 0;">
+
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-two-thirds">
+
+        <div>
+          <h1 class="nhsuk-app-heading" style="margin-bottom: 20px;">
+            <span class="nhsuk-caption-l" id="studentRef">BRN0000259-3 - Ali Smith (September 2024)</span>
+            <!-- Change of circumstances summary -->
+          </h1>
+        </div>
+
+        <div class="nhsuk-card" style="background: #005EB8; margin-top: 0;">
+          <div class="nhsuk-card__content">
+            <h1 class="nhsuk-card__heading" style="text-align: center; color: white;">
+              Income assessment returned to parent
+            </h1>
+          </div>
+        </div>
+
+        <p>You've completed the following actions:</p>
+        <ul>
+          <li>change of circumstances pended</li>
+          <li>email sent to parent - they'll be able to change their answers and add more evidence</li>
+          <li>note created</li>
+        </ul>
+
+        <h2 class="nhsuk-heading-m" style="margin-top: 40px;">More details</h2>
+
+        <details class="nhsuk-details nhsuk-expander">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              Email sent to parent
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <p>You've sent this email to the parent.</p>
+
+            <div class="nhsuk-card">
+              <div class="nhsuk-card__content">
+
+                <p><strong>Changes needed for change of circumstances - NHS Bursary</strong></p>
+
+                <p>Dear John Smith,</p>
+
+                <p>You have provided information to support Ali Smith in their application for a means-tested NHS
+                  Bursary.</p>
+
+                <p>Please provide up-to-date evidence of how your salary has changed.</p>
+
+                <p>Please can you supply this additional information by following this link:
+                  <span class="nhsuk-link nhsuk-link--no-visited-state">'link to system'</span>
+                </p>
+                <p>If you have any general queries about the NHS Student Bursary, please use our online enquiry system
+                  <a href="https://faq.nhsbsa.nhs.uk/knowledgebase/category/?articlecategory=NHS%20Bursary&amp;id=CAT-05069&amp;parentid="
+                    target="_blank">'Ask Us'</a> which is available 24 hours a day, 7 days a week.
+                  If you cannot find the answer you require, you can contact us using the details below:
+                </p>
+                <ul>
+                  <li>Telephone: 0300 330 1345</li>
+                  <li>Text relay service: 18001 0300 330 1345</li>
+                  <li>Twitter: <a href="https://www.twitter.com/NHSBSA_Students" target="_blank">@NHSBSA_Students</a>
+                  </li>
+                  <li>Facebook: <a href="https://www.facebook.com/NHSstudentbursaries"
+                      target="_blank">NHSstudentbursaries</a>
+                  </li>
+                </ul>
+
+                <p>Yours sincerely,</p>
+                <p>Student Services</p>
+                <p>NHS Business Services Authority</p>
+
+
+
+
+
+
+                <!-- We've completed your change of circumstances request for <strong>Change of address</strong>.</p>
+
+                <p>We've made changes to your payments because of this change.
+                  <a href="https://nhs-bursary.nhsbsa.nhs.uk/student/login">Sign in to your NHS Bursary account</a> to
+                  review your new payments.
+                </p>
+
+                <p>If you've submitted any more changes, we'll send separate emails about these when they're complete or
+                  if we need any more information.</p>
+
+                <p>Student Services</p> -->
+
+              </div>
+            </div>
+          </div>
+        </details>
+
+
+
+        <details class="nhsuk-details nhsuk-expander">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              Note created
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <p>You've added this note to the student's record.</p>
+
+            <div class="nhsuk-card">
+              <div class="nhsuk-card__content">
+
+                <h3 class="nhsuk-heading-s">Change of circumstances - 13 February 2025 at 11:37am
+                  <br>
+                  <div style="font-size: 1.1875rem; line-height: 1.47368;">Linked activity 252 - Change of parents' or
+                    partner's income or expenses</div>
+                  <strong class="nhsuk-tag nhsuk-tag--grey">System note</strong>
+                </h3>
+
+                <ul>
+                  <li>Change of circumstances pended.</li>
+                  <li>Income assessment returned to parent (John Smith).</li>
+                  <li>Email sent to parent (John Smith).</li>
+                </ul>
+
+                <p>Message added to email: Please provide up-to-date evidence of how your salary has changed.</p>
+
+                <p id="processorCommentPreview">
+                  Processor comment: <span id="processorCommentText">I'm returning this income assessment back to the
+                    parent, because their evidence for salary changes was insufficient.</span>
+                </p>
+
+                <p>
+                  Date of change: 5 February 2025
+                </p>
+
+                <div class="nhsuk-hint" id="contact-hint">
+                  Last modified by <strong>David Williams</strong>
+                </div>
+
+              </div>
+            </div>
+        </details>
+
+        <div class="nhsuk-form-group">
+          <a class="nhsuk-button nhsuk-u-margin-right-5 nhsuk-u-margin-top-3" id="complete"
+            href="student-details-locked?CoCActivityStatus=pending" role="button" data-module="nhsuk-button">Return to
+            Student details</a>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+</div>
+{% endblock %}

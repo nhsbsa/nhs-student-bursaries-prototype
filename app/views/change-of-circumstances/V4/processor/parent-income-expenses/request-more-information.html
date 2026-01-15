@@ -50,21 +50,22 @@
   </div>
 
   <h1 class="nhsuk-app-heading">
-    <span class="nhsuk-caption-l">Application Assessment</span><span>Request further evidence</span>
+    <span class="nhsuk-caption-l">BRN0000259-3 - Ali Smith (September 2024)</span><span>Request further evidence</span>
   </h1>
 
-  <form action="/change-of-circumstances/V4/processor/parent-income-expenses/request-more-information" method="POST">
+  <form action="/change-of-circumstances/V4/processor/parent-income-expenses/request-more-information-route"
+    method="POST">
     <input type="hidden" name="_csrf" value="864ba651-a8d0-4b47-81da-e49579184dde">
     <div class="nhsuk-grid-row">
       <div class="nhsuk-grid-column-full">
 
-        <p>Complete the text box below to explain why you're returning this assessment to John Smith. It will be
+        <p>Complete the text box below to explain why you're returning this income assessment to John Smith. It will be
           included in the email sent to them.</p>
 
         <hr>
 
         <div class="nhsuk-form-group" id="error-message-documentcomments">
-          <label for="mailContent" class="nhsuk-label" id="mailContent-label">Dear John Smith,</label>
+          <p>Dear John Smith,</p>
 
           <p>You have provided information to support Ali Smith in their application for a means-tested NHS
             Bursary.</p>
@@ -72,7 +73,8 @@
           <textarea class="nhsuk-textarea" rows="8" id="mailContent" maxlength="2000"
             aria-labelledby="mailContent-label" name="mailContent"></textarea>
           <p id="charactersRemaining" class="nhsuk-hint" aria-hidden="true">2000 characters remaining</p>
-          <p id="char-count-screen-reader" class="nhsuk-u-visually-hidden" aria-live="polite">You can enter up to 2000 characters</p>
+          <p id="char-count-screen-reader" class="nhsuk-u-visually-hidden" aria-live="polite">You can enter up to 2000
+            characters</p>
         </div>
 
         <p>Please can you supply this additional information by following this link:
@@ -98,12 +100,12 @@
         <hr>
 
         <div class="nhsuk-form-group">
-          <button class="nhsuk-button" type="submit" name="buttonType" value="sendEmail" id="email"
-            role="button">Send</button>
+          <button class="nhsuk-button" type="submit" name="sendP1Email" value="yes" id="withEmail"
+            role="button">Continue</button>
         </div>
         <div class="nhsuk-form-group">
-          <button class="nhsuk-button nhsuk-button--secondary" type="submit" name="buttonType" value="withoutEmail"
-            id="noEmail" role="button">Proceed without email</button>
+          <button class="nhsuk-button nhsuk-button--secondary" type="submit" name="sendP1Email" value="no"
+            id="withoutEmail" role="button">Continue without email</button>
         </div>
       </div>
 
@@ -111,7 +113,11 @@
 
   </form>
 
+</div>
 
+
+
+<!-- Character count script -->
 <script>
   const textarea = document.querySelector('#mailContent');
   const countRemaining = document.getElementById('charactersRemaining');
