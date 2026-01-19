@@ -77,7 +77,8 @@
 
                 <h3 class="nhsuk-heading-s">Change of circumstances - 13 February 2025 at 11:37am
                   <br>
-                  <div style="font-size: 1.1875rem; line-height: 1.47368;">Linked activity 252 - Change of address</div>
+                  <div style="font-size: 1.1875rem; line-height: 1.47368;">Linked activity 252 - Change of parents'
+                    or partner's income or expenses</div>
                   <strong class="nhsuk-tag nhsuk-tag--grey">System note</strong>
                 </h3>
 
@@ -100,8 +101,8 @@
                 {% else %}
                 <ul>
                   <li>Change of circumstances completed.</li>
-                  <li>Address updated.</li>
-                  <li>Living with parents updated.</li>
+                  <!-- <li>Address updated.</li> -->
+                  <li>Bursary details updated.</li>
                   <li>Payments updated manually.</li>
                   <!-- <li>Calculations sheet uploaded.</li> -->
                   <li>Email sent to student.</li>
@@ -113,28 +114,7 @@
                     like.</span>
                 </p>
 
-                <p>Change type: Change of address<br>
-                  Previous address: 13 Pleasant House, Laney Street, Smalltown, Scotland, NE33 3AB<br>
-                  New address: 34 The Tower, Streetson Crescent, Bigtown, England, SR2 7NB<br>
-
-                  Living with parents:
-
-                  {% if data['CoCScenario'] == "addressOnly" %}
-                  Yes
-                  {% else %}
-                  No
-                  {% endif %}
-
-                  <br>
-                  Reason for change:
-
-                  {% if data['CoCScenario'] == "addressOnly" %}
-                  Me and my parents have moved house together.
-                  {% else %}
-                  I moved out of my parents house into my studio flat.
-                  {% endif %}
-
-                  <br>
+                <p>Change type: Change of parents' or partner's income or expenses<br>
                   Date of change: 5 February 2025
                 </p>
 
