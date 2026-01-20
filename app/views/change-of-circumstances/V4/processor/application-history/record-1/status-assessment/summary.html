@@ -1,0 +1,162 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-processor.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Change of circumstances summary {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb"
+  style="background-color: white; padding:12px 0; margin-bottom: 40px;">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
+          href="/change-of-circumstances/V4/processor/student-details-locked">Student details</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
+          href="/change-of-circumstances/V4/processor/course-details">Enrolment details</a></li>
+
+    </ol>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="#">Back to Course details</a></p>
+  </div>
+</nav>
+
+{% endblock %}
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-width-container">
+  <main class="nhsuk-main-wrapper" id="maincontent" role="main">
+
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-back-link">
+          <a class="nhsuk-back-link__link" href="javascript:history.go(-1)" id="back">
+            <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+              aria-hidden="true">
+              <path
+                d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+              </path>
+            </svg>
+            Go back</a>
+        </div>
+
+        <span class="nhsuk-caption-l">BRN0000259-3 - Ali Smith (September 2024)</span>
+        <h1 class="nhsuk-heading-xl">
+          Status assessment summary
+        </h1>
+
+        <h2 class="nhsuk-heading-l">Status assessment details</h2>
+
+        <div class="nhsuk-card">
+          <div class="nhsuk-card__content">
+            <h3 class="nhsuk-card__heading">The student has been classed as a Dependent student</h3>
+            <p class="nhsuk-card__description">The student has been classed as a 'dependent student', and their
+              means-tested bursary entitlement will be assessed on the income of their parent(s) if they wish to declare
+              this.</p>
+          </div>
+        </div>
+
+
+
+        <dl class="nhsuk-summary-list">
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Do you want to apply for an Income Assessed Bursary?</dt>
+
+            <dd class="nhsuk-summary-list__value" id="meansTested">Yes</dd>
+
+            <dd class="nhsuk-summary-list__actions">
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Have Student Finance England confirmed you're an independent student?
+            </dt>
+
+            <dd class="nhsuk-summary-list__value" id="sfeIndependent">No</dd>
+            <dd class="nhsuk-summary-list__actions">
+            </dd>
+          </div>
+
+
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Do you have any dependent children?</dt>
+
+            <dd class="nhsuk-summary-list__value" id="careOfChild">No</dd>
+            <dd class="nhsuk-summary-list__actions">
+            </dd>
+          </div>
+
+
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">What is your relationship status?</dt>
+
+            <dd class="nhsuk-summary-list__value" id="relationshipStatus2">None of the above</dd>
+            <dd class="nhsuk-summary-list__actions">
+            </dd>
+          </div>
+
+
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Do you live at your parent's house?</dt>
+            <dd class="nhsuk-summary-list__value" id="parentalHome">Yes</dd>
+            <dd class="nhsuk-summary-list__actions">
+            </dd>
+          </div>
+
+
+
+
+
+
+
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Have both of your parents died?</dt>
+
+            <dd class="nhsuk-summary-list__value" id="parentsDeceased">No</dd>
+            <dd class="nhsuk-summary-list__actions">
+            </dd>
+          </div>
+
+
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Are you estranged from your parents?</dt>
+
+            <dd class="nhsuk-summary-list__value" id="estranged">No</dd>
+            <dd class="nhsuk-summary-list__actions">
+            </dd>
+          </div>
+
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Have you supported yourself for a total of 36 months before your course
+              starts?</dt>
+
+            <dd class="nhsuk-summary-list__value" id="selfSupported">No</dd>
+            <dd class="nhsuk-summary-list__actions">
+            </dd>
+          </div>
+
+        </dl>
+
+      </div>
+    </div>
+  </main>
+</div>
+{% endblock %}
