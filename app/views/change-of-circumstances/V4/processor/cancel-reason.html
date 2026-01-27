@@ -24,7 +24,7 @@
       <li class="nhsuk-breadcrumb__item"><a id="searchLink" class="nhsuk-breadcrumb__link" href="#">Student search</a>
       </li>
       <li class="nhsuk-breadcrumb__item"><a id="studentDetailsLink" class="nhsuk-breadcrumb__link"
-          href="/change-of-circumstances/V4/processor/student-details-locked">Student details</a></li>
+          href="/change-of-circumstances/V2/process-application/student-details-locked">Student details</a></li>
 
     </ol>
     <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="#">Back to Course details</a></p>
@@ -57,108 +57,41 @@
         <div>
           <h1 class="nhsuk-app-heading nhsuk-heading-l">
             <span class="nhsuk-caption-l" id="studentRef">BRN0000259-3 - Ali Smith (September 2024)</span>
-            Add a comment about this change (optional)
+            Why are you cancelling this change?
           </h1>
         </div>
 
-        <p>We'll create a note for you. You can add a comment to this note.</p>
-
-        <details class="nhsuk-details nhsuk-expander">
-          <summary class="nhsuk-details__summary">
-            <span class="nhsuk-details__summary-text">
-              Preview of note
-            </span>
-          </summary>
-          <div class="nhsuk-details__text">
-            <!-- <p>You've added this note to the student's record.</p> -->
-
-            <div class="nhsuk-card">
-              <div class="nhsuk-card__content">
-
-                <h3 class="nhsuk-heading-s">Change of circumstances - 13 February 2025 at 11:37am
-                  <br>
-                  <div style="font-size: 1.1875rem; line-height: 1.47368;">Linked activity 252 - Change of parents'
-                    or partner's income or expenses</div>
-                  <strong class="nhsuk-tag nhsuk-tag--grey">System note</strong>
-                </h3>
-
-                {% if data['CoCScenario'] == "addressOnly" %}
-                <ul>
-                  <li>Change of circumstances completed.</li>
-                  <li>Address updated.</li>
-                  <li>Email sent to student.</li>
-                </ul>
-
-                {% elif data['CoCSchedulingChoice'] == "automaticReschedule" %}
-                <ul>
-                  <li>Change of circumstances completed.</li>
-                  <li>Address updated.</li>
-                  <li>Living with parents updated.</li>
-                  <li>Payments updated automatically.</li>
-                  <li>Email sent to student.</li>
-                </ul>
-
-                {% else %}
-                <ul>
-                  <li>Change of circumstances completed.</li>
-                  <!-- <li>Address updated.</li> -->
-                  <li>Bursary details updated.</li>
-                  <li>Payments updated manually.</li>
-                  <!-- <li>Calculations sheet uploaded.</li> -->
-                  <li>Email sent to student.</li>
-                </ul>
-                {% endif %}
-
-                <p id="processorCommentPreview">
-                  Processor comment: <span id="processorCommentText">This is an example of what your comment will look
-                    like.</span>
-                </p>
-
-                <p>Change type: Change of parents' or partner's income or expenses<br>
-                  Date of change: 5 February 2025
-                </p>
-
-                <div class="nhsuk-hint" id="contact-hint">
-                  Last modified by <strong>David Williams</strong>
-                </div>
-
-              </div>
-            </div>
+        <div class="nhsuk-form-group">
+          <!-- <label class="nhsuk-label" for="example">
+            Reason
+          </label> -->
+          <div class="nhsuk-hint" id="example-hint">
+            The student will not see this reason. This will appear in the Notes section on Student Details.
           </div>
-        </details>
+          <textarea class="nhsuk-textarea" id="change-cancel-processor-reason" name="example" rows="5"
+            aria-describedby="example-hint"></textarea>
 
+          <p id="charactersRemaining" class="nhsuk-hint" aria-hidden="true">500 characters remaining</p>
+          <p id="char-count-screen-reader" class="nhsuk-u-visually-hidden" aria-live="polite">You can enter up to 500
+            characters</p>
+        </div>
 
+        <div class="nhsuk-form-group" style="margin-top: 40px;">
+          <a class="nhsuk-button nhsuk-u-margin-right-5" id="complete" href="cancel-confirmation?CoCActivityStatus=cancelled" role="button"
+            data-module="nhsuk-button">Cancel change</a>
 
-        <form action="/change-of-circumstances/V4/processor/change-confirmation-comment-route" method="POST">
-
-          <div class="nhsuk-form-group">
-            <div class="nhsuk-hint" id="example-hint">
-              Comment
-            </div>
-            <textarea class="nhsuk-textarea" id="change-completion-processor-comment" name="example" rows="5"
-              aria-describedby="example-hint"></textarea>
-
-            <p id="charactersRemaining" class="nhsuk-hint" aria-hidden="true">500 characters remaining</p>
-            <p id="char-count-screen-reader" class="nhsuk-u-visually-hidden" aria-live="polite">You can enter up to 500
-              characters</p>
-          </div>
-
-          <div class="nhsuk-form-group" style="margin-top: 40px;">
-            <button class="nhsuk-button" type="submit">Complete change</button>
-
-            <p><a id="canceltoStudent" href="student-details-locked">Cancel</a></p>
-          </div>
-
-        </form>
+          <p><a id="canceltoStudent" href="student-details-locked">Cancel</a></p>
+        </div>
 
       </div>
+
     </div>
   </main>
 </div>
 
 
 <script>
-  const textarea = document.querySelector('#change-completion-processor-comment');
+  const textarea = document.querySelector('#change-cancel-processor-reason');
   const countRemaining = document.getElementById('charactersRemaining');
   const staticMsg = document.querySelector('#char-count-screen-reader');
   const maxCharacters = 500;
@@ -208,36 +141,6 @@
   window.addEventListener('load', () => {
     updateCharacterCount();
     updateScreenReaderMessage();
-  });
-</script>
-
-
-
-<script>
-  const commentPreview = document.getElementById('processorCommentPreview');
-  const commentText = document.getElementById('processorCommentText');
-
-  // When contents of Comment textbox is changed: update Comment in preview 
-  textarea.addEventListener('input', () => {
-    const value = textarea.value.trim();
-
-    if (value) {
-      commentText.textContent = value;
-      commentPreview.style.display = 'block';
-    } else {
-      commentPreview.style.display = 'none';
-    }
-  });
-
-  // On page load: replace placeholder if JS is running
-  window.addEventListener('load', () => {
-    const initialValue = textarea.value.trim();
-    if (initialValue) {
-      commentText.textContent = initialValue;
-      commentPreview.style.display = 'block';
-    } else {
-      commentPreview.style.display = 'none';
-    }
   });
 </script>
 {% endblock %}

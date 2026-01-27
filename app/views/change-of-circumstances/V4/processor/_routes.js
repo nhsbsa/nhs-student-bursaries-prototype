@@ -33,10 +33,10 @@ router.post('/change-summary-route', (req, res) => {
     res.redirect('/change-of-circumstances/V4/processor/pend-reason')
   }
 
-  // DECLINE CHANGE radio option
-  // else if (CoCProcessorChoice === 'decline') {
-  //   res.redirect('/change-of-circumstances/V4/processor/decline-reason')
-  // }
+  // CANCEL CHANGE radio option
+  else if (CoCProcessorChoice === 'cancel') {
+    res.redirect('/change-of-circumstances/V4/processor/cancel-reason')
+  }
 
   // Else, stay on this page (no radio selected)
   else {

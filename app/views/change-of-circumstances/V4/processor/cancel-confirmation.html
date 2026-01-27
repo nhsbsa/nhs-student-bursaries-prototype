@@ -1,0 +1,85 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-processor.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Student dashboard {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+{% endblock %}
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-width-container">
+  <main class="nhsuk-main-wrapper" id="maincontent" role="main" style="padding: 0;">
+
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-two-thirds">
+
+        <div>
+          <h1 class="nhsuk-app-heading" style="margin-bottom: 20px;">
+            <span class="nhsuk-caption-l" id="studentRef">BRN0000259-3 - Ali Smith (September 2024)</span>
+            <!-- Change of circumstances summary -->
+          </h1>
+        </div>
+
+        <div class="nhsuk-card" style="background: #005EB8; margin-top: 0;">
+          <div class="nhsuk-card__content">
+            <h1 class="nhsuk-card__heading" style="text-align: center; color: white;">
+              Change of circumstances cancelled
+            </h1>
+          </div>
+        </div>
+
+        <p>You've added this note to the student's record.</p>
+
+        <div class="nhsuk-card">
+          <div class="nhsuk-card__content">
+
+            <h3 class="nhsuk-heading-s">Change of circumstances - 13 February 2025 at 11:37am
+              <br>
+              <div style="font-size: 1.1875rem; line-height: 1.47368;">Linked activity 252 - Change of parents' or
+                partner's income or expenses</div>
+              <strong class="nhsuk-tag nhsuk-tag--grey">System note</strong>
+            </h3>
+
+            <p>Change of circumstances cancelled.</p>
+
+            <p>Cancel reason: Student submitted duplicate CoC request, this one is no longer needed, will process
+              other request.</p>
+
+            <div class="nhsuk-hint" id="contact-hint">
+              Last modified by <strong>David Williams</strong>
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="nhsuk-form-group">
+          <!-- <a class="nhsuk-button nhsuk-u-margin-right-5" id="complete" href="#" role="button"
+            data-module="nhsuk-button">Add note and return to student details</a> -->
+          <a class="nhsuk-button nhsuk-u-margin-right-5" id="complete" href="student-details-locked" role="button"
+            data-module="nhsuk-button">Return to Student details</a>
+
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+</div>
+{% endblock %}
