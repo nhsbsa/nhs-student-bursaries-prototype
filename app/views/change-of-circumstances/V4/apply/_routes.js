@@ -10,7 +10,7 @@ const router = express.Router();
 // Routes for STUDENT: APPLY FOR CoC journey
 
 // Scenario initialization routes for intro page
-router.get('/apply/intro', (req, res) => {
+router.get('/intro', (req, res) => {
   const previousSituation = req.query.previousSituation;
 
   // Initialize variables based on scenario
@@ -82,8 +82,8 @@ router.get('/apply/intro', (req, res) => {
 
 
 
-router.post('/apply/changes-route', (req, res) => {
-
+router.post('/changes-route', (req, res) => {
+  
   const CoCType = req.session.data['CoCType']
 
   if (
@@ -101,7 +101,7 @@ router.post('/apply/changes-route', (req, res) => {
 
 // STATUS ASSESSMENT ROUTES
 
-router.post('/apply/status-assessment-relationship-route', (req, res) => {
+router.post('/status-assessment-relationship-route', (req, res) => {
 
   const relationshipStatus = req.session.data['relationshipStatus']
 
@@ -124,7 +124,7 @@ router.post('/apply/status-assessment-relationship-route', (req, res) => {
 })
 
 
-router.post('/apply/status-assessment-live-with-parents-route', (req, res) => {
+router.post('/status-assessment-live-with-parents-route', (req, res) => {
 
   res.redirect('/change-of-circumstances/V4/apply/status-assessment-cya');
 
@@ -135,7 +135,7 @@ router.post('/apply/status-assessment-live-with-parents-route', (req, res) => {
 // TASKLIST ROUTES
 
 
-router.post('/apply/tasklist-parent-or-partner-details-route', (req, res) => {
+router.post('/tasklist-parent-or-partner-details-route', (req, res) => {
   const originalRelationshipStatus = req.session.data['originalRelationshipStatus'] || null
   const relationshipStatus = req.session.data['relationshipStatus']
   const dependencyStatus = req.session.data['dependencyStatus']
@@ -173,7 +173,7 @@ router.post('/apply/tasklist-parent-or-partner-details-route', (req, res) => {
 
 // PARTNER DETAILS ROUTES
 
-router.post('/apply/partner-cya-route', (req, res) => {
+router.post('/partner-cya-route', (req, res) => {
 
   const originalLivingWithPartner = req.session.data['originalLivingWithPartner']
   const livingWithPartner = req.session.data['livingWithPartner']
@@ -194,21 +194,21 @@ router.post('/apply/partner-cya-route', (req, res) => {
 })
 
 
-router.post('/apply/partner-name-route', (req, res) => {
+router.post('/partner-name-route', (req, res) => {
 
   res.redirect('/change-of-circumstances/V4/apply/partner-email')
 
 })
 
 
-router.post('/apply/partner-email-route', (req, res) => {
+router.post('/partner-email-route', (req, res) => {
 
   res.redirect('/change-of-circumstances/V4/apply/partner-cya')
 
 })
 
 
-router.post('/apply/partner-live-with-partner-route', (req, res) => {
+router.post('/partner-live-with-partner-route', (req, res) => {
 
   const livingWithPartner = req.session.data['livingWithPartner']
 
@@ -229,7 +229,7 @@ router.post('/apply/partner-live-with-partner-route', (req, res) => {
 
 // PARENTS DETAILS ROUTES
 
-router.post('/apply/parents-cya-route', (req, res) => {
+router.post('/parents-cya-route', (req, res) => {
 
   const originalParentsLiveTogether = req.session.data['originalParentsLiveTogether']
   const parentsLiveTogether = req.session.data['parentsLiveTogether']
@@ -251,7 +251,7 @@ router.post('/apply/parents-cya-route', (req, res) => {
 })
 
 
-router.post('/apply/parents-live-together-route', (req, res) => {
+router.post('/parents-live-together-route', (req, res) => {
 
   const parentsLiveTogether = req.session.data['parentsLiveTogether']
 
@@ -271,14 +271,14 @@ router.post('/apply/parents-live-together-route', (req, res) => {
 
 // PARENTS DON'T LIVE TOGETHER ROUTES
 
-router.post('/apply/parents-dont-live-together-reason-route', (req, res) => {
+router.post('/parents-dont-live-together-reason-route', (req, res) => {
 
   res.redirect('/change-of-circumstances/V4/apply/parent-you-usually-live-with')
 
 })
 
 
-router.post('/apply/parent-you-usually-live-with-route', (req, res) => {
+router.post('/parent-you-usually-live-with-route', (req, res) => {
 
   const parentYouUsuallyLiveWith = req.session.data['parentYouUsuallyLiveWith']
 
@@ -308,14 +308,14 @@ router.post('/apply/parent-you-usually-live-with-route', (req, res) => {
 })
 
 
-router.post('/apply/parent-name-route', (req, res) => {
+router.post('/parent-name-route', (req, res) => {
 
   res.redirect('/change-of-circumstances/V4/apply/parent-email')
 
 })
 
 
-router.post('/apply/parent-email-route', (req, res) => {
+router.post('/parent-email-route', (req, res) => {
 
   res.redirect('/change-of-circumstances/V4/apply/parents-cya')
 
@@ -324,28 +324,28 @@ router.post('/apply/parent-email-route', (req, res) => {
 
 // PARENTS LIVING TOGETHER ROUTES
 
-router.post('/apply/parent-1-name-route', (req, res) => {
+router.post('/parent-1-name-route', (req, res) => {
 
   res.redirect('/change-of-circumstances/V4/apply/parent-1-email')
 
 })
 
 
-router.post('/apply/parent-1-email-route', (req, res) => {
+router.post('/parent-1-email-route', (req, res) => {
 
   res.redirect('/change-of-circumstances/V4/apply/parent-2-name')
 
 })
 
 
-router.post('/apply/parent-2-name-route', (req, res) => {
+router.post('/parent-2-name-route', (req, res) => {
 
   res.redirect('/change-of-circumstances/V4/apply/parent-2-email')
 
 })
 
 
-router.post('/apply/parent-2-email-route', (req, res) => {
+router.post('/parent-2-email-route', (req, res) => {
 
   res.redirect('/change-of-circumstances/V4/apply/parents-cya')
 
